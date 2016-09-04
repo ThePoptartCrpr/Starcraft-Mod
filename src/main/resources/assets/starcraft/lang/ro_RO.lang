@@ -1,0 +1,191 @@
+
+itemGroup.StarcraftMaterials=Materiale Din Starcraft
+itemGroup.StarcraftBuildingBlocks=Cuburi De Construcție Din Starcraft
+itemGroup.StarcraftTools=Unelte Din Starcraft
+itemGroup.StarcraftCombat=Arme Din Starcraft
+itemGroup.StarcraftMisc=Diverse Din Starcraft
+
+
+
+tile.energyBlock.name=Cub De Energie
+tile.voidEnergyBlock.name=Cub De Energie Vida
+tile.protossMetalDark.name=Metal Protoss
+Întunecat
+tile.protossMetal.name=Metal Protoss
+tile.blueDyedProtossMetal.name=Metal Protoss Albastru
+tile.protossEnergyStabilizer.name=Stabilizator De Energie Protoss
+tile.protossEnergyChannel.name=Canal De Energie Protoss
+tile.alienOre.name=Minereu Extraterestru
+tile.charAlienOre.name=Minereu Extraterestru (Char)
+tile.shakurasAlienOre.name=Minereu Extraterestru (Shakuras)
+tile.pylonCrystal.name=Cristal De Pylon
+tile.darkPylonCrystal.name=Cristal Întunecat De Pylon
+
+tile.mineralOre.name=Minereu De Minerale
+tile.richMineralOre.name=Minereu Bogat În Minerale
+tile.charMineralOre.name=Minereu De Minerale (Char)
+tile.charRichMineralOre.name=Minereu Bogat în Minerale (Char)
+tile.shakurasMineralOre.name=Minereu De Minerale (Shakuras)
+tile.shakurasRichMineralOre.name=Minereu Bogat în Minerale (Shakuras)
+
+tile.titaniumOre.name=Minereu De Titaniu
+tile.charTitaniumOre.name=Minereu De Titaniu (Char)
+tile.shakurasTitaniumOre.name=Minereu De Titaniu (Shakuras)
+tile.titaniumBlock.name=Cub De Titaniu
+
+tile.copperOre.name=Minereu De Cupru
+tile.charCopperOre.name=Minereu De Cupru (Char)
+tile.shakurasCopperOre.name=Minereu Dr Cupru (Shakuras)
+tile.copperBlock.name=Cub De Cupru
+
+tile.steelBlock.name=Cub De Oțel
+
+tile.blueDyedIronBlock.name=Cub Albastru De Fier
+
+tile.mineralField.name=Câmp Cu Minerale
+tile.richMineralField.name=Câmp Bogat În  Minerale
+
+tile.vespeneGeyser.name=Gheizer De Gaz
+tile.vespeneGeyserChar.name=Gheizer De Gaz (Char)
+tile.vespeneGeyserBase.name=Baza Gheizer-ului De Gaz
+tile.vespeneGeyserBaseChar.name=Baza Gheizer-ului De Gaz (Char)
+tile.richVespeneGeyser.name=Gheizer Bogat în Gaz
+tile.richVespeneGeyserChar.name=Gheizer Bogat în Gaz (Char)
+
+tile.zergCreep.name=Mazga De Zerg
+
+tile.zergStructurePurpleFlesh.name=Carne Mov
+tile.zergStructureBrownFlesh.name=Carne Maro
+tile.zergStructureCarapace.name=Carapacea Structurii
+tile.keratinChunk.name=Bucata De Cheratina
+tile.zergStructureInnerFlesh.name=Carne Interioara
+
+tile.shakurasSand.name=Nisip (Shakuras)
+tile.shakurasStone.name=Piatra (Shakuras)
+tile.shakurasCoal.name=Minereu De Carbune (Shakuras)
+tile.shakurasIron.name=Minereu De Fier (Shakuras)
+tile.shakurasGold.name=Minereu De Aur (Shakuras)
+tile.shakurasDiamond.name=Minereu De Diamant (Shakuras)
+tile.shakurasRedstone.name=Minereu De Piatra Rosie (Shakuras)
+tile.shakurasRedstoneLit.name=Minereu De Piatra Rosie (Shakuras)
+tile.shakurasLapis.name=Minereu De Lapis Lazuli (Shakuras)
+
+tile.fluidAcid.name=Acid Fluid
+tile.fluidBlood.name=Sânge Fluid
+
+tile.charAsh.name=Cenusa (Char)
+tile.charDirt.name=Pamant (Char)
+tile.charStone.name=Piatra (Char)
+tile.charCoal.name=Minereu De Carbune (Char)
+tile.charIron.name=Minereu De Fier (Char)
+tile.charGold.name=Minereu De Aur (Char)
+tile.charDiamond.name=Minereu De Diamant (Char)
+tile.charRedstone.name=Minereu De Piatra Rosie (Char)
+tile.charRedstoneLit.name=Minereu De Piatra Rosie (Char)
+tile.charLapis.name=Minereu De Lapis Lazuli (Char)
+tile.dimPortalChar.name=Portal Către Char
+tile.dimPortalOverworld.name=Portal Către Lumea De La Suprafata
+tile.dimPortalShakuras.name=Portal Către Shakuras
+
+item.Starcraft_psiBlade.name=Lama Psi
+item.Starcraft_darkPsiBlade.name=Lama Psi (Intunecata)
+item.Starcraft_warpBlade.name=Lama Warp
+item.Starcraft_darkWarpBlade.name=Lama Warp (Intunecata)
+item.Starcraft_masterPsiBlade.name=Lama Master Psi
+
+
+item.Starcraft_mineralShard.name=Ciob De Minerale
+item.Starcraft_richMineralShard.name=Ciob Bogat în Minerale
+item.Starcraft_rawVespene.name=Gaz Brut
+item.Starcraft_zergVespene.name=Gaz Cules De Zerg
+item.Starcraft_protossVespene.name=Gaz Cules De Protoss
+item.Starcraft_terranVespene.name=Gaz Cules De Terran
+
+item.Starcraft_alienIngot.name=Lingou Extraterestru
+item.Starcraft_darkAlienIngot.name=Lingou Extraterestru Intunecat
+item.Starcraft_psiBladeFocuserUncharged.name=Lama Psi Focuser (Neincarcata)
+item.Starcraft_darkPsiBladeFocuserUncharged.name=Lama Psi Focuser (Intunecata, Neincarcata)
+
+item.Starcraft_energy.name=Energie
+item.Starcraft_corruptedEnergy.name=Energie Corupta
+item.Starcraft_voidEnergy.name=Energie Vida
+item.Starcraft_protossArtifact.name=Artefact De Protoss
+item.Starcraft_uraj.name=Uraj
+
+
+
+item.Starcraft_titaniumIngot.name=Lingou De Titaniu
+item.Starcraft_copperIngot.name=Lingou De Cupru
+item.Starcraft_steelIngot.name=Lingou De Oțel
+
+item.Starcraft_titaniumSword.name=Sabie De Titaniu
+item.Starcraft_titaniumPickaxe.name=Târnăcop De Titaniu
+item.Starcraft_titaniumAxe.name=Topor De Titaniu
+item.Starcraft_titaniumShovel.name=Lopata De Titaniu
+item.Starcraft_titaniumHoe.name=Sapa De Titaniu
+
+item.Starcraft_titaniumHelmet.name=Coif De Titaniu
+item.Starcraft_titaniumChestplate.name=Placa De Piept De Titaniu
+item.Starcraft_titaniumLeggings.name=Pantaloni De Titaniu
+item.Starcraft_titaniumBoots.name=Cizme De Titaniu
+
+item.Starcraft_copperSword.name=Sabie De Cupru
+item.Starcraft_copperPickaxe.name=Târnăcop De Cupru
+item.Starcraft_copperAxe.name=Topor De Cupru
+item.Starcraft_copperShovel.name=Lopata De Cupru
+item.Starcraft_copperHoe.name=Sapa De Cupru
+
+item.Starcraft_copperHelmet.name=Coif De Cupru
+item.Starcraft_copperChestplate.name=Armura De Piept de Cupru
+item.Starcraft_copperLeggings.name=Pantaloni De Cupru
+item.Starcraft_copperBoots.name=Cizme De Cupru
+
+item.Starcraft_steelSword.name=Sabie De Oțel
+item.Starcraft_steelPickaxe.name=Târnăcop De Oțel 
+item.Starcraft_steelAxe.name=Topor De Oțel
+item.Starcraft_steelShovel.name=Lopata De Oțel
+item.Starcraft_steelHoe.name=Sapa De Oțel
+
+item.Starcraft_steelHelmet.name=Coif De Oțel
+item.Starcraft_steelChestplate.name=Armura De Piept de Oțel
+item.Starcraft_steelLeggings.name=Pantaloni De Oțel
+item.Starcraft_steelBoots.name=Cizme De Oțel
+
+item.Starcraft_c14GaussRifle.name=Pusca C14 Gauss
+item.Starcraft_c14GaussRifleBullet.name=Glonț  De Pusca C14 Gauss
+item.Starcraft_c14GaussRifleBarrel.name=Țeavă De Pusca C14 Gauss
+item.Starcraft_c14GaussRifleBody.name=Corp De Pusca C14 Gauss
+item.Starcraft_c14GaussRifleGrip.name=Suport De Pusca C14 Gauss
+
+
+item.Starcraft_zergCarapaceT1.name=Carapace De Zerg T1
+item.Starcraft_zergCarapaceT2.name=Carapace De Zerg T2
+item.Starcraft_zergCarapaceT3.name=Carapace De Zerg T3
+
+item.Starcraft_creepResin.name=Resina De Mazga
+item.Starcraft_organicTissue.name=Țesut Organic
+
+item.acidBucket.name=Găleată Cu Acid
+item.bloodBucket.name=Găleată Cu Sange
+
+
+entity.Larva.name=Larva
+entity.LarvaCocoon.name=Cocon De Larva
+entity.Broodling.name=Broodling
+
+entity.Probe.name=Sonda
+entity.DarkProbe.name=Sonda Intunecata
+
+entity.Civilian.name=Civil
+
+
+
+
+achievement.mineMinerals=Nu avem destule minerale!
+achievement.mineMinerals.desc=Obtine cioburi de Minerale!
+
+achievement.mineRichMinerals=Prea multe minerale!
+achievement.mineRichMinerals.desc=Obtine cioburi bogate în minerale!
+
+achievement.mineVespene=Geizer de gaz golit!
+achievement.mineVespene.desc=Obtine gaz!

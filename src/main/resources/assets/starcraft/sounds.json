@@ -1,0 +1,16 @@
+{
+    "larva-live1": {"category": "master", "sounds": ["larva-live1"]},
+    "larva-hurt": {"category": "master", "sounds": ["larva-hurt"]},
+    "larva-death": {"category": "master", "sounds": ["larva-death"]},
+    "overlord-live1": {"category": "master", "sounds": ["overlord-live1"]},
+    "overlord-hurt": {"category": "master", "sounds": ["overlord-hurt"]},
+    "overlord-death": {"category": "master", "sounds": ["overlord-death"]},
+    "zergCocoon-live1": {"category": "master", "sounds": ["zergCocoon-live1"]},
+    "zergCocoon-hurt": {"category": "master", "sounds": ["zergCocoon-hurt"]},
+    "zergCocoon-death": {"category": "master", "sounds": ["zergCocoon-death"]},
+    "probe-live1": {"category": "master", "sounds": ["probe-live1"]},
+    "probe-hurt": {"category": "master", "sounds": ["probe-hurt"]},
+    "probe-death": {"category": "master", "sounds": ["probe-death"]},
+    "c14GaussRifle-firing": {"category": "master", "sounds": ["c14GaussRifle-firing"]},
+    "c14GaussRifle-out": {"category": "master", "sounds": ["c14GaussRifle-out"]}
+}
