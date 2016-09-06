@@ -12,6 +12,7 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.common.DimensionManager;
 
 public class WorldProviderChar extends WorldProvider {
 	
@@ -25,7 +26,7 @@ public class WorldProviderChar extends WorldProvider {
 	@Override
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerChar(this.getSeed(), terrainType);
-		this.dimensionId = 2;
+		this.dimensionId = DimensionManager.getNextFreeDimId();
 		this.hasNoSky = false;
 
 	}
