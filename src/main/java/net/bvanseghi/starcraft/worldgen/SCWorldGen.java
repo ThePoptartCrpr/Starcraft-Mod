@@ -100,7 +100,7 @@ public class SCWorldGen implements IWorldGenerator {
 			this.addOreSpawn(ModBlocks.ores, 3, world, Blocks.stone, random, x, z, 16, 16,
 					4 + random.nextInt(6), 5, 4, 28);
 		
-			this.addOreSpawn(ModBlocks.ores, 4, world, Blocks.stone, random, x, z, 16, 16,
+			this.addOreSpawn(ModBlocks.ores, 9, world, Blocks.stone, random, x, z, 16, 16,
 					4 + random.nextInt(6), 6, 4, 50);
 		
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
@@ -117,7 +117,7 @@ public class SCWorldGen implements IWorldGenerator {
 
 		}
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateShakuras < 11) {
+			if (chanceProtossWarpGateShakuras < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -131,7 +131,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateShakuras < 11) {
+			if (chanceProtossWarpGateShakuras < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -186,7 +186,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceTerranBunker < 11) {
+			if (chanceTerranBunker < 21) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -243,7 +243,7 @@ public class SCWorldGen implements IWorldGenerator {
 				0, 16);
 
 		// Lapis
-		this.addOreSpawnChar(ModBlocks.ores, 9, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
+		this.addOreSpawnChar(ModBlocks.ores, 4, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
 				0, 16);
 
 		// Diamond
@@ -286,7 +286,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateOverworld < 11) {
+			if (chanceProtossWarpGateOverworld < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -300,7 +300,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateShakuras < 11) {
+			if (chanceProtossWarpGateShakuras < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -382,49 +382,49 @@ public class SCWorldGen implements IWorldGenerator {
 		int chanceProtossWarpGateOverworld = random.nextInt(6000);
 
 		
-			this.addOreSpawnShakuras(ModBlocks.ores, 22, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+			this.addOreSpawnShakuras(ModBlocks.ores2, 6, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
 					4 + random.nextInt(2), 7, 28, 50);
 		
-			this.addOreSpawnShakuras(ModBlocks.ores, 23, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+			this.addOreSpawnShakuras(ModBlocks.ores2, 7, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
 					4 + random.nextInt(2), 5, 4, 28);
 		
-			this.addOreSpawnShakuras(ModBlocks.ores, 24, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+			this.addOreSpawnShakuras(ModBlocks.ores2, 8, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
 					4 + random.nextInt(6), 5, 4, 20);
 		
-			this.addOreSpawnShakuras(ModBlocks.ores, 25, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+			this.addOreSpawnShakuras(ModBlocks.ores2, 9, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
 					4 + random.nextInt(6), 5, 4, 28);
 		
-			this.addOreSpawnShakuras(ModBlocks.ores, 26, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+			this.addOreSpawnShakuras(ModBlocks.ores2, 10, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
 					4 + random.nextInt(6), 6, 4, 50);
 
 		// Coal
-		this.addOreSpawnShakuras(ModBlocks.ores, 16, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(12),
+		this.addOreSpawnShakuras(ModBlocks.ores2, 0, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(12),
 				20, 0, 128);
 
 		// Iron
-		this.addOreSpawnShakuras(ModBlocks.ores, 17, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 1 + random.nextInt(7),
+		this.addOreSpawnShakuras(ModBlocks.ores2, 1, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 1 + random.nextInt(7),
 				20, 0, 64);
 
 		// Gold
-		this.addOreSpawnShakuras(ModBlocks.ores, 18, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
+		this.addOreSpawnShakuras(ModBlocks.ores2, 2, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
 				0, 32);
 
 		// Redstone
-		this.addOreSpawnShakuras(ModBlocks.ores, 19, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 3 + random.nextInt(4), 8,
+		this.addOreSpawnShakuras(ModBlocks.ores2, 3, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 3 + random.nextInt(4), 8,
 				0, 16);
 
 		// Lapis
-		this.addOreSpawnShakuras(ModBlocks.ores, 20, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
+		this.addOreSpawnShakuras(ModBlocks.ores2, 4, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
 				0, 16);
 
 		// Diamond
-		this.addOreSpawnShakuras(ModBlocks.ores, 21, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(5),
+		this.addOreSpawnShakuras(ModBlocks.ores2, 5, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(5),
 				1, 0, 16);
 
 		BiomeGenBase biome = world.getWorldChunkManager().getBiomeGenAt(x, z);
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossPylon < 21) {
+			if (chanceProtossPylon < 11) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -452,7 +452,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceVoidProtossPylon < 21) {
+			if (chanceVoidProtossPylon < 11) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -466,7 +466,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGate < 11) {
+			if (chanceProtossWarpGate < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -480,7 +480,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateOverworld < 11) {
+			if (chanceProtossWarpGateOverworld < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);

@@ -18,13 +18,16 @@ import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.material.ModMaterials;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 public class ModBlocks extends Block {
 	 
 	public static Block ores;
 	public static Block ores2;
 	
-	public static BlockStarcraftOres oreDiamondChar;
 	public static Block zergStrucCarapace;
 	public static Block zergStrucFlesh;
 	public static Block protossMetal;
@@ -39,6 +42,10 @@ public class ModBlocks extends Block {
 	public static Block warpGateWormholeChar;
 	public static Block warpGateWormholeOverworld;
 	public static Block warpGateWormholeShakuras;
+	
+	public static Block protossWarpProjectorC;
+	public static Block protossWarpProjectorO;
+	public static Block protossWarpProjectorS;
 
 	public static Block mineralField;
 	public static Block richMineralField;
@@ -74,11 +81,9 @@ public class ModBlocks extends Block {
 
 	public static Block dirtShakuras;
 	public static Block stoneShakuras;
+	public static Block cobblestoneShakuras;
 	public static Block sandShakuras;
 	public static Block grassShakuras;
-	
-	public static Block redstoneShakuras;
-	public static Block redstoneLitShakuras;
 	
 	public static Block dirtKorhal;
 	public static Block stoneKorhal;
@@ -125,6 +130,10 @@ public class ModBlocks extends Block {
 		warpGateWormholeChar = new BlockWarpGateWormholeChar(Material.ground);
 		warpGateWormholeOverworld = new BlockWarpGateWormholeOverworld(Material.ground);
 		warpGateWormholeShakuras = new BlockWarpGateWormholeShakuras(Material.ground);
+		
+		protossWarpProjectorC = new BlockProtossWarpProjectorC();
+		protossWarpProjectorO = new BlockProtossWarpProjectorO();
+		protossWarpProjectorS = new BlockProtossWarpProjectorS();
 
 		mineralField = new BlockMineralField(Material.ground);
 		richMineralField = new BlockRichMineralField(Material.ground);
@@ -150,7 +159,8 @@ public class ModBlocks extends Block {
 		stoneChar = new BlockCharStone();
 		
 		sandShakuras = new BlockShakurasSand();
-		stoneShakuras = new BlockShakurasStone();;
+		stoneShakuras = new BlockShakurasStone();
+		cobblestoneShakuras = new BlockShakurasCobblestone();
 		
 		dimPortalChar = new DimPortalChar(); 
 		dimPortalOverworld = new DimPortalOverworld();
@@ -182,6 +192,10 @@ public class ModBlocks extends Block {
 			.setBlockName("warpGateWormholeOverworld");
 		GameRegistry.registerBlock(warpGateWormholeShakuras, BlockWarpGateWormholeShakuras.name)
 			.setBlockName("warpGateWormholeShakuras");
+		
+		GameRegistry.registerBlock(protossWarpProjectorC, BlockProtossWarpProjectorC.name);
+		GameRegistry.registerBlock(protossWarpProjectorO, BlockProtossWarpProjectorO.name);
+		GameRegistry.registerBlock(protossWarpProjectorS, BlockProtossWarpProjectorS.name);
 
 		GameRegistry.registerBlock(mineralField, BlockMineralField.name).setBlockName("mineralField");
 		GameRegistry.registerBlock(richMineralField, BlockRichMineralField.name).setBlockName("richMineralField");
@@ -204,6 +218,7 @@ public class ModBlocks extends Block {
 		GameRegistry.registerBlock(stoneChar, BlockCharStone.name);
 
 		GameRegistry.registerBlock(sandShakuras, BlockShakurasSand.name);
+		GameRegistry.registerBlock(cobblestoneShakuras, BlockShakurasCobblestone.name);
 		GameRegistry.registerBlock(stoneShakuras, BlockShakurasStone.name);
 		
 		GameRegistry.registerBlock(dimPortalChar, DimPortalChar.name);
@@ -211,7 +226,8 @@ public class ModBlocks extends Block {
 		GameRegistry.registerBlock(dimPortalShakuras, DimPortalShakuras.name); 
 
 	}
-
+	
+	 
 	public ModBlocks(String unlocalizedname, String texturename, Material material) {
 
 		super(material);

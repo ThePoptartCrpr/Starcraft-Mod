@@ -1,7 +1,10 @@
 package net.bvanseghi.starcraft.achievement;
 
 import cpw.mods.fml.common.FMLCommonHandler;
+import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.events.OnCraftItemEvent;
 import net.bvanseghi.starcraft.events.OnPickupItemEvent;
+import net.bvanseghi.starcraft.events.OnPlayerEnterDimEvent;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.item.ItemStack;
@@ -61,19 +64,22 @@ public class Achievements {
 				new ItemStack(ModWeapons.masterPsiBlade), achievementGetPsiBladeFocuser).initIndependentStat().registerStat();
 		
 		// Dimension Achievements
-		//achievementGetMasterPsiBlade = new Achievement("achievement.getMasterPsiBlade", "getMasterPsiBlade", -2, 0,
-				//new ItemStack(ModWeapons.masterPsiBlade), achievementGetPsiBladeFocuser).initIndependentStat().registerStat();
 		
-		achievementEnterShakuras = new Achievement("achievement.enterShakuras", "enterShakuras", -2, 1,
-				new ItemStack(ModWeapons.copperSword), (Achievement) null).initIndependentStat().registerStat();
+		achievementEnterChar = new Achievement("achievement.enterChar", "enterChar", -3, 0,
+				new ItemStack(ModBlocks.stoneChar), (Achievement) null).initIndependentStat().registerStat();
+		
+		achievementEnterShakuras = new Achievement("achievement.enterShakuras", "enterShakuras", -2, 0,
+				new ItemStack(ModBlocks.stoneShakuras), (Achievement) null).initIndependentStat().registerStat();
 
 
 		AchievementPage.registerAchievementPage(new AchievementPage("Starcraft",
 				new Achievement[] { achievementMinedMinerals, achievementMinedRichMinerals, achievementMinedVespene,
 						achievementGetC14GaussRifle, achievementGetPsiBlade, achievementGetWarpBlade,
 						achievementGetMasterPsiBlade, achievementGetPsiBladeDark, achievementGetPsiBladeFocuser,
-						achievementGetPsiBladeFocuserDark, achievementEnterShakuras }));
+						achievementGetPsiBladeFocuserDark, achievementEnterChar, achievementEnterShakuras }));
 
 		FMLCommonHandler.instance().bus().register(new OnPickupItemEvent());
+		FMLCommonHandler.instance().bus().register(new OnCraftItemEvent());
+		FMLCommonHandler.instance().bus().register(new OnPlayerEnterDimEvent());
 	}
 }

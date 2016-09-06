@@ -8,17 +8,17 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModWeapons {
 
-	// Tool Materials, has name, harvest level, maxUses, efficiency, damage
+	// Tool Materials, harvest level, maxUses, efficiency, damage
 	// (added), enchantability
 
-	public static final ToolMaterial PSIBLADE = EnumHelper.addToolMaterial("PSIBLADE", 0, 1000, 9.5F, 4.0F, 0);
-	public static final ToolMaterial WARPBLADE = EnumHelper.addToolMaterial("WARPBLADE", 0, 1000, 9.5F, 41.0F, 0);
-	public static final ToolMaterial MASTERPSIBLADE = EnumHelper.addToolMaterial("MASTERPSIBLADE", 0, 1000, 9.5F, 81.0F,
+	public static final ToolMaterial PSIBLADE = EnumHelper.addToolMaterial("PSIBLADE", 0, 150, 9.5F, 4.0F, 0);
+	public static final ToolMaterial WARPBLADE = EnumHelper.addToolMaterial("WARPBLADE", 0, 250, 9.5F, 18.5F, 0);
+	public static final ToolMaterial MASTERPSIBLADE = EnumHelper.addToolMaterial("MASTERPSIBLADE", 0, 500, 9.5F, 38.5F,
 			0);
 
-	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial("TITANIUM", 3, 1000, 9.5F, 3.0F, 10);
-	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial("COPPER", 2, 1000, 9.5F, 0.0F, 10);
-	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial("STEEL", 2, 1000, 9.5F, 2.5F, 10);
+	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial("TITANIUM", 2, 502, 5.5F, 2.0F, 10);
+	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial("COPPER", 2, 190, 4.5F, 1.0F, 10);
+	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial("STEEL", 2, 753, 6.5F, 3.0F, 10);
 
 	public static final ToolMaterial GUN = EnumHelper.addToolMaterial("GUN", 0, 0, 9.5F, -3.0F, 0);
 

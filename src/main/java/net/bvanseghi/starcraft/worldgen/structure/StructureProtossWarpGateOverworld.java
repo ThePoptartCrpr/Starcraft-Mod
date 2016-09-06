@@ -316,8 +316,8 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 8, y + 2, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 9, y + 2, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 10, y + 2, z + 1, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 11, y + 2, z + 1, ModBlocks.protossMetal, 3, 3);
-		world.setBlock(x + 12, y + 2, z + 1, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 11, y + 2, z + 1, ModBlocks.protossMetal, 2, 3);
+		world.setBlock(x + 12, y + 2, z + 1, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 13, y + 2, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 2, z + 2, Blocks.air, 0, 3);
@@ -332,8 +332,8 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 9, y + 2, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 10, y + 2, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 11, y + 2, z + 2, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 12, y + 2, z + 2, ModBlocks.protossMetal, 3, 3);
-		world.setBlock(x + 13, y + 2, z + 2, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 12, y + 2, z + 2, ModBlocks.protossMetal, 2, 3);
+		world.setBlock(x + 13, y + 2, z + 2, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 14, y + 2, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 2, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 3, Blocks.air, 0, 3);
@@ -348,7 +348,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 10, y + 2, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 11, y + 2, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 12, y + 2, z + 3, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 13, y + 2, z + 3, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 13, y + 2, z + 3, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 14, y + 2, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 2, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 4, ModBlocks.protossMetal, 0, 3);
@@ -456,7 +456,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 13, y + 2, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 2, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 11, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 1, y + 2, z + 11, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 2, y + 2, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 4, y + 2, z + 11, ModBlocks.protossMetal, 0, 3);
@@ -471,8 +471,8 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 13, y + 2, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 2, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 12, ModBlocks.protossMetal, 3, 3);
-		world.setBlock(x + 2, y + 2, z + 12, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 1, y + 2, z + 12, ModBlocks.protossMetal, 2, 3);
+		world.setBlock(x + 2, y + 2, z + 12, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 3, y + 2, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 4, y + 2, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 5, y + 2, z + 12, ModBlocks.protossMetal, 0, 3);
@@ -487,8 +487,8 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 14, y + 2, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 2, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 13, ModBlocks.protossMetal, 3, 3);
-		world.setBlock(x + 3, y + 2, z + 13, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 2, y + 2, z + 13, ModBlocks.protossMetal, 2, 3);
+		world.setBlock(x + 3, y + 2, z + 13, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 4, y + 2, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 5, y + 2, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 6, y + 2, z + 13, ModBlocks.protossMetal, 0, 3);
@@ -531,7 +531,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 13, y + 3, z + 0, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 0, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 3, z + 1, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 1, y + 3, z + 1, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 1, y + 3, z + 1, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 2, y + 3, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 4, y + 3, z + 1, Blocks.air, 0, 3);
@@ -540,7 +540,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 7, y + 3, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 8, y + 3, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 9, y + 3, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 3, z + 1, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 10, y + 3, z + 1, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 11, y + 3, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 12, y + 3, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 1, Blocks.air, 0, 3);
@@ -588,7 +588,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 10, y + 3, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 11, y + 3, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 12, y + 3, z + 4, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 13, y + 3, z + 4, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 13, y + 3, z + 4, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 14, y + 3, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 3, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 5, Blocks.air, 0, 3);
@@ -666,7 +666,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 13, y + 3, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 3, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 3, z + 10, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 1, y + 3, z + 10, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 2, y + 3, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 4, y + 3, z + 10, ModBlocks.protossMetal, 0, 3);
@@ -714,7 +714,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 1, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 3, z + 13, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 4, y + 3, z + 13, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 5, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 6, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 7, y + 3, z + 13, Blocks.air, 0, 3);
@@ -723,7 +723,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 10, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 11, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 12, y + 3, z + 13, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 13, y + 3, z + 13, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 13, y + 3, z + 13, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 14, y + 3, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 0, y + 3, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 14, Blocks.air, 0, 3);
@@ -774,7 +774,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 1, y + 4, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 2, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 4, y + 4, z + 2, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 4, y + 4, z + 2, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 5, y + 4, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 6, y + 4, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 7, y + 4, z + 2, Blocks.air, 0, 3);
@@ -796,13 +796,13 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 8, y + 4, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 9, y + 4, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 10, y + 4, z + 3, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 11, y + 4, z + 3, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 11, y + 4, z + 3, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 12, y + 4, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 4, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 4, z + 4, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 2, y + 4, z + 4, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 3, y + 4, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 4, y + 4, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 5, y + 4, z + 4, ModBlocks.protossMetal, 0, 3);
@@ -902,13 +902,13 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 9, y + 4, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 10, y + 4, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 11, y + 4, z + 10, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 12, y + 4, z + 10, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 12, y + 4, z + 10, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 13, y + 4, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 4, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 4, z + 11, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 3, y + 4, z + 11, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 4, y + 4, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 5, y + 4, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 6, y + 4, z + 11, ModBlocks.protossMetal, 0, 3);
@@ -930,7 +930,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 7, y + 4, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 8, y + 4, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 9, y + 4, z + 12, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 10, y + 4, z + 12, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 10, y + 4, z + 12, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 11, y + 4, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 12, y + 4, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 12, Blocks.air, 0, 3);
@@ -1033,7 +1033,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 5, y + 5, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 6, y + 5, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 7, y + 5, z + 4, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 8, y + 5, z + 4, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 8, y + 5, z + 4, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 9, y + 5, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 10, y + 5, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 11, y + 5, z + 4, Blocks.air, 0, 3);
@@ -1047,7 +1047,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 4, y + 5, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 5, y + 5, z + 5, ModBlocks.protossEnergyStabilizer, 0, 3);
 		world.setBlock(x + 6, y + 5, z + 5, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 7, y + 5, z + 5, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 7, y + 5, z + 5, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 8, y + 5, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 9, y + 5, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 10, y + 5, z + 5, ModBlocks.protossMetal, 0, 3);
@@ -1063,9 +1063,9 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 5, y + 5, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 6, y + 5, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 7, y + 5, z + 6, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 8, y + 5, z + 6, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 8, y + 5, z + 6, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 9, y + 5, z + 6, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 10, y + 5, z + 6, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 10, y + 5, z + 6, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 11, y + 5, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 12, y + 5, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 6, Blocks.air, 0, 3);
@@ -1075,11 +1075,11 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 2, y + 5, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 4, y + 5, z + 7, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 5, y + 5, z + 7, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 5, y + 5, z + 7, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 6, y + 5, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 7, y + 5, z + 7, ModBlocks.protossEnergyStabilizer, 0, 3);
 		world.setBlock(x + 8, y + 5, z + 7, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 9, y + 5, z + 7, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 9, y + 5, z + 7, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 10, y + 5, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 11, y + 5, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 12, y + 5, z + 7, Blocks.air, 0, 3);
@@ -1089,9 +1089,9 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 1, y + 5, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 5, z + 8, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 4, y + 5, z + 8, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 5, y + 5, z + 8, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 6, y + 5, z + 8, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 6, y + 5, z + 8, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 7, y + 5, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 8, y + 5, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 9, y + 5, z + 8, ModBlocks.protossMetal, 0, 3);
@@ -1107,7 +1107,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 4, y + 5, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 5, y + 5, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 6, y + 5, z + 9, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 7, y + 5, z + 9, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 7, y + 5, z + 9, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 8, y + 5, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 9, y + 5, z + 9, ModBlocks.protossEnergyStabilizer, 0, 3);
 		world.setBlock(x + 10, y + 5, z + 9, Blocks.air, 0, 3);
@@ -1121,7 +1121,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 3, y + 5, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 4, y + 5, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 5, y + 5, z + 10, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 6, y + 5, z + 10, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 6, y + 5, z + 10, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 7, y + 5, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 8, y + 5, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 9, y + 5, z + 10, Blocks.air, 0, 3);
@@ -1806,7 +1806,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 0, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 11, z + 2, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 3, y + 11, z + 2, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 4, y + 11, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 5, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 6, y + 11, z + 2, Blocks.air, 0, 3);
@@ -1820,7 +1820,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 14, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 11, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 11, z + 3, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 2, y + 11, z + 3, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 3, y + 11, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 4, y + 11, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 5, y + 11, z + 3, Blocks.air, 0, 3);
@@ -1950,7 +1950,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 9, y + 11, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 10, y + 11, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 11, y + 11, z + 11, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 12, y + 11, z + 11, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 12, y + 11, z + 11, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 13, y + 11, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 0, y + 11, z + 12, Blocks.air, 0, 3);
@@ -1964,7 +1964,7 @@ public class StructureProtossWarpGateOverworld extends WorldGenerator {
 		world.setBlock(x + 8, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 9, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 10, y + 11, z + 12, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 11, y + 11, z + 12, ModBlocks.protossMetal, 3, 3);
+		world.setBlock(x + 11, y + 11, z + 12, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 12, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 12, Blocks.air, 0, 3);

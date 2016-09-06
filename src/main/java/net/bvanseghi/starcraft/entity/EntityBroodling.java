@@ -33,8 +33,6 @@ public class EntityBroodling extends EntityZergMob {
         
         
         this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
-        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(0, new EntityAIHurtByTarget(this, true));
         
         this.targetTasks.addTask(0, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
@@ -47,10 +45,10 @@ public class EntityBroodling extends EntityZergMob {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(60.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(30.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.43000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(2.0D);
 	}
 
 	public boolean isAIEnabled()

@@ -23,7 +23,7 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class WorldChunkManagerShakuras extends WorldChunkManager {
 	public static ArrayList<BiomeGenBase> allowedBiomes = new ArrayList<BiomeGenBase>(
-			Arrays.asList(BiomesSC.biomeShakurasDesert));
+			Arrays.asList(BiomesSC.biomeShakurasDesert, BiomesSC.biomeShakurasOcean));
 	private GenLayer genBiomes;
 	/** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
 	private GenLayer biomeIndexLayer;

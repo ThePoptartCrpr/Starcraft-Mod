@@ -9,6 +9,8 @@ public class ModTileEntities {
 		GameRegistry.registerTileEntity(TileEntityBlockRichMineralField.class, "RichMineralField");
 		GameRegistry.registerTileEntity(TileEntityBlockVespeneGeyser.class, "VespeneGeyser");
 		GameRegistry.registerTileEntity(TileEntityBlockRichVespeneGeyser.class, "RichVespeneGeyser");
+		GameRegistry.registerTileEntity(TileEntityBlockVespeneGeyserChar.class, "VespeneGeyserChar");
+		GameRegistry.registerTileEntity(TileEntityBlockRichVespeneGeyserChar.class, "RichVespeneGeyserChar");
 		GameRegistry.registerTileEntity(TileEntityBlockWarpGateWormholeChar.class, "WarpGateWormholeChar");
 	}
 }

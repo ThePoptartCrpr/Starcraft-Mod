@@ -53,7 +53,7 @@ public class EntityOverlord extends EntityFlying {
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(400.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(200.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.015D);
 	}
 

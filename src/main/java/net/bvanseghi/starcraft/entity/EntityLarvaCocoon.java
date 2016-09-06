@@ -26,7 +26,7 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(400.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(200.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(999999.0D);
 	}
