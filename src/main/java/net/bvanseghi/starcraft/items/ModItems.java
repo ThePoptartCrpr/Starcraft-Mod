@@ -49,14 +49,11 @@ public class ModItems extends Item {
 		// Initialize items here.
 		mineralShard = new ItemMineralShard();
 		richMineralShard = new ItemRichMineralShard();
-		vespene = new ItemVespene();
 
 		psiBladeFocuserUncharged = new ItemPsiBladeFocuserUncharged();
 		darkPsiBladeFocuserUncharged = new ItemDarkPsiBladeFocuserUncharged();
 		protossArtifact = new ItemProtossArtifact();
 		uraj = new ItemUraj();
-
-		ingot = new ItemIngot();
 
 		C14GaussRifle = new ItemC14GaussRifle().setFull3D();
 		C14GaussRifleBullet = new ItemC14GaussRifleBullet();

@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.proxy;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.entity.EntityArmoredZealot;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
@@ -12,6 +13,7 @@ import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityOverlord;
 import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.model.ModelArmoredZealot;
 import net.bvanseghi.starcraft.model.ModelBroodling;
 import net.bvanseghi.starcraft.model.ModelCivilian;
 import net.bvanseghi.starcraft.model.ModelDarkProbe;
@@ -26,6 +28,7 @@ import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyserChar;
 import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyserChar;
+import net.bvanseghi.starcraft.renderer.RenderArmoredZealot;
 import net.bvanseghi.starcraft.renderer.RenderBroodling;
 import net.bvanseghi.starcraft.renderer.RenderC14GaussRifleBullet;
 import net.bvanseghi.starcraft.renderer.RenderCivilian;
@@ -114,6 +117,8 @@ public class ClientProxy extends CommonProxy {
 				new RenderCivilian(new ModelCivilian(), 0.0F));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class, new RenderProbe(new ModelProbe(), 0.0F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityArmoredZealot.class, new RenderArmoredZealot(new ModelArmoredZealot(), 0.0F));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
 				new RenderDarkProbe(new ModelDarkProbe(), 0.0F));

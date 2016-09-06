@@ -34,20 +34,11 @@ public class OnPickupItemEvent {
 	}
 
 	@SubscribeEvent
-	public void onC14GaussRifleObtained(PlayerEvent.ItemPickupEvent e) {
-		if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModItems.C14GaussRifle))) {
-			e.player.addStat(Achievements.achievementGetC14GaussRifle, 1);
+	public void onMasterPsiBladeObtained(PlayerEvent.ItemPickupEvent e) {
+		if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModWeapons.masterPsiBlade))) {
+			e.player.addStat(Achievements.achievementGetMasterPsiBlade, 1);
 			// add sound here
 		}
 	}
-	
-	@SubscribeEvent
-	public void onPsiBladeObtained(PlayerEvent.ItemPickupEvent e) {
-		if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModWeapons.psiBlade))) {
-			e.player.addStat(Achievements.achievementGetPsiBlade, 1);
-			// add sound here
-		}
-	}
-	
 	
 }

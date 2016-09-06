@@ -1,0 +1,208 @@
+
+itemGroup.StarcraftMaterials=Matériaux (Starcraft)
+itemGroup.StarcraftBuildingBlocks=Blocs De Construction (Starcraft)
+itemGroup.StarcraftTools=Outils (Starcraft)
+itemGroup.StarcraftCombat=Armes Et Armures (Starcraft)
+itemGroup.StarcraftMisc=Autres (Starcraft)
+
+
+
+tile.energyBlock.name=Bloc D'énérgie
+tile.voidEnergyBlock.name=Bloc D'énérgie Du Vide
+tile.protossMetal.Dark.name=Métal Protoss Sombre
+tile.protossMetal.Aiur.name=Métal Protoss
+tile.protossMetal.Blue.name=Métal Protoss Bleu
+
+tile.protossEnergyStabilizer.name=Stabiliseur D'énérgie Protoss
+tile.protossEnergyChannel.name=Canal D'énérgie Protoss
+
+tile.ore.Alien.name=Minerai Alien
+tile.ore.AlienC.name=Minerai Alien(Char)
+tile.ore2.AlienS.name=Minerai Alien(Shakuras)
+tile.crystal.Pure.name=Pylon Crystal
+tile.crystal.Dark.name=Dark Pylon Crystal
+tile.crystal.Void.name=Void Pylon Crystal
+
+tile.ore.Mineral.name=Minerai Minéral
+tile.ore.RichMineral.name=Minerai Minéral Riche
+
+tile.ore.MineralC.name=Minerai Minéral(Char)
+tile.ore.RichMineralC.name=Minerai Minéral Riche(Char)
+tile.ore2.MineralS.name=Minerai Minéral(Shakuras)
+tile.ore2.RichMineralS.name=Minerai Minéral Riche(Shakuras)
+
+tile.ore.Titanium.name=Minerai De Titane
+tile.ore.TitaniumC.name=Minerai De Titane(Char)
+tile.ore2.TitaniumS.name=Minerai De Titane(Shakuras)
+tile.compMetal.Titanium.name=Bloc De Titane
+
+tile.ore.Copper.name=Minerai De Cuivre
+tile.ore.CopperC.name=Minerai De Cuivre(Char)
+tile.ore2.CopperS.name=Minerai De Cuivre(Shakuras)
+tile.compMetal.Copper.name=Bloc De Cuivre
+
+tile.compMetal.Steel.name=Bloc D'acier
+
+tile.dyedIron.Blue.name=Bloc De Fer Bleu
+
+tile.mineralField.name=Bouclier Minéral
+tile.richMineralField.name=Bouclier Minéral Riche
+
+tile.vespeneGeyser.name=Vespene Geyser
+tile.vespeneGeyserChar.name=Vespene Geyser (Char)
+tile.vespeneGeyserBase.name=Vespene Geyser Base
+tile.vespeneGeyserBaseChar.name=Vespene Geyser Base (Char)
+tile.richVespeneGeyser.name=Rich Vespene Geyser
+tile.richVespeneGeyserChar.name=Rich Vespene Geyser (Char)
+
+tile.zergCreep.name=Zerg Creep
+
+tile.zergStrucFlesh.Purple.name=Chair Violette
+tile.zergStrucFlesh.Brown.name=Chair Brune
+tile.zergStrucCarapace.T1.name=Structure T1 Carapace 
+tile.zergStrucCarapace.T2.name=Structure T2 Carapace 
+tile.zergStrucCarapace.T3.name=Structure T3 Carapace 
+tile.keratinChunk.name=Keratin Chunk
+tile.zergStrucFlesh.Pink.name=Chair Rose
+
+tile.shakurasSand.name=Sable (Shakuras)
+tile.shakurasStone.name=Pierre (Shakuras)
+
+tile.ore2.CoalS.name=Minerai De Charbon(Shakuras)
+tile.ore2.IronS.name=Minerai De fer(Shakuras)
+tile.ore2.GoldS.name=Minerai D'or(Shakuras)
+tile.ore2.DiamondS.name=Minerai De Diamant(Shakuras)
+tile.ore2.RedstoneS.name=Minerai De Redstone(Shakuras)
+tile.ore2.RedstoneLitS.name=Minerai De Redstone Allumé(Shakuras)
+tile.ore2.LapisS.name=Minerai De Lapis Lazuli(Shakuras)
+
+tile.fluidAcid.name=Acide Fluide
+tile.fluidBlood.name=Sang Fluide
+
+tile.charAsh.name=Cendres (Char)
+tile.charDirt.name=Terre (Char)
+tile.charStone.name=Pierre (Char)
+
+tile.ore.CoalC.name=Minerai De Charbon(Char)
+tile.ore.IronC.name=Minerai De Fer(Char)
+tile.ore.GoldC.name=Minerai D'or(Char)
+tile.ore.DiamondC.name=Minerai De Diamant(Char)
+tile.ore.RedstoneC.name=Minerai De Redstone(Char)
+tile.ore.RedstoneLitC.name=Minerai De Redstone Allumé(Char)
+tile.ore.LapisC.name=Minerai De Lapis Lazuli(Char)
+
+tile.dimPortalChar.name=Portail Char
+tile.dimPortalOverworld.name=Portail Overworld
+tile.dimPortalShakuras.name=Portail Shakuras
+
+item.Starcraft_psiBlade.name=Psi Blade
+item.Starcraft_darkPsiBlade.name=Psi Blade (Dark)
+item.Starcraft_warpBlade.name=Warp Blade
+item.Starcraft_darkWarpBlade.name=Warp Blade (Dark)
+item.Starcraft_masterPsiBlade.name=Master Psi Blade
+
+
+item.Starcraft_mineralShard.name=Fragment Minéral
+item.Starcraft_richMineralShard.name=Fragment Minéral Riche
+item.vespene.Raw.name=Raw Vespene
+item.vespene.Protoss.name=Protoss Vespene
+item.vespene.Terran.name=Terran Vespene
+item.vespene.Zerg.name=Zerg Vespene
+
+item.ingot.Alien.name=Lingot Alien
+item.ingot.AlienDark.name=Lingot Alien Sombre
+item.Starcraft_psiBladeFocuserUncharged.name=Psi Blade Focuser (Déchargé)
+item.Starcraft_darkPsiBladeFocuserUncharged.name=Psi Blade Focuser (sombre, Déchargé)
+
+item.energy.Pure.name=Énérgie
+item.energy.Corrupt.name=Énergie Corrompue
+item.energy.Void.name=Énergie Du Vide
+item.Starcraft_protossArtifact.name=Artéfact Protoss
+item.Starcraft_uraj.name=Uraj
+
+
+
+item.ingot.Titanium.name=Lingot De Titane
+item.ingot.Copper.name=Lingot De Cuivre
+item.ingot.Steel.name=Lingot D'acier
+
+item.Starcraft_titaniumSword.name=Épée De Titane
+item.Starcraft_titaniumPickaxe.name=Pioche En Titane
+item.Starcraft_titaniumAxe.name=Hache En Titane
+item.Starcraft_titaniumShovel.name=Cuillère En Titane
+item.Starcraft_titaniumHoe.name=Houe En Titane
+
+item.Starcraft_titaniumHelmet.name=Casque De Titane
+item.Starcraft_titaniumChestplate.name=Plastron De Titane
+item.Starcraft_titaniumLeggings.name=Jambières De Titane
+item.Starcraft_titaniumBoots.name=Bottes De Titane
+
+item.Starcraft_copperSword.name=Épée En Cuivre
+item.Starcraft_copperPickaxe.name=Pioche De Cuivre
+item.Starcraft_copperAxe.name=Hache En Cuivre
+item.Starcraft_copperShovel.name=Pelle En Cuivre
+item.Starcraft_copperHoe.name=Houe En Cuivre
+
+item.Starcraft_copperHelmet.name=Casque De Cuivre
+item.Starcraft_copperChestplate.name=Plastron De Cuivre
+item.Starcraft_copperLeggings.name=Jambières De Cuivre
+item.Starcraft_copperBoots.name=Bottes De Cuivre
+
+item.Starcraft_steelSword.name=Épée En Acier
+item.Starcraft_steelPickaxe.name=Pioche En Acier
+item.Starcraft_steelAxe.name=Hache En Acier
+item.Starcraft_steelShovel.name=Pelle En Acier
+item.Starcraft_steelHoe.name=Houe En Acier
+
+item.Starcraft_steelHelmet.name=Casque D'acier
+item.Starcraft_steelChestplate.name=Plastron D'acier
+item.Starcraft_steelLeggings.name=Jambes D'acier
+item.Starcraft_steelBoots.name=Bottes D'acier
+
+item.Starcraft_c14GaussRifle.name=C14 Gauss Rifle
+item.Starcraft_c14GaussRifleBullet.name=C14 Gauss Rifle Bullet
+item.Starcraft_c14GaussRifleBarrel.name=C14 Gauss Rifle Barrel
+item.Starcraft_c14GaussRifleBody.name=C14 Gauss Rifle Body
+item.Starcraft_c14GaussRifleGrip.name=C14 Gauss Rifle Grip
+
+
+item.zergCarapace.T1.name=Zerg Carapace T1
+item.zergCarapace.T2.name=Zerg Carapace T2
+item.zergCarapace.T3.name=Zerg Carapace T3
+
+item.Starcraft_creepResin.name=Creep Resin
+item.Starcraft_organicTissue.name=Tissu Organique
+
+item.c14Parts.Barrel.name=C14 Rifle Barrel
+item.c14Parts.Body.name=C14 Rifle Body
+item.c14Parts.Grip.name=C14 Rifle Grip
+
+item.essence.Protoss.name=Essence Protoss
+item.essence.Terran.name=Essence Terran
+item.essence.Zerg.name=Essence Zerg
+
+
+item.acidBucket.name=Seau D'acide
+item.bloodBucket.name=Seau De Sang
+
+
+entity.Larva.name=Larve
+entity.LarvaCocoon.name=Cocon De Larve
+entity.Broodling.name=Broodling
+entity.Overlord.name=Overlord
+entity.Probe.name=Probe
+entity.DarkProbe.name=Dark Probe
+
+entity.Civilian.name=Civile
+
+
+
+
+achievement.mineMinerals=Not Enough Minerals!
+achievement.mineMinerals.desc=Obtain mineral shards!
+
+achievement.mineRichMinerals=Too Many Minerals!
+achievement.mineRichMinerals.desc=Obtain rich mineral shards!
+
+achievement.mineVespene=Vespene Geyser Depleted!
+achievement.mineVespene.desc=Obtain vespene!

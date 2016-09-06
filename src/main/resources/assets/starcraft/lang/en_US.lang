@@ -1,6 +1,7 @@
 
 itemGroup.StarcraftMaterials=Starcraft Materials
 itemGroup.StarcraftBuildingBlocks=Starcraft Building Blocks
+itemGroup.StarcraftDecorativeBlocks=Starcraft Decorative Blocks
 itemGroup.StarcraftTools=Starcraft Tools
 itemGroup.StarcraftCombat=Starcraft Combat
 itemGroup.StarcraftMisc=Starcraft Miscellaneous
@@ -198,14 +199,46 @@ entity.Civilian.name=Civilian
 
 
 
-achievement.mineMinerals=Not Enough Minerals!
+achievement.mineMinerals=Ooo, Shiny!
 achievement.mineMinerals.desc=Get mineral shards!
 
-achievement.mineRichMinerals=Too Many Minerals!
+achievement.mineRichMinerals=Shinier!
 achievement.mineRichMinerals.desc=Get rich mineral shards!
 
 achievement.mineVespene=Vespene Geyser Depleted!
 achievement.mineVespene.desc=Obtain vespene!
-							 
+				
 achievement.getC14GaussRifle=Hell, it's About Time!
-achievement.getC14GaussRifle.desc=Obtain a C14 Gauss Rifle!
+achievement.getC14GaussRifle.desc=Obtain a C14 gauss rifle!
+
+------------------------------------------------------------
+
+achievement.getPsiBladeFocuser=Embrace Purity
+achievement.getPsiBladeFocuser.desc=Obtain a psi blade focuser!
+
+achievement.getPsiBladeFocuserDark=Embrace Corruption
+achievement.getPsiBladeFocuserDark.desc=Obtain a psi blade focuser (dark)!
+
+achievement.getPsiBlade=My Life For Aiur!
+achievement.getPsiBlade.desc=Obtain a psi blade!
+
+achievement.getPsiBladeDark=Amon's Will
+achievement.getPsiBladeDark.desc=Obtain a psi blade (dark)!
+
+achievement.getWarpBlade=For Shakuras!
+achievement.getWarpBlade.desc=Obtain a warp blade!
+
+achievement.getWarpBladeDark=Shadow Guard
+achievement.getWarpBladeDark.desc=Obtain a warp blade (dark)!
+
+achievement.getMasterPsiBlade=En Taro Zeratul...
+achievement.getMasterPsiBlade.desc=Obtain Zeratul's Master Psi Blade!
+
+achievement.enterChar=The Devil's Nest
+achievement.enterChar.desc=Arrive on Char!
+
+achievement.enterShakuras=We Linger, In Twilight...
+achievement.enterShakuras.desc=Arrive on Shakuras!
+
+
+

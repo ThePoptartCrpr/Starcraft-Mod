@@ -1,13 +1,17 @@
 package net.bvanseghi.starcraft.blocks;
 
+import java.util.Random;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
+import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 
 public class BlockProtossEnergyChannel extends Block {
@@ -45,4 +49,14 @@ public class BlockProtossEnergyChannel extends Block {
 		
 		return this.blockIcon;
 	}
+	
+	public Item getItemDropped(int meta, Random rand, int par1)
+    {
+			return ModItems.energy;
+    }
+	
+	public int damageDropped(int meta)
+    {
+			return 0;
+    }	
 }

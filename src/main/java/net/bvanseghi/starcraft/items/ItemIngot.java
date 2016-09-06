@@ -24,6 +24,8 @@ public class ItemIngot extends Item {
 		this.setCreativeTab(CreativeTab.TabStarcraftMaterials);
 	}
 	
+	public static final String[] names = new String[] { "Copper", "Alien", "AlienDark", "Titanium", "Steel" };
+	
 	@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 
@@ -37,7 +39,7 @@ public class ItemIngot extends Item {
 		}
 	}
 
-	public static final String[] names = new String[] { "Copper", "Alien", "AlienDark", "Titanium", "Steel" };
+	
 
 	public String getUnlocalizedName(ItemStack par1ItemStack)
 	{

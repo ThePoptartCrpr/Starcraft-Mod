@@ -12,11 +12,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.World;
 
 public class BlockPylonCrystal extends Block {
 
@@ -59,7 +58,23 @@ public class BlockPylonCrystal extends Block {
 		return texture[meta];
 	}
 	
-	public int damageDropped(int meta) {
-		return meta;
-	}
+	public Item getItemDropped(int meta, Random rand, int par1)
+    {
+		if(rand.nextInt(9) == 0){
+			return ModItems.energy;
+		}
+			return null;
+    }
+	
+	public int damageDropped(int meta)
+    {
+		if(meta == 0) {
+			return this == ModBlocks.crystals ? 0 : 0;
+		}else if(meta == 1) {
+			return this == ModBlocks.crystals ? 2 : 0;
+		}else if(meta == 2) {
+			return this == ModBlocks.crystals ? 1 : 0;
+		}
+        return 0;
+    }	
 }

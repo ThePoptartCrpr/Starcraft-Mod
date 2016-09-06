@@ -19,6 +19,7 @@ public class BiomesSC extends BiomeGenBase {
 	public static BiomeGenBase biomeMoltenInferno;
 	
 	public static BiomeGenBase biomeShakurasDesert;
+	public static BiomeGenBase biomeShakurasOcean;
 
 	public static void init() {
 		registerBiomes();
@@ -29,20 +30,22 @@ public class BiomesSC extends BiomeGenBase {
 		biomeCreepInfestationChar = new CharBiomeGenCreepInfestation(51, true).setBiomeName("Infestation Biome");
 		biomeAshPlains = new BiomeGenAshPlains(52).setBiomeName("Ash Plains");
 		biomeMoltenInferno = new BiomeGenMoltenInferno(54).setBiomeName("Molten Inferno");
-		
-		biomeShakurasDesert = new BiomeGenDesertShakuras(55).setBiomeName("Shakuras Desert");
+		biomeShakurasOcean = new BiomeGenShakurasOcean(55).setBiomeName("Shakuras Ocean");
+		biomeShakurasDesert = new BiomeGenDesertShakuras(56).setBiomeName("Shakuras Desert");
 
 		BiomeDictionary.registerBiomeType(biomeCreepInfestationChar, Type.FOREST);
 		BiomeDictionary.registerBiomeType(biomeAshPlains, Type.FOREST);
 		BiomeDictionary.registerBiomeType(biomeMoltenInferno, Type.FOREST);
 		
-		BiomeDictionary.registerBiomeType(biomeShakurasDesert, Type.DESERT);
+		BiomeDictionary.registerBiomeType(biomeShakurasOcean, Type.COLD, Type.OCEAN);
+		BiomeDictionary.registerBiomeType(biomeShakurasDesert, Type.COLD, Type.SNOWY);
 
 		// add biomes here
 		
 		BiomeManager.addSpawnBiome(BiomesSC.biomeCreepInfestationChar);
 		BiomeManager.addSpawnBiome(BiomesSC.biomeAshPlains);
-		BiomeManager.addSpawnBiome(BiomesSC.biomeMoltenInferno);
+		
+		BiomeManager.removeSpawnBiome(BiomesSC.biomeMoltenInferno);
 		
 		BiomeManager.addSpawnBiome(BiomesSC.biomeShakurasDesert);
 
