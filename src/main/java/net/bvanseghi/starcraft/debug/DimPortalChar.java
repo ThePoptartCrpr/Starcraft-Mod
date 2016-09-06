@@ -1,35 +1,34 @@
 package net.bvanseghi.starcraft.debug;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import java.util.List;
 import java.util.Random;
 
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
 import net.bvanseghi.starcraft.worldgen.provider.WorldProviderChar;
+<<<<<<< HEAD
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+=======
+>>>>>>> 10d39cd1103b9952221478be548366f8dc0b53a0
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityEndPortal;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.Teleporter;
 import net.minecraft.world.World;
 
 public class DimPortalChar extends ModBlocks {
 	public static boolean field_149948_a;
 	private static final String __OBFID = "CL_00000236";
+<<<<<<< HEAD
 	public int dim = 2;
+=======
+	private int dim = WorldProviderChar.getDimensionID();
+>>>>>>> 10d39cd1103b9952221478be548366f8dc0b53a0
 	public static final String name = "dimPortalChar";
 
 	public DimPortalChar() {
