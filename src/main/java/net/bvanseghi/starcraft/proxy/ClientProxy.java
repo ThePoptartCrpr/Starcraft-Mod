@@ -3,7 +3,7 @@ package net.bvanseghi.starcraft.proxy;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.entity.EntityArmoredZealot;
+import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
@@ -118,7 +118,7 @@ public class ClientProxy extends CommonProxy {
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class, new RenderProbe(new ModelProbe(), 0.0F));
 		
-		RenderingRegistry.registerEntityRenderingHandler(EntityArmoredZealot.class, new RenderArmoredZealot(new ModelArmoredZealot(), 0.0F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class, new RenderArmoredZealot(new ModelArmoredZealot(), 0.0F));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
 				new RenderDarkProbe(new ModelDarkProbe(), 0.0F));

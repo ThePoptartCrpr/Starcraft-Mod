@@ -9,6 +9,7 @@ import java.util.Random;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
+import net.bvanseghi.starcraft.worldgen.provider.WorldProviderChar;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -28,7 +29,7 @@ import net.minecraft.world.World;
 public class DimPortalChar extends ModBlocks {
 	public static boolean field_149948_a;
 	private static final String __OBFID = "CL_00000236";
-	private int dim = 2;
+	public int dim = 2;
 	public static final String name = "dimPortalChar";
 
 	public DimPortalChar() {

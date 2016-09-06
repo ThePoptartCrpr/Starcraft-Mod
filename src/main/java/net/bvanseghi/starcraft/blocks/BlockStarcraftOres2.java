@@ -32,17 +32,17 @@ public class BlockStarcraftOres2 extends Block {
 
 	public BlockStarcraftOres2() {
 		super(Material.rock);
-		this.setHarvestLevel("pickaxe", 2, 0);
+		this.setHarvestLevel("pickaxe", 1, 0);
 		this.setHarvestLevel("pickaxe", 2, 1);
 		this.setHarvestLevel("pickaxe", 2, 2);
 		this.setHarvestLevel("pickaxe", 2, 3);
-		this.setHarvestLevel("pickaxe", 2, 4);
+		this.setHarvestLevel("pickaxe", 1, 4);
 		this.setHarvestLevel("pickaxe", 2, 5);
-		this.setHarvestLevel("pickaxe", 2, 6);
+		this.setHarvestLevel("pickaxe", 1, 6);
 		this.setHarvestLevel("pickaxe", 2, 7);
 		this.setHarvestLevel("pickaxe", 2, 8);
 		this.setHarvestLevel("pickaxe", 2, 9);
-		this.setHarvestLevel("pickaxe", 2, 10);
+		this.setHarvestLevel("pickaxe", 1, 10);
 		this.setHardness(3.5F);
 		this.setResistance(5.0F);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);

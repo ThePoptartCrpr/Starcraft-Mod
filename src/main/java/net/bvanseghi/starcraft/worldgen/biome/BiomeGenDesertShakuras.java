@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.blocks.BlockShakurasSand;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityDarkProbe;
 import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.minecraft.block.Block;
@@ -33,6 +34,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 		
 		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityProbe.class, 8, 2, 3));
 		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityDarkProbe.class, 5, 2, 3));
+		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityZealot.class, 3, 2, 3));
 	}
 
 	public int getSkyColorByTemp(float par1) {

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.bvanseghi.starcraft.Starcraft;
-import net.bvanseghi.starcraft.entity.EntityArmoredZealot;
+import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
 import net.bvanseghi.starcraft.entity.EntityDarkProbe;
@@ -73,9 +73,9 @@ public class EntityHandler {
 		Random random = new Random(x);
 
 		// Unique spawn details for the Zealot
-		EntityRegistry.registerGlobalEntityID(EntityArmoredZealot.class, name, entityId);
-		EntityRegistry.addSpawn(EntityArmoredZealot.class, 50, 2, 3, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
-		EntityRegistry.registerModEntity(EntityArmoredZealot.class, name, entityId, Starcraft.instance, 64, 1, true);
+		EntityRegistry.registerGlobalEntityID(EntityZealot.class, name, entityId);
+		EntityRegistry.addSpawn(EntityZealot.class, 25, 2, 3, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.registerModEntity(EntityZealot.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}

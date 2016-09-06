@@ -28,7 +28,7 @@ public class BlockPylonCrystal extends Block {
 		super(Material.rock);
 		setStepSound(soundTypeStone);
 		setHardness(5.0F);
-		setResistance(15.0F);
+		setResistance(20.0F);
 		setLightLevel(4.0F);
 		setHarvestLevel("pickaxe", 2);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);

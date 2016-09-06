@@ -467,30 +467,7 @@ public class ModelArmoredZealot extends ModelBase
   public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
   {
     super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    
-    float f6;
-    float f7;
-    if (this.onGround > -9990.0F)
-    {
-        f6 = this.onGround;
-        this.chestUpper.rotateAngleY = MathHelper.sin(MathHelper.sqrt_float(f6) * (float)Math.PI * 2.0F) * 0.2F;
-        this.armRight1.rotationPointZ = MathHelper.sin(this.chestUpper.rotateAngleY) * 5.0F;
-        this.armRight1.rotationPointX = -MathHelper.cos(this.chestUpper.rotateAngleY) * 5.0F;
-        this.armLeft1.rotationPointZ = -MathHelper.sin(this.chestUpper.rotateAngleY) * 5.0F;
-        this.armLeft1.rotationPointX = MathHelper.cos(this.chestUpper.rotateAngleY) * 5.0F;
-        this.armRight1.rotateAngleY += this.chestUpper.rotateAngleY;
-        this.armLeft1.rotateAngleY += this.chestUpper.rotateAngleY;
-        this.armLeft1.rotateAngleX += this.chestUpper.rotateAngleY;
-        f6 = 1.0F - this.onGround;
-        f6 *= f6;
-        f6 *= f6;
-        f6 = 1.0F - f6;
-        f7 = MathHelper.sin(f6 * (float)Math.PI);
-        float f8 = MathHelper.sin(this.onGround * (float)Math.PI) * -(this.head.rotateAngleX - 0.7F) * 0.75F;
-        this.armRight1.rotateAngleX = (float)((double)this.armRight1.rotateAngleX - ((double)f7 * 1.2D + (double)f8));
-        this.armRight1.rotateAngleY += this.chestUpper.rotateAngleY * 2.0F;
-        this.armRight1.rotateAngleZ = MathHelper.sin(this.onGround * (float)Math.PI) * -0.4F;
-    }
+   
   }
 
 }

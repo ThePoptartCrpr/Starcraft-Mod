@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.renderer;
 
 import org.lwjgl.opengl.GL11;
 
-import net.bvanseghi.starcraft.entity.EntityArmoredZealot;
+import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.model.ModelArmoredZealot;
 import net.minecraft.client.model.ModelBase;
@@ -25,16 +25,16 @@ public class RenderArmoredZealot extends RenderLiving {
 		modelEntity = (ModelArmoredZealot) mainModel;
 	}
 
-	public void renderArmoredZealot(EntityArmoredZealot entity, double x, double y, double z, float u, float v) {
+	public void renderArmoredZealot(EntityZealot entity, double x, double y, double z, float u, float v) {
 		super.doRender(entity, x, y, z, u, v);
 	}
 
 	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderArmoredZealot((EntityArmoredZealot) entityLiving, x, y, z, u, v);
+		renderArmoredZealot((EntityZealot) entityLiving, x, y, z, u, v);
 	}
 
 	public void doRender(Entity entity, double x, double y, double z, float u, float v) {
-		renderArmoredZealot((EntityArmoredZealot) entity, x, y, z, u, v);
+		renderArmoredZealot((EntityZealot) entity, x, y, z, u, v);
 
 	}
 

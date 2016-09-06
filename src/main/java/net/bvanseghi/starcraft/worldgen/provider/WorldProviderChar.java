@@ -22,6 +22,8 @@ public class WorldProviderChar extends WorldProvider {
 	public String getDimensionName() {
 		return "Char";
 	}
+	
+	int d = this.dimensionId;
 
 	@Override
 	public void registerWorldChunkManager() {

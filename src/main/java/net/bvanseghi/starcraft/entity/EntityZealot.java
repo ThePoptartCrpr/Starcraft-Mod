@@ -20,9 +20,9 @@ import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class EntityArmoredZealot extends EntityProtossMob {
+public class EntityZealot extends EntityProtossMob {
 
-	public EntityArmoredZealot(World world) {
+	public EntityZealot(World world) {
 		super(world);
 		clearAITasks();
 		this.tasks.addTask(0, new EntityAISwimming(this));
@@ -43,10 +43,10 @@ public class EntityArmoredZealot extends EntityProtossMob {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(30.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.43000000417232513D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(150.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(4.0D);
 	}
 	
 	protected void clearAITasks()
