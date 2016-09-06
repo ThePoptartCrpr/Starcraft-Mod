@@ -11,7 +11,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.DimensionManager;
 
 public class WorldProviderShakuras extends WorldProvider {
-	
+	private static int dimID = DimensionManager.getNextFreeDimId();
 	World world;
 	
 	@Override
@@ -22,7 +22,7 @@ public class WorldProviderShakuras extends WorldProvider {
 	@Override
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerShakuras(this.getSeed(), terrainType);
-		this.dimensionId = DimensionManager.getNextFreeDimId();
+		this.dimensionId = dimID;
 		this.hasNoSky = true;
 
 	}
@@ -79,4 +79,7 @@ public class WorldProviderShakuras extends WorldProvider {
         worldObj.getWorldInfo().setWorldTime(20000);
     }
 
+	public static int getDimensionID() {
+		return dimID;
+	}
 }

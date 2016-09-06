@@ -1,34 +1,24 @@
 package net.bvanseghi.starcraft.debug;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import java.util.List;
 import java.util.Random;
 
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
-import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
+import net.bvanseghi.starcraft.worldgen.provider.WorldProviderShakuras;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityEndPortal;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.Teleporter;
 import net.minecraft.world.World;
 
 public class DimPortalShakuras extends ModBlocks {
 	public static boolean field_149948_a;
 	private static final String __OBFID = "CL_00000236";
-	private int dim = 3;
+	private int dim = WorldProviderShakuras.getDimensionID();
 	public static final String name = "dimPortalShakuras";
 
 	public DimPortalShakuras() {

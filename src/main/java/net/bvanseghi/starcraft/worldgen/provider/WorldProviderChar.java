@@ -1,12 +1,8 @@
 package net.bvanseghi.starcraft.worldgen.provider;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.worldgen.chunk.ChunkProviderChar;
 import net.bvanseghi.starcraft.worldgen.manager.WorldChunkManagerChar;
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
@@ -15,7 +11,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.DimensionManager;
 
 public class WorldProviderChar extends WorldProvider {
-	
+	private static int dimID = DimensionManager.getNextFreeDimId();
 	World world;
 	
 	@Override
@@ -26,7 +22,7 @@ public class WorldProviderChar extends WorldProvider {
 	@Override
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerChar(this.getSeed(), terrainType);
-		this.dimensionId = DimensionManager.getNextFreeDimId();
+		this.dimensionId = dimID;
 		this.hasNoSky = false;
 
 	}
@@ -96,5 +92,8 @@ public class WorldProviderChar extends WorldProvider {
 	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks) {
 		return Vec3.createVectorHelper(0, 0, 0);
 	}
-
+	
+	public static int getDimensionID() {
+		return dimID;
+	}
 }
