@@ -60,6 +60,11 @@ public class EntityZealot extends EntityProtossMob {
         return true;
     }
 	
+	public int getTalkInterval()
+    {
+        return 160;
+    }
+	
 	protected void dropFewItems(boolean par1, int par2) {
 
 	}

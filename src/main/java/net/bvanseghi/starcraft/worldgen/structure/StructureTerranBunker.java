@@ -322,14 +322,18 @@ public class StructureTerranBunker extends WorldGenerator {
 		world.setTileEntity(x + 9, y + 1, z + 3, chest);
 		Random randchest = new Random();
 		for(int slot = 0; slot < chest.getSizeInventory(); slot++) {
-			int num = randchest.nextInt(15);
-			if(num < 7) {
-				chest.setInventorySlotContents(slot, new ItemStack(ModItems.ingot, 1, 3));
+			int num = randchest.nextInt(30);
+			if(num == 0) {
+				chest.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 0));
+				
 			}
-			else if(num >= 7 && num <= 11){
-				int quantity = randchest.nextInt(3) + 1;
-				chest.setInventorySlotContents(slot, new ItemStack(ModItems.ingot, 1, 2));
+			else if(num >= 13 && num <= 19){
+				chest.setInventorySlotContents(slot, new ItemStack(ModItems.ingot, 1, 0));
 			}
+			else if(num == 1){
+				chest.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 1));
+			}
+
 		}
 
 		world.setBlock(x + 10, y + 1, z + 3, ModBlocks.compMetal, 1, 3);
@@ -431,15 +435,19 @@ public class StructureTerranBunker extends WorldGenerator {
 		world.setTileEntity(x + 4, y + 1, z + 10, chest2);
 		Random randchest2 = new Random();
 		for(int slot = 0; slot < chest2.getSizeInventory(); slot++) {
-			int num = randchest2.nextInt(15);
-			if(num < 7) {
-				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.ingot, 1, 3));
+			int num = randchest2.nextInt(30);
+			if(num < 1) {
+				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 0));
 			}
-			else if(num >= 7 && num <= 11){
-				int quantity = randchest2.nextInt(3) + 1;
-				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.ingot, 1, 2));
+			else if(num >= 13 && num <= 19){
+				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.ingot, 1, 0));
+			}
+			else if(num > 29){
+				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 1));
 			}
 		}
+		
+		
 		world.setBlock(x + 5, y + 1, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 6, y + 1, z + 10, ModBlocks.compMetal, 1, 3);
 		world.setBlock(x + 7, y + 1, z + 10, ModBlocks.compMetal, 1, 3);

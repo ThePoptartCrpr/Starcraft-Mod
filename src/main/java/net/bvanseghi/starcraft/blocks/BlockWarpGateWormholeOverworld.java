@@ -1,23 +1,13 @@
 package net.bvanseghi.starcraft.blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.bvanseghi.starcraft.model.ModelWarpGateWormholeChar;
-import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeChar;
-import net.minecraft.block.Block;
+import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverworld;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
 public class BlockWarpGateWormholeOverworld extends BlockContainer {
@@ -53,7 +43,7 @@ public class BlockWarpGateWormholeOverworld extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World par1, int par2) {
-		return new TileEntityBlockWarpGateWormholeChar();
+		return new TileEntityBlockWarpGateWormholeOverworld();
 	}
 
 	public void onBlockAdded(World world, int x, int y, int z) {

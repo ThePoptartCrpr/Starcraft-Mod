@@ -17,37 +17,49 @@ tile.protossMetal.Blue.name=Blue Protoss Metal
 tile.protossEnergyStabilizer.name=Protoss Energy Stabilizer
 tile.protossEnergyChannel.name=Protoss Energy Channel
 
-tile.ore.Alien.name=Alien Ore
-tile.ore.AlienC.name=Alien Ore (Char)
-tile.ore2.AlienS.name=Alien Ore (Shakuras)
+tile.oreAlienC.name=Alien Ore (Char)
+tile.oreAlienS.name=Alien Ore (Shakuras)
 tile.crystal.Pure.name=Pylon Crystal
 tile.crystal.Dark.name=Dark Pylon Crystal
 tile.crystal.Void.name=Void Pylon Crystal
 
-tile.ore.Mineral.name=Mineral Ore
-tile.ore.RichMineral.name=Rich Mineral Ore
-
-tile.ore.MineralC.name=Mineral Ore (Char)
-tile.ore.RichMineralC.name=Rich Mineral Ore (Char)
-tile.ore2.MineralS.name=Mineral Ore (Shakuras)
-tile.ore2.RichMineralS.name=Rich Mineral Ore (Shakuras)
+tile.oreMineralC.name=Mineral Ore (Char)
+tile.oreRichMineralC.name=Rich Mineral Ore (Char)
+tile.oreMineralS.name=Mineral Ore (Shakuras)
+tile.oreRichMineralS.name=Rich Mineral Ore (Shakuras)
 
 tile.ore.Titanium.name=Titanium Ore
 tile.ore.TitaniumC.name=Titanium Ore (Char)
 tile.ore2.TitaniumS.name=Titanium Ore (Shakuras)
 tile.compMetal.Titanium.name=Block of Titanium
 
-tile.ore.Copper.name=Copper Ore
-tile.ore.CopperC.name=Copper Ore (Char)
-tile.ore2.CopperS.name=Copper Ore (Shakuras)
+tile.oreCopperOW.name=Copper Ore
+tile.oreCopperC.name=Copper Ore (Char)
+tile.ore2CopperS.name=Copper Ore (Shakuras)
 tile.compMetal.Copper.name=Block of Copper
 
 tile.compMetal.Steel.name=Block of Steel
 
-tile.dyedIron.Blue.name=Blue Block of Iron
+tile.dyedIron.Blue.name=Block of Iron (Blue)
+tile.dyedIron.Black.name=Block of Iron (Black)
+tile.dyedIron.Brown.name=Block of Iron (Brown)
+tile.dyedIron.Cyan.name=Block of Iron (Cyan)
+tile.dyedIron.Gray.name=Block of Iron (Gray)
+tile.dyedIron.Green.name=Block of Iron (Green)
+tile.dyedIron.LightBlue.name=Block of Iron (Light Blue)
+tile.dyedIron.Lime.name=Block of Iron (Lime)
+tile.dyedIron.Magenta.name=Block of Iron (Magenta)
+tile.dyedIron.Orange.name=Block of Iron (Orange)
+tile.dyedIron.Pink.name=Block of Iron (Pink)
+tile.dyedIron.Purple.name=Block of Iron (Purple)
+tile.dyedIron.Red.name=Block of Iron (Red)
+tile.dyedIron.Silver.name=Block of Iron (Silver)
+tile.dyedIron.Yellow.name=Block of Iron (Yellow)
 
 tile.mineralField.name=Mineral Field
 tile.richMineralField.name=Rich Mineral Field
+tile.compMineral.Rich.name=Block of Rich Mineral
+tile.compMineral.Blue.name=Block of Mineral
 
 tile.vespeneGeyser.name=Vespene Geyser
 tile.vespeneGeyserChar.name=Vespene Geyser (Char)
@@ -58,24 +70,38 @@ tile.richVespeneGeyserChar.name=Rich Vespene Geyser (Char)
 
 tile.zergCreep.name=Zerg Creep
 
-tile.zergStrucFlesh.Purple.name=Purple Flesh
-tile.zergStrucFlesh.Brown.name=Brown Flesh
+tile.zergStrucFlesh.Purple.name=Zerg Flesh (Purple)
+tile.zergStrucFlesh.Brown.name=Zerg Flesh (Brown)
+tile.zergStrucFlesh.Pink.name=Zerg Flesh (Pink)
+tile.zergStrucFlesh.Blue.name=Zerg Flesh (Blue)
+tile.zergStrucFlesh.Cyan.name=Zerg Flesh (Cyan)
+tile.zergStrucFlesh.DarkGray.name=Zerg Flesh (Dark Gray)
+tile.zergStrucFlesh.Green.name=Zerg Flesh (Green)
+tile.zergStrucFlesh.LightBlue.name=Zerg Flesh (Light Blue)
+tile.zergStrucFlesh.Lime.name=Zerg Flesh (Lime)
+tile.zergStrucFlesh.Magenta.name=Zerg Flesh (Magenta)
+tile.zergStrucFlesh.Orange.name=Zerg Flesh (Orange)
+tile.zergStrucFlesh.Red.name=Zerg Flesh (Red)
+tile.zergStrucFlesh.Silver.name=Zerg Flesh (Silver)
+tile.zergStrucFlesh.White.name=Zerg Flesh (White)
+tile.zergStrucFlesh.Yellow.name=Zerg Flesh (Yellow)
+
 tile.zergStrucCarapace.T1.name=Structure T1 Carapace 
 tile.zergStrucCarapace.T2.name=Structure T2 Carapace 
 tile.zergStrucCarapace.T3.name=Structure T3 Carapace 
 tile.keratinChunk.name=Keratin Chunk
-tile.zergStrucFlesh.Pink.name=Pink Flesh
 
 tile.shakurasSand.name=Sand (Shakuras)
 tile.shakurasStone.name=Stone (Shakuras)
+tile.shakurasCobblestone.name=Cobblestone (Shakuras)
 
-tile.ore2.CoalS.name=Coal Ore (Shakuras)
-tile.ore2.IronS.name=Iron Ore (Shakuras)
-tile.ore2.GoldS.name=Gold Ore (Shakuras)
-tile.ore2.DiamondS.name=Diamond Ore (Shakuras)
-tile.ore2.RedstoneS.name=Redstone Ore (Shakuras)
-tile.ore2.RedstoneLitS.name=Redstone Ore (Shakuras)
-tile.ore2.LapisS.name=Lapis Lazuli Ore (Shakuras)
+tile.oreCoalS.name=Coal Ore (Shakuras)
+tile.ore2IronS.name=Iron Ore (Shakuras)
+tile.oreGoldS.name=Gold Ore (Shakuras)
+tile.oreDiamondS.name=Diamond Ore (Shakuras)
+tile.oreRedstoneS.name=Redstone Ore (Shakuras)
+tile.oreRedstoneLitS.name=Redstone Ore (Shakuras)
+tile.oreLapisS.name=Lapis Lazuli Ore (Shakuras)
 
 tile.fluidAcid.name=Fluid Acid
 tile.fluidBlood.name=Fluid Blood
@@ -83,18 +109,23 @@ tile.fluidBlood.name=Fluid Blood
 tile.charAsh.name=Ash (Char)
 tile.charDirt.name=Dirt (Char)
 tile.charStone.name=Stone (Char)
+tile.charCobblestone.name=Cobblestone (Char)
 
-tile.ore.CoalC.name=Coal Ore (Char)
-tile.ore.IronC.name=Iron Ore (Char)
-tile.ore.GoldC.name=Gold Ore (Char)
-tile.ore.DiamondC.name=Diamond Ore (Char)
-tile.ore.RedstoneC.name=Redstone Ore (Char)
-tile.ore.RedstoneLitC.name=Redstone Ore (Char)
-tile.ore.LapisC.name=Lapis Lazuli Ore (Char)
+tile.oreCoalC.name=Coal Ore (Char)
+tile.oreIronC.name=Iron Ore (Char)
+tile.oreGoldC.name=Gold Ore (Char)
+tile.oreDiamondC.name=Diamond Ore (Char)
+tile.oreRedstoneC.name=Redstone Ore (Char)
+tile.oreRedstoneLitC.name=Redstone Ore (Char)
+tile.oreLapisC.name=Lapis Lazuli Ore (Char)
 
 tile.dimPortalChar.name=Char Portal
 tile.dimPortalOverworld.name=Overworld Portal
 tile.dimPortalShakuras.name=Shakuras Portal
+
+tile.protossWarpProjectorC.name=Warp Projector (Char)
+tile.protossWarpProjectorO.name=Warp Projector (Overworld)
+tile.protossWarpProjectorS.name=Warp Projector (Shakuras)
 
 item.Starcraft_psiBlade.name=Psi Blade
 item.Starcraft_darkPsiBlade.name=Psi Blade (Dark)
@@ -182,10 +213,12 @@ item.essence.Protoss.name=Protoss Essence
 item.essence.Terran.name=Terran Essence
 item.essence.Zerg.name=Zerg Essence
 
-
 item.acidBucket.name=Acid Bucket
 item.bloodBucket.name=Blood Bucket
 
+item.Starcraft_protossModule.name=Protoss Module
+item.coord.Char.name=Char Coordinates
+item.coord.Shakuras.name=Shakuras Coordinates
 
 entity.Larva.name=Larva
 entity.LarvaCocoon.name=Larva Cocoon
@@ -195,6 +228,7 @@ entity.Probe.name=Probe
 entity.DarkProbe.name=Dark Probe
 
 entity.Civilian.name=Civilian
+entity.Zealot.name=Zealot
 
 
 

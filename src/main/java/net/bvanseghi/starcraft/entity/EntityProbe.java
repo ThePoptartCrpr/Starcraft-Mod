@@ -70,10 +70,6 @@ public class EntityProbe extends EntityProtossPassive {
         this.tasks.addTask(16, new EntityAIAvoidEntity(this, EntityTerranPassive.class, 8.0F, 0.4D, 0.4D));
         this.tasks.addTask(17, new EntityAIAvoidEntity(this, EntityTerranMob.class, 8.0F, 0.4D, 0.4D));
         
-        
-        this.tasks.addTask(14, new EntityAIMoveIndoors(this));
-        this.tasks.addTask(15, new EntityAIRestrictOpenDoor(this));
-        this.tasks.addTask(16, new EntityAIOpenDoor(this, true));
         this.tasks.addTask(17, new EntityAIMoveTowardsRestriction(this, 0.4D));
         this.tasks.addTask(18, new EntityAIWatchClosest2(this, EntityPlayer.class, 3.0F, 1.0F));
         this.tasks.addTask(19, new EntityAIWatchClosest2(this, EntityVillager.class, 5.0F, 0.02F));
@@ -90,18 +86,11 @@ public class EntityProbe extends EntityProtossPassive {
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.43000000417232513D);
 	}
-
-	protected String getLivingSound() {
-		return "Starcraft:probe-live1";
-	}
-
-	protected String getHurtSound() {
-		return "Starcraft:probe-hurt";
-	}
-
-	protected String getDeathSound() {
-		return "Starcraft:probe-death";
-	}
+	
+	public int getTalkInterval()
+    {
+        return 160;
+    }
 
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
 		if (this.noClip) {

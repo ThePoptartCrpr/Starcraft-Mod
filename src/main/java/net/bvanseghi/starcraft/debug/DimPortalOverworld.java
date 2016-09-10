@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.debug;
 import java.util.List;
 import java.util.Random;
 
+import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
 import net.minecraft.block.material.MapColor;
@@ -25,7 +26,7 @@ public class DimPortalOverworld extends ModBlocks {
 		this.setLightLevel(1.0F);
 		this.setHardness(5.0F);
 		this.setResistance(0.0F);
-		this.setCreativeTab(null);
+		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 
 	}
 

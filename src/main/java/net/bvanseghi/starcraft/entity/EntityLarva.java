@@ -46,19 +46,7 @@ public class EntityLarva extends EntityZergPassive {
 			this.entityDropItem(new ItemStack(ModItems.zergCarapace, 1, 0), 1);
 		}
 	}
-
-	protected String getLivingSound() {
-		return "Starcraft:larva-live1";
-	}
-
-	protected String getHurtSound() {
-		return "Starcraft:larva-hurt";
-	}
-
-	protected String getDeathSound() {
-		return "Starcraft:larva-death";
-	}
-
+	
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
 		if (this.noClip) {
 			this.boundingBox.offset(p_70091_1_, p_70091_3_, p_70091_5_);

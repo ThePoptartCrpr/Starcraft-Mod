@@ -6,7 +6,7 @@ import net.minecraft.world.World;
 
 public class BlockProtossWarpProjectorS extends ModBlocks {
 
-	public static final String name = "protossWarpProjectors";
+	public static final String name = "protossWarpProjectorS";
 	public BlockProtossWarpProjectorS() {
 		super(name, name, Material.rock);
 		

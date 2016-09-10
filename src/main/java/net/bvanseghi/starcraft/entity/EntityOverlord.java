@@ -38,18 +38,6 @@ public class EntityOverlord extends EntityFlying {
 		this.setSize(4.0F, 4.0F);
 
 	}
-	/*
-	protected String getLivingSound() {
-		return "Starcraft:overlord-live1";
-	}
-	
-	protected String getHurtSound() {
-		return "Starcraft:overlord-hurt";
-	}
-	*/
-	protected String getDeathSound() {
-		return "Starcraft:overlord-death";
-	}
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();

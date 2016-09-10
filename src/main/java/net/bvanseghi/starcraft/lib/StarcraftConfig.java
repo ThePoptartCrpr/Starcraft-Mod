@@ -7,7 +7,8 @@ import net.minecraftforge.common.config.Configuration;
 public class StarcraftConfig {
 
 	public static boolean creepCanSpread;
-	
+	public static int dimChar;
+	public static int dimShakuras;
 	
 	public static void preInit() {
 		Configuration config = new Configuration(new File("config/Starcraft.cfg"));
@@ -16,8 +17,12 @@ public class StarcraftConfig {
 
 		// General
 		config.setCategoryComment("General", "General settings.");
-		creepCanSpread = config.get("General", "Zerg - Creep Can Spread", true).getBoolean(true);
+			creepCanSpread = config.get("General", "Zerg - Creep Can Spread", true).getBoolean(true);
 
+		//Dimensions
+		config.setCategoryComment("Dimension ID's", "Change the ID's of the dimensions");
+		dimChar = config.getInt("Char ID", "Dimension ID's", 2, -128, 127, "ID for the planet Char");
+		dimShakuras = config.getInt("Shakuras ID", "Dimension ID's", 3, -128, 127, "ID for the planet Shakuras");
 		// Biome Generation (Overworld)
 	
 		// Overall Structure Generation

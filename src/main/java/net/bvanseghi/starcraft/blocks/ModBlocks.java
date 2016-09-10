@@ -7,30 +7,76 @@ import net.bvanseghi.starcraft.debug.DimPortalOverworld;
 import net.bvanseghi.starcraft.debug.DimPortalShakuras;
 import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.items.ItemCompressedMetalBlocks;
+import net.bvanseghi.starcraft.items.ItemCompressedMineralBlocks;
 import net.bvanseghi.starcraft.items.ItemCrystalBlocks;
 import net.bvanseghi.starcraft.items.ItemDyedIronBlocks;
-import net.bvanseghi.starcraft.items.ItemOreBlocks;
-import net.bvanseghi.starcraft.items.ItemOreBlocks2;
 import net.bvanseghi.starcraft.items.ItemProtossMetalBlocks;
 import net.bvanseghi.starcraft.items.ItemZergStructureCarapaceBlocks;
 import net.bvanseghi.starcraft.items.ItemZergStructureFleshBlocks;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.material.ModMaterials;
+import net.bvanseghi.starcraft.ore.OreOWCopper;
+import net.bvanseghi.starcraft.ore.OreOWTitanium;
+import net.bvanseghi.starcraft.orechar.OreCharAlien;
+import net.bvanseghi.starcraft.orechar.OreCharCoal;
+import net.bvanseghi.starcraft.orechar.OreCharCopper;
+import net.bvanseghi.starcraft.orechar.OreCharDiamond;
+import net.bvanseghi.starcraft.orechar.OreCharGold;
+import net.bvanseghi.starcraft.orechar.OreCharIron;
+import net.bvanseghi.starcraft.orechar.OreCharLapis;
+import net.bvanseghi.starcraft.orechar.OreCharMineral;
+import net.bvanseghi.starcraft.orechar.OreCharRedstone;
+import net.bvanseghi.starcraft.orechar.OreCharRichMineral;
+import net.bvanseghi.starcraft.orechar.OreCharTitanium;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasAlien;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasCoal;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasCopper;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasDiamond;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasGold;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasIron;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasLapis;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasMineral;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasRedstone;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasRichMineral;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasTitanium;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 
 public class ModBlocks extends Block {
 	 
-	public static Block ores;
-	public static Block ores2;
+	
+	public static Block oreCopperOW;
+	public static Block oreTitaniumOW;
+	
+	public static Block oreAlienC;
+	public static Block oreCoalC;
+	public static Block oreCopperC;
+	public static Block oreDiamondC;
+	public static Block oreGoldC;
+	public static Block oreIronC;
+	public static Block oreLapisC;
+	public static Block oreMineralC;
+	public static Block oreRedstoneC;
+	public static Block oreRichMineralC;
+	public static Block oreTitaniumC;
+	
+	public static Block oreAlienS;
+	public static Block oreCoalS;
+	public static Block oreCopperS;
+	public static Block oreDiamondS;
+	public static Block oreGoldS;
+	public static Block oreIronS;
+	public static Block oreLapisS;
+	public static Block oreMineralS;
+	public static Block oreRedstoneS;
+	public static Block oreRichMineralS;
+	public static Block oreTitaniumS;
+	
 	
 	public static Block zergStrucCarapace;
 	public static Block zergStrucFlesh;
 	public static Block protossMetal;
+	public static Block compMineral;
 	public static Block dyedIron;
 	
 	public static Block protossEnergyStabilizer;
@@ -91,6 +137,7 @@ public class ModBlocks extends Block {
 
 	public static Block dirtChar;
 	public static Block stoneChar;
+	public static Block cobblestoneChar;
 	public static Block ashChar;
 
 	public static Block dirtTarsonis;
@@ -112,9 +159,34 @@ public class ModBlocks extends Block {
 		
 		// Blocks are initialized here.
 		
-		ores = new BlockStarcraftOres().setBlockName("ore");
-		ores2 = new BlockStarcraftOres2().setBlockName("ore2");
+		oreCopperOW = new OreOWCopper();
+		oreTitaniumOW = new OreOWTitanium();
 		
+		oreAlienC = new OreCharAlien();
+		oreCoalC = new OreCharCoal();
+		oreCopperC = new OreCharCopper();
+		oreDiamondC = new OreCharDiamond();
+		oreGoldC = new OreCharGold();
+		oreIronC = new OreCharIron();
+		oreLapisC = new OreCharLapis();
+		oreMineralC = new OreCharMineral();
+		oreRedstoneC = new OreCharRedstone();
+		oreRichMineralC = new OreCharRichMineral();
+		oreTitaniumC = new OreCharTitanium();
+		
+		oreAlienS = new OreShakurasAlien();
+		oreCoalS = new OreShakurasCoal();
+		oreCopperS = new OreShakurasCopper();
+		oreDiamondS = new OreShakurasDiamond();
+		oreGoldS = new OreShakurasGold();
+		oreIronS = new OreShakurasIron();
+		oreLapisS = new OreShakurasLapis();
+		oreMineralS = new OreShakurasMineral();
+		oreRedstoneS = new OreShakurasRedstone();
+		oreRichMineralS = new OreShakurasRichMineral();
+		oreTitaniumS = new OreShakurasTitanium();
+		
+		compMineral = new BlockCompressedMinerals().setBlockName("compMineral");
 		crystals = new BlockPylonCrystal().setBlockName("crystal");
 		zergStrucCarapace = new BlockZergStructureCarapace().setBlockName("zergStrucCarapace");
 		zergStrucFlesh = new BlockZergStructureFlesh().setBlockName("zergStrucFlesh");
@@ -157,6 +229,7 @@ public class ModBlocks extends Block {
 		ashChar = new BlockAsh();
 		dirtChar = new BlockCharDirt();
 		stoneChar = new BlockCharStone();
+		cobblestoneChar = new BlockCharCobblestone();
 		
 		sandShakuras = new BlockShakurasSand();
 		stoneShakuras = new BlockShakurasStone();
@@ -171,9 +244,34 @@ public class ModBlocks extends Block {
 
 		// Items are registered here.
 		
-		GameRegistry.registerBlock(ores, ItemOreBlocks.class, "ores");
-		GameRegistry.registerBlock(ores2, ItemOreBlocks2.class, "ores2");
+		GameRegistry.registerBlock(oreCopperOW, OreOWCopper.name);
+		GameRegistry.registerBlock(oreTitaniumOW, OreOWTitanium.name);
 		
+		GameRegistry.registerBlock(oreAlienC, OreCharAlien.name);
+		GameRegistry.registerBlock(oreCoalC, OreCharCoal.name);
+		GameRegistry.registerBlock(oreCopperC, OreCharCopper.name);
+		GameRegistry.registerBlock(oreDiamondC, OreCharDiamond.name);
+		GameRegistry.registerBlock(oreGoldC, OreCharGold.name);
+		GameRegistry.registerBlock(oreIronC, OreCharIron.name);
+		GameRegistry.registerBlock(oreLapisC, OreCharLapis.name);
+		GameRegistry.registerBlock(oreMineralC, OreCharMineral.name);
+		GameRegistry.registerBlock(oreRedstoneC, OreCharRedstone.name);
+		GameRegistry.registerBlock(oreRichMineralC, OreCharRichMineral.name);
+		GameRegistry.registerBlock(oreTitaniumC, OreCharTitanium.name);
+		
+		GameRegistry.registerBlock(oreAlienS, OreShakurasAlien.name);
+		GameRegistry.registerBlock(oreCoalS, OreShakurasCoal.name);
+		GameRegistry.registerBlock(oreCopperS, OreShakurasCopper.name);
+		GameRegistry.registerBlock(oreDiamondS, OreShakurasDiamond.name);
+		GameRegistry.registerBlock(oreGoldS, OreShakurasGold.name);
+		GameRegistry.registerBlock(oreIronS, OreShakurasIron.name);
+		GameRegistry.registerBlock(oreLapisS, OreShakurasLapis.name);
+		GameRegistry.registerBlock(oreMineralS, OreShakurasMineral.name);
+		GameRegistry.registerBlock(oreRedstoneS, OreShakurasRedstone.name);
+		GameRegistry.registerBlock(oreRichMineralS, OreShakurasRichMineral.name);
+		GameRegistry.registerBlock(oreTitaniumS, OreShakurasTitanium.name);
+		
+		GameRegistry.registerBlock(compMineral, ItemCompressedMineralBlocks.class, "compMinerals");
 		GameRegistry.registerBlock(crystals, ItemCrystalBlocks.class, "crystals");
 		GameRegistry.registerBlock(zergStrucCarapace, ItemZergStructureCarapaceBlocks.class, "zergStrucCarapace");
 		GameRegistry.registerBlock(zergStrucFlesh, ItemZergStructureFleshBlocks.class, "zergStrucFlesh");
@@ -216,6 +314,7 @@ public class ModBlocks extends Block {
 		GameRegistry.registerBlock(ashChar, BlockAsh.name);
 		GameRegistry.registerBlock(dirtChar, BlockCharDirt.name);
 		GameRegistry.registerBlock(stoneChar, BlockCharStone.name);
+		GameRegistry.registerBlock(cobblestoneChar, BlockCharCobblestone.name);
 
 		GameRegistry.registerBlock(sandShakuras, BlockShakurasSand.name);
 		GameRegistry.registerBlock(cobblestoneShakuras, BlockShakurasCobblestone.name);
