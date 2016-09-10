@@ -1,27 +1,17 @@
 package net.bvanseghi.starcraft.blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.bvanseghi.starcraft.CreativeTab;
+import net.bvanseghi.starcraft.lib.Library;
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.bvanseghi.starcraft.model.ModelWarpGateWormholeChar;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeChar;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
 public class BlockWarpGateWormholeChar extends BlockContainer {
-
 	public static final String name = "warpGateWormholeChar";
 
 	public BlockWarpGateWormholeChar(Material material) {
@@ -57,7 +47,7 @@ public class BlockWarpGateWormholeChar extends BlockContainer {
 	}
 
 	public void onBlockAdded(World world, int x, int y, int z) {
-		world.setBlock(x + 1, y, z, ModBlocks.dimPortalChar);
+		/*world.setBlock(x + 1, y, z, ModBlocks.dimPortalChar);
 		world.setBlock(x + 1, y, z + 1, ModBlocks.dimPortalChar);
 		world.setBlock(x, y, z + 1, ModBlocks.dimPortalChar);
 		world.setBlock(x - 1, y, z + 1, ModBlocks.dimPortalChar);
@@ -84,7 +74,9 @@ public class BlockWarpGateWormholeChar extends BlockContainer {
 		world.setBlock(x - 1, y + 2, z - 1, ModBlocks.dimPortalChar);
 		world.setBlock(x, y + 2, z - 1, ModBlocks.dimPortalChar);
 		world.setBlock(x + 1, y + 2, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y + 2, z, ModBlocks.dimPortalChar);
+		world.setBlock(x, y + 2, z, ModBlocks.dimPortalChar);*/
+		
+		Library lib = new Library();
+		lib.blockCube(world, ModBlocks.dimPortalChar, x, y, z);
 	}
-
 }
