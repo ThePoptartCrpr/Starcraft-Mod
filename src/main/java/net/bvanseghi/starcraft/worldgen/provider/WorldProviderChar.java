@@ -1,5 +1,6 @@
 package net.bvanseghi.starcraft.worldgen.provider;
 
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.worldgen.chunk.ChunkProviderChar;
 import net.bvanseghi.starcraft.worldgen.manager.WorldChunkManagerChar;
 import net.minecraft.entity.Entity;
@@ -11,20 +12,17 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.DimensionManager;
 
 public class WorldProviderChar extends WorldProvider {
-	private static int dimID = DimensionManager.getNextFreeDimId();
 	World world;
 	
 	@Override
 	public String getDimensionName() {
 		return "Char";
 	}
-	
-	int d = this.dimensionId;
 
 	@Override
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerChar(this.getSeed(), terrainType);
-		this.dimensionId = dimID;
+		this.dimensionId = StarcraftConfig.dimChar;
 		this.hasNoSky = false;
 
 	}
@@ -93,9 +91,5 @@ public class WorldProviderChar extends WorldProvider {
 	@Override
 	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks) {
 		return Vec3.createVectorHelper(0, 0, 0);
-	}
-	
-	public static int getDimensionID() {
-		return dimID;
 	}
 }

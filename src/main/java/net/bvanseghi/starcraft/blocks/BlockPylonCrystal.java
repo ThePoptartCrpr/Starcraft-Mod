@@ -71,9 +71,9 @@ public class BlockPylonCrystal extends Block {
 		if(meta == 0) {
 			return this == ModBlocks.crystals ? 0 : 0;
 		}else if(meta == 1) {
-			return this == ModBlocks.crystals ? 2 : 0;
-		}else if(meta == 2) {
 			return this == ModBlocks.crystals ? 1 : 0;
+		}else if(meta == 2) {
+			return this == ModBlocks.crystals ? 2 : 0;
 		}
         return 0;
     }	

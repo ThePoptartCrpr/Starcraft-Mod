@@ -48,12 +48,12 @@ public class SCWorldGen implements IWorldGenerator {
 
 	public static void setupWorldgen() {
 		// Char
-		DimensionManager.registerProviderType(2, WorldProviderChar.class, true);
-		DimensionManager.registerDimension(2, 2);
+		DimensionManager.registerProviderType(StarcraftConfig.dimChar, WorldProviderChar.class, true);
+		DimensionManager.registerDimension(StarcraftConfig.dimChar, StarcraftConfig.dimChar);
 
 		// Shakuras
-		DimensionManager.registerProviderType(3, WorldProviderShakuras.class, true);
-		DimensionManager.registerDimension(3, 3);
+		DimensionManager.registerProviderType(StarcraftConfig.dimShakuras, WorldProviderShakuras.class, true);
+		DimensionManager.registerDimension(StarcraftConfig.dimShakuras, StarcraftConfig.dimShakuras);
 
 	}
 
@@ -68,14 +68,17 @@ public class SCWorldGen implements IWorldGenerator {
 		case -1:
 			generateNether(world, random, chunkX * 16, chunkZ * 16);
 			break;
-		case 2:
-			generateChar(world, random, chunkX * 16, chunkZ * 16);
-			break;
-		case 3:
-			generateShakuras(world, random, chunkX * 16, chunkZ * 16);
-			break;
 		case 1:
 			generateEnd(world, random, chunkX * 16, chunkZ * 16);
+			break;
+		default:
+			if(world.provider.dimensionId == StarcraftConfig.dimChar) {
+				generateChar(world, random, chunkX * 16, chunkZ * 16);
+				break;
+			}else if(world.provider.dimensionId == StarcraftConfig.dimShakuras){
+				generateShakuras(world, random, chunkX * 16, chunkZ * 16);
+				break;
+			}
 			break;
 		}
 	}
@@ -88,34 +91,23 @@ public class SCWorldGen implements IWorldGenerator {
 		int chanceTerranBunker = random.nextInt(4000);
 		int chanceProtossWarpGateShakuras = random.nextInt(4000);
 
+		/*
 			this.addOreSpawn(ModBlocks.ores, 0, world, Blocks.stone, random, x, z, 16, 16,
-					4 + random.nextInt(2), 7, 28, 50);
+					3 + random.nextInt(4), 9, 28, 50);
 		
 			this.addOreSpawn(ModBlocks.ores, 1, world, Blocks.stone, random, x, z, 16, 16,
-					4 + random.nextInt(2), 5, 4, 28);
+					3 + random.nextInt(4), 6, 4, 28);
 		
 			this.addOreSpawn(ModBlocks.ores, 2, world, Blocks.stone, random, x, z, 16, 16,
-					4 + random.nextInt(6), 5, 4, 20);
+					2 + random.nextInt(3), 5, 4, 20);
+		*/
 		
-			this.addOreSpawn(ModBlocks.ores, 3, world, Blocks.stone, random, x, z, 16, 16,
-					4 + random.nextInt(6), 5, 4, 28);
+			this.addOreSpawn(ModBlocks.oreTitaniumOW, world, Blocks.stone, random, x, z, 16, 16,
+					1 + random.nextInt(7), 9, 4, 28);
 		
-			this.addOreSpawn(ModBlocks.ores, 9, world, Blocks.stone, random, x, z, 16, 16,
-					4 + random.nextInt(6), 6, 4, 50);
+			this.addOreSpawn(ModBlocks.oreCopperOW, world, Blocks.stone, random, x, z, 16, 16,
+					1 + random.nextInt(7), 25, 4, 64);
 		
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceVespeneGeyser < 21) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureVespeneGeyser().generate(world, random, i, j, k);
-				}
-			}
-		} else {
-
-		}
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
 			if (chanceProtossWarpGateShakuras < 50) {
 				for (int a = 0; a < 1; a++) {
@@ -138,47 +130,6 @@ public class SCWorldGen implements IWorldGenerator {
 					int j = world.getHeightValue(i, k);
 
 					new StructureProtossWarpGateChar().generate(world, random, i, j - 1, k);
-				}
-			}
-		} else {
-
-		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceRichVespeneGeyser < 11) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureRichVespeneGeyser().generate(world, random, i, j, k);
-				}
-			}
-		} else {
-
-		}
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceMineralBed < 21) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureMineralBed().generate(world, random, i, j, k);
-				}
-			}
-		} else {
-
-		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceRichMineralBed < 11) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureRichMineralBed().generate(world, random, i, j, k);
 				}
 			}
 		} else {
@@ -211,43 +162,43 @@ public class SCWorldGen implements IWorldGenerator {
 		int chanceProtossWarpGateOverworld = random.nextInt(4000);
 		int chanceProtossWarpGateShakuras = random.nextInt(4000);
 
-			this.addOreSpawnChar(ModBlocks.ores, 11, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					4 + random.nextInt(2), 7, 28, 50);
+			this.addOreSpawnChar(ModBlocks.oreMineralC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+					3 + random.nextInt(4), 13, 28, 50);
 		
-			this.addOreSpawnChar(ModBlocks.ores, 12, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					4 + random.nextInt(2), 5, 4, 28);
+			this.addOreSpawnChar(ModBlocks.oreRichMineralC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+					3 + random.nextInt(4), 9, 4, 28);
 		
-			this.addOreSpawnChar(ModBlocks.ores, 13, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					4 + random.nextInt(6), 5, 4, 20);
+			this.addOreSpawnChar(ModBlocks.oreAlienC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+					2 + random.nextInt(3), 5, 4, 20);
 		
-			this.addOreSpawnChar(ModBlocks.ores, 14, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					4 + random.nextInt(6), 5, 4, 28);
+			this.addOreSpawnChar(ModBlocks.oreTitaniumC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+					1 + random.nextInt(7), 9, 4, 28);
 		
-			this.addOreSpawnChar(ModBlocks.ores, 15, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					4 + random.nextInt(6), 6, 4, 50);
+			this.addOreSpawnChar(ModBlocks.oreCopperC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+					1 + random.nextInt(7), 25, 4, 64);
 		
 		// Coal
-		this.addOreSpawnChar(ModBlocks.ores, 5, world, ModBlocks.stoneChar, random, x, z, 16, 16, 4 + random.nextInt(12),
+		this.addOreSpawnChar(ModBlocks.oreCoalC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 4 + random.nextInt(12),
 				20, 0, 128);
 
 		// Iron
-		this.addOreSpawnChar(ModBlocks.ores, 6, world, ModBlocks.stoneChar, random, x, z, 16, 16, 1 + random.nextInt(7),
+		this.addOreSpawnChar(ModBlocks.oreIronC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 1 + random.nextInt(7),
 				20, 0, 64);
 
 		// Gold
-		this.addOreSpawnChar(ModBlocks.ores, 7, world, ModBlocks.stoneChar, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
+		this.addOreSpawnChar(ModBlocks.oreGoldC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
 				0, 32);
 
 		// Redstone
-		this.addOreSpawnChar(ModBlocks.ores, 8, world, ModBlocks.stoneChar, random, x, z, 16, 16, 3 + random.nextInt(4), 8,
+		this.addOreSpawnChar(ModBlocks.oreRedstoneC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 3 + random.nextInt(4), 8,
 				0, 16);
 
 		// Lapis
-		this.addOreSpawnChar(ModBlocks.ores, 4, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
+		this.addOreSpawnChar(ModBlocks.oreLapisC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
 				0, 16);
 
 		// Diamond
-		this.addOreSpawnChar(ModBlocks.ores, 10, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(5),
+		this.addOreSpawnChar(ModBlocks.oreDiamondC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(5),
 				1, 0, 16);
 
 		BiomeGenBase biome = world.getWorldChunkManager().getBiomeGenAt(x, z);
@@ -382,43 +333,43 @@ public class SCWorldGen implements IWorldGenerator {
 		int chanceProtossWarpGateOverworld = random.nextInt(6000);
 
 		
-			this.addOreSpawnShakuras(ModBlocks.ores2, 6, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					4 + random.nextInt(2), 7, 28, 50);
+			this.addOreSpawnShakuras(ModBlocks.oreMineralS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+					3 + random.nextInt(4), 9, 28, 50);
 		
-			this.addOreSpawnShakuras(ModBlocks.ores2, 7, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					4 + random.nextInt(2), 5, 4, 28);
+			this.addOreSpawnShakuras(ModBlocks.oreRichMineralS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+					3 + random.nextInt(4), 6, 4, 28);
 		
-			this.addOreSpawnShakuras(ModBlocks.ores2, 8, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					4 + random.nextInt(6), 5, 4, 20);
+			this.addOreSpawnShakuras(ModBlocks.oreAlienS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+					2 + random.nextInt(3), 5, 4, 20);
 		
-			this.addOreSpawnShakuras(ModBlocks.ores2, 9, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					4 + random.nextInt(6), 5, 4, 28);
+			this.addOreSpawnShakuras(ModBlocks.oreTitaniumS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+					1 + random.nextInt(7), 9, 4, 28);
 		
-			this.addOreSpawnShakuras(ModBlocks.ores2, 10, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					4 + random.nextInt(6), 6, 4, 50);
+			this.addOreSpawnShakuras(ModBlocks.oreCopperS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+					1 + random.nextInt(7), 25, 4, 64);
 
 		// Coal
-		this.addOreSpawnShakuras(ModBlocks.ores2, 0, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(12),
+		this.addOreSpawnShakuras(ModBlocks.oreCoalS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(12),
 				20, 0, 128);
 
 		// Iron
-		this.addOreSpawnShakuras(ModBlocks.ores2, 1, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 1 + random.nextInt(7),
+		this.addOreSpawnShakuras(ModBlocks.oreIronS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 1 + random.nextInt(7),
 				20, 0, 64);
 
 		// Gold
-		this.addOreSpawnShakuras(ModBlocks.ores2, 2, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
+		this.addOreSpawnShakuras(ModBlocks.oreGoldS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
 				0, 32);
 
 		// Redstone
-		this.addOreSpawnShakuras(ModBlocks.ores2, 3, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 3 + random.nextInt(4), 8,
+		this.addOreSpawnShakuras(ModBlocks.oreRedstoneS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 3 + random.nextInt(4), 8,
 				0, 16);
 
 		// Lapis
-		this.addOreSpawnShakuras(ModBlocks.ores2, 4, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
+		this.addOreSpawnShakuras(ModBlocks.oreLapisS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
 				0, 16);
 
 		// Diamond
-		this.addOreSpawnShakuras(ModBlocks.ores2, 5, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(5),
+		this.addOreSpawnShakuras(ModBlocks.oreDiamondS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(5),
 				1, 0, 16);
 
 		BiomeGenBase biome = world.getWorldChunkManager().getBiomeGenAt(x, z);

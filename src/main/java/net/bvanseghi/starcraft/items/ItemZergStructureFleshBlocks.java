@@ -11,7 +11,8 @@ public class ItemZergStructureFleshBlocks extends ItemBlock {
 		this.setHasSubtypes(true);
 	}
 	
-	public static final String[] names = new String[] { "Purple", "Brown", "Pink" };
+	public static final String[] names = new String[] { "Purple", "Brown", "Pink", "Blue", "Cyan", "DarkGray", "Green",
+			"LightBlue", "Lime", "Magenta", "Orange", "Red", "Silver", "White", "Yellow" };
 	
 	public String getUnlocalizedName(ItemStack itemstack) {
 		int i = itemstack.getItemDamage();

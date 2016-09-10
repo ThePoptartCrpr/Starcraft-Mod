@@ -33,6 +33,7 @@ public class ModItems extends Item {
 	public static Item c14Parts;
 
 	public static Item ingot;
+	public static Item coord;
 
 	public static Item C14GaussRifle;
 	public static Item C14GaussRifleBullet;
@@ -43,6 +44,8 @@ public class ModItems extends Item {
 
 	public static Item acidBucket;
 	public static Item bloodBucket;
+	
+	public static Item protossModule;
 
 	
 	public static void preInit() {
@@ -54,6 +57,7 @@ public class ModItems extends Item {
 		darkPsiBladeFocuserUncharged = new ItemDarkPsiBladeFocuserUncharged();
 		protossArtifact = new ItemProtossArtifact();
 		uraj = new ItemUraj();
+		protossModule = new ItemProtossModule();
 
 		C14GaussRifle = new ItemC14GaussRifle().setFull3D();
 		C14GaussRifleBullet = new ItemC14GaussRifleBullet();
@@ -66,6 +70,10 @@ public class ModItems extends Item {
 		
 		for(int i = 0; i < ItemIngot.names.length; i++){
 			ingot = new ItemIngot().setUnlocalizedName("ingot");
+		}
+		
+		for(int i = 0; i < ItemProtossCoordinates.names.length; i++){
+			coord = new ItemProtossCoordinates().setUnlocalizedName("coord");
 		}
 		
 		for(int i = 0; i < ItemEssence.names.length; i++){
@@ -96,12 +104,15 @@ public class ModItems extends Item {
 		GameRegistry.registerItem(darkPsiBladeFocuserUncharged, ItemDarkPsiBladeFocuserUncharged.name);
 		GameRegistry.registerItem(protossArtifact, ItemProtossArtifact.name);
 		GameRegistry.registerItem(uraj, ItemUraj.name);
+		GameRegistry.registerItem(protossModule, ItemProtossModule.name);
 
 		GameRegistry.registerItem(C14GaussRifle, "c14GaussRifle");
 		GameRegistry.registerItem(C14GaussRifleBullet, ItemC14GaussRifleBullet.name);
 
 		GameRegistry.registerItem(creepResin, ItemCreepResin.name);
 		GameRegistry.registerItem(organicTissue, ItemOrganicTissue.name);
+		
+		GameRegistry.registerItem(coord, REFERENCE.MODID + (coord.getUnlocalizedName().substring(5)));
 		
 		GameRegistry.registerItem(ingot, REFERENCE.MODID + (ingot.getUnlocalizedName().substring(5)));
 		GameRegistry.registerItem(essence, REFERENCE.MODID + (essence.getUnlocalizedName().substring(5)));

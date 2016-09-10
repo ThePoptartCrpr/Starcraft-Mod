@@ -114,9 +114,9 @@ public class Starcraft {
 	}
 	
 	public static void oreRegistrations(){
-		OreDictionary.registerOre("ingotCopper", new ItemStack(ModItems.ingot, 0, 0));
-		OreDictionary.registerOre("ingotTitanium", new ItemStack(ModItems.ingot, 0, 0));
-		OreDictionary.registerOre("ingotSteel", new ItemStack(ModItems.ingot, 0, 0));
+		OreDictionary.registerOre("ingotCopper", new ItemStack(ModItems.ingot, 1, 0));
+		OreDictionary.registerOre("ingotTitanium", new ItemStack(ModItems.ingot, 1, 3));
+		OreDictionary.registerOre("ingotSteel", new ItemStack(ModItems.ingot, 1, 4));
 		
 	}
 	

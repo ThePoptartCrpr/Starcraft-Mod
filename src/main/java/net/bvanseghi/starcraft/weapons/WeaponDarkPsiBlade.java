@@ -13,8 +13,6 @@ import net.minecraft.world.World;
 
 public class WeaponDarkPsiBlade extends ItemSword {
 
-	ItemStack stack;
-	EntityPlayer player;
 	public static final String name = "darkPsiBlade";
 
 	public WeaponDarkPsiBlade(ToolMaterial material) {
@@ -23,4 +21,6 @@ public class WeaponDarkPsiBlade extends ItemSword {
 		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + name);
 		this.setTextureName(REFERENCE.Texture_Path + name);
 	}
+	
+	
 }

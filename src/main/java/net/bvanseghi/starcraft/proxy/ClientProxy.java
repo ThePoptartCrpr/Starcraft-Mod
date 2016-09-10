@@ -3,7 +3,6 @@ package net.bvanseghi.starcraft.proxy;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
@@ -12,6 +11,8 @@ import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityOverlord;
 import net.bvanseghi.starcraft.entity.EntityProbe;
+import net.bvanseghi.starcraft.entity.EntityScourge;
+import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.model.ModelArmoredZealot;
 import net.bvanseghi.starcraft.model.ModelBroodling;
@@ -21,6 +22,7 @@ import net.bvanseghi.starcraft.model.ModelLarva;
 import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
 import net.bvanseghi.starcraft.model.ModelOverlord;
 import net.bvanseghi.starcraft.model.ModelProbe;
+import net.bvanseghi.starcraft.model.ModelScourge;
 import net.bvanseghi.starcraft.renderer.ItemRenderC14GaussRifle;
 import net.bvanseghi.starcraft.renderer.ItemRenderMineralField;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichMineralField;
@@ -41,6 +43,7 @@ import net.bvanseghi.starcraft.renderer.RenderProbe;
 import net.bvanseghi.starcraft.renderer.RenderRichMineralField;
 import net.bvanseghi.starcraft.renderer.RenderRichVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.RenderRichVespeneGeyserChar;
+import net.bvanseghi.starcraft.renderer.RenderScourge;
 import net.bvanseghi.starcraft.renderer.RenderVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.RenderVespeneGeyserChar;
 import net.bvanseghi.starcraft.renderer.RenderWarpGateWormholeChar;
@@ -109,6 +112,9 @@ public class ClientProxy extends CommonProxy {
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityBroodling.class,
 				new RenderBroodling(new ModelBroodling(), 0.0F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityScourge.class,
+				new RenderScourge(new ModelScourge(), 0.0F));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityOverlord.class,
 				new RenderOverlord(new ModelOverlord(), 0.0F));

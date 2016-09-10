@@ -4,7 +4,6 @@ import java.util.Random;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.bvanseghi.starcraft.Starcraft;
-import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
 import net.bvanseghi.starcraft.entity.EntityDarkProbe;
@@ -13,6 +12,8 @@ import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityOverlord;
 import net.bvanseghi.starcraft.entity.EntityProbe;
+import net.bvanseghi.starcraft.entity.EntityScourge;
+import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
@@ -35,6 +36,22 @@ public class EntityHandler {
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
+	
+	/*
+	public static void RegisterScourge(Class entityClass, String name, int mainColor, int subColor) {
+		// creates colors for Spawn Egg based on name.
+		int entityId = EntityRegistry.findGlobalUniqueEntityId();
+		long x = name.hashCode();
+		Random random = new Random(x);
+
+		// Unique spawn details for the larva Cocoon
+		EntityRegistry.registerGlobalEntityID(EntityScourge.class, name, entityId);
+		EntityRegistry.addSpawn(EntityScourge.class, 50, 2, 3, EnumCreatureType.monster);
+		EntityRegistry.registerModEntity(EntityScourge.class, name, entityId, Starcraft.instance, 64, 1, true);
+		EntityList.entityEggs.put(Integer.valueOf(entityId),
+				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
+	}
+	*/
 
 	// Peaceful Entities
 
@@ -74,7 +91,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the Zealot
 		EntityRegistry.registerGlobalEntityID(EntityZealot.class, name, entityId);
-		EntityRegistry.addSpawn(EntityZealot.class, 25, 2, 3, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityZealot.class, 50, 2, 3, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityZealot.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
@@ -88,7 +105,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the larva
 		EntityRegistry.registerGlobalEntityID(EntityDarkProbe.class, name, entityId);
-		EntityRegistry.addSpawn(EntityDarkProbe.class, 20, 2, 3, EnumCreatureType.creature, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityDarkProbe.class, 50, 2, 3, EnumCreatureType.creature, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityDarkProbe.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));

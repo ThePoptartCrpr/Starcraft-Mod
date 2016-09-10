@@ -25,4 +25,14 @@ public class BlockCharStone extends ModBlocks {
 		setBlockName(name);
 		setBlockTextureName(REFERENCE.MODID + ":" + name);
 	}
+	
+	public int damageDropped(int par1) {
+		return par1;
+
+	}
+	
+	 public Item getItemDropped(int par1, Random rand, int par3)
+	    {
+	        return Item.getItemFromBlock(ModBlocks.cobblestoneChar);
+	    }
 }

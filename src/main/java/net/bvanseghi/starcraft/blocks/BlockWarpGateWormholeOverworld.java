@@ -4,7 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.lib.Library;
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeChar;
+import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverworld;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -43,39 +43,10 @@ public class BlockWarpGateWormholeOverworld extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World par1, int par2) {
-		return new TileEntityBlockWarpGateWormholeChar();
+		return new TileEntityBlockWarpGateWormholeOverworld();
 	}
 
 	public void onBlockAdded(World world, int x, int y, int z) {
-		/*world.setBlock(x + 1, y, z, ModBlocks.dimPortalOverworld);
-		world.setBlock(x + 1, y, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x, y, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y, z, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y, z - 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x, y, z - 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x + 1, y, z - 1, ModBlocks.dimPortalOverworld);
-
-		world.setBlock(x + 1, y + 1, z, ModBlocks.dimPortalOverworld);
-		world.setBlock(x + 1, y + 1, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x, y + 1, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y + 1, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y + 1, z, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y + 1, z - 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x, y + 1, z - 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x + 1, y + 1, z - 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x, y + 1, z, ModBlocks.dimPortalOverworld);
-
-		world.setBlock(x + 1, y + 2, z, ModBlocks.dimPortalOverworld);
-		world.setBlock(x + 1, y + 2, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x, y + 2, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y + 2, z + 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y + 2, z, ModBlocks.dimPortalOverworld);
-		world.setBlock(x - 1, y + 2, z - 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x, y + 2, z - 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x + 1, y + 2, z - 1, ModBlocks.dimPortalOverworld);
-		world.setBlock(x, y + 2, z, ModBlocks.dimPortalOverworld);*/
-		
 		Library lib = new Library();
 		lib.blockCube(world, ModBlocks.dimPortalOverworld, x, y, z);
 	}

@@ -47,35 +47,6 @@ public class BlockWarpGateWormholeChar extends BlockContainer {
 	}
 
 	public void onBlockAdded(World world, int x, int y, int z) {
-		/*world.setBlock(x + 1, y, z, ModBlocks.dimPortalChar);
-		world.setBlock(x + 1, y, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y, z, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x + 1, y, z - 1, ModBlocks.dimPortalChar);
-
-		world.setBlock(x + 1, y + 1, z, ModBlocks.dimPortalChar);
-		world.setBlock(x + 1, y + 1, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y + 1, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y + 1, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y + 1, z, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y + 1, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y + 1, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x + 1, y + 1, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y + 1, z, ModBlocks.dimPortalChar);
-
-		world.setBlock(x + 1, y + 2, z, ModBlocks.dimPortalChar);
-		world.setBlock(x + 1, y + 2, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y + 2, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y + 2, z + 1, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y + 2, z, ModBlocks.dimPortalChar);
-		world.setBlock(x - 1, y + 2, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y + 2, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x + 1, y + 2, z - 1, ModBlocks.dimPortalChar);
-		world.setBlock(x, y + 2, z, ModBlocks.dimPortalChar);*/
-		
 		Library lib = new Library();
 		lib.blockCube(world, ModBlocks.dimPortalChar, x, y, z);
 	}

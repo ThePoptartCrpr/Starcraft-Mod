@@ -10,7 +10,7 @@ import net.minecraftforge.common.BiomeManager;
 
 public class GenLayerShakurasBiomes extends GenLayer {
 
-	public BiomeGenBase[] dimBiomes = {BiomesSC.biomeShakurasDesert, BiomesSC.biomeShakurasOcean };
+	public BiomeGenBase[] dimBiomes = {BiomesSC.biomeShakurasDesert};
 
 	public GenLayerShakurasBiomes(long par1) {
 		super(par1);

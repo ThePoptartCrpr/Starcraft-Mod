@@ -3,8 +3,10 @@ package net.bvanseghi.starcraft.debug;
 import java.util.List;
 import java.util.Random;
 
+import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.worldgen.provider.WorldProviderShakuras;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -18,7 +20,7 @@ import net.minecraft.world.World;
 public class DimPortalShakuras extends ModBlocks {
 	public static boolean field_149948_a;
 	private static final String __OBFID = "CL_00000236";
-	private int dim = WorldProviderShakuras.getDimensionID();
+	private int dim = StarcraftConfig.dimShakuras;
 	public static final String name = "dimPortalShakuras";
 
 	public DimPortalShakuras() {
@@ -26,7 +28,7 @@ public class DimPortalShakuras extends ModBlocks {
 		this.setLightLevel(1.0F);
 		this.setHardness(5.0F);
 		this.setResistance(0.0F);
-		this.setCreativeTab(null);
+		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		
 	}
 

@@ -1,5 +1,6 @@
 package net.bvanseghi.starcraft.worldgen.provider;
 
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.worldgen.chunk.ChunkProviderShakuras;
 import net.bvanseghi.starcraft.worldgen.manager.WorldChunkManagerShakuras;
 import net.minecraft.entity.Entity;
@@ -11,7 +12,6 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.DimensionManager;
 
 public class WorldProviderShakuras extends WorldProvider {
-	private static int dimID = DimensionManager.getNextFreeDimId();
 	World world;
 	
 	@Override
@@ -22,7 +22,7 @@ public class WorldProviderShakuras extends WorldProvider {
 	@Override
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerShakuras(this.getSeed(), terrainType);
-		this.dimensionId = dimID;
+		this.dimensionId = StarcraftConfig.dimShakuras;
 		this.hasNoSky = true;
 
 	}
@@ -78,8 +78,4 @@ public class WorldProviderShakuras extends WorldProvider {
     {
         worldObj.getWorldInfo().setWorldTime(20000);
     }
-
-	public static int getDimensionID() {
-		return dimID;
-	}
 }
