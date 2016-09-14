@@ -4,7 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.bvanseghi.starcraft.model.ModelArmoredZealot;
+import net.bvanseghi.starcraft.model.ModelZealot;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
@@ -12,17 +12,17 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderArmoredZealot extends RenderLiving {
+public class RenderZealot extends RenderLiving {
 
 	private static final ResourceLocation texture = new ResourceLocation(
-			REFERENCE.MODID + ":" + "textures/model/armoredZealot.png");
+			REFERENCE.MODID + ":" + "textures/model/zealot.png");
 
-	protected ModelArmoredZealot modelEntity;
+	protected ModelZealot modelEntity;
 
-	public RenderArmoredZealot(ModelBase parModelBase, float par2) {
+	public RenderZealot(ModelBase parModelBase, float par2) {
 		super(parModelBase, par2);
 
-		modelEntity = (ModelArmoredZealot) mainModel;
+		modelEntity = (ModelZealot) mainModel;
 	}
 
 	public void renderArmoredZealot(EntityZealot entity, double x, double y, double z, float u, float v) {

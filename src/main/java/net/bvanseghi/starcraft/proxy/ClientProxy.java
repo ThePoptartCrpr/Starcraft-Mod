@@ -14,7 +14,7 @@ import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.bvanseghi.starcraft.entity.EntityScourge;
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.model.ModelArmoredZealot;
+import net.bvanseghi.starcraft.model.ModelZealot;
 import net.bvanseghi.starcraft.model.ModelBroodling;
 import net.bvanseghi.starcraft.model.ModelCivilian;
 import net.bvanseghi.starcraft.model.ModelDarkProbe;
@@ -30,7 +30,7 @@ import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyserChar;
 import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyserChar;
-import net.bvanseghi.starcraft.renderer.RenderArmoredZealot;
+import net.bvanseghi.starcraft.renderer.RenderZealot;
 import net.bvanseghi.starcraft.renderer.RenderBroodling;
 import net.bvanseghi.starcraft.renderer.RenderC14GaussRifleBullet;
 import net.bvanseghi.starcraft.renderer.RenderCivilian;
@@ -124,7 +124,7 @@ public class ClientProxy extends CommonProxy {
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class, new RenderProbe(new ModelProbe(), 0.0F));
 		
-		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class, new RenderArmoredZealot(new ModelArmoredZealot(), 0.0F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class, new RenderZealot(new ModelZealot(), 0.0F));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
 				new RenderDarkProbe(new ModelDarkProbe(), 0.0F));
