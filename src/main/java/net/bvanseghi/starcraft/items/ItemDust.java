@@ -20,7 +20,7 @@ public class ItemDust extends Item {
 	
 	public ItemDust() {
 		setHasSubtypes(true);
-		setCreativeTab(CreativeTab.TabStarcraftMaterials);
+		// setCreativeTab(CreativeTab.TabStarcraftMaterials);
 	}
 	
 	public void registerIcons(IIconRegister iconReg) {
