@@ -144,6 +144,10 @@ public class ModRecipes {
 		 * ItemStack(ModItems.ingot, 1, 0), 0);
 		 * 
 		 */
+
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreTitaniumOW), new ItemStack(ModItems.ingot, 1, 3), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCopperOW), new ItemStack(ModItems.ingot, 1, 0), 0);
+		
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCoalC), new ItemStack(Items.coal), 0);
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreIronC), new ItemStack(Items.iron_ingot), 0);
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreGoldC), new ItemStack(Items.gold_ingot), 0);
@@ -151,8 +155,8 @@ public class ModRecipes {
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreLapisC), new ItemStack(Items.dye, 0, 4), 0);
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreDiamondC), new ItemStack(Items.diamond), 0);
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreAlienC), new ItemStack(ModItems.ingot, 0, 1), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreTitaniumC), new ItemStack(ModItems.ingot, 0, 3), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCopperC), new ItemStack(ModItems.ingot, 0, 0), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreTitaniumC), new ItemStack(ModItems.ingot, 1, 3), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCopperC), new ItemStack(ModItems.ingot, 1, 0), 0);
 
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCoalS), new ItemStack(Items.coal), 0);
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreIronS), new ItemStack(Items.iron_ingot), 0);

@@ -37,7 +37,7 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
-	/*
+	
 	public static void RegisterScourge(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
@@ -51,7 +51,7 @@ public class EntityHandler {
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
-	*/
+	
 
 	// Peaceful Entities
 

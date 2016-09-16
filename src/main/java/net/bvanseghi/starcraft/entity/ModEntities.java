@@ -25,9 +25,9 @@ public class ModEntities {
 
 		EntityHandler.RegisterBroodling(EntityBroodling.class, "Broodling", 38400 / 2, 7684608 / 2);
 		
-		/*
+		
 		EntityHandler.RegisterScourge(EntityScourge.class, "Scourge", 38400 / 2, 7684608 / 2);
-		*/
+		
 		
 		EntityHandler.RegisterArmoredZealot(EntityZealot.class, "Zealot", 38400 / 2, 7684608 / 2);
 		

@@ -28,9 +28,9 @@ tile.oreRichMineralC.name=Rich Mineral Ore (Char)
 tile.oreMineralS.name=Mineral Ore (Shakuras)
 tile.oreRichMineralS.name=Rich Mineral Ore (Shakuras)
 
-tile.ore.Titanium.name=Titanium Ore
-tile.ore.TitaniumC.name=Titanium Ore (Char)
-tile.ore2.TitaniumS.name=Titanium Ore (Shakuras)
+tile.oreTitaniumOW.name=Titanium Ore
+tile.oreTitaniumC.name=Titanium Ore (Char)
+tile.ore2TitaniumS.name=Titanium Ore (Shakuras)
 tile.compMetal.Titanium.name=Block of Titanium
 
 tile.oreCopperOW.name=Copper Ore

@@ -4,201 +4,153 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelScourge extends ModelBase
-{
-  //fields
-    ModelRenderer tail5;
-    ModelRenderer rightWingExt;
-    ModelRenderer tail1;
-    ModelRenderer tail2;
-    ModelRenderer tail3;
-    ModelRenderer tail4;
-    ModelRenderer Mouth;
-    ModelRenderer rightWingWebbing;
-    ModelRenderer leftWingWebbing;
-    ModelRenderer leftWingExt;
-    ModelRenderer base;
-    ModelRenderer leftWingBase;
-    ModelRenderer rightWingBase;
-    ModelRenderer chomper1;
-    ModelRenderer chomper2;
-    ModelRenderer chomper3;
-    ModelRenderer chomper4;
-    ModelRenderer chomper5;
-    ModelRenderer chomper6;
-    ModelRenderer chomper7;
-    ModelRenderer chomper8;
-  
-  public ModelScourge()
-  {
-    textureWidth = 64;
-    textureHeight = 64;
-    
-      tail5 = new ModelRenderer(this, 0, 48);
-      tail5.addBox(0F, 0F, 0F, 2, 2, 3);
-      tail5.setRotationPoint(-1F, 19F, 6.5F);
-      tail5.setTextureSize(64, 32);
-      tail5.mirror = true;
-      setRotation(tail5, -2.41661F, 0F, 0F);
-      rightWingExt = new ModelRenderer(this, 0, 58);
-      rightWingExt.addBox(0F, 0F, 0F, 7, 1, 1);
-      rightWingExt.setRotationPoint(-10F, 10F, 2.1F);
-      rightWingExt.setTextureSize(64, 32);
-      rightWingExt.mirror = true;
-      setRotation(rightWingExt, 0F, 2.035316F, 0.3839724F);
-      tail1 = new ModelRenderer(this, 0, 16);
-      tail1.addBox(0F, 0F, 0F, 5, 4, 5);
-      tail1.setRotationPoint(-2.5F, 9F, 2F);
-      tail1.setTextureSize(64, 32);
-      tail1.mirror = true;
-      setRotation(tail1, -0.4089647F, 0F, 0F);
-      tail2 = new ModelRenderer(this, 0, 26);
-      tail2.addBox(0F, 0F, 0F, 4, 3, 4);
-      tail2.setRotationPoint(-2F, 11F, 6F);
-      tail2.setTextureSize(64, 32);
-      tail2.mirror = true;
-      setRotation(tail2, -1.115358F, 0F, 0F);
-      tail3 = new ModelRenderer(this, 0, 34);
-      tail3.addBox(0F, 0F, 0F, 3, 3, 3);
-      tail3.setRotationPoint(-1.5F, 14F, 7F);
-      tail3.setTextureSize(64, 32);
-      tail3.mirror = true;
-      setRotation(tail3, -1.412787F, 0F, 0F);
-      tail4 = new ModelRenderer(this, 0, 41);
-      tail4.addBox(0F, 0F, 0F, 3, 3, 3);
-      tail4.setRotationPoint(-1.5F, 17F, 7.5F);
-      tail4.setTextureSize(64, 32);
-      tail4.mirror = true;
-      setRotation(tail4, -2.082002F, 0F, 0F);
-      Mouth = new ModelRenderer(this, 11, 48);
-      Mouth.addBox(0F, 0F, 0F, 4, 4, 1);
-      Mouth.setRotationPoint(-2F, 11F, -7.733333F);
-      Mouth.setTextureSize(64, 32);
-      Mouth.mirror = true;
-      setRotation(Mouth, 0.148353F, 0F, 0F);
-      rightWingWebbing = new ModelRenderer(this, 31, 0);
-      rightWingWebbing.addBox(0F, 0F, 0F, 9, 0, 6);
-      rightWingWebbing.setRotationPoint(-11F, 12.3F, -2F);
-      rightWingWebbing.setTextureSize(64, 32);
-      rightWingWebbing.mirror = true;
-      setRotation(rightWingWebbing, 0.3717912F, 0.4788812F, 0F);
-      leftWingWebbing = new ModelRenderer(this, 31, 0);
-      leftWingWebbing.addBox(0F, 0F, 0F, 9, 0, 6);
-      leftWingWebbing.setRotationPoint(3F, 12F, -5F);
-      leftWingWebbing.setTextureSize(64, 32);
-      leftWingWebbing.mirror = true;
-      setRotation(leftWingWebbing, 0.3717912F, -0.4461433F, 0F);
-      leftWingExt = new ModelRenderer(this, 0, 58);
-      leftWingExt.addBox(0F, 0F, 0F, 7, 1, 1);
-      leftWingExt.setRotationPoint(9.2F, 10F, 2.1F);
-      leftWingExt.setTextureSize(64, 32);
-      leftWingExt.mirror = true;
-      setRotation(leftWingExt, 0F, 1.10627F, 0.3839724F);
-      base = new ModelRenderer(this, 0, 0);
-      base.addBox(0F, 0F, 0F, 6, 6, 9);
-      base.setRotationPoint(-3F, 10F, -7F);
-      base.setTextureSize(64, 32);
-      base.mirror = true;
-      setRotation(base, 0.1487144F, 0F, 0F);
-      leftWingBase = new ModelRenderer(this, 0, 54);
-      leftWingBase.addBox(0F, 0F, 0F, 8, 1, 2);
-      leftWingBase.setRotationPoint(3F, 10F, -1F);
-      leftWingBase.setTextureSize(64, 32);
-      leftWingBase.mirror = true;
-      setRotation(leftWingBase, 0.3717912F, -0.4461433F, 0F);
-      rightWingBase = new ModelRenderer(this, 0, 54);
-      rightWingBase.addBox(0F, 0F, 0F, 8, 1, 2);
-      rightWingBase.setRotationPoint(-10F, 10F, 2.266667F);
-      rightWingBase.setTextureSize(64, 32);
-      rightWingBase.mirror = true;
-      setRotation(rightWingBase, 0.3717912F, 0.4788812F, 0F);
-      chomper1 = new ModelRenderer(this, 31, 7);
-      chomper1.addBox(0F, -1F, 0F, 1, 1, 3);
-      chomper1.setRotationPoint(1.6F, 11.4F, -8.9F);
-      chomper1.setTextureSize(64, 32);
-      chomper1.mirror = true;
-      setRotation(chomper1, -0.1396263F, -0.1396263F, 0F);
-      chomper2 = new ModelRenderer(this, 31, 7);
-      chomper2.addBox(-1F, -1F, 0F, 1, 1, 3);
-      chomper2.setRotationPoint(-1.466667F, 11.36667F, -8.866667F);
-      chomper2.setTextureSize(64, 32);
-      chomper2.mirror = true;
-      setRotation(chomper2, -0.1396263F, 0.1396263F, 0F);
-      chomper3 = new ModelRenderer(this, 31, 7);
-      chomper3.addBox(0F, 0F, 0F, 1, 1, 3);
-      chomper3.setRotationPoint(1.533333F, 14.8F, -8.466666F);
-      chomper3.setTextureSize(64, 32);
-      chomper3.mirror = true;
-      setRotation(chomper3, 0.2792527F, -0.1396263F, 0F);
-      chomper4 = new ModelRenderer(this, 31, 7);
-      chomper4.addBox(-1F, 0F, 0F, 1, 1, 3);
-      chomper4.setRotationPoint(-1.6F, 14.8F, -8.466666F);
-      chomper4.setTextureSize(64, 32);
-      chomper4.mirror = true;
-      setRotation(chomper4, 0.2792527F, 0.1396263F, 0F);
-      chomper5 = new ModelRenderer(this, 31, 7);
-      chomper5.addBox(-0.5F, 0F, 0F, 1, 1, 3);
-      chomper5.setRotationPoint(0F, 10.93333F, -9.333333F);
-      chomper5.setTextureSize(64, 32);
-      chomper5.mirror = true;
-      setRotation(chomper5, -0.1396263F, 0F, 0F);
-      chomper6 = new ModelRenderer(this, 31, 7);
-      chomper6.addBox(-0.5F, -1F, 0F, 1, 1, 3);
-      chomper6.setRotationPoint(0F, 15.46667F, -9.133333F);
-      chomper6.setTextureSize(64, 32);
-      chomper6.mirror = true;
-      setRotation(chomper6, 0.2792527F, 0F, 0F);
-      chomper7 = new ModelRenderer(this, 31, 7);
-      chomper7.addBox(0F, -0.5F, 0F, 1, 1, 3);
-      chomper7.setRotationPoint(-2.2F, 13.33333F, -9.4F);
-      chomper7.setTextureSize(64, 32);
-      chomper7.mirror = true;
-      setRotation(chomper7, 0.1396263F, 0.1396263F, 0F);
-      chomper8 = new ModelRenderer(this, 31, 7);
-      chomper8.addBox(-1F, -0.5F, 0F, 1, 1, 3);
-      chomper8.setRotationPoint(2.2F, 13.26667F, -9.466666F);
-      chomper8.setTextureSize(64, 32);
-      chomper8.mirror = true;
-      setRotation(chomper8, 0.1396263F, -0.1396263F, 0F);
-  }
-  
-  public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-  {
-    super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    tail5.render(f5);
-    rightWingExt.render(f5);
-    tail1.render(f5);
-    tail2.render(f5);
-    tail3.render(f5);
-    tail4.render(f5);
-    Mouth.render(f5);
-    rightWingBase.render(f5);
-    leftWingBase.render(f5);
-    leftWingExt.render(f5);
-    base.render(f5);
-    leftWingBase.render(f5);
-    rightWingBase.render(f5);
-    chomper1.render(f5);
-    chomper2.render(f5);
-    chomper3.render(f5);
-    chomper4.render(f5);
-    chomper5.render(f5);
-    chomper6.render(f5);
-    chomper7.render(f5);
-    chomper8.render(f5);
-  }
-  
-  private void setRotation(ModelRenderer model, float x, float y, float z)
-  {
-    model.rotateAngleX = x;
-    model.rotateAngleY = y;
-    model.rotateAngleZ = z;
-  }
-  
-  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
-  {
-    super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-  }
+/**
+ * ModelScourge.tcn - TechneToTabulaImporter
+ * Created using Tabula 4.1.1
+ */
+public class ModelScourge extends ModelBase {
+    public ModelRenderer tail5;
+    public ModelRenderer rightWingExt;
+    public ModelRenderer tail1;
+    public ModelRenderer tail2;
+    public ModelRenderer tail3;
+    public ModelRenderer tail4;
+    public ModelRenderer Mouth;
+    public ModelRenderer rightWingBase;
+    public ModelRenderer leftWingBase;
+    public ModelRenderer leftWingExt;
+    public ModelRenderer base;
+    public ModelRenderer leftWingBase_1;
+    public ModelRenderer rightWingBase_1;
+    public ModelRenderer chomper1;
+    public ModelRenderer chomper2;
+    public ModelRenderer chomper3;
+    public ModelRenderer chomper4;
+    public ModelRenderer chomper5;
+    public ModelRenderer chomper6;
+    public ModelRenderer chomper7;
+    public ModelRenderer chomper8;
 
+    public ModelScourge() {
+        this.textureWidth = 64;
+        this.textureHeight = 64;
+        this.base = new ModelRenderer(this, 0, 0);
+        this.base.setRotationPoint(-3.0F, 10.0F, -7.0F);
+        this.base.addBox(0.0F, 0.0F, 0.0F, 6, 6, 9, 0.0F);
+        this.setRotateAngle(base, 0.14871443808078766F, -0.0F, 0.0F);
+        this.chomper1 = new ModelRenderer(this, 31, 7);
+        this.chomper1.setRotationPoint(1.600000023841858F, 11.399999618530273F, -8.899999618530273F);
+        this.chomper1.addBox(0.0F, -1.0F, 0.0F, 1, 1, 3, 0.0F);
+        this.setRotateAngle(chomper1, -0.13962633907794952F, -0.13962633907794952F, 0.0F);
+        this.tail5 = new ModelRenderer(this, 0, 48);
+        this.tail5.setRotationPoint(-1.0F, 19.0F, 6.5F);
+        this.tail5.addBox(0.0F, 0.0F, 0.0F, 2, 2, 3, 0.0F);
+        this.setRotateAngle(tail5, -2.416609525680542F, -0.0F, 0.0F);
+        this.leftWingBase = new ModelRenderer(this, 31, 0);
+        this.leftWingBase.setRotationPoint(3.0F, 12.0F, -5.0F);
+        this.leftWingBase.addBox(0.0F, 0.0F, 0.0F, 9, 0, 6, 0.0F);
+        this.setRotateAngle(leftWingBase, 0.37179118394851673F, -0.4461433291435241F, 0.0F);
+        this.tail1 = new ModelRenderer(this, 0, 16);
+        this.tail1.setRotationPoint(-2.5F, 9.0F, 2.0F);
+        this.tail1.addBox(0.0F, 0.0F, 0.0F, 5, 4, 5, 0.0F);
+        this.setRotateAngle(tail1, -0.40896472334861755F, -0.0F, 0.0F);
+        this.tail2 = new ModelRenderer(this, 0, 26);
+        this.tail2.setRotationPoint(-2.0F, 11.0F, 6.0F);
+        this.tail2.addBox(0.0F, 0.0F, 0.0F, 4, 3, 4, 0.0F);
+        this.setRotateAngle(tail2, -1.1153583526611328F, -0.0F, 0.0F);
+        this.leftWingBase_1 = new ModelRenderer(this, 0, 54);
+        this.leftWingBase_1.setRotationPoint(3.0F, 10.0F, -1.0F);
+        this.leftWingBase_1.addBox(0.0F, 0.0F, 0.0F, 8, 1, 2, 0.0F);
+        this.setRotateAngle(leftWingBase_1, 0.37179118394851673F, -0.4461433291435241F, 0.0F);
+        this.chomper4 = new ModelRenderer(this, 31, 7);
+        this.chomper4.setRotationPoint(-1.600000023841858F, 14.800000190734863F, -8.466666221618652F);
+        this.chomper4.addBox(-1.0F, 0.0F, 0.0F, 1, 1, 3, 0.0F);
+        this.setRotateAngle(chomper4, 0.279252678155899F, 0.13962633907794952F, 0.0F);
+        this.tail3 = new ModelRenderer(this, 0, 34);
+        this.tail3.setRotationPoint(-1.5F, 14.0F, 7.0F);
+        this.tail3.addBox(0.0F, 0.0F, 0.0F, 3, 3, 3, 0.0F);
+        this.setRotateAngle(tail3, -1.4127871990203857F, -0.0F, 0.0F);
+        this.rightWingBase = new ModelRenderer(this, 31, 0);
+        this.rightWingBase.setRotationPoint(-11.0F, 12.300000190734863F, -2.0F);
+        this.rightWingBase.addBox(0.0F, 0.0F, 0.0F, 9, 0, 6, 0.0F);
+        this.setRotateAngle(rightWingBase, 0.37179118394851673F, 0.4788811802864074F, 0.0F);
+        this.chomper2 = new ModelRenderer(this, 31, 7);
+        this.chomper2.setRotationPoint(-1.4666666984558105F, 11.366666793823242F, -8.866666793823242F);
+        this.chomper2.addBox(-1.0F, -1.0F, 0.0F, 1, 1, 3, 0.0F);
+        this.setRotateAngle(chomper2, -0.13962633907794952F, 0.13962633907794952F, 0.0F);
+        this.Mouth = new ModelRenderer(this, 11, 48);
+        this.Mouth.setRotationPoint(-2.0F, 11.0F, -7.733333110809326F);
+        this.Mouth.addBox(0.0F, 0.0F, 0.0F, 4, 4, 1, 0.0F);
+        this.setRotateAngle(Mouth, 0.14835298061370847F, -0.0F, 0.0F);
+        this.chomper5 = new ModelRenderer(this, 31, 7);
+        this.chomper5.setRotationPoint(0.0F, 10.933333396911621F, -9.333333015441895F);
+        this.chomper5.addBox(-0.5F, 0.0F, 0.0F, 1, 1, 3, 0.0F);
+        this.setRotateAngle(chomper5, -0.13962633907794952F, -0.0F, 0.0F);
+        this.leftWingExt = new ModelRenderer(this, 0, 58);
+        this.leftWingExt.setRotationPoint(9.199999809265137F, 10.0F, 2.0999999046325684F);
+        this.leftWingExt.addBox(0.0F, 0.0F, 0.0F, 7, 1, 1, 0.0F);
+        this.setRotateAngle(leftWingExt, 0.6419446023504676F, 0.9771990110331723F, 0.7338341021673389F);
+        this.chomper8 = new ModelRenderer(this, 31, 7);
+        this.chomper8.setRotationPoint(2.200000047683716F, 13.266666412353516F, -9.466666221618652F);
+        this.chomper8.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 3, 0.0F);
+        this.setRotateAngle(chomper8, 0.13962633907794952F, -0.13962633907794952F, 0.0F);
+        this.rightWingBase_1 = new ModelRenderer(this, 0, 54);
+        this.rightWingBase_1.setRotationPoint(-10.0F, 10.0F, 2.2666666507720947F);
+        this.rightWingBase_1.addBox(0.0F, 0.0F, 0.0F, 8, 1, 2, 0.0F);
+        this.setRotateAngle(rightWingBase_1, 0.37179118394851673F, 0.4788811802864074F, 0.0F);
+        this.chomper3 = new ModelRenderer(this, 31, 7);
+        this.chomper3.setRotationPoint(1.5333333015441895F, 14.800000190734863F, -8.466666221618652F);
+        this.chomper3.addBox(0.0F, 0.0F, 0.0F, 1, 1, 3, 0.0F);
+        this.setRotateAngle(chomper3, 0.279252678155899F, -0.13962633907794952F, 0.0F);
+        this.chomper6 = new ModelRenderer(this, 31, 7);
+        this.chomper6.setRotationPoint(0.0F, 15.466666221618652F, -9.133333206176758F);
+        this.chomper6.addBox(-0.5F, -1.0F, 0.0F, 1, 1, 3, 0.0F);
+        this.setRotateAngle(chomper6, 0.27925267815589905F, -0.0F, 0.0F);
+        this.chomper7 = new ModelRenderer(this, 31, 7);
+        this.chomper7.setRotationPoint(-2.200000047683716F, 13.333333015441895F, -9.399999618530273F);
+        this.chomper7.addBox(0.0F, -0.5F, 0.0F, 1, 1, 3, 0.0F);
+        this.setRotateAngle(chomper7, 0.13962633907794952F, 0.13962633907794952F, 0.0F);
+        this.rightWingExt = new ModelRenderer(this, 0, 58);
+        this.rightWingExt.setRotationPoint(-10.0F, 10.0F, 2.0999999046325684F);
+        this.rightWingExt.addBox(0.0F, 0.0F, 0.0F, 7, 1, 1, 0.0F);
+        this.setRotateAngle(rightWingExt, 2.4996401628233897F, 0.9772039035680417F, 2.4077520124362692F);
+        this.tail4 = new ModelRenderer(this, 0, 41);
+        this.tail4.setRotationPoint(-1.5F, 17.0F, 7.5F);
+        this.tail4.addBox(0.0F, 0.0F, 0.0F, 3, 3, 3, 0.0F);
+        this.setRotateAngle(tail4, -2.0820021629333496F, -0.0F, 0.0F);
+    }
+
+    @Override
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+        this.base.render(f5);
+        this.chomper1.render(f5);
+        this.tail5.render(f5);
+        this.leftWingBase.render(f5);
+        this.tail1.render(f5);
+        this.tail2.render(f5);
+        this.leftWingBase_1.render(f5);
+        this.chomper4.render(f5);
+        this.tail3.render(f5);
+        this.rightWingBase.render(f5);
+        this.chomper2.render(f5);
+        this.Mouth.render(f5);
+        this.chomper5.render(f5);
+        this.leftWingExt.render(f5);
+        this.chomper8.render(f5);
+        this.rightWingBase_1.render(f5);
+        this.chomper3.render(f5);
+        this.chomper6.render(f5);
+        this.chomper7.render(f5);
+        this.rightWingExt.render(f5);
+        this.tail4.render(f5);
+    }
+
+    /**
+     * This is a helper function from Tabula to set the rotation of model parts
+     */
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
+    }
 }
