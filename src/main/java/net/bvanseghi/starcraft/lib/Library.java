@@ -29,10 +29,8 @@ public class Library {
 		for(byte xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
 			//Don't place block at anchor
 			if(xOffsets[xOffsetIndex] != 0 || zOffsets[zOffsetIndex] != 0) {
-				System.out.println("Placing block at (" + xOffsets[xOffsetIndex] + ", " + yOffsets[yOffsetIndex] + ", " + zOffsets[zOffsetIndex] + ") in relative grid");
 				world.setBlock(x + xOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + zOffsets[zOffsetIndex], block);
 			} else if(yOffsets[yOffsetIndex] != 0) {
-				System.out.println("Placing block at (" + xOffsets[xOffsetIndex] + ", " + yOffsets[yOffsetIndex] + ", " + zOffsets[zOffsetIndex] + ") in relative grid");
 				world.setBlock(x + xOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + zOffsets[zOffsetIndex], block);
 			}
 			
