@@ -123,9 +123,9 @@ tile.dimPortalChar.name=Char Portal
 tile.dimPortalOverworld.name=Overworld Portal
 tile.dimPortalShakuras.name=Shakuras Portal
 
-tile.protossWarpProjectorC.name=Warp Projector (Char)
-tile.protossWarpProjectorO.name=Warp Projector (Overworld)
-tile.protossWarpProjectorS.name=Warp Projector (Shakuras)
+tile.warpProjectorC.name=Warp Projector (Char)
+tile.warpProjectorO.name=Warp Projector (Overworld)
+tile.warpProjectorS.name=Warp Projector (Shakuras)
 
 item.Starcraft_psiBlade.name=Psi Blade
 item.Starcraft_darkPsiBlade.name=Psi Blade (Dark)

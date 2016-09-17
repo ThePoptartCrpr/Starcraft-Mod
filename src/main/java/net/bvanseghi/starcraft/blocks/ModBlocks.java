@@ -203,9 +203,9 @@ public class ModBlocks extends Block {
 		warpGateWormholeOverworld = new BlockWarpGateWormholeOverworld(Material.ground);
 		warpGateWormholeShakuras = new BlockWarpGateWormholeShakuras(Material.ground);
 		
-		protossWarpProjectorC = new BlockProtossWarpProjectorC();
-		protossWarpProjectorO = new BlockProtossWarpProjectorO();
-		protossWarpProjectorS = new BlockProtossWarpProjectorS();
+		protossWarpProjectorC = new BlockProtossWarpProjectorC("warpProjectorC");
+		protossWarpProjectorO = new BlockProtossWarpProjectorO("warpProjectorO");
+		protossWarpProjectorS = new BlockProtossWarpProjectorS("warpProjectorS");
 
 		mineralField = new BlockMineralField(Material.ground);
 		richMineralField = new BlockRichMineralField(Material.ground);
@@ -291,9 +291,9 @@ public class ModBlocks extends Block {
 		GameRegistry.registerBlock(warpGateWormholeShakuras, BlockWarpGateWormholeShakuras.name)
 			.setBlockName("warpGateWormholeShakuras");
 		
-		GameRegistry.registerBlock(protossWarpProjectorC, BlockProtossWarpProjectorC.name);
-		GameRegistry.registerBlock(protossWarpProjectorO, BlockProtossWarpProjectorO.name);
-		GameRegistry.registerBlock(protossWarpProjectorS, BlockProtossWarpProjectorS.name);
+		GameRegistry.registerBlock(protossWarpProjectorC, "warpProjectorC");
+		GameRegistry.registerBlock(protossWarpProjectorO, "warpProjectorO");
+		GameRegistry.registerBlock(protossWarpProjectorS, "warpProjectorS");
 
 		GameRegistry.registerBlock(mineralField, BlockMineralField.name).setBlockName("mineralField");
 		GameRegistry.registerBlock(richMineralField, BlockRichMineralField.name).setBlockName("richMineralField");

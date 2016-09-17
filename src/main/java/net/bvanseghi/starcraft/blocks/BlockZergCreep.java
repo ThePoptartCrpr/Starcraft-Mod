@@ -9,6 +9,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -38,19 +39,33 @@ public class BlockZergCreep extends ModBlocks {
 	}
 
 	public void updateTick(World par1, int par2, int par3, int par4, Random par5) {
+		int mult = 1;
+		int base = StarcraftConfig.creepSpreadBaseVal;
+		
 		if (StarcraftConfig.creepCanSpread == true) {
+			if(StarcraftConfig.creepSpreadScalesWithDif = true) {
+				if(par1.difficultySetting == EnumDifficulty.PEACEFUL) {
+					mult = 1;
+				}else if(par1.difficultySetting == EnumDifficulty.EASY) {
+					mult = 4;
+				}else if(par1.difficultySetting == EnumDifficulty.NORMAL) {
+					mult = 8;
+				}else if(par1.difficultySetting == EnumDifficulty.HARD) {
+					mult = 16;
+				}else if(par1.getWorldInfo().isHardcoreModeEnabled()) {
+					mult = 32;
+				}
+			}
 			if (!par1.isRemote) {
 				if (par1.getBlockLightValue(par2, par3 + 1, par4) >= 0) {
-					for (int l = 0; l < 4; ++l) {
+					//l controls the speed of the creep growth. DEFAULT: 4
+					for (int l = 0; l < base*mult; ++l) {
 						int i1 = par2 + par5.nextInt(3) - 1;
 						int j1 = par3 + par5.nextInt(5) - 3;
 						int k1 = par4 + par5.nextInt(3) - 1;
 						Block block = par1.getBlock(i1, j1 + 1, k1);
-
 						if (par1.getBlock(i1, j1, k1) == Blocks.grass) {
-
 							par1.setBlock(i1, j1+1, k1, ModBlocks.zergCreep);
-
 						}
 					}
 				}

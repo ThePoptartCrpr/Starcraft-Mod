@@ -7,7 +7,6 @@ public class EntityProtossMob extends EntityMob {
 
 	public EntityProtossMob(World p_i1738_1_) {
 		super(p_i1738_1_);
-		// TODO Auto-generated constructor stub
 	}
 
 }

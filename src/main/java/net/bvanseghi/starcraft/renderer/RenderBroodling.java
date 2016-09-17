@@ -1,5 +1,7 @@
 package net.bvanseghi.starcraft.renderer;
 
+import org.lwjgl.opengl.GL11;
+
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.model.ModelBroodling;
@@ -7,6 +9,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBroodling extends RenderLiving {
@@ -40,4 +43,7 @@ public class RenderBroodling extends RenderLiving {
 		return texture;
 	}
 
+	 protected void preRenderCallback(EntityLivingBase entity, float f){
+	    	GL11.glRotatef(28F, 0F, 1F, 0F);
+	    }
 }

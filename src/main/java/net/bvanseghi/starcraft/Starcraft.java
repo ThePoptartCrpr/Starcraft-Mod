@@ -15,6 +15,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.internal.EntitySpawnHandler;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.bvanseghi.starcraft.GUI.GUI;
@@ -25,6 +26,7 @@ import net.bvanseghi.starcraft.entity.ModEntities;
 import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.handlers.BucketHandler;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
+import net.bvanseghi.starcraft.handlers.VanillaEntityHandler;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.SCWorldSettings;
 import net.bvanseghi.starcraft.lib.REFERENCE;
@@ -90,6 +92,8 @@ public class Starcraft {
 		ModRecipes.init();
 		ModEntities.init();
 		Achievements.init();
+		
+		MinecraftForge.EVENT_BUS.register(new VanillaEntityHandler());
 
 	}
 

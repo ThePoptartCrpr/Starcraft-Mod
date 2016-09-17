@@ -44,7 +44,8 @@ public class RenderZealot extends RenderLiving {
 	}
 	   
      protected void preRenderCallback(EntityLivingBase entity, float f){
-    	GL11.glScalef(0.75F, 0.75F, 0.75F);
+    	GL11.glScalef(0.70F, 0.70F, 0.70F);
+    	GL11.glRotatef(25F, 0F, 1F, 0F);
     }
 
    

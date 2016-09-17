@@ -1,10 +1,13 @@
 package net.bvanseghi.starcraft.lib;
 
 import net.minecraft.block.Block;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 public class Library {
 	
+	int creepGrowthMult;
+	public static World world;
 	/**
 	 * Makes a cube out of {@code block}.
 	 * Anchor: bottom-middle
@@ -29,10 +32,10 @@ public class Library {
 		for(byte xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
 			//Don't place block at anchor
 			if(xOffsets[xOffsetIndex] != 0 || zOffsets[zOffsetIndex] != 0) {
-				System.out.println("Placing block at (" + xOffsets[xOffsetIndex] + ", " + yOffsets[yOffsetIndex] + ", " + zOffsets[zOffsetIndex] + ") in relative grid");
+				//System.out.println("Placing block at (" + xOffsets[xOffsetIndex] + ", " + yOffsets[yOffsetIndex] + ", " + zOffsets[zOffsetIndex] + ") in relative grid");
 				world.setBlock(x + xOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + zOffsets[zOffsetIndex], block);
 			} else if(yOffsets[yOffsetIndex] != 0) {
-				System.out.println("Placing block at (" + xOffsets[xOffsetIndex] + ", " + yOffsets[yOffsetIndex] + ", " + zOffsets[zOffsetIndex] + ") in relative grid");
+				//System.out.println("Placing block at (" + xOffsets[xOffsetIndex] + ", " + yOffsets[yOffsetIndex] + ", " + zOffsets[zOffsetIndex] + ") in relative grid");
 				world.setBlock(x + xOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + zOffsets[zOffsetIndex], block);
 			}
 			

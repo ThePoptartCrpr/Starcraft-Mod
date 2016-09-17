@@ -37,6 +37,10 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
+	/**
+	 * Will be added in a future update once new A.I is written. DO NOT TOUCH.
+	 */
+	
 	
 	public static void RegisterScourge(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
@@ -83,7 +87,7 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
-	public static void RegisterArmoredZealot(Class entityClass, String name, int mainColor, int subColor) {
+	public static void RegisterZealot(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 		long x = name.hashCode();
