@@ -1,5 +1,6 @@
 package net.bvanseghi.starcraft;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.items.ModItems;
@@ -7,13 +8,29 @@ import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModRecipes {
 
 	public static void init() {
+		//Iron Dust from Iron Ingot
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 1), new Object[] {Items.iron_ingot});
+		
+		//Iron Ingot from Iron Dust
+		GameRegistry.addSmelting(new ItemStack(ModItems.dust, 1, 1), new ItemStack(Items.iron_ingot), 0);
+		
+		//Carbon Dust from Coal
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 2), new Object[] {Items.coal});
+		
+		//Coal from Carbon Dust
+		GameRegistry.addRecipe(new ItemStack(Items.coal), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.dust, 1, 2)});
+		
+		//Steel Dust from Carbon and Iron Dusts
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 2)});
+		
+		//Steel Ingot from Steel Dust
+		GameRegistry.addSmelting(new ItemStack(ModItems.dust, 1, 0), new ItemStack(ModItems.ingot, 1, 4), 0);
+		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.protossMetal, 1, 0),
 				new Object[] { "AAA", "AAA", "AAA", 'A', new ItemStack(ModItems.ingot, 0, 1) });
 

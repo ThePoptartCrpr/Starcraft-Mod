@@ -3,17 +3,18 @@ package net.bvanseghi.starcraft.entity.monster;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityClientPlayerMP;
+import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIMoveTowardsTarget;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
@@ -31,8 +32,10 @@ public class EntityScourgeMob extends EntityFlying implements IMob {
     private int aggroCooldown;
     public int prevAttackCounter;
     public int attackCounter;
-    /** The explosion radius of spawned fireballs. */
-    private int explosionStrength = 1;
+    /** the player */
+    private EntityClientPlayerMP player = Minecraft.getMinecraft().thePlayer;
+    /** the world */
+    private WorldClient world = Minecraft.getMinecraft().theWorld;
     private static final String __OBFID = "CL_00001689";
 
     public EntityScourgeMob(World p_i1735_1_)
@@ -41,7 +44,6 @@ public class EntityScourgeMob extends EntityFlying implements IMob {
         setSize(4.0F, 4.0F);
         isImmuneToFire = true;
         experienceValue = 5;
-        tasks.addTask(0, new EntityAIMoveTowardsTarget(new EntityCreature(Minecraft.getMinecraft().theWorld) {}, 3, 10));
     }
 
     @SideOnly(Side.CLIENT)
@@ -150,14 +152,8 @@ public class EntityScourgeMob extends EntityFlying implements IMob {
                 if (this.attackCounter == 20)
                 {
                     this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1008, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
-                    EntityLargeFireball entitylargefireball = new EntityLargeFireball(this.worldObj, this, d5, d6, d7);
-                    entitylargefireball.field_92057_e = this.explosionStrength;
                     double d8 = 4.0D;
                     Vec3 vec3 = this.getLook(1.0F);
-                    entitylargefireball.posX = this.posX + vec3.xCoord * d8;
-                    entitylargefireball.posY = this.posY + (double)(this.height / 2.0F) + 0.5D;
-                    entitylargefireball.posZ = this.posZ + vec3.zCoord * d8;
-                    this.worldObj.spawnEntityInWorld(entitylargefireball);
                     this.attackCounter = -40;
                 }
             }
@@ -189,7 +185,7 @@ public class EntityScourgeMob extends EntityFlying implements IMob {
     }
 
     /**
-     * True if the ghast has an unobstructed line of travel to the waypoint.
+     * True if the Scourge has an unobstructed line of travel to the waypoint.
      */
     private boolean isCourseTraversable(double p_70790_1_, double p_70790_3_, double p_70790_5_, double p_70790_7_)
     {
@@ -277,26 +273,23 @@ public class EntityScourgeMob extends EntityFlying implements IMob {
     {
         return 1;
     }
-
-    /**
-     * (abstract) Protected helper method to write subclass entity data to NBT.
-     */
-    public void writeEntityToNBT(NBTTagCompound p_70014_1_)
-    {
-        super.writeEntityToNBT(p_70014_1_);
-        p_70014_1_.setInteger("ExplosionPower", this.explosionStrength);
-    }
-
-    /**
-     * (abstract) Protected helper method to read subclass entity data from NBT.
-     */
-    public void readEntityFromNBT(NBTTagCompound p_70037_1_)
-    {
-        super.readEntityFromNBT(p_70037_1_);
-
-        if (p_70037_1_.hasKey("ExplosionPower", 99))
-        {
-            this.explosionStrength = p_70037_1_.getInteger("ExplosionPower");
-        }
+    
+    public void onUpdate() {
+    	super.onUpdate();
+    	
+    	if((targetedEntity instanceof EntityPlayer) && (getDistanceSqToEntity(player) <= 100)) {
+    		if(getDistanceSqToEntity(player) <= 100) {
+    			if(getDistanceSqToEntity(player) <= 0.01) {
+    				world.createExplosion(this, posX, posY, posZ, 1, true);
+    				this.setDead();
+    				return;
+    			}
+    			
+    			waypointX = player.posX;
+    			waypointY = player.posY;
+    			waypointZ = player.posZ;
+    			addPotionEffect(new PotionEffect(1, 2));;
+    		}
+    	}
     }
 }

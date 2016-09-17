@@ -33,6 +33,7 @@ public class ModItems extends Item {
 	public static Item c14Parts;
 
 	public static Item ingot;
+	public static Item dust;
 	public static Item coord;
 
 	public static Item C14GaussRifle;
@@ -70,6 +71,10 @@ public class ModItems extends Item {
 		
 		for(int i = 0; i < ItemIngot.names.length; i++){
 			ingot = new ItemIngot().setUnlocalizedName("ingot");
+		}
+		
+		for(int i = 0; i < ItemDust.metaNames.length; i++) {
+			dust = new ItemDust().setUnlocalizedName("dust");
 		}
 		
 		for(int i = 0; i < ItemProtossCoordinates.names.length; i++){
@@ -115,6 +120,7 @@ public class ModItems extends Item {
 		GameRegistry.registerItem(coord, REFERENCE.MODID + (coord.getUnlocalizedName().substring(5)));
 		
 		GameRegistry.registerItem(ingot, REFERENCE.MODID + (ingot.getUnlocalizedName().substring(5)));
+		GameRegistry.registerItem(dust, REFERENCE.MODID + (dust.getUnlocalizedName().substring(5)));
 		GameRegistry.registerItem(essence, REFERENCE.MODID + (essence.getUnlocalizedName().substring(5)));
 		GameRegistry.registerItem(c14Parts, REFERENCE.MODID + (c14Parts.getUnlocalizedName().substring(5)));
 		GameRegistry.registerItem(vespene, REFERENCE.MODID + (vespene.getUnlocalizedName().substring(5)));

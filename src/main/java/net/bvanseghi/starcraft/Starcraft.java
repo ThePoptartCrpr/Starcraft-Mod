@@ -1,24 +1,14 @@
 package net.bvanseghi.starcraft;
 
-import java.io.File;
-
-import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.internal.EntitySpawnHandler;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import net.bvanseghi.starcraft.GUI.GUI;
 import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
@@ -28,7 +18,6 @@ import net.bvanseghi.starcraft.handlers.BucketHandler;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
 import net.bvanseghi.starcraft.handlers.VanillaEntityHandler;
 import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.SCWorldSettings;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.material.ModMaterials;
@@ -38,25 +27,15 @@ import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.bvanseghi.starcraft.worldgen.SCWorldGen;
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldSettings;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.client.ClientCommandHandler;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
 
 @Mod(modid = REFERENCE.MODID, name = REFERENCE.NAME, version = REFERENCE.VERSION)
 public class Starcraft {
 	
 	@Instance(REFERENCE.MODID)
 	public static Starcraft instance;
-	public static World world;
 
 	@SidedProxy(clientSide = "net.bvanseghi.starcraft.proxy.ClientProxy", serverSide = "net.bvanseghi.starcraft.proxy.CommonProxy")
 	public static CommonProxy starcraftProxy;
@@ -121,7 +100,9 @@ public class Starcraft {
 		OreDictionary.registerOre("ingotCopper", new ItemStack(ModItems.ingot, 1, 0));
 		OreDictionary.registerOre("ingotTitanium", new ItemStack(ModItems.ingot, 1, 3));
 		OreDictionary.registerOre("ingotSteel", new ItemStack(ModItems.ingot, 1, 4));
-		
+		OreDictionary.registerOre("dustSteel", new ItemStack(ModItems.dust, 1, 0));
+		OreDictionary.registerOre("dustIron", new ItemStack(ModItems.dust, 1, 1));
+		OreDictionary.registerOre("dustCarbon", new ItemStack(ModItems.dust, 1, 2));
 	}
 	
 	public static void addOreRecipes(){
