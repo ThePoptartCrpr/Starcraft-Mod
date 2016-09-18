@@ -66,13 +66,13 @@ public class EntityCivilian extends EntityTerranPassive{
         this.tasks.addTask(17, new EntityAIAvoidEntity(this, EntityProtossMob.class, 8.0F, 0.4D, 0.4D));
         
         
-        this.tasks.addTask(14, new EntityAIMoveIndoors(this));
-        this.tasks.addTask(15, new EntityAIRestrictOpenDoor(this));
-        this.tasks.addTask(16, new EntityAIOpenDoor(this, true));
-        this.tasks.addTask(17, new EntityAIMoveTowardsRestriction(this, 0.4D));
-        this.tasks.addTask(18, new EntityAIWatchClosest2(this, EntityPlayer.class, 3.0F, 1.0F));
-        this.tasks.addTask(19, new EntityAIWatchClosest2(this, EntityVillager.class, 5.0F, 0.02F));
-        this.tasks.addTask(20, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
+        this.tasks.addTask(18, new EntityAIMoveIndoors(this));
+        this.tasks.addTask(19, new EntityAIRestrictOpenDoor(this));
+        this.tasks.addTask(20, new EntityAIOpenDoor(this, true));
+        this.tasks.addTask(21, new EntityAIMoveTowardsRestriction(this, 0.4D));
+        this.tasks.addTask(22, new EntityAIWatchClosest2(this, EntityPlayer.class, 3.0F, 1.0F));
+        this.tasks.addTask(23, new EntityAIWatchClosest2(this, EntityVillager.class, 5.0F, 0.02F));
+        this.tasks.addTask(24, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
 	}
 	
 	 public boolean isAIEnabled()
@@ -98,6 +98,11 @@ public class EntityCivilian extends EntityTerranPassive{
 		return null;
 	}
 
+	protected boolean canDespawn()
+    {
+        return false;
+    }
+	
 	@Override
 	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
 		// TODO Auto-generated method stub

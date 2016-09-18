@@ -6,6 +6,8 @@ import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
+import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -19,6 +21,8 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
@@ -56,8 +60,8 @@ public class EntityZealot extends EntityProtossMob {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(150.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(8.0D);
 	}
 	
 	protected void clearAITasks()
@@ -76,9 +80,19 @@ public class EntityZealot extends EntityProtossMob {
         return 160;
     }
 	
-	protected void dropFewItems(boolean par1, int par2) {
-
-	}
+    /**
+     * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
+     * par2 - Level of Looting used to kill this mob.
+     */
+    protected void dropFewItems(boolean p_70628_1_, int p_70628_2_)
+    {
+        int j = this.rand.nextInt(50);
+        if(j == 50) {
+            this.dropItem(ModWeapons.psiBlade, 1);
+        }else if(j < 5) {
+        	this.dropItem(ModItems.energy, 1);
+        }
+    }
 	
 	@Override
 	public void onUpdate()

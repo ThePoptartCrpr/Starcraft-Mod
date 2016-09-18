@@ -6,13 +6,13 @@ import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
+import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -70,4 +70,17 @@ public class BlockZergStructureFlesh extends Block {
 	public int damageDropped(int meta) {
 		return meta;
 	}
+	
+	public void onBlockDestroyedByPlayer(World p_149664_1_, int p_149664_2_, int p_149664_3_, int p_149664_4_, int p_149664_5_)
+    {
+        if (!p_149664_1_.isRemote)
+        {
+            EntityBroodling entitybroodling = new EntityBroodling(p_149664_1_);
+            entitybroodling.setLocationAndAngles((double)p_149664_2_ + 0.5D, (double)p_149664_3_, (double)p_149664_4_ + 0.5D, 0.0F, 0.0F);
+            p_149664_1_.spawnEntityInWorld(entitybroodling);
+            entitybroodling.spawnExplosionParticle();
+        }
+
+        super.onBlockDestroyedByPlayer(p_149664_1_, p_149664_2_, p_149664_3_, p_149664_4_, p_149664_5_);
+    }
 }

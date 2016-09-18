@@ -41,9 +41,11 @@ import net.bvanseghi.starcraft.oreshakuras.OreShakurasRichMineral;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasTitanium;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.world.IBlockAccess;
 
 public class ModBlocks extends Block {
 	 
+	public static Block voidBlock;
 	
 	public static Block oreCopperOW;
 	public static Block oreTitaniumOW;
@@ -159,6 +161,8 @@ public class ModBlocks extends Block {
 		
 		// Blocks are initialized here.
 		
+		voidBlock = new BlockVoidBlock();
+		
 		oreCopperOW = new OreOWCopper();
 		oreTitaniumOW = new OreOWTitanium();
 		
@@ -209,6 +213,7 @@ public class ModBlocks extends Block {
 
 		mineralField = new BlockMineralField(Material.ground);
 		richMineralField = new BlockRichMineralField(Material.ground);
+		
 
 		vespeneGeyser = new BlockVespeneGeyser(Material.ground);
 		richVespeneGeyser = new BlockRichVespeneGeyser(Material.ground);
@@ -243,6 +248,8 @@ public class ModBlocks extends Block {
 		
 
 		// Items are registered here.
+		
+		GameRegistry.registerBlock(voidBlock, BlockVoidBlock.name);
 		
 		GameRegistry.registerBlock(oreCopperOW, OreOWCopper.name);
 		GameRegistry.registerBlock(oreTitaniumOW, OreOWTitanium.name);

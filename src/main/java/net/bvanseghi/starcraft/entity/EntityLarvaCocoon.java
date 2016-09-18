@@ -30,6 +30,11 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(999999.0D);
 	}
+	
+	protected boolean canDespawn()
+    {
+        return false;
+    }
 
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
 		if (this.noClip) {

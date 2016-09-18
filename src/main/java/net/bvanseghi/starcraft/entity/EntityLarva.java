@@ -38,6 +38,11 @@ public class EntityLarva extends EntityZergPassive {
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.15D);
 	}
+	
+	protected boolean canDespawn()
+    {
+        return false;
+    }
 
 	protected void dropFewItems(boolean par1, int par2) {
 		int dropChanceCarapace = random.nextInt(9);

@@ -41,7 +41,7 @@ public class EntityHandler {
 	 * Will be added in a future update once new A.I is written. DO NOT TOUCH.
 	 */
 	
-	
+	/*
 	public static void RegisterScourge(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
@@ -55,7 +55,7 @@ public class EntityHandler {
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
-	
+	*/
 
 	// Peaceful Entities
 
@@ -95,7 +95,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the Zealot
 		EntityRegistry.registerGlobalEntityID(EntityZealot.class, name, entityId);
-		EntityRegistry.addSpawn(EntityZealot.class, 50, 2, 3, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityZealot.class, 30, 2, 3, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityZealot.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
@@ -107,9 +107,9 @@ public class EntityHandler {
 		long x = name.hashCode();
 		Random random = new Random(x);
 
-		// Unique spawn details for the larva
+		// Unique spawn details for the probe
 		EntityRegistry.registerGlobalEntityID(EntityDarkProbe.class, name, entityId);
-		EntityRegistry.addSpawn(EntityDarkProbe.class, 50, 2, 3, EnumCreatureType.creature, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityDarkProbe.class, 40, 2, 3, EnumCreatureType.creature, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityDarkProbe.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));

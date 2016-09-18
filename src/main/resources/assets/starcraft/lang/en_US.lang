@@ -30,12 +30,12 @@ tile.oreRichMineralS.name=Rich Mineral Ore (Shakuras)
 
 tile.oreTitaniumOW.name=Titanium Ore
 tile.oreTitaniumC.name=Titanium Ore (Char)
-tile.ore2TitaniumS.name=Titanium Ore (Shakuras)
+tile.oreTitaniumS.name=Titanium Ore (Shakuras)
 tile.compMetal.Titanium.name=Block of Titanium
 
 tile.oreCopperOW.name=Copper Ore
 tile.oreCopperC.name=Copper Ore (Char)
-tile.ore2CopperS.name=Copper Ore (Shakuras)
+tile.oreCopperS.name=Copper Ore (Shakuras)
 tile.compMetal.Copper.name=Block of Copper
 
 tile.compMetal.Steel.name=Block of Steel
@@ -96,7 +96,7 @@ tile.shakurasStone.name=Stone (Shakuras)
 tile.shakurasCobblestone.name=Cobblestone (Shakuras)
 
 tile.oreCoalS.name=Coal Ore (Shakuras)
-tile.ore2IronS.name=Iron Ore (Shakuras)
+tile.oreIronS.name=Iron Ore (Shakuras)
 tile.oreGoldS.name=Gold Ore (Shakuras)
 tile.oreDiamondS.name=Diamond Ore (Shakuras)
 tile.oreRedstoneS.name=Redstone Ore (Shakuras)

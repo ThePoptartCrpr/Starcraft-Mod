@@ -65,7 +65,29 @@ public class BlockZergCreep extends ModBlocks {
 						int k1 = par4 + par5.nextInt(3) - 1;
 						Block block = par1.getBlock(i1, j1 + 1, k1);
 						if (par1.getBlock(i1, j1, k1) == Blocks.grass) {
-							par1.setBlock(i1, j1+1, k1, ModBlocks.zergCreep);
+							par1.setBlock(i1, j1, k1, ModBlocks.zergCreep);
+						}else if(par1.getBlock(i1, j1, k1) == Blocks.log) {
+							if(par1.getBlockMetadata(par2, par3, par4) == 0) {
+								//for future update
+							}else if(par1.getBlockMetadata(i1, j1, k1) == 1) {
+								//for future update
+							}else if(par1.getBlockMetadata(i1, j1, k1) == 2) {
+								//for future update
+							}else if(par1.getBlockMetadata(i1, j1, k1) == 3) {
+								//for future update
+							}
+						}else if(par1.getBlock(i1, j1, k1) == Blocks.leaves) {
+							if(par1.getBlockMetadata(i1, j1, k1) == 0) {
+								//for future update
+							}else if(par1.getBlockMetadata(i1, j1, k1) == 1) {
+								
+							}else if(par1.getBlockMetadata(i1, j1, k1) == 2) {
+								//for future update
+							}else if(par1.getBlockMetadata(i1, j1, k1) == 3) {
+								//for future update
+							}
+						}else if(par1.getBlock(i1, j1, k1) == Blocks.farmland || par1.getBlock(i1, j1, k1) == Blocks.dirt) {
+							//for future update
 						}
 					}
 				}

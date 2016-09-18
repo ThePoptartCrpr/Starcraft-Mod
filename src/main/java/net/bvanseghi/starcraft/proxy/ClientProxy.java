@@ -14,7 +14,6 @@ import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.bvanseghi.starcraft.entity.EntityScourge;
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.model.ModelZealot;
 import net.bvanseghi.starcraft.model.ModelBroodling;
 import net.bvanseghi.starcraft.model.ModelCivilian;
 import net.bvanseghi.starcraft.model.ModelDarkProbe;
@@ -23,6 +22,7 @@ import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
 import net.bvanseghi.starcraft.model.ModelOverlord;
 import net.bvanseghi.starcraft.model.ModelProbe;
 import net.bvanseghi.starcraft.model.ModelScourge;
+import net.bvanseghi.starcraft.model.ModelZealot;
 import net.bvanseghi.starcraft.renderer.ItemRenderC14GaussRifle;
 import net.bvanseghi.starcraft.renderer.ItemRenderMineralField;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichMineralField;
@@ -30,7 +30,6 @@ import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyserChar;
 import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyserChar;
-import net.bvanseghi.starcraft.renderer.RenderZealot;
 import net.bvanseghi.starcraft.renderer.RenderBroodling;
 import net.bvanseghi.starcraft.renderer.RenderC14GaussRifleBullet;
 import net.bvanseghi.starcraft.renderer.RenderCivilian;
@@ -47,6 +46,7 @@ import net.bvanseghi.starcraft.renderer.RenderScourge;
 import net.bvanseghi.starcraft.renderer.RenderVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.RenderVespeneGeyserChar;
 import net.bvanseghi.starcraft.renderer.RenderWarpGateWormholeChar;
+import net.bvanseghi.starcraft.renderer.RenderZealot;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockMineralField;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichMineralField;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichVespeneGeyser;
@@ -64,7 +64,7 @@ public class ClientProxy extends CommonProxy {
 	public void registerRenderObjects() {
 
 		// Blocks
-
+		
 		TileEntitySpecialRenderer renderMineralField = new RenderMineralField();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlockMineralField.class, renderMineralField);
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModBlocks.mineralField),
