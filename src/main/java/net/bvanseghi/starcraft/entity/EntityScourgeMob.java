@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.entity.monster;
+package net.bvanseghi.starcraft.entity;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -22,6 +22,9 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
+/**
+ * Maybe don't use this...
+ */
 public class EntityScourgeMob extends EntityFlying implements IMob {
 	public int courseChangeCooldown;
     public double waypointX;
