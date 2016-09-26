@@ -15,18 +15,19 @@ public class ItemDust extends Item {
 	@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 	
+	//TODO: set localized names to dust/grain/grain respectively
 	public static final String[] metaNames = {"Steel", "Iron", "Carbon"};
 	
 	public ItemDust() {
 		setHasSubtypes(true);
-		// setCreativeTab(CreativeTab.TabStarcraftMaterials);
+//		setCreativeTab(CreativeTab.TabStarcraftMaterials);
 	}
 	
 	public void registerIcons(IIconRegister iconReg) {
 		icons = new IIcon[metaNames.length];
 		
 		for(int i = 0; i < icons.length; i++) {
-			icons[i] = iconReg.registerIcon(REFERENCE.MODID + ":" + "ingot" + metaNames[i]);
+			icons[i] = iconReg.registerIcon(REFERENCE.MODID + ":" + "dust" + metaNames[i]);
 		}
 	}
 	
@@ -53,7 +54,7 @@ public class ItemDust extends Item {
 	}
 	
 	//Why?!
-	public int getMetadata(int meta) {
-		return meta;
-	}
+//	public int getMetadata(int meta) {
+//		return meta;
+//	}
 }

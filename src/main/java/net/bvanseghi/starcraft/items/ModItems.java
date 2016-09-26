@@ -1,7 +1,5 @@
 package net.bvanseghi.starcraft.items;
 
-//import com.mojang.authlib.GameProfile;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
