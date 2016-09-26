@@ -4,13 +4,10 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.blocks.BlockAsh;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenAshPlains extends BiomesSC {
 
@@ -43,7 +40,7 @@ public class BiomeGenAshPlains extends BiomesSC {
 
 	public final void genBiomeTerrainChar(World world, Random rand, Block[] blockArray, byte[] par1, int par2, int par3,
 			double par4) {
-		boolean flag = true;
+//		boolean flag = true;
 		Block block = this.topBlock;
 		byte b0 = (byte) (this.field_150604_aj & 255);
 		Block block1 = this.fillerBlock;

@@ -16,8 +16,8 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureStart;
-import net.minecraftforge.common.BiomeManager;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class MapGenXelnagaTemple extends MapGenStructure
 {
     public final List list;
@@ -26,7 +26,9 @@ public class MapGenXelnagaTemple extends MapGenStructure
     private ChunkCoordIntPair[] structureCoords;
     private double field_82671_h;
     private int field_82672_i;
-    private static final String __OBFID = "CL_00000481";
+    
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00000481";
 
     public MapGenXelnagaTemple()
     {
@@ -170,30 +172,29 @@ public class MapGenXelnagaTemple extends MapGenStructure
         return start;
     }
 
-    public static class Start extends StructureStart
-        {
-            private static final String __OBFID = "CL_00000482";
+    public static class Start extends StructureStart {
+    	
+    	@SuppressWarnings("unused")
+    	private static final String __OBFID = "CL_00000482";
 
-            public Start() {}
+        public Start() {}
 
-            public Start(World p_i2067_1_, Random p_i2067_2_, int p_i2067_3_, int p_i2067_4_)
-            {
-                super(p_i2067_3_, p_i2067_4_);
-                StructureXelnagaTemplePieces.prepareStructurePieces();
-                StructureXelnagaTemplePieces.Stairs2 stairs2 = new StructureXelnagaTemplePieces.Stairs2(0, p_i2067_2_, (p_i2067_3_ << 4) + 2, (p_i2067_4_ << 4) + 2);
-                this.components.add(stairs2);
-                stairs2.buildComponent(stairs2, this.components, p_i2067_2_);
-                List list = stairs2.field_75026_c;
+        public Start(World p_i2067_1_, Random p_i2067_2_, int p_i2067_3_, int p_i2067_4_) {
+            super(p_i2067_3_, p_i2067_4_);
+            StructureXelnagaTemplePieces.prepareStructurePieces();
+            StructureXelnagaTemplePieces.Stairs2 stairs2 = new StructureXelnagaTemplePieces.Stairs2(0, p_i2067_2_, (p_i2067_3_ << 4) + 2, (p_i2067_4_ << 4) + 2);
+            this.components.add(stairs2);
+            stairs2.buildComponent(stairs2, this.components, p_i2067_2_);
+            List list = stairs2.field_75026_c;
 
-                while (!list.isEmpty())
-                {
-                    int k = p_i2067_2_.nextInt(list.size());
-                    StructureComponent structurecomponent = (StructureComponent)list.remove(k);
-                    structurecomponent.buildComponent(stairs2, this.components, p_i2067_2_);
-                }
-
-                this.updateBoundingBox();
-                this.markAvailableHeight(p_i2067_1_, p_i2067_2_, 10);
+            while (!list.isEmpty()) {
+                int k = p_i2067_2_.nextInt(list.size());
+                StructureComponent structurecomponent = (StructureComponent)list.remove(k);
+                structurecomponent.buildComponent(stairs2, this.components, p_i2067_2_);
             }
+
+            this.updateBoundingBox();
+            this.markAvailableHeight(p_i2067_1_, p_i2067_2_, 10);
         }
+    }
 }

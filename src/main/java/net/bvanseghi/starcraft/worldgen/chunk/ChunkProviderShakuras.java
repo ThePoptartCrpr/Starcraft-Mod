@@ -7,7 +7,6 @@ import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.Ev
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 
 import java.util.List;
 import java.util.Random;
@@ -73,6 +72,8 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 	double[] field_147425_f;
 	double[] field_147426_g;
 	int[][] field_73219_j = new int[32][32];
+	
+	@SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00000396";
 
 	{
@@ -246,6 +247,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 		return chunk;
 	}
 
+	@SuppressWarnings("unused")
 	private void func_147423_a(int par1, int par2, int par3) {
 		double d0 = 684.412D;
 		double d1 = 684.412D;
@@ -484,6 +486,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 	 * Returns a list of creatures of the specified type that can spawn at the
 	 * given location.
 	 */
+	@SuppressWarnings("rawtypes")
 	public List getPossibleCreatures(EnumCreatureType creatureType, int par1, int par2, int par3) {
 		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(par1, par3);
 		return creatureType == EnumCreatureType.monster

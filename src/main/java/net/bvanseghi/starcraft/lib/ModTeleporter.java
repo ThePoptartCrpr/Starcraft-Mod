@@ -1,20 +1,16 @@
 package net.bvanseghi.starcraft.lib;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
-import net.minecraft.block.Block;
+
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.ChunkCoordinates;
-import net.minecraft.util.Direction;
 import net.minecraft.util.LongHashMap;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
+@SuppressWarnings("unused")
 public class ModTeleporter extends Teleporter
 {
     private final WorldServer worldServerInstance;
@@ -26,7 +22,8 @@ public class ModTeleporter extends Teleporter
      * A list of valid keys for the destinationCoordainteCache. These are based on the X & Z of the players initial
      * location.
      */
-    private final List destinationCoordinateKeys = new ArrayList();
+    @SuppressWarnings("rawtypes")
+	private final List destinationCoordinateKeys = new ArrayList();
     private static final String __OBFID = "CL_00000153";
 
     public ModTeleporter(WorldServer p_i1963_1_)

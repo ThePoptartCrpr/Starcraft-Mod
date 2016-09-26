@@ -4,7 +4,6 @@ import java.util.List;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -45,6 +44,7 @@ public class ItemDust extends Item {
 		return (IIcon) icons[par1];
 	}
 	
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(Item item, CreativeTabs tab, List list) {
 		for(int i = 0; i < metaNames.length; i++) {

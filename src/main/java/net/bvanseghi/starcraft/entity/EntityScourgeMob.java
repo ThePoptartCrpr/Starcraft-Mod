@@ -10,10 +10,8 @@ import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
@@ -39,7 +37,9 @@ public class EntityScourgeMob extends EntityFlying implements IMob {
     private EntityClientPlayerMP player = Minecraft.getMinecraft().thePlayer;
     /** the world */
     private WorldClient world = Minecraft.getMinecraft().theWorld;
-    private static final String __OBFID = "CL_00001689";
+    
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00001689";
 
     public EntityScourgeMob(World p_i1735_1_)
     {
@@ -79,7 +79,8 @@ public class EntityScourgeMob extends EntityFlying implements IMob {
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0D);
     }
 
-    protected void updateEntityActionState()
+    @SuppressWarnings("unused")
+	protected void updateEntityActionState()
     {
         if (!this.worldObj.isRemote && this.worldObj.difficultySetting == EnumDifficulty.PEACEFUL)
         {

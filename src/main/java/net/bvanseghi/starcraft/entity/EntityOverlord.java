@@ -5,16 +5,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.stats.AchievementList;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
@@ -29,9 +24,11 @@ public class EntityOverlord extends EntityFlying {
     private int aggroCooldown;
     public int prevAttackCounter;
     public int attackCounter;
-    /** The explosion radius of spawned fireballs. */
-    private int explosionStrength = 1;
-    private static final String __OBFID = "CL_00001689";
+//    /** The explosion radius of spawned fireballs. */
+//    private int explosionStrength = 1;
+    
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00001689";
 
 	public EntityOverlord(World world) {
 		super(world);
@@ -72,7 +69,8 @@ public class EntityOverlord extends EntityFlying {
 	        this.dataWatcher.addObject(16, Byte.valueOf((byte)0));
 	    }
 
-	    protected void updateEntityActionState()
+	    @SuppressWarnings("unused")
+		protected void updateEntityActionState()
 	    {
 	        if (!this.worldObj.isRemote && this.worldObj.difficultySetting == EnumDifficulty.PEACEFUL)
 	        {

@@ -3,13 +3,9 @@ package net.bvanseghi.starcraft.blocks;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.world.World;
 
 public class BlockCharStone extends ModBlocks {
 

@@ -10,11 +10,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class StructureProtossWarpGateChar extends WorldGenerator {
-	protected Block[] GetValidSpawnBlocks() {
+	protected Block[] getValidSpawnBlocks() {
 		return new Block[] { Blocks.grass, Blocks.stone, Blocks.dirt, Blocks.gravel, ModBlocks.sandShakuras, ModBlocks.stoneShakuras };
 	}
 
-	public boolean LocationIsValidSpawn(World world, int x, int y, int z) {
+	public boolean locationIsValidSpawn(World world, int x, int y, int z) {
 		int distanceToAir = 0;
 		Block checkBlock = world.getBlock(x, y, z);
 
@@ -33,7 +33,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		Block blockAbove = world.getBlock(x, y + 1, z);
 		Block blockBelow = world.getBlock(x, y - 1, z);
 
-		for (Block i : GetValidSpawnBlocks()) {
+		for (Block i : getValidSpawnBlocks()) {
 			if (blockAbove != Blocks.air) {
 				return false;
 			}
@@ -48,40 +48,52 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		return false;
 	}
 
+	//Abstracted
 	public boolean generate(World world, Random rand, int x, int y, int z) {
 		int i = rand.nextInt(1);
 
 		if (i == 0) {
-			generate_r0(world, rand, x, y, z);
+			generator(world, x, y, z, (byte) 0); //how does do even
 		}
 
 		return true;
-
 	}
 
-	public boolean generate_r0(World world, Random rand, int x, int y, int z) {
-		if (!LocationIsValidSpawn(world, x, y, z) || !LocationIsValidSpawn(world, x + 14, y, z)
-				|| !LocationIsValidSpawn(world, x + 14, y, z + 14) || !LocationIsValidSpawn(world, x, y, z + 14)) {
+	/**
+	 * Calls the generators
+	 * @param world the world
+	 * @param x X coordinate
+	 * @param y Y coordinate
+	 * @param z Z coordinate
+	 * @param metadata block metadata
+	 */
+	private void generator(World world, int x, int y, int z, byte metadata) {
+		generatePart1(world, x, y, z, metadata);
+	}
+	
+	public boolean generatePart1(World world, int x, int y, int z, byte metadata) {
+		if (!locationIsValidSpawn(world, x, y, z) || !locationIsValidSpawn(world, x + 14, y, z)
+				|| !locationIsValidSpawn(world, x + 14, y, z + 14) || !locationIsValidSpawn(world, x, y, z + 14)) {
 			return false;
 		}
 
 		
-		world.setBlock(x + 0, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 1, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 1, Blocks.air, 0, 3);
@@ -96,7 +108,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 2, ModBlocks.protossMetal, 0, 3);
@@ -111,7 +123,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 3, ModBlocks.protossMetal, 0, 3);
@@ -126,7 +138,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 4, ModBlocks.protossMetal, 0, 3);
@@ -141,7 +153,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 5, ModBlocks.protossMetal, 0, 3);
@@ -156,7 +168,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 6, ModBlocks.protossMetal, 0, 3);
@@ -171,7 +183,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 7, ModBlocks.protossMetal, 0, 3);
@@ -186,7 +198,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 8, ModBlocks.protossMetal, 0, 3);
@@ -201,7 +213,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 9, ModBlocks.protossMetal, 0, 3);
@@ -216,7 +228,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 9, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 10, ModBlocks.protossMetal, 0, 3);
@@ -231,7 +243,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 11, ModBlocks.protossMetal, 0, 3);
@@ -246,7 +258,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 12, ModBlocks.protossMetal, 0, 3);
@@ -261,7 +273,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 13, ModBlocks.protossMetal, 0, 3);
@@ -276,7 +288,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 1, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 14, Blocks.air, 0, 3);
@@ -291,22 +303,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 1, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 1, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 1, z + 14, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 2, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 1, Blocks.air, 0, 3);
@@ -321,7 +333,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 1, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 13, y + 2, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 2, ModBlocks.protossMetal, 0, 3);
@@ -336,7 +348,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 2, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 13, y + 2, z + 2, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 14, y + 2, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 3, ModBlocks.protossMetal, 0, 3);
@@ -351,7 +363,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 3, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 14, y + 2, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 4, ModBlocks.protossMetal, 0, 3);
@@ -366,7 +378,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 5, ModBlocks.protossMetal, 0, 3);
@@ -381,7 +393,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 6, ModBlocks.protossMetal, 0, 3);
@@ -396,7 +408,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 7, ModBlocks.protossMetal, 0, 3);
@@ -411,7 +423,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 8, ModBlocks.protossMetal, 0, 3);
@@ -426,7 +438,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 9, ModBlocks.protossMetal, 0, 3);
@@ -441,7 +453,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 9, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 10, ModBlocks.protossMetal, 0, 3);
@@ -456,7 +468,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 11, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 2, y + 2, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 11, ModBlocks.protossMetal, 0, 3);
@@ -471,7 +483,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 12, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 2, y + 2, z + 12, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 3, y + 2, z + 12, ModBlocks.protossMetal, 0, 3);
@@ -486,7 +498,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 13, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 3, y + 2, z + 13, ModBlocks.protossMetal, 2, 3);
@@ -501,7 +513,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 2, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 2, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 2, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 14, Blocks.air, 0, 3);
@@ -516,22 +528,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 2, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 14, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 0, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 1, y + 3, z + 0, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 2, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 3, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 1, ModBlocks.protossMetal, 0, 3);
+		world.setBlock(x, y + 3, z, ModBlocks.protossMetal, 0, 3);
+		world.setBlock(x + 1, y + 3, z, ModBlocks.protossMetal, 0, 3);
+		world.setBlock(x + 2, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 3, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 1, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 2, y + 3, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 1, Blocks.air, 0, 3);
@@ -546,7 +558,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 2, ModBlocks.protossMetal, 0, 3);
@@ -561,7 +573,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 3, ModBlocks.protossMetal, 0, 3);
@@ -576,7 +588,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 4, ModBlocks.protossMetal, 0, 3);
@@ -591,7 +603,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 4, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 14, y + 3, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 5, ModBlocks.protossMetal, 0, 3);
@@ -606,7 +618,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 6, ModBlocks.protossMetal, 0, 3);
@@ -621,7 +633,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 6, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 7, ModBlocks.protossMetal, 0, 3);
@@ -636,7 +648,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 7, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 8, ModBlocks.protossMetal, 0, 3);
@@ -651,7 +663,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 8, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 9, ModBlocks.protossMetal, 0, 3);
@@ -666,7 +678,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 9, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 10, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 2, y + 3, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 10, ModBlocks.protossMetal, 0, 3);
@@ -681,7 +693,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 11, ModBlocks.protossMetal, 0, 3);
@@ -696,7 +708,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 12, ModBlocks.protossMetal, 0, 3);
@@ -711,7 +723,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 13, Blocks.air, 0, 3);
@@ -726,7 +738,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 13, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 14, y + 3, z + 13, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 0, y + 3, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 3, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 3, z + 14, Blocks.air, 0, 3);
@@ -741,22 +753,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 3, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 3, z + 14, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 3, z + 14, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 4, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 4, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 1, Blocks.air, 0, 3);
@@ -771,7 +783,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 2, ModBlocks.protossMetal, 0, 3);
@@ -786,7 +798,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 3, ModBlocks.protossMetal, 0, 3);
@@ -801,7 +813,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 4, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 3, y + 4, z + 4, ModBlocks.protossMetal, 0, 3);
@@ -816,7 +828,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 5, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 5, ModBlocks.protossMetal, 0, 3);
@@ -831,7 +843,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 6, ModBlocks.protossMetal, 0, 3);
@@ -846,7 +858,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 7, ModBlocks.protossMetal, 0, 3);
@@ -861,7 +873,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 8, ModBlocks.protossMetal, 0, 3);
@@ -876,7 +888,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 9, ModBlocks.protossMetal, 0, 3);
@@ -891,7 +903,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 9, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 9, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 10, ModBlocks.protossMetal, 0, 3);
@@ -906,7 +918,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 10, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 13, y + 4, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 11, ModBlocks.protossMetal, 2, 3);
@@ -921,7 +933,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 12, Blocks.air, 0, 3);
@@ -936,7 +948,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 13, Blocks.air, 0, 3);
@@ -951,7 +963,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 4, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 4, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 14, Blocks.air, 0, 3);
@@ -966,22 +978,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 4, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 4, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 4, z + 14, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 5, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 5, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 1, ModBlocks.protossMetal, 0, 3);
@@ -996,7 +1008,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 2, ModBlocks.protossMetal, 0, 3);
@@ -1011,7 +1023,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 3, ModBlocks.protossEnergyChannel, 0, 3);
@@ -1026,7 +1038,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 4, Blocks.air, 0, 3);
@@ -1041,7 +1053,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 5, Blocks.air, 0, 3);
@@ -1056,7 +1068,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 6, Blocks.air, 0, 3);
@@ -1071,7 +1083,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 7, Blocks.air, 0, 3);
@@ -1086,7 +1098,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 8, Blocks.air, 0, 3);
@@ -1101,7 +1113,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 9, Blocks.air, 0, 3);
@@ -1116,7 +1128,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 9, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 10, Blocks.air, 0, 3);
@@ -1131,7 +1143,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 11, Blocks.air, 0, 3);
@@ -1146,7 +1158,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 12, Blocks.air, 0, 3);
@@ -1161,7 +1173,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 13, Blocks.air, 0, 3);
@@ -1176,7 +1188,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 5, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 5, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 5, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 5, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 5, z + 14, Blocks.air, 0, 3);
@@ -1191,22 +1203,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 5, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 5, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 5, z + 14, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 6, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 6, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 1, ModBlocks.protossMetal, 0, 3);
@@ -1221,7 +1233,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 2, ModBlocks.protossMetal, 0, 3);
@@ -1236,7 +1248,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 3, ModBlocks.protossEnergyChannel, 0, 3);
@@ -1251,7 +1263,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 4, Blocks.air, 0, 3);
@@ -1266,7 +1278,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 5, Blocks.air, 0, 3);
@@ -1281,7 +1293,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 6, Blocks.air, 0, 3);
@@ -1296,7 +1308,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 7, Blocks.air, 0, 3);
@@ -1311,7 +1323,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 8, Blocks.air, 0, 3);
@@ -1326,7 +1338,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 9, Blocks.air, 0, 3);
@@ -1342,14 +1354,14 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 13, y + 6, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 9, Blocks.air, 0, 3);
 
-		generate_r02(world, rand, x, y, z);
+		generate_r02(world, x, y, z);
 		return true;
 
 	}
 
-	public boolean generate_r02(World world, Random rand, int x, int y, int z) {
+	public boolean generate_r02(World world, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 6, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 10, Blocks.air, 0, 3);
@@ -1364,7 +1376,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 11, Blocks.air, 0, 3);
@@ -1379,7 +1391,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 12, Blocks.air, 0, 3);
@@ -1394,7 +1406,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 13, Blocks.air, 0, 3);
@@ -1409,7 +1421,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 6, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 6, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 6, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 6, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 6, z + 14, Blocks.air, 0, 3);
@@ -1424,22 +1436,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 6, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 6, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 6, z + 14, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 7, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 7, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 1, ModBlocks.protossMetal, 0, 3);
@@ -1454,7 +1466,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 2, ModBlocks.protossMetal, 0, 3);
@@ -1469,7 +1481,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 3, ModBlocks.protossEnergyChannel, 0, 3);
@@ -1484,7 +1496,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 4, Blocks.air, 0, 3);
@@ -1499,7 +1511,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 5, Blocks.air, 0, 3);
@@ -1514,7 +1526,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 6, Blocks.air, 0, 3);
@@ -1529,7 +1541,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 7, Blocks.air, 0, 3);
@@ -1544,7 +1556,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 8, Blocks.air, 0, 3);
@@ -1559,7 +1571,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 9, Blocks.air, 0, 3);
@@ -1574,7 +1586,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 9, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 10, Blocks.air, 0, 3);
@@ -1589,7 +1601,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 11, Blocks.air, 0, 3);
@@ -1604,7 +1616,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 12, Blocks.air, 0, 3);
@@ -1619,7 +1631,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 13, Blocks.air, 0, 3);
@@ -1634,7 +1646,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 7, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 7, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 7, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 7, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 7, z + 14, Blocks.air, 0, 3);
@@ -1649,22 +1661,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 7, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 14, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 8, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 8, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 8, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 8, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 8, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 8, z + 1, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 8, z + 1, ModBlocks.protossMetal, 0, 3);
@@ -1679,7 +1691,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 8, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 8, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 8, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 8, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 8, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 8, z + 2, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 8, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 8, z + 2, ModBlocks.protossMetal, 0, 3);
@@ -1694,7 +1706,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 8, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 8, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 8, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 8, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 8, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 8, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 2, y + 8, z + 3, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 8, z + 3, ModBlocks.protossEnergyChannel, 0, 3);
@@ -1703,7 +1715,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 8, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 8, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 8, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 8, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 8, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 8, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 8, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 8, z + 12, Blocks.air, 0, 3);
@@ -1718,7 +1730,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 8, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 8, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 14, y + 8, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 8, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 8, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 8, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 8, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 8, z + 13, Blocks.air, 0, 3);
@@ -1733,7 +1745,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 8, z + 13, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 8, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 8, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 8, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 8, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 8, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 8, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 8, z + 14, Blocks.air, 0, 3);
@@ -1774,22 +1786,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 10, z + 11, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 10, y + 10, z + 12, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 11, y + 10, z + 12, ModBlocks.protossMetal, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 11, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 11, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 1, Blocks.air, 0, 3);
@@ -1804,7 +1816,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 2, ModBlocks.protossMetal, 2, 3);
@@ -1819,7 +1831,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 3, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 3, y + 11, z + 3, ModBlocks.protossMetal, 0, 3);
@@ -1834,7 +1846,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 4, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 4, ModBlocks.protossMetal, 0, 3);
@@ -1849,7 +1861,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 5, Blocks.air, 0, 3);
@@ -1864,7 +1876,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 6, Blocks.air, 0, 3);
@@ -1879,7 +1891,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 7, Blocks.air, 0, 3);
@@ -1894,7 +1906,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 8, Blocks.air, 0, 3);
@@ -1909,7 +1921,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 9, Blocks.air, 0, 3);
@@ -1924,7 +1936,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 9, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 10, Blocks.air, 0, 3);
@@ -1939,7 +1951,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 10, ModBlocks.protossMetal, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 11, Blocks.air, 0, 3);
@@ -1954,7 +1966,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 11, ModBlocks.protossMetal, 2, 3);
 		world.setBlock(x + 13, y + 11, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 12, Blocks.air, 0, 3);
@@ -1969,7 +1981,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 13, Blocks.air, 0, 3);
@@ -1984,7 +1996,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 11, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 11, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 11, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 11, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 11, z + 14, Blocks.air, 0, 3);
@@ -1999,22 +2011,22 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 11, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 11, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 11, z + 14, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 11, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 12, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 13, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 14, y + 12, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 10, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 11, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 13, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x + 14, y + 12, z, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 1, Blocks.air, 0, 3);
@@ -2029,7 +2041,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 2, Blocks.air, 0, 3);
@@ -2044,7 +2056,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 2, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 3, ModBlocks.protossMetal, 0, 3);
@@ -2059,7 +2071,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 3, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 4, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 4, ModBlocks.protossMetal, 0, 3);
@@ -2074,7 +2086,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 4, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 4, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 5, Blocks.air, 0, 3);
@@ -2089,7 +2101,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 5, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 6, Blocks.air, 0, 3);
@@ -2104,7 +2116,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 6, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 7, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 7, Blocks.air, 0, 3);
@@ -2119,7 +2131,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 7, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 7, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 8, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 8, Blocks.air, 0, 3);
@@ -2134,7 +2146,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 8, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 8, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 9, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 9, Blocks.air, 0, 3);
@@ -2149,7 +2161,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 9, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 9, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 10, Blocks.air, 0, 3);
@@ -2164,7 +2176,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 10, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 11, Blocks.air, 0, 3);
@@ -2179,7 +2191,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 11, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 12, Blocks.air, 0, 3);
@@ -2194,7 +2206,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 12, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 13, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 13, Blocks.air, 0, 3);
@@ -2209,7 +2221,7 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 12, y + 12, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 13, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 13, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 12, z + 14, Blocks.air, 0, 3);
+		world.setBlock(x, y + 12, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 12, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 12, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 12, z + 14, Blocks.air, 0, 3);
@@ -2225,7 +2237,5 @@ public class StructureProtossWarpGateChar extends WorldGenerator {
 		world.setBlock(x + 13, y + 12, z + 14, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 14, Blocks.air, 0, 3);
 		return true;
-
 	}
-
 }

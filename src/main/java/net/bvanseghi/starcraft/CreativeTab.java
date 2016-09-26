@@ -6,7 +6,6 @@ import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 public class CreativeTab {

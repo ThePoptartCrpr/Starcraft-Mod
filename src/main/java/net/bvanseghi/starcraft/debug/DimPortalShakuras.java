@@ -7,7 +7,6 @@ import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.bvanseghi.starcraft.worldgen.provider.WorldProviderShakuras;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -19,7 +18,10 @@ import net.minecraft.world.World;
 
 public class DimPortalShakuras extends ModBlocks {
 	public static boolean field_149948_a;
+	
+	@SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00000236";
+	
 	private int dim = StarcraftConfig.dimShakuras;
 	public static final String name = "dimPortalShakuras";
 
@@ -37,6 +39,7 @@ public class DimPortalShakuras extends ModBlocks {
 	 * boxes to the list if they intersect the mask.) Parameters: World, X, Y,
 	 * Z, mask, list, colliding entity
 	 */
+	@SuppressWarnings("rawtypes")
 	public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB mask, List list,
 			Entity entity) {
 	}

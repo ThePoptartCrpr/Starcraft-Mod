@@ -8,7 +8,6 @@ import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
@@ -16,8 +15,6 @@ import net.minecraft.util.IIcon;
 
 public class BlockProtossEnergyChannel extends Block {
 	public static final String name = "protossEnergyChannel";
-    
-	private static String textureName;
 	
 	@SideOnly(Side.CLIENT)
 	private IIcon topTexture;

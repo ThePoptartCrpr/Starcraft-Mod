@@ -11,6 +11,7 @@ public class BiomeGenCreepInfestation extends BiomeGenBase {
 
 	public static final Height biomeHeight = new Height(0.05F, 0.05F);
 
+	@SuppressWarnings("unchecked")
 	public BiomeGenCreepInfestation(int id) {
 		super(id);
 

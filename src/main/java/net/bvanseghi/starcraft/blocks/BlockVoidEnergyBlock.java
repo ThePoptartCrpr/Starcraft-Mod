@@ -1,6 +1,5 @@
 package net.bvanseghi.starcraft.blocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 public class BlockVoidEnergyBlock extends ModBlocks {

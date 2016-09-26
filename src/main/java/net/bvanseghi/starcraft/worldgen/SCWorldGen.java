@@ -4,14 +4,10 @@ import java.util.Random;
 
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.bvanseghi.starcraft.Starcraft;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ChunkProviderGenerate;
-import net.bvanseghi.starcraft.lib.SCWorldSettings;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.bvanseghi.starcraft.worldgen.biome.BiomeGenCreepInfestation;
 import net.bvanseghi.starcraft.worldgen.biome.CharBiomeGenCreepInfestation;
-import net.bvanseghi.starcraft.worldgen.chunk.ChunkProviderChar;
 import net.bvanseghi.starcraft.worldgen.features.CharWorldGenMinable;
 import net.bvanseghi.starcraft.worldgen.features.ShakurasWorldGenMinable;
 import net.bvanseghi.starcraft.worldgen.provider.WorldProviderChar;
@@ -24,22 +20,17 @@ import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateChar;
 import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateOverworld;
 import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateShakuras;
 import net.bvanseghi.starcraft.worldgen.structure.StructureRichMineralBed;
-import net.bvanseghi.starcraft.worldgen.structure.StructureRichVespeneGeyser;
 import net.bvanseghi.starcraft.worldgen.structure.StructureRichVespeneGeyserChar;
 import net.bvanseghi.starcraft.worldgen.structure.StructureTerranBunker;
-import net.bvanseghi.starcraft.worldgen.structure.StructureVespeneGeyser;
 import net.bvanseghi.starcraft.worldgen.structure.StructureVespeneGeyserChar;
 import net.bvanseghi.starcraft.worldgen.structure.StructureZergSpawningPool;
 import net.bvanseghi.starcraft.worldgen.structure.StructureZergSpire;
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldSettings;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.common.DimensionManager;
 
 public class SCWorldGen implements IWorldGenerator {
@@ -83,6 +74,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	public void generateSurface(World world, Random random, int x, int z) {
 		int chanceVespeneGeyser = random.nextInt(1500);
 		int chanceRichVespeneGeyser = random.nextInt(2500);
@@ -372,6 +364,7 @@ public class SCWorldGen implements IWorldGenerator {
 		this.addOreSpawnShakuras(ModBlocks.oreDiamondS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(5),
 				1, 0, 16);
 
+		@SuppressWarnings("unused")
 		BiomeGenBase biome = world.getWorldChunkManager().getBiomeGenAt(x, z);
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
@@ -501,15 +494,9 @@ public class SCWorldGen implements IWorldGenerator {
 
 	}
 
-	public void generateNether(World world, Random random, int x, int z) {
-		// TODO Auto-generated method stub
+	public void generateNether(World world, Random random, int x, int z) {}
 
-	}
-
-	public void generateEnd(World world, Random random, int x, int z) {
-		// TODO Auto-generated method stub
-
-	}
+	public void generateEnd(World world, Random random, int x, int z) {}
 
 	private void addOreSpawn(Block block, World world, Block target, Random random, int blockXPos, int blockZPos,
 			int maxX, int maxZ, int maxVeinSize, int chanceToSpawn, int minY, int maxY) {
@@ -521,6 +508,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void addOreSpawn(Block block, int meta, World world, Block target, Random random, int blockXPos, int blockZPos,
 			int maxX, int maxZ, int maxVeinSize, int chanceToSpawn, int minY, int maxY) {
 		for (int i = 0; i < chanceToSpawn; i++) {
@@ -541,6 +529,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private void addOreSpawnChar(Block block, int meta, World world, Block target, Random random, int blockXPos,
 			int blockZPos, int maxX, int maxZ, int maxVeinSize, int chanceToSpawn, int minY, int maxY) {
 		for (int i = 0; i < chanceToSpawn; i++) {
@@ -561,6 +550,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void addOreSpawnShakuras(Block block, int meta, World world, Block target, Random random, int blockXPos,
 			int blockZPos, int maxX, int maxZ, int maxVeinSize, int chanceToSpawn, int minY, int maxY) {
 		for (int i = 0; i < chanceToSpawn; i++) {

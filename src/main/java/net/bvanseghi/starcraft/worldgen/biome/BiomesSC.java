@@ -1,11 +1,9 @@
 package net.bvanseghi.starcraft.worldgen.biome;
 
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.BiomeManager.BiomeEntry;
 
 public class BiomesSC extends BiomeGenBase {
 

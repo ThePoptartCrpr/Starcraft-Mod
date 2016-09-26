@@ -5,16 +5,8 @@ package net.bvanseghi.starcraft.items;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraftforge.fluids.FluidContainerRegistry;
 
 public class ModItems extends Item {
 

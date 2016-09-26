@@ -26,7 +26,7 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(Items.coal), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.dust, 1, 2)});
 		
 		//Steel Dust from Carbon and Iron Dusts
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 2)});
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 2, 1), new ItemStack(ModItems.dust, 2, 2)});
 		
 		//Steel Ingot from Steel Dust
 		GameRegistry.addSmelting(new ItemStack(ModItems.dust, 1, 0), new ItemStack(ModItems.ingot, 1, 4), 0);

@@ -1,7 +1,5 @@
 package net.bvanseghi.starcraft.blocks;
 
-import javax.swing.Icon;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
@@ -18,6 +16,7 @@ public class BlockProtossEnergyStabilizer extends Block {
 		@SideOnly(Side.CLIENT)
 		private IIcon topTexture;
 		
+		@SuppressWarnings("static-access")
 		public BlockProtossEnergyStabilizer(String textureName){
 			super(Material.rock);
 			setStepSound(soundTypeMetal);

@@ -1,12 +1,9 @@
 package net.bvanseghi.starcraft.worldgen.layer;
 
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
-import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;
-import net.minecraft.world.gen.layer.GenLayerBiome;
 import net.minecraft.world.gen.layer.IntCache;
-import net.minecraftforge.common.BiomeManager;
 
 public class GenLayerShakurasBiomes extends GenLayer {
 

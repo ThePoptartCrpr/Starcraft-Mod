@@ -4,7 +4,6 @@ import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;

@@ -1,12 +1,12 @@
 package net.bvanseghi.starcraft.worldgen.manager;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.bvanseghi.starcraft.worldgen.layer.GenLayerChar;
 import net.minecraft.crash.CrashReport;
@@ -20,21 +20,24 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.terraingen.WorldTypeEvent;
-import static net.minecraft.world.biome.BiomeGenBase.*;
 
+@SuppressWarnings({"rawtypes", "unchecked", "unused"})
 public class WorldChunkManagerChar extends WorldChunkManager {
 	public static ArrayList<BiomeGenBase> allowedBiomes = new ArrayList<BiomeGenBase>(
 			Arrays.asList(BiomesSC.biomeAshPlains, BiomesSC.biomeCreepInfestationChar, BiomesSC.biomeMoltenInferno));
 	private GenLayer genBiomes;
+	
 	/** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
 	private GenLayer biomeIndexLayer;
+	
 	/** The BiomeCache object for this world. */
 	private BiomeCache biomeCache;
+	
 	/** A list of biomes that the player can spawn in. */
 	private List biomesToSpawnIn;
+	
 	private static final String __OBFID = "CL_00000166";
+	
 	private float rainfall;
 
 	protected WorldChunkManagerChar() {

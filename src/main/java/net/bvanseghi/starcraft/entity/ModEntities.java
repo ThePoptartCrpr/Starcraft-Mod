@@ -1,8 +1,6 @@
 package net.bvanseghi.starcraft.entity;
 
-import net.bvanseghi.starcraft.Starcraft;
 import net.bvanseghi.starcraft.handlers.EntityHandler;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 
 public class ModEntities {
 

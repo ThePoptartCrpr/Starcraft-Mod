@@ -8,7 +8,6 @@ import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockMineralField;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;

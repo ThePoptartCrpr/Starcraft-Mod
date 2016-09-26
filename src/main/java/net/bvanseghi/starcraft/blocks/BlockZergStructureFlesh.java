@@ -53,6 +53,7 @@ public class BlockZergStructureFlesh extends Block {
 		}
 	}
 
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
 

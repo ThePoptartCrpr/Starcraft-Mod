@@ -1,6 +1,5 @@
 package net.bvanseghi.starcraft.entity;
 
-import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
@@ -11,30 +10,22 @@ import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.event.entity.living.ZombieEvent.SummonAidEvent;
 
 public class EntityZealot extends EntityProtossMob {
 
-	private boolean field_146076_bu = false;
-    private float field_146074_bv = -1.0F;
-    private float field_146073_bw;
+//	private boolean field_146076_bu = false;
+//	private float field_146074_bv = -1.0F;
+//	private float field_146073_bw;
     
 	public EntityZealot(World world) {
 		   

@@ -3,7 +3,6 @@ package net.bvanseghi.starcraft.armour;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 

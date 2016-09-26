@@ -17,6 +17,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 
 	public static final Height biomeHeight = new Height(0.05F, 0.05F);
 
+	@SuppressWarnings("unchecked")
 	public BiomeGenDesertShakuras(int id) {
 		super(id);
 
@@ -48,7 +49,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 
 	public final void genBiomeTerrainShakuras(World world, Random rand, Block[] blockArray, byte[] par1, int par2, int par3,
 			double par4) {
-		boolean flag = true;
+//		boolean flag = true;
 		Block block = this.topBlock;
 		byte b0 = (byte) (this.field_150604_aj & 255);
 		Block block1 = this.fillerBlock;

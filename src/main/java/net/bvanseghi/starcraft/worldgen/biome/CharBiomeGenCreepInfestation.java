@@ -8,7 +8,6 @@ import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -18,6 +17,7 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 	public static final Height biomeHeight = new Height(0.05F, 0.05F);
 	public boolean isOnChar;
 
+	@SuppressWarnings("unchecked")
 	public CharBiomeGenCreepInfestation(int id, boolean isOnChar) {
 		super(id);
 
@@ -48,7 +48,7 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 
 	public final void genBiomeTerrainChar(World world, Random rand, Block[] blockArray, byte[] par1, int par2, int par3,
 			double par4) {
-		boolean flag = true;
+//		boolean flag = true;
 		Block block = this.topBlock;
 		byte b0 = (byte) (this.field_150604_aj & 255);
 		Block block1 = this.fillerBlock;
