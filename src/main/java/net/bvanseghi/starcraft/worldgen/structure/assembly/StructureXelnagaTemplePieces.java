@@ -19,12 +19,13 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
-import net.minecraftforge.common.ChestGenHooks;
 
+@SuppressWarnings({"rawtypes", "unchecked", "unused"})
 public class StructureXelnagaTemplePieces
 {
     private static final StructureXelnagaTemplePieces.PieceWeight[] pieceWeightArray = new StructureXelnagaTemplePieces.PieceWeight[] {new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.Straight.class, 40, 0), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.Prison.class, 5, 5), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.LeftTurn.class, 20, 0), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.RightTurn.class, 20, 0), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.RoomCrossing.class, 10, 6), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.StairsStraight.class, 5, 5), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.Stairs.class, 5, 5), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.Crossing.class, 5, 4), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.ChestCorridor.class, 5, 4), new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.Library.class, 10, 2)
     {
+    	
         private static final String __OBFID = "CL_00000484";
         public boolean canSpawnMoreStructuresOfType(int p_75189_1_)
         {
@@ -32,6 +33,7 @@ public class StructureXelnagaTemplePieces
         }
     }, new StructureXelnagaTemplePieces.PieceWeight(StructureXelnagaTemplePieces.PortalRoom.class, 20, 1)
     {
+    	
         private static final String __OBFID = "CL_00000485";
         public boolean canSpawnMoreStructuresOfType(int p_75189_1_)
         {

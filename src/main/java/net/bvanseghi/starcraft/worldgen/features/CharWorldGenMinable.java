@@ -14,7 +14,10 @@ public class CharWorldGenMinable extends WorldGenerator
     /** The number of blocks to generate. */
     private int numberOfBlocks;
     private Block field_150518_c;
-    private static final String __OBFID = "CL_00000426";
+    
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00000426";
+    
     private int mineableBlockMeta;
 
     public CharWorldGenMinable(Block p_i45459_1_, int p_i45459_2_)

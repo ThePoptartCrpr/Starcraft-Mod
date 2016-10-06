@@ -7,10 +7,8 @@ import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.bvanseghi.starcraft.worldgen.provider.WorldProviderChar;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -20,7 +18,10 @@ import net.minecraft.world.World;
 
 public class DimPortalChar extends ModBlocks {
 	public static boolean field_149948_a;
+	
+	@SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00000236";
+	
 	private int dim = StarcraftConfig.dimChar;
 	public static final String name = "dimPortalChar";
 
@@ -38,6 +39,7 @@ public class DimPortalChar extends ModBlocks {
 	 * boxes to the list if they intersect the mask.) Parameters: World, X, Y,
 	 * Z, mask, list, colliding entity
 	 */
+	@SuppressWarnings("rawtypes")
 	public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB mask, List list,
 			Entity entity) {
 	}

@@ -17,6 +17,7 @@ public class BlockProtossWarpProjectorS extends ModBlocks {
 	@SideOnly(Side.CLIENT)
 	private IIcon topTexture;
 	
+	@SuppressWarnings("static-access")
 	public BlockProtossWarpProjectorS(String textureName){
 		super(Material.rock);
 		setStepSound(soundTypeMetal);

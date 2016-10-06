@@ -1,11 +1,8 @@
 package net.bvanseghi.starcraft.worldgen.chunk;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.MINESHAFT;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVINE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.SCATTERED_FEATURE;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.STRONGHOLD;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.VILLAGE;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
@@ -17,7 +14,6 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.SCWorldSettings;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.bvanseghi.starcraft.worldgen.features.CharGenCustomLakes;
 import net.minecraft.block.Block;
@@ -26,7 +22,6 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
@@ -41,10 +36,7 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
-import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
-import net.minecraft.world.gen.structure.MapGenStronghold;
-import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
@@ -81,6 +73,8 @@ public class ChunkProviderChar extends ChunkProviderGenerate implements IChunkPr
 	double[] field_147425_f;
 	double[] field_147426_g;
 	int[][] field_73219_j = new int[32][32];
+	
+	@SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00000396";
 
 	{
@@ -254,6 +248,7 @@ public class ChunkProviderChar extends ChunkProviderGenerate implements IChunkPr
 		return chunk;
 	}
 
+	@SuppressWarnings("unused")
 	private void func_147423_a(int par1, int par2, int par3) {
 		double d0 = 684.412D;
 		double d1 = 684.412D;
@@ -492,6 +487,7 @@ public class ChunkProviderChar extends ChunkProviderGenerate implements IChunkPr
 	 * Returns a list of creatures of the specified type that can spawn at the
 	 * given location.
 	 */
+	@SuppressWarnings("rawtypes")
 	public List getPossibleCreatures(EnumCreatureType creatureType, int par1, int par2, int par3) {
 		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(par1, par3);
 		return creatureType == EnumCreatureType.monster

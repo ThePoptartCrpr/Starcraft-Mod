@@ -4,7 +4,6 @@ import java.util.List;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,18 +15,19 @@ public class ItemDust extends Item {
 	@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 	
+	//TODO: set localized names to dust/grain/grain respectively
 	public static final String[] metaNames = {"Steel", "Iron", "Carbon"};
 	
 	public ItemDust() {
 		setHasSubtypes(true);
-		// setCreativeTab(CreativeTab.TabStarcraftMaterials);
+//		setCreativeTab(CreativeTab.TabStarcraftMaterials);
 	}
 	
 	public void registerIcons(IIconRegister iconReg) {
 		icons = new IIcon[metaNames.length];
 		
 		for(int i = 0; i < icons.length; i++) {
-			icons[i] = iconReg.registerIcon(REFERENCE.MODID + ":" + "ingot" + metaNames[i]);
+			icons[i] = iconReg.registerIcon(REFERENCE.MODID + ":" + "dust" + metaNames[i]);
 		}
 	}
 	
@@ -45,6 +45,7 @@ public class ItemDust extends Item {
 		return (IIcon) icons[par1];
 	}
 	
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(Item item, CreativeTabs tab, List list) {
 		for(int i = 0; i < metaNames.length; i++) {
@@ -53,7 +54,7 @@ public class ItemDust extends Item {
 	}
 	
 	//Why?!
-	public int getMetadata(int meta) {
-		return meta;
-	}
+//	public int getMetadata(int meta) {
+//		return meta;
+//	}
 }

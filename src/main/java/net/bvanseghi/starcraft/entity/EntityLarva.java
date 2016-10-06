@@ -52,6 +52,7 @@ public class EntityLarva extends EntityZergPassive {
 		}
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
 		if (this.noClip) {
 			this.boundingBox.offset(p_70091_1_, p_70091_3_, p_70091_5_);

@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.material;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 
+@SuppressWarnings("unused")
 public class ModMaterialLiquids extends Material {
 	private static final String __OBFID = "CL_00000541";
 	private int mobilityFlag;

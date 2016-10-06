@@ -14,10 +14,7 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
-import net.minecraft.entity.ai.EntityAIMoveIndoors;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
-import net.minecraft.entity.ai.EntityAIOpenDoor;
-import net.minecraft.entity.ai.EntityAIRestrictOpenDoor;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
@@ -42,9 +39,6 @@ import net.minecraft.world.World;
 public class EntityDarkProbe extends EntityProtossPassive {
 
 	Random random = new Random();
-	private int fire;
-	private boolean firstUpdate;
-	private int nextStepDistance;
 
 	public EntityDarkProbe(World world) {
 		super(world);
@@ -92,6 +86,7 @@ public class EntityDarkProbe extends EntityProtossPassive {
         return 160;
     }
 
+	@SuppressWarnings({"rawtypes", "unused"})
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
 		if (this.noClip) {
 			this.boundingBox.offset(p_70091_1_, p_70091_3_, p_70091_5_);

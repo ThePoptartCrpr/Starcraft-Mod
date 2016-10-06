@@ -1,7 +1,6 @@
 package net.bvanseghi.starcraft.armour;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;

@@ -15,9 +15,6 @@ import net.minecraft.world.World;
 public class EntityLarvaCocoon extends EntityZergPassive {
 
 	Random random = new Random();
-	private int fire;
-	private boolean firstUpdate;
-	private int nextStepDistance;
 
 	public EntityLarvaCocoon(World world) {
 		super(world);
@@ -36,6 +33,7 @@ public class EntityLarvaCocoon extends EntityZergPassive {
         return false;
     }
 
+	@SuppressWarnings({"rawtypes", "unused"})
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
 		if (this.noClip) {
 			this.boundingBox.offset(p_70091_1_, p_70091_3_, p_70091_5_);

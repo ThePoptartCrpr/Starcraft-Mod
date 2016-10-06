@@ -53,6 +53,7 @@ public class ItemIngot extends Item {
 		return (IIcon) icons[par1];
 	}
 	
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
     public void getSubItems(Item p_150895_1_, CreativeTabs p_150895_2_, List p_150895_3_)
     {

@@ -3,8 +3,6 @@ package net.bvanseghi.starcraft.items;
 
 import java.util.List;
 
-import javax.swing.Icon;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
@@ -14,7 +12,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.MathHelper;
 
 public class ItemC14GaussRifleParts extends Item {
 
@@ -54,6 +51,7 @@ public class ItemC14GaussRifleParts extends Item {
 		return (IIcon) icons[par1];
 	}
 	
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
     public void getSubItems(Item p_150895_1_, CreativeTabs p_150895_2_, List p_150895_3_)
     {

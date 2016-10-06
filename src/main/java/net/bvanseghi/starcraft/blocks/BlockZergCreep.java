@@ -4,13 +4,10 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.EnumDifficulty;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockZergCreep extends ModBlocks {
@@ -63,7 +60,6 @@ public class BlockZergCreep extends ModBlocks {
 						int i1 = par2 + par5.nextInt(3) - 1;
 						int j1 = par3 + par5.nextInt(5) - 3;
 						int k1 = par4 + par5.nextInt(3) - 1;
-						Block block = par1.getBlock(i1, j1 + 1, k1);
 						if (par1.getBlock(i1, j1, k1) == Blocks.grass) {
 							par1.setBlock(i1, j1, k1, ModBlocks.zergCreep);
 						}else if(par1.getBlock(i1, j1, k1) == Blocks.log) {

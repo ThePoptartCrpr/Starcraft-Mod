@@ -5,11 +5,7 @@ import org.lwjgl.opengl.GL11;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.model.ModelC14GaussRifle;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.inventory.GuiContainerCreative;
-import net.minecraft.client.gui.inventory.GuiInventory;
-import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer;
@@ -44,6 +40,8 @@ public class ItemRenderC14GaussRifle implements IItemRenderer {
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
 
 		float sc = 1.3F;
+		
+		@SuppressWarnings("unused")
 		boolean fprendered = false;
 
 		switch (type) {

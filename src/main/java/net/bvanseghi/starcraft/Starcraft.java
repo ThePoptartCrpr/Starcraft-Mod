@@ -7,7 +7,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.internal.EntitySpawnHandler;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ModArmour;
@@ -81,6 +80,7 @@ public class Starcraft {
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	public static void addNames(){
 		LanguageRegistry.addName(new ItemStack(ModItems.ingot, 0, 0), "Copper Ingot");
 		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 0), "Protoss Essence");

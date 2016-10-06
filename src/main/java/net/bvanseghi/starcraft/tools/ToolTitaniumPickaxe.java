@@ -1,11 +1,7 @@
 package net.bvanseghi.starcraft.tools;
 
-import java.util.Set;
-
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemPickaxe;
 
 public class ToolTitaniumPickaxe extends ItemPickaxe {

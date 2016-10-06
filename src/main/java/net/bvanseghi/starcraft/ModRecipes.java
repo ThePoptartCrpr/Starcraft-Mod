@@ -13,24 +13,39 @@ import net.minecraft.item.ItemStack;
 public class ModRecipes {
 
 	public static void init() {
+<<<<<<< HEAD
 		
 		//Steel Dust from Carbon and Iron Dusts
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 2), new ItemStack(ModItems.dust, 3, 2)});
 		
 		//Iron Dust from Iron Ingot
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 1), new Object[] {Items.iron_ingot});
+=======
+		//Iron Grain x9 from Iron Ore
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 1), new Object[] {Blocks.iron_ore});
+>>>>>>> 980b5402f8810d20224d8d65190edef81d2b98e8
 		
-		//Iron Ingot from Iron Dust
-		GameRegistry.addSmelting(new ItemStack(ModItems.dust, 1, 1), new ItemStack(Items.iron_ingot), 0);
+		//Iron Ore from Iron Grain x9
+		GameRegistry.addRecipe(new ItemStack(Blocks.iron_ore), new Object[] {"III", "III", "III", 'I', new ItemStack(ModItems.dust, 1, 1)});
 		
-		//Carbon Dust from Coal
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 2), new Object[] {Items.coal});
+		//Carbon Grain x9 from Charcoal
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 2), new Object[] {new ItemStack(Items.coal, 1, 1)});
 		
-		//Coal from Carbon Dust
-		GameRegistry.addRecipe(new ItemStack(Items.coal), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.dust, 1, 2)});
+		//Charcoal from Carbon Grain x9
+		GameRegistry.addRecipe(new ItemStack(Items.coal, 1, 1), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.dust, 1, 2)});
 		
+<<<<<<< HEAD
+=======
+		//Steel Dust from Carbon and Iron Grains
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 2), new ItemStack(ModItems.dust, 3, 2)});
+		
+>>>>>>> 980b5402f8810d20224d8d65190edef81d2b98e8
 		//Steel Ingot from Steel Dust
 		GameRegistry.addSmelting(new ItemStack(ModItems.dust, 1, 0), new ItemStack(ModItems.ingot, 1, 4), 0);
+
+		////////////////////////////////////////////////////////
+		//The rest is not my doing, so there aren't any notes!//
+		////////////////////////////////////////////////////////
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.protossMetal, 1, 0),
 				new Object[] { "AAA", "AAA", "AAA", 'A', new ItemStack(ModItems.ingot, 0, 1) });

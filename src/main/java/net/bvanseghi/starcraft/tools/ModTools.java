@@ -1,11 +1,10 @@
 package net.bvanseghi.starcraft.tools;
 
-import net.bvanseghi.starcraft.CreativeTab;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModTools {
 

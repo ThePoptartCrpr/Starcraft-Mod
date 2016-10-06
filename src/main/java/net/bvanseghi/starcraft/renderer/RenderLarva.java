@@ -17,6 +17,7 @@ public class RenderLarva extends RenderLiving {
 	private static final ResourceLocation texture = new ResourceLocation(
 			REFERENCE.MODID + ":" + "textures/model/larva.png");
 
+	@SuppressWarnings("unused")
 	private ModelBase scaleAmount;
 	protected ModelLarva modelEntity;
 

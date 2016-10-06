@@ -1,7 +1,5 @@
 package net.bvanseghi.starcraft.lib;
 
-import net.minecraft.world.WorldSettings;
-
 public class REFERENCE {
 	public static final String MODID = "Starcraft";
 	public static final String NAME = "Starcraft";

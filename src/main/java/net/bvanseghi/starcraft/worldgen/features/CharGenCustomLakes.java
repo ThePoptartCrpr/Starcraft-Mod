@@ -9,11 +9,12 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class CharGenCustomLakes extends WorldGenerator {
 	private Block field_150556_a;
+	
+	@SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00000418";
 
 	public CharGenCustomLakes(Block block) {

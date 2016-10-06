@@ -37,9 +37,6 @@ import net.minecraft.world.World;
 public class EntityCivilian extends EntityTerranPassive{
 
 	Random random = new Random();
-	private int fire;
-	private boolean firstUpdate;
-	private int nextStepDistance;
 
 	public EntityCivilian(World world) {
 		super(world);
@@ -105,7 +102,6 @@ public class EntityCivilian extends EntityTerranPassive{
 	
 	@Override
 	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

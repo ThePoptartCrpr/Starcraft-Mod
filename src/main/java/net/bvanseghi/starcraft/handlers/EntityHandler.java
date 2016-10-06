@@ -1,7 +1,5 @@
 package net.bvanseghi.starcraft.handlers;
 
-import java.util.Random;
-
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.bvanseghi.starcraft.Starcraft;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
@@ -19,15 +17,14 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 
+@SuppressWarnings("unchecked")
 public class EntityHandler {
 
 	// Hostile Entities
-
+	@SuppressWarnings("rawtypes")
 	public static void RegisterBroodling(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the larva Cocoon
 		EntityRegistry.registerGlobalEntityID(EntityBroodling.class, name, entityId);
@@ -73,11 +70,10 @@ public class EntityHandler {
 
 	// Peaceful Entities
 
+	@SuppressWarnings("rawtypes")
 	public static void RegisterCivilian(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the larva
 		EntityRegistry.registerGlobalEntityID(EntityCivilian.class, name, entityId);
@@ -87,11 +83,10 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public static void RegisterProbe(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the larva
 		EntityRegistry.registerGlobalEntityID(EntityProbe.class, name, entityId);
@@ -101,11 +96,10 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public static void RegisterZealot(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the Zealot
 		EntityRegistry.registerGlobalEntityID(EntityZealot.class, name, entityId);
@@ -115,11 +109,10 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static void RegisterDarkProbe(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the probe
 		EntityRegistry.registerGlobalEntityID(EntityDarkProbe.class, name, entityId);
@@ -129,11 +122,10 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static void RegisterLarva(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the larva
 		EntityRegistry.registerGlobalEntityID(EntityLarva.class, name, entityId);
@@ -143,11 +135,10 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static void RegisterLarvaCocoon(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the larva Cocoon
 		EntityRegistry.registerGlobalEntityID(EntityLarvaCocoon.class, name, entityId);
@@ -157,11 +148,10 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static void RegisterOverlord(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the Overlord
 		EntityRegistry.registerGlobalEntityID(EntityOverlord.class, name, entityId);
@@ -171,11 +161,10 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static void RegisterDrone(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the Drone
 		EntityRegistry.registerGlobalEntityID(EntityDrone.class, name, entityId);

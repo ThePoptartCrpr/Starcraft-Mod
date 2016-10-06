@@ -17,7 +17,10 @@ import net.minecraft.world.World;
 
 public class DimPortalOverworld extends ModBlocks {
 	public static boolean field_149948_a;
+	
+	@SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00000236";
+	
 	private int dimOverworld = 0;
 	public static final String name = "dimPortalOverworld";
 
@@ -35,6 +38,7 @@ public class DimPortalOverworld extends ModBlocks {
 	 * boxes to the list if they intersect the mask.) Parameters: World, X, Y,
 	 * Z, mask, list, colliding entity
 	 */
+	@SuppressWarnings("rawtypes")
 	public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB mask, List list,
 			Entity entity) {
 	}
