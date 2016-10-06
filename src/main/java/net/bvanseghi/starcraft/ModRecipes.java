@@ -26,8 +26,7 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(Items.coal, 1, 1), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.dust, 1, 2)});
 		
 		//Steel Dust from Carbon and Iron Grains
-		//FIXME: force at least 3 of each
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 2)});
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 2), new ItemStack(ModItems.dust, 3, 2)});
 		
 		//Steel Ingot from Steel Dust
 		GameRegistry.addSmelting(new ItemStack(ModItems.dust, 1, 0), new ItemStack(ModItems.ingot, 1, 4), 0);
