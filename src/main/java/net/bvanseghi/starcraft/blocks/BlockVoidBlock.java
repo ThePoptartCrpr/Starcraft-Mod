@@ -25,6 +25,7 @@ public class BlockVoidBlock extends ModBlocks {
 		setResistance(30000.0F);
 		setHarvestLevel("pickaxe", 4);
 		this.setTickRandomly(true);
+		this.setCreativeTab(null);
 	}
 
 	

@@ -7,12 +7,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.IItemRenderer;
 
-public class ItemRenderMovingLightSource implements IItemRenderer {
+public class ItemRenderWarpGateWormholeOverworld implements IItemRenderer {
 
 	TileEntitySpecialRenderer render;
 	private TileEntity entity;
 
-	public ItemRenderMovingLightSource(TileEntitySpecialRenderer render, TileEntity entity) {
+	public ItemRenderWarpGateWormholeOverworld(TileEntitySpecialRenderer render, TileEntity entity) {
 		this.entity = entity;
 		this.render = render;
 	}

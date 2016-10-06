@@ -32,7 +32,7 @@ public class BlockProtossMetal extends Block {
 		super(Material.iron);
 		setStepSound(soundTypeMetal);
 		setHardness(5.0F);
-		setResistance(30.0F);
+		setResistance(25.0F);
 		setHarvestLevel("pickaxe", 3);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}

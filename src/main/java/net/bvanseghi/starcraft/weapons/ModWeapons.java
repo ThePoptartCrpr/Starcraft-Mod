@@ -1,10 +1,10 @@
 package net.bvanseghi.starcraft.weapons;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModWeapons {
 
@@ -13,8 +13,8 @@ public class ModWeapons {
 
 	public static final ToolMaterial PSIBLADE = EnumHelper.addToolMaterial("PSIBLADE", 0, 150, 9.5F, 4.0F, 0);
 	public static final ToolMaterial WARPBLADE = EnumHelper.addToolMaterial("WARPBLADE", 0, 250, 9.5F, 18.5F, 0);
-	public static final ToolMaterial MASTERPSIBLADE = EnumHelper.addToolMaterial("MASTERPSIBLADE", 0, 500, 9.5F, 38.5F,
-			0);
+	public static final ToolMaterial DUALWARPBLADE = EnumHelper.addToolMaterial("DUALWARPBLADE", 0, 500, 9.5F, 18.5F, 0);
+	public static final ToolMaterial MASTERPSIBLADE = EnumHelper.addToolMaterial("MASTERPSIBLADE", 0, 750, 9.5F, 38.5F, 0);
 
 	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial("TITANIUM", 2, 502, 5.5F, 2.0F, 10);
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial("COPPER", 2, 190, 4.5F, 1.0F, 10);
@@ -29,6 +29,7 @@ public class ModWeapons {
 
 	public static Item warpBlade;
 	public static Item darkWarpBlade;
+	public static Item darkDualWarpBlade;
 
 	public static Item masterPsiBlade;
 
@@ -43,6 +44,7 @@ public class ModWeapons {
 
 		warpBlade = new WeaponWarpBlade(WARPBLADE);
 		darkWarpBlade = new WeaponDarkWarpBlade(WARPBLADE);
+		darkDualWarpBlade = new WeaponDarkDualWarpBlade(DUALWARPBLADE);
 
 		masterPsiBlade = new WeaponMasterPsiBlade(MASTERPSIBLADE);
 
@@ -55,6 +57,7 @@ public class ModWeapons {
 
 		GameRegistry.registerItem(warpBlade, REFERENCE.MODID + warpBlade.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(darkWarpBlade, REFERENCE.MODID + darkWarpBlade.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(darkDualWarpBlade, REFERENCE.MODID + darkDualWarpBlade.getUnlocalizedName().substring(5));
 
 		GameRegistry.registerItem(masterPsiBlade, REFERENCE.MODID + masterPsiBlade.getUnlocalizedName().substring(5));
 
