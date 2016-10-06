@@ -80,7 +80,7 @@ public class ModelZergling extends ModelBase {
         this.setRotateAngle(jaw, -0.06981317007977318F, -0.0F, 0.0F);
         this.rShin = new ModelRenderer(this, 62, 42);
         this.rShin.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.rShin.addBox(-1.2F, 3.0F, 1.1F, 2, 2, 4, 0.0F);
+        this.rShin.addBox(-1.3F, 3.0F, 1.1F, 2, 2, 4, 0.0F);
         this.setRotateAngle(rShin, 0.045553093477052F, -0.0F, 0.0F);
         this.stomach = new ModelRenderer(this, 0, 4);
         this.stomach.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -144,7 +144,7 @@ public class ModelZergling extends ModelBase {
         this.lshin = new ModelRenderer(this, 49, 42);
         this.lshin.mirror = true;
         this.lshin.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.lshin.addBox(0.0F, 3.0F, 1.1F, 2, 2, 4, 0.0F);
+        this.lshin.addBox(0.1F, 3.0F, 1.1F, 2, 2, 4, 0.0F);
         this.setRotateAngle(lshin, 0.045553093477052F, -0.0F, -0.0F);
         this.muzzleLower = new ModelRenderer(this, 0, 37);
         this.muzzleLower.setRotationPoint(0.0F, 2.8F, -1.5F);

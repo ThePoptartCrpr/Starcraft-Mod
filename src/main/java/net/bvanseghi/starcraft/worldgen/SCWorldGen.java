@@ -417,7 +417,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGate < 50) {
+			if (chanceProtossWarpGate < 35) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
@@ -431,7 +431,7 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateOverworld < 50) {
+			if (chanceProtossWarpGateOverworld < 35) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);

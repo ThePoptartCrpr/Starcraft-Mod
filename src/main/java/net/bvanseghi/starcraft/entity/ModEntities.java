@@ -20,6 +20,8 @@ public class ModEntities {
 
 			EntityHandler.RegisterBroodling(EntityBroodling.class, "Broodling", 11403519, 7684608);
 			
+			EntityHandler.RegisterZergling(EntityZergling.class, "Zergling", 11403519, 7684608);
+			
 			//EntityHandler.RegisterScourge(EntityScourge.class, "Scourge", 11403519, 7684608);
 			
 			// EntityHandler.RegisterDrone(EntityDrone.class, "Drone", 38400/2,

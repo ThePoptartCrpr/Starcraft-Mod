@@ -23,9 +23,6 @@ public class BiomeGenCreepInfestation extends BiomeGenBase {
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
-		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityLarva.class, 8, 2, 3));
-		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityLarvaCocoon.class, 5, 2, 3));
-		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityOverlord.class, 3, 2, 3));
 	}
 
 	public int getSkyColorByTemp(float par1) {

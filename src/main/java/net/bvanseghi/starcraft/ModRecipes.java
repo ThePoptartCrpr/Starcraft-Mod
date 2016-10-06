@@ -13,6 +13,10 @@ import net.minecraft.item.ItemStack;
 public class ModRecipes {
 
 	public static void init() {
+		
+		//Steel Dust from Carbon and Iron Dusts
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 2), new ItemStack(ModItems.dust, 3, 2)});
+		
 		//Iron Dust from Iron Ingot
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 1), new Object[] {Items.iron_ingot});
 		
@@ -24,9 +28,6 @@ public class ModRecipes {
 		
 		//Coal from Carbon Dust
 		GameRegistry.addRecipe(new ItemStack(Items.coal), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.dust, 1, 2)});
-		
-		//Steel Dust from Carbon and Iron Dusts
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 2)});
 		
 		//Steel Ingot from Steel Dust
 		GameRegistry.addSmelting(new ItemStack(ModItems.dust, 1, 0), new ItemStack(ModItems.ingot, 1, 4), 0);

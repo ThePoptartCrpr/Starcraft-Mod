@@ -31,10 +31,6 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
 		this.setDisableRain();
-		
-		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityProbe.class, 8, 2, 3));
-		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityDarkProbe.class, 5, 2, 3));
-		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityZealot.class, 3, 2, 3));
 	}
 
 	public int getSkyColorByTemp(float par1) {

@@ -13,6 +13,7 @@ import net.bvanseghi.starcraft.entity.EntityOverlord;
 import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.bvanseghi.starcraft.entity.EntityScourge;
 import net.bvanseghi.starcraft.entity.EntityZealot;
+import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.model.ModelBroodling;
 import net.bvanseghi.starcraft.model.ModelCivilian;
@@ -23,6 +24,7 @@ import net.bvanseghi.starcraft.model.ModelOverlord;
 import net.bvanseghi.starcraft.model.ModelProbe;
 import net.bvanseghi.starcraft.model.ModelScourge;
 import net.bvanseghi.starcraft.model.ModelZealot;
+import net.bvanseghi.starcraft.model.ModelZergling;
 import net.bvanseghi.starcraft.renderer.ItemRenderC14GaussRifle;
 import net.bvanseghi.starcraft.renderer.ItemRenderMineralField;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichMineralField;
@@ -52,6 +54,7 @@ import net.bvanseghi.starcraft.renderer.RenderWarpGateWormholeChar;
 import net.bvanseghi.starcraft.renderer.RenderWarpGateWormholeOverworld;
 import net.bvanseghi.starcraft.renderer.RenderWarpGateWormholeShakuras;
 import net.bvanseghi.starcraft.renderer.RenderZealot;
+import net.bvanseghi.starcraft.renderer.RenderZergling;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockMineralField;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichMineralField;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichVespeneGeyser;
@@ -131,6 +134,9 @@ public class ClientProxy extends CommonProxy {
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityBroodling.class,
 				new RenderBroodling(new ModelBroodling(), 0.0F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class,
+				new RenderZergling(new ModelZergling(), 0.0F));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityScourge.class,
 				new RenderScourge(new ModelScourge(), 0.0F));
