@@ -1,29 +1,35 @@
 package net.bvanseghi.starcraft;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.tools.ModTools;
+import net.bvanseghi.starcraft.tools.ModTools;
+import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemStack;
 
 public class ModRecipes {
 
 	public static void init() {
-<<<<<<< HEAD
 		
 		//Steel Dust from Carbon and Iron Dusts
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 2), new ItemStack(ModItems.dust, 3, 2)});
 		
 		//Iron Dust from Iron Ingot
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 1), new Object[] {Items.iron_ingot});
-=======
 		//Iron Grain x9 from Iron Ore
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 1), new Object[] {Blocks.iron_ore});
->>>>>>> 980b5402f8810d20224d8d65190edef81d2b98e8
 		
 		//Iron Ore from Iron Grain x9
 		GameRegistry.addRecipe(new ItemStack(Blocks.iron_ore), new Object[] {"III", "III", "III", 'I', new ItemStack(ModItems.dust, 1, 1)});
@@ -34,12 +40,9 @@ public class ModRecipes {
 		//Charcoal from Carbon Grain x9
 		GameRegistry.addRecipe(new ItemStack(Items.coal, 1, 1), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.dust, 1, 2)});
 		
-<<<<<<< HEAD
-=======
 		//Steel Dust from Carbon and Iron Grains
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 2), new ItemStack(ModItems.dust, 3, 2)});
 		
->>>>>>> 980b5402f8810d20224d8d65190edef81d2b98e8
 		//Steel Ingot from Steel Dust
 		GameRegistry.addSmelting(new ItemStack(ModItems.dust, 1, 0), new ItemStack(ModItems.ingot, 1, 4), 0);
 
