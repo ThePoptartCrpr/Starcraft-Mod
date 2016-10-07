@@ -4,20 +4,15 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.blocks.BlockShakurasSand;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.entity.EntityZealot;
-import net.bvanseghi.starcraft.entity.EntityDarkProbe;
-import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenDesertShakuras extends BiomesSC {
 
 	public static final Height biomeHeight = new Height(0.05F, 0.05F);
 
-	@SuppressWarnings("unchecked")
 	public BiomeGenDesertShakuras(int id) {
 		super(id);
 
