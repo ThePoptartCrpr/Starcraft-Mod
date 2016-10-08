@@ -37,8 +37,6 @@ public class EntityHandler {
 	public static void RegisterZergling(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 
 		// Unique spawn details for the larva Cocoon
 		EntityRegistry.registerGlobalEntityID(EntityZergling.class, name, entityId);

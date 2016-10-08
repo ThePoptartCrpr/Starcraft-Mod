@@ -26,16 +26,15 @@ public class ModRecipes {
 		//Steel Dust from Carbon and Iron Dusts
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 1), new ItemStack(ModItems.dust, 3, 2), new ItemStack(ModItems.dust, 3, 2)});
 		
-		//Iron Dust from Iron Ingot
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 1), new Object[] {Items.iron_ingot});
 		//Iron Grain x9 from Iron Ore
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 1), new Object[] {Blocks.iron_ore});
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 2, 1), new Object[] {Blocks.iron_ore});
 		
 		//Iron Ore from Iron Grain x9
 		GameRegistry.addRecipe(new ItemStack(Blocks.iron_ore), new Object[] {"III", "III", "III", 'I', new ItemStack(ModItems.dust, 1, 1)});
 		
-		//Carbon Grain x9 from Charcoal
+		//Carbon Grain x9 from Charcoal and Coal
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 2), new Object[] {new ItemStack(Items.coal, 1, 1)});
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 2), new Object[] {new ItemStack(Items.coal, 0, 1)});
 		
 		//Charcoal from Carbon Grain x9
 		GameRegistry.addRecipe(new ItemStack(Items.coal, 1, 1), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.dust, 1, 2)});

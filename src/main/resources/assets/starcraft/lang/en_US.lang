@@ -220,9 +220,14 @@ item.Starcraft_protossModule.name=Protoss Module
 item.coord.Char.name=Char Coordinates
 item.coord.Shakuras.name=Shakuras Coordinates
 
+item.dust.Carbon.name=Carbon Dust
+item.dust.Iron.name=Iron Dust
+item.dust.Steel.name=Steel Dust
+
 entity.Larva.name=Larva
 entity.LarvaCocoon.name=Larva Cocoon
 entity.Broodling.name=Broodling
+entity.Zergling.name=Zergling
 entity.Overlord.name=Overlord
 entity.Probe.name=Probe
 entity.DarkProbe.name=Dark Probe

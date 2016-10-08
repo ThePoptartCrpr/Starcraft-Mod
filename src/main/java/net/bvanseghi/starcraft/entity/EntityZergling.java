@@ -25,18 +25,18 @@ public class EntityZergling extends EntityZergMob {
 		super(world);
 		this.clearAITasks();
 		this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityTerranMob.class, 1, true));
+        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityProtossMob.class, 1, true));
         this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1, false));
         this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityTerranPassive.class, 1, true));
         this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityProtossPassive.class, 1, true));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityTerranMob.class, 1, true));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityProtossMob.class, 1, true));
         this.tasks.addTask(2, new EntityAIWander(this, 1));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, 0, false));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, 0, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, 0, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityProtossPassive.class, 0, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, 0, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, 0, false));
         this.setSize(1.0F, 1.75F);;
 	}
 	
