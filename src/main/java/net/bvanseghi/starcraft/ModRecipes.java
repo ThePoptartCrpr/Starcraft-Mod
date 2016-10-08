@@ -1,22 +1,13 @@
 package net.bvanseghi.starcraft;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.tools.ModTools;
-import net.bvanseghi.starcraft.tools.ModTools;
-import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemStack;
 
 public class ModRecipes {

@@ -27,6 +27,7 @@ public class Library {
 		byte[] zOffsets = {-1, 0, 1};
 		
 		for(byte xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
+			
 			//Don't place block at anchor
 			if(xOffsets[xOffsetIndex] != 0 || zOffsets[zOffsetIndex] != 0) {
 				world.setBlock(x + xOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + zOffsets[zOffsetIndex], block);

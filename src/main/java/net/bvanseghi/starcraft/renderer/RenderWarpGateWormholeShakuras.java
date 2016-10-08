@@ -3,7 +3,6 @@ package net.bvanseghi.starcraft.renderer;
 import org.lwjgl.opengl.GL11;
 
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.bvanseghi.starcraft.model.ModelWarpGateWormholeChar;
 import net.bvanseghi.starcraft.model.ModelWarpGateWormholeShakuras;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;

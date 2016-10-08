@@ -1,5 +1,7 @@
 package net.bvanseghi.starcraft.handlers;
 
+import java.util.Random;
+
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.bvanseghi.starcraft.Starcraft;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
@@ -34,9 +36,11 @@ public class EntityHandler {
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
+	@SuppressWarnings({"rawtypes", "unused"})
 	public static void RegisterZergling(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
+		//x and random are unused... should we keep them?
 
 		// Unique spawn details for the larva Cocoon
 		EntityRegistry.registerGlobalEntityID(EntityZergling.class, name, entityId);
