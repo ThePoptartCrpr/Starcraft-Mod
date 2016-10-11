@@ -9,17 +9,23 @@ import net.minecraftforge.common.util.EnumHelper;
 public class ModArmour {
 
 	/*
-	 * CLOTH(5, new int[]{1, 3, 2, 1}, 15), CHAIN(15, new int[]{2, 5, 4, 1},
-	 * 12), IRON(15, new int[]{2, 6, 5, 2}, 9), GOLD(7, new int[]{2, 5, 3, 1},
-	 * 25), DIAMOND(33, new int[]{3, 8, 6, 3}, 10);
+	 * CLOTH(5, new int[]{1, 3, 2, 1}, 15), 
+	 * CHAIN(15, new int[]{2, 5, 4, 1}, 12), 
+	 * IRON(15, new int[]{2, 6, 5, 2}, 9),
+	 * GOLD(7, new int[]{2, 5, 3, 1}, 25), 
+	 * DIAMOND(33, new int[]{3, 8, 6, 3}, 10);
 	 */
 
 	static final ItemArmor.ArmorMaterial copperArmourMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", 11,
 			new int[] { 2, 5, 4, 1 }, 12);
-	static final ItemArmor.ArmorMaterial steelArmourMaterial = EnumHelper.addArmorMaterial("steelArmorMaterial", 21,
-			new int[] { 3, 6, 5, 2 }, 30);
+	static final ItemArmor.ArmorMaterial steelArmourMaterial = EnumHelper.addArmorMaterial("steelArmorMaterial", 29,
+			new int[] { 3, 7, 5, 3 }, 9);
 	static final ItemArmor.ArmorMaterial titaniumArmourMaterial = EnumHelper.addArmorMaterial("titaniumArmorMaterial",
-			29, new int[] { 3, 7, 5, 3 }, 9);
+			21, new int[] { 3, 6, 5, 2 }, 30);
+	
+	//terran armours
+	static final ItemArmor.ArmorMaterial ghostArmourMaterial = EnumHelper.addArmorMaterial("ghostArmourMaterial", 20, 
+			new int[] { 2, 6, 4, 2 }, 0);
 
 	public static Item titaniumHelmet;
 	public static Item titaniumChestplate;
@@ -35,6 +41,11 @@ public class ModArmour {
 	public static Item steelChestplate;
 	public static Item steelLeggings;
 	public static Item steelBoots;
+	
+	public static Item ghostHelmet;
+	public static Item ghostChestplate;
+	public static Item ghostLeggings;
+	public static Item ghostBoots;
 
 	public static void preInit() {
 
@@ -53,6 +64,11 @@ public class ModArmour {
 		steelLeggings = new ArmourSteelLeggings(steelArmourMaterial, 0, 2);
 		steelBoots = new ArmourSteelBoots(steelArmourMaterial, 0, 3);
 
+		ghostHelmet = new ArmourGhostHelmet(ghostArmourMaterial, 0, 0);
+		ghostChestplate = new ArmourGhostChestplate(ghostArmourMaterial, 0, 1);
+		ghostLeggings = new ArmourGhostLeggings(ghostArmourMaterial, 0, 2);
+		ghostBoots = new ArmourGhostBoots(ghostArmourMaterial, 0, 3);
+		
 		GameRegistry.registerItem(titaniumHelmet, REFERENCE.MODID + titaniumHelmet.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(titaniumChestplate,
 				REFERENCE.MODID + titaniumChestplate.getUnlocalizedName().substring(5));
@@ -70,6 +86,11 @@ public class ModArmour {
 		GameRegistry.registerItem(steelChestplate, REFERENCE.MODID + steelChestplate.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(steelLeggings, REFERENCE.MODID + steelLeggings.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(steelBoots, REFERENCE.MODID + steelBoots.getUnlocalizedName().substring(5));
+		
+		GameRegistry.registerItem(ghostHelmet, REFERENCE.MODID + ghostHelmet.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(ghostChestplate, REFERENCE.MODID + ghostChestplate.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(ghostLeggings, REFERENCE.MODID + ghostLeggings.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(ghostBoots, REFERENCE.MODID + ghostBoots.getUnlocalizedName().substring(5));
 
 	}
 }

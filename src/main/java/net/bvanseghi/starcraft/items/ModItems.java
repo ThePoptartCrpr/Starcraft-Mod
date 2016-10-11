@@ -37,6 +37,8 @@ public class ModItems extends Item {
 	public static Item bloodBucket;
 	
 	public static Item protossModule;
+	
+	public static Item keystone;
 
 	
 	public static void preInit() {
@@ -55,6 +57,8 @@ public class ModItems extends Item {
 
 		creepResin = new ItemCreepResin();
 		organicTissue = new ItemOrganicTissue();
+		
+		keystone = new ItemKeystone();
 
 		acidBucket = new ItemAcidBucket(ModBlocks.fluidAcid);
 		bloodBucket = new ItemBloodBucket(ModBlocks.fluidAcid);
@@ -106,6 +110,8 @@ public class ModItems extends Item {
 
 		GameRegistry.registerItem(creepResin, ItemCreepResin.name);
 		GameRegistry.registerItem(organicTissue, ItemOrganicTissue.name);
+		
+		//GameRegistry.registerItem(keystone, ItemKeystone.name);
 		
 		GameRegistry.registerItem(coord, REFERENCE.MODID + (coord.getUnlocalizedName().substring(5)));
 		
