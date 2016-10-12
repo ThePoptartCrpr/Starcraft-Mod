@@ -7,7 +7,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
 
 public class ModArmour {
-
+	
 	/*
 	 * CLOTH(5, new int[]{1, 3, 2, 1}, 15), 
 	 * CHAIN(15, new int[]{2, 5, 4, 1}, 12), 
