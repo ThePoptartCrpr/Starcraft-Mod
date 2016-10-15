@@ -19,8 +19,6 @@ public class ArmourGhostLeggings extends ItemArmor {
 
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-
-		return null;//"Starcraft:textures/model/armor/copper_layer_1.png";
+		return null; //"Starcraft:textures/model/armor/copper_layer_1.png";
 	}
-
 }
