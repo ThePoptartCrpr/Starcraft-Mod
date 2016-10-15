@@ -12,6 +12,7 @@ import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.ModEntities;
+import net.bvanseghi.starcraft.events.LivingUpdateEventHandler;
 import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.handlers.BucketHandler;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
@@ -71,8 +72,8 @@ public class Starcraft {
 		ModEntities.init();
 		Achievements.init();
 		
+		MinecraftForge.EVENT_BUS.register(new LivingUpdateEventHandler());
 		MinecraftForge.EVENT_BUS.register(new VanillaEntityHandler());
-
 	}
 
 	@EventHandler

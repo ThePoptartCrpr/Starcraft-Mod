@@ -1,5 +1,6 @@
 package net.bvanseghi.starcraft.proxy;
 
+//TODO: find any potential wildcards and put them in place
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
@@ -7,6 +8,7 @@ import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
 import net.bvanseghi.starcraft.entity.EntityDarkProbe;
+import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityOverlord;
@@ -18,6 +20,7 @@ import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.model.ModelBroodling;
 import net.bvanseghi.starcraft.model.ModelCivilian;
 import net.bvanseghi.starcraft.model.ModelDarkProbe;
+import net.bvanseghi.starcraft.model.ModelDarkTemplar;
 import net.bvanseghi.starcraft.model.ModelLarva;
 import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
 import net.bvanseghi.starcraft.model.ModelOverlord;
@@ -39,6 +42,7 @@ import net.bvanseghi.starcraft.renderer.RenderBroodling;
 import net.bvanseghi.starcraft.renderer.RenderC14GaussRifleBullet;
 import net.bvanseghi.starcraft.renderer.RenderCivilian;
 import net.bvanseghi.starcraft.renderer.RenderDarkProbe;
+import net.bvanseghi.starcraft.renderer.RenderDarkTemplar;
 import net.bvanseghi.starcraft.renderer.RenderLarva;
 import net.bvanseghi.starcraft.renderer.RenderLarvaCocoon;
 import net.bvanseghi.starcraft.renderer.RenderMineralField;
@@ -150,6 +154,8 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class, new RenderProbe(new ModelProbe(), 0.0F));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class, new RenderZealot(new ModelZealot(), 0.0F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityDarkTemplar.class, new RenderDarkTemplar(new ModelDarkTemplar(), 0));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
 				new RenderDarkProbe(new ModelDarkProbe(), 0.0F));

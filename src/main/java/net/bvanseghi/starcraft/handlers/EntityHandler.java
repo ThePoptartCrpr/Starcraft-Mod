@@ -5,6 +5,7 @@ import net.bvanseghi.starcraft.Starcraft;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
 import net.bvanseghi.starcraft.entity.EntityDarkProbe;
+import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
 import net.bvanseghi.starcraft.entity.EntityDrone;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
@@ -22,7 +23,7 @@ public class EntityHandler {
 
 	// Hostile Entities
 	@SuppressWarnings("rawtypes")
-	public static void RegisterBroodling(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerBroodling(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -30,12 +31,11 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityBroodling.class, name, entityId);
 		EntityRegistry.addSpawn(EntityBroodling.class, 50, 2, 3, EnumCreatureType.monster);
 		EntityRegistry.registerModEntity(EntityBroodling.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
-				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
+		EntityList.entityEggs.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public static void RegisterZergling(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerZergling(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -52,7 +52,7 @@ public class EntityHandler {
 	 */
 	
 	/*
-	public static void RegisterScourge(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerScourge(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 		long x = name.hashCode();
@@ -70,7 +70,7 @@ public class EntityHandler {
 	// Peaceful Entities
 
 	@SuppressWarnings("rawtypes")
-	public static void RegisterCivilian(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerCivilian(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -83,7 +83,7 @@ public class EntityHandler {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public static void RegisterProbe(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerProbe(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -96,7 +96,16 @@ public class EntityHandler {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public static void RegisterZealot(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerDarkTemplar(Class entityClass, String name, int mainColor, int secondaryColor) {
+		int entityID = EntityRegistry.findGlobalUniqueEntityId(); //For spawn egg... I guess
+		
+		EntityRegistry.addSpawn(EntityDarkTemplar.class, 30, 1, 1, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.registerModEntity(EntityDarkTemplar.class, name, entityID, Starcraft.instance, 64, 1, true);
+		EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, mainColor, secondaryColor));
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public static void registerZealot(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -109,7 +118,7 @@ public class EntityHandler {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static void RegisterDarkProbe(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerDarkProbe(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -122,7 +131,7 @@ public class EntityHandler {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static void RegisterLarva(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerLarva(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -135,7 +144,7 @@ public class EntityHandler {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static void RegisterLarvaCocoon(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerLarvaCocoon(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -148,7 +157,7 @@ public class EntityHandler {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static void RegisterOverlord(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerOverlord(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 
@@ -161,7 +170,7 @@ public class EntityHandler {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static void RegisterDrone(Class entityClass, String name, int mainColor, int subColor) {
+	public static void registerDrone(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 

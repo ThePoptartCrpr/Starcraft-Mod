@@ -44,7 +44,7 @@ public class EntityZealot extends EntityProtossMob {
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, 0, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZergPassive.class, 0, false));
-	        this.setSize(1.5F, 2.5F);
+	    this.setSize(1.5F, 2.5F);
 	}
 
 	protected void applyEntityAttributes() {
