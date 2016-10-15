@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 
 //TODO: actually make this :P
 public class RenderDarkTemplar extends RenderLiving {
-	private static final ResourceLocation texture = new ResourceLocation(REFERENCE.MODID + ":" + "textures/model/dark_templar.png");
+	private static final ResourceLocation texture = new ResourceLocation(REFERENCE.MODID + ":" + "textures/model/darkTemplar.png");
 	protected ModelDarkTemplar modelEntity;
 
 	public RenderDarkTemplar(ModelBase parModelBase, float par2) {
