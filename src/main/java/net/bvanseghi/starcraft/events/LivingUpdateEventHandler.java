@@ -5,6 +5,7 @@ import net.bvanseghi.starcraft.armour.ArmourGhostBoots;
 import net.bvanseghi.starcraft.armour.ArmourGhostChestplate;
 import net.bvanseghi.starcraft.armour.ArmourGhostHelmet;
 import net.bvanseghi.starcraft.armour.ArmourGhostLeggings;
+import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
@@ -18,17 +19,15 @@ public class LivingUpdateEventHandler {
 			
 			try {
 				if(player.getCurrentArmor(0).getItem() instanceof ArmourGhostBoots && player.getCurrentArmor(1).getItem() instanceof ArmourGhostLeggings && player.getCurrentArmor(2).getItem() instanceof ArmourGhostChestplate && player.getCurrentArmor(3).getItem() instanceof ArmourGhostHelmet) {
-					setInvis(true);
+					player.setInvisible(true);
 				} else {
-					setInvis(false);
+					player.setInvisible(false);
 				}
 			} catch(NullPointerException e) {
-				setInvis(false);
+				player.setInvisible(false);
 			}
+		} else if(event.entity instanceof EntityDarkTemplar) {
+			event.entity.setInvisible(true);
 		}
-	}
-	
-	private void setInvis(boolean invisible) {
-		player.setInvisible(invisible);
 	}
 }
