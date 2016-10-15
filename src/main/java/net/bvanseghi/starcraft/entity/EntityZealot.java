@@ -66,6 +66,18 @@ public class EntityZealot extends EntityProtossMob {
         return true;
     }
 	
+	public String getLivingSound() {
+		return "Starcraft:zealot-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:zealot-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:zealot-death";
+	}
+	
 	public int getTalkInterval()
     {
         return 160;

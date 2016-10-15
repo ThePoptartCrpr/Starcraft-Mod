@@ -7,11 +7,14 @@ import net.bvanseghi.starcraft.armour.ArmourGhostHelmet;
 import net.bvanseghi.starcraft.armour.ArmourGhostLeggings;
 import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
 public class LivingUpdateEventHandler {
 	private EntityPlayer player;
-
+	private EntityDarkTemplar dtentity;
+	World world;
+	
 	@SubscribeEvent
 	public void onLivingUpdate(LivingUpdateEvent event) {
 		if(event.entity instanceof EntityPlayer) {

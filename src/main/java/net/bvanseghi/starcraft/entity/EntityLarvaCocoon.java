@@ -32,6 +32,23 @@ public class EntityLarvaCocoon extends EntityZergPassive {
     {
         return false;
     }
+	
+	public int getTalkInterval()
+    {
+        return 160;
+    }
+	
+	public String getLivingSound() {
+		return "Starcraft:zergCocoon-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:zergCocoon-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:zergCocoon-death";
+	}
 
 	@SuppressWarnings({"rawtypes", "unused"})
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {

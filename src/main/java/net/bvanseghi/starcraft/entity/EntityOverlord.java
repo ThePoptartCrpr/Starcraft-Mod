@@ -41,6 +41,23 @@ public class EntityOverlord extends EntityFlying {
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(200.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.015D);
 	}
+	
+	public int getTalkInterval()
+    {
+        return 160;
+    }
+	
+	public String getLivingSound() {
+		return "Starcraft:overlord-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:overlord-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:overlord-death";
+	}
 
 	 @SideOnly(Side.CLIENT)
 	    public boolean func_110182_bF()

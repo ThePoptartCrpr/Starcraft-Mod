@@ -85,6 +85,18 @@ public class EntityDarkProbe extends EntityProtossPassive {
     {
         return 160;
     }
+	
+	public String getLivingSound() {
+		return "Starcraft:probe-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:probe-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:probe-death";
+	}
 
 	@SuppressWarnings({"rawtypes", "unused"})
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {

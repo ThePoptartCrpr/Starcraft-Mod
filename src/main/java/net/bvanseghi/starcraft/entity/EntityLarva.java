@@ -44,6 +44,23 @@ public class EntityLarva extends EntityZergPassive {
         return false;
     }
 
+	public int getTalkInterval()
+    {
+        return 160;
+    }
+	
+	public String getLivingSound() {
+		return "Starcraft:larva-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:larva-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:larva-death";
+	}
+	
 	protected void dropFewItems(boolean par1, int par2) {
 		int dropChanceCarapace = random.nextInt(9);
 

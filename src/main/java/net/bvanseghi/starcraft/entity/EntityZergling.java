@@ -59,8 +59,21 @@ public class EntityZergling extends EntityZergMob {
 		return true;
 	}
 	
-	public int getTalkInterval() {
-		return 150;
+	public int getTalkInterval()
+    {
+        return 160;
+    }
+	
+	public String getLivingSound() {
+		return "Starcraft:zergling-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:zergling-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:zergling-death";
 	}
 	
 	/**

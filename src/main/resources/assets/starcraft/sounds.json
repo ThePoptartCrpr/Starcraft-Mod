@@ -8,12 +8,18 @@
     "zergCocoon-live1": {"category": "master", "sounds": ["zergCocoon-live1"]},
     "zergCocoon-hurt": {"category": "master", "sounds": ["zergCocoon-hurt"]},
     "zergCocoon-death": {"category": "master", "sounds": ["zergCocoon-death"]},
+    "zergling-live1": {"category": "master", "sounds": ["zergling-live1"]},
+    "zergling-hurt": {"category": "master", "sounds": ["zergling-hurt"]},
+    "zergling-death": {"category": "master", "sounds": ["zergling-death"]},
     "probe-live1": {"category": "master", "sounds": ["probe-live1"]},
     "probe-hurt": {"category": "master", "sounds": ["probe-hurt"]},
     "probe-death": {"category": "master", "sounds": ["probe-death"]},
     "zealot-live1": {"category": "master", "sounds": ["zealot-live1"]},
     "zealot-hurt": {"category": "master", "sounds": ["zealot-hurt"]},
     "zealot-death": {"category": "master", "sounds": ["zealot-death"]},
+    "darkTemplar-live1": {"category": "master", "sounds": ["darkTemplar-live1"]},
+    "darkTemplar-hurt": {"category": "master", "sounds": ["darkTemplar-hurt"]},
+    "darkTemplar-death": {"category": "master", "sounds": ["darkTemplar-death"]},
     "c14GaussRifle-firing": {"category": "master", "sounds": ["c14GaussRifle-firing"]},
     "c14GaussRifle-out": {"category": "master", "sounds": ["c14GaussRifle-out"]}
 }
