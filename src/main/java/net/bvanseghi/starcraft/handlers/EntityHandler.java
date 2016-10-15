@@ -97,11 +97,12 @@ public class EntityHandler {
 	
 	@SuppressWarnings("rawtypes")
 	public static void registerDarkTemplar(Class entityClass, String name, int mainColor, int secondaryColor) {
-		int entityID = EntityRegistry.findGlobalUniqueEntityId(); //For spawn egg... I guess
+		int entityId = EntityRegistry.findGlobalUniqueEntityId(); //For spawn egg... I guess
 		
+		EntityRegistry.registerGlobalEntityID(EntityDarkTemplar.class, name, entityId);
 		EntityRegistry.addSpawn(EntityDarkTemplar.class, 30, 1, 1, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
-		EntityRegistry.registerModEntity(EntityDarkTemplar.class, name, entityID, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, mainColor, secondaryColor));
+		EntityRegistry.registerModEntity(EntityDarkTemplar.class, name, entityId, Starcraft.instance, 64, 1, true);
+		EntityList.entityEggs.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityId, mainColor, secondaryColor));
 	}
 	
 	@SuppressWarnings("rawtypes")
