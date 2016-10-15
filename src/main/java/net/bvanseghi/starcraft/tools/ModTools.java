@@ -11,9 +11,15 @@ public class ModTools {
 	// Tool Materials, has name, harvest level, maxUses, efficiency, damage
 	// (added), enchantability
 	
+	public static final ToolMaterial BLUEMINERAL = EnumHelper.addToolMaterial("BLUEMINERAL", 2, 288, 4.7F, 1.5F, 10);
+	public static final ToolMaterial ORANGEMINERAL = EnumHelper.addToolMaterial("ORANGEMINERAL", 2, 362, 5.0F, 1.8F, 10);
 	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial("TITANIUM", 2, 502, 5.5F, 2.0F, 10);
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial("COPPER", 1, 190, 4.5F, 1.0F, 10);
 	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial("STEEL", 2, 753, 6.5F, 3.0F, 10);
+	public static final ToolMaterial NEOSTEEL = EnumHelper.addToolMaterial("NEOSTEEL", 2, 867, 6.5F, 3.5F, 10);
+	public static final ToolMaterial VANADIUM = EnumHelper.addToolMaterial("VANADIUM", 3, 966, 7.3F, 4.0F, 10);
+	public static final ToolMaterial KERATIN = EnumHelper.addToolMaterial("KERATIN", 2, 564, 5.8F, 2.5F, 10);
+	
 
 	// Tools
 
