@@ -44,7 +44,7 @@ public class EntityZergling extends EntityZergMob {
 		super.applyEntityAttributes();
 		
 		//To be modified by bvanseghi
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(35.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(5.0D);

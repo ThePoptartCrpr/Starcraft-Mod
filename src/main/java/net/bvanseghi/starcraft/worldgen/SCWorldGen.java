@@ -12,8 +12,10 @@ import net.bvanseghi.starcraft.worldgen.features.CharWorldGenMinable;
 import net.bvanseghi.starcraft.worldgen.features.ShakurasWorldGenMinable;
 import net.bvanseghi.starcraft.worldgen.provider.WorldProviderChar;
 import net.bvanseghi.starcraft.worldgen.provider.WorldProviderShakuras;
-import net.bvanseghi.starcraft.worldgen.structure.StructureDarkProtossPylon;
 import net.bvanseghi.starcraft.worldgen.structure.StructureMineralBed;
+import net.bvanseghi.starcraft.worldgen.structure.StructureProtossDarkPylon;
+import net.bvanseghi.starcraft.worldgen.structure.StructureProtossDarkWarpGateChar;
+import net.bvanseghi.starcraft.worldgen.structure.StructureProtossDarkWarpGateOverworld;
 import net.bvanseghi.starcraft.worldgen.structure.StructureProtossPylon;
 import net.bvanseghi.starcraft.worldgen.structure.StructureProtossVoidPylon;
 import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateChar;
@@ -82,17 +84,6 @@ public class SCWorldGen implements IWorldGenerator {
 		int chanceRichMineralBed = random.nextInt(2500);
 		int chanceTerranBunker = random.nextInt(4000);
 		int chanceProtossWarpGateShakuras = random.nextInt(4000);
-
-		/*
-			this.addOreSpawn(ModBlocks.ores, 0, world, Blocks.stone, random, x, z, 16, 16,
-					3 + random.nextInt(4), 9, 28, 50);
-		
-			this.addOreSpawn(ModBlocks.ores, 1, world, Blocks.stone, random, x, z, 16, 16,
-					3 + random.nextInt(4), 6, 4, 28);
-		
-			this.addOreSpawn(ModBlocks.ores, 2, world, Blocks.stone, random, x, z, 16, 16,
-					2 + random.nextInt(3), 5, 4, 20);
-		*/
 		
 			this.addOreSpawn(ModBlocks.oreTitaniumOW, world, Blocks.stone, random, x, z, 16, 16,
 					1 + random.nextInt(7), 9, 4, 28);
@@ -388,7 +379,7 @@ public class SCWorldGen implements IWorldGenerator {
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureDarkProtossPylon().generate(world, random, i, j, k);
+					new StructureProtossDarkPylon().generate(world, random, i, j, k);
 				}
 			}
 		} else {
@@ -416,7 +407,7 @@ public class SCWorldGen implements IWorldGenerator {
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossWarpGateChar().generate(world, random, i, j - 1, k);
+					new StructureProtossDarkWarpGateChar().generate(world, random, i, j - 1, k);
 				}
 			}
 		} else {
@@ -430,7 +421,7 @@ public class SCWorldGen implements IWorldGenerator {
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossWarpGateOverworld().generate(world, random, i, j - 1, k);
+					new StructureProtossDarkWarpGateOverworld().generate(world, random, i, j - 1, k);
 				}
 			}
 		} else {

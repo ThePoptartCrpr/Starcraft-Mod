@@ -22,7 +22,7 @@ public class BlockProtossMetal extends Block {
 	/**
 	 *  Aiur = yellow, Dark = dark grey.
 	 */
-	public static final String[] subBlocks = new String[] { "Aiur", "Dark", "Blue" };
+	public static final String[] subBlocks = new String[] { "Aiur", "Dark", "Blue", "Green" };
 	
 	public BlockProtossMetal() {
 		super(Material.iron);

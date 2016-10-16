@@ -44,7 +44,7 @@ public class EntityDarkTemplar extends EntityProtossMob {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(120);
+		getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(60);
 		getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513);
 		getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32);
 		getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(24.5);
