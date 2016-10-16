@@ -77,7 +77,7 @@ public class EntityDarkProbe extends EntityProtossPassive {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.43000000417232513D);
 	}
 	
@@ -85,6 +85,18 @@ public class EntityDarkProbe extends EntityProtossPassive {
     {
         return 160;
     }
+	
+	public String getLivingSound() {
+		return "Starcraft:probe-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:probe-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:probe-death";
+	}
 
 	@SuppressWarnings({"rawtypes", "unused"})
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {

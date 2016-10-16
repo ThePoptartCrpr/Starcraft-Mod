@@ -11,7 +11,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class StructureDarkProtossPylon extends WorldGenerator {
+public class StructureProtossDarkPylon extends WorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { Blocks.grass, Blocks.stone, Blocks.dirt, ModBlocks.sandShakuras, ModBlocks.stoneShakuras };
 	}

@@ -44,7 +44,7 @@ public class EntityZergling extends EntityZergMob {
 		super.applyEntityAttributes();
 		
 		//To be modified by bvanseghi
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(35.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(5.0D);
@@ -59,8 +59,21 @@ public class EntityZergling extends EntityZergMob {
 		return true;
 	}
 	
-	public int getTalkInterval() {
-		return 150;
+	public int getTalkInterval()
+    {
+        return 160;
+    }
+	
+	public String getLivingSound() {
+		return "Starcraft:zergling-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:zergling-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:zergling-death";
 	}
 	
 	/**

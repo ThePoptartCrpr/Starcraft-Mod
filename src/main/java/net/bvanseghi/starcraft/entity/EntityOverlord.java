@@ -38,8 +38,25 @@ public class EntityOverlord extends EntityFlying {
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(200.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.015D);
+	}
+	
+	public int getTalkInterval()
+    {
+        return 160;
+    }
+	
+	public String getLivingSound() {
+		return "Starcraft:overlord-live1";
+	}
+	
+	public String getHurtSound() {
+		return "Starcraft:overlord-hurt";
+	}
+	
+	public String getDeathSound() {
+		return "Starcraft:overlord-death";
 	}
 
 	 @SideOnly(Side.CLIENT)

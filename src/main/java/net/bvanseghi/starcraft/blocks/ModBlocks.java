@@ -60,6 +60,9 @@ public class ModBlocks extends Block {
 	public static Block protossEnergyStabilizer;
 	public static Block protossEnergyChannel;
 	
+	public static Block protossEnergyStabilizerDark;
+	public static Block protossEnergyChannelDark;
+	
 	public static Block energyBlock;
 	public static Block voidEnergyBlock;
 	public static Block crystals;
@@ -177,6 +180,8 @@ public class ModBlocks extends Block {
 		
 		protossEnergyStabilizer = new BlockProtossEnergyStabilizer("protossEnergyStabilizer");
 		protossEnergyChannel = new BlockProtossEnergyChannel("protossEnergyChannel");
+		protossEnergyStabilizerDark = new BlockProtossEnergyStabilizerDark("protossEnergyStabilizerDark");
+		protossEnergyChannelDark = new BlockProtossEnergyChannelDark("protossEnergyChannelDark");
 		energyBlock = new BlockEnergyBlock();
 		voidEnergyBlock = new BlockVoidEnergyBlock();
 		warpGateWormholeChar = new BlockWarpGateWormholeChar(Material.ground);
@@ -265,6 +270,8 @@ public class ModBlocks extends Block {
 		
 		GameRegistry.registerBlock(protossEnergyStabilizer, "protossEnergyStabilizer");
 		GameRegistry.registerBlock(protossEnergyChannel, BlockProtossEnergyChannel.name);
+		GameRegistry.registerBlock(protossEnergyStabilizerDark, "protossEnergyStabilizerDark");
+		GameRegistry.registerBlock(protossEnergyChannelDark, BlockProtossEnergyChannelDark.name);
 		GameRegistry.registerBlock(energyBlock, BlockEnergyBlock.name);
 		GameRegistry.registerBlock(voidEnergyBlock, BlockVoidEnergyBlock.name);
 		GameRegistry.registerBlock(warpGateWormholeChar, BlockWarpGateWormholeChar.name)

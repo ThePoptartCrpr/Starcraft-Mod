@@ -23,8 +23,7 @@ public class ItemC14GaussRifle extends ItemSword {
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
 		if (par3EntityPlayer.capabilities.isCreativeMode
 				|| par3EntityPlayer.inventory.consumeInventoryItem(ModItems.C14GaussRifleBullet)) {
-			par2World.playSoundAtEntity(par3EntityPlayer, "Starcraft:c14GaussRifle-firing", 20.0F,
-					1.5F / 1F);
+			par2World.playSoundAtEntity(par3EntityPlayer, "Starcraft:c14GaussRifle-firing", 20.0F, 1.5F / 1F);
 			if (!par2World.isRemote) {
 				par2World.spawnEntityInWorld(new EntityC14GaussRifleBullet(par2World, par3EntityPlayer));
 			}

@@ -13,9 +13,12 @@ tile.voidEnergyBlock.name=Block Of Void Energy
 tile.protossMetal.Dark.name=Dark Protoss Metal
 tile.protossMetal.Aiur.name=Protoss Metal
 tile.protossMetal.Blue.name=Blue Protoss Metal
+tile.protossMetal.Green.name=Green Protoss Metal
 
 tile.protossEnergyStabilizer.name=Protoss Energy Stabilizer
 tile.protossEnergyChannel.name=Protoss Energy Channel
+tile.protossEnergyStabilizerDark.name=Dark Protoss Energy Stabilizer
+tile.protossEnergyChannelDark.name=Dark Protoss Energy Channel
 
 tile.oreAlienC.name=Alien Ore (Char)
 tile.oreAlienS.name=Alien Ore (Shakuras)
@@ -233,6 +236,7 @@ entity.Probe.name=Probe
 entity.DarkProbe.name=Dark Probe
 
 entity.Civilian.name=Civilian
+entity.DarkTemplar.name=Dark Templar
 entity.Zealot.name=Zealot
 
 
