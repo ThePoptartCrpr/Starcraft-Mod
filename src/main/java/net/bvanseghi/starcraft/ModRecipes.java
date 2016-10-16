@@ -14,7 +14,7 @@ public class ModRecipes {
 
 	public static void init() {
 		
-		//Steel Dust from Carbon and Iron Dusts
+		//Steel Dust from Carbon and Iron Grains
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 2), new ItemStack(ModItems.dust, 1, 2)});
 		
 		//Iron Grain x2 from Iron Ore
