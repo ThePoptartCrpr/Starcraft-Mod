@@ -5,6 +5,7 @@ import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -44,10 +45,10 @@ public class EntityZergling extends EntityZergMob {
 		super.applyEntityAttributes();
 		
 		//To be modified by bvanseghi
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(25.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.zerglingHP);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(StarcraftConfig.zerglingDmg);
 	}
 	
 	protected void clearAITasks() {

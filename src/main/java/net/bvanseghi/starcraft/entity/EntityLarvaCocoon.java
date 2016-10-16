@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
@@ -23,7 +24,7 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.larvaCocoonHP);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(999999.0D);
 	}

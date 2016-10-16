@@ -2,6 +2,7 @@ package net.bvanseghi.starcraft.entity;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -38,7 +39,7 @@ public class EntityOverlord extends EntityFlying {
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.overlordHP);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.015D);
 	}
 	

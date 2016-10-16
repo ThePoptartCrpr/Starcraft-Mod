@@ -8,6 +8,7 @@ import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
@@ -77,7 +78,7 @@ public class EntityDarkProbe extends EntityProtossPassive {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.dProbeHP);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.43000000417232513D);
 	}
 	

@@ -6,6 +6,7 @@ import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -49,10 +50,10 @@ public class EntityZealot extends EntityProtossMob {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.zealotHP);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(StarcraftConfig.zealotDmg);
 	}
 	
 	protected void clearAITasks()

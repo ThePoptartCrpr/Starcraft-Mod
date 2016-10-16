@@ -1,6 +1,8 @@
 package net.bvanseghi.starcraft.entity;
 
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.world.World;
 
@@ -9,6 +11,11 @@ public class EntityDrone extends EntityAnimal {
 	public EntityDrone(World world) {
 		super(world);
 
+	}
+	
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.droneHP);
 	}
 
 	@Override
