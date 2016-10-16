@@ -12,7 +12,6 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
 public class LivingUpdateEventHandler {
 	private EntityPlayer player;
-	private EntityDarkTemplar dtentity;
 	World world;
 	
 	@SubscribeEvent
