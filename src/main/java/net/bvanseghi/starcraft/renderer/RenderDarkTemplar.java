@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 
 //TODO: actually make this :P
 public class RenderDarkTemplar extends RenderLiving {
-	private static final ResourceLocation texture = new ResourceLocation(REFERENCE.MODID + ":" + "textures/model/darkTemplar.png");
+	private static final ResourceLocation texture = new ResourceLocation(REFERENCE.MODID + ":" + "textures/model/darktemplar.png");
 	protected ModelDarkTemplar modelEntity;
 
 	public RenderDarkTemplar(ModelBase parModelBase, float par2) {
@@ -42,5 +42,6 @@ public class RenderDarkTemplar extends RenderLiving {
     protected void preRenderCallback(EntityLivingBase entity, float f) {
     	GL11.glScalef(0.70F, 0.70F, 0.70F);
     	GL11.glRotatef(28F, 0F, 1F, 0F);
+    	GL11.glColor4f(1.0f, 1.0f, 1.0f, 0.7f);
     }
 }

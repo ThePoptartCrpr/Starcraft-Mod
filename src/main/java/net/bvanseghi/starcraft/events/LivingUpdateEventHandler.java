@@ -29,8 +29,8 @@ public class LivingUpdateEventHandler {
 			} catch(NullPointerException e) {
 				player.setInvisible(false);
 			}
-		} else if(event.entity instanceof EntityDarkTemplar) {
+		} /*else if(event.entity instanceof EntityDarkTemplar) {
 			event.entity.setInvisible(true);
-		}
+		}*/
 	}
 }
