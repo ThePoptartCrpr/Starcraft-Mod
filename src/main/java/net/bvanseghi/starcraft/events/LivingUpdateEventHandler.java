@@ -6,13 +6,13 @@ import net.bvanseghi.starcraft.armour.ArmourGhostChestplate;
 import net.bvanseghi.starcraft.armour.ArmourGhostHelmet;
 import net.bvanseghi.starcraft.armour.ArmourGhostLeggings;
 import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
 public class LivingUpdateEventHandler {
 	private EntityPlayer player;
-	private EntityDarkTemplar dtentity;
 	World world;
 	
 	@SubscribeEvent
@@ -29,8 +29,8 @@ public class LivingUpdateEventHandler {
 			} catch(NullPointerException e) {
 				player.setInvisible(false);
 			}
-		} /*else if(event.entity instanceof EntityDarkTemplar) {
+		} else if(event.entity instanceof EntityDarkTemplar && !StarcraftConfig.dTempVis) {
 			event.entity.setInvisible(true);
-		}*/
+		}
 	}
 }

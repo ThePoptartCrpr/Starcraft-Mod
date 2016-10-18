@@ -156,7 +156,7 @@ public class EntityHandler {
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
-
+	/*
 	@SuppressWarnings("rawtypes")
 	public static void registerOverlord(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.
@@ -169,7 +169,7 @@ public class EntityHandler {
 		EntityList.entityEggs.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
-
+	*/
 	@SuppressWarnings("rawtypes")
 	public static void registerDrone(Class entityClass, String name, int mainColor, int subColor) {
 		// creates colors for Spawn Egg based on name.

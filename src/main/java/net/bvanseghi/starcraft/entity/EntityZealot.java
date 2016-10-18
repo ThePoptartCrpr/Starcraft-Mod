@@ -1,11 +1,14 @@
 package net.bvanseghi.starcraft.entity;
 
+import java.util.Random;
+
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -49,10 +52,10 @@ public class EntityZealot extends EntityProtossMob {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.zealotHP);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(StarcraftConfig.zealotDmg);
 	}
 	
 	protected void clearAITasks()
@@ -67,7 +70,15 @@ public class EntityZealot extends EntityProtossMob {
     }
 	
 	public String getLivingSound() {
-		return "Starcraft:zealot-live1";
+		Random rand = new Random();
+		if(rand.nextInt(2) == 0) {
+			return "Starcraft:zealot-live1";
+		}else if(rand.nextInt(2) == 1) {
+			return "Starcraft:zealot-live2";
+		}else if(rand.nextInt(2) == 2) {
+			return "Starcraft:zealot-live3";
+		}
+		return "Starcraft:zealot-live4";
 	}
 	
 	public String getHurtSound() {

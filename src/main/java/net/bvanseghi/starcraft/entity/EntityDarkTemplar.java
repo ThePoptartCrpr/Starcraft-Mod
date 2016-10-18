@@ -4,6 +4,7 @@ import net.bvanseghi.starcraft.entity.monster.*;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -44,10 +45,10 @@ public class EntityDarkTemplar extends EntityProtossMob {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(60);
+		getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.dTempHP);
 		getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513);
 		getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32);
-		getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(24.5);
+		getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(StarcraftConfig.dTempDmg);
 	}
 	
 	protected void clearAITasks() {
@@ -70,7 +71,10 @@ public class EntityDarkTemplar extends EntityProtossMob {
     }
 	
 	public String getLivingSound() {
-		return "Starcraft:darkTemplar-live1";
+		if(rand.nextInt(2) == 0) {
+			return "Starcraft:darkTemplar-live1";
+		}
+		return "Starcraft:darkTemplar-live2";
 	}
 	
 	public String getHurtSound() {

@@ -15,7 +15,6 @@ public class ItemDust extends Item {
 	@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 	
-	//TODO: set localized names to dust/grain/grain respectively
 	public static final String[] metaNames = {"Steel", "Iron", "Carbon"};
 	
 	public ItemDust() {

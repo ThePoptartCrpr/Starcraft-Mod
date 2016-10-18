@@ -35,7 +35,6 @@ import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
@@ -411,12 +410,6 @@ public class ChunkProviderChar extends ChunkProviderGenerate implements IChunkPr
 		}
 
 		boolean doGen = TerrainGen.populate(chunkProvider, worldObj, rand, par1, par2, flag, DUNGEON);
-		for (k1 = 0; doGen && k1 < 8; ++k1) {
-			l1 = k + this.rand.nextInt(16) + 8;
-			i2 = this.rand.nextInt(256);
-			int j2 = l + this.rand.nextInt(16) + 8;
-			(new WorldGenDungeons()).generate(this.worldObj, this.rand, l1, i2, j2);
-		}
 
 		biomegenbase.decorate(this.worldObj, this.rand, k, l);
 		if (TerrainGen.populate(chunkProvider, worldObj, rand, par1, par2, flag, ANIMALS)) {

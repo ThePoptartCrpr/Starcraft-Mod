@@ -1,10 +1,13 @@
 package net.bvanseghi.starcraft.entity;
 
+import java.util.Random;
+
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -44,10 +47,10 @@ public class EntityZergling extends EntityZergMob {
 		super.applyEntityAttributes();
 		
 		//To be modified by bvanseghi
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(25.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.zerglingHP);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(StarcraftConfig.zerglingDmg);
 	}
 	
 	protected void clearAITasks() {
@@ -65,7 +68,15 @@ public class EntityZergling extends EntityZergMob {
     }
 	
 	public String getLivingSound() {
-		return "Starcraft:zergling-live1";
+		Random rand = new Random();
+		if(rand.nextInt(2) == 0) {
+			return "Starcraft:zergling-live1";
+		}else if(rand.nextInt(2) == 1) {
+			return "Starcraft:zergling-live2";
+		}else if(rand.nextInt(2) == 2) {
+			return "Starcraft:zergling-live3";
+		}
+		return "Starcraft:zergling-live4";
 	}
 	
 	public String getHurtSound() {

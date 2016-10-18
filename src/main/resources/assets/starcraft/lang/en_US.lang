@@ -223,8 +223,8 @@ item.Starcraft_protossModule.name=Protoss Module
 item.coord.Char.name=Char Coordinates
 item.coord.Shakuras.name=Shakuras Coordinates
 
-item.dust.Carbon.name=Carbon Dust
-item.dust.Iron.name=Iron Dust
+item.dust.Carbon.name=Carbon Grain
+item.dust.Iron.name=Iron Grain
 item.dust.Steel.name=Steel Dust
 
 entity.Larva.name=Larva
