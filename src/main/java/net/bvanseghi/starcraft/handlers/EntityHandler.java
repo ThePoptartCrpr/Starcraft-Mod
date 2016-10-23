@@ -9,7 +9,6 @@ import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
 import net.bvanseghi.starcraft.entity.EntityDrone;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
-import net.bvanseghi.starcraft.entity.EntityOverlord;
 import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityZergling;

@@ -47,7 +47,6 @@ public class BlockWarpGateWormholeOverworld extends BlockContainer {
 	}
 
 	public void onBlockAdded(World world, int x, int y, int z) {
-		Library lib = new Library();
-		lib.blockCube(world, ModBlocks.dimPortalOverworld, x, y, z);
+		Library.blockCube(world, ModBlocks.dimPortalOverworld, x, y, z);
 	}
 }
