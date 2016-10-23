@@ -16,9 +16,7 @@ import net.bvanseghi.starcraft.worldgen.structure.StructureMineralBed;
 import net.bvanseghi.starcraft.worldgen.structure.StructureProtossPylonTemplate;
 import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateTemplate;
 import net.bvanseghi.starcraft.worldgen.structure.StructureRichMineralBed;
-import net.bvanseghi.starcraft.worldgen.structure.StructureRichVespeneGeyserChar;
 import net.bvanseghi.starcraft.worldgen.structure.StructureTerranBunker;
-import net.bvanseghi.starcraft.worldgen.structure.StructureVespeneGeyserChar;
 import net.bvanseghi.starcraft.worldgen.structure.StructureVespeneGeyserTemplate;
 import net.bvanseghi.starcraft.worldgen.structure.StructureZergSpawningPool;
 import net.bvanseghi.starcraft.worldgen.structure.StructureZergSpire;
@@ -71,7 +69,6 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 	}
 
-	@SuppressWarnings("unused")
 	public void generateSurface(World world, Random random, int x, int z) {
 		int chanceTerranBunker = random.nextInt(4000);
 		int chanceProtossWarpGate = random.nextInt(4000);

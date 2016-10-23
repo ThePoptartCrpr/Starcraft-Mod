@@ -4,7 +4,6 @@ import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.worldgen.chunk.ChunkProviderChar;
 import net.bvanseghi.starcraft.worldgen.manager.WorldChunkManagerChar;
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
