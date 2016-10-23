@@ -21,13 +21,13 @@ public class Library {
 	 */
 	public static void blockCube(World world, Block block, int x, int y, int z) {
 		boolean killLoop = false;
-		byte yOffsetIndex = 0;
-		byte zOffsetIndex = 0;
-		byte[] xOffsets = {-1, 0, 1};
-		byte[] yOffsets = {0, 1, 2};
-		byte[] zOffsets = {-1, 0, 1};
+		int yOffsetIndex = 0;
+		int zOffsetIndex = 0;
+		int[] xOffsets = {-1, 0, 1};
+		int[] yOffsets = {0, 1, 2};
+		int[] zOffsets = {-1, 0, 1};
 		
-		for(byte xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
+		for(int xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
 			
 			//Don't place block at anchor
 			if(xOffsets[xOffsetIndex] != 0 || zOffsets[zOffsetIndex] != 0) {
@@ -72,14 +72,16 @@ public class Library {
 	 */
 	public static boolean checkCube(World world, Block block, int x, int y, int z) {
 		boolean killLoop = false;
-		byte yOffsetIndex = 0;
-		byte zOffsetIndex = 0;
-		byte blockIndex = 0;
-		byte[] offsets = {-1, 0, 1};
+		int yOffsetIndex = 0;
+		int zOffsetIndex = 0;
+		int blockIndex = 0;
+		int[] offsets = {-1, 0, 1};
 		Block[] blocks = new Block[27];
 		
-		for(byte xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
-			blocks[blockIndex] = world.getBlock(offsets[xOffsetIndex], offsets[yOffsetIndex], offsets[zOffsetIndex]);
+		for(int xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
+			if(blockIndex < 3) {
+				blocks[blockIndex] = world.getBlock(offsets[xOffsetIndex], offsets[yOffsetIndex], offsets[zOffsetIndex]);
+			}
 			
 			//Reset X index to 0 after going past the final column
 			if(xOffsetIndex + 1 == 3) {
@@ -98,10 +100,8 @@ public class Library {
 			}
 			
 			if(killLoop) {
-				blockIndex = 0;
-				
-				for(; blockIndex < 27; blockIndex++) {
-					if(blocks[blockIndex] == block) {
+				for(Block indexBlock : blocks) {
+					if(indexBlock == block) {
 						return true;
 					}
 				}
