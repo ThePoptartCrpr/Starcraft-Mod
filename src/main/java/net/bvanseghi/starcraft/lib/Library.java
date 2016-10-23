@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.lib;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 
+//Copyright 2016 the Starcraft Minecraft mod team
 public class Library {
 	
 	/**
@@ -18,7 +19,7 @@ public class Library {
 	 * @param z the Z coordinate of the
 	 * anchor position
 	 */
-	public void blockCube(World world, Block block, int x, int y, int z) {
+	public static void blockCube(World world, Block block, int x, int y, int z) {
 		boolean killLoop = false;
 		byte yOffsetIndex = 0;
 		byte zOffsetIndex = 0;
@@ -55,5 +56,60 @@ public class Library {
 				break;
 			}
 		}
+	}
+	
+	/**
+	 * Checks a 3x3x3 area for any instances
+	 * of {@code block}. The center is in
+	 * the absolute center of the cube
+	 * @param world the world
+	 * @param block the {@link Block} to check for
+	 * @param x center X coord
+	 * @param y center Y coord
+	 * @param z center Z coord
+	 * @return true if at least one instance
+	 * of {@code block} is found
+	 */
+	public static boolean checkCube(World world, Block block, int x, int y, int z) {
+		boolean killLoop = false;
+		byte yOffsetIndex = 0;
+		byte zOffsetIndex = 0;
+		byte blockIndex = 0;
+		byte[] offsets = {-1, 0, 1};
+		Block[] blocks = new Block[27];
+		
+		for(byte xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
+			blocks[blockIndex] = world.getBlock(offsets[xOffsetIndex], offsets[yOffsetIndex], offsets[zOffsetIndex]);
+			
+			//Reset X index to 0 after going past the final column
+			if(xOffsetIndex + 1 == 3) {
+				xOffsetIndex = -1; //Not 0 because it'll increment after the loop
+				zOffsetIndex++;
+				
+				//Reset Z index and raise Y index after going past the final row
+				if(zOffsetIndex == 3) {
+					zOffsetIndex = 0;
+					yOffsetIndex++;
+					
+					if(yOffsetIndex == 3) {
+						killLoop = true;
+					}
+				}
+			}
+			
+			if(killLoop) {
+				blockIndex = 0;
+				
+				for(; blockIndex < 27; blockIndex++) {
+					if(blocks[blockIndex] == block) {
+						return true;
+					}
+				}
+			}
+			
+			blockIndex++;
+		}
+		
+		return false;
 	}
 }

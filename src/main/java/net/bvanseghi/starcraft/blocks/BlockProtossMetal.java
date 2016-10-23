@@ -14,6 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
+//Copyright 2016 the Starcraft Minecraft mod team
 public class BlockProtossMetal extends Block {
 
 	@SideOnly(Side.CLIENT)

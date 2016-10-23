@@ -147,6 +147,7 @@ public class ModBlocks extends Block {
 	public static Block stoneChar;
 	public static Block cobblestoneChar;
 	public static Block ashChar;
+	public static Block magmaChar;
 
 	public static Block dirtTarsonis;
 	public static Block stoneTarsonis;
@@ -247,6 +248,7 @@ public class ModBlocks extends Block {
 		dirtChar = new BlockCharDirt();
 		stoneChar = new BlockCharStone();
 		cobblestoneChar = new BlockCharCobblestone();
+		magmaChar = new BlockMagma();
 		
 		sandShakuras = new BlockShakurasSand();
 		stoneShakuras = new BlockShakurasStone();
@@ -340,6 +342,7 @@ public class ModBlocks extends Block {
 		GameRegistry.registerBlock(dirtChar, BlockCharDirt.name);
 		GameRegistry.registerBlock(stoneChar, BlockCharStone.name);
 		GameRegistry.registerBlock(cobblestoneChar, BlockCharCobblestone.name);
+		GameRegistry.registerBlock(magmaChar, BlockMagma.name);
 
 		GameRegistry.registerBlock(sandShakuras, BlockShakurasSand.name);
 		GameRegistry.registerBlock(cobblestoneShakuras, BlockShakurasCobblestone.name);

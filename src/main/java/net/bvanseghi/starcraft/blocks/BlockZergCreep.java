@@ -91,6 +91,3 @@ public class BlockZergCreep extends ModBlocks {
 		}
 	}
 }
-			
-	
-	
