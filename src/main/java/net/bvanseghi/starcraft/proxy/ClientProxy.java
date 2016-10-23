@@ -33,8 +33,10 @@ import net.bvanseghi.starcraft.renderer.ItemRenderMineralField;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichMineralField;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyserChar;
+import net.bvanseghi.starcraft.renderer.ItemRenderRichVespeneGeyserShakuras;
 import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyserChar;
+import net.bvanseghi.starcraft.renderer.ItemRenderVespeneGeyserShakuras;
 import net.bvanseghi.starcraft.renderer.ItemRenderWarpGateWormholeChar;
 import net.bvanseghi.starcraft.renderer.ItemRenderWarpGateWormholeOverworld;
 import net.bvanseghi.starcraft.renderer.ItemRenderWarpGateWormholeShakuras;
@@ -51,9 +53,11 @@ import net.bvanseghi.starcraft.renderer.RenderProbe;
 import net.bvanseghi.starcraft.renderer.RenderRichMineralField;
 import net.bvanseghi.starcraft.renderer.RenderRichVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.RenderRichVespeneGeyserChar;
+import net.bvanseghi.starcraft.renderer.RenderRichVespeneGeyserShakuras;
 import net.bvanseghi.starcraft.renderer.RenderScourge;
 import net.bvanseghi.starcraft.renderer.RenderVespeneGeyser;
 import net.bvanseghi.starcraft.renderer.RenderVespeneGeyserChar;
+import net.bvanseghi.starcraft.renderer.RenderVespeneGeyserShakuras;
 import net.bvanseghi.starcraft.renderer.RenderWarpGateWormholeChar;
 import net.bvanseghi.starcraft.renderer.RenderWarpGateWormholeOverworld;
 import net.bvanseghi.starcraft.renderer.RenderWarpGateWormholeShakuras;
@@ -63,8 +67,10 @@ import net.bvanseghi.starcraft.tileentity.TileEntityBlockMineralField;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichMineralField;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichVespeneGeyser;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichVespeneGeyserChar;
+import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichVespeneGeyserShakuras;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyser;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyserChar;
+import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyserShakuras;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeChar;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverworld;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeShakuras;
@@ -111,6 +117,18 @@ public class ClientProxy extends CommonProxy {
 				new ItemRenderRichVespeneGeyserChar(renderRichVespeneGeyserChar,
 						new TileEntityBlockRichVespeneGeyserChar()));
 
+		TileEntitySpecialRenderer renderVespeneGeyserShakuras = new RenderVespeneGeyserShakuras();
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlockVespeneGeyserShakuras.class, renderVespeneGeyserShakuras);
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModBlocks.vespeneGeyserShakuras),
+				new ItemRenderVespeneGeyserShakuras(renderVespeneGeyserShakuras, new TileEntityBlockVespeneGeyserShakuras()));
+
+		TileEntitySpecialRenderer renderRichVespeneGeyserShakuras = new RenderRichVespeneGeyserShakuras();
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlockRichVespeneGeyserShakuras.class,
+				renderRichVespeneGeyserShakuras);
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModBlocks.richVespeneGeyserShakuras),
+				new ItemRenderRichVespeneGeyserShakuras(renderRichVespeneGeyserShakuras,
+						new TileEntityBlockRichVespeneGeyserShakuras()));
+		
 		TileEntitySpecialRenderer renderWarpGateWormholeChar = new RenderWarpGateWormholeChar();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlockWarpGateWormholeChar.class,
 				renderWarpGateWormholeChar);

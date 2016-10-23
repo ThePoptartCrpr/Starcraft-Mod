@@ -2,7 +2,9 @@ package net.bvanseghi.starcraft.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.debug.*;
+import net.bvanseghi.starcraft.debug.DimPortalChar;
+import net.bvanseghi.starcraft.debug.DimPortalOverworld;
+import net.bvanseghi.starcraft.debug.DimPortalShakuras;
 import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.items.ItemCompressedMetalBlocks;
 import net.bvanseghi.starcraft.items.ItemCompressedMineralBlocks;
@@ -13,9 +15,30 @@ import net.bvanseghi.starcraft.items.ItemZergStructureCarapaceBlocks;
 import net.bvanseghi.starcraft.items.ItemZergStructureFleshBlocks;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.bvanseghi.starcraft.material.ModMaterials;
-import net.bvanseghi.starcraft.ore.*;
-import net.bvanseghi.starcraft.orechar.*;
-import net.bvanseghi.starcraft.oreshakuras.*;
+import net.bvanseghi.starcraft.ore.OreOWCopper;
+import net.bvanseghi.starcraft.ore.OreOWTitanium;
+import net.bvanseghi.starcraft.orechar.OreCharAlien;
+import net.bvanseghi.starcraft.orechar.OreCharCoal;
+import net.bvanseghi.starcraft.orechar.OreCharCopper;
+import net.bvanseghi.starcraft.orechar.OreCharDiamond;
+import net.bvanseghi.starcraft.orechar.OreCharGold;
+import net.bvanseghi.starcraft.orechar.OreCharIron;
+import net.bvanseghi.starcraft.orechar.OreCharLapis;
+import net.bvanseghi.starcraft.orechar.OreCharMineral;
+import net.bvanseghi.starcraft.orechar.OreCharRedstone;
+import net.bvanseghi.starcraft.orechar.OreCharRichMineral;
+import net.bvanseghi.starcraft.orechar.OreCharTitanium;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasAlien;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasCoal;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasCopper;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasDiamond;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasGold;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasIron;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasLapis;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasMineral;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasRedstone;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasRichMineral;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasTitanium;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -81,8 +104,12 @@ public class ModBlocks extends Block {
 	public static Block richVespeneGeyser;
 	public static Block vespeneGeyserChar;
 	public static Block richVespeneGeyserChar;
+	public static Block vespeneGeyserShakuras;
+	public static Block richVespeneGeyserShakuras;
+	
 	public static Block vespeneGeyserBase;
 	public static Block vespeneGeyserBaseChar;
+	public static Block vespeneGeyserBaseShakuras;
 	
 	public static Block zergCreep;
 	public static Block keratinChunk;
@@ -200,8 +227,12 @@ public class ModBlocks extends Block {
 		richVespeneGeyser = new BlockRichVespeneGeyser(Material.ground);
 		vespeneGeyserChar = new BlockVespeneGeyserChar(Material.ground);
 		richVespeneGeyserChar = new BlockRichVespeneGeyserChar(Material.ground);
+		vespeneGeyserShakuras = new BlockVespeneGeyserShakuras(Material.ground);
+		richVespeneGeyserShakuras = new BlockRichVespeneGeyserShakuras(Material.ground);
+		
 		vespeneGeyserBase = new BlockVespeneGeyserBase();
 		vespeneGeyserBaseChar = new BlockVespeneGeyserBaseChar();
+		vespeneGeyserBaseShakuras = new BlockVespeneGeyserBaseShakuras();
 
 		zergCreep = new BlockZergCreep();
 		keratinChunk = new BlockKeratinChunk();
@@ -292,8 +323,12 @@ public class ModBlocks extends Block {
 		GameRegistry.registerBlock(richVespeneGeyser, BlockRichVespeneGeyser.name).setBlockName("richVespeneGeyser");
 		GameRegistry.registerBlock(vespeneGeyserChar, BlockVespeneGeyserChar.name).setBlockName("vespeneGeyserChar");
 		GameRegistry.registerBlock(richVespeneGeyserChar, BlockRichVespeneGeyserChar.name).setBlockName("richVespeneGeyserChar");
+		GameRegistry.registerBlock(vespeneGeyserShakuras, BlockVespeneGeyserShakuras.name).setBlockName("vespeneGeyserShakuras");
+		GameRegistry.registerBlock(richVespeneGeyserShakuras, BlockRichVespeneGeyserShakuras.name).setBlockName("richVespeneGeyserShakuras");
+		
 		GameRegistry.registerBlock(vespeneGeyserBase, BlockVespeneGeyserBase.name);
 		GameRegistry.registerBlock(vespeneGeyserBaseChar, BlockVespeneGeyserBaseChar.name);
+		GameRegistry.registerBlock(vespeneGeyserBaseShakuras, BlockVespeneGeyserBaseShakuras.name);
 
 		GameRegistry.registerBlock(zergCreep, BlockZergCreep.name);
 		GameRegistry.registerBlock(keratinChunk, BlockKeratinChunk.name);

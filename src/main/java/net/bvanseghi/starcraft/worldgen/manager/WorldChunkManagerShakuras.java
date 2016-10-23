@@ -21,7 +21,7 @@ import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-@SuppressWarnings({"rawtypes", "unchecked", "unused"})
+@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 public class WorldChunkManagerShakuras extends WorldChunkManager {
 	public static ArrayList<BiomeGenBase> allowedBiomes = new ArrayList<BiomeGenBase>(
 			Arrays.asList(BiomesSC.biomeShakurasDesert));

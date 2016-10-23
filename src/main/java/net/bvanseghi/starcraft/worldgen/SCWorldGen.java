@@ -13,18 +13,13 @@ import net.bvanseghi.starcraft.worldgen.features.ShakurasWorldGenMinable;
 import net.bvanseghi.starcraft.worldgen.provider.WorldProviderChar;
 import net.bvanseghi.starcraft.worldgen.provider.WorldProviderShakuras;
 import net.bvanseghi.starcraft.worldgen.structure.StructureMineralBed;
-import net.bvanseghi.starcraft.worldgen.structure.StructureProtossDarkPylon;
-import net.bvanseghi.starcraft.worldgen.structure.StructureProtossDarkWarpGateChar;
-import net.bvanseghi.starcraft.worldgen.structure.StructureProtossDarkWarpGateOverworld;
-import net.bvanseghi.starcraft.worldgen.structure.StructureProtossPylon;
-import net.bvanseghi.starcraft.worldgen.structure.StructureProtossVoidPylon;
-import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateChar;
-import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateOverworld;
-import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateShakuras;
+import net.bvanseghi.starcraft.worldgen.structure.StructureProtossPylonTemplate;
+import net.bvanseghi.starcraft.worldgen.structure.StructureProtossWarpGateTemplate;
 import net.bvanseghi.starcraft.worldgen.structure.StructureRichMineralBed;
 import net.bvanseghi.starcraft.worldgen.structure.StructureRichVespeneGeyserChar;
 import net.bvanseghi.starcraft.worldgen.structure.StructureTerranBunker;
 import net.bvanseghi.starcraft.worldgen.structure.StructureVespeneGeyserChar;
+import net.bvanseghi.starcraft.worldgen.structure.StructureVespeneGeyserTemplate;
 import net.bvanseghi.starcraft.worldgen.structure.StructureZergSpawningPool;
 import net.bvanseghi.starcraft.worldgen.structure.StructureZergSpire;
 import net.minecraft.block.Block;
@@ -78,12 +73,8 @@ public class SCWorldGen implements IWorldGenerator {
 
 	@SuppressWarnings("unused")
 	public void generateSurface(World world, Random random, int x, int z) {
-		int chanceVespeneGeyser = random.nextInt(1500);
-		int chanceRichVespeneGeyser = random.nextInt(2500);
-		int chanceMineralBed = random.nextInt(1500);
-		int chanceRichMineralBed = random.nextInt(2500);
 		int chanceTerranBunker = random.nextInt(4000);
-		int chanceProtossWarpGateShakuras = random.nextInt(4000);
+		int chanceProtossWarpGate = random.nextInt(4000);
 		
 			this.addOreSpawn(ModBlocks.oreTitaniumOW, world, Blocks.stone, random, x, z, 16, 16,
 					1 + random.nextInt(7), 9, 4, 28);
@@ -92,33 +83,24 @@ public class SCWorldGen implements IWorldGenerator {
 					1 + random.nextInt(7), 25, 4, 64);
 		
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateShakuras < 50) {
+			if (chanceProtossWarpGate < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossWarpGateShakuras().generate(world, random, i, j - 1, k);
+					
+					if(random.nextInt(1) == 0) {
+						//Shakuras
+						new StructureProtossWarpGateTemplate().generate(2, 0, 2, world, random, i, j - 1, k);
+					}else if (random.nextInt(1) == 1){
+						//Char
+						new StructureProtossWarpGateTemplate().generate(1, 0, 2, world, random, i, j - 1, k);
+					}
 				}
-			}
 		} else {
 
 		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateShakuras < 50) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureProtossWarpGateChar().generate(world, random, i, j - 1, k);
-				}
-			}
-		} else {
-
-		}
-
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
 			if (chanceTerranBunker < 21) {
 				for (int a = 0; a < 1; a++) {
@@ -131,59 +113,41 @@ public class SCWorldGen implements IWorldGenerator {
 			}
 		} else {
 
+			}
 		}
-
 	}
 
 	public void generateChar(World world, Random random, int x, int z) {
 		int chanceSpawningPool = random.nextInt(2000);
 		int chanceSpire = random.nextInt(3000);
 		int chanceVespeneGeyser = random.nextInt(1500);
-		int chanceRichVespeneGeyser = random.nextInt(2500);
 		int chanceMineralBed = random.nextInt(1500);
 		int chanceRichMineralBed = random.nextInt(2500);
-		int chanceProtossWarpGateOverworld = random.nextInt(4000);
-		int chanceProtossWarpGateShakuras = random.nextInt(4000);
+		int chanceProtossWarpGate = random.nextInt(4000);
 
-			this.addOreSpawnChar(ModBlocks.oreMineralC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					3 + random.nextInt(4), 13, 28, 50);
-		
-			this.addOreSpawnChar(ModBlocks.oreRichMineralC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					3 + random.nextInt(4), 9, 4, 28);
-		
-			this.addOreSpawnChar(ModBlocks.oreAlienC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					2 + random.nextInt(3), 5, 4, 20);
-		
-			this.addOreSpawnChar(ModBlocks.oreTitaniumC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					1 + random.nextInt(7), 9, 4, 28);
-		
-			this.addOreSpawnChar(ModBlocks.oreCopperC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
-					1 + random.nextInt(7), 25, 4, 64);
-		
-		// Coal
+		this.addOreSpawnChar(ModBlocks.oreMineralC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+				3 + random.nextInt(4), 13, 28, 50);
+		this.addOreSpawnChar(ModBlocks.oreRichMineralC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+				3 + random.nextInt(4), 9, 4, 28);
+		this.addOreSpawnChar(ModBlocks.oreAlienC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+				2 + random.nextInt(3), 5, 4, 20);
+		this.addOreSpawnChar(ModBlocks.oreTitaniumC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+				1 + random.nextInt(7), 9, 4, 28);
+		this.addOreSpawnChar(ModBlocks.oreCopperC, world, ModBlocks.stoneChar, random, x, z, 16, 16,
+				1 + random.nextInt(7), 25, 4, 64);
 		this.addOreSpawnChar(ModBlocks.oreCoalC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 4 + random.nextInt(12),
 				20, 0, 128);
-
-		// Iron
 		this.addOreSpawnChar(ModBlocks.oreIronC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 1 + random.nextInt(7),
 				20, 0, 64);
-
-		// Gold
 		this.addOreSpawnChar(ModBlocks.oreGoldC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
 				0, 32);
-
-		// Redstone
 		this.addOreSpawnChar(ModBlocks.oreRedstoneC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 3 + random.nextInt(4), 8,
 				0, 16);
-
-		// Lapis
 		this.addOreSpawnChar(ModBlocks.oreLapisC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
 				0, 16);
-
-		// Diamond
 		this.addOreSpawnChar(ModBlocks.oreDiamondC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(5),
 				1, 0, 16);
-
+		
 		BiomeGenBase biome = world.getWorldChunkManager().getBiomeGenAt(x, z);
 
 		
@@ -220,55 +184,40 @@ public class SCWorldGen implements IWorldGenerator {
 		}
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateOverworld < 50) {
+			if (chanceProtossWarpGate < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossWarpGateOverworld().generate(world, random, i, j - 1, k);
+					if(random.nextInt(1) == 0) {
+						//Overworld
+						new StructureProtossWarpGateTemplate().generate(0, 0, 2, world, random, i, j - 1, k);
+					}else if (random.nextInt(1) == 1){
+						//Shakuras
+						new StructureProtossWarpGateTemplate().generate(2, 0, 2, world, random, i, j - 1, k);
+					}
 				}
 			}
 		} else {
 
 		}
-
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateShakuras < 50) {
+			if (chanceVespeneGeyser < 31 && chanceVespeneGeyser > 11) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossWarpGateShakuras().generate(world, random, i, j - 1, k);
+					new StructureVespeneGeyserTemplate().generate(ModBlocks.vespeneGeyserBaseChar, ModBlocks.vespeneGeyserChar, world, random, i, j, k);
 				}
-			}
-		} else {
-
-		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceVespeneGeyser < 21) {
+			}else if(chanceVespeneGeyser < 11) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureVespeneGeyserChar().generate(world, random, i, j, k);
-				}
-			}
-		} else {
-
-		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceRichVespeneGeyser < 11) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureRichVespeneGeyserChar().generate(world, random, i, j, k);
+					new StructureVespeneGeyserTemplate().generate(ModBlocks.vespeneGeyserBaseChar, ModBlocks.vespeneGeyserChar, world, random, i, j, k);
 				}
 			}
 		} else {
@@ -306,52 +255,32 @@ public class SCWorldGen implements IWorldGenerator {
 
 	public void generateShakuras(World world, Random random, int x, int z) {
 		int chanceVespeneGeyser = random.nextInt(1500);
-		int chanceRichVespeneGeyser = random.nextInt(2500);
 		int chanceMineralBed = random.nextInt(1500);
 		int chanceRichMineralBed = random.nextInt(2500);
 		int chanceProtossPylon = random.nextInt(4000);
-		int chanceDarkProtossPylon = random.nextInt(4000);
-		int chanceVoidProtossPylon = random.nextInt(4000);
-		int chanceProtossWarpGate = random.nextInt(6000);
-		int chanceProtossWarpGateOverworld = random.nextInt(6000);
+		int chanceProtossWarpGate = random.nextInt(5500);
 
 		
-			this.addOreSpawnShakuras(ModBlocks.oreMineralS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					3 + random.nextInt(4), 9, 28, 50);
-		
-			this.addOreSpawnShakuras(ModBlocks.oreRichMineralS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					3 + random.nextInt(4), 6, 4, 28);
-		
-			this.addOreSpawnShakuras(ModBlocks.oreAlienS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					2 + random.nextInt(3), 5, 4, 20);
-		
-			this.addOreSpawnShakuras(ModBlocks.oreTitaniumS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					1 + random.nextInt(7), 9, 4, 28);
-		
-			this.addOreSpawnShakuras(ModBlocks.oreCopperS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
-					1 + random.nextInt(7), 25, 4, 64);
-
-		// Coal
+		this.addOreSpawnShakuras(ModBlocks.oreMineralS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+				3 + random.nextInt(4), 9, 28, 50);
+		this.addOreSpawnShakuras(ModBlocks.oreRichMineralS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+				3 + random.nextInt(4), 6, 4, 28);
+		this.addOreSpawnShakuras(ModBlocks.oreAlienS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+				2 + random.nextInt(3), 5, 4, 20);
+		this.addOreSpawnShakuras(ModBlocks.oreTitaniumS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+				1 + random.nextInt(7), 9, 4, 28);
+		this.addOreSpawnShakuras(ModBlocks.oreCopperS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16,
+				1 + random.nextInt(7), 25, 4, 64);
 		this.addOreSpawnShakuras(ModBlocks.oreCoalS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(12),
 				20, 0, 128);
-
-		// Iron
 		this.addOreSpawnShakuras(ModBlocks.oreIronS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 1 + random.nextInt(7),
 				20, 0, 64);
-
-		// Gold
 		this.addOreSpawnShakuras(ModBlocks.oreGoldS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
 				0, 32);
-
-		// Redstone
 		this.addOreSpawnShakuras(ModBlocks.oreRedstoneS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 3 + random.nextInt(4), 8,
 				0, 16);
-
-		// Lapis
 		this.addOreSpawnShakuras(ModBlocks.oreLapisS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(4), 1,
 				0, 16);
-
-		// Diamond
 		this.addOreSpawnShakuras(ModBlocks.oreDiamondS, world, ModBlocks.stoneShakuras, random, x, z, 16, 16, 2 + random.nextInt(5),
 				1, 0, 16);
 
@@ -365,91 +294,57 @@ public class SCWorldGen implements IWorldGenerator {
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossPylon().generate(world, random, i, j, k);
+					if(random.nextInt(2) == 0) {
+						//Khalai Pylon
+						new StructureProtossPylonTemplate().generate(0, 0, world, random, i, j, k);
+					}else if (random.nextInt(2) == 1){
+						//Dark Pylon
+						new StructureProtossPylonTemplate().generate(1, 1, world, random, i, j, k);
+					}else if(random.nextInt(2) == 2){
+						//Void Pylon
+						new StructureProtossPylonTemplate().generate(1, 2, world, random, i, j, k);
+					}
+					
 				}
 			}
 		} else {
 
 		}
-
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceDarkProtossPylon < 11) {
+			if (chanceProtossWarpGate < 50) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossDarkPylon().generate(world, random, i, j, k);
+					if(random.nextInt(1) == 0) {
+						//Overworld
+						new StructureProtossWarpGateTemplate().generate(0, 1, 3, world, random, i, j - 1, k);
+					}else if (random.nextInt(1) == 1){
+						//Char
+						new StructureProtossWarpGateTemplate().generate(1, 1, 3, world, random, i, j - 1, k);
+					}
 				}
 			}
 		} else {
 
 		}
-
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceVoidProtossPylon < 11) {
+			if (chanceVespeneGeyser < 31 && chanceVespeneGeyser > 11) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossVoidPylon().generate(world, random, i, j, k);
+					new StructureVespeneGeyserTemplate().generate(ModBlocks.vespeneGeyserBaseShakuras, ModBlocks.vespeneGeyserShakuras, world, random, i, j, k);
 				}
-			}
-		} else {
-
-		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGate < 35) {
+			}else if(chanceVespeneGeyser < 11) {
 				for (int a = 0; a < 1; a++) {
 					int i = x + random.nextInt(16);
 					int k = z + random.nextInt(16);
 					int j = world.getHeightValue(i, k);
 
-					new StructureProtossDarkWarpGateChar().generate(world, random, i, j - 1, k);
-				}
-			}
-		} else {
-
-		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceProtossWarpGateOverworld < 35) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureProtossDarkWarpGateOverworld().generate(world, random, i, j - 1, k);
-				}
-			}
-		} else {
-
-		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceVespeneGeyser < 21) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureVespeneGeyserChar().generate(world, random, i, j, k);
-				}
-			}
-		} else {
-
-		}
-
-		if (world.getWorldInfo().isMapFeaturesEnabled()) {
-			if (chanceRichVespeneGeyser < 11) {
-				for (int a = 0; a < 1; a++) {
-					int i = x + random.nextInt(16);
-					int k = z + random.nextInt(16);
-					int j = world.getHeightValue(i, k);
-
-					new StructureRichVespeneGeyserChar().generate(world, random, i, j, k);
+					new StructureVespeneGeyserTemplate().generate(ModBlocks.vespeneGeyserBaseShakuras, ModBlocks.vespeneGeyserShakuras, world, random, i, j, k);
 				}
 			}
 		} else {

@@ -21,23 +21,23 @@ import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-@SuppressWarnings({"rawtypes", "unchecked", "unused"})
+@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 public class WorldChunkManagerChar extends WorldChunkManager {
 	public static ArrayList<BiomeGenBase> allowedBiomes = new ArrayList<BiomeGenBase>(
-			Arrays.asList(BiomesSC.biomeAshPlains, BiomesSC.biomeCreepInfestationChar, BiomesSC.biomeMoltenInferno));
+			Arrays.asList(BiomesSC.biomeAshPlains, BiomesSC.biomeCreepInfestationChar));
 	private GenLayer genBiomes;
-	
+
 	/** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
 	private GenLayer biomeIndexLayer;
-	
+
 	/** The BiomeCache object for this world. */
 	private BiomeCache biomeCache;
-	
+
 	/** A list of biomes that the player can spawn in. */
 	private List biomesToSpawnIn;
-	
+
 	private static final String __OBFID = "CL_00000166";
-	
+
 	private float rainfall;
 
 	protected WorldChunkManagerChar() {

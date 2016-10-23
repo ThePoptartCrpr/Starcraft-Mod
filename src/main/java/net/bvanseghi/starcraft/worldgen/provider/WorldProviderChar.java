@@ -38,16 +38,6 @@ public class WorldProviderChar extends WorldProvider {
 	public boolean canRespawnHere() {
 		return true; // I'm assuming you should be able to respawn on Char
 	}
-	
-	 public void setSpawnPointChar(int x, int y, int z)
-	    {
-		 
-		 if(world.getBlock(x-1, y, z) == Blocks.lava) {
-	        
-		 }else {
-			 worldObj.getWorldInfo().setSpawnPosition(x, y, z);
-		 }
-	    }
 	 
 	@Override
 	public float calculateCelestialAngle(long par1, float par2) {
