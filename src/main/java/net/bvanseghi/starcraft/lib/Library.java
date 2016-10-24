@@ -3,7 +3,10 @@ package net.bvanseghi.starcraft.lib;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 
-//Copyright 2016 the Starcraft Minecraft mod team
+/**
+ * Copyright 2016 the Starcraft Minecraft mod team
+ * @author wundrweapon
+ */
 public class Library {
 	
 	/**
@@ -79,8 +82,8 @@ public class Library {
 		Block[] blocks = new Block[27];
 		
 		for(int xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
-			if(blockIndex < 3) {
-				blocks[blockIndex] = world.getBlock(offsets[xOffsetIndex], offsets[yOffsetIndex], offsets[zOffsetIndex]);
+			if(blockIndex < 3 && yOffsetIndex < 3 && zOffsetIndex < 3) {
+				blocks[blockIndex] = world.getBlock(x + offsets[xOffsetIndex], y + offsets[yOffsetIndex], z + offsets[zOffsetIndex]);
 			}
 			
 			//Reset X index to 0 after going past the final column
