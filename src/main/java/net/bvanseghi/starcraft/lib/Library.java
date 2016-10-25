@@ -26,17 +26,16 @@ public class Library {
 		boolean killLoop = false;
 		int yOffsetIndex = 0;
 		int zOffsetIndex = 0;
-		int[] xOffsets = {-1, 0, 1};
+		int[] xzOffsets = {-1, 0, 1};
 		int[] yOffsets = {0, 1, 2};
-		int[] zOffsets = {-1, 0, 1};
 		
 		for(int xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
 			
 			//Don't place block at anchor
-			if(xOffsets[xOffsetIndex] != 0 || zOffsets[zOffsetIndex] != 0) {
-				world.setBlock(x + xOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + zOffsets[zOffsetIndex], block);
+			if(xzOffsets[xOffsetIndex] != 0 || xzOffsets[zOffsetIndex] != 0) {
+				world.setBlock(x + xzOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + xzOffsets[zOffsetIndex], block);
 			} else if(yOffsets[yOffsetIndex] != 0) {
-				world.setBlock(x + xOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + zOffsets[zOffsetIndex], block);
+				world.setBlock(x + xzOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + xzOffsets[zOffsetIndex], block);
 			}
 			
 			//Reset X index to 0 after going past the final column
@@ -74,45 +73,30 @@ public class Library {
 	 * of {@code block} is found
 	 */
 	public static boolean checkCube(World world, Block block, int x, int y, int z) {
-		boolean killLoop = false;
 		int yOffsetIndex = 0;
 		int zOffsetIndex = 0;
-		int blockIndex = 0;
 		int[] offsets = {-1, 0, 1};
-		Block[] blocks = new Block[27];
 		
 		for(int xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
-			if(blockIndex < 3 && yOffsetIndex < 3 && zOffsetIndex < 3) {
-				blocks[blockIndex] = world.getBlock(x + offsets[xOffsetIndex], y + offsets[yOffsetIndex], z + offsets[zOffsetIndex]);
-			}
-			
-			//Reset X index to 0 after going past the final column
-			if(xOffsetIndex + 1 == 3) {
-				xOffsetIndex = -1; //Not 0 because it'll increment after the loop
-				zOffsetIndex++;
+			if(world.getBlock(x + offsets[xOffsetIndex], y + offsets[yOffsetIndex], z + offsets[zOffsetIndex]) == block) {
+				return true;
+			} else {
+				if(xOffsetIndex == 2) {
+					xOffsetIndex = -1;
+					zOffsetIndex++;
+				}
 				
-				//Reset Z index and raise Y index after going past the final row
 				if(zOffsetIndex == 3) {
 					zOffsetIndex = 0;
 					yOffsetIndex++;
-					
-					if(yOffsetIndex == 3) {
-						killLoop = true;
-					}
+				}
+				
+				if(yOffsetIndex == 3) {
+					return false;
 				}
 			}
-			
-			if(killLoop) {
-				for(Block indexBlock : blocks) {
-					if(indexBlock == block) {
-						return true;
-					}
-				}
-			}
-			
-			blockIndex++;
 		}
 		
-		return false;
+		return false; //Won't run
 	}
 }
