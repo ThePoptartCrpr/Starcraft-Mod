@@ -10,9 +10,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 
 /**
- * Magma block. Makes lava source on break
- * @author wundrweapon
+ * Magma block. Makes lava source on break<br>
  * Copyright 2016 the Starcraft Minecraft mod team
+ * @author wundrweapon
  */
 public class BlockMagma extends ModBlocks {
 	public static final String name = "charMagma";
@@ -34,7 +34,7 @@ public class BlockMagma extends ModBlocks {
 	
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random random) {
-		if(Library.checkCube(world, Blocks.flowing_lava, x, y, z) || Library.checkCube(world, Blocks.lava, x, y, z)) {
+		if(Library.checkCube(world, Blocks.lava, x, y, z)) {
 			breakBlock(world, x, y, z, this, 0);
 		}
 	}
