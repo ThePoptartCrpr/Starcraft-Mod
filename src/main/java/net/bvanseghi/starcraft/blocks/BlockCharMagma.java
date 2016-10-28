@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.Library;
+import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -14,17 +15,18 @@ import net.minecraft.world.World;
  * Copyright 2016 the Starcraft Minecraft mod team
  * @author wundrweapon
  */
-public class BlockMagma extends ModBlocks {
+public class BlockCharMagma extends ModBlocks {
 	public static final String name = "charMagma";
 	
-	public BlockMagma() {
-		super(name, name, Material.ground);
+	public BlockCharMagma() {
+		super(name, name, Material.rock);
 		setStepSound(soundTypeStone);
-		setHardness(5.0F);
-		setResistance(25.0F);
-		setHarvestLevel("pickaxe", 3);
-		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setTickRandomly(true);
+		setHardness(1.5F);
+		setResistance(5.0F);
+		setHarvestLevel("pickaxe", 1);
+		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setBlockName(name);
+		setBlockTextureName(REFERENCE.MODID + ":" + name);
 	}
 	
 	@Override

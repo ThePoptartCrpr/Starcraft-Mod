@@ -136,6 +136,8 @@ public class SCWorldGen implements IWorldGenerator {
 				20, 0, 128);
 		this.addOreSpawnChar(ModBlocks.oreIronC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 1 + random.nextInt(7),
 				20, 0, 64);
+		this.addOreSpawnChar(ModBlocks.magmaChar, world, ModBlocks.stoneChar, random, x, z, 16, 16, 6 + random.nextInt(12),
+				100, 0, 128);
 		this.addOreSpawnChar(ModBlocks.oreGoldC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 4 + random.nextInt(4), 2,
 				0, 32);
 		this.addOreSpawnChar(ModBlocks.oreRedstoneC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 3 + random.nextInt(4), 8,

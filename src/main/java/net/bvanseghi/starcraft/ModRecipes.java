@@ -134,7 +134,8 @@ public class ModRecipes {
 				new Object[] { "S", 'S', new ItemStack(ModBlocks.compMetal, 1, 2) });
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.creepResin, 4), new Object[] { ModBlocks.zergCreep });
-
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.zergCreep), new Object[] {"##", "##", '#', ModItems.creepResin});
+		
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.sandShakuras), new ItemStack(Blocks.stained_glass, 1, 11), 0);
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.cobblestoneShakuras), new ItemStack(ModBlocks.stoneShakuras),
 				0);
