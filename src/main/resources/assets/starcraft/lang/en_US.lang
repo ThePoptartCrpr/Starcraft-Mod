@@ -70,7 +70,7 @@ tile.vespeneGeyserBase.name=Vespene Geyser Base
 tile.vespeneGeyserBaseChar.name=Vespene Geyser Base (Char)
 tile.richVespeneGeyser.name=Rich Vespene Geyser
 tile.richVespeneGeyserChar.name=Rich Vespene Geyser (Char)
-tile.vespeneGeyser.name=Vespene Geyser (Shakuras)
+tile.vespeneGeyserShakuras.name=Vespene Geyser (Shakuras)
 tile.richVespeneGeyserShakuras.name=Rich Vespene Geyser (Shakuras)
 tile.vespeneGeyserBaseShakuras.name=Vespene Geyser Base (Shakuras)
 
@@ -117,6 +117,7 @@ tile.charDirt.name=Dirt (Char)
 tile.charStone.name=Stone (Char)
 tile.charCobblestone.name=Cobblestone (Char)
 
+tile.charMagma.name=Magma (Char)
 tile.oreCoalC.name=Coal Ore (Char)
 tile.oreIronC.name=Iron Ore (Char)
 tile.oreGoldC.name=Gold Ore (Char)

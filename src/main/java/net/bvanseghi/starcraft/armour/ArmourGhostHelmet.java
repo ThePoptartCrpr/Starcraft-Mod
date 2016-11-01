@@ -11,7 +11,7 @@ public class ArmourGhostHelmet extends ItemArmor {
 
 	public ArmourGhostHelmet(ArmorMaterial armourMaterial, int renderIndex, int armourType) {
 		super(armourMaterial, renderIndex, armourType);
-//		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
+ 		this.setCreativeTab(null);
 		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + name);
 		this.setTextureName(REFERENCE.Texture_Path + name);
 	}
