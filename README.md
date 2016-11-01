@@ -21,4 +21,4 @@ Minecraft mod based on Starcraft. To install:
 10) Rename [/Starcraft-Mod (no git)] to [/Starcraft-Mod]  
  
  
-If confused, PM wundrweapon on http://www.minecraftforum.net/ with title "SCMC Install Help"
+If confused, PM wundrweapon#4856 on Discord
