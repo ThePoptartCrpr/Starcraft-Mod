@@ -1,8 +1,5 @@
 package net.bvanseghi.starcraft.proxy;
 
-//TODO: find any potential wildcards and put them in place
-import cpw.mods.fml.client.registry.ClientRegistry;
-import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
@@ -76,9 +73,11 @@ import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverwor
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeShakuras;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class ClientProxy extends CommonProxy {
 
 	public void registerRenderObjects() {

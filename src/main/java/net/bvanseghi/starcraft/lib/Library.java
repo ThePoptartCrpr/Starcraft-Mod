@@ -1,6 +1,7 @@
 package net.bvanseghi.starcraft.lib;
 
 import net.minecraft.block.Block;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
@@ -33,9 +34,9 @@ public class Library {
 			
 			//Don't place block at anchor
 			if(xzOffsets[xOffsetIndex] != 0 || xzOffsets[zOffsetIndex] != 0) {
-				world.setBlock(x + xzOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + xzOffsets[zOffsetIndex], block);
+				world.setBlockState(new BlockPos(x + xzOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + xzOffsets[zOffsetIndex]), block.getDefaultState());
 			} else if(yOffsets[yOffsetIndex] != 0) {
-				world.setBlock(x + xzOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + xzOffsets[zOffsetIndex], block);
+				world.setBlockState(new BlockPos(x + xzOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + xzOffsets[zOffsetIndex]), block.getDefaultState());
 			}
 			
 			//Reset X index to 0 after going past the final column
@@ -63,7 +64,10 @@ public class Library {
 	/**
 	 * Checks a 3x3x3 area for any instances
 	 * of {@code block}. The center is in
-	 * the absolute center of the cube
+	 * the absolute center of the cube<br>
+	 * <b>WARNING:</b> this may not work
+	 * due to checking for a default state
+	 * and not some other state
 	 * @param world the world
 	 * @param block the {@link Block} to check for
 	 * @param x center X coord
@@ -78,7 +82,7 @@ public class Library {
 		int[] offsets = {-1, 0, 1};
 		
 		for(int xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
-			if(world.getBlock(x + offsets[xOffsetIndex], y + offsets[yOffsetIndex], z + offsets[zOffsetIndex]) == block) {
+			if(world.getBlockState(new BlockPos(x + offsets[xOffsetIndex], y + offsets[yOffsetIndex], z + offsets[zOffsetIndex])) == block.getDefaultState()) {
 				return true;
 			} else {
 				if(xOffsetIndex == 2) {

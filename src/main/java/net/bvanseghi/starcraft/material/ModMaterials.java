@@ -9,8 +9,7 @@ public class ModMaterials {
 	public static Material blood;
 
 	public static void preInit() {
-		acid = new MaterialLiquid(MapColor.greenColor);
-		blood = new MaterialLiquid(MapColor.redColor);
+		acid = new MaterialLiquid(MapColor.GREEN);
+		blood = new MaterialLiquid(MapColor.RED);
 	}
-
 }

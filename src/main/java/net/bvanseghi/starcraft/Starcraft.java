@@ -1,13 +1,5 @@
 package net.bvanseghi.starcraft;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
@@ -29,6 +21,13 @@ import net.bvanseghi.starcraft.worldgen.SCWorldGen;
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = REFERENCE.MODID, name = REFERENCE.NAME, version = REFERENCE.VERSION)
@@ -81,21 +80,21 @@ public class Starcraft {
 		
 	}
 	
-	@SuppressWarnings("deprecation")
-	public static void addNames(){
-		LanguageRegistry.addName(new ItemStack(ModItems.ingot, 0, 0), "Copper Ingot");
-		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 0), "Protoss Essence");
-		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 1), "Terran Essence");
-		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 2), "Zerg Essence");
-		
-		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 0), "C14 Barrel");
-		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 1), "C14 Body");
-		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 2), "C14 Grip");
-		
-		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 0), "Energy");
-		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 1), "Corrupted Energy");
-		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 2), "Void Energy");
-	}
+//	public static void addNames() {
+		//TODO: add lang file data to these
+//		LanguageRegistry.addName(new ItemStack(ModItems.ingot, 0, 0), "Copper Ingot");
+//		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 0), "Protoss Essence");
+//		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 1), "Terran Essence");
+//		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 2), "Zerg Essence");
+//		
+//		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 0), "C14 Barrel");
+//		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 1), "C14 Body");
+//		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 2), "C14 Grip");
+//		
+//		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 0), "Energy");
+//		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 1), "Corrupted Energy");
+//		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 2), "Void Energy");
+//	}
 	
 	public static void oreRegistrations(){
 		OreDictionary.registerOre("ingotCopper", new ItemStack(ModItems.ingot, 1, 0));
@@ -105,9 +104,4 @@ public class Starcraft {
 		OreDictionary.registerOre("dustIron", new ItemStack(ModItems.dust, 1, 1));
 		OreDictionary.registerOre("dustCarbon", new ItemStack(ModItems.dust, 1, 2));
 	}
-	
-	public static void addOreRecipes(){
-		
-	}
-
 }

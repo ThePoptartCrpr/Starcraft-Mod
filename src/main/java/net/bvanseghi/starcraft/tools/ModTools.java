@@ -1,7 +1,5 @@
 package net.bvanseghi.starcraft.tools;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
@@ -54,24 +52,5 @@ public class ModTools {
 		steelPickaxe = new ToolSteelPickaxe(STEEL);
 		steelShovel = new ToolSteelShovel(STEEL);
 		steelHoe = new ToolSteelHoe(STEEL);
-
-		GameRegistry.registerItem(titaniumAxe, REFERENCE.MODID + titaniumAxe.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(titaniumPickaxe, REFERENCE.MODID + titaniumPickaxe.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(titaniumShovel, REFERENCE.MODID + titaniumShovel.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(titaniumHoe, REFERENCE.MODID + titaniumHoe.getUnlocalizedName().substring(5));
-
-		GameRegistry.registerItem(copperAxe, REFERENCE.MODID + copperAxe.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(copperPickaxe, REFERENCE.MODID + copperPickaxe.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(copperShovel, REFERENCE.MODID + copperShovel.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(copperHoe, REFERENCE.MODID + copperHoe.getUnlocalizedName().substring(5));
-
-		GameRegistry.registerItem(steelAxe, REFERENCE.MODID + steelAxe.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(steelPickaxe, REFERENCE.MODID + steelPickaxe.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(steelShovel, REFERENCE.MODID + steelShovel.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(steelHoe, REFERENCE.MODID + steelHoe.getUnlocalizedName().substring(5));
-	}
-
-	public static void init() {
-
 	}
 }

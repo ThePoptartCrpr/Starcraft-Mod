@@ -1,6 +1,5 @@
 package net.bvanseghi.starcraft.items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.REFERENCE;
@@ -95,33 +94,32 @@ public class ModItems extends Item {
 			energy = new ItemEnergy().setUnlocalizedName("energy");
 		}
 
-		// Register the items to the game here.
-		GameRegistry.registerItem(mineralShard, ItemMineralShard.name);
-		GameRegistry.registerItem(richMineralShard, ItemRichMineralShard.name);
-
-		GameRegistry.registerItem(psiBladeFocuserUncharged, ItemPsiBladeFocuserUncharged.name);
-		GameRegistry.registerItem(darkPsiBladeFocuserUncharged, ItemDarkPsiBladeFocuserUncharged.name);
-		GameRegistry.registerItem(protossArtifact, ItemProtossArtifact.name);
-		GameRegistry.registerItem(uraj, ItemUraj.name);
-		GameRegistry.registerItem(protossModule, ItemProtossModule.name);
-
-		GameRegistry.registerItem(C14GaussRifle, "c14GaussRifle");
-		GameRegistry.registerItem(C14GaussRifleBullet, ItemC14GaussRifleBullet.name);
-
-		GameRegistry.registerItem(creepResin, ItemCreepResin.name);
-		GameRegistry.registerItem(organicTissue, ItemOrganicTissue.name);
-		
-		//GameRegistry.registerItem(keystone, ItemKeystone.name);
-		
-		GameRegistry.registerItem(coord, REFERENCE.MODID + (coord.getUnlocalizedName().substring(5)));
-		
-		GameRegistry.registerItem(ingot, REFERENCE.MODID + (ingot.getUnlocalizedName().substring(5)));
-		GameRegistry.registerItem(dust, REFERENCE.MODID + (dust.getUnlocalizedName().substring(5)));
-		GameRegistry.registerItem(essence, REFERENCE.MODID + (essence.getUnlocalizedName().substring(5)));
-		GameRegistry.registerItem(c14Parts, REFERENCE.MODID + (c14Parts.getUnlocalizedName().substring(5)));
-		GameRegistry.registerItem(vespene, REFERENCE.MODID + (vespene.getUnlocalizedName().substring(5)));
-		GameRegistry.registerItem(zergCarapace, REFERENCE.MODID + (zergCarapace.getUnlocalizedName().substring(5)));
-		GameRegistry.registerItem(energy, REFERENCE.MODID + (energy.getUnlocalizedName().substring(5)));
+//		GameRegistry.registerItem(mineralShard, ItemMineralShard.name);
+//		GameRegistry.registerItem(richMineralShard, ItemRichMineralShard.name);
+//
+//		GameRegistry.registerItem(psiBladeFocuserUncharged, ItemPsiBladeFocuserUncharged.name);
+//		GameRegistry.registerItem(darkPsiBladeFocuserUncharged, ItemDarkPsiBladeFocuserUncharged.name);
+//		GameRegistry.registerItem(protossArtifact, ItemProtossArtifact.name);
+//		GameRegistry.registerItem(uraj, ItemUraj.name);
+//		GameRegistry.registerItem(protossModule, ItemProtossModule.name);
+//
+//		GameRegistry.registerItem(C14GaussRifle, "c14GaussRifle");
+//		GameRegistry.registerItem(C14GaussRifleBullet, ItemC14GaussRifleBullet.name);
+//
+//		GameRegistry.registerItem(creepResin, ItemCreepResin.name);
+//		GameRegistry.registerItem(organicTissue, ItemOrganicTissue.name);
+//		
+//		GameRegistry.registerItem(keystone, ItemKeystone.name);
+//		
+//		GameRegistry.registerItem(coord, REFERENCE.MODID + (coord.getUnlocalizedName().substring(5)));
+//		
+//		GameRegistry.registerItem(ingot, REFERENCE.MODID + (ingot.getUnlocalizedName().substring(5)));
+//		GameRegistry.registerItem(dust, REFERENCE.MODID + (dust.getUnlocalizedName().substring(5)));
+//		GameRegistry.registerItem(essence, REFERENCE.MODID + (essence.getUnlocalizedName().substring(5)));
+//		GameRegistry.registerItem(c14Parts, REFERENCE.MODID + (c14Parts.getUnlocalizedName().substring(5)));
+//		GameRegistry.registerItem(vespene, REFERENCE.MODID + (vespene.getUnlocalizedName().substring(5)));
+//		GameRegistry.registerItem(zergCarapace, REFERENCE.MODID + (zergCarapace.getUnlocalizedName().substring(5)));
+//		GameRegistry.registerItem(energy, REFERENCE.MODID + (energy.getUnlocalizedName().substring(5)));
 		
 	}
 
@@ -130,6 +128,6 @@ public class ModItems extends Item {
 
 		this.setCreativeTab(CreativeTab.TabStarcraftMaterials);
 		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + unlocalizedname);
-		this.setTextureName(REFERENCE.Texture_Path + texturename);
+//		this.setTextureName(REFERENCE.Texture_Path + texturename);
 	}
 }

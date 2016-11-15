@@ -1,10 +1,6 @@
 package net.bvanseghi.starcraft.achievement;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.events.OnCraftItemEvent;
-import net.bvanseghi.starcraft.events.OnPickupItemEvent;
-import net.bvanseghi.starcraft.events.OnPlayerEnterDimEvent;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.item.ItemStack;
@@ -77,9 +73,5 @@ public class Achievements {
 						achievementGetC14GaussRifle, achievementGetPsiBlade, achievementGetWarpBlade,
 						achievementGetMasterPsiBlade, achievementGetPsiBladeDark, achievementGetPsiBladeFocuser,
 						achievementGetPsiBladeFocuserDark, achievementEnterChar, achievementEnterShakuras }));
-
-		FMLCommonHandler.instance().bus().register(new OnPickupItemEvent());
-		FMLCommonHandler.instance().bus().register(new OnCraftItemEvent());
-		FMLCommonHandler.instance().bus().register(new OnPlayerEnterDimEvent());
 	}
 }
