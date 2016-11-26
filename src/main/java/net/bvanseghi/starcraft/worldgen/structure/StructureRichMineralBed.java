@@ -21,7 +21,7 @@ public class StructureRichMineralBed extends WorldGenerator {
 		int distanceToAir = 0;
 		Block checkBlock = world.getBlock(x, y, z);
 
-		while (checkBlock != Blocks.air) {
+		while (checkBlock != Blocks.AIR) {
 			distanceToAir++;
 			checkBlock = world.getBlock(x, y + distanceToAir, z);
 		}
@@ -37,7 +37,7 @@ public class StructureRichMineralBed extends WorldGenerator {
 		Block blockBelow = world.getBlock(x, y - 1, z);
 
 		for (Block i : GetValidSpawnBlocks()) {
-			if (blockAbove != Blocks.air) {
+			if (blockAbove != Blocks.AIR) {
 				return false;
 			}
 			if (block == i) {
@@ -68,50 +68,50 @@ public class StructureRichMineralBed extends WorldGenerator {
 			return false;
 		}
 
-		world.setBlock(x + 0, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 0, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 0, z + 0, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 2, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 3, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 4, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 5, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 7, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 8, y + 0, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 9, y + 0, z + 0, Blocks.AIR, 0, 3);
 		world.setBlock(x + 10, y + 0, z + 0, ModBlocks.richMineralField, 0, 3);
 		world.setBlock(x + 0, y + 0, z + 1, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 1, y + 0, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 0, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 0, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 0, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 0, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 0, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x + 1, y + 0, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 2, y + 0, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 3, y + 0, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 4, y + 0, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 5, y + 0, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 0, z + 1, Blocks.AIR, 0, 3);
 		world.setBlock(x + 7, y + 0, z + 1, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 8, y + 0, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x + 8, y + 0, z + 1, Blocks.AIR, 0, 3);
 		world.setBlock(x + 9, y + 0, z + 1, ModBlocks.richMineralField, 0, 3);
 		world.setBlock(x + 10, y + 0, z + 1, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 0, y + 0, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 0, z + 2, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 0, z + 2, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 2, y + 0, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 0, z + 2, Blocks.AIR, 0, 3);
 		world.setBlock(x + 3, y + 0, z + 2, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 4, y + 0, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 0, z + 2, Blocks.AIR, 0, 3);
 		world.setBlock(x + 5, y + 0, z + 2, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 6, y + 0, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 7, y + 0, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 8, y + 0, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 9, y + 0, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 0, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 0, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 0, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 0, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 0, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 7, y + 0, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 8, y + 0, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 9, y + 0, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 10, y + 0, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 0, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 0, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 2, y + 0, z + 3, Blocks.AIR, 0, 3);
 		world.setBlock(x + 3, y + 0, z + 3, ModBlocks.richMineralField, 0, 3);
 		world.setBlock(x + 4, y + 0, z + 3, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 5, y + 0, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 0, z + 3, Blocks.AIR, 0, 3);
 		world.setBlock(x + 6, y + 0, z + 3, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 7, y + 0, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x + 7, y + 0, z + 3, Blocks.AIR, 0, 3);
 		world.setBlock(x + 8, y + 0, z + 3, ModBlocks.richMineralField, 0, 3);
-		world.setBlock(x + 9, y + 0, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 10, y + 0, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x + 9, y + 0, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 10, y + 0, z + 3, Blocks.AIR, 0, 3);
 		return true;
 
 	}

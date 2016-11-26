@@ -12,7 +12,6 @@ public class ToolTitaniumPickaxe extends ItemPickaxe {
 		super(material);
 		this.setCreativeTab(CreativeTab.TabStarcraftTools);
 		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + name);
-		this.setTextureName(REFERENCE.Texture_Path + name);
 	}
 
 }

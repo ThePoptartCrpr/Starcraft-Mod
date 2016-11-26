@@ -108,7 +108,7 @@ public class CharGenCustomLakes extends WorldGenerator {
                     {
                         if (aboolean[(i1 * 16 + j2) * 8 + j1])
                         {
-                            world.setBlock(x + i1, y + j1, z + j2, j1 >= 4 ? Blocks.air : this.field_150556_a, 0, 2);
+                            world.setBlock(x + i1, y + j1, z + j2, j1 >= 4 ? Blocks.AIR : this.field_150556_a, 0, 2);
                         }
                     }
                 }
@@ -124,13 +124,13 @@ public class CharGenCustomLakes extends WorldGenerator {
                         {
                             BiomeGenBase biomegenbase = world.getBiomeGenForCoords(x + i1, z + j2);
 
-                            if (biomegenbase.topBlock == Blocks.mycelium)
+                            if (biomegenbase.topBlock == Blocks.MYCELIUM)
                             {
-                                world.setBlock(x + i1, y + j1 - 1, z + j2, Blocks.mycelium, 0, 2);
+                                world.setBlock(x + i1, y + j1 - 1, z + j2, Blocks.MYCELIUM, 0, 2);
                             }
                             else
                             {
-                                world.setBlock(x + i1, y + j1 - 1, z + j2, Blocks.grass, 0, 2);
+                                world.setBlock(x + i1, y + j1 - 1, z + j2, Blocks.GRASS, 0, 2);
                             }
                         }
                     }

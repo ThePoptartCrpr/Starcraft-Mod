@@ -263,7 +263,7 @@ public class EntityLarva extends EntityZergPassive {
 						+ (double) MathHelper.sqrt_double(d12 * d12 + d10 * d10 + d11 * d11) * 0.6D);
 
 				if (this.distanceWalkedOnStepModified > (float) this.nextStepDistance
-						&& block.getMaterial() != Material.air) {
+						&& block.getMaterial() != Material.AIR) {
 					this.nextStepDistance = (int) this.distanceWalkedOnStepModified + 1;
 
 					if (this.isInWater()) {
@@ -327,7 +327,7 @@ public class EntityLarva extends EntityZergPassive {
 				block = this.worldObj.getBlock(j1, k - 1, l);
 			}
 
-			if (block == ModBlocks.zergCreep || block == Blocks.air || block == ModBlocks.keratinChunk
+			if (block == ModBlocks.zergCreep || block == Blocks.AIR || block == ModBlocks.keratinChunk
 					|| block == ModBlocks.zergStrucCarapace || block == ModBlocks.zergStrucFlesh) {
 
 			} else {

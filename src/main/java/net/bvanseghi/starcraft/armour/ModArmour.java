@@ -1,10 +1,10 @@
 package net.bvanseghi.starcraft.armour;
 
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModArmour {
 	
@@ -17,16 +17,16 @@ public class ModArmour {
 	 */
 
 	//TODO: find a way to remake this
-//	static final ItemArmor.ArmorMaterial copperArmourMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", 11,
-//			new int[] { 2, 5, 4, 1 }, 12);
-//	static final ItemArmor.ArmorMaterial steelArmourMaterial = EnumHelper.addArmorMaterial("steelArmorMaterial", 29,
-//			new int[] { 3, 7, 5, 3 }, 9);
-//	static final ItemArmor.ArmorMaterial titaniumArmourMaterial = EnumHelper.addArmorMaterial("titaniumArmorMaterial",
-//			21, new int[] { 3, 6, 5, 2 }, 30);
+	static final ItemArmor.ArmorMaterial copperArmourMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", "Starcraft:textures/model/armor/copper_layer_1.png", 11,
+			new int[] { 2, 5, 4, 1 }, 12, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC , 0f);
+	static final ItemArmor.ArmorMaterial steelArmourMaterial = EnumHelper.addArmorMaterial("steelArmorMaterial", "Starcraft:textures/model/armor/steel_layer_1.png", 29,
+			new int[] { 3, 7, 5, 3 }, 9, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	static final ItemArmor.ArmorMaterial titaniumArmourMaterial = EnumHelper.addArmorMaterial("titaniumArmorMaterial", "Starcraft:textures/model/armor/titanium_layer_1.png",
+			21, new int[] { 3, 6, 5, 2 }, 30, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
 //	
 //	//terran armours
-//	static final ItemArmor.ArmorMaterial ghostArmourMaterial = EnumHelper.addArmorMaterial("ghostArmourMaterial", 20, 
-//			new int[] { 2, 6, 4, 2 }, 0);
+	static final ItemArmor.ArmorMaterial ghostArmourMaterial = EnumHelper.addArmorMaterial("ghostArmourMaterial", "Starcraft:textures/model/armor/ghost_invis_layer_1.png", 20, 
+			new int[] { 2, 6, 4, 2 }, 0, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
 
 	public static Item titaniumHelmet;
 	public static Item titaniumChestplate;
@@ -49,50 +49,24 @@ public class ModArmour {
 	public static Item ghostBoots;
 
 	public static void preInit() {
+		titaniumHelmet = new ArmourTitaniumHelmet(titaniumArmourMaterial, 0, EntityEquipmentSlot.HEAD);
+		titaniumChestplate = new ArmourTitaniumChestplate(titaniumArmourMaterial, 0, EntityEquipmentSlot.CHEST);
+		titaniumLeggings = new ArmourTitaniumLeggings(titaniumArmourMaterial, 0, EntityEquipmentSlot.LEGS);
+		titaniumBoots = new ArmourTitaniumBoots(titaniumArmourMaterial, 0, EntityEquipmentSlot.FEET);
 
-//		titaniumHelmet = new ArmourTitaniumHelmet(titaniumArmourMaterial, 0, 0);
-//		titaniumChestplate = new ArmourTitaniumChestplate(titaniumArmourMaterial, 0, 1);
-//		titaniumLeggings = new ArmourTitaniumLeggings(titaniumArmourMaterial, 0, 2);
-//		titaniumBoots = new ArmourTitaniumBoots(titaniumArmourMaterial, 0, 3);
-//
-//		copperHelmet = new ArmourCopperHelmet(copperArmourMaterial, 0, 0);
-//		copperChestplate = new ArmourCopperChestplate(copperArmourMaterial, 0, 1);
-//		copperLeggings = new ArmourCopperLeggings(copperArmourMaterial, 0, 2);
-//		copperBoots = new ArmourCopperBoots(copperArmourMaterial, 0, 3);
-//
-//		steelHelmet = new ArmourSteelHelmet(steelArmourMaterial, 0, 0);
-//		steelChestplate = new ArmourSteelChestplate(steelArmourMaterial, 0, 1);
-//		steelLeggings = new ArmourSteelLeggings(steelArmourMaterial, 0, 2);
-//		steelBoots = new ArmourSteelBoots(steelArmourMaterial, 0, 3);
-//
-//		ghostHelmet = new ArmourGhostHelmet(ghostArmourMaterial, 0, 0);
-//		ghostChestplate = new ArmourGhostChestplate(ghostArmourMaterial, 0, 1);
-//		ghostLeggings = new ArmourGhostLeggings(ghostArmourMaterial, 0, 2);
-//		ghostBoots = new ArmourGhostBoots(ghostArmourMaterial, 0, 3);
-		
-		//TODO: register these properly
-//		GameRegistry.registerItem(titaniumHelmet, REFERENCE.MODID + titaniumHelmet.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(titaniumChestplate,
-//				REFERENCE.MODID + titaniumChestplate.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(titaniumLeggings,
-//				REFERENCE.MODID + titaniumLeggings.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(titaniumBoots, REFERENCE.MODID + titaniumBoots.getUnlocalizedName().substring(5));
-//
-//		GameRegistry.registerItem(copperHelmet, REFERENCE.MODID + copperHelmet.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(copperChestplate,
-//				REFERENCE.MODID + copperChestplate.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(copperLeggings, REFERENCE.MODID + copperLeggings.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(copperBoots, REFERENCE.MODID + copperBoots.getUnlocalizedName().substring(5));
-//
-//		GameRegistry.registerItem(steelHelmet, REFERENCE.MODID + steelHelmet.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(steelChestplate, REFERENCE.MODID + steelChestplate.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(steelLeggings, REFERENCE.MODID + steelLeggings.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(steelBoots, REFERENCE.MODID + steelBoots.getUnlocalizedName().substring(5));
-//		
-//		GameRegistry.registerItem(ghostHelmet, REFERENCE.MODID + ghostHelmet.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(ghostChestplate, REFERENCE.MODID + ghostChestplate.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(ghostLeggings, REFERENCE.MODID + ghostLeggings.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(ghostBoots, REFERENCE.MODID + ghostBoots.getUnlocalizedName().substring(5));
+		copperHelmet = new ArmourCopperHelmet(copperArmourMaterial, 0, EntityEquipmentSlot.HEAD);
+		copperChestplate = new ArmourCopperChestplate(copperArmourMaterial, 0, EntityEquipmentSlot.CHEST);
+		copperLeggings = new ArmourCopperLeggings(copperArmourMaterial, 0, EntityEquipmentSlot.LEGS);
+		copperBoots = new ArmourCopperBoots(copperArmourMaterial, 0, EntityEquipmentSlot.FEET);
 
+		steelHelmet = new ArmourSteelHelmet(steelArmourMaterial, 0, EntityEquipmentSlot.HEAD);
+		steelChestplate = new ArmourSteelChestplate(steelArmourMaterial, 0, EntityEquipmentSlot.CHEST);
+		steelLeggings = new ArmourSteelLeggings(steelArmourMaterial, 0, EntityEquipmentSlot.LEGS);
+		steelBoots = new ArmourSteelBoots(steelArmourMaterial, 0, EntityEquipmentSlot.FEET);
+
+		ghostHelmet = new ArmourGhostHelmet(ghostArmourMaterial, 0, EntityEquipmentSlot.HEAD);
+		ghostChestplate = new ArmourGhostChestplate(ghostArmourMaterial, 0, EntityEquipmentSlot.CHEST);
+		ghostLeggings = new ArmourGhostLeggings(ghostArmourMaterial, 0, EntityEquipmentSlot.LEGS);
+		ghostBoots = new ArmourGhostBoots(ghostArmourMaterial, 0, EntityEquipmentSlot.FEET);
 	}
 }

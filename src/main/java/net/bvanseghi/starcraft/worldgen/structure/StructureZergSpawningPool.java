@@ -20,7 +20,7 @@ public class StructureZergSpawningPool extends WorldGenerator {
 		int distanceToAir = 0;
 		Block checkBlock = world.getBlock(x, y, z);
 
-		while (checkBlock != Blocks.air) {
+		while (checkBlock != Blocks.AIR) {
 			distanceToAir++;
 			checkBlock = world.getBlock(x, y + distanceToAir, z);
 		}
@@ -36,7 +36,7 @@ public class StructureZergSpawningPool extends WorldGenerator {
 		Block blockBelow = world.getBlock(x, y - 1, z);
 
 		for (Block i : GetValidSpawnBlocks()) {
-			if (blockAbove != Blocks.air) {
+			if (blockAbove != Blocks.AIR) {
 				return false;
 			}
 			if (block == i) {
@@ -1575,7 +1575,7 @@ public class StructureZergSpawningPool extends WorldGenerator {
 
 	public boolean generate_r02(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 18, y + 3, z + 15, Blocks.air, 0, 3);
+		world.setBlock(x + 18, y + 3, z + 15, Blocks.AIR, 0, 3);
 		world.setBlock(x + 0, y + 3, z + 16, Blocks.air, 0, 3);
 		world.setBlock(x + 1, y + 3, z + 16, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 3, z + 16, Blocks.air, 0, 3);

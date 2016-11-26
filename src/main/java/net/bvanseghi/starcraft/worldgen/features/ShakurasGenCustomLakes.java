@@ -108,7 +108,7 @@ public class ShakurasGenCustomLakes extends WorldGenerator {
                     {
                         if (aboolean[(i1 * 16 + j2) * 8 + j1])
                         {
-                            world.setBlock(x + i1, y + j1, z + j2, j1 >= 4 ? Blocks.air : this.field_150556_a, 0, 2);
+                            world.setBlock(x + i1, y + j1, z + j2, j1 >= 4 ? Blocks.AIR : this.field_150556_a, 0, 2);
                         }
                     }
                 }
