@@ -24,10 +24,11 @@ public class BlockWarpGateWormholeChar extends BlockContainer {
 		this.setCreativeTab(null);
 	}
 
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon(REFERENCE.MODID + ":" + "mineralField");
-	}
+	}*/
 
 	public int getRenderType() {
 		return -1;

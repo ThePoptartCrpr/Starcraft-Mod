@@ -1,13 +1,13 @@
 package net.bvanseghi.starcraft.worldgen.layer;
 
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerShakurasBiomes extends GenLayer {
 
-	public BiomeGenBase[] dimBiomes = {BiomesSC.biomeShakurasDesert};
+	public Biome[] dimBiomes = {BiomesSC.biomeShakurasDesert};
 
 	public GenLayerShakurasBiomes(long par1) {
 		super(par1);

@@ -63,7 +63,7 @@ public class EntityOverlord extends EntityFlying {
 	 @SideOnly(Side.CLIENT)
 	    public boolean func_110182_bF()
 	    {
-	        return this.dataWatcher.getWatchableObjectByte(16) != 0;
+	        return this.dataManager.getWatchableObjectByte(16) != 0;
 	    }
 
 	    /**
@@ -84,13 +84,13 @@ public class EntityOverlord extends EntityFlying {
 	    protected void entityInit()
 	    {
 	        super.entityInit();
-	        this.dataWatcher.addObject(16, Byte.valueOf((byte)0));
+	        this.dataManager.addObject(16, Byte.valueOf((byte)0));
 	    }
 
 	    @SuppressWarnings("unused")
 		protected void updateEntityActionState()
 	    {
-	        if (!this.worldObj.isRemote && this.worldObj.difficultySetting == EnumDifficulty.PEACEFUL)
+	        if (!this.worldObj.isRemote && this.worldObj.getDifficulty() == EnumDifficulty.PEACEFUL)
 	        {
 	            this.setDead();
 	        }
@@ -164,12 +164,12 @@ public class EntityOverlord extends EntityFlying {
 
 	        if (!this.worldObj.isRemote)
 	        {
-	            byte b1 = this.dataWatcher.getWatchableObjectByte(16);
+	            byte b1 = this.dataManager.getWatchableObjectByte(16);
 	            byte b0 = (byte)(this.attackCounter > 10 ? 1 : 0);
 
 	            if (b1 != b0)
 	            {
-	                this.dataWatcher.updateObject(16, Byte.valueOf(b0));
+	                this.dataManager.updateObject(16, Byte.valueOf(b0));
 	            }
 	        }
 	    }
@@ -199,7 +199,7 @@ public class EntityOverlord extends EntityFlying {
 
 	    protected Item getDropItem()
 	    {
-	        return Items.gunpowder;
+	        return Items.GUNPOWDER;
 	    }
 
 	    /**
@@ -213,14 +213,14 @@ public class EntityOverlord extends EntityFlying {
 
 	        for (k = 0; k < j; ++k)
 	        {
-	            this.dropItem(Items.ghast_tear, 1);
+	            this.dropItem(Items.GHAST_TEAR, 1);
 	        }
 
 	        j = this.rand.nextInt(3) + this.rand.nextInt(1 + p_70628_2_);
 
 	        for (k = 0; k < j; ++k)
 	        {
-	            this.dropItem(Items.gunpowder, 1);
+	            this.dropItem(Items.GUNPOWDER, 1);
 	        }
 	    }
 

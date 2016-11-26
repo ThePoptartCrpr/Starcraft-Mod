@@ -11,7 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class StructureProtossWarpGateTemplate extends WorldGenerator {
 	protected Block[] getValidSpawnBlocks() {
-		return new Block[] { ModBlocks.ashChar, ModBlocks.stoneChar, ModBlocks.ashChar, Blocks.gravel, ModBlocks.sandShakuras, ModBlocks.stoneShakuras };
+		return new Block[] { ModBlocks.ashChar, ModBlocks.stoneChar, ModBlocks.ashChar, Blocks.GRAVEL, ModBlocks.sandShakuras, ModBlocks.stoneShakuras };
 	}
 	
 	public int metaDim;

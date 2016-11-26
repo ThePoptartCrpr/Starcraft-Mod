@@ -17,8 +17,9 @@ import net.minecraft.util.IIcon;
 //Copyright 2016 the Starcraft Minecraft mod team
 public class BlockProtossMetal extends Block {
 
-	@SideOnly(Side.CLIENT)
-	private IIcon[] texture;
+	//TODO: Figure out how textures work now.
+//	@SideOnly(Side.CLIENT)
+//	private IIcon[] texture;
 	
 	/**
 	 *  Aiur = yellow, Dark = dark grey.
@@ -26,7 +27,7 @@ public class BlockProtossMetal extends Block {
 	public static final String[] subBlocks = new String[] { "Aiur", "Dark", "Blue", "Green" };
 	
 	public BlockProtossMetal() {
-		super(Material.iron);
+		super(Material.IRON);
 		setStepSound(soundTypeMetal);
 		setHardness(5.0F);
 		setResistance(25.0F);
@@ -34,7 +35,8 @@ public class BlockProtossMetal extends Block {
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 	
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		
 		texture = new IIcon[subBlocks.length];
@@ -42,7 +44,7 @@ public class BlockProtossMetal extends Block {
 		for(int i = 0; i < subBlocks.length; i++) {
 			texture[i] = iconRegister.registerIcon(REFERENCE.MODID + ":" + "protossMetal" + subBlocks[i]);
 		}
-	}
+	}*/
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
@@ -54,10 +56,11 @@ public class BlockProtossMetal extends Block {
 		
 	}
 	
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
 		return texture[meta];
-	}
+	}*/
 	
 	public int damageDropped(int meta) {
 		return meta;

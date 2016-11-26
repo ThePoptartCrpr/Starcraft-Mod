@@ -1,22 +1,23 @@
 package net.bvanseghi.starcraft.worldgen.biome;
 
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager;
 
-public class BiomesSC extends BiomeGenBase {
+public class BiomesSC extends Biome {
 
 	public BiomesSC(int par1) {
 		super(par1);
 
 	}
 
-	public static BiomeGenBase biomeCreepInfestationChar;
-	public static BiomeGenBase biomeAshPlains;
-	public static BiomeGenBase biomeMoltenInferno;
+	public static Biome biomeCreepInfestationChar;
+	public static Biome biomeAshPlains;
+	public static Biome biomeMoltenInferno;
 	
-	public static BiomeGenBase biomeShakurasDesert;
+	public static Biome biomeShakurasDesert;
 
 	public static void init() {
 		registerBiomes();

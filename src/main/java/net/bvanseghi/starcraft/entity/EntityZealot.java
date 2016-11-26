@@ -14,14 +14,14 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class EntityZealot extends EntityProtossMob {
@@ -35,11 +35,11 @@ public class EntityZealot extends EntityProtossMob {
 		super(world);
 		clearAITasks();
 		this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityTerranMob.class, 1.0D, true));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityZergMob.class, 1.0D, true));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityTerranPassive.class, 1.0D, true));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityZergPassive.class, 1.0D, true));
+        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityTerranMob.class, 1.0D, true));
+        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityZergMob.class, 1.0D, true));
+        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityPlayer.class, 1.0D, false));
+        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityTerranPassive.class, 1.0D, true));
+        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityZergPassive.class, 1.0D, true));
         this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, 0, false));

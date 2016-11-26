@@ -13,6 +13,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
@@ -47,19 +48,19 @@ public class StructureXelnagaTemplePieces
 
     public static void registerXelnagaTemplePieces()
     {
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.ChestCorridor.class, "SHCC");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.Corridor.class, "SHFC");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.Crossing.class, "SH5C");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.LeftTurn.class, "SHLT");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.Library.class, "SHLi");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.PortalRoom.class, "SHPR");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.Prison.class, "SHPH");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.RightTurn.class, "SHRT");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.RoomCrossing.class, "SHRC");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.Stairs.class, "SHSD");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.Stairs2.class, "SHStart");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.Straight.class, "SHS");
-        MapGenStructureIO.func_143031_a(StructureXelnagaTemplePieces.StairsStraight.class, "SHSSD");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.ChestCorridor.class, "SHCC");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.Corridor.class, "SHFC");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.Crossing.class, "SH5C");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.LeftTurn.class, "SHLT");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.Library.class, "SHLi");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.PortalRoom.class, "SHPR");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.Prison.class, "SHPH");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.RightTurn.class, "SHRT");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.RoomCrossing.class, "SHRC");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.Stairs.class, "SHSD");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.Stairs2.class, "SHStart");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.Straight.class, "SHS");
+        MapGenStructureIO.registerStructureComponent(StructureXelnagaTemplePieces.StairsStraight.class, "SHSSD");
     }
 
     /**
@@ -252,7 +253,7 @@ public class StructureXelnagaTemplePieces
     public static class ChestCorridor extends StructureXelnagaTemplePieces.XelnagaTemple
         {
             /** List of items that XelnagaTemple chests can contain. */
-            public static final WeightedRandomChestContent[] XelnagaTempleChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.ender_pearl, 0, 1, 1, 10), new WeightedRandomChestContent(Items.diamond, 0, 1, 3, 3), new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 5, 10), new WeightedRandomChestContent(Items.gold_ingot, 0, 1, 3, 5), new WeightedRandomChestContent(Items.redstone, 0, 4, 9, 5), new WeightedRandomChestContent(Items.bread, 0, 1, 3, 15), new WeightedRandomChestContent(Items.APPLE, 0, 1, 3, 15), new WeightedRandomChestContent(Items.iron_pickaxe, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_sword, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_chestplate, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_helmet, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_leggings, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_boots, 0, 1, 1, 5), new WeightedRandomChestContent(Items.golden_apple, 0, 1, 1, 1), new WeightedRandomChestContent(Items.saddle, 0, 1, 1, 1), new WeightedRandomChestContent(Items.iron_horse_armor, 0, 1, 1, 1), new WeightedRandomChestContent(Items.golden_horse_armor, 0, 1, 1, 1), new WeightedRandomChestContent(Items.diamond_horse_armor, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] XelnagaTempleChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.ENDER_PEARL, 0, 1, 1, 10), new WeightedRandomChestContent(Items.DIAMOND, 0, 1, 3, 3), new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 1, 3, 5), new WeightedRandomChestContent(Items.REDSTONE, 0, 4, 9, 5), new WeightedRandomChestContent(Items.BREAD, 0, 1, 3, 15), new WeightedRandomChestContent(Items.APPLE, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_SWORD, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_CHESTPLATE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_HELMET, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_LEGGINGS, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_BOOTS, 0, 1, 1, 5), new WeightedRandomChestContent(Items.GOLDEN_APPLE, 0, 1, 1, 1), new WeightedRandomChestContent(Items.SADDLE, 0, 1, 1, 1), new WeightedRandomChestContent(Items.IRON_HORSE_ARMOR, 0, 1, 1, 1), new WeightedRandomChestContent(Items.GOLDEN_HORSE_ARMOR, 0, 1, 1, 1), new WeightedRandomChestContent(Items.DIAMOND_HORSE_ARMOR, 0, 1, 1, 1)};
             private boolean hasMadeChest;
             private static final String __OBFID = "CL_00000487";
 
@@ -310,7 +311,7 @@ public class StructureXelnagaTemplePieces
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 4, 4, 6, true, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.placeDoor(p_74875_1_, p_74875_2_, p_74875_3_, this.field_143013_d, 1, 1, 0);
                     this.placeDoor(p_74875_1_, p_74875_2_, p_74875_3_, StructureXelnagaTemplePieces.XelnagaTemple.Door.OPENING, 1, 1, 6);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 3, 1, 2, 3, 1, 4, Blocks.stonebrick, Blocks.stonebrick, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 3, 1, 2, 3, 1, 4, Blocks.STONEBRICK, Blocks.STONEBRICK, false);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONE_SLAB, 5, 3, 1, 1, p_74875_3_);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONE_SLAB, 5, 3, 1, 5, p_74875_3_);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONE_SLAB, 5, 3, 2, 2, p_74875_3_);
@@ -410,26 +411,26 @@ public class StructureXelnagaTemplePieces
                 {
                     for (int i = 0; i < this.field_74993_a; ++i)
                     {
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 0, 0, i, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 1, 0, i, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 2, 0, i, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3, 0, i, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 4, 0, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 0, 0, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 1, 0, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 2, 0, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3, 0, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 4, 0, i, p_74875_3_);
 
                         for (int j = 1; j <= 3; ++j)
                         {
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 0, j, i, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.air, 0, 1, j, i, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.air, 0, 2, j, i, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.air, 0, 3, j, i, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 4, j, i, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 0, j, i, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.AIR, 0, 1, j, i, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.AIR, 0, 2, j, i, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.AIR, 0, 3, j, i, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 4, j, i, p_74875_3_);
                         }
 
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 0, 4, i, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 1, 4, i, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 2, 4, i, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3, 4, i, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 4, 4, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 0, 4, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 1, 4, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 2, 4, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3, 4, i, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 4, 4, i, p_74875_3_);
                     }
 
                     return true;
@@ -540,25 +541,25 @@ public class StructureXelnagaTemplePieces
 
                     if (this.field_74996_b)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 1, 0, 5, 3, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 1, 0, 5, 3, Blocks.AIR, Blocks.AIR, false);
                     }
 
                     if (this.field_74995_d)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 3, 1, 9, 5, 3, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 3, 1, 9, 5, 3, Blocks.AIR, Blocks.AIR, false);
                     }
 
                     if (this.field_74997_c)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 7, 0, 7, 9, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 7, 0, 7, 9, Blocks.AIR, Blocks.AIR, false);
                     }
 
                     if (this.field_74999_h)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 5, 7, 9, 7, 9, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 5, 7, 9, 7, 9, Blocks.AIR, Blocks.AIR, false);
                     }
 
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 1, 10, 7, 3, 10, Blocks.air, Blocks.air, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 1, 10, 7, 3, 10, Blocks.AIR, Blocks.AIR, false);
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 1, 2, 1, 8, 2, 6, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 4, 1, 5, 4, 4, 9, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 8, 1, 5, 8, 4, 9, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
@@ -633,11 +634,11 @@ public class StructureXelnagaTemplePieces
 
                     if (this.coordBaseMode != 2 && this.coordBaseMode != 3)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 1, 4, 3, 3, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 1, 4, 3, 3, Blocks.AIR, Blocks.AIR, false);
                     }
                     else
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 1, 0, 3, 3, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 1, 0, 3, 3, Blocks.AIR, Blocks.AIR, false);
                     }
 
                     return true;
@@ -648,7 +649,7 @@ public class StructureXelnagaTemplePieces
     public static class Library extends StructureXelnagaTemplePieces.XelnagaTemple
         {
             /** List of items that XelnagaTemple Library chests can contain. */
-            public static final WeightedRandomChestContent[] XelnagaTempleLibraryChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.book, 0, 1, 3, 20), new WeightedRandomChestContent(Items.paper, 0, 2, 7, 20), new WeightedRandomChestContent(Items.map, 0, 1, 1, 1), new WeightedRandomChestContent(Items.compass, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] XelnagaTempleLibraryChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.BOOK, 0, 1, 3, 20), new WeightedRandomChestContent(Items.paper, 0, 2, 7, 20), new WeightedRandomChestContent(Items.MAP, 0, 1, 1, 1), new WeightedRandomChestContent(Items.COMPASS, 0, 1, 1, 1)};
             private boolean isLargeRoom;
             private static final String __OBFID = "CL_00000491";
 
@@ -805,7 +806,7 @@ public class StructureXelnagaTemplePieces
 
                     if (this.isLargeRoom)
                     {
-                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.air, 0, 12, 9, 1, p_74875_3_);
+                        this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.AIR, 0, 12, 9, 1, p_74875_3_);
                        // this.generateStructureChestContents(p_74875_1_, p_74875_3_, p_74875_2_, 12, 8, 1, info.getItems(p_74875_2_), info.getCount(p_74875_2_));
                     }
 
@@ -906,21 +907,21 @@ public class StructureXelnagaTemplePieces
                 this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 2, b0, 14, 8, b0, 14, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                 this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 1, 1, 1, 2, 1, 4, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                 this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 8, 1, 1, 9, 1, 4, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 1, 1, 1, 1, 3, Blocks.flowing_lava, Blocks.flowing_lava, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 1, 1, 9, 1, 3, Blocks.flowing_lava, Blocks.flowing_lava, false);
+                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 1, 1, 1, 1, 3, Blocks.FLOWING_LAVA, Blocks.FLOWING_LAVA, false);
+                this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 1, 1, 9, 1, 3, Blocks.FLOWING_LAVA, Blocks.FLOWING_LAVA, false);
                 this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 3, 1, 8, 7, 1, 12, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 9, 6, 1, 11, Blocks.flowing_lava, Blocks.flowing_lava, false);
+                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 9, 6, 1, 11, Blocks.FLOWING_LAVA, Blocks.FLOWING_LAVA, false);
                 int i;
 
                 for (i = 3; i < 14; i += 2)
                 {
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, i, 0, 4, i, Blocks.iron_bars, Blocks.iron_bars, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 10, 3, i, 10, 4, i, Blocks.iron_bars, Blocks.iron_bars, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, i, 0, 4, i, Blocks.IRON_BARS, Blocks.IRON_BARS, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 10, 3, i, 10, 4, i, Blocks.IRON_BARS, Blocks.IRON_BARS, false);
                 }
 
                 for (i = 2; i < 9; i += 2)
                 {
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, i, 3, 15, i, 4, 15, Blocks.iron_bars, Blocks.iron_bars, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, i, 3, 15, i, 4, 15, Blocks.IRON_BARS, Blocks.IRON_BARS, false);
                 }
 
                 i = this.getMetadataWithOffset(Blocks.stone_brick_stairs, 3);
@@ -1042,19 +1043,19 @@ public class StructureXelnagaTemplePieces
                 {
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 8, 4, 10, true, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.placeDoor(p_74875_1_, p_74875_2_, p_74875_3_, this.field_143013_d, 1, 1, 0);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 1, 10, 3, 3, 10, Blocks.air, Blocks.air, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 1, 10, 3, 3, 10, Blocks.AIR, Blocks.AIR, false);
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 4, 1, 1, 4, 3, 1, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 4, 1, 3, 4, 3, 3, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 4, 1, 7, 4, 3, 7, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 4, 1, 9, 4, 3, 9, false, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 4, 4, 3, 6, Blocks.iron_bars, Blocks.iron_bars, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 1, 5, 7, 3, 5, Blocks.iron_bars, Blocks.iron_bars, false);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.iron_bars, 0, 4, 3, 2, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.iron_bars, 0, 4, 3, 8, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.iron_door, this.getMetadataWithOffset(Blocks.iron_door, 3), 4, 1, 2, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.iron_door, this.getMetadataWithOffset(Blocks.iron_door, 3) + 8, 4, 2, 2, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.iron_door, this.getMetadataWithOffset(Blocks.iron_door, 3), 4, 1, 8, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.iron_door, this.getMetadataWithOffset(Blocks.iron_door, 3) + 8, 4, 2, 8, p_74875_3_);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 4, 4, 3, 6, Blocks.IRON_BARS, Blocks.IRON_BARS, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 1, 5, 7, 3, 5, Blocks.IRON_BARS, Blocks.IRON_BARS, false);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.IRON_BARS, 0, 4, 3, 2, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.IRON_BARS, 0, 4, 3, 8, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.IRON_DOOR, this.getMetadataWithOffset(Blocks.IRON_DOOR, 3), 4, 1, 2, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.IRON_DOOR, this.getMetadataWithOffset(Blocks.IRON_DOOR, 3) + 8, 4, 2, 2, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.IRON_DOOR, this.getMetadataWithOffset(Blocks.IRON_DOOR, 3), 4, 1, 8, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.IRON_DOOR, this.getMetadataWithOffset(Blocks.IRON_DOOR, 3) + 8, 4, 2, 8, p_74875_3_);
                     return true;
                 }
             }
@@ -1096,11 +1097,11 @@ public class StructureXelnagaTemplePieces
 
                     if (this.coordBaseMode != 2 && this.coordBaseMode != 3)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 1, 0, 3, 3, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 1, 0, 3, 3, Blocks.AIR, Blocks.AIR, false);
                     }
                     else
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 1, 4, 3, 3, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 1, 4, 3, 3, Blocks.AIR, Blocks.AIR, false);
                     }
 
                     return true;
@@ -1111,7 +1112,7 @@ public class StructureXelnagaTemplePieces
     public static class RoomCrossing extends StructureXelnagaTemplePieces.XelnagaTemple
         {
             /** Items that could generate in the chest that is located in XelnagaTemple Room Crossing. */
-            public static final WeightedRandomChestContent[] XelnagaTempleRoomCrossingChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 5, 10), new WeightedRandomChestContent(Items.gold_ingot, 0, 1, 3, 5), new WeightedRandomChestContent(Items.redstone, 0, 4, 9, 5), new WeightedRandomChestContent(Items.coal, 0, 3, 8, 10), new WeightedRandomChestContent(Items.bread, 0, 1, 3, 15), new WeightedRandomChestContent(Items.APPLE, 0, 1, 3, 15), new WeightedRandomChestContent(Items.iron_pickaxe, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] XelnagaTempleRoomCrossingChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 1, 3, 5), new WeightedRandomChestContent(Items.REDSTONE, 0, 4, 9, 5), new WeightedRandomChestContent(Items.COAL, 0, 3, 8, 10), new WeightedRandomChestContent(Items.BREAD, 0, 1, 3, 15), new WeightedRandomChestContent(Items.APPLE, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 1)};
             protected int roomType;
             private static final String __OBFID = "CL_00000496";
 
@@ -1171,17 +1172,17 @@ public class StructureXelnagaTemplePieces
                 {
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 10, 6, 10, true, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.placeDoor(p_74875_1_, p_74875_2_, p_74875_3_, this.field_143013_d, 4, 1, 0);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 10, 6, 3, 10, Blocks.air, Blocks.air, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 4, 0, 3, 6, Blocks.air, Blocks.air, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 10, 1, 4, 10, 3, 6, Blocks.air, Blocks.air, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 10, 6, 3, 10, Blocks.AIR, Blocks.AIR, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 4, 0, 3, 6, Blocks.AIR, Blocks.AIR, false);
+                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 10, 1, 4, 10, 3, 6, Blocks.AIR, Blocks.AIR, false);
                     int i;
 
                     switch (this.roomType)
                     {
                         case 0:
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 5, 1, 5, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 5, 2, 5, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 5, 3, 5, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 5, 1, 5, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 5, 2, 5, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 5, 3, 5, p_74875_3_);
                             this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.torch, 0, 4, 3, 5, p_74875_3_);
                             this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.torch, 0, 6, 3, 5, p_74875_3_);
                             this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.torch, 0, 5, 3, 4, p_74875_3_);
@@ -1198,15 +1199,15 @@ public class StructureXelnagaTemplePieces
                         case 1:
                             for (i = 0; i < 5; ++i)
                             {
-                                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3, 1, 3 + i, p_74875_3_);
-                                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 7, 1, 3 + i, p_74875_3_);
-                                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3 + i, 1, 3, p_74875_3_);
-                                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3 + i, 1, 7, p_74875_3_);
+                                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3, 1, 3 + i, p_74875_3_);
+                                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 7, 1, 3 + i, p_74875_3_);
+                                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3 + i, 1, 3, p_74875_3_);
+                                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3 + i, 1, 7, p_74875_3_);
                             }
 
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 5, 1, 5, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 5, 2, 5, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 5, 3, 5, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 5, 1, 5, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 5, 2, 5, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 5, 3, 5, p_74875_3_);
                             this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.flowing_water, 0, 5, 4, 5, p_74875_3_);
                             break;
                         case 2:
@@ -1354,22 +1355,22 @@ public class StructureXelnagaTemplePieces
                     this.fillWithRandomizedBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 4, 10, 4, true, p_74875_2_, StructureXelnagaTemplePieces.XelnagaTempleStones);
                     this.placeDoor(p_74875_1_, p_74875_2_, p_74875_3_, this.field_143013_d, 1, 7, 0);
                     this.placeDoor(p_74875_1_, p_74875_2_, p_74875_3_, StructureXelnagaTemplePieces.XelnagaTemple.Door.OPENING, 1, 1, 4);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 2, 6, 1, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 1, 5, 1, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 2, 6, 1, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 1, 5, 1, p_74875_3_);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 0, 1, 6, 1, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 1, 5, 2, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 1, 4, 3, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 1, 5, 2, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 1, 4, 3, p_74875_3_);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 0, 1, 5, 3, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 2, 4, 3, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3, 3, 3, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 2, 4, 3, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3, 3, 3, p_74875_3_);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 0, 3, 4, 3, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3, 3, 2, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3, 2, 1, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3, 3, 2, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3, 2, 1, p_74875_3_);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 0, 3, 3, 1, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 2, 2, 1, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 1, 1, 1, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 2, 2, 1, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 1, 1, 1, p_74875_3_);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 0, 1, 2, 1, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 1, 1, 2, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 1, 1, 2, p_74875_3_);
                     this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 0, 1, 1, 3, p_74875_3_);
                     return true;
                 }
@@ -1390,7 +1391,7 @@ public class StructureXelnagaTemplePieces
                 super(0, p_i2083_2_, p_i2083_3_, p_i2083_4_);
             }
 
-            public ChunkPosition func_151553_a()
+            public ChunkPos func_151553_a()
             {
                 return this.XelnagaTemplePortalRoom != null ? this.XelnagaTemplePortalRoom.func_151553_a() : super.func_151553_a();
             }
@@ -1452,9 +1453,9 @@ public class StructureXelnagaTemplePieces
 
                         if (j < 5)
                         {
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 1, 5 - j, 1 + j, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 2, 5 - j, 1 + j, p_74875_3_);
-                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stonebrick, 0, 3, 5 - j, 1 + j, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 1, 5 - j, 1 + j, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 2, 5 - j, 1 + j, p_74875_3_);
+                            this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONEBRICK, 0, 3, 5 - j, 1 + j, p_74875_3_);
                         }
                     }
 
@@ -1476,7 +1477,7 @@ public class StructureXelnagaTemplePieces
             {
                 if (p_75062_5_)
                 {
-                    this.field_151562_a = Blocks.stonebrick;
+                    this.field_151562_a = Blocks.STONEBRICK;
                     float f = p_75062_1_.nextFloat();
 
                     if (f < 0.2F)
@@ -1499,7 +1500,7 @@ public class StructureXelnagaTemplePieces
                 }
                 else
                 {
-                    this.field_151562_a = Blocks.air;
+                    this.field_151562_a = Blocks.AIR;
                     this.selectedBlockMetaData = 0;
                 }
             }
@@ -1591,12 +1592,12 @@ public class StructureXelnagaTemplePieces
 
                     if (this.expandsX)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 2, 0, 3, 4, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 2, 0, 3, 4, Blocks.AIR, Blocks.AIR, false);
                     }
 
                     if (this.expandsZ)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 2, 4, 3, 4, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 2, 4, 3, 4, Blocks.AIR, Blocks.AIR, false);
                     }
 
                     return true;
@@ -1639,42 +1640,42 @@ public class StructureXelnagaTemplePieces
                 {
                     case 1:
                     default:
-                        this.fillWithBlocks(p_74990_1_, p_74990_3_, p_74990_5_, p_74990_6_, p_74990_7_, p_74990_5_ + 3 - 1, p_74990_6_ + 3 - 1, p_74990_7_, Blocks.air, Blocks.air, false);
+                        this.fillWithBlocks(p_74990_1_, p_74990_3_, p_74990_5_, p_74990_6_, p_74990_7_, p_74990_5_ + 3 - 1, p_74990_6_ + 3 - 1, p_74990_7_, Blocks.AIR, Blocks.AIR, false);
                         break;
                     case 2:
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_, p_74990_6_, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_ + 1, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_ + 2, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_ + 2, p_74990_6_, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_, p_74990_6_, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_ + 1, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_ + 2, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_ + 2, p_74990_6_, p_74990_7_, p_74990_3_);
                         this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.wooden_door, 0, p_74990_5_ + 1, p_74990_6_, p_74990_7_, p_74990_3_);
                         this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.wooden_door, 8, p_74990_5_ + 1, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
                         break;
                     case 3:
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.air, 0, p_74990_5_ + 1, p_74990_6_, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.air, 0, p_74990_5_ + 1, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_bars, 0, p_74990_5_, p_74990_6_, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_bars, 0, p_74990_5_, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_bars, 0, p_74990_5_, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_bars, 0, p_74990_5_ + 1, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_bars, 0, p_74990_5_ + 2, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_bars, 0, p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_bars, 0, p_74990_5_ + 2, p_74990_6_, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.AIR, 0, p_74990_5_ + 1, p_74990_6_, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.AIR, 0, p_74990_5_ + 1, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_BARS, 0, p_74990_5_, p_74990_6_, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_BARS, 0, p_74990_5_, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_BARS, 0, p_74990_5_, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_BARS, 0, p_74990_5_ + 1, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_BARS, 0, p_74990_5_ + 2, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_BARS, 0, p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_BARS, 0, p_74990_5_ + 2, p_74990_6_, p_74990_7_, p_74990_3_);
                         break;
                     case 4:
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_, p_74990_6_, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_ + 1, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_ + 2, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stonebrick, 0, p_74990_5_ + 2, p_74990_6_, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_door, 0, p_74990_5_ + 1, p_74990_6_, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.iron_door, 8, p_74990_5_ + 1, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stone_button, this.getMetadataWithOffset(Blocks.stone_button, 4), p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_ + 1, p_74990_3_);
-                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.stone_button, this.getMetadataWithOffset(Blocks.stone_button, 3), p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_ - 1, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_, p_74990_6_, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_ + 1, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_ + 2, p_74990_6_ + 2, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONEBRICK, 0, p_74990_5_ + 2, p_74990_6_, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_DOOR, 0, p_74990_5_ + 1, p_74990_6_, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.IRON_DOOR, 8, p_74990_5_ + 1, p_74990_6_ + 1, p_74990_7_, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONE_BUTTON, this.getMetadataWithOffset(Blocks.STONE_BUTTON, 4), p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_ + 1, p_74990_3_);
+                        this.placeBlockAtCurrentPosition(p_74990_1_, Blocks.STONE_BUTTON, this.getMetadataWithOffset(Blocks.STONE_BUTTON, 3), p_74990_5_ + 2, p_74990_6_ + 1, p_74990_7_ - 1, p_74990_3_);
                 }
             }
 

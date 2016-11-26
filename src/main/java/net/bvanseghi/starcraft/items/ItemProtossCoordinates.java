@@ -3,15 +3,12 @@ package net.bvanseghi.starcraft.items;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemProtossCoordinates extends Item {
 
@@ -23,7 +20,8 @@ public class ItemProtossCoordinates extends Item {
 	
 	public static final String[] names = new String[] { "Char", "Shakuras" };
 	
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 
 	public void registerIcons(IIconRegister par1IconRegister)
@@ -34,7 +32,7 @@ public class ItemProtossCoordinates extends Item {
 		{
 			icons[i] = par1IconRegister.registerIcon(REFERENCE.MODID + ":" + "coord" + names[i]);
 		}
-	}
+	}*/
 
 	
 
@@ -48,10 +46,11 @@ public class ItemProtossCoordinates extends Item {
 		return super.getUnlocalizedName() + "." + names[i];
 	}
 
-	public IIcon getIconFromDamage(int par1)
+	//TODO: Figure out how textures work now.
+	/*public IIcon getIconFromDamage(int par1)
 	{
 		return (IIcon) icons[par1];
-	}
+	}*/
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)

@@ -89,7 +89,7 @@ public class BiomeGenAshPlains extends BiomesSC {
 							} else if (l1 < 56 - l) {
 								block = null;
 								block1 = ModBlocks.stoneChar;
-								blockArray[i2] = Blocks.gravel;
+								blockArray[i2] = Blocks.GRAVEL;
 							} else {
 								blockArray[i2] = block1;
 							}

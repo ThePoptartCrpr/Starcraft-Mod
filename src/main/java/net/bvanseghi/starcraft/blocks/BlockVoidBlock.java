@@ -13,7 +13,7 @@ public class BlockVoidBlock extends ModBlocks {
 	public static final String name = "voidBlock";
 
 	public BlockVoidBlock() {
-		super(name, name, Material.ground);
+		super(name, name, Material.GROUND);
 		setHardness(30000.0F);
 		setResistance(30000.0F);
 		setHarvestLevel("pickaxe", 4);

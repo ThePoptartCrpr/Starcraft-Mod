@@ -19,7 +19,8 @@ public class BlockAcidFluid extends BlockFluidClassic {
 		this.setCreativeTab(null);
 	}
 
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	protected IIcon stillIcon;
 	@SideOnly(Side.CLIENT)
 	protected IIcon flowingIcon;
@@ -34,7 +35,7 @@ public class BlockAcidFluid extends BlockFluidClassic {
 	public void registerBlockIcons(IIconRegister register) {
 		stillIcon = register.registerIcon("Starcraft:acidFluidStill");
 		flowingIcon = register.registerIcon("Starcraft:acidFluidFlowing");
-	}
+	}*/
 
 	public void onEntityCollidedWithBlock(World world, int par1, int par2, int par3, Entity entity) {
 		entity.attackEntityFrom(DamageSource.cactus, 1.0F);

@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class StructureProtossPylonTemplate extends WorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.grass, Blocks.stone, Blocks.dirt, ModBlocks.sandShakuras, ModBlocks.stoneShakuras };
+		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.sandShakuras, ModBlocks.stoneShakuras };
 	}
 	
 	public int metaDim;

@@ -1,13 +1,13 @@
 package net.bvanseghi.starcraft.worldgen.layer;
 
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerCharBiomes extends GenLayer {
 
-	public BiomeGenBase[] dimBiomes = { BiomesSC.biomeCreepInfestationChar, BiomesSC.biomeAshPlains,
+	public Biome[] dimBiomes = { BiomesSC.biomeCreepInfestationChar, BiomesSC.biomeAshPlains,
 			BiomesSC.biomeMoltenInferno, };
 
 	public GenLayerCharBiomes(long par1) {

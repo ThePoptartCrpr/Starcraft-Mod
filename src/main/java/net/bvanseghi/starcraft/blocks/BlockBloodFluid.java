@@ -17,7 +17,8 @@ public class BlockBloodFluid extends BlockFluidClassic {
 		this.setCreativeTab(null);
 	}
 
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	protected IIcon stillIcon;
 	@SideOnly(Side.CLIENT)
 	protected IIcon flowingIcon;
@@ -32,7 +33,7 @@ public class BlockBloodFluid extends BlockFluidClassic {
 	public void registerBlockIcons(IIconRegister register) {
 		stillIcon = register.registerIcon("Starcraft:bloodFluidStill");
 		flowingIcon = register.registerIcon("Starcraft:bloodFluidFlowing");
-	}
+	}*/
 
 	@Override
 	public boolean canDisplace(IBlockAccess world, int x, int y, int z) {

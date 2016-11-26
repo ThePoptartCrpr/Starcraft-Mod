@@ -11,7 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class StructureVespeneGeyser extends WorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.grass, };
+		return new Block[] { Blocks.GRASS, };
 	}
 
 	public boolean LocationIsValidSpawn(World world, int x, int y, int z) {

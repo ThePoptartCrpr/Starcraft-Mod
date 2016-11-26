@@ -15,7 +15,7 @@ public class BlockZergCreep extends ModBlocks {
 	public static final String name = "zergCreep";
 
 	public BlockZergCreep() {
-		super(name, name, Material.ground);
+		super(name, name, Material.GROUND);
 		setStepSound(soundTypeGravel);
 		setHardness(5.0F);
 		setResistance(10.0F);
@@ -41,13 +41,13 @@ public class BlockZergCreep extends ModBlocks {
 		
 		if (StarcraftConfig.creepCanSpread == true) {
 			if(StarcraftConfig.creepSpreadScalesWithDif = true) {
-				if(par1.difficultySetting == EnumDifficulty.PEACEFUL) {
+				if(par1.getDifficulty() == EnumDifficulty.PEACEFUL) {
 					mult = 1;
-				}else if(par1.difficultySetting == EnumDifficulty.EASY) {
+				}else if(par1.getDifficulty() == EnumDifficulty.EASY) {
 					mult = 4;
-				}else if(par1.difficultySetting == EnumDifficulty.NORMAL) {
+				}else if(par1.getDifficulty() == EnumDifficulty.NORMAL) {
 					mult = 8;
-				}else if(par1.difficultySetting == EnumDifficulty.HARD) {
+				}else if(par1.getDifficulty() == EnumDifficulty.HARD) {
 					mult = 16;
 				}else if(par1.getWorldInfo().isHardcoreModeEnabled()) {
 					mult = 32;
@@ -60,9 +60,9 @@ public class BlockZergCreep extends ModBlocks {
 						int i1 = par2 + par5.nextInt(3) - 1;
 						int j1 = par3 + par5.nextInt(5) - 3;
 						int k1 = par4 + par5.nextInt(3) - 1;
-						if (par1.getBlock(i1, j1, k1) == Blocks.grass) {
+						if (par1.getBlock(i1, j1, k1) == Blocks.GRASS) {
 							par1.setBlock(i1, j1, k1, ModBlocks.zergCreep);
-						}else if(par1.getBlock(i1, j1, k1) == Blocks.log) {
+						}else if(par1.getBlock(i1, j1, k1) == Blocks.LOG) {
 							if(par1.getBlockMetadata(par2, par3, par4) == 0) {
 								//for future update
 							}else if(par1.getBlockMetadata(i1, j1, k1) == 1) {
@@ -72,7 +72,7 @@ public class BlockZergCreep extends ModBlocks {
 							}else if(par1.getBlockMetadata(i1, j1, k1) == 3) {
 								//for future update
 							}
-						}else if(par1.getBlock(i1, j1, k1) == Blocks.leaves) {
+						}else if(par1.getBlock(i1, j1, k1) == Blocks.LEAVES) {
 							if(par1.getBlockMetadata(i1, j1, k1) == 0) {
 								//for future update
 							}else if(par1.getBlockMetadata(i1, j1, k1) == 1) {
@@ -82,7 +82,7 @@ public class BlockZergCreep extends ModBlocks {
 							}else if(par1.getBlockMetadata(i1, j1, k1) == 3) {
 								//for future update
 							}
-						}else if(par1.getBlock(i1, j1, k1) == Blocks.farmland || par1.getBlock(i1, j1, k1) == Blocks.dirt) {
+						}else if(par1.getBlock(i1, j1, k1) == Blocks.FARMLAND || par1.getBlock(i1, j1, k1) == Blocks.DIRT) {
 							//for future update
 						}
 					}

@@ -2,8 +2,6 @@ package net.bvanseghi.starcraft.worldgen;
 
 import java.util.Random;
 
-import cpw.mods.fml.common.IWorldGenerator;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ChunkProviderGenerate;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
@@ -23,10 +21,13 @@ import net.bvanseghi.starcraft.worldgen.structure.StructureZergSpire;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.fml.common.IWorldGenerator;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class SCWorldGen implements IWorldGenerator {
 
@@ -147,7 +148,7 @@ public class SCWorldGen implements IWorldGenerator {
 		this.addOreSpawnChar(ModBlocks.oreDiamondC, world, ModBlocks.stoneChar, random, x, z, 16, 16, 2 + random.nextInt(5),
 				1, 0, 16);
 		
-		BiomeGenBase biome = world.getWorldChunkManager().getBiomeGenAt(x, z);
+		Biome biome = world.getWorldChunkManager().getBiomeGenAt(x, z);
 
 		
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
@@ -284,7 +285,7 @@ public class SCWorldGen implements IWorldGenerator {
 				1, 0, 16);
 
 		@SuppressWarnings("unused")
-		BiomeGenBase biome = world.getWorldChunkManager().getBiomeGenAt(x, z);
+		Biome biome = world.getWorldChunkManager().getBiomeGenAt(x, z);
 
 		if (world.getWorldInfo().isMapFeaturesEnabled()) {
 			if (chanceProtossPylon < 11) {

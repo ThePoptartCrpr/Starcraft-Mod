@@ -6,9 +6,10 @@ import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class ShakurasGenCustomLakes extends WorldGenerator {
@@ -120,17 +121,17 @@ public class ShakurasGenCustomLakes extends WorldGenerator {
                 {
                     for (j1 = 4; j1 < 8; ++j1)
                     {
-                        if (aboolean[(i1 * 16 + j2) * 8 + j1] && world.getBlock(x + i1, y + j1 - 1, z + j2) == Blocks.dirt && world.getSavedLightValue(EnumSkyBlock.Sky, x + i1, y + j1, z + j2) > 0)
+                        if (aboolean[(i1 * 16 + j2) * 8 + j1] && world.getBlock(x + i1, y + j1 - 1, z + j2) == Blocks.DIRT && world.getSavedLightValue(EnumSkyBlock.Sky, x + i1, y + j1, z + j2) > 0)
                         {
-                            BiomeGenBase biomegenbase = world.getBiomeGenForCoords(x + i1, z + j2);
+                            Biome biome = world.getBiomeGenForCoords(x + i1, z + j2);
 
-                            if (biomegenbase.topBlock == Blocks.mycelium)
+                            if (biome.topBlock == Blocks.MYCELIUM)
                             {
-                                world.setBlock(x + i1, y + j1 - 1, z + j2, Blocks.mycelium, 0, 2);
+                                world.setBlockState(new BlockPos(x + i1, y + j1 - 1, z + j2), Blocks.MYCELIUM.getDefaultState(), 2);
                             }
                             else
                             {
-                                world.setBlock(x + i1, y + j1 - 1, z + j2, Blocks.grass, 0, 2);
+                                world.setBlockState(new BlockPos(x + i1, y + j1 - 1, z + j2), Blocks.GRASS.getDefaultState(), 2);
                             }
                         }
                     }
@@ -166,7 +167,7 @@ public class ShakurasGenCustomLakes extends WorldGenerator {
 
                         if (world.isBlockFreezable(x + i1, y + b0, z + j2))
                         {
-                            world.setBlock(x + i1, y + b0, z + j2, Blocks.ice, 0, 2);
+                            world.setBlock(x + i1, y + b0, z + j2, Blocks.ICE, 0, 2);
                         }
                     }
                 }

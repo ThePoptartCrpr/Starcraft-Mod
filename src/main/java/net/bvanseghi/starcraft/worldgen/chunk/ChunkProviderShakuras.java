@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.lib.ChunkProviderGenerate;
 import net.bvanseghi.starcraft.lib.SCWorldSettings;
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.bvanseghi.starcraft.worldgen.features.ShakurasGenCustomLakes;
@@ -20,14 +21,15 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.MapGenRavine;
@@ -65,7 +67,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 	/** Holds ravine generator */
 	private MapGenBase ravineGenerator = new MapGenRavine();
 	/** The biomes that are used to generate the chunk */
-	private BiomeGenBase[] biomesForGeneration;
+	private Biome[] biomesForGeneration;
 	double[] field_147427_d;
 	double[] field_147428_e;
 	double[] field_147425_f;
@@ -183,7 +185,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 		}
 	}
 
-	public void replaceBlocksForBiome(int par1, int par2, Block[] block, byte[] par3, BiomeGenBase[] biomeGenBase) {
+	public void replaceBlocksForBiome(int par1, int par2, Block[] block, byte[] par3, Biome[] biomeGenBase) {
 		// ChunkProviderEvent.ReplaceBiomeBlocks event = new
 		// ChunkProviderEvent.ReplaceBiomeBlocks(this, p_147422_1_, p_147422_2_,
 		// p_147422_3_, p_147422_4_, p_147422_5_, this.worldObj);
@@ -272,13 +274,13 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 				float f1 = 0.0F;
 				float f2 = 0.0F;
 				byte b0 = 2;
-				BiomeGenBase biomegenbase = this.biomesForGeneration[j1 + 2 + (k1 + 2) * 10];
+				Biome biome = this.biomesForGeneration[j1 + 2 + (k1 + 2) * 10];
 
 				for (int l1 = -b0; l1 <= b0; ++l1) {
 					for (int i2 = -b0; i2 <= b0; ++i2) {
-						BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
-						float f3 = biomegenbase1.rootHeight;
-						float f4 = biomegenbase1.heightVariation;
+						Biome biome1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
+						float f3 = biome1.rootHeight;
+						float f4 = biome1.heightVariation;
 
 						if (this.field_147435_p == WorldType.AMPLIFIED && f3 > 0.0F) {
 							f3 = 1.0F + f3 * 2.0F;
@@ -287,7 +289,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 
 						float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
 
-						if (biomegenbase1.rootHeight > biomegenbase.rootHeight) {
+						if (biome1.rootHeight > biome.rootHeight) {
 							f5 /= 2.0F;
 						}
 
@@ -371,7 +373,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 		BlockFalling.fallInstantly = true;
 		int k = par1 * 16;
 		int l = par2 * 16;
-		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(k + 16, l + 16);
+		Biome biome = this.worldObj.getBiomeGenForCoords(k + 16, l + 16);
 		this.rand.setSeed(this.worldObj.getSeed());
 		long i1 = this.rand.nextLong() / 2L * 2L + 1L;
 		long j1 = this.rand.nextLong() / 2L * 2L + 1L;
@@ -388,7 +390,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 		int l1;
 		int i2;
 
-		if (biomegenbase != BiomeGenBase.desert && biomegenbase != BiomeGenBase.desertHills && !flag
+		if (biome != Biome.REGISTRY.getObject(new ResourceLocation("minecraft:desert")) && biome != Biome.REGISTRY.getObject(new ResourceLocation("minecraft:desertHills")) && !flag
 				&& this.rand.nextInt(100) == 0
 				&& TerrainGen.populate(chunkProvider, worldObj, rand, par1, par2, flag, LAKE)) {
 			k1 = k + this.rand.nextInt(16) + 8;
@@ -410,9 +412,9 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 
 		boolean doGen = TerrainGen.populate(chunkProvider, worldObj, rand, par1, par2, flag, DUNGEON);
 		
-		biomegenbase.decorate(this.worldObj, this.rand, k, l);
+		biome.decorate(this.worldObj, this.rand, k, l);
 		if (TerrainGen.populate(chunkProvider, worldObj, rand, par1, par2, flag, ANIMALS)) {
-			SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);
+			SpawnerAnimals.performWorldGenSpawning(this.worldObj, biome, k + 8, l + 8, 16, 16, this.rand);
 		}
 		k += 8;
 		l += 8;
@@ -423,7 +425,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 				i2 = this.worldObj.getPrecipitationHeight(k + k1, l + l1);
 
 				if (this.worldObj.isBlockFreezable(k1 + k, i2 - 1, l1 + l)) {
-					this.worldObj.setBlock(k1 + k, i2 - 1, l1 + l, Blocks.ice, 0, 2);
+					this.worldObj.setBlock(k1 + k, i2 - 1, l1 + l, Blocks.ICE, 0, 2);
 				}
 
 				if (this.worldObj.func_147478_e(k1 + k, i2, l1 + l, true)) {
@@ -481,11 +483,11 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 	 */
 	@SuppressWarnings("rawtypes")
 	public List getPossibleCreatures(EnumCreatureType creatureType, int par1, int par2, int par3) {
-		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(par1, par3);
-		return creatureType == EnumCreatureType.monster
+		Biome biome = this.worldObj.getBiomeGenForCoords(par1, par3);
+		return creatureType == EnumCreatureType.MONSTER
 				&& this.scatteredFeatureGenerator.func_143030_a(par1, par2, par3)
 						? this.scatteredFeatureGenerator.getScatteredFeatureSpawnList()
-						: biomegenbase.getSpawnableList(creatureType);
+						: biome.getSpawnableList(creatureType);
 	}
 
 	public int getLoadedChunkCount() {

@@ -21,7 +21,7 @@ public class Registry {
 	public static void register(Register<Item> registry) {
 		registry.getRegistry().registerAll(items); //Register items
 		registry.getRegistry().registerAll(tools); //Register tools
-		registry.getRegistry().registerAll(armours); //Register Armour
-		registry.getRegistry().registerAll(weapons);
+		registry.getRegistry().registerAll(armours); //Register armour
+		registry.getRegistry().registerAll(weapons); //Register weapons
 	}
 }

@@ -14,6 +14,8 @@ import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 @SuppressWarnings("unchecked")
@@ -74,7 +76,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the larva
 		EntityRegistry.registerGlobalEntityID(EntityCivilian.class, name, entityId);
-		EntityRegistry.addSpawn(EntityCivilian.class, 30, 2, 3, EnumCreatureType.creature, BiomeGenBase.birchForest, BiomeGenBase.forest);
+		EntityRegistry.addSpawn(EntityCivilian.class, 30, 2, 3, EnumCreatureType.CREATURE, Biome.REGISTRY.getObject(new ResourceLocation("minecraft:birchForest")), Biome.REGISTRY.getObject(new ResourceLocation("minecraft:forest")));
 		EntityRegistry.registerModEntity(EntityCivilian.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
@@ -87,7 +89,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the larva
 		EntityRegistry.registerGlobalEntityID(EntityProbe.class, name, entityId);
-		EntityRegistry.addSpawn(EntityProbe.class, 20, 2, 3, EnumCreatureType.creature, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityProbe.class, 20, 2, 3, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityProbe.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
@@ -123,7 +125,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the probe
 		EntityRegistry.registerGlobalEntityID(EntityDarkProbe.class, name, entityId);
-		EntityRegistry.addSpawn(EntityDarkProbe.class, 30, 2, 3, EnumCreatureType.creature, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityDarkProbe.class, 30, 2, 3, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityDarkProbe.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
@@ -136,7 +138,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the larva
 		EntityRegistry.registerGlobalEntityID(EntityLarva.class, name, entityId);
-		EntityRegistry.addSpawn(EntityLarva.class, 20, 2, 3, EnumCreatureType.creature, BiomesSC.biomeCreepInfestationChar);
+		EntityRegistry.addSpawn(EntityLarva.class, 20, 2, 3, EnumCreatureType.CREATURE, BiomesSC.biomeCreepInfestationChar);
 		EntityRegistry.registerModEntity(EntityLarva.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
@@ -149,7 +151,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the larva Cocoon
 		EntityRegistry.registerGlobalEntityID(EntityLarvaCocoon.class, name, entityId);
-		EntityRegistry.addSpawn(EntityLarvaCocoon.class, 30, 2, 3, EnumCreatureType.creature, BiomesSC.biomeCreepInfestationChar);
+		EntityRegistry.addSpawn(EntityLarvaCocoon.class, 30, 2, 3, EnumCreatureType.CREATURE, BiomesSC.biomeCreepInfestationChar);
 		EntityRegistry.registerModEntity(EntityLarvaCocoon.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
@@ -175,7 +177,7 @@ public class EntityHandler {
 
 		// Unique spawn details for the Drone
 		EntityRegistry.registerGlobalEntityID(EntityDrone.class, name, entityId);
-		EntityRegistry.addSpawn(EntityDrone.class, 30, 2, 3, EnumCreatureType.creature, BiomesSC.biomeCreepInfestationChar);
+		EntityRegistry.addSpawn(EntityDrone.class, 30, 2, 3, EnumCreatureType.CREATURE, BiomesSC.biomeCreepInfestationChar);
 		EntityRegistry.registerModEntity(EntityDrone.class, name, entityId, Starcraft.instance, 64, 1, true);
 		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));

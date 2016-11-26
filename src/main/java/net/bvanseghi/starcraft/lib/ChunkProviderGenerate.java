@@ -20,11 +20,13 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
@@ -79,7 +81,7 @@ public class ChunkProviderGenerate implements IChunkProvider
     /** Holds ravine generator */
     private MapGenBase ravineGenerator = new MapGenRavine();
     /** The biomes that are used to generate the chunk */
-    private BiomeGenBase[] biomesForGeneration;
+    private Biome[] biomesForGeneration;
     double[] field_147427_d;
     double[] field_147428_e;
     double[] field_147425_f;
@@ -211,7 +213,7 @@ public class ChunkProviderGenerate implements IChunkProvider
         }
     }
 
-    public void replaceBlocksForBiome(int p_147422_1_, int p_147422_2_, Block[] p_147422_3_, byte[] p_147422_4_, BiomeGenBase[] p_147422_5_)
+    public void replaceBlocksForBiome(int p_147422_1_, int p_147422_2_, Block[] p_147422_3_, byte[] p_147422_4_, Biome[] p_147422_5_)
     {
         ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, p_147422_1_, p_147422_2_, p_147422_3_, p_147422_4_, p_147422_5_, this.worldObj);
         MinecraftForge.EVENT_BUS.post(event);
@@ -224,8 +226,8 @@ public class ChunkProviderGenerate implements IChunkProvider
         {
             for (int l = 0; l < 16; ++l)
             {
-                BiomeGenBase biomegenbase = p_147422_5_[l + k * 16];
-                biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
+                Biome biome = p_147422_5_[l + k * 16];
+                biome.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
             }
         }
     }
@@ -298,15 +300,15 @@ public class ChunkProviderGenerate implements IChunkProvider
                 float f1 = 0.0F;
                 float f2 = 0.0F;
                 byte b0 = 2;
-                BiomeGenBase biomegenbase = this.biomesForGeneration[j1 + 2 + (k1 + 2) * 10];
+                Biome biome = this.biomesForGeneration[j1 + 2 + (k1 + 2) * 10];
 
                 for (int l1 = -b0; l1 <= b0; ++l1)
                 {
                     for (int i2 = -b0; i2 <= b0; ++i2)
                     {
-                        BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
-                        float f3 = biomegenbase1.rootHeight;
-                        float f4 = biomegenbase1.heightVariation;
+                        Biome biome1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
+                        float f3 = biome1.rootHeight;
+                        float f4 = biome1.heightVariation;
 
                         if (this.field_147435_p == WorldType.AMPLIFIED && f3 > 0.0F)
                         {
@@ -316,7 +318,7 @@ public class ChunkProviderGenerate implements IChunkProvider
 
                         float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
 
-                        if (biomegenbase1.rootHeight > biomegenbase.rootHeight)
+                        if (biome1.rootHeight > biome.rootHeight)
                         {
                             f5 /= 2.0F;
                         }
@@ -412,7 +414,7 @@ public class ChunkProviderGenerate implements IChunkProvider
         BlockFalling.fallInstantly = true;
         int k = p_73153_2_ * 16;
         int l = p_73153_3_ * 16;
-        BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(k + 16, l + 16);
+        Biome biome = this.worldObj.getBiomeGenForCoords(k + 16, l + 16);
         this.rand.setSeed(this.worldObj.getSeed());
         long i1 = this.rand.nextLong() / 2L * 2L + 1L;
         long j1 = this.rand.nextLong() / 2L * 2L + 1L;
@@ -433,7 +435,7 @@ public class ChunkProviderGenerate implements IChunkProvider
         int l1;
         int i2;
 
-        if (biomegenbase != BiomeGenBase.desert && biomegenbase != BiomeGenBase.desertHills && !flag && this.rand.nextInt(4) == 0
+        if (biome != Biome.REGISTRY.getObject(new ResourceLocation("minecraft:desert")) && biome != Biome.REGISTRY.getObject(new ResourceLocation("minecraft:desertHills")) && !flag && this.rand.nextInt(4) == 0
             && TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, LAKE))
         {
             k1 = k + this.rand.nextInt(16) + 8;
@@ -463,10 +465,10 @@ public class ChunkProviderGenerate implements IChunkProvider
             (new WorldGenDungeons()).generate(this.worldObj, this.rand, l1, i2, j2);
         }
 
-        biomegenbase.decorate(this.worldObj, this.rand, k, l);
+        biome.decorate(this.worldObj, this.rand, k, l);
         if (TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, ANIMALS))
         {
-        SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);
+        SpawnerAnimals.performWorldGenSpawning(this.worldObj, biome, k + 8, l + 8, 16, 16, this.rand);
         }
         k += 8;
         l += 8;
@@ -480,7 +482,7 @@ public class ChunkProviderGenerate implements IChunkProvider
 
                 if (this.worldObj.isBlockFreezable(k1 + k, i2 - 1, l1 + l))
                 {
-                    this.worldObj.setBlock(k1 + k, i2 - 1, l1 + l, Blocks.ice, 0, 2);
+                    this.worldObj.setBlock(k1 + k, i2 - 1, l1 + l, Blocks.ICE, 0, 2);
                 }
 
                 if (this.worldObj.func_147478_e(k1 + k, i2, l1 + l, true))
@@ -540,9 +542,9 @@ public class ChunkProviderGenerate implements IChunkProvider
     @SuppressWarnings("rawtypes")
 	public List getPossibleCreatures(EnumCreatureType creatureType, int x, int y, int z)
     {
-        BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(x, z);
+        Biome biome = this.worldObj.getBiomeGenForCoords(x, z);
     	
-        return creatureType == EnumCreatureType.MONSTER && this.scatteredFeatureGenerator.isInsideStructure(new BlockPos(x, y, z)) ? this.scatteredFeatureGenerator.getScatteredFeatureSpawnList() : biomegenbase.getSpawnableList(creatureType);
+        return creatureType == EnumCreatureType.MONSTER && this.scatteredFeatureGenerator.isInsideStructure(new BlockPos(x, y, z)) ? this.scatteredFeatureGenerator.getScatteredFeatureSpawnList() : biome.getSpawnableList(creatureType);
     }
 
     public ChunkPos func_147416_a(World p_147416_1_, String p_147416_2_, int p_147416_3_, int p_147416_4_, int p_147416_5_)

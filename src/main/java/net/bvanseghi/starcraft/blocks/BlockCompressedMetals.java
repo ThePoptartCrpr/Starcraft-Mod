@@ -2,8 +2,6 @@ package net.bvanseghi.starcraft.blocks;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.block.Block;
@@ -13,11 +11,14 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockCompressedMetals extends Block {
 
-	@SideOnly(Side.CLIENT)
-	private IIcon[] texture;
+	//TODO: Figure out how textures work now.
+//	@SideOnly(Side.CLIENT)
+//	private IIcon[] texture;
 	
 	/**
 	 *  Aiur = yellow, Dark = dark grey.
@@ -25,7 +26,7 @@ public class BlockCompressedMetals extends Block {
 	public static final String[] subBlocks = new String[] { "Copper", "Titanium", "Steel" };
 	
 	public BlockCompressedMetals() {
-		super(Material.iron);
+		super(Material.IRON);
 		setStepSound(soundTypeMetal);
 		setHardness(5.0F);
 		setResistance(10.0F);
@@ -33,7 +34,8 @@ public class BlockCompressedMetals extends Block {
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 	
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		
 		texture = new IIcon[subBlocks.length];
@@ -41,7 +43,7 @@ public class BlockCompressedMetals extends Block {
 		for(int i = 0; i < subBlocks.length; i++) {
 			texture[i] = iconRegister.registerIcon(REFERENCE.MODID + ":" + "compMetal" + subBlocks[i]);
 		}
-	}
+	}*/
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
@@ -53,10 +55,11 @@ public class BlockCompressedMetals extends Block {
 		
 	}
 	
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
 		return texture[meta];
-	}
+	}*/
 	
 	public int damageDropped(int meta) {
 		return meta;

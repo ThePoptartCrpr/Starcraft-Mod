@@ -13,8 +13,9 @@ public class BlockProtossEnergyStabilizerDark extends Block {
 
 		private static String textureName;
 		
-		@SideOnly(Side.CLIENT)
-		private IIcon topTexture;
+		//TODO: Figure out how textures work now.
+//		@SideOnly(Side.CLIENT)
+//		private IIcon topTexture;
 		
 		@SuppressWarnings("static-access")
 		public BlockProtossEnergyStabilizerDark(String textureName){
@@ -30,7 +31,8 @@ public class BlockProtossEnergyStabilizerDark extends Block {
 			this.textureName = textureName;
 		}
 		
-		@SideOnly(Side.CLIENT)
+		//TODO: Figure out how textures work now.
+		/*@SideOnly(Side.CLIENT)
 		public void registerBlockIcons(IIconRegister reg){
 			this.blockIcon = reg.registerIcon(REFERENCE.MODID + ":" + textureName + "_side");
 			this.topTexture = reg.registerIcon(REFERENCE.MODID + ":" + textureName + "_top");
@@ -43,5 +45,5 @@ public class BlockProtossEnergyStabilizerDark extends Block {
 			}
 			
 			return this.blockIcon;
-		}
+		}*/
 }

@@ -8,11 +8,12 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.worldgen.structure.assembly.StructureXelnagaTemplePieces;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureStart;
@@ -23,7 +24,7 @@ public class MapGenXelnagaTemple extends MapGenStructure
     public final List list;
     /** is spawned false and set true once the defined BiomeGenBases were compared with the present ones */
     private boolean ranBiomeCheck;
-    private ChunkCoordIntPair[] structureCoords;
+    private ChunkPos[] structureCoords;
     private double field_82671_h;
     private int field_82672_i;
     
@@ -32,20 +33,20 @@ public class MapGenXelnagaTemple extends MapGenStructure
 
     public MapGenXelnagaTemple()
     {
-        this.structureCoords = new ChunkCoordIntPair[3];
+        this.structureCoords = new ChunkPos[3];
         this.field_82671_h = 32.0D;
         this.field_82672_i = 3;
         this.list = new ArrayList();
-        BiomeGenBase[] abiomegenbase = BiomeGenBase.getBiomeGenArray();
-        int i = abiomegenbase.length;
+        Biome[] aBiome = Biome.getBiomeGenArray();
+        int i = aBiome.length;
 
         for (int j = 0; j < i; ++j)
         {
-            BiomeGenBase biomegenbase = abiomegenbase[j];
+            Biome biome = aBiome[j];
 
-            if (biomegenbase != null && biomegenbase.rootHeight > 0.0F /*&& !BiomeManager.XelnagaTempleBiomesBlackList.contains(biomegenbase)*/)
+            if (biome != null && biome.rootHeight > 0.0F /*&& !BiomeManager.XelnagaTempleBiomesBlackList.contains(biomegenbase)*/)
             {
-                this.list.add(biomegenbase);
+                this.list.add(biome);
             }
         }
        /* for (BiomeGenBase biome : BiomeManager.XelnagaTempleBiomes)
@@ -72,7 +73,7 @@ public class MapGenXelnagaTemple extends MapGenStructure
             }
             else if (((String)entry.getKey()).equals("count"))
             {
-                this.structureCoords = new ChunkCoordIntPair[MathHelper.parseIntWithDefaultAndMax((String)entry.getValue(), this.structureCoords.length, 1)];
+                this.structureCoords = new ChunkPos[MathHelper.parseIntWithDefaultAndMax((String)entry.getValue(), this.structureCoords.length, 1)];
             }
             else if (((String)entry.getKey()).equals("spread"))
             {
@@ -100,15 +101,15 @@ public class MapGenXelnagaTemple extends MapGenStructure
                 double d1 = (1.25D * (double)l + random.nextDouble()) * this.field_82671_h * (double)l;
                 int j1 = (int)Math.round(Math.cos(d0) * d1);
                 int k1 = (int)Math.round(Math.sin(d0) * d1);
-                ChunkPosition chunkposition = this.worldObj.getWorldChunkManager().findBiomePosition((j1 << 4) + 8, (k1 << 4) + 8, 112, this.list, random);
+                ChunkPos chunkpos = this.worldObj.getWorldChunkManager().findBiomePosition((j1 << 4) + 8, (k1 << 4) + 8, 112, this.list, random);
 
-                if (chunkposition != null)
+                if (chunkpos != null)
                 {
-                    j1 = chunkposition.chunkPosX >> 4;
-                    k1 = chunkposition.chunkPosZ >> 4;
+                    j1 = chunkpos.chunkXPos >> 4;
+                    k1 = chunkpos.chunkZPos >> 4;
                 }
 
-                this.structureCoords[i1] = new ChunkCoordIntPair(j1, k1);
+                this.structureCoords[i1] = new ChunkPos(j1, k1);
                 d0 += (Math.PI * 2D) * (double)l / (double)this.field_82672_i;
 
                 if (i1 == this.field_82672_i)
@@ -121,14 +122,14 @@ public class MapGenXelnagaTemple extends MapGenStructure
             this.ranBiomeCheck = true;
         }
 
-        ChunkCoordIntPair[] achunkcoordintpair = this.structureCoords;
-        int l1 = achunkcoordintpair.length;
+        ChunkPos[] achunkpos = this.structureCoords;
+        int l1 = achunkpos.length;
 
         for (int k = 0; k < l1; ++k)
         {
-            ChunkCoordIntPair chunkcoordintpair = achunkcoordintpair[k];
+        	ChunkPos chunkpos = achunkpos[k];
 
-            if (p_75047_1_ == chunkcoordintpair.chunkXPos && p_75047_2_ == chunkcoordintpair.chunkZPos)
+            if (p_75047_1_ == chunkpos.chunkXPos && p_75047_2_ == chunkpos.chunkZPos)
             {
                 return true;
             }
@@ -144,16 +145,16 @@ public class MapGenXelnagaTemple extends MapGenStructure
     protected List getCoordList()
     {
         ArrayList arraylist = new ArrayList();
-        ChunkCoordIntPair[] achunkcoordintpair = this.structureCoords;
-        int i = achunkcoordintpair.length;
+        ChunkPos[] achunk = this.structureCoords;
+        int i = achunk.length;
 
         for (int j = 0; j < i; ++j)
         {
-            ChunkCoordIntPair chunkcoordintpair = achunkcoordintpair[j];
+        	ChunkPos chunkpos = achunk[j];
 
-            if (chunkcoordintpair != null)
+            if (chunkpos != null)
             {
-                arraylist.add(chunkcoordintpair.func_151349_a(64));
+                arraylist.add(chunkpos.func_151349_a(64));
             }
         }
 

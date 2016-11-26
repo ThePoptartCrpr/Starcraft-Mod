@@ -21,7 +21,8 @@ public class ItemZergCarapace extends Item {
 		this.setCreativeTab(CreativeTab.TabStarcraftMaterials);
 	}
 	
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 
 	public void registerIcons(IIconRegister par1IconRegister)
@@ -32,7 +33,7 @@ public class ItemZergCarapace extends Item {
 		{
 			icons[i] = par1IconRegister.registerIcon(REFERENCE.MODID + ":" + "zergCarapace" + names[i]);
 		}
-	}
+	}*/
 
 	public static final String[] names = new String[] { "T1", "T2", "T3" };
 
@@ -46,10 +47,11 @@ public class ItemZergCarapace extends Item {
 		return super.getUnlocalizedName() + "." + names[i];
 	}
 
-	public IIcon getIconFromDamage(int par1)
+	//TODO: Figure out how textures work now.
+	/*public IIcon getIconFromDamage(int par1)
 	{
 		return (IIcon) icons[par1];
-	}
+	}*/
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)

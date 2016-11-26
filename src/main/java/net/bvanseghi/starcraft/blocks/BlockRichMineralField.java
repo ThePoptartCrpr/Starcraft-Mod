@@ -41,11 +41,12 @@ public class BlockRichMineralField extends BlockContainer {
 	protected boolean canSilkHarvest() {
 		return true;
 	}
-
-	@SideOnly(Side.CLIENT)
+	
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon(REFERENCE.MODID + ":" + "richMineralField");
-	}
+	}*/
 
 	public int getRenderType() {
 		return -1;

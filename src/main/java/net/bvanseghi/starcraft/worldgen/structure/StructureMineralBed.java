@@ -13,8 +13,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class StructureMineralBed extends WorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.grass, Blocks.stone, Blocks.dirt, ModBlocks.ashChar, ModBlocks.stoneChar,
-				ModBlocks.ashChar, ModBlocks.sandShakuras, ModBlocks.stoneShakuras, Blocks.obsidian };
+		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.ashChar, ModBlocks.stoneChar,
+				ModBlocks.ashChar, ModBlocks.sandShakuras, ModBlocks.stoneShakuras, Blocks.OBSIDIAN };
 	}
 
 	public boolean LocationIsValidSpawn(World world, int x, int y, int z) {

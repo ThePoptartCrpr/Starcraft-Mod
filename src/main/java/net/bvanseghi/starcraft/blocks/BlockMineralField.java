@@ -2,8 +2,6 @@ package net.bvanseghi.starcraft.blocks;
 
 import java.util.Random;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.REFERENCE;
@@ -14,6 +12,8 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockMineralField extends BlockContainer {
 
@@ -42,10 +42,11 @@ public class BlockMineralField extends BlockContainer {
 		return true;
 	}
 
-	@SideOnly(Side.CLIENT)
+	//TODO: Change to new texture method
+/*	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon(REFERENCE.MODID + ":" + "mineralField");
-	}
+	}*/
 
 	public int getRenderType() {
 		return -1;

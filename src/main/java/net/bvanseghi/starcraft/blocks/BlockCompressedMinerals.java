@@ -16,8 +16,9 @@ import net.minecraft.util.IIcon;
 
 public class BlockCompressedMinerals extends Block {
 
-	@SideOnly(Side.CLIENT)
-	private IIcon[] texture;
+	//TODO: Figure out how textures work now.
+//	@SideOnly(Side.CLIENT)
+//	private IIcon[] texture;
 	
 	/**
 	 *  Aiur = yellow, Dark = dark grey.
@@ -25,7 +26,7 @@ public class BlockCompressedMinerals extends Block {
 	public static final String[] subBlocks = new String[] { "Blue", "Rich" };
 	
 	public BlockCompressedMinerals() {
-		super(Material.iron);
+		super(Material.IRON);
 		setStepSound(soundTypeMetal);
 		setHardness(5.0F);
 		setResistance(10.0F);
@@ -33,7 +34,8 @@ public class BlockCompressedMinerals extends Block {
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 	
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		
 		texture = new IIcon[subBlocks.length];
@@ -41,7 +43,7 @@ public class BlockCompressedMinerals extends Block {
 		for(int i = 0; i < subBlocks.length; i++) {
 			texture[i] = iconRegister.registerIcon(REFERENCE.MODID + ":" + "compMineral" + subBlocks[i]);
 		}
-	}
+	}*/
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
@@ -53,10 +55,11 @@ public class BlockCompressedMinerals extends Block {
 		
 	}
 	
-	@SideOnly(Side.CLIENT)
+	//TODO: Figure out how textures work now.
+	/*@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
 		return texture[meta];
-	}
+	}*/
 	
 	public int damageDropped(int meta) {
 		return meta;

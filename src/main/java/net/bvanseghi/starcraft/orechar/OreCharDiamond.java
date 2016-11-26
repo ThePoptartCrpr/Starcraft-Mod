@@ -31,6 +31,6 @@ public class OreCharDiamond extends ModBlocks {
 	
 	 public Item getItemDropped(int par1, Random rand, int par3)
 	    {
-	        return Items.diamond;
+	        return Items.DIAMOND;
 	    }
 }

@@ -10,7 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.Biome;
 
 public class CharBiomeGenCreepInfestation extends BiomesSC {
 
@@ -32,8 +32,8 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
 		this.setDisableRain();
-		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityLarva.class, 8, 2, 3));
-		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityLarvaCocoon.class, 8, 2, 3));
+		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityLarva.class, 8, 2, 3));
+		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityLarvaCocoon.class, 8, 2, 3));
 
 		this.isOnChar = isOnChar;
 	}
@@ -97,7 +97,7 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 							} else if (l1 < 56 - l) {
 								block = null;
 								block1 = ModBlocks.stoneChar;
-								blockArray[i2] = Blocks.gravel;
+								blockArray[i2] = Blocks.GRAVEL;
 							} else {
 								blockArray[i2] = block1;
 							}
