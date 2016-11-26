@@ -163,7 +163,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 								if ((d15 += d16) > 0.0D) {
 									block[j3 += short1] = ModBlocks.stoneShakuras;
 								} else if (k2 * 8 + l2 < b0) {
-									block[j3 += short1] = Blocks.water;
+									block[j3 += short1] = Blocks.WATER;
 								} else {
 									block[j3 += short1] = null;
 								}
@@ -394,7 +394,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 			k1 = k + this.rand.nextInt(16) + 8;
 			l1 = this.rand.nextInt(256);
 			i2 = l + this.rand.nextInt(16) + 8;
-			(new ShakurasGenCustomLakes(Blocks.water)).generate(this.worldObj, this.rand, k1, l1, i2);
+			(new ShakurasGenCustomLakes(Blocks.WATER)).generate(this.worldObj, this.rand, k1, l1, i2);
 		}
 
 		if (TerrainGen.populate(chunkProvider, worldObj, rand, par1, par2, flag, LAKE) && !flag
@@ -404,7 +404,7 @@ public class ChunkProviderShakuras extends ChunkProviderGenerate implements IChu
 			i2 = l + this.rand.nextInt(16) + 8;
 
 			if (l1 < 63 || this.rand.nextInt(10) == 0) {
-				(new ShakurasGenCustomLakes(Blocks.water)).generate(this.worldObj, this.rand, k1, l1, i2);
+				(new ShakurasGenCustomLakes(Blocks.WATER)).generate(this.worldObj, this.rand, k1, l1, i2);
 			}
 		}
 

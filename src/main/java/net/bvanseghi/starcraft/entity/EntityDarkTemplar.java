@@ -45,10 +45,10 @@ public class EntityDarkTemplar extends EntityProtossMob {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.dTempHP);
-		getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513);
-		getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32);
-		getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(StarcraftConfig.dTempDmg);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.dTempHP);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513);
+		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
+		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.dTempDmg);
 	}
 	
 	protected void clearAITasks() {
@@ -113,7 +113,7 @@ public class EntityDarkTemplar extends EntityProtossMob {
 	
 	@Override
 	public boolean attackEntityAsMob(Entity target) {
-		float attackDamage = (float) getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
+		float attackDamage = (float) getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue();
 		int knockbackModifier = 0;
 
 		if(target instanceof EntityLivingBase) {

@@ -47,10 +47,10 @@ public class EntityZergling extends EntityZergMob {
 		super.applyEntityAttributes();
 		
 		//To be modified by bvanseghi
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.zerglingHP);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(StarcraftConfig.zerglingDmg);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
 	}
 	
 	protected void clearAITasks() {

@@ -15,7 +15,7 @@ import net.minecraftforge.fluids.Fluid;
 public class BlockAcidFluid extends BlockFluidClassic {
 
 	public BlockAcidFluid(Fluid fluid, Material material) {
-		super(ModFluids.acid, Material.water);
+		super(ModFluids.acid, Material.WATER);
 		this.setCreativeTab(null);
 	}
 

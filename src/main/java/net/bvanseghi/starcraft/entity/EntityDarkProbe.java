@@ -33,8 +33,8 @@ import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ReportedException;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
 public class EntityDarkProbe extends EntityProtossPassive {

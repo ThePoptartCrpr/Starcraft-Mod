@@ -8,7 +8,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.worldgen.structure.assembly.StructureXelnagaTemplePieces;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;

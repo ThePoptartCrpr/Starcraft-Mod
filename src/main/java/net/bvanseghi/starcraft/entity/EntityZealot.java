@@ -52,10 +52,10 @@ public class EntityZealot extends EntityProtossMob {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.zealotHP);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.39000000417232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(StarcraftConfig.zealotDmg);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zealotHP);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zealotDmg);
 	}
 	
 	protected void clearAITasks()
@@ -118,7 +118,7 @@ public class EntityZealot extends EntityProtossMob {
 	public boolean attackEntityAsMob(Entity entityTarget)
 	{
 	    float attackDamage = (float)getEntityAttribute(SharedMonsterAttributes
-	          .attackDamage).getAttributeValue();
+	          .ATTACK_DAMAGE).getAttributeValue();
 	    int knockbackModifier = 0;
 
 	    if (entityTarget instanceof EntityLivingBase)

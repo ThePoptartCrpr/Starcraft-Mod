@@ -212,24 +212,24 @@ public class ModBlocks extends Block {
 		protossEnergyChannelDark = new BlockProtossEnergyChannelDark("protossEnergyChannelDark");
 		energyBlock = new BlockEnergyBlock();
 		voidEnergyBlock = new BlockVoidEnergyBlock();
-		warpGateWormholeChar = new BlockWarpGateWormholeChar(Material.ground);
-		warpGateWormholeOverworld = new BlockWarpGateWormholeOverworld(Material.ground);
-		warpGateWormholeShakuras = new BlockWarpGateWormholeShakuras(Material.ground);
+		warpGateWormholeChar = new BlockWarpGateWormholeChar(Material.GROUND);
+		warpGateWormholeOverworld = new BlockWarpGateWormholeOverworld(Material.GROUND);
+		warpGateWormholeShakuras = new BlockWarpGateWormholeShakuras(Material.GROUND);
 		
 		protossWarpProjectorC = new BlockProtossWarpProjectorC("warpProjectorC");
 		protossWarpProjectorO = new BlockProtossWarpProjectorO("warpProjectorO");
 		protossWarpProjectorS = new BlockProtossWarpProjectorS("warpProjectorS");
 
-		mineralField = new BlockMineralField(Material.ground);
-		richMineralField = new BlockRichMineralField(Material.ground);
+		mineralField = new BlockMineralField(Material.GROUND);
+		richMineralField = new BlockRichMineralField(Material.GROUND);
 		
 
-		vespeneGeyser = new BlockVespeneGeyser(Material.ground);
-		richVespeneGeyser = new BlockRichVespeneGeyser(Material.ground);
-		vespeneGeyserChar = new BlockVespeneGeyserChar(Material.ground);
-		richVespeneGeyserChar = new BlockRichVespeneGeyserChar(Material.ground);
-		vespeneGeyserShakuras = new BlockVespeneGeyserShakuras(Material.ground);
-		richVespeneGeyserShakuras = new BlockRichVespeneGeyserShakuras(Material.ground);
+		vespeneGeyser = new BlockVespeneGeyser(Material.GROUND);
+		richVespeneGeyser = new BlockRichVespeneGeyser(Material.GROUND);
+		vespeneGeyserChar = new BlockVespeneGeyserChar(Material.GROUND);
+		richVespeneGeyserChar = new BlockRichVespeneGeyserChar(Material.GROUND);
+		vespeneGeyserShakuras = new BlockVespeneGeyserShakuras(Material.GROUND);
+		richVespeneGeyserShakuras = new BlockRichVespeneGeyserShakuras(Material.GROUND);
 		
 		vespeneGeyserBase = new BlockVespeneGeyserBase();
 		vespeneGeyserBaseChar = new BlockVespeneGeyserBaseChar();
@@ -239,9 +239,9 @@ public class ModBlocks extends Block {
 		keratinChunk = new BlockKeratinChunk();
 
 		fluidAcid = new BlockAcidFluid(ModFluids.acid, ModMaterials.acid);
-		fluidBlood = new BlockBloodFluid(ModFluids.blood, Material.water);
-		fluidAcid = new BlockAcidFluid(ModFluids.acid, Material.lava);
-		fluidBlood = new BlockBloodFluid(ModFluids.blood, Material.water);
+		fluidBlood = new BlockBloodFluid(ModFluids.blood, Material.WATER);
+		fluidAcid = new BlockAcidFluid(ModFluids.acid, Material.LAVA);
+		fluidBlood = new BlockBloodFluid(ModFluids.blood, Material.WATER);
 
 
 		ashChar = new BlockAsh();

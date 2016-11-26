@@ -156,7 +156,7 @@ public class CharGenCustomLakes extends WorldGenerator {
                 }
             }
 
-            if (this.field_150556_a.getMaterial() == Material.water)
+            if (this.field_150556_a.getMaterial() == Material.WATER)
             {
                 for (i1 = 0; i1 < 16; ++i1)
                 {

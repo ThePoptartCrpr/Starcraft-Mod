@@ -395,7 +395,7 @@ public class ChunkProviderChar extends ChunkProviderGenerate implements IChunkPr
 			k1 = k + this.rand.nextInt(16) + 8;
 			l1 = this.rand.nextInt(256);
 			i2 = l + this.rand.nextInt(16) + 8;
-			(new CharGenCustomLakes(Blocks.water)).generate(this.worldObj, this.rand, k1, l1, i2);
+			(new CharGenCustomLakes(Blocks.WATER)).generate(this.worldObj, this.rand, k1, l1, i2);
 		}
 
 		if (TerrainGen.populate(chunkProvider, worldObj, rand, par1, par2, flag, LAVA) && !flag
