@@ -12,8 +12,6 @@ public class WeaponDarkPsiBlade extends ItemSword {
 		super(material);
 		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
 		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + name);
-		this.setTextureName(REFERENCE.Texture_Path + name);
 	}
-	
 	
 }

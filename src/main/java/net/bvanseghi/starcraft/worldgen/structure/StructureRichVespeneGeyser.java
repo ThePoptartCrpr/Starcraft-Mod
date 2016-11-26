@@ -18,7 +18,7 @@ public class StructureRichVespeneGeyser extends WorldGenerator {
 		int distanceToAir = 0;
 		Block checkBlock = world.getBlock(x, y, z);
 
-		while (checkBlock != Blocks.air) {
+		while (checkBlock != Blocks.AIR) {
 			distanceToAir++;
 			checkBlock = world.getBlock(x, y + distanceToAir, z);
 		}
@@ -34,7 +34,7 @@ public class StructureRichVespeneGeyser extends WorldGenerator {
 		Block blockBelow = world.getBlock(x, y - 1, z);
 
 		for (Block i : GetValidSpawnBlocks()) {
-			if (blockAbove != Blocks.air) {
+			if (blockAbove != Blocks.AIR) {
 				return false;
 			}
 			if (block == i) {
@@ -68,7 +68,7 @@ public class StructureRichVespeneGeyser extends WorldGenerator {
 		world.setBlock(x + 0, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 1, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 2, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 3, y + 0, z + 0, Blocks.air, 0, 3);
+		world.setBlock(x + 3, y + 0, z + 0, Blocks.AIR, 0, 3);
 		world.setBlock(x + 4, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 5, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 6, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
@@ -86,69 +86,69 @@ public class StructureRichVespeneGeyser extends WorldGenerator {
 		world.setBlock(x + 4, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 5, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 6, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 0, y + 0, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 0, z + 3, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 2, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 3, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 4, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 5, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 6, y + 0, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 0, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 1, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 1, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 2, y + 1, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 3, y + 1, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 4, y + 1, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 5, y + 1, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 1, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 1, z + 1, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 1, z + 1, ModBlocks.richVespeneGeyser, 0, 3);
-		world.setBlock(x + 2, y + 1, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x + 2, y + 1, z + 1, Blocks.AIR, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 4, y + 1, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 1, z + 1, Blocks.AIR, 0, 3);
 		world.setBlock(x + 5, y + 1, z + 1, ModBlocks.richVespeneGeyser, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 1, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x + 6, y + 1, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 1, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 1, z + 2, Blocks.AIR, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 4, y + 1, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 5, y + 1, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 1, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 1, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 1, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 1, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 1, z + 3, Blocks.AIR, 0, 3);
 		world.setBlock(x + 2, y + 1, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 3, y + 1, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
 		world.setBlock(x + 4, y + 1, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 5, y + 1, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 0, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 2, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 1, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 2, Blocks.air, 0, 3);
+		world.setBlock(x + 5, y + 1, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 1, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 2, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 2, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 2, y + 2, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 3, y + 2, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 4, y + 2, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 5, y + 2, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 2, z + 0, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 2, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 2, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 2, y + 2, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 3, y + 2, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 4, y + 2, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 5, y + 2, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 2, z + 1, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 2, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 2, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 2, y + 2, z + 2, Blocks.AIR, 0, 3);
 		world.setBlock(x + 3, y + 2, z + 2, ModBlocks.richVespeneGeyser, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 2, Blocks.air, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 3, y + 2, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 3, Blocks.air, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 3, Blocks.air, 0, 3);
+		world.setBlock(x + 4, y + 2, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 5, y + 2, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 2, z + 2, Blocks.AIR, 0, 3);
+		world.setBlock(x + 0, y + 2, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 1, y + 2, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 2, y + 2, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 3, y + 2, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 4, y + 2, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 5, y + 2, z + 3, Blocks.AIR, 0, 3);
+		world.setBlock(x + 6, y + 2, z + 3, Blocks.AIR, 0, 3);
 		return true;
 
 	}

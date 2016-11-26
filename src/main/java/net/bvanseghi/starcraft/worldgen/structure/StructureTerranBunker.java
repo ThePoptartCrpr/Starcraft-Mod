@@ -22,7 +22,7 @@ public class StructureTerranBunker extends WorldGenerator {
 		int distanceToAir = 0;
 		Block checkBlock = world.getBlock(x, y, z);
 
-		while (checkBlock != Blocks.air) {
+		while (checkBlock != Blocks.AIR) {
 			distanceToAir++;
 			checkBlock = world.getBlock(x, y + distanceToAir, z);
 		}
@@ -38,7 +38,7 @@ public class StructureTerranBunker extends WorldGenerator {
 		Block blockBelow = world.getBlock(x, y - 1, z);
 
 		for (Block i : GetValidSpawnBlocks()) {
-			if (blockAbove != Blocks.air) {
+			if (blockAbove != Blocks.AIR) {
 				return false;
 			}
 			if (block == i) {

@@ -62,11 +62,11 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 			int i2 = (j1 * 16 + i1) * k1 + l1;
 
 			if (l1 <= 0 + rand.nextInt(5)) {
-				blockArray[i2] = Blocks.bedrock;
+				blockArray[i2] = Blocks.BEDROCK;
 			} else {
 				Block block2 = blockArray[i2];
 
-				if (block2 != null && block2.getMaterial() != Material.air) {
+				if (block2 != null && block2.getMaterial() != Material.AIR) {
 					if (block2 == ModBlocks.stoneChar) {
 						if (k == -1) {
 							if (l <= 0) {
@@ -79,7 +79,7 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 								block1 = this.fillerBlock;
 							}
 
-							if (l1 < 63 && (block == null || block.getMaterial() == Material.air)) {
+							if (l1 < 63 && (block == null || block.getMaterial() == Material.AIR)) {
 								block = Blocks.lava;
 								b0 = 0;
 							}

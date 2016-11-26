@@ -1,10 +1,10 @@
 package net.bvanseghi.starcraft.weapons;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.item.ItemSword;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WeaponDarkDualWarpBlade extends ItemSword {
 
@@ -14,7 +14,6 @@ public class WeaponDarkDualWarpBlade extends ItemSword {
 		super(material);
 		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
 		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + name);
-		this.setTextureName(REFERENCE.Texture_Path + name);
 	}
 	
 	@SideOnly(Side.CLIENT)

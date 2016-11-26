@@ -33,7 +33,7 @@ public class BlockVoidBlock extends ModBlocks {
 					int i1 = par2 + par5.nextInt(3) - 1;
 					int j1 = par3 + par5.nextInt(5) - 3;
 					int k1 = par4 + par5.nextInt(3) - 1;
-					if (par1.getBlock(i1, j1, k1) != Blocks.air) {
+					if (par1.getBlock(i1, j1, k1) != Blocks.AIR) {
 						par1.setBlock(i1, j1, k1, ModBlocks.voidBlock);
 					}
 				}

@@ -19,7 +19,7 @@ public class StructureZergSpire extends WorldGenerator {
 		int distanceToAir = 0;
 		Block checkBlock = world.getBlock(x, y, z);
 
-		while (checkBlock != Blocks.air) {
+		while (checkBlock != Blocks.AIR) {
 			distanceToAir++;
 			checkBlock = world.getBlock(x, y + distanceToAir, z);
 		}
@@ -35,7 +35,7 @@ public class StructureZergSpire extends WorldGenerator {
 		Block blockBelow = world.getBlock(x, y - 1, z);
 
 		for (Block i : GetValidSpawnBlocks()) {
-			if (blockAbove != Blocks.air) {
+			if (blockAbove != Blocks.AIR) {
 				return false;
 			}
 			if (block == i) {
@@ -1574,7 +1574,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r02(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 12, y + 2, z + 10, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 2, z + 10, Blocks.AIR, 0, 3);
 		world.setBlock(x + 13, y + 2, z + 10, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 2, z + 10, ModBlocks.zergStrucFlesh, 0, 3);
 		world.setBlock(x + 15, y + 2, z + 10, Blocks.air, 0, 3);
@@ -3082,7 +3082,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r03(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 4, z + 21, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 4, z + 21, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 4, z + 21, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 4, z + 21, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 4, z + 21, Blocks.air, 0, 3);
@@ -4590,7 +4590,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r04(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 12, y + 7, z + 5, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 7, z + 5, Blocks.AIR, 0, 3);
 		world.setBlock(x + 13, y + 7, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 7, z + 5, Blocks.air, 0, 3);
 		world.setBlock(x + 15, y + 7, z + 5, Blocks.air, 0, 3);
@@ -6098,7 +6098,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r05(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 9, z + 16, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 9, z + 16, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 9, z + 16, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 9, z + 16, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 9, z + 16, Blocks.air, 0, 3);
@@ -7606,7 +7606,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r06(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 12, y + 12, z + 0, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 12, z + 0, Blocks.AIR, 0, 3);
 		world.setBlock(x + 13, y + 12, z + 0, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 12, z + 0, Blocks.air, 0, 3);
 		world.setBlock(x + 15, y + 12, z + 0, Blocks.air, 0, 3);
@@ -9114,7 +9114,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r07(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 14, z + 11, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 14, z + 11, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 14, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 14, z + 11, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 14, z + 11, Blocks.air, 0, 3);
@@ -10622,7 +10622,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r08(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 12, y + 16, z + 21, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 16, z + 21, Blocks.AIR, 0, 3);
 		world.setBlock(x + 13, y + 16, z + 21, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 16, z + 21, Blocks.air, 0, 3);
 		world.setBlock(x + 15, y + 16, z + 21, Blocks.air, 0, 3);
@@ -12130,7 +12130,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r09(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 19, z + 6, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 19, z + 6, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 19, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 19, z + 6, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 19, z + 6, Blocks.air, 0, 3);
@@ -13638,7 +13638,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r010(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 12, y + 21, z + 16, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 21, z + 16, Blocks.AIR, 0, 3);
 		world.setBlock(x + 13, y + 21, z + 16, ModBlocks.zergStrucFlesh, 0, 3);
 		world.setBlock(x + 14, y + 21, z + 16, ModBlocks.zergStrucFlesh, 0, 3);
 		world.setBlock(x + 15, y + 21, z + 16, Blocks.air, 0, 3);
@@ -15146,7 +15146,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r011(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 24, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 24, z + 1, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 24, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 24, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 24, z + 1, Blocks.air, 0, 3);
@@ -18162,7 +18162,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r013(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 28, z + 22, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 28, z + 22, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 28, z + 22, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 28, z + 22, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 28, z + 22, Blocks.air, 0, 3);
@@ -21178,7 +21178,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r015(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 33, z + 17, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 33, z + 17, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 33, z + 17, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 33, z + 17, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 33, z + 17, Blocks.air, 0, 3);
@@ -22686,7 +22686,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r016(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 12, y + 36, z + 1, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 36, z + 1, Blocks.AIR, 0, 3);
 		world.setBlock(x + 13, y + 36, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 36, z + 1, Blocks.air, 0, 3);
 		world.setBlock(x + 15, y + 36, z + 1, Blocks.air, 0, 3);
@@ -24194,7 +24194,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r017(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 0, y + 38, z + 12, Blocks.air, 0, 3);
+		world.setBlock(x + 0, y + 38, z + 12, Blocks.AIR, 0, 3);
 		world.setBlock(x + 1, y + 38, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 2, y + 38, z + 12, Blocks.air, 0, 3);
 		world.setBlock(x + 3, y + 38, z + 12, ModBlocks.zergStrucFlesh, 1, 3);
@@ -25702,7 +25702,7 @@ public class StructureZergSpire extends WorldGenerator {
 
 	public boolean generate_r018(World world, Random rand, int x, int y, int z) {
 
-		world.setBlock(x + 12, y + 40, z + 22, Blocks.air, 0, 3);
+		world.setBlock(x + 12, y + 40, z + 22, Blocks.AIR, 0, 3);
 		world.setBlock(x + 13, y + 40, z + 22, Blocks.air, 0, 3);
 		world.setBlock(x + 14, y + 40, z + 22, Blocks.air, 0, 3);
 		world.setBlock(x + 15, y + 40, z + 22, Blocks.air, 0, 3);

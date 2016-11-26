@@ -44,7 +44,7 @@ public class ModTools {
 		titaniumHoe = new ToolTitaniumHoe(TITANIUM);
 
 		copperAxe = new ToolCopperAxe(COPPER);
-		copperPickaxe = new ToolTCopperPickaxe(COPPER);
+		copperPickaxe = new ToolCopperPickaxe(COPPER);
 		copperShovel = new ToolCopperShovel(COPPER);
 		copperHoe = new ToolCopperHoe(COPPER);
 

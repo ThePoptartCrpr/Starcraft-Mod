@@ -17,6 +17,7 @@ public class ModWeapons {
 	public static final ToolMaterial MASTERPSIBLADE = EnumHelper.addToolMaterial("MASTERPSIBLADE", 0, 750, 9.5F, 38.5F, 0);
 
 	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial("TITANIUM", 2, 502, 5.5F, 2.0F, 10);
+
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial("COPPER", 2, 190, 4.5F, 1.0F, 10);
 	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial("STEEL", 2, 753, 6.5F, 3.0F, 10);
 
@@ -52,6 +53,7 @@ public class ModWeapons {
 		copperSword = new WeaponCopperSword(COPPER);
 		steelSword = new WeaponSteelSword(STEEL);
 
+<<<<<<< HEAD
 		GameRegistry.registerItem(psiBlade, REFERENCE.MODID + psiBlade.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(darkPsiBlade, REFERENCE.MODID + darkPsiBlade.getUnlocalizedName().substring(5));
 
@@ -64,5 +66,11 @@ public class ModWeapons {
 		GameRegistry.registerItem(titaniumSword, REFERENCE.MODID + titaniumSword.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(copperSword, REFERENCE.MODID + copperSword.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(steelSword, REFERENCE.MODID + steelSword.getUnlocalizedName().substring(5));
+=======
+	}
+
+	public static void init() {
+
+>>>>>>> b78648803a10b46b212838d7f921906d35385bf8
 	}
 }
