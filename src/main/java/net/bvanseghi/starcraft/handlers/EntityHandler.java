@@ -1,6 +1,5 @@
 package net.bvanseghi.starcraft.handlers;
 
-import cpw.mods.fml.common.registry.EntityRegistry;
 import net.bvanseghi.starcraft.Starcraft;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
@@ -15,7 +14,7 @@ import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 @SuppressWarnings("unchecked")
 public class EntityHandler {
@@ -30,7 +29,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityBroodling.class, name, entityId);
 		EntityRegistry.addSpawn(EntityBroodling.class, 50, 2, 3, EnumCreatureType.monster);
 		EntityRegistry.registerModEntity(EntityBroodling.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityId, mainColor, subColor));
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
 	@SuppressWarnings("rawtypes")
@@ -42,7 +41,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityZergling.class, name, entityId);
 		EntityRegistry.addSpawn(EntityZergling.class, 20, 2, 3, EnumCreatureType.monster, BiomesSC.biomeCreepInfestationChar);
 		EntityRegistry.registerModEntity(EntityZergling.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
@@ -77,7 +76,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityCivilian.class, name, entityId);
 		EntityRegistry.addSpawn(EntityCivilian.class, 30, 2, 3, EnumCreatureType.creature, BiomeGenBase.birchForest, BiomeGenBase.forest);
 		EntityRegistry.registerModEntity(EntityCivilian.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
@@ -90,7 +89,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityProbe.class, name, entityId);
 		EntityRegistry.addSpawn(EntityProbe.class, 20, 2, 3, EnumCreatureType.creature, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityProbe.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
@@ -101,7 +100,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityDarkTemplar.class, name, entityId);
 		EntityRegistry.addSpawn(EntityDarkTemplar.class, 30, 1, 1, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityDarkTemplar.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityId, mainColor, secondaryColor));
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityId, mainColor, secondaryColor));
 	}
 	
 	@SuppressWarnings("rawtypes")
@@ -113,7 +112,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityZealot.class, name, entityId);
 		EntityRegistry.addSpawn(EntityZealot.class, 30, 1, 1, EnumCreatureType.monster, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityZealot.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 
@@ -126,7 +125,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityDarkProbe.class, name, entityId);
 		EntityRegistry.addSpawn(EntityDarkProbe.class, 30, 2, 3, EnumCreatureType.creature, BiomesSC.biomeShakurasDesert);
 		EntityRegistry.registerModEntity(EntityDarkProbe.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 
@@ -139,7 +138,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityLarva.class, name, entityId);
 		EntityRegistry.addSpawn(EntityLarva.class, 20, 2, 3, EnumCreatureType.creature, BiomesSC.biomeCreepInfestationChar);
 		EntityRegistry.registerModEntity(EntityLarva.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 
@@ -152,7 +151,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityLarvaCocoon.class, name, entityId);
 		EntityRegistry.addSpawn(EntityLarvaCocoon.class, 30, 2, 3, EnumCreatureType.creature, BiomesSC.biomeCreepInfestationChar);
 		EntityRegistry.registerModEntity(EntityLarvaCocoon.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	/*
@@ -178,7 +177,7 @@ public class EntityHandler {
 		EntityRegistry.registerGlobalEntityID(EntityDrone.class, name, entityId);
 		EntityRegistry.addSpawn(EntityDrone.class, 30, 2, 3, EnumCreatureType.creature, BiomesSC.biomeCreepInfestationChar);
 		EntityRegistry.registerModEntity(EntityDrone.class, name, entityId, Starcraft.instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityId),
+		EntityList.ENTITY_EGGS.put(Integer.valueOf(entityId),
 				new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 }

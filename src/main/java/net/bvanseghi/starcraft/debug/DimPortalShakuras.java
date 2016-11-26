@@ -1,19 +1,15 @@
 package net.bvanseghi.starcraft.debug;
 
 import java.util.List;
-import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.lib.ModTeleporter;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.Item;
-import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
 public class DimPortalShakuras extends ModBlocks {
@@ -26,7 +22,7 @@ public class DimPortalShakuras extends ModBlocks {
 	public static final String name = "dimPortalShakuras";
 
 	public DimPortalShakuras() {
-		super(name, name, Material.rock);
+		super(name, name, Material.ROCK);
 		this.setLightLevel(1.0F);
 		this.setHardness(5.0F);
 		this.setResistance(0.0F);
@@ -44,33 +40,35 @@ public class DimPortalShakuras extends ModBlocks {
 			Entity entity) {
 	}
 
-	@Override
-	public boolean isNormalCube() {
-		return false;
-	}
-
-	@Override
-	public Item getItemDropped(int par1, Random par2Random, int par3) {
-		return null;
-	}
-
-	@Override
-	public boolean canSilkHarvest(World world, EntityPlayer player, int x, int y, int z, int metadata) {
-		return false;
-	}
+	//TODO: et cetera, et cetera
+//	@Override
+//	public boolean isNormalCube() {
+//		return false;
+//	}
+//
+//	@Override
+//	public Item getItemDropped(int par1, Random par2Random, int par3) {
+//		return null;
+//	}
+//
+//	@Override
+//	public boolean canSilkHarvest(World world, EntityPlayer player, int x, int y, int z, int metadata) {
+//		return false;
+//	}
 
 	/**
 	 * Triggered whenever an entity collides with this block (enters into the
 	 * block). Args: world, x, y, z, entity
 	 */
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-		if (entity.ridingEntity == null && entity.riddenByEntity == null && !world.isRemote) {
+		if (!entity.isRiding() && !entity.isBeingRidden() && !world.isRemote) {
 
 			try {
 				EntityPlayerMP player = (EntityPlayerMP) entity;
 				if (player.dimension != this.dim) {
-					player.mcServer.getConfigurationManager().transferPlayerToDimension(player, this.dim,
-							new ModTeleporter(player.mcServer.worldServerForDimension(this.dim)));
+					
+					//TODO: same
+//					player.mcServer.getConfigurationManager().transferPlayerToDimension(player, this.dim, new ModTeleporter(player.mcServer.worldServerForDimension(this.dim)));
 				}
 			} catch (ClassCastException e) {
 				return; // not a player
@@ -79,6 +77,6 @@ public class DimPortalShakuras extends ModBlocks {
 	}
 
 	public MapColor getMapColor(int par1) {
-		return MapColor.obsidianColor;
+		return MapColor.OBSIDIAN;
 	}
 }

@@ -1,6 +1,5 @@
 package net.bvanseghi.starcraft.handlers;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityCreeper;
@@ -12,6 +11,7 @@ import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class VanillaEntityHandler {
 	
@@ -19,11 +19,11 @@ public class VanillaEntityHandler {
 	public void onEntitySpawn(EntityJoinWorldEvent event) {
 		
 		if(StarcraftConfig.vanillaSpawn == true) {
-			if (event.entity instanceof EntityCaveSpider || event.entity instanceof EntitySilverfish
-					|| event.entity instanceof EntityWitch || event.entity instanceof EntitySlime
-					|| event.entity instanceof EntityEnderman || event.entity instanceof EntityCreeper
-					|| event.entity instanceof EntitySkeleton || event.entity instanceof EntityZombie
-					|| event.entity instanceof EntitySpider) {
+			if (event.getEntity() instanceof EntityCaveSpider || event.getEntity() instanceof EntitySilverfish
+					|| event.getEntity() instanceof EntityWitch || event.getEntity() instanceof EntitySlime
+					|| event.getEntity() instanceof EntityEnderman || event.getEntity() instanceof EntityCreeper
+					|| event.getEntity() instanceof EntitySkeleton || event.getEntity() instanceof EntityZombie
+					|| event.getEntity() instanceof EntitySpider) {
 				event.setCanceled(true);
 			}
 		}

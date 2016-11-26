@@ -5,42 +5,41 @@ import java.util.List;
 import java.util.Random;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.LongHashMap;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
 @SuppressWarnings("unused")
-public class ModTeleporter extends Teleporter
-{
+public class ModTeleporter extends Teleporter {
     private final WorldServer worldServerInstance;
+    
     /** A private Random() function in Teleporter */
     private final Random random;
-    /** Stores successful portal placement locations for rapid lookup. */
-    private final LongHashMap destinationCoordinateCache = new LongHashMap();
+    
     /**
-     * A list of valid keys for the destinationCoordainteCache. These are based on the X & Z of the players initial
+     * A list of valid keys for the destinationCoordainteCache. These are based on the X & Z of the player's initial
      * location.
      */
     @SuppressWarnings("rawtypes")
 	private final List destinationCoordinateKeys = new ArrayList();
+    
     private static final String __OBFID = "CL_00000153";
 
-    public ModTeleporter(WorldServer p_i1963_1_)
+    public ModTeleporter(WorldServer worldSrv)
     {
-    	super(p_i1963_1_);
-        this.worldServerInstance = p_i1963_1_;
-        this.random = new Random(p_i1963_1_.getSeed());
+    	super(worldSrv);
+        worldServerInstance = worldSrv;
+        random = new Random(worldSrv.getSeed());
     }
 
     /**
      * Place an entity in a nearby portal, creating one if necessary.
      */
-    public void placeInPortal(Entity p_77185_1_, double p_77185_2_, double p_77185_4_, double p_77185_6_, float p_77185_8_)
+    public void placeInPortal(Entity entity, double x, double y, double z, float par5float)
     {
-            int i = MathHelper.floor_double(p_77185_1_.posX);
-            int k = MathHelper.floor_double(p_77185_1_.posZ);
-            int j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(i, k));
+            int i = MathHelper.floor_double(entity.posX);
+            int k = MathHelper.floor_double(entity.posZ);
+            int j = /*MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(i, */k/*))*/; //FIXME: get this working
             byte b0 = 1;
             byte b1 = 0;
 
@@ -59,7 +58,7 @@ public class ModTeleporter extends Teleporter
                 }
             }*/
 
-            p_77185_1_.setLocationAndAngles((double)i, (double)j, (double)k, p_77185_1_.rotationYaw, 0.0F);
-            p_77185_1_.motionX = p_77185_1_.motionY = p_77185_1_.motionZ = 0.0D;
+            entity.setLocationAndAngles((double)i, (double)j, (double)k, entity.rotationYaw, 0.0F);
+            entity.motionX = entity.motionY = entity.motionZ = 0.0D;
     }
 }

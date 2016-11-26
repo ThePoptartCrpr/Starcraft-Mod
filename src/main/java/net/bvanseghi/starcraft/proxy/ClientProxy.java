@@ -71,14 +71,18 @@ import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyserShakuras;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeChar;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverworld;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeShakuras;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.block.model.ModelManager;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
-public class ClientProxy extends CommonProxy {
+public class ClientProxy implements IProxy {
 
 	public void registerRenderObjects() {
 
@@ -185,9 +189,9 @@ public class ClientProxy extends CommonProxy {
 		MinecraftForgeClient.registerItemRenderer(ModItems.C14GaussRifle,
 				(IItemRenderer) new ItemRenderC14GaussRifle());
 	}
-
-	public void registerTileEntitySpecialRenderer() {
-
+	
+	@Override
+	public void setModels() {
+		
 	}
-
 }

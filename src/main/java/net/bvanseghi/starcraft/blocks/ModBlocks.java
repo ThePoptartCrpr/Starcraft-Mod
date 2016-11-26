@@ -1,6 +1,5 @@
 package net.bvanseghi.starcraft.blocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
@@ -41,6 +40,7 @@ import net.bvanseghi.starcraft.oreshakuras.OreShakurasRichMineral;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasTitanium;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBlocks extends Block {
 	 
