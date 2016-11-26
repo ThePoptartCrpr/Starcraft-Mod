@@ -5,9 +5,12 @@ import java.util.Random;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.Library;
 import net.bvanseghi.starcraft.lib.REFERENCE;
-import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
@@ -16,28 +19,28 @@ import net.minecraft.world.World;
  * @author wundrweapon
  */
 public class BlockCharMagma extends ModBlocks {
-	public static final String name = "charMagma";
+	public static final String name = "char_magma";
 	
 	public BlockCharMagma() {
-		super(name, name, Material.rock);
-		setStepSound(soundTypeStone);
+		super(name, name, Material.ROCK);
+		setSoundType(SoundType.STONE);
 		setHardness(1.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setBlockName(name);
-		setBlockTextureName(REFERENCE.MODID + ":" + name);
+		setRegistryName(new ResourceLocation(REFERENCE.MODID + ":" + name));
+		setUnlocalizedName(name);
 	}
 	
 	@Override
-	public void breakBlock(World world, int x, int y, int z, Block block, int par6int) {
-		world.setBlock(x, y, z, Blocks.flowing_lava);
+	public void breakBlock(World world, BlockPos pos, IBlockState state) {
+		world.setBlockState(pos, Blocks.FLOWING_LAVA.getDefaultState());
 	}
 	
 	@Override
-	public void updateTick(World world, int x, int y, int z, Random random) {
-		if(Library.checkCube(world, Blocks.lava, x, y, z)) {
-			breakBlock(world, x, y, z, this, 0);
+	public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
+		if(Library.checkCube(world, state.getBlock(), pos.getX(), pos.getY(), pos.getZ())) {
+			breakBlock(world, pos, state);
 		}
 	}
 }

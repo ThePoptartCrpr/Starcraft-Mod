@@ -13,8 +13,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityMobSpawner;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
@@ -313,10 +311,10 @@ public class StructureXelnagaTemplePieces
                     this.placeDoor(p_74875_1_, p_74875_2_, p_74875_3_, this.field_143013_d, 1, 1, 0);
                     this.placeDoor(p_74875_1_, p_74875_2_, p_74875_3_, StructureXelnagaTemplePieces.XelnagaTemple.Door.OPENING, 1, 1, 6);
                     this.fillWithBlocks(p_74875_1_, p_74875_3_, 3, 1, 2, 3, 1, 4, Blocks.stonebrick, Blocks.stonebrick, false);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 5, 3, 1, 1, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 5, 3, 1, 5, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 5, 3, 2, 2, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_slab, 5, 3, 2, 4, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONE_SLAB, 5, 3, 1, 1, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONE_SLAB, 5, 3, 1, 5, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONE_SLAB, 5, 3, 2, 2, p_74875_3_);
+                    this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.STONE_SLAB, 5, 3, 2, 4, p_74875_3_);
                     int i;
 
                     for (i = 2; i <= 4; ++i)

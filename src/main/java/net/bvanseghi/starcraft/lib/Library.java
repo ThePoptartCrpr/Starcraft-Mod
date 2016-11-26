@@ -1,6 +1,7 @@
 package net.bvanseghi.starcraft.lib;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -14,49 +15,27 @@ public class Library {
 	 * Makes a cube out of {@code block}.
 	 * Anchor: bottom-middle
 	 * @param world the world
-	 * @param block the block to make a
-	 * cube of
-	 * @param x the X coordinate of the
+	 * @param blockState the blockState to
+	 * make a cube of (use
+	 * {@link Block#getDefaultState()} if
+	 * unsure)
+	 * @param xIn the X coordinate of the
 	 * anchor position
-	 * @param y the Y coordinate of the
+	 * @param yIn the Y coordinate of the
 	 * anchor position
-	 * @param z the Z coordinate of the
+	 * @param zIn the Z coordinate of the
 	 * anchor position
 	 */
-	public static void blockCube(World world, Block block, int x, int y, int z) {
-		boolean killLoop = false;
-		int yOffsetIndex = 0;
-		int zOffsetIndex = 0;
-		int[] xzOffsets = {-1, 0, 1};
-		int[] yOffsets = {0, 1, 2};
-		
-		for(int xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
-			
-			//Don't place block at anchor
-			if(xzOffsets[xOffsetIndex] != 0 || xzOffsets[zOffsetIndex] != 0) {
-				world.setBlockState(new BlockPos(x + xzOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + xzOffsets[zOffsetIndex]), block.getDefaultState());
-			} else if(yOffsets[yOffsetIndex] != 0) {
-				world.setBlockState(new BlockPos(x + xzOffsets[xOffsetIndex], y + yOffsets[yOffsetIndex], z + xzOffsets[zOffsetIndex]), block.getDefaultState());
-			}
-			
-			//Reset X index to 0 after going past the final column
-			if(xOffsetIndex + 1 == 3) {
-				xOffsetIndex = -1;
-				zOffsetIndex++;
-				
-				//Reset Z index and raise Y index after going past the final row
-				if(zOffsetIndex == 3) {
-					zOffsetIndex = 0;
-					yOffsetIndex++;
-					
-					if(yOffsetIndex == 3) {
-						killLoop = true;
+	public static void blockCube(World world, IBlockState blockState, int xIn, int yIn, int zIn) {
+		for(int x = -1; x < 2; x++) {
+			for(int y = 0; y < 3; y++) {
+				for(int z = -1; z < 2; z++) {
+					if(x == 0 && y == 0 && z== 0) {
+						continue;
+					} else {
+						world.setBlockState(new BlockPos(xIn + x, yIn + y, zIn + z), blockState);
 					}
 				}
-			}
-			
-			if(killLoop) {
-				break;
 			}
 		}
 	}
@@ -65,42 +44,25 @@ public class Library {
 	 * Checks a 3x3x3 area for any instances
 	 * of {@code block}. The center is in
 	 * the absolute center of the cube<br>
-	 * <b>WARNING:</b> this may not work
-	 * due to checking for a default state
-	 * and not some other state
 	 * @param world the world
 	 * @param block the {@link Block} to check for
-	 * @param x center X coord
-	 * @param y center Y coord
-	 * @param z center Z coord
+	 * @param xIn center X coord
+	 * @param yIn center Y coord
+	 * @param zIn center Z coord
 	 * @return true if at least one instance
 	 * of {@code block} is found
 	 */
-	public static boolean checkCube(World world, Block block, int x, int y, int z) {
-		int yOffsetIndex = 0;
-		int zOffsetIndex = 0;
-		int[] offsets = {-1, 0, 1};
-		
-		for(int xOffsetIndex = 0; xOffsetIndex < 3; xOffsetIndex++) {
-			if(world.getBlockState(new BlockPos(x + offsets[xOffsetIndex], y + offsets[yOffsetIndex], z + offsets[zOffsetIndex])) == block.getDefaultState()) {
-				return true;
-			} else {
-				if(xOffsetIndex == 2) {
-					xOffsetIndex = -1;
-					zOffsetIndex++;
-				}
-				
-				if(zOffsetIndex == 3) {
-					zOffsetIndex = 0;
-					yOffsetIndex++;
-				}
-				
-				if(yOffsetIndex == 3) {
-					return false;
+	public static boolean checkCube(World world, Block block, int xIn, int yIn, int zIn) {
+		for(int x = -1; x < 2; x++) {
+			for(int y = -1; y < 2; y++) {
+				for(int z = -1; z < 2; z++) {
+					if(world.getBlockState(new BlockPos(xIn + x, yIn + y, zIn + z)).getBlock() == block) {
+						return true;
+					}
 				}
 			}
 		}
 		
-		return false; //Won't run
+		return false; //Only runs if we never find the block in question
 	}
 }

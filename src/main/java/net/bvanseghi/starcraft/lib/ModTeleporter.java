@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Random;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
@@ -25,8 +27,7 @@ public class ModTeleporter extends Teleporter {
     
     private static final String __OBFID = "CL_00000153";
 
-    public ModTeleporter(WorldServer worldSrv)
-    {
+    public ModTeleporter(WorldServer worldSrv) {
     	super(worldSrv);
         worldServerInstance = worldSrv;
         random = new Random(worldSrv.getSeed());
@@ -35,30 +36,29 @@ public class ModTeleporter extends Teleporter {
     /**
      * Place an entity in a nearby portal, creating one if necessary.
      */
-    public void placeInPortal(Entity entity, double x, double y, double z, float par5float)
-    {
-            int i = MathHelper.floor_double(entity.posX);
-            int k = MathHelper.floor_double(entity.posZ);
-            int j = /*MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(i, */k/*))*/; //FIXME: get this working
+    public void placeInPortal(Entity entity, double xIn, double yIn, double zIn, float par5float) {
+            int entityX = MathHelper.floor_double(entity.posX);
+            int entityY = MathHelper.floor_double(entity.posZ);
+            int entityZ = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(new BlockPos(entityX, yIn, entityY)).getY());
             byte b0 = 1;
             byte b1 = 0;
 
-            /*for (int l = -2; l <= 2; ++l)
+            for (int l = -2; l <= 2; ++l)
             {
                 for (int i1 = -2; i1 <= 2; ++i1)
                 {
                     for (int j1 = -1; j1 < 3; ++j1)
                     {
-                        int k1 = i + i1 * b0 + l * b1;
-                        int l1 = j + j1;
-                        int i2 = k + i1 * b1 - l * b0;
+                        int k1 = entityX + i1 * b0 + l * b1;
+                        int l1 = entityZ + j1;
+                        int i2 = entityY + i1 * b1 - l * b0;
                         boolean flag = j1 < 0;
-                        this.worldServerInstance.setBlock(k1, l1, i2, Blocks.air);
+                        this.worldServerInstance.setBlockState(new BlockPos(k1, l1, i2), Blocks.AIR.getDefaultState());
                     }
                 }
-            }*/
+            }
 
-            entity.setLocationAndAngles((double)i, (double)j, (double)k, entity.rotationYaw, 0.0F);
-            entity.motionX = entity.motionY = entity.motionZ = 0.0D;
+            entity.setLocationAndAngles((double) entityX, (double) entityZ, (double) entityY, entity.rotationYaw, 0.0F);
+            entity.motionX = entity.motionY = entity.motionZ = 0;
     }
 }
