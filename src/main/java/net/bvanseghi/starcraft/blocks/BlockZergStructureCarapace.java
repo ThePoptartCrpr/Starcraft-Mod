@@ -3,7 +3,7 @@ package net.bvanseghi.starcraft.blocks;
 import java.util.List;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;

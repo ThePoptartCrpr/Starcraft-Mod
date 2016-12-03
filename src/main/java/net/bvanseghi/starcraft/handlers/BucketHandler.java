@@ -9,7 +9,7 @@ import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.items.ItemAcidBucket;
 import net.bvanseghi.starcraft.items.ItemBloodBucket;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -56,7 +56,7 @@ public class BucketHandler {
 
 	public static void initABucket() {
 		acidBucket = new ItemAcidBucket(ModBlocks.fluidAcid);
-		acidBucket.setRegistryName(new ResourceLocation(REFERENCE.MODID + ":acid_bucket"));
+		acidBucket.setRegistryName(new ResourceLocation(Reference.MODID + ":acid_bucket"));
 		acidBucket.setUnlocalizedName("acidBucket").setContainerItem(Items.BUCKET);
 		FluidContainerRegistry.registerFluidContainer(ModFluids.acid, new ItemStack(acidBucket)); //TODO: use ItemFluidContainer for this class
 		
@@ -67,7 +67,7 @@ public class BucketHandler {
 
 	public static void initBBucket() {
 		bloodBucket = new ItemBloodBucket(ModBlocks.fluidBlood);
-		bloodBucket.setRegistryName(new ResourceLocation(REFERENCE.MODID + ":blood_bucket"));
+		bloodBucket.setRegistryName(new ResourceLocation(Reference.MODID + ":blood_bucket"));
 		bloodBucket.setUnlocalizedName("bloodBucket").setContainerItem(Items.BUCKET);
 		FluidContainerRegistry.registerFluidContainer(ModFluids.blood, new ItemStack(bloodBucket)); //TODO: see above
 		

@@ -3,7 +3,7 @@ package net.bvanseghi.starcraft.renderer;
 import org.lwjgl.opengl.GL11;
 
 import net.bvanseghi.starcraft.entity.EntityLarva;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelLarva;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -15,7 +15,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderLarva extends RenderLiving {
 
 	private static final ResourceLocation texture = new ResourceLocation(
-			REFERENCE.MODID + ":" + "textures/model/larva.png");
+			Reference.MODID + ":" + "textures/model/larva.png");
 
 	@SuppressWarnings("unused")
 	private ModelBase scaleAmount;

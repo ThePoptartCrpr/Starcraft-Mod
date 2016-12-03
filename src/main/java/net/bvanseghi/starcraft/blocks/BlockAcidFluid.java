@@ -1,22 +1,24 @@
 package net.bvanseghi.starcraft.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.fluids.ModFluids;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
 public class BlockAcidFluid extends BlockFluidClassic {
+	private static String name = "acid_fluid";
+	private static final ResourceLocation REGISTRY_RL = new ResourceLocation(Reference.TEXTURE_PATH_BASE + name);
 
 	public BlockAcidFluid(Fluid fluid, Material material) {
 		super(ModFluids.acid, Material.WATER);
-		this.setCreativeTab(null);
+		setCreativeTab(null);
+		setRegistryName(REGISTRY_RL);
+		setUnlocalizedName(Reference.MODID + "_acidFluid");
 	}
 
 	//TODO: Figure out how textures work now.
@@ -40,5 +42,4 @@ public class BlockAcidFluid extends BlockFluidClassic {
 	public void onEntityCollidedWithBlock(World world, int par1, int par2, int par3, Entity entity) {
 		entity.attackEntityFrom(DamageSource.cactus, 1.0F);
 	}
-
 }

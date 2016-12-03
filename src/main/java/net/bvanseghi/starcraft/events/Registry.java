@@ -13,15 +13,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @EventBusSubscriber
 public class Registry {
 	private static Item[] items = {BucketHandler.acidBucket, BucketHandler.bloodBucket, ModItems.acidBucket, ModItems.bloodBucket, ModItems.C14GaussRifle, ModItems.C14GaussRifleBullet, ModItems.c14Parts, ModItems.coord, ModItems.creepResin, ModItems.darkPsiBladeFocuserUncharged, ModItems.dust, ModItems.energy, ModItems.essence, ModItems.ingot, ModItems.mineralShard, ModItems.organicTissue, ModItems.protossArtifact, ModItems.protossModule, ModItems.psiBladeFocuserUncharged, ModItems.richMineralShard, ModItems.uraj, ModItems.vespene, ModItems.zergCarapace}; //TODO: add the other items
-	private static Item[] tools = {ModTools.copperAxe, ModTools.copperHoe, ModTools.copperPickaxe, ModTools.copperShovel, ModTools.steelAxe, ModTools.steelHoe, ModTools.steelPickaxe, ModTools.steelShovel, ModTools.titaniumAxe, ModTools.titaniumHoe, ModTools.titaniumPickaxe, ModTools.titaniumShovel};
-	private static Item[] armours = {ModArmour.copperHelmet, ModArmour.copperChestplate, ModArmour.copperLeggings, ModArmour.copperBoots, ModArmour.steelHelmet, ModArmour.steelChestplate, ModArmour.steelLeggings, ModArmour.steelBoots, ModArmour.titaniumHelmet, ModArmour.titaniumChestplate, ModArmour.titaniumLeggings, ModArmour.titaniumBoots, ModArmour.ghostHelmet, ModArmour.ghostChestplate, ModArmour.ghostLeggings, ModArmour.ghostBoots};
-	private static Item[] weapons = {ModWeapons.copperSword, ModWeapons.darkPsiBlade, ModWeapons.darkWarpBlade, ModWeapons.masterPsiBlade, ModWeapons.psiBlade, ModWeapons.steelSword, ModWeapons.titaniumSword, ModWeapons.warpBlade};
 	
 	@SubscribeEvent
 	public static void register(Register<Item> registry) {
 		registry.getRegistry().registerAll(items); //Register items
-		registry.getRegistry().registerAll(tools); //Register tools
-		registry.getRegistry().registerAll(armours); //Register armour
-		registry.getRegistry().registerAll(weapons); //Register weapons
+		registry.getRegistry().registerAll(ModTools.TOOLS); //Register tools
+		registry.getRegistry().registerAll(ModArmour.ARMOURS); //Register armour
+		registry.getRegistry().registerAll(ModWeapons.WEAPONS); //Register weapons
 	}
 }

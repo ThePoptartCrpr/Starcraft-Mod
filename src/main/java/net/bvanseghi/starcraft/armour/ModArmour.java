@@ -46,6 +46,8 @@ public class ModArmour {
 	public static Item ghostChestplate;
 	public static Item ghostLeggings;
 	public static Item ghostBoots;
+	
+	public static final Item[] ARMOURS = {titaniumHelmet, titaniumChestplate, titaniumLeggings, titaniumBoots, copperHelmet, copperChestplate, copperLeggings, copperBoots, steelHelmet, steelChestplate, steelLeggings, steelBoots, ghostHelmet, ghostChestplate, ghostLeggings, ghostBoots};
 
 	public static void preInit() {
 		titaniumHelmet = new ArmourTitaniumHelmet(titaniumArmourMaterial, 0, EntityEquipmentSlot.HEAD);

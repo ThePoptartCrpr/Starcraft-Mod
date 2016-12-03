@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.Library;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -28,7 +28,7 @@ public class BlockCharMagma extends ModBlocks {
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setRegistryName(new ResourceLocation(REFERENCE.MODID + ":" + name));
+		setRegistryName(new ResourceLocation(Reference.MODID + ":" + name));
 		setUnlocalizedName(name);
 	}
 	

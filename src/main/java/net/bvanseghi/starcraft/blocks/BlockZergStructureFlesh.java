@@ -6,7 +6,7 @@ import java.util.Random;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

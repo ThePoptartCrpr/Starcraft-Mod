@@ -69,9 +69,9 @@ public class Achievements {
 
 
 		AchievementPage.registerAchievementPage(new AchievementPage("Starcraft",
-				new Achievement[] { achievementMinedMinerals, achievementMinedRichMinerals, achievementMinedVespene,
+				new Achievement[] {achievementMinedMinerals, achievementMinedRichMinerals, achievementMinedVespene,
 						achievementGetC14GaussRifle, achievementGetPsiBlade, achievementGetWarpBlade,
 						achievementGetMasterPsiBlade, achievementGetPsiBladeDark, achievementGetPsiBladeFocuser,
-						achievementGetPsiBladeFocuserDark, achievementEnterChar, achievementEnterShakuras }));
+						achievementGetPsiBladeFocuserDark, achievementEnterChar, achievementEnterShakuras}));
 	}
 }

@@ -3,7 +3,7 @@ package net.bvanseghi.starcraft.renderer;
 import org.lwjgl.opengl.GL11;
 
 import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelDarkTemplar;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 
 //TODO: actually make this :P
 public class RenderDarkTemplar extends RenderLiving {
-	private static final ResourceLocation texture = new ResourceLocation(REFERENCE.MODID + ":" + "textures/model/darktemplar.png");
+	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/darktemplar.png");
 	protected ModelDarkTemplar modelEntity;
 
 	public RenderDarkTemplar(ModelBase parModelBase, float par2) {

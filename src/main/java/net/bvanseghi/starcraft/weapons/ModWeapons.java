@@ -1,10 +1,8 @@
 package net.bvanseghi.starcraft.weapons;
 
-import net.bvanseghi.starcraft.lib.REFERENCE;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModWeapons {
 
@@ -37,6 +35,8 @@ public class ModWeapons {
 	public static Item titaniumSword;
 	public static Item copperSword;
 	public static Item steelSword;
+	
+	public static final Item[] WEAPONS = {psiBlade, darkPsiBlade, warpBlade, darkWarpBlade, masterPsiBlade, titaniumSword, copperSword, steelSword};
 
 	public static void preInit() {
 
@@ -52,25 +52,5 @@ public class ModWeapons {
 		titaniumSword = new WeaponTitaniumSword(TITANIUM);
 		copperSword = new WeaponCopperSword(COPPER);
 		steelSword = new WeaponSteelSword(STEEL);
-
-<<<<<<< HEAD
-		GameRegistry.registerItem(psiBlade, REFERENCE.MODID + psiBlade.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(darkPsiBlade, REFERENCE.MODID + darkPsiBlade.getUnlocalizedName().substring(5));
-
-		GameRegistry.registerItem(warpBlade, REFERENCE.MODID + warpBlade.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(darkWarpBlade, REFERENCE.MODID + darkWarpBlade.getUnlocalizedName().substring(5));
-//		GameRegistry.registerItem(darkDualWarpBlade, REFERENCE.MODID + darkDualWarpBlade.getUnlocalizedName().substring(5));
-
-		GameRegistry.registerItem(masterPsiBlade, REFERENCE.MODID + masterPsiBlade.getUnlocalizedName().substring(5));
-
-		GameRegistry.registerItem(titaniumSword, REFERENCE.MODID + titaniumSword.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(copperSword, REFERENCE.MODID + copperSword.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(steelSword, REFERENCE.MODID + steelSword.getUnlocalizedName().substring(5));
-=======
-	}
-
-	public static void init() {
-
->>>>>>> b78648803a10b46b212838d7f921906d35385bf8
 	}
 }

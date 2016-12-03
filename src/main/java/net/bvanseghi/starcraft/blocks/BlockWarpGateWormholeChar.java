@@ -3,7 +3,7 @@ package net.bvanseghi.starcraft.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.lib.Library;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeChar;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;

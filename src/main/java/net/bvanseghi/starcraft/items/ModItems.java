@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.items;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.item.Item;
 
 public class ModItems extends Item {
@@ -127,7 +127,7 @@ public class ModItems extends Item {
 		super();
 
 		this.setCreativeTab(CreativeTab.TabStarcraftMaterials);
-		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + unlocalizedname);
+		this.setUnlocalizedName(Reference.UNLOCALIZED_NAME_PATH_BASE + unlocalizedname);
 //		this.setTextureName(REFERENCE.Texture_Path + texturename);
 	}
 }

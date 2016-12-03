@@ -3,11 +3,14 @@ package net.bvanseghi.starcraft.blocks;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -18,19 +21,19 @@ public class BlockAsh extends ModBlocks {
 	public static final String name = "charAsh";
 
 	public BlockAsh() {
-		super(name, name, Material.snow);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
-		setStepSound(soundTypeSnow);
+		super(name, name, Material.SNOW);
+//		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F); FIXME: this
+		setSoundType(SoundType.SNOW);
 		setHardness(0.5F);
 		setResistance(2.5F);
 		setHarvestLevel("shovel", 1);
 		this.setTickRandomly(true);
-        this.func_150154_b(0);
+        this.setBounds(0);
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int p_149668_2_, int p_149668_3_,
 			int p_149668_4_) {
-		int l = p_149668_1_.getBlockMetadata(p_149668_2_, p_149668_3_, p_149668_4_) & 7;
+		int l = p_149668_1_.getBlockState(p_149668_2_, p_149668_3_, p_149668_4_) & 7;
 		float f = 0.125F;
 		return AxisAlignedBB.getBoundingBox((double) p_149668_2_ + this.minX, (double) p_149668_3_ + this.minY,
 				(double) p_149668_4_ + this.minZ, (double) p_149668_2_ + this.maxX,
@@ -58,7 +61,7 @@ public class BlockAsh extends ModBlocks {
 	 * Sets the block's bounds for rendering it as an item
 	 */
 	public void setBlockBoundsForItemRender() {
-		this.func_150154_b(0);
+		this.setBounds(0);
 	}
 
 	/**
@@ -67,32 +70,37 @@ public class BlockAsh extends ModBlocks {
 	 */
 	public void setBlockBoundsBasedOnState(IBlockAccess p_149719_1_, int p_149719_2_, int p_149719_3_,
 			int p_149719_4_) {
-		this.func_150154_b(p_149719_1_.getBlockMetadata(p_149719_2_, p_149719_3_, p_149719_4_));
+		this.setBounds(p_149719_1_.getBlockState(p_149719_2_, p_149719_3_, p_149719_4_));
 	}
 
-	protected void func_150154_b(int p_150154_1_) {
-		int j = p_150154_1_ & 7;
+	protected void setBounds(int par1int) {
+		int j = par1int & 7;
 		float f = (float) (2 * (1 + j)) / 16.0F;
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, f, 1.0F);
+//		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, f, 1.0F); FIXME: this
 	}
 
 	/**
 	 * Checks to see if its valid to put this block at the specified
-	 * coordinates. Args: world, x, y, z
+	 * {@link BlockPos}
+	 * @param world the {@link World}
+	 * @param pos the {@link BlockPos} for the potential placement
 	 */
-	public boolean canPlaceBlockAt(World p_149742_1_, int p_149742_2_, int p_149742_3_, int p_149742_4_) {
-		Block block = p_149742_1_.getBlock(p_149742_2_, p_149742_3_ - 1, p_149742_4_);
-		return block != Blocks.ICE && block != Blocks.PACKED_ICE
-				? (block.isLeaves(p_149742_1_, p_149742_2_,
-						p_149742_3_
-								- 1,
-						p_149742_4_)
-								? true
-								: (block == this
-										&& (p_149742_1_.getBlockMetadata(p_149742_2_, p_149742_3_ - 1, p_149742_4_)
-												& 7) == 7 ? true
-														: block.isOpaqueCube()))
-				: false;
+	public boolean canPlaceBlockAt(World world, BlockPos pos) {
+		BlockPos oneBelowPos = new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ()); //one block below pos
+		IBlockState oneBelowPosState = world.getBlockState(oneBelowPos); //IBlockState of oneBelowPos
+		Block oneBelowPosBlock = world.getBlockState(oneBelowPos).getBlock(); //Block of oneBelowPos
+		
+//		return oneBelowPosBlock != Blocks.ICE && oneBelowPosBlock != Blocks.PACKED_ICE ? (oneBelowPosBlock.isLeaves(world.getBlockState(oneBelowPos), null, null) ? true : (oneBelowPosBlock == this && (world.getBlockState(oneBelowPos).getm) & 7) == 7 ? true : oneBelowPosBlock.isOpaqueCube()) : false;
+		
+		if(oneBelowPosBlock == Blocks.ICE || oneBelowPosBlock == Blocks.PACKED_ICE) {
+			return false;
+		} else if(oneBelowPosState.getMaterial() == Material.LEAVES) {
+			return true;
+		} else if(oneBelowPosBlock == this && (oneBelowPosBlock.getMetaFromState(oneBelowPosState) & 7) == 7) {
+			return true;
+		} else {
+			return oneBelowPosBlock.getDefaultState().isFullCube();
+		}
 	}
 
 	/**
@@ -177,7 +185,7 @@ public class BlockAsh extends ModBlocks {
      */
     public boolean isReplaceable(IBlockAccess world, int x, int y, int z)
     {
-        int meta = world.getBlockMetadata(x, y, z);
+        int meta = world.getBlockState(x, y, z);
         return meta >= 7 ? false : blockMaterial.isReplaceable();
     }
     

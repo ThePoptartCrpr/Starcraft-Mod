@@ -4,7 +4,7 @@ package net.bvanseghi.starcraft.items;
 import java.util.List;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

@@ -1,17 +1,19 @@
 package net.bvanseghi.starcraft.armour;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.util.ResourceLocation;
 
 public class ArmourTitaniumLeggings extends ItemArmor {
-
-	public static final String name = "titaniumLeggings";
+	private static String name = "titanium_leggings";
+	public static final ResourceLocation REGISTRY_RL = new ResourceLocation(Reference.TEXTURE_PATH_BASE + name);
 
 	public ArmourTitaniumLeggings(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
-		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
-		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + name);
+		setCreativeTab(CreativeTab.TabStarcraftCombat);
+		setRegistryName(REGISTRY_RL);
+		setUnlocalizedName(Reference.UNLOCALIZED_NAME_PATH_BASE + name);
 	}
 }

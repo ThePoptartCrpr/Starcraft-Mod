@@ -35,6 +35,8 @@ public class ModTools {
 	public static Item steelPickaxe;
 	public static Item steelShovel;
 	public static Item steelHoe;
+	
+	public static final Item[] TOOLS = {titaniumAxe, titaniumHoe, titaniumPickaxe, titaniumShovel, copperAxe, copperHoe, copperPickaxe, copperShovel, steelAxe, steelHoe, steelPickaxe, steelShovel};
 
 	public static void preInit() {
 

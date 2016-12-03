@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.renderer;
 
 import org.lwjgl.opengl.GL11;
 
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelC14GaussRifle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -14,7 +14,7 @@ public class ItemRenderC14GaussRifle implements IItemRenderer {
 
 	protected ModelC14GaussRifle c14GaussRifle;
 	private static final ResourceLocation texture = new ResourceLocation(
-			REFERENCE.MODID + ":" + "textures/model/c14GaussRifle.png");
+			Reference.MODID + ":" + "textures/model/c14GaussRifle.png");
 
 	public ItemRenderC14GaussRifle() {
 		c14GaussRifle = new ModelC14GaussRifle();

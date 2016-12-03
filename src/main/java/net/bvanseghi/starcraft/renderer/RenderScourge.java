@@ -1,7 +1,7 @@
 package net.bvanseghi.starcraft.renderer;
 
 import net.bvanseghi.starcraft.entity.EntityScourge;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelScourge;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderScourge extends RenderLiving {
 
 	private static final ResourceLocation texture = new ResourceLocation(
-			REFERENCE.MODID + ":" + "textures/model/scourge.png");
+			Reference.MODID + ":" + "textures/model/scourge.png");
 
 	protected ModelScourge modelEntity;
 

@@ -24,7 +24,6 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.IRON_ORE), new Object[] {new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 1), new ItemStack(Blocks.STONE)});
 		
 		//Carbon Grain x9 from Coal (not Charcoal as Coal is natural, and iirc has more carbon)
-//		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 2), new Object[] {new ItemStack(Items.coal, 1, 1)});
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 9, 2), new Object[] {new ItemStack(Items.COAL, 0, 1)});
 		
 		//Charcoal from Carbon Grain x9

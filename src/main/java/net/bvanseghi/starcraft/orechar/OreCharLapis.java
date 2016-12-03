@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -21,7 +21,7 @@ public class OreCharLapis extends ModBlocks {
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setBlockName(name);
-		setBlockTextureName(REFERENCE.MODID + ":" + name);
+		setBlockTextureName(Reference.MODID + ":" + name);
 	}
 	
 	public int damageDropped(int par1) {

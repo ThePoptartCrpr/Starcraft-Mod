@@ -1,16 +1,18 @@
 package net.bvanseghi.starcraft.armour;
 
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.util.ResourceLocation;
 
 public class ArmourGhostHelmet extends ItemArmor {
-
-	public static final String name = "ghostHelmet";
+	private static String name = "ghost_helmet";
+	public static final ResourceLocation REGISTRY_RL = new ResourceLocation(Reference.TEXTURE_PATH_BASE + name);
 
 	public ArmourGhostHelmet(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
- 		this.setCreativeTab(null);
-		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + name);
+ 		setCreativeTab(null);
+ 		setRegistryName(REGISTRY_RL);
+		setUnlocalizedName(Reference.UNLOCALIZED_NAME_PATH_BASE + name);
 	}
 }

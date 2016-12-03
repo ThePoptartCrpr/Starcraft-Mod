@@ -8,7 +8,7 @@ import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.handlers.BucketHandler;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
 import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.material.ModMaterials;
 import net.bvanseghi.starcraft.proxy.IProxy;
@@ -26,10 +26,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
-@Mod(modid = REFERENCE.MODID, name = REFERENCE.NAME, version = REFERENCE.VERSION)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Starcraft {
 	
-	@Instance(REFERENCE.MODID)
+	@Instance(Reference.MODID)
 	public static Starcraft instance;
 
 	@SidedProxy(clientSide = "net.bvanseghi.starcraft.proxy.ClientProxy")
@@ -80,7 +80,7 @@ public class Starcraft {
 //		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 2), "Void Energy");
 //	}
 	
-	public static void oreRegistrations(){
+	public static void oreRegistrations() {
 		OreDictionary.registerOre("ingotCopper", new ItemStack(ModItems.ingot, 1, 0));
 		OreDictionary.registerOre("ingotTitanium", new ItemStack(ModItems.ingot, 1, 3));
 		OreDictionary.registerOre("ingotSteel", new ItemStack(ModItems.ingot, 1, 4));

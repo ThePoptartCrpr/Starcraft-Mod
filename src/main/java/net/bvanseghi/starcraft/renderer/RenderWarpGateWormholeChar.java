@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.renderer;
 
 import org.lwjgl.opengl.GL11;
 
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelWarpGateWormholeChar;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderWarpGateWormholeChar extends TileEntitySpecialRenderer {
 
 	private static final ResourceLocation texture = new ResourceLocation(
-			REFERENCE.MODID + ":" + "textures/model/warpGateWormholeChar.png");
+			Reference.MODID + ":" + "textures/model/warpGateWormholeChar.png");
 
 	private ModelWarpGateWormholeChar model;
 

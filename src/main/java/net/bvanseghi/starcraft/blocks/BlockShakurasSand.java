@@ -1,7 +1,7 @@
 package net.bvanseghi.starcraft.blocks;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 
@@ -16,7 +16,7 @@ public class BlockShakurasSand extends BlockFalling {
 		setResistance(2.5F);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setBlockName(name);
-		setBlockTextureName(REFERENCE.MODID + ":" + name);
+		setBlockTextureName(Reference.MODID + ":" + name);
 	}
 
 	public int damageDropped(int par1) {

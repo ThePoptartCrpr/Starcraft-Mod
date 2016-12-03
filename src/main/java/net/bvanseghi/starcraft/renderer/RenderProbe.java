@@ -1,7 +1,7 @@
 package net.bvanseghi.starcraft.renderer;
 
 import net.bvanseghi.starcraft.entity.EntityProbe;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelProbe;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderProbe extends RenderLiving {
 
 	private static final ResourceLocation texture = new ResourceLocation(
-			REFERENCE.MODID + ":" + "textures/model/probe.png");
+			Reference.MODID + ":" + "textures/model/probe.png");
 
 	protected ModelProbe modelEntity;
 

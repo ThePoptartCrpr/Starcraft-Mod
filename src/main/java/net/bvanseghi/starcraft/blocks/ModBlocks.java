@@ -12,7 +12,7 @@ import net.bvanseghi.starcraft.items.ItemDyedIronBlocks;
 import net.bvanseghi.starcraft.items.ItemProtossMetalBlocks;
 import net.bvanseghi.starcraft.items.ItemZergStructureCarapaceBlocks;
 import net.bvanseghi.starcraft.items.ItemZergStructureFleshBlocks;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.material.ModMaterials;
 import net.bvanseghi.starcraft.ore.OreOWCopper;
 import net.bvanseghi.starcraft.ore.OreOWTitanium;
@@ -360,7 +360,7 @@ public class ModBlocks extends Block {
 		super(material);
 
 		setBlockName(unlocalizedname);
-		setBlockTextureName(REFERENCE.MODID + ":" + unlocalizedname);
+		setBlockTextureName(Reference.MODID + ":" + unlocalizedname);
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 	

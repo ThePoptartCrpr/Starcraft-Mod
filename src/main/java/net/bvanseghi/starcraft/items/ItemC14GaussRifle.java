@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.items;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
-import net.bvanseghi.starcraft.lib.REFERENCE;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,8 +15,8 @@ public class ItemC14GaussRifle extends ItemSword {
 		super(ModWeapons.GUN);
 		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
 		this.setFull3D();
-		this.setUnlocalizedName(REFERENCE.Unlocalized_Path + "c14GaussRifle");
-		this.setTextureName(REFERENCE.Texture_Path + "c14GaussRifle");
+		this.setUnlocalizedName(Reference.UNLOCALIZED_NAME_PATH_BASE + "c14GaussRifle");
+		this.setTextureName(Reference.TEXTURE_PATH_BASE + "c14GaussRifle");
 	}
 
 	@Override
