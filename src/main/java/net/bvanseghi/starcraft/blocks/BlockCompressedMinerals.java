@@ -2,17 +2,15 @@ package net.bvanseghi.starcraft.blocks;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockCompressedMinerals extends Block {
 
@@ -23,15 +21,15 @@ public class BlockCompressedMinerals extends Block {
 	/**
 	 *  Aiur = yellow, Dark = dark grey.
 	 */
-	public static final String[] subBlocks = new String[] { "Blue", "Rich" };
+	public static final String[] subBlocks = new String[] {"Blue", "Rich"};
 	
 	public BlockCompressedMinerals() {
 		super(Material.IRON);
-		setStepSound(soundTypeMetal);
+		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setResistance(10.0F);
 		setHarvestLevel("pickaxe", 2);
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 	
 	//TODO: Figure out how textures work now.
@@ -48,11 +46,9 @@ public class BlockCompressedMinerals extends Block {
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		
 		for (int i = 0; i < subBlocks.length; i++) {
 			list.add(new ItemStack(block, 1, i));
 		}
-		
 	}
 	
 	//TODO: Figure out how textures work now.

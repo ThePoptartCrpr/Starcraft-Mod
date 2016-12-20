@@ -1,17 +1,12 @@
 package net.bvanseghi.starcraft.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.util.IIcon;
 
 public class BlockProtossEnergyStabilizerDark extends Block {
-
-		private static String textureName;
+//		private static String textureName;
 		
 		//TODO: Figure out how textures work now.
 //		@SideOnly(Side.CLIENT)
@@ -19,16 +14,16 @@ public class BlockProtossEnergyStabilizerDark extends Block {
 		
 		@SuppressWarnings("static-access")
 		public BlockProtossEnergyStabilizerDark(String textureName){
-			super(Material.rock);
-			setStepSound(soundTypeMetal);
+			super(Material.ROCK);
+			setSoundType(SoundType.METAL);
 			setHardness(5.0F);
 			setLightLevel(1.0F);
 			setResistance(30.0F);
 			setHarvestLevel("pickaxe", 3);
-			this.setBlockTextureName("protossEnergyStabilizerDark");
-			this.setBlockName("protossEnergyStabilizerDark");
-			this.setCreativeTab(CreativeTab.TabStarcraftDecorativeBlocks);
-			this.textureName = textureName;
+//			this.setBlockTextureName("protossEnergyStabilizerDark");
+//			this.setBlockName("protossEnergyStabilizerDark");
+			setCreativeTab(CreativeTab.TabStarcraftDecorativeBlocks);
+//			this.textureName = textureName;
 		}
 		
 		//TODO: Figure out how textures work now.

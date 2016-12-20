@@ -1,192 +1,22 @@
 package net.bvanseghi.starcraft.blocks;
 
-import java.util.Random;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.BlockSnow;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockAsh extends ModBlocks {
-
-	public static final String name = "charAsh";
-
-	public BlockAsh() {
-		super(name, name, Material.SNOW);
-//		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F); FIXME: this
-		setSoundType(SoundType.SNOW);
-		setHardness(0.5F);
-		setResistance(2.5F);
-		setHarvestLevel("shovel", 1);
-		this.setTickRandomly(true);
-        this.setBounds(0);
-	}
-
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int p_149668_2_, int p_149668_3_,
-			int p_149668_4_) {
-		int l = p_149668_1_.getBlockState(p_149668_2_, p_149668_3_, p_149668_4_) & 7;
-		float f = 0.125F;
-		return AxisAlignedBB.getBoundingBox((double) p_149668_2_ + this.minX, (double) p_149668_3_ + this.minY,
-				(double) p_149668_4_ + this.minZ, (double) p_149668_2_ + this.maxX,
-				(double) ((float) p_149668_3_ + (float) l * f), (double) p_149668_4_ + this.maxZ);
-	}
-
-	/**
-	 * Is this block (a) opaque and (b) a full 1m cube? This determines whether
-	 * or not to render the shared face of two adjacent blocks and also whether
-	 * the player can attach torches, redstone wire, etc to this block.
-	 */
-	public boolean isOpaqueCube() {
-		return false;
-	}
-
-	/**
-	 * If this block doesn't render as an ordinary block it will return False
-	 * (examples: signs, buttons, stairs, etc)
-	 */
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
-
-	/**
-	 * Sets the block's bounds for rendering it as an item
-	 */
-	public void setBlockBoundsForItemRender() {
-		this.setBounds(0);
-	}
-
-	/**
-	 * Updates the blocks bounds based on its current state. Args: world, x, y,
-	 * z
-	 */
-	public void setBlockBoundsBasedOnState(IBlockAccess p_149719_1_, int p_149719_2_, int p_149719_3_,
-			int p_149719_4_) {
-		this.setBounds(p_149719_1_.getBlockState(p_149719_2_, p_149719_3_, p_149719_4_));
-	}
-
-	protected void setBounds(int par1int) {
-		int j = par1int & 7;
-		float f = (float) (2 * (1 + j)) / 16.0F;
-//		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, f, 1.0F); FIXME: this
-	}
-
-	/**
-	 * Checks to see if its valid to put this block at the specified
-	 * {@link BlockPos}
-	 * @param world the {@link World}
-	 * @param pos the {@link BlockPos} for the potential placement
-	 */
-	public boolean canPlaceBlockAt(World world, BlockPos pos) {
-		BlockPos oneBelowPos = new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ()); //one block below pos
-		IBlockState oneBelowPosState = world.getBlockState(oneBelowPos); //IBlockState of oneBelowPos
-		Block oneBelowPosBlock = world.getBlockState(oneBelowPos).getBlock(); //Block of oneBelowPos
-		
-//		return oneBelowPosBlock != Blocks.ICE && oneBelowPosBlock != Blocks.PACKED_ICE ? (oneBelowPosBlock.isLeaves(world.getBlockState(oneBelowPos), null, null) ? true : (oneBelowPosBlock == this && (world.getBlockState(oneBelowPos).getm) & 7) == 7 ? true : oneBelowPosBlock.isOpaqueCube()) : false;
-		
-		if(oneBelowPosBlock == Blocks.ICE || oneBelowPosBlock == Blocks.PACKED_ICE) {
-			return false;
-		} else if(oneBelowPosState.getMaterial() == Material.LEAVES) {
-			return true;
-		} else if(oneBelowPosBlock == this && (oneBelowPosBlock.getMetaFromState(oneBelowPosState) & 7) == 7) {
-			return true;
-		} else {
-			return oneBelowPosBlock.getDefaultState().isFullCube();
-		}
-	}
-
-	/**
-	 * Lets the block know when one of its neighbor changes. Doesn't know which
-	 * neighbor changed (coordinates passed are their own) Args: x, y, z,
-	 * neighbor Block
-	 */
-	public void onNeighborBlockChange(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_,
-			Block p_149695_5_) {
-		this.func_150155_m(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_);
-	}
-
-	private boolean func_150155_m(World p_150155_1_, int p_150155_2_, int p_150155_3_, int p_150155_4_) {
-		if (!this.canPlaceBlockAt(p_150155_1_, p_150155_2_, p_150155_3_, p_150155_4_)) {
-			p_150155_1_.setBlockToAir(p_150155_2_, p_150155_3_, p_150155_4_);
-			return false;
-		} else {
-			return true;
-		}
-	}
-
-	/**
-	 * Called when the player destroys a block with an item that can harvest it.
-	 * (i, j, k) are the coordinates of the block and l is the block's
-	 * subtype/damage.
-	 */
-	public void harvestBlock(World p_149636_1_, EntityPlayer p_149636_2_, int p_149636_3_, int p_149636_4_,
-			int p_149636_5_, int p_149636_6_) {
-		super.harvestBlock(p_149636_1_, p_149636_2_, p_149636_3_, p_149636_4_, p_149636_5_, p_149636_6_);
-		p_149636_1_.setBlockToAir(p_149636_3_, p_149636_4_, p_149636_5_);
-	}
-
-	public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
-		return null;
-	}
-
-	/**
-	 * Returns the quantity of items to drop on block destruction.
-	 */
-	public int quantityDropped(Random p_149745_1_) {
-		return 1;
-	}
-
-
-	/**
-	 * Returns true if the given side of this block type should be rendered, if
-	 * the adjacent block is at the given coordinates. Args: blockAccess, x, y,
-	 * z, side
-	 */
-	@SideOnly(Side.CLIENT)
-	public boolean shouldSideBeRendered(IBlockAccess p_149646_1_, int p_149646_2_, int p_149646_3_, int p_149646_4_,
-			int p_149646_5_) {
-		return p_149646_5_ == 1 ? true
-				: super.shouldSideBeRendered(p_149646_1_, p_149646_2_, p_149646_3_, p_149646_4_, p_149646_5_);
-	}
-
-	/**
-	 * Metadata and fortune sensitive version, this replaces the old (int meta,
-	 * Random rand) version in 1.1.
-	 *
-	 * @param meta
-	 *            Blocks Metadata
-	 * @param fortune
-	 *            Current item fortune level
-	 * @param random
-	 *            Random number generator
-	 * @return The number of items to drop
-	 */
-	public int quantityDropped(int meta, int fortune, Random random) {
-		return (meta & 7) + 1;
-	}
-
-	/**
-     * Determines if a new block can be replace the space occupied by this one,
-     * Used in the player's placement code to make the block act like water, and lava.
-     *
-     * @param world The current world
-     * @param x X Position
-     * @param y Y position
-     * @param z Z position
-     * @return True if the block is replaceable by another block
-     */
-    public boolean isReplaceable(IBlockAccess world, int x, int y, int z)
-    {
-        int meta = world.getBlockState(x, y, z);
-        return meta >= 7 ? false : blockMaterial.isReplaceable();
-    }
+public class BlockAsh extends BlockSnow {
     
+    @SuppressWarnings("unused")
+	private boolean checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state) {
+        if (!this.canPlaceBlockAt(worldIn, pos))
+        {
+            worldIn.setBlockToAir(pos);
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

@@ -1,17 +1,13 @@
 package net.bvanseghi.starcraft.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
 public class BlockBloodFluid extends BlockFluidClassic {
-
 	public BlockBloodFluid(Fluid fluid, Material material) {
 		super(fluid, material);
 		this.setCreativeTab(null);
@@ -36,17 +32,20 @@ public class BlockBloodFluid extends BlockFluidClassic {
 	}*/
 
 	@Override
-	public boolean canDisplace(IBlockAccess world, int x, int y, int z) {
-		if (world.getBlock(x, y, z).getMaterial().isLiquid())
+	public boolean canDisplace(IBlockAccess world, BlockPos pos) {
+		if(world.getBlockState(pos).getMaterial().isLiquid()) {
 			return false;
-		return super.canDisplace(world, x, y, z);
+		}
+		
+		return super.canDisplace(world, pos);
 	}
 
 	@Override
-	public boolean displaceIfPossible(World world, int x, int y, int z) {
-		if (world.getBlock(x, y, z).getMaterial().isLiquid())
+	public boolean displaceIfPossible(World world, BlockPos pos) {
+		if(world.getBlockState(pos).getMaterial().isLiquid()) {
 			return false;
-		return super.displaceIfPossible(world, x, y, z);
+		}
+		
+		return super.displaceIfPossible(world, pos);
 	}
-
 }

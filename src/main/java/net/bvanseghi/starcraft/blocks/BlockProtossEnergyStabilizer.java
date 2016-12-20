@@ -2,28 +2,27 @@ package net.bvanseghi.starcraft.blocks;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class BlockProtossEnergyStabilizer extends Block {
-
-		private static String textureName;
+//		private static String textureName;
 		
 		//TODO: Figure out how textures work now.
 //		@SideOnly(Side.CLIENT)
 //		private IIcon topTexture;
 		
-		@SuppressWarnings("static-access")
-		public BlockProtossEnergyStabilizer(String textureName){
+		public BlockProtossEnergyStabilizer(String textureName) {
 			super(Material.ROCK);
-			setStepSound(soundTypeMetal);
+			setSoundType(SoundType.METAL);
 			setHardness(5.0F);
 			setLightLevel(1.0F);
 			setResistance(30.0F);
 			setHarvestLevel("pickaxe", 3);
-			this.setBlockTextureName("protossEnergyStabilizer");
-			this.setBlockName("protossEnergyStabilizer");
-			this.setCreativeTab(CreativeTab.TabStarcraftDecorativeBlocks);
-			this.textureName = textureName;
+//			this.setBlockTextureName("protossEnergyStabilizer");
+//			this.setBlockName("protossEnergyStabilizer");
+			setCreativeTab(CreativeTab.TabStarcraftDecorativeBlocks);
+//			this.textureName = textureName;
 		}
 		
 		//TODO: Figure out how textures work now.

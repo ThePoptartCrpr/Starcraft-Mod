@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -17,16 +18,16 @@ public class BlockDyedIronBlocks extends Block {
 //	@SideOnly(Side.CLIENT)
 //	private IIcon[] texture;
 
-	public static final String[] subBlocks = new String[] { "Blue", "Black", "Brown", "Cyan", "Gray", "Green",
-			"LightBlue", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "Silver", "Yellow" };
+	public static final String[] subBlocks = new String[] {"Blue", "Black", "Brown", "Cyan", "Gray", "Green",
+			"LightBlue", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "Silver", "Yellow"};
 
 	public BlockDyedIronBlocks() {
 		super(Material.IRON);
-		setStepSound(soundTypeMetal);
+		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 2);
-		this.setCreativeTab(CreativeTab.TabStarcraftDecorativeBlocks);
+		setCreativeTab(CreativeTab.TabStarcraftDecorativeBlocks);
 	}
 
 	//TODO: Figure out how textures work now.
@@ -43,11 +44,9 @@ public class BlockDyedIronBlocks extends Block {
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-
 		for (int i = 0; i < subBlocks.length; i++) {
 			list.add(new ItemStack(block, 1, i));
 		}
-
 	}
 
 	//TODO: Figure out how textures work now.

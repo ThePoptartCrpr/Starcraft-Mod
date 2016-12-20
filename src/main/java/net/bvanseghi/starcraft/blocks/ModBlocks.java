@@ -262,6 +262,7 @@ public class ModBlocks extends Block {
 		
 
 		// Items are registered here.
+		//TODO: GET ALL OF THIS JUNK INTO THE REGISTRY EVENT!!!
 		
 		GameRegistry.registerBlock(voidBlock, BlockVoidBlock.name);
 		

@@ -4,30 +4,25 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockMineralField;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockMineralField extends BlockContainer {
-
-	public static final String name = "mineralField";
+	public static final String name = "mineral_field";
 
 	public BlockMineralField(Material material) {
 		super(material);
-
-		setStepSound(soundTypeStone);
+		setSoundType(SoundType.STONE);
 		setHardness(3.0F);
 		setResistance(15.0F);
 		setHarvestLevel("pickaxe", 1);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.85F, 1.0F);
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+//		setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.85F, 1.0F); //FIXME: frickin' this
+		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 
 	public Item getItemDropped(int par1, Random par2, int par3) {
@@ -43,7 +38,7 @@ public class BlockMineralField extends BlockContainer {
 	}
 
 	//TODO: Change to new texture method
-/*	@SideOnly(Side.CLIENT)
+	/*@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon(REFERENCE.MODID + ":" + "mineralField");
 	}*/
@@ -64,5 +59,4 @@ public class BlockMineralField extends BlockContainer {
 	public TileEntity createNewTileEntity(World par1, int par2) {
 		return new TileEntityBlockMineralField();
 	}
-
 }
