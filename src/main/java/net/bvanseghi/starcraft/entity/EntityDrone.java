@@ -15,7 +15,7 @@ public class EntityDrone extends EntityAnimal {
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.droneHP);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.droneHP);
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import net.bvanseghi.starcraft.lib.Library;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeShakuras;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
@@ -17,7 +18,7 @@ public class BlockWarpGateWormholeShakuras extends BlockContainer {
 	public BlockWarpGateWormholeShakuras(Material material) {
 		super(material);
 
-		setStepSound(soundTypeStone);
+		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(0.0F);
 		this.setLightLevel(1.0F);

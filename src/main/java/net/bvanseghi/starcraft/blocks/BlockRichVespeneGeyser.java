@@ -2,15 +2,13 @@ package net.bvanseghi.starcraft.blocks;
 
 import java.util.Random;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichVespeneGeyser;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -22,16 +20,16 @@ public class BlockRichVespeneGeyser extends BlockContainer {
 	public BlockRichVespeneGeyser(Material material) {
 		super(material);
 
-		setStepSound(soundTypeStone);
+		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(3.0F);
 		setHarvestLevel("pickaxe", 1);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
+	//	this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 
 	@Override
-	public Item getItemDropped(int par1, Random par2, int par3) {
+	public Item getItemDropped(IBlockState state, Random par2, int par3) {
 		return ModItems.vespene;
 	}
 	

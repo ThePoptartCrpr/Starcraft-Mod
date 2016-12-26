@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -16,7 +17,7 @@ public class BlockZergCreep extends ModBlocks {
 
 	public BlockZergCreep() {
 		super(name, name, Material.GROUND);
-		setStepSound(soundTypeGravel);
+		setSoundType(SoundType.SAND);
 		setHardness(5.0F);
 		setResistance(10.0F);
 		setHarvestLevel("shovel", 2);

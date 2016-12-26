@@ -24,9 +24,9 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.larvaCocoonHP);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(999999.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.larvaCocoonHP);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
 	}
 	
 	protected boolean canDespawn()
@@ -51,6 +51,7 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 		return "Starcraft:zergCocoon-death";
 	}
 
+	/*
 	@SuppressWarnings({"rawtypes", "unused"})
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
 		if (this.noClip) {
@@ -164,7 +165,7 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 			this.worldObj.theProfiler.endSection();
 		}
 	}
-
+	*/
 	public boolean isPushedByWater() {
 		return false;
 	}

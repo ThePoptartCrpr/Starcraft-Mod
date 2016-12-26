@@ -1,13 +1,14 @@
 package net.bvanseghi.starcraft.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Reference;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.IIcon;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class BlockProtossWarpProjectorS extends ModBlocks {
@@ -20,14 +21,14 @@ public class BlockProtossWarpProjectorS extends ModBlocks {
 	
 	@SuppressWarnings("static-access")
 	public BlockProtossWarpProjectorS(String textureName){
-		super(Material.rock);
-		setStepSound(soundTypeMetal);
+		super(Material.ROCK);
+		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setLightLevel(1.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 3);
-		this.setBlockTextureName("warpProjectorS");
-		this.setBlockName("warpProjectorS");
+	//	this.setBlockTextureName("warpProjectorS");
+	//	this.setBlockName("warpProjectorS");
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		this.textureName = textureName;
 	}
@@ -49,9 +50,9 @@ public class BlockProtossWarpProjectorS extends ModBlocks {
 	}*/
 	
 	
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
-    {
-		world.setBlock(x, y + 3, z, ModBlocks.warpGateWormholeShakuras);
+	@Override
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack stack, EnumFacing side, float hitX, float hitY, float hitZ) {
+		world.setBlockState(new BlockPos(pos.getX(), pos.getY() + 3, pos.getZ()), ModBlocks.warpGateWormholeShakuras.getDefaultState(), 3);
         return true;
     }
 

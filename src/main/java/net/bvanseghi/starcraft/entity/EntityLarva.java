@@ -1,23 +1,13 @@
 package net.bvanseghi.starcraft.entity;
 
-import java.util.List;
 import java.util.Random;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.crash.CrashReport;
-import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ReportedException;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class EntityLarva extends EntityZergPassive {
@@ -36,8 +26,8 @@ public class EntityLarva extends EntityZergPassive {
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(StarcraftConfig.larvaHP);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.15D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.larvaHP);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.15D);
 	}
 	
 	protected boolean canDespawn()
@@ -69,7 +59,7 @@ public class EntityLarva extends EntityZergPassive {
 			this.entityDropItem(new ItemStack(ModItems.zergCarapace, 1, 0), 1);
 		}
 	}
-	
+	/*
 	@SuppressWarnings("rawtypes")
 	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
 		if (this.noClip) {
@@ -337,7 +327,7 @@ public class EntityLarva extends EntityZergPassive {
 			canMorph();
 		}
 	}
-
+*/
 	public void canMorph() {
 
 		double posX = this.posX;

@@ -3,7 +3,7 @@ package net.bvanseghi.starcraft.entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class EntityC14GaussRifleBullet extends EntityThrowable {
@@ -28,10 +28,15 @@ public class EntityC14GaussRifleBullet extends EntityThrowable {
 	}
 
 	@Override
-	protected void onImpact(MovingObjectPosition p_70227_1_) {
+	protected float getGravityVelocity() {
+		return 0;
+	}
+
+	@Override
+	protected void onImpact(RayTraceResult result) {
 		if (!this.worldObj.isRemote) {
-			if (p_70227_1_.entityHit != null) {
-				if (!p_70227_1_.entityHit.isImmuneToFire() && p_70227_1_.entityHit
+			if (result.entityHit != null) {
+				if (!result.entityHit.isImmuneToFire() && result.entityHit
 						.attackEntityFrom(DamageSource.causeThrownDamage(this, this.shootingEntity), 6.0F)) {
 
 				}
@@ -40,11 +45,6 @@ public class EntityC14GaussRifleBullet extends EntityThrowable {
 			}
 			this.setDead();
 		}
-	}
-
-	@Override
-	protected float getGravityVelocity() {
-		return 0;
 	}
 
 }

@@ -60,6 +60,7 @@ public class EntityOverlord extends EntityFlying {
 		return "Starcraft:overlord-death";
 	}
 
+	
 	 @SideOnly(Side.CLIENT)
 	    public boolean func_110182_bF()
 	    {
@@ -69,6 +70,7 @@ public class EntityOverlord extends EntityFlying {
 	    /**
 	     * Called when the entity is attacked.
 	     */
+	 /*
 	    public boolean attackEntityFrom(DamageSource p_70097_1_, float p_70097_2_)
 	    {
 	        if (this.isEntityInvulnerable())
@@ -173,7 +175,7 @@ public class EntityOverlord extends EntityFlying {
 	            }
 	        }
 	    }
-
+*/
 	    /**
 	     * True if the ghast has an unobstructed line of travel to the waypoint.
 	     */

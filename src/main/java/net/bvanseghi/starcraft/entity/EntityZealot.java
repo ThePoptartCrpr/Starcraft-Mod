@@ -34,20 +34,10 @@ public class EntityZealot extends EntityProtossMob {
 		   
 		super(world);
 		clearAITasks();
-		this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityTerranMob.class, 1.0D, true));
-        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityZergMob.class, 1.0D, true));
-        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityPlayer.class, 1.0D, false));
-        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityTerranPassive.class, 1.0D, true));
-        this.tasks.addTask(1, new EntityAIAttackMelee(this, EntityZergPassive.class, 1.0D, true));
-        this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, 0, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZergMob.class, 0, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, 0, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZergPassive.class, 0, false));
 	    this.setSize(1.5F, 2.5F);
+	    /*
+	     * TODO: recreate entity ai.
+	     */
 	}
 
 	protected void applyEntityAttributes() {

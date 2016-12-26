@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.Reference;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
@@ -12,14 +13,14 @@ public class BlockShakurasStone extends ModBlocks {
 	public static final String name = "shakurasStone";
 
 	public BlockShakurasStone() {
-		super(Material.rock);
-		setStepSound(soundTypeStone);
+		super(Material.ROCK);
+		setSoundType(SoundType.STONE);
 		setHardness(1.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setBlockName(name);
-		setBlockTextureName(Reference.MODID + ":" + name);
+	//	setBlockName(name);
+	//	setBlockTextureName(Reference.MODID + ":" + name);
 	}
 
 	public int damageDropped(int par1) {
