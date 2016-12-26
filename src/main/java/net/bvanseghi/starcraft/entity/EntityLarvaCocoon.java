@@ -1,16 +1,11 @@
 package net.bvanseghi.starcraft.entity;
 
-import java.util.List;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.minecraft.crash.CrashReport;
-import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.util.ReportedException;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
 public class EntityLarvaCocoon extends EntityZergPassive {

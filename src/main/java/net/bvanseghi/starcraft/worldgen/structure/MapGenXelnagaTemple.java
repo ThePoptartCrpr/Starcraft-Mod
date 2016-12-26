@@ -10,8 +10,6 @@ import java.util.Random;
 import net.bvanseghi.starcraft.worldgen.structure.assembly.StructureXelnagaTemplePieces;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.ChunkCoordIntPair;
-import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.structure.MapGenStructure;

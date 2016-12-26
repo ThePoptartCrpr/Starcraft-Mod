@@ -1,6 +1,22 @@
 package net.bvanseghi.starcraft.proxy;
 
-import net.bvanseghi.starcraft.armour.*;
+import net.bvanseghi.starcraft.armour.ArmourCopperBoots;
+import net.bvanseghi.starcraft.armour.ArmourCopperChestplate;
+import net.bvanseghi.starcraft.armour.ArmourCopperHelmet;
+import net.bvanseghi.starcraft.armour.ArmourCopperLeggings;
+import net.bvanseghi.starcraft.armour.ArmourGhostBoots;
+import net.bvanseghi.starcraft.armour.ArmourGhostChestplate;
+import net.bvanseghi.starcraft.armour.ArmourGhostHelmet;
+import net.bvanseghi.starcraft.armour.ArmourGhostLeggings;
+import net.bvanseghi.starcraft.armour.ArmourSteelBoots;
+import net.bvanseghi.starcraft.armour.ArmourSteelChestplate;
+import net.bvanseghi.starcraft.armour.ArmourSteelHelmet;
+import net.bvanseghi.starcraft.armour.ArmourSteelLeggings;
+import net.bvanseghi.starcraft.armour.ArmourTitaniumBoots;
+import net.bvanseghi.starcraft.armour.ArmourTitaniumChestplate;
+import net.bvanseghi.starcraft.armour.ArmourTitaniumHelmet;
+import net.bvanseghi.starcraft.armour.ArmourTitaniumLeggings;
+import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
@@ -75,7 +91,6 @@ import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeShakura
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;

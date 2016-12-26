@@ -1,14 +1,10 @@
 package net.bvanseghi.starcraft.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.bvanseghi.starcraft.lib.Library;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverworld;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 

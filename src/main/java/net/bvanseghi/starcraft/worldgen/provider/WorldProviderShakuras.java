@@ -5,7 +5,6 @@ import net.bvanseghi.starcraft.worldgen.chunk.ChunkProviderShakuras;
 import net.bvanseghi.starcraft.worldgen.manager.WorldChunkManagerShakuras;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkProvider;
