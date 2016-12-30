@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
+  "modid": "Starcraft",
+  "name": "Starcraft Mod",
+  "description": "The Void hungers! Prepare for epic conquest, as three races battle each other to the death! Choose your side, conquer the universe... all while a horrible evil stirs in The Void...",
+  "version": "1.5pa",
+  "mcversion": "1.10.2",
+  "url": "http//www.scmcmod.x10host.com",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["bvanseghi", "valiec2019", "wundrweapon", "CraftSpider"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
