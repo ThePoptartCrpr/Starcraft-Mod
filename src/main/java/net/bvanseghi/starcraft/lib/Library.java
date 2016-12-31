@@ -1,5 +1,7 @@
 package net.bvanseghi.starcraft.lib;
 
+import java.util.ArrayList;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -12,28 +14,29 @@ import net.minecraft.world.World;
 public class Library {
 	
 	/**
-	 * Makes a cube out of {@code block}.
-	 * Anchor: bottom-middle
+	 * Makes a cube out of {@code blockState}
+	 * anchored at the bottom-middle. NOTE:
+	 * this ignores the anchor. Also, make
+	 * sure the side length is an odd number,
+	 * else you'll break something
 	 * @param world the world
 	 * @param blockState the blockState to
 	 * make a cube of (use
 	 * {@link Block#getDefaultState()} if
 	 * unsure)
-	 * @param xIn the X coordinate of the
-	 * anchor position
-	 * @param yIn the Y coordinate of the
-	 * anchor position
-	 * @param zIn the Z coordinate of the
-	 * anchor position
+	 * @param pos the {@link BlockPos} of
+	 * the anchor
+	 * @param sideLength the length of the
+	 * sides of the cube
 	 */
-	public static void blockCube(World world, IBlockState blockState, int xIn, int yIn, int zIn) {
-		for(int x = -1; x < 2; x++) {
-			for(int y = 0; y < 3; y++) {
-				for(int z = -1; z < 2; z++) {
+	public static void blockCube(World world, IBlockState blockState, BlockPos pos, int sideLength) {
+		for(int x = -sideLength/2; x < sideLength/2 + 1; x++) {
+			for(int y = -sideLength/2; y < sideLength/2 + 1; y++) {
+				for(int z = -sideLength/2; z < sideLength/2 + 1; z++) {
 					if(x == 0 && y == 0 && z== 0) {
 						continue;
 					} else {
-						world.setBlockState(new BlockPos(xIn + x, yIn + y, zIn + z), blockState);
+						world.setBlockState(new BlockPos(pos.getX() + x, pos.getY() + y, pos.getZ() + z), blockState);
 					}
 				}
 			}
@@ -41,28 +44,35 @@ public class Library {
 	}
 	
 	/**
-	 * Checks a 3x3x3 area for any instances
-	 * of {@code block}. The center is in
-	 * the absolute center of the cube<br>
+	 * Checks a cubic volume for any instances
+	 * of {@code blockState}. The anchor is in
+	 * the absolute center of the cube. Make
+	 * sure the side length is an odd number,
+	 * else you'll break something
 	 * @param world the world
-	 * @param block the {@link Block} to check for
-	 * @param xIn center X coord
-	 * @param yIn center Y coord
-	 * @param zIn center Z coord
-	 * @return true if at least one instance
-	 * of {@code block} is found
+	 * @param blockState the {@link IBlockState}
+	 * to check for
+	 * @param pos the anchor {@link BlockPos}
+	 * @param sideLength the length of the cube's
+	 * sides
+	 * @return ArrayList of all the BlockPos
+	 * instances that contain {@code blockState}
 	 */
-	public static boolean checkCube(World world, Block block, int xIn, int yIn, int zIn) {
-		for(int x = -1; x < 2; x++) {
-			for(int y = -1; y < 2; y++) {
-				for(int z = -1; z < 2; z++) {
-					if(world.getBlockState(new BlockPos(xIn + x, yIn + y, zIn + z)).getBlock() == block) {
-						return true;
+	public static ArrayList<BlockPos> checkCube(World world, IBlockState blockState, BlockPos pos, int sideLength) {
+		ArrayList<BlockPos> posList = new ArrayList<BlockPos>();
+		
+		for(int x = -sideLength/2; x < sideLength/2 + 1; x++) {
+			for(int y = -sideLength/2; y < sideLength/2 + 1; y++) {
+				for(int z = -sideLength/2; z < sideLength/2 + 1; z++) {
+					BlockPos currPos = new BlockPos(pos.getX() + x, pos.getY() + y, pos.getZ() + z);
+					
+					if(world.getBlockState(currPos) == blockState) {
+						posList.add(currPos);
 					}
 				}
 			}
 		}
 		
-		return false; //Only runs if we never find the block in question
+		return posList;
 	}
 }

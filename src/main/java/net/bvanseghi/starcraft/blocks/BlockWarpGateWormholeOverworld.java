@@ -5,7 +5,9 @@ import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverwor
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class BlockWarpGateWormholeOverworld extends BlockContainer {
@@ -44,7 +46,8 @@ public class BlockWarpGateWormholeOverworld extends BlockContainer {
 		return new TileEntityBlockWarpGateWormholeOverworld();
 	}
 
-	public void onBlockAdded(World world, int x, int y, int z) {
-		Library.blockCube(world, ModBlocks.dimPortalOverworld, x, y, z);
+	@Override
+	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+		Library.blockCube(world, ModBlocks.dimPortalOverworld.getDefaultState(), pos, 3);
 	}
 }

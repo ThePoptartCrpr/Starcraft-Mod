@@ -39,7 +39,7 @@ public class BlockCharMagma extends ModBlocks {
 	
 	@Override
 	public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
-		if(Library.checkCube(world, state.getBlock(), pos.getX(), pos.getY(), pos.getZ())) {
+		if(!Library.checkCube(world, Blocks.FLOWING_LAVA.getDefaultState(), pos, 3).isEmpty()) {
 			breakBlock(world, pos, state);
 		}
 	}
