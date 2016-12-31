@@ -3,6 +3,8 @@ package net.bvanseghi.starcraft.entity;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
+import net.bvanseghi.starcraft.events.SCSoundEvent;
+import net.bvanseghi.starcraft.events.SCSoundEvents;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.EntityAgeable;
@@ -40,16 +42,16 @@ public class EntityLarva extends EntityZergPassive {
         return 160;
     }
 	
-	public String getLivingSound() {
-		return "Starcraft:larva-live1";
+	public SCSoundEvent getLivingSound() {
+		return SCSoundEvents.ENTITY_LARVA_LIVE1;
 	}
 	
-	public String getHurtSound() {
-		return "Starcraft:larva-hurt";
+	public SCSoundEvent getHurtSound() {
+		return SCSoundEvents.ENTITY_LARVA_HURT;
 	}
 	
-	public String getDeathSound() {
-		return "Starcraft:larva-death";
+	public SCSoundEvent getDeathSound() {
+		return SCSoundEvents.ENTITY_LARVA_DEATH;
 	}
 	
 	protected void dropFewItems(boolean par1, int par2) {

@@ -11,6 +11,7 @@ import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.material.ModMaterials;
+import net.bvanseghi.starcraft.proxy.ClientProxy;
 import net.bvanseghi.starcraft.proxy.IProxy;
 import net.bvanseghi.starcraft.tileentity.ModTileEntities;
 import net.bvanseghi.starcraft.tools.ModTools;
@@ -34,7 +35,8 @@ public class Starcraft {
 
 	@SidedProxy(clientSide = "net.bvanseghi.starcraft.proxy.ClientProxy")
 	public static IProxy proxy;
-
+	public static ClientProxy cproxy;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
@@ -59,6 +61,7 @@ public class Starcraft {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		cproxy.init();
 		ModRecipes.init();
 		ModEntities.init();
 		Achievements.init();

@@ -55,7 +55,7 @@ public class BlockVespeneGeyser extends BlockContainer {
 		return -1;
 	}
 
-	public boolean isOpaqueCube() {
+	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
 

@@ -20,8 +20,8 @@ public class OreOWCopper extends ModBlocks {
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setBlockName(name);
-		setBlockTextureName(Reference.MODID + ":" + name);
+	//	setBlockName(name);
+	//	setBlockTextureName(Reference.MODID + ":" + name);
 	}
 	
 	public int damageDropped(int par1) {

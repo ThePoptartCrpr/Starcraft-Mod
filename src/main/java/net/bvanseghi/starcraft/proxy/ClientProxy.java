@@ -88,6 +88,7 @@ import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyserShakuras;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeChar;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverworld;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeShakuras;
+import net.bvanseghi.starcraft.worldgen.SCWorldGen;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
@@ -95,6 +96,7 @@ import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class ClientProxy implements IProxy {
@@ -236,5 +238,11 @@ public class ClientProxy implements IProxy {
 		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumChestplate, 0, new ModelResourceLocation(ArmourTitaniumChestplate.REGISTRY_RL, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumHelmet, 0, new ModelResourceLocation(ArmourTitaniumHelmet.REGISTRY_RL, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumLeggings, 0, new ModelResourceLocation(ArmourTitaniumLeggings.REGISTRY_RL, "inventory"));
+	}
+	
+	
+	
+	public void init() {
+		GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
 	}
 }
