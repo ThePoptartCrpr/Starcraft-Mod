@@ -11,7 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class StructureRichVespeneGeyserChar extends WorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { ModBlocks.ashChar, ModBlocks.dirtChar, ModBlocks.stoneChar, Blocks.obsidian };
+		return new Block[] { ModBlocks.ashChar, ModBlocks.dirtChar, ModBlocks.stoneChar, Blocks.OBSIDIAN };
 	}
 
 	public boolean LocationIsValidSpawn(World world, int x, int y, int z) {
@@ -39,9 +39,9 @@ public class StructureRichVespeneGeyserChar extends WorldGenerator {
 			}
 			if (block == i) {
 				return true;
-			} else if (block == Blocks.snow_layer && blockBelow == i) {
+			} else if (block == Blocks.SNOW_LAYER && blockBelow == i) {
 				return true;
-			} else if (block.getMaterial() == Material.plants && blockBelow == i) {
+			} else if (block.getMaterial() == Material.PLANTS && blockBelow == i) {
 				return true;
 			}
 		}

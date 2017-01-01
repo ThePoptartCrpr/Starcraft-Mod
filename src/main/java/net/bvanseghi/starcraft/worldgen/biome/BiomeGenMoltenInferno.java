@@ -96,9 +96,9 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 							--k;
 							blockArray[i2] = block1;
 
-							if (k == 0 && block1 == Blocks.sand) {
+							if (k == 0 && block1 == Blocks.SAND) {
 								k = rand.nextInt(4) + Math.max(0, l1 - 63);
-								block1 = Blocks.sandstone;
+								block1 = Blocks.SANDSTONE;
 							}
 						}
 					}

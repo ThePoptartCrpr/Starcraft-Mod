@@ -42,9 +42,9 @@ public class StructureRichMineralBed extends WorldGenerator {
 			}
 			if (block == i) {
 				return true;
-			} else if (block == Blocks.snow_layer && blockBelow == i) {
+			} else if (block == Blocks.SNOW_LAYER && blockBelow == i) {
 				return true;
-			} else if (block.getMaterial() == Material.plants && blockBelow == i) {
+			} else if (block.getMaterial() == Material.PLANTS && blockBelow == i) {
 				return true;
 			}
 		}
