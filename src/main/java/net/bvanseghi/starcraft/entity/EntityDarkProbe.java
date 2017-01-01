@@ -3,6 +3,8 @@ package net.bvanseghi.starcraft.entity;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
+import net.bvanseghi.starcraft.events.SCSoundEvent;
+import net.bvanseghi.starcraft.events.SCSoundEvents;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -36,16 +38,16 @@ public class EntityDarkProbe extends EntityProtossPassive {
         return 160;
     }
 	
-	public String getLivingSound() {
-		return "Starcraft:probe-live1";
+	public SCSoundEvent getLivingSound() {
+		return SCSoundEvents.ENTITY_PROBE_LIVE1;
 	}
 	
-	public String getHurtSound() {
-		return "Starcraft:probe-hurt";
+	public SCSoundEvent getHurtSound() {
+		return SCSoundEvents.ENTITY_PROBE_HURT;
 	}
 	
-	public String getDeathSound() {
-		return "Starcraft:probe-death";
+	public SCSoundEvent getDeathSound() {
+		return SCSoundEvents.ENTITY_PROBE_DEATH;
 	}
 
 	/*

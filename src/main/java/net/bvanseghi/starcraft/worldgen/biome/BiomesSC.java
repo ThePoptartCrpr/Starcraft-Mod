@@ -7,9 +7,8 @@ import net.minecraftforge.common.BiomeManager;
 
 public class BiomesSC extends Biome {
 
-	public BiomesSC(int par1) {
+	public BiomesSC(BiomeProperties par1) {
 		super(par1);
-
 	}
 
 	public static Biome biomeCreepInfestationChar;
@@ -22,12 +21,12 @@ public class BiomesSC extends Biome {
 		registerBiomes();
 	}
 
-	private static void registerBiomes() {
+	public static void registerBiomes() {
 
-		biomeCreepInfestationChar = new CharBiomeGenCreepInfestation(51, true).setBiomeName("Infestation Biome");
-		biomeAshPlains = new BiomeGenAshPlains(52).setBiomeName("Ash Plains");
-		biomeMoltenInferno = new BiomeGenMoltenInferno(53).setBiomeName("Molten Inferno");
-		biomeShakurasDesert = new BiomeGenDesertShakuras(54).setBiomeName("Shakuras Desert");
+		biomeCreepInfestationChar = new CharBiomeGenCreepInfestation(51, true).setRegistryName("Infestation Biome");
+		biomeAshPlains = new BiomeGenAshPlains(52).setRegistryName("Ash Plains");
+		biomeMoltenInferno = new BiomeGenMoltenInferno(53).setRegistryName("Molten Inferno");
+		biomeShakurasDesert = new BiomeGenDesertShakuras(54).setRegistryName("Shakuras Desert");
 
 		BiomeDictionary.registerBiomeType(biomeCreepInfestationChar, Type.FOREST);
 		BiomeDictionary.registerBiomeType(biomeAshPlains, Type.FOREST);

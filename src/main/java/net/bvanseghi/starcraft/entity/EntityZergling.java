@@ -3,6 +3,8 @@ package net.bvanseghi.starcraft.entity;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
+import net.bvanseghi.starcraft.events.SCSoundEvent;
+import net.bvanseghi.starcraft.events.SCSoundEvents;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -46,24 +48,24 @@ public class EntityZergling extends EntityZergMob {
         return 160;
     }
 	
-	public String getLivingSound() {
+	public SCSoundEvent getLivingSound() {
 		Random rand = new Random();
 		if(rand.nextInt(2) == 0) {
-			return "Starcraft:zergling-live1";
+			return SCSoundEvents.ENTITY_ZERGLING_LIVE1;
 		}else if(rand.nextInt(2) == 1) {
-			return "Starcraft:zergling-live2";
+			return SCSoundEvents.ENTITY_ZERGLING_LIVE2;
 		}else if(rand.nextInt(2) == 2) {
-			return "Starcraft:zergling-live3";
+			return SCSoundEvents.ENTITY_ZERGLING_LIVE3;
 		}
-		return "Starcraft:zergling-live4";
+		return SCSoundEvents.ENTITY_ZERGLING_LIVE4;
 	}
 	
-	public String getHurtSound() {
-		return "Starcraft:zergling-hurt";
+	public SCSoundEvent getHurtSound() {
+		return SCSoundEvents.ENTITY_ZERGLING_HURT;
 	}
 	
-	public String getDeathSound() {
-		return "Starcraft:zergling-death";
+	public SCSoundEvent getDeathSound() {
+		return SCSoundEvents.ENTITY_ZERGLING_DEATH;
 	}
 	
 	/**

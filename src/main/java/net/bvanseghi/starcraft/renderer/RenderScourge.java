@@ -5,19 +5,20 @@ import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelScourge;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderScourge extends RenderLiving {
+public class RenderScourge<T> extends RenderLiving<EntityScourge> {
 
-	private static final ResourceLocation texture = new ResourceLocation(
+	private static final ResourceLocation SCOURGE_TEXTURES = new ResourceLocation(
 			Reference.MODID + ":" + "textures/model/scourge.png");
 
 	protected ModelScourge modelEntity;
 
-	public RenderScourge(ModelBase parModelBase, float par2) {
-		super(parModelBase, par2);
+	public RenderScourge(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
+		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 
 		modelEntity = ((ModelScourge) mainModel);
 	}
@@ -29,15 +30,20 @@ public class RenderScourge extends RenderLiving {
 	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
 		renderScourge((EntityScourge) entityLiving, x, y, z, u, v);
 	}
+	
+	public void doRender(EntityScourge entity, double x, double y, double z, float entityYaw, float partialTicks)
+    {
+        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-	public void doRender(Entity entity, double x, double y, double z, float u, float v) {
-		renderScourge((EntityScourge) entity, x, y, z, u, v);
-
-	}
+        if (!this.renderOutlines)
+        {
+            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+        }
+    }
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity var1) {
-		return texture;
+	protected ResourceLocation getEntityTexture(EntityScourge entity) {
+		return SCOURGE_TEXTURES;
 	}
 
 }

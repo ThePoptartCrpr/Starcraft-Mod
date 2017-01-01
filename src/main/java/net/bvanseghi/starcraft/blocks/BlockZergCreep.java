@@ -4,10 +4,13 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
+import net.minecraft.block.BlockDirt;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
@@ -36,55 +39,29 @@ public class BlockZergCreep extends ModBlocks {
 		return true;
 	}
 
-	public void updateTick(World par1, int par2, int par3, int par4, Random par5) {
-		int mult = 1;
-		int base = StarcraftConfig.creepSpreadBaseVal;
-		
-		if (StarcraftConfig.creepCanSpread == true) {
-			if(StarcraftConfig.creepSpreadScalesWithDif = true) {
-				if(par1.getDifficulty() == EnumDifficulty.PEACEFUL) {
-					mult = 1;
-				}else if(par1.getDifficulty() == EnumDifficulty.EASY) {
-					mult = 4;
-				}else if(par1.getDifficulty() == EnumDifficulty.NORMAL) {
-					mult = 8;
-				}else if(par1.getDifficulty() == EnumDifficulty.HARD) {
-					mult = 16;
-				}else if(par1.getWorldInfo().isHardcoreModeEnabled()) {
-					mult = 32;
-				}
-			}
-			if (!par1.isRemote) {
-				if (par1.getBlockLightValue(par2, par3 + 1, par4) >= 0) {
-					//l controls the speed of the creep growth. DEFAULT: 4
-					for (int l = 0; l < base*mult; ++l) {
-						int i1 = par2 + par5.nextInt(3) - 1;
-						int j1 = par3 + par5.nextInt(5) - 3;
-						int k1 = par4 + par5.nextInt(3) - 1;
-						if (par1.getBlock(i1, j1, k1) == Blocks.GRASS) {
-							par1.setBlock(i1, j1, k1, ModBlocks.zergCreep);
-						}else if(par1.getBlock(i1, j1, k1) == Blocks.LOG) {
-							if(par1.getBlockMetadata(par2, par3, par4) == 0) {
-								//for future update
-							}else if(par1.getBlockMetadata(i1, j1, k1) == 1) {
-								//for future update
-							}else if(par1.getBlockMetadata(i1, j1, k1) == 2) {
-								//for future update
-							}else if(par1.getBlockMetadata(i1, j1, k1) == 3) {
-								//for future update
-							}
-						}else if(par1.getBlock(i1, j1, k1) == Blocks.LEAVES) {
-							if(par1.getBlockMetadata(i1, j1, k1) == 0) {
-								//for future update
-							}else if(par1.getBlockMetadata(i1, j1, k1) == 1) {
-								
-							}else if(par1.getBlockMetadata(i1, j1, k1) == 2) {
-								//for future update
-							}else if(par1.getBlockMetadata(i1, j1, k1) == 3) {
-								//for future update
-							}
-						}else if(par1.getBlock(i1, j1, k1) == Blocks.FARMLAND || par1.getBlock(i1, j1, k1) == Blocks.DIRT) {
-							//for future update
+	// TODO: Redo the Zerg Creep effect
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+		if (!worldIn.isRemote) {
+			if (worldIn.getLightFromNeighbors(pos.up()) < 4
+					&& worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2) {
+				worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());
+			} else {
+				if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
+					for (int i = 0; i < 4; ++i) {
+						BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
+
+						if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos)) {
+							return;
+						}
+
+						IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
+						IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+
+						if (iblockstate1.getBlock() == Blocks.DIRT
+								&& iblockstate1.getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.DIRT
+								&& worldIn.getLightFromNeighbors(blockpos.up()) >= 4
+								&& iblockstate.getLightOpacity(worldIn, pos.up()) <= 2) {
+							worldIn.setBlockState(blockpos, Blocks.GRASS.getDefaultState());
 						}
 					}
 				}

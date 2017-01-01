@@ -5,9 +5,13 @@ import java.util.Random;
 import net.bvanseghi.starcraft.blocks.BlockAsh;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkPrimer;
 
 public class BiomeGenAshPlains extends BiomesSC {
 
@@ -26,88 +30,99 @@ public class BiomeGenAshPlains extends BiomesSC {
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		this.setDisableRain();
 	}
 
 	public int getSkyColorByTemp(float par1) {
 		return 0;
 	}
+	
+	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal)
+    {
+        this.genBiomeTerrainChar(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
+    }
 
-	public void genTerrainBlocks(World world, Random rand, Block[] block, byte[] par1, int par2, int par3,
-			double par4) {
-		this.genBiomeTerrainChar(world, rand, block, par1, par2, par3, par4);
+	public final void genBiomeTerrainChar(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
+
+		int i = worldIn.getSeaLevel();
+        IBlockState iblockstate = this.topBlock;
+        IBlockState iblockstate1 = this.fillerBlock;
+        int j = -1;
+        int k = (int)(noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
+        int l = x & 15;
+        int i1 = z & 15;
+        BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+
+        for (int j1 = 255; j1 >= 0; --j1)
+        {
+            if (j1 <= rand.nextInt(5))
+            {
+                chunkPrimerIn.setBlockState(i1, j1, l, BEDROCK);
+            }
+            else
+            {
+                IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
+
+                if (iblockstate2.getMaterial() == Material.AIR)
+                {
+                    j = -1;
+                }
+                else if (iblockstate2.getBlock() == Blocks.STONE)
+                {
+                    if (j == -1)
+                    {
+                        if (k <= 0)
+                        {
+                            iblockstate = AIR;
+                            iblockstate1 = STONE;
+                        }
+                        else if (j1 >= i - 4 && j1 <= i + 1)
+                        {
+                            iblockstate = this.topBlock;
+                            iblockstate1 = this.fillerBlock;
+                        }
+
+                        if (j1 < i && (iblockstate == null || iblockstate.getMaterial() == Material.AIR))
+                        {
+                            if (this.getFloatTemperature(blockpos$mutableblockpos.setPos(x, j1, z)) < 0.15F)
+                            {
+                                iblockstate = ICE;
+                            }
+                            else
+                            {
+                                iblockstate = WATER;
+                            }
+                        }
+
+                        j = k;
+
+                        if (j1 >= i - 1)
+                        {
+                            chunkPrimerIn.setBlockState(i1, j1, l, iblockstate);
+                        }
+                        else if (j1 < i - 7 - k)
+                        {
+                            iblockstate = AIR;
+                            iblockstate1 = STONE;
+                            chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
+                        }
+                        else
+                        {
+                            chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
+                        }
+                    }
+                    else if (j > 0)
+                    {
+                        --j;
+                        chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
+
+                        if (j == 0 && iblockstate1.getBlock() == Blocks.SAND && k > 1)
+                        {
+                            j = rand.nextInt(4) + Math.max(0, j1 - 63);
+                            iblockstate1 = iblockstate1.getValue(BlockSand.VARIANT) == BlockSand.EnumType.RED_SAND ? RED_SANDSTONE : SANDSTONE;
+                        }
+                    }
+                }
+            }
+        }
 	}
-
-	public final void genBiomeTerrainChar(World world, Random rand, Block[] blockArray, byte[] par1, int par2, int par3,
-			double par4) {
-//		boolean flag = true;
-		Block block = this.topBlock;
-		byte b0 = (byte) (this.field_150604_aj & 255);
-		Block block1 = this.fillerBlock;
-		int k = -1;
-		int l = (int) (par4 / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
-		int i1 = par2 & 15;
-		int j1 = par3 & 15;
-		int k1 = blockArray.length / 256;
-
-		for (int l1 = 255; l1 >= 0; --l1) {
-			int i2 = (j1 * 16 + i1) * k1 + l1;
-
-			if (l1 <= 0 + rand.nextInt(5)) {
-				blockArray[i2] = Blocks.BEDROCK;
-			} else {
-				Block block2 = blockArray[i2];
-
-				if (block2 != null && block2.getMaterial() != Material.AIR) {
-					if (block2 == ModBlocks.stoneChar) {
-						if (k == -1) {
-							if (l <= 0) {
-								block = null;
-								b0 = 0;
-								block1 = ModBlocks.stoneChar;
-							} else if (l1 >= 59 && l1 <= 64) {
-								block = this.topBlock;
-								b0 = (byte) (this.field_150604_aj & 255);
-								block1 = this.fillerBlock;
-							}
-
-							if (l1 < 63 && (block == null || block.getMaterial() == Material.AIR)) {
-								block = Blocks.lava;
-								b0 = 0;
-							}
-
-							k = l;
-
-							if (l1 >= 62) {
-								if (block instanceof BlockAsh) {
-									int i3 = (j1 * 16 + i1) * k1 + (l1 + 1);
-									blockArray[i3] = block;
-									block = this.fillerBlock;
-								}
-								blockArray[i2] = block;
-								par1[i2] = b0;
-							} else if (l1 < 56 - l) {
-								block = null;
-								block1 = ModBlocks.stoneChar;
-								blockArray[i2] = Blocks.GRAVEL;
-							} else {
-								blockArray[i2] = block1;
-							}
-						} else if (k > 0) {
-							--k;
-							blockArray[i2] = block1;
-
-							if (k == 0 && block1 == Blocks.sand) {
-								k = rand.nextInt(4) + Math.max(0, l1 - 63);
-								block1 = Blocks.sandstone;
-							}
-						}
-					}
-				} else {
-					k = -1;
-				}
-			}
-		}
-	}
-
 }

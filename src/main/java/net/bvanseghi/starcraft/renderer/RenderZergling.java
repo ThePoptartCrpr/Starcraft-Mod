@@ -7,20 +7,20 @@ import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelZergling;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
-import net.minecraft.entity.Entity;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderZergling extends RenderLiving {
+public class RenderZergling<T> extends RenderLiving<EntityZergling> {
 
-	private static final ResourceLocation texture = new ResourceLocation(
+	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(
 			Reference.MODID + ":" + "textures/model/zergling.png");
 
 	protected ModelZergling modelEntity;
 
-	public RenderZergling(ModelBase parModelBase, float par2) {
-		super(parModelBase, par2);
+	public RenderZergling(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
+		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 
 		modelEntity = ((ModelZergling) mainModel);
 	}
@@ -32,20 +32,25 @@ public class RenderZergling extends RenderLiving {
 	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
 		renderZergling((EntityZergling) entityLiving, x, y, z, u, v);
 	}
+	
+	public void doRender(EntityZergling entity, double x, double y, double z, float entityYaw, float partialTicks)
+    {
+        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-	public void doRender(Entity entity, double x, double y, double z, float u, float v) {
-		renderZergling((EntityZergling) entity, x, y, z, u, v);
-
-	}
+        if (!this.renderOutlines)
+        {
+            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+        }
+    }
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity var1) {
-		return texture;
+	protected ResourceLocation getEntityTexture(EntityZergling entity) {
+		return ZERGLING_TEXTURES;
 	}
 	
-	 protected void preRenderCallback(EntityLivingBase entity, float f){
-		 	GL11.glScalef(1.25F, 1.25F, 1.25F);
+	//TODO: Fix this
+		protected void preRenderCallback(T entitylivingbaseIn, float partialTickTime) {
+			GL11.glScalef(1.25F, 1.25F, 1.25F);
 	    	GL11.glRotatef(28F, 0F, 1F, 0F);
-	    }
-
+		}
 }

@@ -20,13 +20,12 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 		this.waterColorMultiplier = 9175295;
 
 		this.topBlock = ModBlocks.ashChar;
-		this.fillerBlock = Blocks.obsidian;
+		this.fillerBlock = Blocks.OBSIDIAN;
 
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		this.setDisableRain();
 	}
 
 	public int getSkyColorByTemp(float par1) {
@@ -111,3 +110,6 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 	}
 
 }
+
+
+
