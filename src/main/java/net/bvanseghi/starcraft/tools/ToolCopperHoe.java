@@ -11,7 +11,7 @@ public class ToolCopperHoe extends ItemHoe {
 	public ToolCopperHoe(ToolMaterial material) {
 		super(material);
 		this.setCreativeTab(CreativeTab.TabStarcraftTools);
-		this.setUnlocalizedName(Reference.UNLOCALIZED_NAME_PATH_BASE + name);
+		this.setUnlocalizedName(Reference.UN_BASE + name);
 	}
 
 }

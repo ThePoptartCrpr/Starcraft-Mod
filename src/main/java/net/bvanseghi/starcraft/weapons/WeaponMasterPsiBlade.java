@@ -11,6 +11,6 @@ public class WeaponMasterPsiBlade extends ItemSword {
 	public WeaponMasterPsiBlade(ToolMaterial material) {
 		super(material);
 		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
-		this.setUnlocalizedName(Reference.UNLOCALIZED_NAME_PATH_BASE + name);
+		this.setUnlocalizedName(Reference.UN_BASE + name);
 	}
 }

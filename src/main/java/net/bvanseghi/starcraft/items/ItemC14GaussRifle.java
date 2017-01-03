@@ -15,8 +15,8 @@ public class ItemC14GaussRifle extends ItemSword {
 		super(ModWeapons.GUN);
 		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
 		this.setFull3D();
-		this.setUnlocalizedName(Reference.UNLOCALIZED_NAME_PATH_BASE + "c14GaussRifle");
-		this.setTextureName(Reference.TEXTURE_PATH_BASE + "c14GaussRifle");
+		this.setUnlocalizedName(Reference.UN_BASE + "c14GaussRifle");
+		this.setTextureName(Reference.RL_BASE + "c14GaussRifle");
 	}
 
 	@Override

@@ -127,7 +127,7 @@ public class ModItems extends Item {
 		super();
 
 		this.setCreativeTab(CreativeTab.TabStarcraftMaterials);
-		this.setUnlocalizedName(Reference.UNLOCALIZED_NAME_PATH_BASE + unlocalizedname);
+		this.setUnlocalizedName(Reference.UN_BASE + unlocalizedname);
 //		this.setTextureName(REFERENCE.Texture_Path + texturename);
 	}
 }
