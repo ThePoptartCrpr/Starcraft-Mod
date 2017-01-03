@@ -1,26 +1,24 @@
 package net.bvanseghi.starcraft.renderer;
 
-import org.lwjgl.opengl.GL11;
-
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelBroodling;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBroodling extends RenderLiving {
+public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
 
-	private static final ResourceLocation texture = new ResourceLocation(
+	private static final ResourceLocation BROODLING_TEXTURES = new ResourceLocation(
 			Reference.MODID + ":" + "textures/model/broodling.png");
 
 	protected ModelBroodling modelEntity;
 
-	public RenderBroodling(ModelBase parModelBase, float par2) {
-		super(parModelBase, par2);
+	public RenderBroodling(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
+		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 
 		modelEntity = ((ModelBroodling) mainModel);
 	}
@@ -32,18 +30,20 @@ public class RenderBroodling extends RenderLiving {
 	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
 		renderBroodling((EntityBroodling) entityLiving, x, y, z, u, v);
 	}
+	
+	public void doRender(EntityBroodling entity, double x, double y, double z, float entityYaw, float partialTicks)
+    {
+        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-	public void doRender(Entity entity, double x, double y, double z, float u, float v) {
-		renderBroodling((EntityBroodling) entity, x, y, z, u, v);
-
-	}
+        if (!this.renderOutlines)
+        {
+            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+        }
+    }
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity var1) {
-		return texture;
+	protected ResourceLocation getEntityTexture(EntityBroodling entity) {
+		return BROODLING_TEXTURES;
 	}
 
-	 protected void preRenderCallback(EntityLivingBase entity, float f){
-	    	GL11.glRotatef(28F, 0F, 1F, 0F);
-	    }
 }

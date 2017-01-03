@@ -3,11 +3,16 @@ package net.bvanseghi.starcraft.renderer;
 import net.bvanseghi.starcraft.Starcraft;
 import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
 import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class RenderC14GaussRifleBullet extends Render {
+
+	protected RenderC14GaussRifleBullet(RenderManager renderManager) {
+		super(renderManager);
+	}
 
 	@Override
 	public void doRender(Entity par1EntityArrow, double par2, double par4, double par6, float par8, float par9) {

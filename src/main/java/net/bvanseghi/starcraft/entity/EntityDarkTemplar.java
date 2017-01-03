@@ -1,6 +1,8 @@
 package net.bvanseghi.starcraft.entity;
 
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
+import net.bvanseghi.starcraft.events.SCSoundEvent;
+import net.bvanseghi.starcraft.events.SCSoundEvents;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
@@ -47,19 +49,19 @@ public class EntityDarkTemplar extends EntityProtossMob {
         return 160;
     }
 	
-	public String getLivingSound() {
+	public SCSoundEvent getLivingSound() {
 		if(rand.nextInt(2) == 0) {
-			return "Starcraft:darkTemplar-live1";
+			return SCSoundEvents.ENTITY_DARKTEMPLAR_LIVE1;
 		}
-		return "Starcraft:darkTemplar-live2";
+		return SCSoundEvents.ENTITY_DARKTEMPLAR_LIVE2;
 	}
 	
-	public String getHurtSound() {
-		return "Starcraft:darkTemplar-hurt";
+	public SCSoundEvent getHurtSound() {
+		return SCSoundEvents.ENTITY_DARKTEMPLAR_HURT;
 	}
 	
-	public String getDeathSound() {
-		return "Starcraft:darkTemplar-death";
+	public SCSoundEvent getDeathSound() {
+		return SCSoundEvents.ENTITY_DARKTEMPLAR_DEATH;
 	}
 	
 	/**

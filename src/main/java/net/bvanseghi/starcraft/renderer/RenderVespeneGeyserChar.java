@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderVespeneGeyserChar extends TileEntitySpecialRenderer {
+public class RenderVespeneGeyserChar<T> extends TileEntitySpecialRenderer {
 
 	private static final ResourceLocation texture = new ResourceLocation(
 			Reference.MODID + ":" + "textures/model/vespeneGeyserChar.png");
@@ -18,9 +18,9 @@ public class RenderVespeneGeyserChar extends TileEntitySpecialRenderer {
 	public RenderVespeneGeyserChar() {
 		this.model = new ModelVespeneGeyserChar();
 	}
-
-	@Override
-	public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f) {
+	
+	public void renderTileEntityAt(T te, double x, double y, double z, float partialTicks, int destroyStage)
+    {
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
 		GL11.glRotatef(180, 0.0F, 0.0F, 1.0F);
@@ -31,6 +31,5 @@ public class RenderVespeneGeyserChar extends TileEntitySpecialRenderer {
 		this.model.renderModel(0.0625F);
 		GL11.glPopMatrix();
 		GL11.glPopMatrix();
-	}
-
+    }
 }

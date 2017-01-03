@@ -5,19 +5,20 @@ import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelCivilian;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCivilian extends RenderLiving {
+public class RenderCivilian<T> extends RenderLiving<EntityCivilian> {
 
-	private static final ResourceLocation texture = new ResourceLocation(
+	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(
 			Reference.MODID + ":" + "textures/model/civilian.png");
 
 	protected ModelCivilian modelEntity;
 
-	public RenderCivilian(ModelBase parModelBase, float par2) {
-		super(parModelBase, par2);
+	public RenderCivilian(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
+		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 
 		modelEntity = ((ModelCivilian) mainModel);
 	}
@@ -29,15 +30,20 @@ public class RenderCivilian extends RenderLiving {
 	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
 		renderCivilian((EntityCivilian) entityLiving, x, y, z, u, v);
 	}
+	
+	public void doRender(EntityCivilian entity, double x, double y, double z, float entityYaw, float partialTicks)
+    {
+        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-	public void doRender(Entity entity, double x, double y, double z, float u, float v) {
-		renderCivilian((EntityCivilian) entity, x, y, z, u, v);
-
-	}
+        if (!this.renderOutlines)
+        {
+            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+        }
+    }
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity var1) {
-		return texture;
+	protected ResourceLocation getEntityTexture(EntityCivilian entity) {
+		return CIVILIAN_TEXTURES;
 	}
 
 }

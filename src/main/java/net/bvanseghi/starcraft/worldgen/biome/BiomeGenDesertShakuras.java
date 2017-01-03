@@ -99,7 +99,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 
 							if (k == 0 && block1 == ModBlocks.sandShakuras) {
 								k = rand.nextInt(4) + Math.max(0, l1 - 63);
-								block1 = Blocks.sandstone;
+								block1 = Blocks.SANDSTONE;
 							}
 						}
 					}

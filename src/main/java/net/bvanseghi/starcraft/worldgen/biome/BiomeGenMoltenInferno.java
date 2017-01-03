@@ -20,13 +20,12 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 		this.waterColorMultiplier = 9175295;
 
 		this.topBlock = ModBlocks.ashChar;
-		this.fillerBlock = Blocks.obsidian;
+		this.fillerBlock = Blocks.OBSIDIAN;
 
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		this.setDisableRain();
 	}
 
 	public int getSkyColorByTemp(float par1) {
@@ -97,9 +96,9 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 							--k;
 							blockArray[i2] = block1;
 
-							if (k == 0 && block1 == Blocks.sand) {
+							if (k == 0 && block1 == Blocks.SAND) {
 								k = rand.nextInt(4) + Math.max(0, l1 - 63);
-								block1 = Blocks.sandstone;
+								block1 = Blocks.SANDSTONE;
 							}
 						}
 					}
@@ -111,3 +110,6 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 	}
 
 }
+
+
+

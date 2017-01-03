@@ -3,6 +3,8 @@ package net.bvanseghi.starcraft.entity;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
+import net.bvanseghi.starcraft.events.SCSoundEvent;
+import net.bvanseghi.starcraft.events.SCSoundEvents;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
@@ -49,24 +51,24 @@ public class EntityZealot extends EntityProtossMob {
         return true;
     }
 	
-	public String getLivingSound() {
+	public SCSoundEvent getLivingSound() {
 		Random rand = new Random();
 		if(rand.nextInt(2) == 0) {
-			return "Starcraft:zealot-live1";
+			return SCSoundEvents.ENTITY_ZEALOT_LIVE1;
 		}else if(rand.nextInt(2) == 1) {
-			return "Starcraft:zealot-live2";
+			return SCSoundEvents.ENTITY_ZEALOT_LIVE2;
 		}else if(rand.nextInt(2) == 2) {
-			return "Starcraft:zealot-live3";
+			return SCSoundEvents.ENTITY_ZEALOT_LIVE3;
 		}
-		return "Starcraft:zealot-live4";
+		return SCSoundEvents.ENTITY_ZEALOT_LIVE4;
 	}
 	
-	public String getHurtSound() {
-		return "Starcraft:zealot-hurt";
+	public SCSoundEvent getHurtSound() {
+		return SCSoundEvents.ENTITY_ZEALOT_HURT;
 	}
 	
-	public String getDeathSound() {
-		return "Starcraft:zealot-death";
+	public SCSoundEvent getDeathSound() {
+		return SCSoundEvents.ENTITY_ZEALOT_DEATH;
 	}
 	
 	public int getTalkInterval()
