@@ -6,6 +6,7 @@ import net.bvanseghi.starcraft.CreativeTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,10 +14,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockDyedIronBlocks extends Block {
-
-	//TODO: Figure out how textures work now.
-//	@SideOnly(Side.CLIENT)
-//	private IIcon[] texture;
 
 	public static final String[] subBlocks = new String[] {"Blue", "Black", "Brown", "Cyan", "Gray", "Green",
 			"LightBlue", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "Silver", "Yellow"};
@@ -30,18 +27,8 @@ public class BlockDyedIronBlocks extends Block {
 		setCreativeTab(CreativeTab.TabStarcraftDecorativeBlocks);
 	}
 
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-
-		texture = new IIcon[subBlocks.length];
-
-		for (int i = 0; i < subBlocks.length; i++) {
-			texture[i] = iconRegister.registerIcon(REFERENCE.MODID + ":" + "dyedIron" + subBlocks[i]);
-		}
-	}*/
-
 	@SuppressWarnings({"rawtypes", "unchecked"})
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
 		for (int i = 0; i < subBlocks.length; i++) {
@@ -49,13 +36,8 @@ public class BlockDyedIronBlocks extends Block {
 		}
 	}
 
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int meta) {
-		return texture[meta];
-	}*/
-
-	public int damageDropped(int meta) {
-		return meta;
+	@Override
+	public int damageDropped(IBlockState state) {
+		return getMetaFromState(state);
 	}
 }

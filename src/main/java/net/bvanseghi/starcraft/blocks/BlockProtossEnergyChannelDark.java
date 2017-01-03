@@ -4,54 +4,34 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 
 public class BlockProtossEnergyChannelDark extends Block {
-	public static final String name = "protossEnergyChannelDark";
-	
-	//TODO: Figure out how textures work now.
-//	@SideOnly(Side.CLIENT)
-//	private IIcon topTexture;
-	
-	public BlockProtossEnergyChannelDark(String textureName){
+	public BlockProtossEnergyChannelDark() {
 		super(Material.ROCK);
+		setRegistryName(new ResourceLocation(Reference.RL_BASE + "protoss_energy_channel_d"));
+		setUnlocalizedName(Reference.UN_BASE + "protossEnergyChannelD");
 		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setLightLevel(1.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 3);
-//		this.setBlockTextureName("protossEnergyChannelDark");
-//		this.setBlockName("protossEnergyChannelDark");
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-//		this.textureName = textureName;
 	}
 	
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister reg){
-		this.blockIcon = reg.registerIcon(REFERENCE.MODID + ":" + "protossEnergyChannelDark");
-		this.topTexture = reg.registerIcon(REFERENCE.MODID + ":" + "protossMetalDark");
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int meta){
-		if(side == 1 || side == 0){
-			return this.topTexture;
-		}
-		
-		return this.blockIcon;
-	}*/
-	
-	public Item getItemDropped(int meta, Random rand, int par1)
-    {
-			return ModItems.energy;
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		return ModItems.energy;
     }
 	
-	public int damageDropped(int meta)
-    {
-			return 1;
-    }	
+	@Override
+	public int damageDropped(IBlockState state) {
+		return 1;
+    }
 }

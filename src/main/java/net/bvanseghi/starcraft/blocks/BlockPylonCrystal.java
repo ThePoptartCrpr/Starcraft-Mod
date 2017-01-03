@@ -3,11 +3,14 @@ package net.bvanseghi.starcraft.blocks;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,11 +18,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockPylonCrystal extends Block {
-
-	//TODO: Figure out how textures work now.
-//	@SideOnly(Side.CLIENT)
-//	private IIcon[] texture;
-	
 	public static final String[] subBlocks = new String[] { "Pure", "Dark", "Void" };
 	
 	public BlockPylonCrystal() {
@@ -29,53 +27,38 @@ public class BlockPylonCrystal extends Block {
 		setResistance(20.0F);
 		setLightLevel(4.0F);
 		setHarvestLevel("pickaxe", 2);
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 	
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		
-		texture = new IIcon[subBlocks.length];
-		
-		for(int i = 0; i < subBlocks.length; i++) {
-			texture[i] = iconRegister.registerIcon(REFERENCE.MODID + ":" + "crystal" + subBlocks[i]);
-		}
-	}*/
-	
 	@SuppressWarnings({"rawtypes", "unchecked"})
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		
 		for (int i = 0; i < subBlocks.length; i++) {
 			list.add(new ItemStack(block, 1, i));
 		}
-		
 	}
 	
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int meta) {
-		return texture[meta];
-	}*/
-	
-	public Item getItemDropped(int meta, Random rand, int par1)
-    {
+	@Override
+	@Nullable
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		if(rand.nextInt(9) == 0){
 			return ModItems.energy;
-		}
+		} else {
 			return null;
+		}
     }
 	
-	public int damageDropped(int meta)
-    {
-		if(meta == 0) {
+	@Override
+	public int damageDropped(IBlockState state) {
+		if(getMetaFromState(state) == 0) {
 			return this == ModBlocks.crystals ? 0 : 0;
-		}else if(meta == 1) {
+		}else if(getMetaFromState(state) == 1) {
 			return this == ModBlocks.crystals ? 1 : 0;
-		}else if(meta == 2) {
+		}else if(getMetaFromState(state) == 2) {
 			return this == ModBlocks.crystals ? 2 : 0;
+		} else {
+			return 0;
 		}
-        return 0;
-    }	
+    }
 }

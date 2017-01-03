@@ -42,6 +42,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+/**
+ * When wundr marks {@link Blockz} as done, then
+ * scrap this class!!!<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
+ */
 public class ModBlocks extends Block {
 	 
 	public static Block voidBlock;
