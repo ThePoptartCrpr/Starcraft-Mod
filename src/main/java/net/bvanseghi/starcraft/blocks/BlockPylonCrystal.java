@@ -7,34 +7,75 @@ import javax.annotation.Nullable;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockPylonCrystal extends Block {
-	public static final String[] subBlocks = new String[] { "Pure", "Dark", "Void" };
+	private static final IProperty<Subblocks> SUBBLOCKS_PROPERTY = PropertyEnum.create("subblocks", Subblocks.class);
 	
 	public BlockPylonCrystal() {
 		super(Material.ROCK);
+		setRegistryName(new ResourceLocation(Reference.RL_BASE + "pylon_crystal"));
+		setUnlocalizedName(Reference.UN_BASE + "pylonCrystal");
 		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(20.0F);
 		setLightLevel(4.0F);
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setDefaultState(blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.PURE));
+	}
+	
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, SUBBLOCKS_PROPERTY);
+	}
+	
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		for(int i = 0; i < 3; i++) {
+			if(state.equals(getStateFromMeta(i))) {
+				return i;
+			}
+		}
+		
+		return 0;
+	}
+	
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		switch(meta) {
+			case 0:
+				return getDefaultState();
+			case 1:
+				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.DARK);
+			case 2:
+				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.VOID);
+			default:
+				return getDefaultState();
+		}
 	}
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		for (int i = 0; i < subBlocks.length; i++) {
+		String[] subblocks = new String[] {"Pure", "Dark", "Void"};
+		
+		for (int i = 0; i < subblocks.length; i++) {
 			list.add(new ItemStack(block, 1, i));
 		}
 	}
@@ -61,4 +102,21 @@ public class BlockPylonCrystal extends Block {
 			return 0;
 		}
     }
+	
+	private enum Subblocks implements IStringSerializable {
+		PURE("Pure"),
+		DARK("Dark"),
+		VOID("Void");
+		
+		private String name;
+		
+		private Subblocks(String name) {
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return name;
+		}
+	}
 }

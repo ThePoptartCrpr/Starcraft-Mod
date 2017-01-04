@@ -29,7 +29,7 @@ public class BlockZergStructureFlesh extends Block {
 	
 	public BlockZergStructureFlesh() {
 		super(Material.CLAY);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "zerg_flesh")); //TODO: match with texture
+		setRegistryName(new ResourceLocation(Reference.RL_BASE + "zerg_flesh"));
 		setUnlocalizedName(Reference.UN_BASE + "zergFlesh");
 		setSoundType(SoundType.GROUND);
 		setResistance(10.0F);
@@ -47,7 +47,7 @@ public class BlockZergStructureFlesh extends Block {
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		for(int i = 0; i < 15; i++) {
-			if(getStateFromMeta(i).equals(state)) {
+			if(state.equals(getStateFromMeta(i))) {
 				return i;
 			}
 		}
