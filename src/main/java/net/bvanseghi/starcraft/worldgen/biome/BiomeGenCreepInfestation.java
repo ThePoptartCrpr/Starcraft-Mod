@@ -6,15 +6,11 @@ import net.minecraft.world.biome.Biome;
 
 public class BiomeGenCreepInfestation extends Biome {
 
-	public static final Height biomeHeight = new Height(0.05F, 0.05F);
-
-	public BiomeGenCreepInfestation(int id) {
+	public BiomeGenCreepInfestation(BiomeProperties id) {
 		super(id);
 
-		this.setHeight(biomeHeight);
-		this.waterColorMultiplier = 9175295;
 
-		this.topBlock = ModBlocks.ZERG_CREEP;
+		this.topBlock = ModBlocks.ZERG_CREEP.getDefaultState();
 		this.fillerBlock = Blocks.DIRT.getDefaultState();
 
 		this.spawnableMonsterList.clear();

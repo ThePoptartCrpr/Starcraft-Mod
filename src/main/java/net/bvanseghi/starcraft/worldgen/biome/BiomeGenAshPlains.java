@@ -15,16 +15,11 @@ import net.minecraft.world.chunk.ChunkPrimer;
 
 public class BiomeGenAshPlains extends BiomesSC {
 
-	public static final Height biomeHeight = new Height(0.05F, 0.05F);
+	public BiomeGenAshPlains(BiomeProperties par1) {
+		super(par1);
 
-	public BiomeGenAshPlains(int id) {
-		super(id);
-
-		this.setHeight(biomeHeight);
-		this.waterColorMultiplier = 9175295;
-
-		this.topBlock = ModBlocks.ASH_CHAR;
-		this.fillerBlock = ModBlocks.DIRT_CHAR;
+		this.topBlock = ModBlocks.ASH_CHAR.getDefaultState();
+		this.fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();

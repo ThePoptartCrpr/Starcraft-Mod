@@ -14,7 +14,6 @@ import net.minecraft.world.World;
 public class DimPortalOverworld extends ModBlocks {
 	public static boolean field_149948_a;
 	
-	@SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00000236";
 	
 	private int dimOverworld = 0;

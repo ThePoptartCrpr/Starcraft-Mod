@@ -19,7 +19,7 @@ public class GenLayerShakurasBiomes extends GenLayer {
 		for (int dz = 0; dz < depth; dz++) {
 			for (int dx = 0; dx < width; dx++) {
 				this.initChunkSeed(dx + x, dz + z);
-				dest[(dx + dz * width)] = this.dimBiomes[nextInt(this.dimBiomes.length)].biomeID;
+				dest[(dx + dz * width)] = this.dimBiomes[nextInt(this.dimBiomes.length)].getIdForBiome(this.dimBiomes[dz]);
 			}
 		}
 		return dest;
