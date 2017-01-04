@@ -27,6 +27,6 @@ public class BlockCharStone extends Block {
 	@Override
 	@Nullable
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(ModBlocks.cobblestoneChar);
+		return Item.getItemFromBlock(ModBlocks.COBBLESTONE_CHAR);
 	}
 }

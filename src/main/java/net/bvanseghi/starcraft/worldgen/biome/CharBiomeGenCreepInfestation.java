@@ -24,8 +24,8 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 		this.setHeight(biomeHeight);
 		this.waterColorMultiplier = 9175295;
 
-		this.topBlock = ModBlocks.zergCreep;
-		this.fillerBlock = ModBlocks.dirtChar;
+		this.topBlock = ModBlocks.ZERG_CREEP;
+		this.fillerBlock = ModBlocks.DIRT_CHAR;
 
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
@@ -67,12 +67,12 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 				Block block2 = blockArray[i2];
 
 				if (block2 != null && block2.getMaterial() != Material.AIR) {
-					if (block2 == ModBlocks.stoneChar) {
+					if (block2 == ModBlocks.STONE_CHAR) {
 						if (k == -1) {
 							if (l <= 0) {
 								block = null;
 								b0 = 0;
-								block1 = ModBlocks.stoneChar;
+								block1 = ModBlocks.STONE_CHAR;
 							} else if (l1 >= 59 && l1 <= 64) {
 								block = this.topBlock;
 								b0 = (byte) (this.field_150604_aj & 255);
@@ -80,7 +80,7 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 							}
 
 							if (l1 < 63 && (block == null || block.getMaterial() == Material.AIR)) {
-								block = Blocks.lava;
+								block = Blocks.LAVA;
 								b0 = 0;
 							}
 
@@ -96,7 +96,7 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 								par1[i2] = b0;
 							} else if (l1 < 56 - l) {
 								block = null;
-								block1 = ModBlocks.stoneChar;
+								block1 = ModBlocks.STONE_CHAR;
 								blockArray[i2] = Blocks.GRAVEL;
 							} else {
 								blockArray[i2] = block1;

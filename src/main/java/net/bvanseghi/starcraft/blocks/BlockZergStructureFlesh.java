@@ -9,9 +9,11 @@ import net.bvanseghi.starcraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -41,18 +43,6 @@ public class BlockZergStructureFlesh extends Block {
 	public int quantityDropped(Random par1) {
 		return 3 + par1.nextInt(3);
 	}
-
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-
-		texture = new IIcon[subBlocks.length];
-
-		for (int i = 0; i < subBlocks.length; i++) {
-			texture[i] = iconRegister.registerIcon(REFERENCE.MODID + ":" + "zergStrucFlesh" + subBlocks[i]);
-		}
-	}*/
-
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
@@ -63,26 +53,23 @@ public class BlockZergStructureFlesh extends Block {
 
 	}
 
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int meta) {
-		return texture[meta];
-	}*/
-
 	public int damageDropped(int meta) {
 		return meta;
 	}
 	
-	public void onBlockDestroyedByPlayer(World p_149664_1_, int p_149664_2_, int p_149664_3_, int p_149664_4_, int p_149664_5_)
+	
+	public void onBlockDestroyedByPlayer(World world, BlockPos pos, IBlockState state)
     {
-        if (!p_149664_1_.isRemote)
-        {
-            EntityBroodling entitybroodling = new EntityBroodling(p_149664_1_);
-            entitybroodling.setLocationAndAngles((double)p_149664_2_ + 0.5D, (double)p_149664_3_, (double)p_149664_4_ + 0.5D, 0.0F, 0.0F);
-            p_149664_1_.spawnEntityInWorld(entitybroodling);
-            entitybroodling.spawnExplosionParticle();
-        }
+		//double x, double y, double z, float yaw, float pitch
+		
+		 if (!world.isRemote)
+	        {
+	            EntityBroodling entitybroodling = new EntityBroodling(world);
+	            entitybroodling.setLocationAndAngles(pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, 0.0F, 0.0F);
+	            world.spawnEntityInWorld(entitybroodling);
+	            entitybroodling.spawnExplosionParticle();
+	        }
 
-        super.onBlockDestroyedByPlayer(p_149664_1_, p_149664_2_, p_149664_3_, p_149664_4_, p_149664_5_);
+	        super.onBlockDestroyedByPlayer(world, pos, state);
     }
 }

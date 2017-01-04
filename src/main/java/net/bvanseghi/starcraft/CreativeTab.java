@@ -13,14 +13,14 @@ public class CreativeTab {
 	public static CreativeTabs TabStarcraftBuildingBlocks = new CreativeTabs("StarcraftBuildingBlocks") {
 		@Override
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(ModBlocks.protossMetal);
+			return Item.getItemFromBlock(ModBlocks.PROTOSS_METAL);
 		}
 	};
 	
 	public static CreativeTabs TabStarcraftDecorativeBlocks = new CreativeTabs("StarcraftDecorativeBlocks") {
 		@Override
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(ModBlocks.dyedIron);
+			return Item.getItemFromBlock(ModBlocks.DYED_IRON);
 		}
 	};
 

@@ -28,7 +28,7 @@ public class BlockProtossWarpProjectorC extends ModBlocks {
 	
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack stack, EnumFacing side, float hitX, float hitY, float hitZ) {
-		world.setBlockState(pos.up(3), ModBlocks.warpGateWormholeChar.getDefaultState(), 3);
+		world.setBlockState(pos.up(3), ModBlocks.WARPGATE_WORMHOLE_CHAR.getDefaultState(), 3);
         return true;
     }
 }

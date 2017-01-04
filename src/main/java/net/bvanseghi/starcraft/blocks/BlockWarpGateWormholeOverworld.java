@@ -48,6 +48,6 @@ public class BlockWarpGateWormholeOverworld extends BlockContainer {
 
 	@Override
 	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
-		Library.blockCube(world, ModBlocks.dimPortalOverworld.getDefaultState(), pos, 3);
+		Library.blockCube(world, ModBlocks.DIM_PORTAL_OVERWORLD.getDefaultState(), pos, 3);
 	}
 }

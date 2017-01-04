@@ -39,50 +39,50 @@ public class ModRecipes {
 		//The rest is not my doing, so there aren't any notes!//
 		////////////////////////////////////////////////////////
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.protossMetal, 1, 0),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.PROTOSS_METAL, 1, 0),
 				new Object[] { "AAA", "AAA", "AAA", 'A', new ItemStack(ModItems.ingot, 0, 1) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.protossMetal, 1, 1),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.PROTOSS_METAL, 1, 1),
 				new Object[] { "DDD", "DDD", "DDD", 'D', new ItemStack(ModItems.ingot, 0, 2) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.energyBlock),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ENERGY_BLOCK),
 				new Object[] { "EEE", "EEE", "EEE", 'E', new ItemStack(ModItems.energy, 0, 0) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.voidEnergyBlock),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.VOID_ENERGY_BLOCK),
 				new Object[] { "VVV", "VVV", "VVV", 'V', new ItemStack(ModItems.energy, 0, 2) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.compMetal, 1, 1),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.COMP_METAL, 1, 1),
 				new Object[] { "TTT", "TTT", "TTT", 'T', new ItemStack(ModItems.ingot, 0, 3) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.compMetal, 1, 0),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.COMP_METAL, 1, 0),
 				new Object[] { "CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.ingot, 0, 0) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.compMetal, 1, 2),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.COMP_METAL, 1, 2),
 				new Object[] { "SSS", "SSS", "SSS", 'S', new ItemStack(ModItems.ingot, 0, 4) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.compMineral, 1, 0),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.COMP_MINERAL, 1, 0),
 				new Object[] { "MMM", "MMM", "MMM", 'M', new ItemStack(ModItems.mineralShard) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.compMineral, 1, 1),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.COMP_MINERAL, 1, 1),
 				new Object[] { "RRR", "RRR", "RRR", 'R', new ItemStack(ModItems.richMineralShard) });
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.zergStrucCarapace, 1, 0),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 0),
 				new Object[] { "CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.zergCarapace, 1, 0) });
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.zergStrucCarapace, 1, 1),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 1),
 				new Object[] { "CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.zergCarapace, 1, 1) });
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.zergStrucCarapace, 1, 2),
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 2),
 				new Object[] { "CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.zergCarapace, 1, 2) });
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.protossWarpProjectorC),
-				new Object[] { "AEA", "ACA", "AMA", 'A', new ItemStack(ModBlocks.protossMetal, 1, 0), 'E',
-						new ItemStack(ModBlocks.energyBlock), 'M', new ItemStack(ModItems.protossModule), 'C',
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.PROTOSS_WARPPROJECTOR_CHAR),
+				new Object[] { "AEA", "ACA", "AMA", 'A', new ItemStack(ModBlocks.PROTOSS_METAL, 1, 0), 'E',
+						new ItemStack(ModBlocks.ENERGY_BLOCK), 'M', new ItemStack(ModItems.protossModule), 'C',
 						new ItemStack(ModItems.coord, 1, 0) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.protossWarpProjectorS),
-				new Object[] { "AEA", "ASA", "AMA", 'A', new ItemStack(ModBlocks.protossMetal, 1, 0), 'E',
-						new ItemStack(ModBlocks.energyBlock), 'M', new ItemStack(ModItems.protossModule), 'S',
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.PROTOSS_WARPPROJECTOR_SHAKURAS),
+				new Object[] { "AEA", "ASA", "AMA", 'A', new ItemStack(ModBlocks.PROTOSS_METAL, 1, 0), 'E',
+						new ItemStack(ModBlocks.ENERGY_BLOCK), 'M', new ItemStack(ModItems.protossModule), 'S',
 						new ItemStack(ModItems.coord, 1, 1) });
 		
 		GameRegistry.addRecipe(new ItemStack(ModItems.protossModule),
@@ -90,30 +90,30 @@ public class ModRecipes {
 						new ItemStack(ModItems.energy, 1, 0), 'D', new ItemStack(Items.DIAMOND)});
 		
 		GameRegistry.addRecipe(new ItemStack(ModItems.mineralShard, 9),
-				new Object[] { "M", 'M', new ItemStack(ModBlocks.compMineral, 1, 0) });
+				new Object[] { "M", 'M', new ItemStack(ModBlocks.COMP_MINERAL, 1, 0) });
 		
 		GameRegistry.addRecipe(new ItemStack(ModItems.richMineralShard, 9),
-				new Object[] { "M", 'M', new ItemStack(ModBlocks.compMineral, 1, 1) });
+				new Object[] { "M", 'M', new ItemStack(ModBlocks.COMP_MINERAL, 1, 1) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.ingot, 9, 2),
-				new Object[] { "D", 'D', new ItemStack(ModBlocks.protossMetal, 1, 1) });
+				new Object[] { "D", 'D', new ItemStack(ModBlocks.PROTOSS_METAL, 1, 1) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.ingot, 9, 1),
-				new Object[] { "A", 'A', new ItemStack(ModBlocks.protossMetal, 1, 0) });
+				new Object[] { "A", 'A', new ItemStack(ModBlocks.PROTOSS_METAL, 1, 0) });
 
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.energy, 9, 0), new Object[] { ModBlocks.energyBlock });
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.energy, 9, 0), new Object[] { ModBlocks.ENERGY_BLOCK });
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.energy, 9, 2),
-				new Object[] { ModBlocks.voidEnergyBlock });
+				new Object[] { ModBlocks.VOID_ENERGY_BLOCK });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.zergCarapace, 9, 0),
-				new Object[] { "C", 'C', new ItemStack(ModBlocks.zergStrucCarapace, 1, 0) });
+				new Object[] { "C", 'C', new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 0) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.zergCarapace, 9, 1),
-				new Object[] { "C", 'C', new ItemStack(ModBlocks.zergStrucCarapace, 1, 1) });
+				new Object[] { "C", 'C', new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 1) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.zergCarapace, 9, 2),
-				new Object[] { "C", 'C', new ItemStack(ModBlocks.zergStrucCarapace, 1, 2) });
+				new Object[] { "C", 'C', new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 2) });
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ingot, 1, 2),
 				new Object[] { new ItemStack(Items.DYE, 0, 0), new ItemStack(ModItems.ingot, 0, 1) });
@@ -124,26 +124,26 @@ public class ModRecipes {
 				new Object[] { " D ", "D D", " DD", 'D', new ItemStack(ModItems.ingot, 0, 2) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.ingot, 9, 3),
-				new Object[] { "T", 'T', new ItemStack(ModBlocks.compMetal, 1, 1) });
+				new Object[] { "T", 'T', new ItemStack(ModBlocks.COMP_METAL, 1, 1) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.ingot, 9, 0),
-				new Object[] { "C", 'C', new ItemStack(ModBlocks.compMetal, 1, 0) });
+				new Object[] { "C", 'C', new ItemStack(ModBlocks.COMP_METAL, 1, 0) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.ingot, 9, 4),
-				new Object[] { "S", 'S', new ItemStack(ModBlocks.compMetal, 1, 2) });
+				new Object[] { "S", 'S', new ItemStack(ModBlocks.COMP_METAL, 1, 2) });
 
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.creepResin, 4), new Object[] { ModBlocks.zergCreep });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.zergCreep), new Object[] {"##", "##", '#', ModItems.creepResin});
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.creepResin, 4), new Object[] { ModBlocks.ZERG_CREEP });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ZERG_CREEP), new Object[] {"##", "##", '#', ModItems.creepResin});
 		
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.sandShakuras), new ItemStack(Blocks.STAINED_GLASS, 1, 11), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.cobblestoneShakuras), new ItemStack(ModBlocks.stoneShakuras),
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.SAND_SHAKURAS), new ItemStack(Blocks.STAINED_GLASS, 1, 11), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.COBBLESTONE_SHAKURAS), new ItemStack(ModBlocks.STONE_SHAKURAS),
 				0);
 		GameRegistry.addRecipe(new ItemStack(Blocks.FURNACE),
-				new Object[] { "###", "# #", "###", '#', ModBlocks.cobblestoneShakuras });
+				new Object[] { "###", "# #", "###", '#', ModBlocks.COBBLESTONE_SHAKURAS });
 
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.cobblestoneChar), new ItemStack(ModBlocks.stoneChar), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.COBBLESTONE_CHAR), new ItemStack(ModBlocks.STONE_CHAR), 0);
 		GameRegistry.addRecipe(new ItemStack(Blocks.FURNACE),
-				new Object[] { "###", "# #", "###", '#', ModBlocks.cobblestoneChar });
+				new Object[] { "###", "# #", "###", '#', ModBlocks.COBBLESTONE_CHAR });
 
 		/*
 		 * GameRegistry.addSmelting(new ItemStack(ModBlocks.ores, 1, 2), new
@@ -154,28 +154,28 @@ public class ModRecipes {
 		 * 
 		 */
 
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreTitaniumOW), new ItemStack(ModItems.ingot, 1, 3), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCopperOW), new ItemStack(ModItems.ingot, 1, 0), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_TITANIUM_OW), new ItemStack(ModItems.ingot, 1, 3), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_COPPER_OW), new ItemStack(ModItems.ingot, 1, 0), 0);
 		
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCoalC), new ItemStack(Items.COAL), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreIronC), new ItemStack(Items.IRON_INGOT), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreGoldC), new ItemStack(Items.GOLD_INGOT), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreRedstoneC), new ItemStack(Items.REDSTONE), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreLapisC), new ItemStack(Items.DYE, 0, 4), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreDiamondC), new ItemStack(Items.DIAMOND), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreAlienC), new ItemStack(ModItems.ingot, 0, 1), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreTitaniumC), new ItemStack(ModItems.ingot, 1, 3), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCopperC), new ItemStack(ModItems.ingot, 1, 0), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_COAL_CHAR), new ItemStack(Items.COAL), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_IRON_CHAR), new ItemStack(Items.IRON_INGOT), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_GOLD_CHAR), new ItemStack(Items.GOLD_INGOT), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_REDSTONE_CHAR), new ItemStack(Items.REDSTONE), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_LAPIS_CHAR), new ItemStack(Items.DYE, 0, 4), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_DIAMOND_CHAR), new ItemStack(Items.DIAMOND), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_ALIEN_CHAR), new ItemStack(ModItems.ingot, 0, 1), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_TITANIUM_CHAR), new ItemStack(ModItems.ingot, 1, 3), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_COPPER_CHAR), new ItemStack(ModItems.ingot, 1, 0), 0);
 
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCoalS), new ItemStack(Items.COAL), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreIronS), new ItemStack(Items.IRON_INGOT), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreGoldS), new ItemStack(Items.GOLD_INGOT), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreRedstoneS), new ItemStack(Items.REDSTONE), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreLapisS), new ItemStack(Items.DYE, 1, 4), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreDiamondS), new ItemStack(Items.DIAMOND), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreAlienS), new ItemStack(ModItems.ingot, 1, 1), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreTitaniumS), new ItemStack(ModItems.ingot, 1, 3), 0);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.oreCopperS), new ItemStack(ModItems.ingot, 1, 0), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_COAL_SHAKURAS), new ItemStack(Items.COAL), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_IRON_SHAKURAS), new ItemStack(Items.IRON_INGOT), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_GOLD_SHAKURAS), new ItemStack(Items.GOLD_INGOT), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_REDSTONE_SHAKURAS), new ItemStack(Items.REDSTONE), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_LAPIS_SHAKURAS), new ItemStack(Items.DYE, 1, 4), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_DIAMOND_SHAKURAS), new ItemStack(Items.DIAMOND), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_ALIEN_SHAKURAS), new ItemStack(ModItems.ingot, 1, 1), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_TITANIUM_SHAKURAS), new ItemStack(ModItems.ingot, 1, 3), 0);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_COPPER_SHAKURAS), new ItemStack(ModItems.ingot, 1, 0), 0);
 
 		GameRegistry.addRecipe(new ItemStack(ModWeapons.psiBlade), new Object[] { " A ", "AEA", " AA", 'A',
 				new ItemStack(ModItems.ingot, 0, 1), 'E', new ItemStack(ModItems.energy, 0, 0) });

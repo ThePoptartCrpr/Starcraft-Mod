@@ -97,55 +97,6 @@ public class EntityZealot extends EntityProtossMob {
 	}
 	
 	@Override
-	public boolean attackEntityAsMob(Entity entityTarget)
-	{
-	    float attackDamage = (float)getEntityAttribute(SharedMonsterAttributes
-	          .ATTACK_DAMAGE).getAttributeValue();
-	    int knockbackModifier = 0;
-
-	    if (entityTarget instanceof EntityLivingBase)
-	    {
-	        attackDamage += EnchantmentHelper.getEnchantmentModifierLiving(this, 
-	              (EntityLivingBase)entityTarget);
-	        knockbackModifier  += EnchantmentHelper.getKnockbackModifier(this, 
-	              (EntityLivingBase)entityTarget);
-	    }
-
-	    boolean isTargetHurt = entityTarget.attackEntityFrom(DamageSource
-	          .causeMobDamage(this), attackDamage);
-
-	    if (isTargetHurt)
-	    {
-	        if (knockbackModifier  > 0)
-	        {
-	            entityTarget.addVelocity((double)(-MathHelper.sin(rotationYaw * 
-	                  (float)Math.PI / 180.0F) * (float)knockbackModifier  * 0.5F), 
-	                   0.1D, (double)(MathHelper.cos(rotationYaw * 
-	                  (float)Math.PI / 180.0F) * (float)knockbackModifier  * 0.5F));
-	            motionX *= 0.6D;
-	            motionZ *= 0.6D;
-	        }
-
-	        int fireModifier = EnchantmentHelper.getFireAspectModifier(this);
-
-	        if (fireModifier > 0)
-	        {
-	            entityTarget.setFire(fireModifier * 4);
-	        }
-
-	        // I copied these enchantments from EntityMob, not sure what they do
-	        if (entityTarget instanceof EntityLivingBase)
-	        {
-	            EnchantmentHelper.func_151384_a((EntityLivingBase)entityTarget, this);
-	        }
-
-	        EnchantmentHelper.func_151385_b(this, entityTarget);
-	    }
-
-	    return isTargetHurt ;
-	}
-	
-	@Override
 	public boolean attackEntityFrom(DamageSource p_70097_1_, float p_70097_2_)
     {
         return super.attackEntityFrom(p_70097_1_, p_70097_2_);

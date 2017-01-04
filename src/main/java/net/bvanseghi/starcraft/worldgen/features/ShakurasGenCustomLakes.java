@@ -147,7 +147,7 @@ public class ShakurasGenCustomLakes extends WorldGenerator
 
                             if (flag1 && (k4 < 4 || rand.nextInt(2) != 0) && worldIn.getBlockState(position.add(j2, k4, k3)).getMaterial().isSolid())
                             {
-                                worldIn.setBlockState(position.add(j2, k4, k3), ModBlocks.stoneShakuras.getDefaultState(), 2);
+                                worldIn.setBlockState(position.add(j2, k4, k3), ModBlocks.STONE_SHAKURAS.getDefaultState(), 2);
                             }
                         }
                     }

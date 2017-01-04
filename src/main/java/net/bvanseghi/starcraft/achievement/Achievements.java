@@ -62,10 +62,10 @@ public class Achievements {
 		// Dimension Achievements
 		
 		achievementEnterChar = new Achievement("achievement.enterChar", "enterChar", -3, 0,
-				new ItemStack(ModBlocks.stoneChar), (Achievement) null).initIndependentStat().registerStat();
+				new ItemStack(ModBlocks.STONE_CHAR), (Achievement) null).initIndependentStat().registerStat();
 		
 		achievementEnterShakuras = new Achievement("achievement.enterShakuras", "enterShakuras", -2, 0,
-				new ItemStack(ModBlocks.stoneShakuras), (Achievement) null).initIndependentStat().registerStat();
+				new ItemStack(ModBlocks.STONE_SHAKURAS), (Achievement) null).initIndependentStat().registerStat();
 
 
 		AchievementPage.registerAchievementPage(new AchievementPage("Starcraft",

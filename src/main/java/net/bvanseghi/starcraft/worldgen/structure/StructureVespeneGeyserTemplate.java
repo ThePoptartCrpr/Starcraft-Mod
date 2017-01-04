@@ -11,7 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class StructureVespeneGeyserTemplate extends WorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { ModBlocks.ashChar, ModBlocks.dirtChar, ModBlocks.stoneChar, Blocks.OBSIDIAN, Blocks.GRASS, ModBlocks.sandShakuras, ModBlocks.stoneShakuras };
+		return new Block[] { ModBlocks.ASH_CHAR, ModBlocks.DIRT_CHAR, ModBlocks.STONE_CHAR, Blocks.OBSIDIAN, Blocks.GRASS, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
 	}
 
 	Block metaBase;

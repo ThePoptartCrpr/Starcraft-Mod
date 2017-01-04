@@ -22,7 +22,7 @@ public class CharWorldGenMinable extends WorldGenerator
 
     public CharWorldGenMinable(IBlockState state, int blockCount)
     {
-        this(state, blockCount, BlockMatcher.forBlock(ModBlocks.stoneChar));
+        this(state, blockCount, BlockMatcher.forBlock(ModBlocks.STONE_CHAR));
     }
 
     public CharWorldGenMinable(IBlockState state, int blockCount, Predicate<IBlockState> p_i45631_3_)
