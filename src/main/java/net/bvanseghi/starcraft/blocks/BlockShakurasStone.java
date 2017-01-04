@@ -29,7 +29,7 @@ public class BlockShakurasStone extends ModBlocks {
 	
 	 public Item getItemDropped(int par1, Random rand, int par3)
 	    {
-	        return Item.getItemFromBlock(ModBlocks.cobblestoneShakuras);
+	        return Item.getItemFromBlock(ModBlocks.COBBLESTONE_SHAKURAS);
 	    }
 	
 	

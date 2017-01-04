@@ -48,6 +48,6 @@ public class BlockWarpGateWormholeShakuras extends BlockContainer {
 
 	@Override
 	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
-		Library.blockCube(world, ModBlocks.dimPortalShakuras.getDefaultState(), pos, 3);
+		Library.blockCube(world, ModBlocks.DIM_PORTAL_SHAKURAS.getDefaultState(), pos, 3);
 	}
 }

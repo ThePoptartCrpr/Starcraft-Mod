@@ -44,11 +44,11 @@ public class SCWorldGen implements IWorldGenerator {
 		//TODO: figure out how to register dimensions using dimType
 	}
 
-	private WorldGenerator copper_overworld;
-	private WorldGenerator titanium_overworld;
+	private WorldGenerator COPPER_OVERWORLD;
+	private WorldGenerator TITANIUM_OVERWORLD;
 	
 	public SCWorldGen() {
-		copper_overworld = new WorldGenMinable(ModBlocks.oreCopperC.getDefaultState().withProperty(BlockOWCopper.TYPE, OreType.OVERWORLD), 8);
+		COPPER_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_COPPER_OW.getDefaultState(), 8);
 	}
 	@Override
 	
@@ -56,7 +56,7 @@ public class SCWorldGen implements IWorldGenerator {
 			IChunkProvider chunkProvider) {
 		switch (world.provider.getDimension()) {
 		case 0: //Overworld
-			this.runGenerator(copper_overworld, world, random, chunkX, chunkZ, 25, 4, 64);
+			this.runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
 		case -1: //Nether
 			
 		case 1: //End

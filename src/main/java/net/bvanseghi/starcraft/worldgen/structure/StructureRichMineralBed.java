@@ -15,8 +15,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class StructureRichMineralBed extends WorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.ashChar, ModBlocks.stoneChar,
-				ModBlocks.ashChar, ModBlocks.sandShakuras, ModBlocks.stoneShakuras, Blocks.OBSIDIAN };
+		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.ASH_CHAR, ModBlocks.STONE_CHAR,
+				ModBlocks.ASH_CHAR, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS, Blocks.OBSIDIAN };
 	}
 	
 	int x = 0;

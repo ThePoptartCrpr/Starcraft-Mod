@@ -22,7 +22,7 @@ public class ShakurasWorldGenMinable extends WorldGenerator
 
     public ShakurasWorldGenMinable(IBlockState state, int blockCount)
     {
-        this(state, blockCount, BlockMatcher.forBlock(ModBlocks.stoneShakuras));
+        this(state, blockCount, BlockMatcher.forBlock(ModBlocks.STONE_SHAKURAS));
     }
 
     public ShakurasWorldGenMinable(IBlockState state, int blockCount, Predicate<IBlockState> p_i45631_3_)

@@ -19,8 +19,8 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 		this.setHeight(biomeHeight);
 		this.waterColorMultiplier = 9175295;
 
-		this.topBlock = ModBlocks.sandShakuras;
-		this.fillerBlock = ModBlocks.stoneShakuras;
+		this.topBlock = ModBlocks.SAND_SHAKURAS;
+		this.fillerBlock = ModBlocks.STONE_SHAKURAS;
 
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
@@ -59,12 +59,12 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 				Block block2 = blockArray[i2];
 
 				if (block2 != null && block2.getMaterial() != Material.AIR) {
-					if (block2 == ModBlocks.stoneShakuras) {
+					if (block2 == ModBlocks.STONE_SHAKURAS) {
 						if (k == -1) {
 							if (l <= 0) {
 								block = null;
 								b0 = 0;
-								block1 = ModBlocks.stoneShakuras;
+								block1 = ModBlocks.STONE_SHAKURAS;
 							} else if (l1 >= 59 && l1 <= 64) {
 								block = this.topBlock;
 								b0 = (byte) (this.field_150604_aj & 255);
@@ -72,7 +72,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 							}
 
 							if (l1 < 63 && (block == null || block.getMaterial() == Material.AIR)) {
-								block = Blocks.lava;
+								block = Blocks.LAVA;
 								b0 = 0;
 							}
 
@@ -88,7 +88,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 								par1[i2] = b0;
 							} else if (l1 < 56 - l) {
 								block = null;
-								block1 = ModBlocks.stoneShakuras;
+								block1 = ModBlocks.STONE_SHAKURAS;
 								blockArray[i2] = Blocks.GRAVEL;
 							} else {
 								blockArray[i2] = block1;
@@ -97,7 +97,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 							--k;
 							blockArray[i2] = block1;
 
-							if (k == 0 && block1 == ModBlocks.sandShakuras) {
+							if (k == 0 && block1 == ModBlocks.SAND_SHAKURAS) {
 								k = rand.nextInt(4) + Math.max(0, l1 - 63);
 								block1 = Blocks.SANDSTONE;
 							}

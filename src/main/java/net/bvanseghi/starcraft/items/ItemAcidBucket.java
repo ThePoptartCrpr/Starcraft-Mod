@@ -10,7 +10,7 @@ public class ItemAcidBucket extends ItemBucket {
 	public ItemAcidBucket(Block block) {
 		super(block);
 
-		this.setTextureName(Reference.MODID + ":acidBucket");
+		this.setRegistryName(Reference.MODID + ":acidBucket");
 		this.setCreativeTab(CreativeTab.TabStarcraftMisc);
 
 	}

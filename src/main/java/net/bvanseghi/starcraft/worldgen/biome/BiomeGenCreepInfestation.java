@@ -14,7 +14,7 @@ public class BiomeGenCreepInfestation extends Biome {
 		this.setHeight(biomeHeight);
 		this.waterColorMultiplier = 9175295;
 
-		this.topBlock = ModBlocks.zergCreep;
+		this.topBlock = ModBlocks.ZERG_CREEP;
 		this.fillerBlock = Blocks.DIRT.getDefaultState();
 
 		this.spawnableMonsterList.clear();

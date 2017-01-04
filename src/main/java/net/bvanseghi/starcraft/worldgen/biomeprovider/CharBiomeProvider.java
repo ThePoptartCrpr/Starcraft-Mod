@@ -15,11 +15,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeCache;
+import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraft.world.storage.WorldInfo;
 
-public class CharBiomeProvider
+public class CharBiomeProvider extends BiomeProvider
 {
     public static List<Biome> allowedBiomes = Lists.newArrayList(/*CHAR BIOMES GO HERE*/);
     private GenLayer genBiomes;

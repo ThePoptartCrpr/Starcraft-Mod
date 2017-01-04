@@ -46,61 +46,58 @@ public class ModBlocks extends Block {
 
 	public ModBlocks(Material material) {
 		super(material);
-		// TODO Auto-generated constructor stub
 	}
 
-	public static Block voidBlock;
+	public static Block ORE_COPPER_OW;
+	public static Block ORE_TITANIUM_OW;
+	public static Block ORE_URANIUM_OW;
 
-	public static Block oreCopperOW;
-	public static Block oreTitaniumOW;
-	public static Block oreUraniumOW;
+	public static Block ORE_ALIEN_CHAR;
+	public static Block ORE_COAL_CHAR;
+	public static Block ORE_COPPER_CHAR;
+	public static Block ORE_DIAMOND_CHAR;
+	public static Block ORE_GOLD_CHAR;
+	public static Block ORE_IRON_CHAR;
+	public static Block ORE_LAPIS_CHAR;
+	public static Block ORE_MINERAL_CHAR;
+	public static Block ORE_REDSTONE_CHAR;
+	public static Block ORE_RICHMINERAL_CHAR;
+	public static Block ORE_TITANIUM_CHAR;
 
-	public static Block oreAlienC;
-	public static Block oreCoalC;
-	public static Block oreCopperC;
-	public static Block oreDiamondC;
-	public static Block oreGoldC;
-	public static Block oreIronC;
-	public static Block oreLapisC;
-	public static Block oreMineralC;
-	public static Block oreRedstoneC;
-	public static Block oreRichMineralC;
-	public static Block oreTitaniumC;
+	public static Block ORE_ALIEN_SHAKURAS;
+	public static Block ORE_COAL_SHAKURAS;
+	public static Block ORE_COPPER_SHAKURAS;
+	public static Block ORE_DIAMOND_SHAKURAS;
+	public static Block ORE_GOLD_SHAKURAS;
+	public static Block ORE_IRON_SHAKURAS;
+	public static Block ORE_LAPIS_SHAKURAS;
+	public static Block ORE_MINERAL_SHAKURAS;
+	public static Block ORE_REDSTONE_SHAKURAS;
+	public static Block ORE_RICHMINERAL_SHAKURAS;
+	public static Block ORE_TITANIUM_SHAKURAS;
 
-	public static Block oreAlienS;
-	public static Block oreCoalS;
-	public static Block oreCopperS;
-	public static Block oreDiamondS;
-	public static Block oreGoldS;
-	public static Block oreIronS;
-	public static Block oreLapisS;
-	public static Block oreMineralS;
-	public static Block oreRedstoneS;
-	public static Block oreRichMineralS;
-	public static Block oreTitaniumS;
+	public static Block ZERG_STRUCTURE_CARAPACE;
+	public static Block ZERG_STRUCTURE_FLESH;
+	public static Block PROTOSS_METAL;
+	public static Block COMP_MINERAL;
+	public static Block DYED_IRON;
 
-	public static Block zergStrucCarapace;
-	public static Block zergStrucFlesh;
-	public static Block protossMetal;
-	public static Block compMineral;
-	public static Block dyedIron;
+	public static Block PROTOSS_ENERGY_STABILIZER;
+	public static Block PROTOSS_ENERGY_CHANNEL;
 
-	public static Block protossEnergyStabilizer;
-	public static Block protossEnergyChannel;
+	public static Block PROTOSS_DARK_ENERGY_STABILIZER;
+	public static Block PROTOSS_DARK_ENERGY_CHANNEL;
 
-	public static Block protossEnergyStabilizerDark;
-	public static Block protossEnergyChannelDark;
+	public static Block ENERGY_BLOCK;
+	public static Block VOID_ENERGY_BLOCK;
+	public static Block CRYSTAL;
+	public static Block WARPGATE_WORMHOLE_CHAR;
+	public static Block WARPGATE_WORMHOLE_OVERWORLD;
+	public static Block WARPGATE_WORMHOLE_SHAKURAS;
 
-	public static Block energyBlock;
-	public static Block voidEnergyBlock;
-	public static Block crystals;
-	public static Block warpGateWormholeChar;
-	public static Block warpGateWormholeOverworld;
-	public static Block warpGateWormholeShakuras;
-
-	public static Block protossWarpProjectorC;
-	public static Block protossWarpProjectorO;
-	public static Block protossWarpProjectorS;
+	public static Block PROTOSS_WARPPROJECTOR_CHAR;
+	public static Block PROTOSS_WARPPROJECTOR_OVERWORLD;
+	public static Block PROTOSS_WARPPROJECTOR_SHAKURAS;
 
 	public static Block MINERAL_FIELD;
 	public static Block RICH_MINERAL_FIELD;
@@ -116,18 +113,18 @@ public class ModBlocks extends Block {
 	public static Block VESPENE_GEYSER_BASE_CHAR;
 	public static Block VESPENE_GEYSER_BASE_SHAKURAS;
 
-	public static Block zergCreep;
-	public static Block keratinChunk;
+	public static Block ZERG_CREEP;
+	public static Block KERATIN_CHUNK;
 
-	public static Block fluidAcid;
-	public static Block fluidBlood;
+	public static Block FLUID_ACID;
+	public static Block FLUID_BLOOD;
 
 	// Future general blocks.
 
 	public static Block terranMetal;
 	public static Block terranMetalDec1;
 
-	public static Block compMetal;
+	public static Block COMP_METAL;
 
 	// Will be used in Xel'Naga temples and shrines.
 	public static Block xelnagaMetal;
@@ -139,20 +136,20 @@ public class ModBlocks extends Block {
 	public static Block grassAuir;
 
 	public static Block dirtShakuras;
-	public static Block stoneShakuras;
-	public static Block cobblestoneShakuras;
-	public static Block sandShakuras;
+	public static Block STONE_SHAKURAS;
+	public static Block COBBLESTONE_SHAKURAS;
+	public static Block SAND_SHAKURAS;
 	public static Block grassShakuras;
 
 	public static Block dirtKorhal;
 	public static Block stoneKorhal;
 	public static Block grassKorhal;
 
-	public static Block dirtChar;
-	public static Block stoneChar;
-	public static Block cobblestoneChar;
-	public static Block ashChar;
-	public static Block magmaChar;
+	public static Block DIRT_CHAR;
+	public static Block STONE_CHAR;
+	public static Block COBBLESTONE_CHAR;
+	public static Block ASH_CHAR;
+	public static Block MAGMA_CHAR;
 
 	public static Block dirtTarsonis;
 	public static Block stoneTarsonis;
@@ -163,64 +160,65 @@ public class ModBlocks extends Block {
 	public static Block grassZerus;
 
 	// debug blocks
-	public static Block dimPortalChar;
-	public static Block dimPortalOverworld;
-	public static Block dimPortalShakuras;
+	public static Block DIM_PORTAL_CHAR;
+	public static Block DIM_PORTAL_OVERWORLD;
+	public static Block DIM_PORTAL_SHAKURAS;
 
 	public static void init() {
-		voidBlock = new BlockVoidBlock();
 		
-		oreCopperOW = new OreOWCopper();
-		oreTitaniumOW = new OreOWTitanium();
-		oreUraniumOW = new OreOWUranium();
+		ORE_COPPER_OW = new OreOWCopper();
+		ORE_TITANIUM_OW = new OreOWTitanium();
+		ORE_URANIUM_OW = new OreOWUranium();
 		
-		oreAlienC = new OreCharAlien();
-		oreCoalC = new OreCharCoal();
-		oreCopperC = new OreCharCopper();
-		oreDiamondC = new OreCharDiamond();
-		oreGoldC = new OreCharGold();
-		oreIronC = new OreCharIron();
-		oreLapisC = new OreCharLapis();
-		oreMineralC = new OreCharMineral();
-		oreRedstoneC = new OreCharRedstone();
-		oreRichMineralC = new OreCharRichMineral();
-		oreTitaniumC = new OreCharTitanium();
+		ORE_ALIEN_CHAR = new OreCharAlien();
+		ORE_COAL_CHAR = new OreCharCoal();
+		ORE_COPPER_CHAR = new OreCharCopper();
+		ORE_DIAMOND_CHAR = new OreCharDiamond();
+		ORE_GOLD_CHAR = new OreCharGold();
+		ORE_IRON_CHAR = new OreCharIron();
+		ORE_LAPIS_CHAR = new OreCharLapis();
+		ORE_MINERAL_CHAR = new OreCharMineral();
+		ORE_REDSTONE_CHAR = new OreCharRedstone();
+		ORE_RICHMINERAL_CHAR = new OreCharRichMineral();
+		ORE_TITANIUM_CHAR = new OreCharTitanium();
 		
-		oreAlienS = new OreShakurasAlien();
-		oreCoalS = new OreShakurasCoal();
-		oreCopperS = new OreShakurasCopper();
-		oreDiamondS = new OreShakurasDiamond();
-		oreGoldS = new OreShakurasGold();
-		oreIronS = new OreShakurasIron();
-		oreLapisS = new OreShakurasLapis();
-		oreMineralS = new OreShakurasMineral();
-		oreRedstoneS = new OreShakurasRedstone();
-		oreRichMineralS = new OreShakurasRichMineral();
-		oreTitaniumS = new OreShakurasTitanium();
-		/*
-		compMineral = new BlockCompressedMinerals().setBlockName("compMineral");
-		crystals = new BlockPylonCrystal().setBlockName("crystal");
-		zergStrucCarapace = new BlockZergStructureCarapace().setBlockName("zergStrucCarapace");
-		zergStrucFlesh = new BlockZergStructureFlesh().setBlockName("zergStrucFlesh");
-		compMetal = new BlockCompressedMetals().setBlockName("compMetal");
-		protossMetal = new BlockProtossMetal().setBlockName("protossMetal");
-		dyedIron = new BlockDyedIronBlocks().setBlockName("dyedIron");
+		ORE_ALIEN_SHAKURAS = new OreShakurasAlien();
+		ORE_COAL_SHAKURAS = new OreShakurasCoal();
+		ORE_COPPER_SHAKURAS = new OreShakurasCopper();
+		ORE_DIAMOND_SHAKURAS = new OreShakurasDiamond();
+		ORE_GOLD_SHAKURAS = new OreShakurasGold();
+		ORE_IRON_SHAKURAS = new OreShakurasIron();
+		ORE_LAPIS_SHAKURAS = new OreShakurasLapis();
+		ORE_MINERAL_SHAKURAS = new OreShakurasMineral();
+		ORE_REDSTONE_SHAKURAS = new OreShakurasRedstone();
+		ORE_RICHMINERAL_SHAKURAS = new OreShakurasRichMineral();
+		ORE_TITANIUM_SHAKURAS = new OreShakurasTitanium();
+		
+		COMP_MINERAL = new BlockCompressedMinerals();
+		CRYSTAL = new BlockPylonCrystal();
+		ZERG_STRUCTURE_CARAPACE = new BlockZergStructureCarapace();
+		ZERG_STRUCTURE_FLESH = new BlockZergStructureFlesh();
+		COMP_METAL = new BlockCompressedMetals();
+		PROTOSS_METAL = new BlockProtossMetal();
+		DYED_IRON = new BlockDyedIronBlocks();
 		
 		
-		protossEnergyStabilizer = new BlockProtossEnergyStabilizer("protossEnergyStabilizer");
-		protossEnergyChannel = new BlockProtossEnergyChannel("protossEnergyChannel");
-		protossEnergyStabilizerDark = new BlockProtossEnergyStabilizerDark("protossEnergyStabilizerDark");
-		protossEnergyChannelDark = new BlockProtossEnergyChannelDark("protossEnergyChannelDark");
-		*/
-		energyBlock = new BlockEnergyBlock();
-		voidEnergyBlock = new BlockVoidEnergyBlock();
-		warpGateWormholeChar = new BlockWarpGateWormholeChar(Material.GROUND);
-		warpGateWormholeOverworld = new BlockWarpGateWormholeOverworld(Material.GROUND);
-		warpGateWormholeShakuras = new BlockWarpGateWormholeShakuras(Material.GROUND);
+		PROTOSS_ENERGY_STABILIZER = new BlockProtossEnergyStabilizer();
+		PROTOSS_ENERGY_CHANNEL = new BlockProtossEnergyChannel();
+		PROTOSS_DARK_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerDark();
+		PROTOSS_DARK_ENERGY_CHANNEL = new BlockProtossEnergyChannelDark();
 		
-		protossWarpProjectorC = new BlockProtossWarpProjectorC();
-		protossWarpProjectorO = new BlockProtossWarpProjectorO();
-		protossWarpProjectorS = new BlockProtossWarpProjectorS();
+		ENERGY_BLOCK = new BlockEnergyBlock();
+		VOID_ENERGY_BLOCK = new BlockVoidEnergyBlock();
+		WARPGATE_WORMHOLE_CHAR = new BlockWarpGateWormholeChar(Material.GROUND);
+		WARPGATE_WORMHOLE_OVERWORLD = new BlockWarpGateWormholeOverworld(Material.GROUND);
+		WARPGATE_WORMHOLE_SHAKURAS = new BlockWarpGateWormholeShakuras(Material.GROUND);
+		
+		PROTOSS_WARPPROJECTOR_CHAR = new BlockProtossWarpProjectorC();
+		PROTOSS_WARPPROJECTOR_OVERWORLD = new BlockProtossWarpProjectorO();
+		PROTOSS_WARPPROJECTOR_SHAKURAS = new BlockProtossWarpProjectorS();
+		
+		
 
 		MINERAL_FIELD = new BlockMineralField(Material.GROUND);
 		RICH_MINERAL_FIELD = new BlockRichMineralField(Material.GROUND);
@@ -237,162 +235,181 @@ public class ModBlocks extends Block {
 		VESPENE_GEYSER_BASE_CHAR = new BlockVespeneGeyserBaseChar();
 		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
 
-		zergCreep = new BlockZergCreep();
-		keratinChunk = new BlockKeratinChunk();
+		ZERG_CREEP = new BlockZergCreep();
+		KERATIN_CHUNK = new BlockKeratinChunk();
 
-		fluidAcid = new BlockAcidFluid(ModFluids.acid, ModMaterials.acid);
-		fluidBlood = new BlockBloodFluid(ModFluids.blood, Material.WATER);
-		fluidAcid = new BlockAcidFluid(ModFluids.acid, Material.LAVA);
-		fluidBlood = new BlockBloodFluid(ModFluids.blood, Material.WATER);
+		FLUID_ACID = new BlockAcidFluid(ModFluids.acid, ModMaterials.acid);
+		FLUID_BLOOD = new BlockBloodFluid(ModFluids.blood, Material.WATER);
+		FLUID_ACID = new BlockAcidFluid(ModFluids.acid, Material.LAVA);
+		FLUID_BLOOD = new BlockBloodFluid(ModFluids.blood, Material.WATER);
 
 
-		ashChar = new BlockAsh();
-		dirtChar = new BlockCharDirt();
-		stoneChar = new BlockCharStone();
-		cobblestoneChar = new BlockCharCobblestone();
-		magmaChar = new BlockCharMagma();
+		ASH_CHAR = new BlockAsh();
+		DIRT_CHAR = new BlockCharDirt();
+		STONE_CHAR = new BlockCharStone();
+		COBBLESTONE_CHAR = new BlockCharCobblestone();
+		MAGMA_CHAR = new BlockCharMagma();
 		
-		sandShakuras = new BlockShakurasSand();
-		stoneShakuras = new BlockShakurasStone();
-		cobblestoneShakuras = new BlockShakurasCobblestone();
+		SAND_SHAKURAS = new BlockShakurasSand();
+		STONE_SHAKURAS = new BlockShakurasStone();
+		COBBLESTONE_SHAKURAS = new BlockShakurasCobblestone();
 		
-		dimPortalChar = new DimPortalChar(); 
-		dimPortalOverworld = new DimPortalOverworld();
-		dimPortalShakuras = new DimPortalShakuras();
+		DIM_PORTAL_CHAR = new DimPortalChar(); 
+		DIM_PORTAL_OVERWORLD = new DimPortalOverworld();
+		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
 	}
 
 	public static void register() {
-		GameRegistry.register(oreCopperOW);
-		GameRegistry.register(oreTitaniumOW);
-		GameRegistry.register(oreUraniumOW);
+		GameRegistry.register(ORE_COPPER_OW);
+		GameRegistry.register(ORE_TITANIUM_OW);
+		GameRegistry.register(ORE_URANIUM_OW);
 		GameRegistry.register(MINERAL_FIELD);
 		GameRegistry.register(RICH_MINERAL_FIELD);
 		GameRegistry.register(VESPENE_GEYSER);
 		GameRegistry.register(RICH_VESPENE_GEYSER);
 		GameRegistry.register(VESPENE_GEYSER_BASE);
-		GameRegistry.register(dimPortalOverworld);
+		GameRegistry.register(DIM_PORTAL_OVERWORLD);
+		GameRegistry.register(COMP_MINERAL);
+		GameRegistry.register(CRYSTAL);
 		
-		GameRegistry.register(oreAlienC);
-		GameRegistry.register(oreCoalC);
-		GameRegistry.register(oreCopperC);
-		GameRegistry.register(oreDiamondC);
-		GameRegistry.register(oreGoldC);
-		GameRegistry.register(oreIronC);
-		GameRegistry.register(oreLapisC);
-		GameRegistry.register(oreMineralC);
-		GameRegistry.register(oreRedstoneC);
-		GameRegistry.register(oreRichMineralC);
-		GameRegistry.register(oreTitaniumC);
-		GameRegistry.register(ashChar);
-		GameRegistry.register(dirtChar);
-		GameRegistry.register(stoneChar);
-		GameRegistry.register(cobblestoneChar);
+		GameRegistry.register(ORE_ALIEN_CHAR);
+		GameRegistry.register(ORE_COAL_CHAR);
+		GameRegistry.register(ORE_COPPER_CHAR);
+		GameRegistry.register(ORE_DIAMOND_CHAR);
+		GameRegistry.register(ORE_GOLD_CHAR);
+		GameRegistry.register(ORE_IRON_CHAR);
+		GameRegistry.register(ORE_LAPIS_CHAR);
+		GameRegistry.register(ORE_MINERAL_CHAR);
+		GameRegistry.register(ORE_REDSTONE_CHAR);
+		GameRegistry.register(ORE_RICHMINERAL_CHAR);
+		GameRegistry.register(ORE_TITANIUM_CHAR);
+		GameRegistry.register(ASH_CHAR);
+		GameRegistry.register(DIRT_CHAR);
+		GameRegistry.register(STONE_CHAR);
+		GameRegistry.register(COBBLESTONE_CHAR);
 		GameRegistry.register(VESPENE_GEYSER_CHAR);
 		GameRegistry.register(RICH_VESPENE_GEYSER_CHAR);
 		GameRegistry.register(VESPENE_GEYSER_BASE_CHAR);
-		GameRegistry.register(magmaChar);
-		GameRegistry.register(dimPortalChar);
+		GameRegistry.register(MAGMA_CHAR);
+		GameRegistry.register(DIM_PORTAL_CHAR);
 		
-		GameRegistry.register(oreAlienS);
-		GameRegistry.register(oreCoalS);
-		GameRegistry.register(oreCopperS);
-		GameRegistry.register(oreDiamondS);
-		GameRegistry.register(oreGoldS);
-		GameRegistry.register(oreIronS);
-		GameRegistry.register(oreLapisS);
-		GameRegistry.register(oreMineralS);
-		GameRegistry.register(oreRedstoneS);
-		GameRegistry.register(oreRichMineralS);
-		GameRegistry.register(oreTitaniumS);
-		GameRegistry.register(sandShakuras);
-		GameRegistry.register(stoneShakuras);
-		GameRegistry.register(cobblestoneShakuras);
+		GameRegistry.register(ORE_ALIEN_SHAKURAS);
+		GameRegistry.register(ORE_COAL_SHAKURAS);
+		GameRegistry.register(ORE_COPPER_SHAKURAS);
+		GameRegistry.register(ORE_DIAMOND_SHAKURAS);
+		GameRegistry.register(ORE_GOLD_SHAKURAS);
+		GameRegistry.register(ORE_IRON_SHAKURAS);
+		GameRegistry.register(ORE_LAPIS_SHAKURAS);
+		GameRegistry.register(ORE_MINERAL_SHAKURAS);
+		GameRegistry.register(ORE_REDSTONE_SHAKURAS);
+		GameRegistry.register(ORE_RICHMINERAL_SHAKURAS);
+		GameRegistry.register(ORE_TITANIUM_SHAKURAS);
+		GameRegistry.register(SAND_SHAKURAS);
+		GameRegistry.register(STONE_SHAKURAS);
+		GameRegistry.register(COBBLESTONE_SHAKURAS);
 		GameRegistry.register(VESPENE_GEYSER_SHAKURAS);
 		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
 		GameRegistry.register(RICH_VESPENE_GEYSER_SHAKURAS);
-		GameRegistry.register(dimPortalShakuras);
+		GameRegistry.register(DIM_PORTAL_SHAKURAS);
 		
-		GameRegistry.register(energyBlock);
-		GameRegistry.register(voidEnergyBlock);
-		GameRegistry.register(warpGateWormholeChar);
-		GameRegistry.register(warpGateWormholeOverworld);
-		GameRegistry.register(warpGateWormholeShakuras);
-		GameRegistry.register(protossWarpProjectorC);
-		GameRegistry.register(protossWarpProjectorO);
-		GameRegistry.register(protossWarpProjectorS);
+		GameRegistry.register(ENERGY_BLOCK);
+		GameRegistry.register(VOID_ENERGY_BLOCK);
+		GameRegistry.register(WARPGATE_WORMHOLE_CHAR);
+		GameRegistry.register(WARPGATE_WORMHOLE_OVERWORLD);
+		GameRegistry.register(WARPGATE_WORMHOLE_SHAKURAS);
+		GameRegistry.register(PROTOSS_WARPPROJECTOR_CHAR);
+		GameRegistry.register(PROTOSS_WARPPROJECTOR_OVERWORLD);
+		GameRegistry.register(PROTOSS_WARPPROJECTOR_SHAKURAS);
+		GameRegistry.register(PROTOSS_ENERGY_STABILIZER);
+		GameRegistry.register(PROTOSS_ENERGY_CHANNEL);
+		GameRegistry.register(PROTOSS_DARK_ENERGY_STABILIZER);
+		GameRegistry.register(PROTOSS_DARK_ENERGY_CHANNEL);
+		GameRegistry.register(PROTOSS_METAL);
 		
-		GameRegistry.register(zergCreep);
-		GameRegistry.register(keratinChunk);
-		GameRegistry.register(fluidAcid);
-		GameRegistry.register(fluidBlood);
+		GameRegistry.register(ZERG_CREEP);
+		GameRegistry.register(KERATIN_CHUNK);
+		GameRegistry.register(FLUID_ACID);
+		GameRegistry.register(FLUID_BLOOD);
 		
+		GameRegistry.register(COMP_METAL);
+		GameRegistry.register(DYED_IRON);
 	}
 
 	public static void registerRenders() {
 		
-		registerRender(oreCopperOW);
-		registerRender(oreTitaniumOW);
-		registerRender(oreUraniumOW);
+		registerRender(ORE_COPPER_OW);
+		registerRender(ORE_TITANIUM_OW);
+		registerRender(ORE_URANIUM_OW);
 		registerRender(MINERAL_FIELD);
 		registerRender(RICH_MINERAL_FIELD);
 		registerRender(VESPENE_GEYSER);
 		registerRender(RICH_VESPENE_GEYSER);
 		registerRender(VESPENE_GEYSER_BASE);
-		registerRender(dimPortalOverworld);
+		registerRender(DIM_PORTAL_OVERWORLD);
+		registerRender(COMP_MINERAL);
+		registerRender(CRYSTAL);
 		
-		registerRender(oreAlienC);
-		registerRender(oreCoalC);
-		registerRender(oreCopperC);
-		registerRender(oreDiamondC);
-		registerRender(oreGoldC);
-		registerRender(oreIronC);
-		registerRender(oreLapisC);
-		registerRender(oreMineralC);
-		registerRender(oreRedstoneC);
-		registerRender(oreRichMineralC);
-		registerRender(oreTitaniumC);
-		registerRender(ashChar);
-		registerRender(dirtChar);
-		registerRender(stoneChar);
-		registerRender(cobblestoneChar);
+		registerRender(ORE_ALIEN_CHAR);
+		registerRender(ORE_COAL_CHAR);
+		registerRender(ORE_COPPER_CHAR);
+		registerRender(ORE_DIAMOND_CHAR);
+		registerRender(ORE_GOLD_CHAR);
+		registerRender(ORE_IRON_CHAR);
+		registerRender(ORE_LAPIS_CHAR);
+		registerRender(ORE_MINERAL_CHAR);
+		registerRender(ORE_REDSTONE_CHAR);
+		registerRender(ORE_RICHMINERAL_CHAR);
+		registerRender(ORE_TITANIUM_CHAR);
+		registerRender(ASH_CHAR);
+		registerRender(DIRT_CHAR);
+		registerRender(STONE_CHAR);
+		registerRender(COBBLESTONE_CHAR);
 		registerRender(VESPENE_GEYSER_CHAR);
 		registerRender(RICH_VESPENE_GEYSER_CHAR);
 		registerRender(VESPENE_GEYSER_BASE_CHAR);
-		registerRender(magmaChar);
-		registerRender(dimPortalChar);
+		registerRender(MAGMA_CHAR);
+		registerRender(DIM_PORTAL_CHAR);
 		
-		registerRender(oreAlienS);
-		registerRender(oreCoalS);
-		registerRender(oreCopperS);
-		registerRender(oreDiamondS);
-		registerRender(oreGoldS);
-		registerRender(oreIronS);
-		registerRender(oreLapisS);
-		registerRender(oreMineralS);
-		registerRender(oreRedstoneS);
-		registerRender(oreRichMineralS);
-		registerRender(oreTitaniumS);
-		registerRender(sandShakuras);
-		registerRender(stoneShakuras);
-		registerRender(cobblestoneShakuras);
+		registerRender(ORE_ALIEN_SHAKURAS);
+		registerRender(ORE_COAL_SHAKURAS);
+		registerRender(ORE_COPPER_SHAKURAS);
+		registerRender(ORE_DIAMOND_SHAKURAS);
+		registerRender(ORE_GOLD_SHAKURAS);
+		registerRender(ORE_IRON_SHAKURAS);
+		registerRender(ORE_LAPIS_SHAKURAS);
+		registerRender(ORE_MINERAL_SHAKURAS);
+		registerRender(ORE_REDSTONE_SHAKURAS);
+		registerRender(ORE_RICHMINERAL_SHAKURAS);
+		registerRender(ORE_TITANIUM_SHAKURAS);
+		registerRender(SAND_SHAKURAS);
+		registerRender(STONE_SHAKURAS);
+		registerRender(COBBLESTONE_SHAKURAS);
 		registerRender(VESPENE_GEYSER_SHAKURAS);
 		registerRender(VESPENE_GEYSER_BASE_SHAKURAS);
 		registerRender(RICH_VESPENE_GEYSER_SHAKURAS);
-		registerRender(dimPortalShakuras);
+		registerRender(DIM_PORTAL_SHAKURAS);
 		
-		registerRender(energyBlock);
-		registerRender(voidEnergyBlock);
-		registerRender(warpGateWormholeChar);
-		registerRender(warpGateWormholeOverworld);
-		registerRender(warpGateWormholeShakuras);
-		registerRender(protossWarpProjectorC);
-		registerRender(protossWarpProjectorO);
-		registerRender(protossWarpProjectorS);
+		registerRender(ENERGY_BLOCK);
+		registerRender(VOID_ENERGY_BLOCK);
+		registerRender(WARPGATE_WORMHOLE_CHAR);
+		registerRender(WARPGATE_WORMHOLE_OVERWORLD);
+		registerRender(WARPGATE_WORMHOLE_SHAKURAS);
+		registerRender(PROTOSS_WARPPROJECTOR_CHAR);
+		registerRender(PROTOSS_WARPPROJECTOR_OVERWORLD);
+		registerRender(PROTOSS_WARPPROJECTOR_SHAKURAS);
+		registerRender(PROTOSS_ENERGY_STABILIZER);
+		registerRender(PROTOSS_ENERGY_CHANNEL);
+		registerRender(PROTOSS_DARK_ENERGY_STABILIZER);
+		registerRender(PROTOSS_DARK_ENERGY_CHANNEL);
+		registerRender(PROTOSS_METAL);
 		
-		registerRender(zergCreep);
-		registerRender(keratinChunk);
-		registerRender(fluidAcid);
-		registerRender(fluidBlood);
+		registerRender(ZERG_CREEP);
+		registerRender(KERATIN_CHUNK);
+		registerRender(FLUID_ACID);
+		registerRender(FLUID_BLOOD);
+		
+		registerRender(COMP_METAL);
+		registerRender(DYED_IRON);
 	}
 
 	public static void registerBlock(Block block) {

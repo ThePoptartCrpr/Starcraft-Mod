@@ -55,23 +55,23 @@ public class BucketHandler {
 	}
 
 	public static void initABucket() {
-		acidBucket = new ItemAcidBucket(ModBlocks.fluidAcid);
+		acidBucket = new ItemAcidBucket(ModBlocks.FLUID_ACID);
 		acidBucket.setRegistryName(new ResourceLocation(Reference.MODID + ":acid_bucket"));
 		acidBucket.setUnlocalizedName("acidBucket").setContainerItem(Items.BUCKET);
 		FluidContainerRegistry.registerFluidContainer(ModFluids.acid, new ItemStack(acidBucket)); //TODO: use ItemFluidContainer for this class
 		
-		bucketMap.put(ModBlocks.fluidAcid, acidBucket);
+		bucketMap.put(ModBlocks.FLUID_ACID, acidBucket);
 		MinecraftForge.EVENT_BUS.register(bucketMap);
 
 	}
 
 	public static void initBBucket() {
-		bloodBucket = new ItemBloodBucket(ModBlocks.fluidBlood);
+		bloodBucket = new ItemBloodBucket(ModBlocks.FLUID_BLOOD);
 		bloodBucket.setRegistryName(new ResourceLocation(Reference.MODID + ":blood_bucket"));
 		bloodBucket.setUnlocalizedName("bloodBucket").setContainerItem(Items.BUCKET);
 		FluidContainerRegistry.registerFluidContainer(ModFluids.blood, new ItemStack(bloodBucket)); //TODO: see above
 		
-		bucketMap.put(ModBlocks.fluidBlood, bloodBucket);
+		bucketMap.put(ModBlocks.FLUID_BLOOD, bloodBucket);
 		MinecraftForge.EVENT_BUS.register(bucketMap);
 	}
 }

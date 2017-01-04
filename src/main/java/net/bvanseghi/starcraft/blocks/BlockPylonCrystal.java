@@ -52,11 +52,11 @@ public class BlockPylonCrystal extends Block {
 	@Override
 	public int damageDropped(IBlockState state) {
 		if(getMetaFromState(state) == 0) {
-			return this == ModBlocks.crystals ? 0 : 0;
+			return this == ModBlocks.CRYSTAL ? 0 : 0;
 		}else if(getMetaFromState(state) == 1) {
-			return this == ModBlocks.crystals ? 1 : 0;
+			return this == ModBlocks.CRYSTAL ? 1 : 0;
 		}else if(getMetaFromState(state) == 2) {
-			return this == ModBlocks.crystals ? 2 : 0;
+			return this == ModBlocks.CRYSTAL ? 2 : 0;
 		} else {
 			return 0;
 		}

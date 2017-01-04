@@ -23,8 +23,8 @@ public class BiomeGenAshPlains extends BiomesSC {
 		this.setHeight(biomeHeight);
 		this.waterColorMultiplier = 9175295;
 
-		this.topBlock = ModBlocks.ashChar;
-		this.fillerBlock = ModBlocks.dirtChar;
+		this.topBlock = ModBlocks.ASH_CHAR;
+		this.fillerBlock = ModBlocks.DIRT_CHAR;
 
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();

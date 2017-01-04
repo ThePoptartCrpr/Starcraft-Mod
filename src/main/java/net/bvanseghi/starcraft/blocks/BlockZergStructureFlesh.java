@@ -102,7 +102,7 @@ public class BlockZergStructureFlesh extends Block {
 	public int quantityDropped(Random rand) {
 		return 3 + rand.nextInt(3);
 	}
-
+	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -116,19 +116,19 @@ public class BlockZergStructureFlesh extends Block {
 
 	@Override
 	public int damageDropped(IBlockState state) {
-		return getMetaFromState(state); //Dare we?
+		return getMetaFromState(state);
 	}
 	
 	@Override
 	public void onBlockDestroyedByPlayer(World world, BlockPos pos, IBlockState state) {
-        if (!world.isRemote) {
-            EntityBroodling broodling = new EntityBroodling(world);
-            broodling.setLocationAndAngles(pos.getX() + .5, pos.getY(), pos.getZ() + .5, 0.0F, 0.0F);
-            world.spawnEntityInWorld(broodling);
-            broodling.spawnExplosionParticle();
-        }
-
-        super.onBlockDestroyedByPlayer(world, pos, state);
+		if(!world.isRemote) {
+			EntityBroodling entitybroodling = new EntityBroodling(world);
+			entitybroodling.setLocationAndAngles(pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, 0.0F, 0.0F);
+			world.spawnEntityInWorld(entitybroodling);
+			entitybroodling.spawnExplosionParticle();
+		}
+		
+		super.onBlockDestroyedByPlayer(world, pos, state);
     }
 	
 	private enum Subblocks implements IStringSerializable {

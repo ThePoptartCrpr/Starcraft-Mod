@@ -10,8 +10,12 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
@@ -85,45 +89,9 @@ public class EntityDarkTemplar extends EntityProtossMob {
 	public void onUpdate() {
 		for (int i = 0; i < 2; ++i)
         {
-            this.worldObj.spawnParticle("smoke", this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D);
+			this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, null);
         }
 		super.onUpdate();
-	}
-	
-	@Override
-	public boolean attackEntityAsMob(Entity target) {
-		float attackDamage = (float) getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue();
-		int knockbackModifier = 0;
-
-		if(target instanceof EntityLivingBase) {
-		    attackDamage += EnchantmentHelper.getEnchantmentModifierLiving(this, (EntityLivingBase) target);
-		    knockbackModifier  += EnchantmentHelper.getKnockbackModifier(this, (EntityLivingBase) target);
-		}
-
-		boolean isTargetHurt = target.attackEntityFrom(DamageSource.causeMobDamage(this), attackDamage);
-
-		if(isTargetHurt) {
-			if(knockbackModifier  > 0) {
-				target.addVelocity((double) (-MathHelper.sin(rotationYaw * (float) Math.PI / 180) * (float) knockbackModifier  * .5f), .1, (double) (MathHelper.cos(rotationYaw * (float) Math.PI / 180) * (float) knockbackModifier  * .5f));
-				motionX *= .6;
-				motionZ *= .6;
-			}
-
-			int fireModifier = EnchantmentHelper.getFireAspectModifier(this);
-
-			if(fireModifier > 0) {
-				target.setFire(fireModifier * 4);
-			}
-
-			//Stolen from EntityMob. What does it do? Who knows, but it works
-			if(target instanceof EntityLivingBase) {
-				EnchantmentHelper.func_151384_a((EntityLivingBase) target, this);
-			}
-
-			EnchantmentHelper.func_151385_b(this, target);
-		}
-
-		return isTargetHurt;
 	}
 	
 	@Override
