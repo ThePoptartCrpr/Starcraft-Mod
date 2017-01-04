@@ -6,6 +6,7 @@ import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
@@ -14,13 +15,17 @@ public class StructureRichVespeneGeyser extends WorldGenerator {
 		return new Block[] { Blocks.GRASS, };
 	}
 
-	public boolean LocationIsValidSpawn(World world, int x, int y, int z) {
+	int x = 0;
+	int y = 0;
+	int z = 0;
+
+	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
 		int distanceToAir = 0;
-		Block checkBlock = world.getBlock(x, y, z);
+		Block checkBlock = world.getBlockState(pos).getBlock();
 
 		while (checkBlock != Blocks.AIR) {
 			distanceToAir++;
-			checkBlock = world.getBlock(x, y + distanceToAir, z);
+			checkBlock = world.getBlockState(pos.add(x, y + distanceToAir, z)).getBlock();
 		}
 
 		if (distanceToAir > 1) {
@@ -28,10 +33,11 @@ public class StructureRichVespeneGeyser extends WorldGenerator {
 		}
 
 		y += distanceToAir - 1;
-
-		Block block = world.getBlock(x, y, z);
-		Block blockAbove = world.getBlock(x, y + 1, z);
-		Block blockBelow = world.getBlock(x, y - 1, z);
+		
+		Block block = world.getBlockState(pos).getBlock();
+		Material m = block.getBlockState().getBaseState().getMaterial();
+		Block blockAbove = world.getBlockState(pos.up()).getBlock();
+		Block blockBelow = world.getBlockState(pos.down()).getBlock();
 
 		for (Block i : GetValidSpawnBlocks()) {
 			if (blockAbove != Blocks.AIR) {
@@ -41,116 +47,115 @@ public class StructureRichVespeneGeyser extends WorldGenerator {
 				return true;
 			} else if (block == Blocks.SNOW_LAYER && blockBelow == i) {
 				return true;
-			} else if (block.getMaterial() == Material.PLANTS && blockBelow == i) {
+			} else if (m == Material.PLANTS && blockBelow == i) {
+				block.getMaterial(block.getDefaultState());
 				return true;
 			}
 		}
 		return false;
 	}
-
-	public boolean generate(World world, Random rand, int x, int y, int z) {
+	public boolean generate(World world, Random rand, BlockPos pos) {
 		int i = rand.nextInt(1);
 
 		if (i == 0) {
-			generate_r0(world, rand, x, y, z);
+			generate_r0(world, rand, pos);
 		}
 
 		return true;
 
 	}
 
-	public boolean generate_r0(World world, Random rand, int x, int y, int z) {
-		if (!LocationIsValidSpawn(world, x, y, z) || !LocationIsValidSpawn(world, x + 6, y, z)
-				|| !LocationIsValidSpawn(world, x + 6, y, z + 3) || !LocationIsValidSpawn(world, x, y, z + 3)) {
+	public boolean generate_r0(World world, Random rand, BlockPos pos) {
+		if (!LocationIsValidSpawn(world, pos.add(x, y, z)) || !LocationIsValidSpawn(world, pos.add(x + 6, y, z))
+				|| !LocationIsValidSpawn(world, pos.add(x + 6, y, z + 3)) || !LocationIsValidSpawn(world, pos.add(x, y, z + 3))) {
 			return false;
 		}
-
-		world.setBlock(x + 0, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 1, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 2, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 3, y + 0, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 4, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 5, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 6, y + 0, z + 0, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 0, y + 0, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 1, y + 0, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 2, y + 0, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 3, y + 0, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 4, y + 0, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 5, y + 0, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 6, y + 0, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 0, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 1, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 2, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 3, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 4, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 5, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 6, y + 0, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 0, y + 0, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 2, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 3, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 4, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 5, y + 0, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 6, y + 0, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 1, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 2, y + 1, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 3, y + 1, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 4, y + 1, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 5, y + 1, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 1, z + 1, ModBlocks.richVespeneGeyser, 0, 3);
-		world.setBlock(x + 2, y + 1, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 3, y + 1, z + 1, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 4, y + 1, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 5, y + 1, z + 1, ModBlocks.richVespeneGeyser, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 1, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 2, y + 1, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 3, y + 1, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 4, y + 1, z + 2, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 5, y + 1, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 0, y + 1, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 1, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 2, y + 1, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 3, y + 1, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 4, y + 1, z + 3, ModBlocks.vespeneGeyserBase, 0, 3);
-		world.setBlock(x + 5, y + 1, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 6, y + 1, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 3, y + 2, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 0, Blocks.AIR, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 3, y + 2, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 1, Blocks.AIR, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 3, y + 2, z + 2, ModBlocks.richVespeneGeyser, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 2, Blocks.AIR, 0, 3);
-		world.setBlock(x + 0, y + 2, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 1, y + 2, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 2, y + 2, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 3, y + 2, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 4, y + 2, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 5, y + 2, z + 3, Blocks.AIR, 0, 3);
-		world.setBlock(x + 6, y + 2, z + 3, Blocks.AIR, 0, 3);
+		world.setBlockState(pos.add(x + 0, y + 0, z + 0), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 0, z + 0), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 0, z + 0), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 0, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 0, z + 0), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 0, z + 0), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 0, z + 0), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 0, z + 1), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 0, z + 1), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 0, z + 1), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 0, z + 1), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 0, z + 1), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 0, z + 1), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 0, z + 1), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 0, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 0, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 0, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 0, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 0, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 0, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 0, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 0, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 0, z + 3), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 0, z + 3), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 0, z + 3), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 0, z + 3), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 0, z + 3), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 0, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 1, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 1, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 1, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 1, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 1, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 1, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 1, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 1, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 1, z + 1), ModBlocks.RICH_VESPENE_GEYSER.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 1, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 1, z + 1), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 1, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 1, z + 1), ModBlocks.RICH_VESPENE_GEYSER.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 1, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 1, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 1, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 1, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 1, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 1, z + 2), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 1, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 1, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 1, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 1, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 1, z + 3), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 1, z + 3), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 1, z + 3), ModBlocks.VESPENE_GEYSER_BASE.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 1, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 1, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 2, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 2, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 2, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 2, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 2, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 2, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 2, z + 0), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 2, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 2, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 2, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 2, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 2, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 2, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 2, z + 1), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 2, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 2, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 2, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 2, z + 2), ModBlocks.RICH_VESPENE_GEYSER.getDefaultState());
+		
+		world.setBlockState(pos.add(x + 4, y + 2, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 2, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 2, z + 2), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 0, y + 2, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 1, y + 2, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 2, y + 2, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 3, y + 2, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 4, y + 2, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 5, y + 2, z + 3), Blocks.AIR.getDefaultState());
+		world.setBlockState(pos.add(x + 6, y + 2, z + 3), Blocks.AIR.getDefaultState());
 		return true;
 
 	}
-
 }

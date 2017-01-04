@@ -19,7 +19,7 @@ public class BlockZergCreep extends ModBlocks {
 	public static final String name = "zergCreep";
 
 	public BlockZergCreep() {
-		super(name, name, Material.GROUND);
+		super(Material.GROUND);
 		setSoundType(SoundType.SAND);
 		setHardness(5.0F);
 		setResistance(10.0F);

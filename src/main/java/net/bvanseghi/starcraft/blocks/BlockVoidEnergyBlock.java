@@ -4,10 +4,9 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class BlockVoidEnergyBlock extends ModBlocks {
-	public static final String name = "voidEnergyBlock";
-
+	
 	public BlockVoidEnergyBlock() {
-		super(name, name, Material.REDSTONE_LIGHT);
+		super(Material.REDSTONE_LIGHT);
 		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(3.0F);

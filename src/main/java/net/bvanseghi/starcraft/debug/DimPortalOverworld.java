@@ -18,10 +18,9 @@ public class DimPortalOverworld extends ModBlocks {
 	private static final String __OBFID = "CL_00000236";
 	
 	private int dimOverworld = 0;
-	public static final String name = "dimPortalOverworld";
 
 	public DimPortalOverworld() {
-		super(name, name, Material.ROCK);
+		super(Material.ROCK);
 		this.setLightLevel(1.0F);
 		this.setHardness(5.0F);
 		this.setResistance(0.0F);

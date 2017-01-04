@@ -10,18 +10,16 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
 public class OreCharAlien extends ModBlocks {
-
-	public static final String name = "oreAlienC";
-
+	
 	public OreCharAlien() {
-		super(name, name, Material.ROCK);
+		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
+		setUnlocalizedName(Reference.ModBlocks.ORE_ALIEN_C.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.ORE_ALIEN_C.getRegistryName());
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-	//	setBlockName(name);
-	//	setBlockTextureName(Reference.MODID + ":" + name);
 	}
 	
 	public int damageDropped(int par1) {

@@ -44,7 +44,6 @@ public class Starcraft {
 		// Pre-Initializations
 		ModTileEntities.preInit();
 		ModFluids.preInit();
-		ModBlocks.preInit();
 		ModMaterials.preInit();
 		ModItems.preInit();
 		ModWeapons.preInit();
@@ -62,6 +61,7 @@ public class Starcraft {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		cproxy.init();
+		ModBlocks.registerRenders();
 		ModRecipes.init();
 		ModEntities.init();
 		Achievements.init();

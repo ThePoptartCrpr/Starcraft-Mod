@@ -6,10 +6,8 @@ import net.minecraft.block.material.Material;
 
 public class BlockShakurasCobblestone extends ModBlocks {
 
-	public static final String name = "shakurasCobblestone";
-
 	public BlockShakurasCobblestone() {
-		super(name, name, Material.ROCK);
+		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
 		setHardness(2.0F);
 		setResistance(5.0F);

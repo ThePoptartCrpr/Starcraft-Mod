@@ -12,17 +12,15 @@ import net.minecraft.item.Item;
 
 public class OreShakurasMineral extends ModBlocks {
 
-	public static final String name = "oreMineralS";
-
 	public OreShakurasMineral() {
-		super(name, name, Material.ROCK);
+		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-	//	setBlockName(name);
-	//	setBlockTextureName(Reference.MODID + ":" + name);
+		setUnlocalizedName(Reference.ModBlocks.ORE_MINERAL_S.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.ORE_MINERAL_S.getRegistryName());
 	}
 	
 	public int damageDropped(int par1) {
