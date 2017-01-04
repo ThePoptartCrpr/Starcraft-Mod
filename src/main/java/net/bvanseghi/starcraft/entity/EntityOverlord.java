@@ -27,7 +27,6 @@ public class EntityOverlord extends EntityFlying {
 //    /** The explosion radius of spawned fireballs. */
 //    private int explosionStrength = 1;
     
-    @SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00001689";
 
 	public EntityOverlord(World world) {

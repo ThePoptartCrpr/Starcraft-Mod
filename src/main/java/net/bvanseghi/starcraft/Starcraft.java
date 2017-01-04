@@ -40,12 +40,10 @@ public class Starcraft {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
-
 		// Pre-Initializations
 		ModTileEntities.preInit();
 		ModFluids.preInit();
 		ModMaterials.preInit();
-		ModItems.preInit();
 		ModWeapons.preInit();
 		ModArmour.preInit();
 		ModTools.preInit();
@@ -62,33 +60,9 @@ public class Starcraft {
 	public void init(FMLInitializationEvent event) {
 		cproxy.init();
 		ModBlocks.registerRenders();
+		ModItems.registerRenders();
 		ModRecipes.init();
 		ModEntities.init();
 		Achievements.init();
-	}
-	
-//	public static void addNames() {
-		//TODO: add lang file data to these
-//		LanguageRegistry.addName(new ItemStack(ModItems.ingot, 0, 0), "Copper Ingot");
-//		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 0), "Protoss Essence");
-//		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 1), "Terran Essence");
-//		LanguageRegistry.addName(new ItemStack(ModItems.essence, 1, 2), "Zerg Essence");
-//		
-//		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 0), "C14 Barrel");
-//		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 1), "C14 Body");
-//		LanguageRegistry.addName(new ItemStack(ModItems.c14Parts, 1, 2), "C14 Grip");
-//		
-//		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 0), "Energy");
-//		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 1), "Corrupted Energy");
-//		LanguageRegistry.addName(new ItemStack(ModItems.energy, 1, 2), "Void Energy");
-//	}
-	
-	public static void oreRegistrations() {
-		OreDictionary.registerOre("ingotCopper", new ItemStack(ModItems.ingot, 1, 0));
-		OreDictionary.registerOre("ingotTitanium", new ItemStack(ModItems.ingot, 1, 3));
-		OreDictionary.registerOre("ingotSteel", new ItemStack(ModItems.ingot, 1, 4));
-		OreDictionary.registerOre("dustSteel", new ItemStack(ModItems.dust, 1, 0));
-		OreDictionary.registerOre("dustIron", new ItemStack(ModItems.dust, 1, 1));
-		OreDictionary.registerOre("dustCarbon", new ItemStack(ModItems.dust, 1, 2));
 	}
 }

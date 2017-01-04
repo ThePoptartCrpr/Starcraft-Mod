@@ -17,20 +17,6 @@ public class ItemEnergy extends Item {
 		this.setHasSubtypes(true);
 		this.setCreativeTab(CreativeTab.TabStarcraftMaterials);
 	}
-	
-	//TODO: Figure out how textures work now.
-/*	@SideOnly(Side.CLIENT)
-	private IIcon[] icons;
-
-	public void registerIcons(IIconRegister par1IconRegister)
-	{
-		icons = new IIcon[names.length];
-
-		for (int i = 0; i < icons.length; i++)
-		{
-			icons[i] = par1IconRegister.registerIcon(REFERENCE.MODID + ":" + "energy" + names[i]);
-		}
-	}*/
 
 	public static final String[] names = new String[] { "Pure", "Corrupt", "Void" };
 
@@ -43,12 +29,6 @@ public class ItemEnergy extends Item {
 		
 		return super.getUnlocalizedName() + "." + names[i];
 	}
-
-	//TODO: Figure out how textures work now.
-	/*public IIcon getIconFromDamage(int par1)
-	{
-		return (IIcon) icons[par1];
-	}*/
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)

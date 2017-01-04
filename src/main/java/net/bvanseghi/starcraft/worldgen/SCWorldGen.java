@@ -46,9 +46,64 @@ public class SCWorldGen implements IWorldGenerator {
 
 	private WorldGenerator COPPER_OVERWORLD;
 	private WorldGenerator TITANIUM_OVERWORLD;
+	private WorldGenerator URANIUM_OVERWORLD;
+	
+	private WorldGenerator ALIEN_CHAR;
+	private WorldGenerator COAL_CHAR;
+	private WorldGenerator COPPER_CHAR;
+	private WorldGenerator DIAMOND_CHAR;
+	private WorldGenerator GOLD_CHAR;
+	private WorldGenerator IRON_CHAR;
+	private WorldGenerator LAPIS_CHAR;
+	private WorldGenerator MINERAL_CHAR;
+	private WorldGenerator REDSTONE_CHAR;
+	private WorldGenerator RICHMINERAL_CHAR;
+	private WorldGenerator TITANIUM_CHAR;
+	private WorldGenerator URANIUM_CHAR;
+	
+	private WorldGenerator ALIEN_SHAKURAS;
+	private WorldGenerator COAL_SHAKURAS;
+	private WorldGenerator COPPER_SHAKURAS;
+	private WorldGenerator DIAMOND_SHAKURAS;
+	private WorldGenerator GOLD_SHAKURAS;
+	private WorldGenerator IRON_SHAKURAS;
+	private WorldGenerator LAPIS_SHAKURAS;
+	private WorldGenerator MINERAL_SHAKURAS;
+	private WorldGenerator REDSTONE_SHAKURAS;
+	private WorldGenerator RICHMINERAL_SHAKURAS;
+	private WorldGenerator TITANIUM_SHAKURAS;
+	private WorldGenerator URANIUM_SHAKURAS;
 	
 	public SCWorldGen() {
 		COPPER_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_COPPER_OW.getDefaultState(), 8);
+		TITANIUM_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_TITANIUM_OW.getDefaultState(), 8);
+		URANIUM_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_URANIUM_OW.getDefaultState(), 8);
+		
+		ALIEN_CHAR = new WorldGenMinable(ModBlocks.ORE_ALIEN_CHAR.getDefaultState(), 8);
+		COAL_CHAR = new WorldGenMinable(ModBlocks.ORE_COAL_CHAR.getDefaultState(), 8);
+		COPPER_CHAR = new WorldGenMinable(ModBlocks.ORE_COPPER_CHAR.getDefaultState(), 8);
+		DIAMOND_CHAR = new WorldGenMinable(ModBlocks.ORE_DIAMOND_CHAR.getDefaultState(), 8);
+		GOLD_CHAR = new WorldGenMinable(ModBlocks.ORE_GOLD_CHAR.getDefaultState(), 8);
+		IRON_CHAR = new WorldGenMinable(ModBlocks.ORE_IRON_CHAR.getDefaultState(), 8);
+		LAPIS_CHAR = new WorldGenMinable(ModBlocks.ORE_LAPIS_CHAR.getDefaultState(), 8);
+		MINERAL_CHAR = new WorldGenMinable(ModBlocks.ORE_MINERAL_CHAR.getDefaultState(), 8);
+		REDSTONE_CHAR = new WorldGenMinable(ModBlocks.ORE_REDSTONE_CHAR.getDefaultState(), 8);
+		RICHMINERAL_CHAR = new WorldGenMinable(ModBlocks.ORE_RICHMINERAL_CHAR.getDefaultState(), 8);
+		URANIUM_CHAR = new WorldGenMinable(ModBlocks.ORE_URANIUM_CHAR.getDefaultState(), 8);
+		
+		TITANIUM_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
+		ALIEN_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_ALIEN_SHAKURAS.getDefaultState(), 8);
+		COAL_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_COAL_SHAKURAS.getDefaultState(), 8);
+		COPPER_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_COPPER_SHAKURAS.getDefaultState(), 8);
+		DIAMOND_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_DIAMOND_SHAKURAS.getDefaultState(), 8);
+		GOLD_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_GOLD_SHAKURAS.getDefaultState(), 8);
+		IRON_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_IRON_SHAKURAS.getDefaultState(), 8);
+		LAPIS_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_LAPIS_SHAKURAS.getDefaultState(), 8);
+		MINERAL_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_MINERAL_SHAKURAS.getDefaultState(), 8);
+		REDSTONE_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_REDSTONE_SHAKURAS.getDefaultState(), 8);
+		RICHMINERAL_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_RICHMINERAL_SHAKURAS.getDefaultState(), 8);
+		TITANIUM_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
+		URANIUM_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_URANIUM_SHAKURAS.getDefaultState(), 8);
 	}
 	@Override
 	
@@ -57,15 +112,41 @@ public class SCWorldGen implements IWorldGenerator {
 		switch (world.provider.getDimension()) {
 		case 0: //Overworld
 			this.runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
+			this.runGenerator(TITANIUM_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
+			this.runGenerator(URANIUM_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
 		case -1: //Nether
 			
 		case 1: //End
 			
 		default: //check for OUR dimensions
 			if(world.provider.getDimension() == StarcraftConfig.dimChar) {
+				this.runGenerator(ALIEN_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(COAL_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(COPPER_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(DIAMOND_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(GOLD_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(IRON_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(LAPIS_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(MINERAL_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(REDSTONE_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(RICHMINERAL_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				
 			}else if(world.provider.getDimension() == StarcraftConfig.dimShakuras){
-			
+				this.runGenerator(ALIEN_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(COPPER_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(DIAMOND_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(GOLD_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(IRON_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(LAPIS_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(MINERAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(REDSTONE_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(RICHMINERAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				this.runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				
 			}
 			break;
 		}

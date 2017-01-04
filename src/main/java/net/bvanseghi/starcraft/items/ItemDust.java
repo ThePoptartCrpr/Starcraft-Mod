@@ -20,16 +20,6 @@ public class ItemDust extends Item {
 		setHasSubtypes(true);
 //		setCreativeTab(CreativeTab.TabStarcraftMaterials);
 	}
-	
-	//TODO: Figure out how textures work now.
-	/*public void registerIcons(IIconRegister iconReg) {
-		icons = new IIcon[metaNames.length];
-		
-		for(int i = 0; i < icons.length; i++) {
-			icons[i] = iconReg.registerIcon(REFERENCE.MODID + ":" + "dust" + metaNames[i]);
-		}
-	}*/
-	
 	public String getUnlocalizedName(ItemStack itemStack) {
 		int itemDamage = itemStack.getItemDamage();
 		
@@ -40,10 +30,6 @@ public class ItemDust extends Item {
 		return super.getUnlocalizedName() + "." + metaNames[itemDamage];
 	}
 	
-	//TODO: Figure out how textures work now.
-	/*public IIcon getIconFromDamage(int par1) {
-		return (IIcon) icons[par1];
-	}*/
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
@@ -52,9 +38,4 @@ public class ItemDust extends Item {
 			list.add(new ItemStack(item, 1, i));
 		}
 	}
-	
-	//Why?!
-//	public int getMetadata(int meta) {
-//		return meta;
-//	}
 }

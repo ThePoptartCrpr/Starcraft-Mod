@@ -11,7 +11,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
-@SuppressWarnings("unused")
 public class ModTeleporter extends Teleporter {
     private final WorldServer worldServerInstance;
     

@@ -14,28 +14,21 @@ import net.minecraft.world.biome.Biome;
 
 public class CharBiomeGenCreepInfestation extends BiomesSC {
 
-	public static final Height biomeHeight = new Height(0.05F, 0.05F);
 	public boolean isOnChar;
 
 	@SuppressWarnings("unchecked")
-	public CharBiomeGenCreepInfestation(int id, boolean isOnChar) {
+	public CharBiomeGenCreepInfestation(BiomeProperties id) {
 		super(id);
 
-		this.setHeight(biomeHeight);
-		this.waterColorMultiplier = 9175295;
-
-		this.topBlock = ModBlocks.ZERG_CREEP;
-		this.fillerBlock = ModBlocks.DIRT_CHAR;
+		this.topBlock = ModBlocks.ZERG_CREEP.getDefaultState();
+		this.fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		this.setDisableRain();
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityLarva.class, 8, 2, 3));
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityLarvaCocoon.class, 8, 2, 3));
-
-		this.isOnChar = isOnChar;
 	}
 
 	public int getSkyColorByTemp(float par1) {
@@ -49,9 +42,10 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 	public final void genBiomeTerrainChar(World world, Random rand, Block[] blockArray, byte[] par1, int par2, int par3,
 			double par4) {
 //		boolean flag = true;
-		Block block = this.topBlock;
-		byte b0 = (byte) (this.field_150604_aj & 255);
-		Block block1 = this.fillerBlock;
+		Block block = this.topBlock.getBlock();
+		byte b0 = (byte) (0 & 255);
+		//WARNING ON B0
+		Block block1 = this.fillerBlock.getBlock();
 		int k = -1;
 		int l = (int) (par4 / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
 		int i1 = par2 & 15;
@@ -65,8 +59,8 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 				blockArray[i2] = Blocks.BEDROCK;
 			} else {
 				Block block2 = blockArray[i2];
-
-				if (block2 != null && block2.getMaterial() != Material.AIR) {
+				Material mat2 = block2.getBlockState().getBaseState().getMaterial();
+				if (block2 != null && mat2 != Material.AIR) {
 					if (block2 == ModBlocks.STONE_CHAR) {
 						if (k == -1) {
 							if (l <= 0) {
@@ -74,12 +68,13 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 								b0 = 0;
 								block1 = ModBlocks.STONE_CHAR;
 							} else if (l1 >= 59 && l1 <= 64) {
-								block = this.topBlock;
-								b0 = (byte) (this.field_150604_aj & 255);
-								block1 = this.fillerBlock;
+								block = this.topBlock.getBlock();
+								b0 = (byte) (0 & 255);
+								//WARNING ON B0
+								block1 = this.fillerBlock.getBlock();
 							}
-
-							if (l1 < 63 && (block == null || block.getMaterial() == Material.AIR)) {
+							Material mat = block.getBlockState().getBaseState().getMaterial();
+							if (l1 < 63 && (block == null || mat == Material.AIR)) {
 								block = Blocks.LAVA;
 								b0 = 0;
 							}
@@ -90,7 +85,7 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 								if (block instanceof BlockAsh) {
 									int i3 = (j1 * 16 + i1) * k1 + (l1 + 1);
 									blockArray[i3] = block;
-									block = this.fillerBlock;
+									block = this.fillerBlock.getBlock();
 								}
 								blockArray[i2] = block;
 								par1[i2] = b0;

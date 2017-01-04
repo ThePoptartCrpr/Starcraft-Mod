@@ -7,7 +7,6 @@ import net.minecraft.client.gui.Gui;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@SuppressWarnings("unused")
 public class GUI extends Gui {
 	private Minecraft mc;
 		

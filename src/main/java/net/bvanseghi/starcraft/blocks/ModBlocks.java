@@ -63,6 +63,7 @@ public class ModBlocks extends Block {
 	public static Block ORE_REDSTONE_CHAR;
 	public static Block ORE_RICHMINERAL_CHAR;
 	public static Block ORE_TITANIUM_CHAR;
+	public static Block ORE_URANIUM_CHAR;
 
 	public static Block ORE_ALIEN_SHAKURAS;
 	public static Block ORE_COAL_SHAKURAS;
@@ -75,6 +76,7 @@ public class ModBlocks extends Block {
 	public static Block ORE_REDSTONE_SHAKURAS;
 	public static Block ORE_RICHMINERAL_SHAKURAS;
 	public static Block ORE_TITANIUM_SHAKURAS;
+	public static Block ORE_URANIUM_SHAKURAS;
 
 	public static Block ZERG_STRUCTURE_CARAPACE;
 	public static Block ZERG_STRUCTURE_FLESH;

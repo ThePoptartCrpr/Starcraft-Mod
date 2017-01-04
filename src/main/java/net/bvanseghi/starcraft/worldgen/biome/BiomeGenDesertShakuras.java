@@ -11,22 +11,16 @@ import net.minecraft.world.World;
 
 public class BiomeGenDesertShakuras extends BiomesSC {
 
-	public static final Height biomeHeight = new Height(0.05F, 0.05F);
-
-	public BiomeGenDesertShakuras(int id) {
+	public BiomeGenDesertShakuras(BiomeProperties id) {
 		super(id);
 
-		this.setHeight(biomeHeight);
-		this.waterColorMultiplier = 9175295;
-
-		this.topBlock = ModBlocks.SAND_SHAKURAS;
-		this.fillerBlock = ModBlocks.STONE_SHAKURAS;
+		this.topBlock = ModBlocks.SAND_SHAKURAS.getDefaultState();
+		this.fillerBlock = ModBlocks.STONE_SHAKURAS.getDefaultState();
 
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		this.setDisableRain();
 	}
 
 	public int getSkyColorByTemp(float par1) {
@@ -41,9 +35,10 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 	public final void genBiomeTerrainShakuras(World world, Random rand, Block[] blockArray, byte[] par1, int par2, int par3,
 			double par4) {
 //		boolean flag = true;
-		Block block = this.topBlock;
-		byte b0 = (byte) (this.field_150604_aj & 255);
-		Block block1 = this.fillerBlock;
+		Block block = this.topBlock.getBlock();
+		byte b0 = (byte) (0 & 255);
+		//WARNING FOR B0
+		Block block1 = this.fillerBlock.getBlock();
 		int k = -1;
 		int l = (int) (par4 / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
 		int i1 = par2 & 15;
@@ -57,8 +52,8 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 				blockArray[i2] = Blocks.BEDROCK;
 			} else {
 				Block block2 = blockArray[i2];
-
-				if (block2 != null && block2.getMaterial() != Material.AIR) {
+				Material mat2 = block2.getBlockState().getBaseState().getMaterial();
+				if (block2 != null && mat2 != Material.AIR) {
 					if (block2 == ModBlocks.STONE_SHAKURAS) {
 						if (k == -1) {
 							if (l <= 0) {
@@ -66,12 +61,13 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 								b0 = 0;
 								block1 = ModBlocks.STONE_SHAKURAS;
 							} else if (l1 >= 59 && l1 <= 64) {
-								block = this.topBlock;
-								b0 = (byte) (this.field_150604_aj & 255);
-								block1 = this.fillerBlock;
+								block = this.topBlock.getBlock();
+								b0 = (byte) (0 & 255);
+								//WARNING FOR B0
+								block1 = this.fillerBlock.getBlock();
 							}
-
-							if (l1 < 63 && (block == null || block.getMaterial() == Material.AIR)) {
+							Material mat = block.getBlockState().getBaseState().getMaterial();
+							if (l1 < 63 && (block == null || mat == Material.AIR)) {
 								block = Blocks.LAVA;
 								b0 = 0;
 							}
@@ -82,7 +78,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 								if (block instanceof BlockShakurasSand) {
 									int i3 = (j1 * 16 + i1) * k1 + (l1 + 1);
 									blockArray[i3] = block;
-									block = this.fillerBlock;
+									block = this.fillerBlock.getBlock();
 								}
 								blockArray[i2] = block;
 								par1[i2] = b0;
