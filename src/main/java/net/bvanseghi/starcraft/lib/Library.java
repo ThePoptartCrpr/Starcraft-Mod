@@ -8,10 +8,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
- * A bunch of stuff that does stuff. For now, its
- * all just handling placing/finding blocks in
- * a cubic volume<br>
- * Copyright 2016 the Starcraft Minecraft mod team
+ * A bunch of stuff that does stuff. No really
+ * "good" name for it that I can think of, so
+ * it's called Library<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
  * @author wundrweapon
  */
 public class Library {
