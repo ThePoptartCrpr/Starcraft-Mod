@@ -103,38 +103,15 @@ public class ModItems extends Item {
 
 				acidBucket = new ItemAcidBucket(ModBlocks.FLUID_ACID);
 				bloodBucket = new ItemBloodBucket(ModBlocks.FLUID_ACID);
+				ingot = new ItemIngot();
+				dust = new ItemDust();
+				coord = new ItemProtossCoordinates();
+				essence = new ItemEssence();
+				c14Parts = new ItemC14GaussRifleParts();
+				vespene = new ItemVespene();
+				zergCarapace = new ItemZergCarapace();
+				energy = new ItemEnergy();
 				
-				for(int i = 0; i < ItemIngot.names.length; i++){
-					ingot = new ItemIngot().setUnlocalizedName("ingot");
-				}
-				
-				for(int i = 0; i < ItemDust.metaNames.length; i++) {
-					dust = new ItemDust().setUnlocalizedName("dust");
-				}
-				
-				for(int i = 0; i < ItemProtossCoordinates.names.length; i++){
-					coord = new ItemProtossCoordinates().setUnlocalizedName("coord");
-				}
-				
-				for(int i = 0; i < ItemEssence.names.length; i++){
-					essence = new ItemEssence().setUnlocalizedName("essence");
-				}
-				
-				for(int i = 0; i < ItemC14GaussRifleParts.names.length; i++){
-					c14Parts = new ItemC14GaussRifleParts().setUnlocalizedName("c14Parts");
-				}
-				
-				for(int i = 0; i < ItemVespene.names.length; i++){
-					vespene = new ItemVespene().setUnlocalizedName("vespene");
-				}
-				
-				for(int i = 0; i < ItemZergCarapace.names.length; i++){
-					zergCarapace = new ItemZergCarapace().setUnlocalizedName("zergCarapace");
-				}
-				
-				for(int i = 0; i < ItemC14GaussRifleParts.names.length; i++){
-					energy = new ItemEnergy().setUnlocalizedName("energy");
-				}
 
 	}
 
@@ -177,13 +154,13 @@ public class ModItems extends Item {
 		registerRender(keystone);
 		registerRender(coord);
 		
-//		GameRegistry.registerRender(ingot);
-//		GameRegistry.registerRender(dust, REFERENCE.MODID + (dust.getUnlocalizedName().substring(5)));
-//		GameRegistry.registerRender(essence, REFERENCE.MODID + (essence.getUnlocalizedName().substring(5)));
-//		GameRegistry.registerRender(c14Parts, REFERENCE.MODID + (c14Parts.getUnlocalizedName().substring(5)));
-//		GameRegistry.registerRender(vespene, REFERENCE.MODID + (vespene.getUnlocalizedName().substring(5)));
-//		GameRegistry.registerRender(zergCarapace, REFERENCE.MODID + (zergCarapace.getUnlocalizedName().substring(5)));
-//		GameRegistry.registerRender(energy, REFERENCE.MODID + (energy.getUnlocalizedName().substring(5)));
+		registerRender(ingot);
+		registerRender(dust);
+		registerRender(essence);
+		registerRender(c14Parts);
+		registerRender(vespene);
+		registerRender(zergCarapace);
+		registerRender(energy);
 	}
 
 	public static void registerItem(Item item) {

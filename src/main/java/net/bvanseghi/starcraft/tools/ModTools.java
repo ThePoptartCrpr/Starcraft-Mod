@@ -40,17 +40,17 @@ public class ModTools {
 
 	public static void preInit() {
 
-		titaniumAxe = new ToolTitaniumAxe(TITANIUM);
+		titaniumAxe = new ToolTitaniumAxe(TITANIUM, 1, 1);
 		titaniumPickaxe = new ToolTitaniumPickaxe(TITANIUM);
 		titaniumShovel = new ToolTitaniumShovel(TITANIUM);
 		titaniumHoe = new ToolTitaniumHoe(TITANIUM);
 
-		copperAxe = new ToolCopperAxe(COPPER);
+		copperAxe = new ToolCopperAxe(COPPER, 1, 1);
 		copperPickaxe = new ToolCopperPickaxe(COPPER);
 		copperShovel = new ToolCopperShovel(COPPER);
 		copperHoe = new ToolCopperHoe(COPPER);
 
-		steelAxe = new ToolSteelAxe(STEEL);
+		steelAxe = new ToolSteelAxe(STEEL, 1, 1);
 		steelPickaxe = new ToolSteelPickaxe(STEEL);
 		steelShovel = new ToolSteelShovel(STEEL);
 		steelHoe = new ToolSteelHoe(STEEL);

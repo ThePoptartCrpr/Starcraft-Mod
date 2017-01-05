@@ -8,6 +8,48 @@ public class Reference {
 	public static final String RL_BASE = MODID + ":";
 	public static final String UN_BASE = MODID + "_";
 	
+	public static enum ModItems {
+		ITEM_MINERAL_SHARD("MineralShard", "mineral_shard"),
+		ITEM_RICHMINERAL_SHARD("MineralRichShard", "mineral_rich_shard"),
+		ITEM_VESPENE("Vespene", "vespene"),
+		ITEM_PSIBLADEFOCUSER_UNCHARGED("FocuserUnchargedPsiBlade", "focuser_uncharged_psi_blade"),
+		ITEM_DARK_PSIBLADEFOCUSER_UNCHARGED("FocuserDarkUnchargedPsiBlade", "focuser_dark_uncharged_psi_blade"),
+		ITEM_ENERGY("Energy", "energy"),
+		ITEM_PROTOSS_ARTIFACT("ProtossArtifact", "protoss_artifact"),
+		ITEM_URAJ("Uraj", "uraj"),
+		ITEM_ESSENCE("Essence", "essence"),
+		ITEM_PART_C14_GAUSS("PartC14Gauss", "part_c14_gauss"),
+		ITEM_INGOT("Ingot", "ingot"),
+		ITEM_DUST("Dust", "dust"),
+		ITEM_COORDINATE("Coordinate", "coordinate"),
+		WEAPON_RIFLE_C14_GAUSS("RifleC14Gauss", "weapon_rifle_c14_gauss"),
+		BULLET_RIFLE_C14_GAUSS("BulletRifleC14Gauss", "bullet_rifle_c14_gauss"),
+		ITEM_ZERG_CARAPACE("ZergCarapace", "zerg_carapace"),
+		ITEM_ZERG_CREEP_RESIN("ZergCreepResin", "zerg_creep_resin"),
+		ITEM_ZERG_ORGANIC_TISSUE("ZergOrganicTissue", "zerg_organic_tissue"),
+		ITEM_BUCKET_ACID("BucketAcid", "bucket_acid"),
+		ITEM_BUCKET_BLOOD("BucketBlood", "bucket_blood"),
+		ITEM_PROTOSS_MODULE("ProtossModule", "protoss_module"),
+		ITEM_KEYSTONE("Keystone", "keystone"),
+		;
+		
+		private String unlocalizedName;
+		private String registryName;
+		
+		ModItems(String unlocalizedName, String registryName) {
+			this.unlocalizedName = unlocalizedName;
+			this.registryName = registryName;
+		}
+		
+		public String getUnlocalizedName() {
+			return unlocalizedName;
+		}
+		
+		public String getRegistryName() {
+			return registryName;
+		}
+	}
+	
 	public static enum ModBlocks {
 		ORE_COPPER_OW("oreCopperOW", "oreCopperOW"),
 		ORE_TITANIUM_OW("oreTitaniumOW", "oreTitaniumOW"),

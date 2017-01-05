@@ -42,26 +42,26 @@ public class Starcraft {
 		StarcraftConfig.preInit();
 		// Pre-Initializations
 		ModTileEntities.preInit();
-		ModFluids.preInit();
+		//ModFluids.preInit();
 		ModMaterials.preInit();
 		ModWeapons.preInit();
 		ModArmour.preInit();
 		ModTools.preInit();
 		FuelHandler.preInit();
-		BiomesSC.init();
-		BucketHandler.initABucket();
-		BucketHandler.initBBucket();
+		//BiomesSC.init();
+		//BucketHandler.initABucket();
+		//BucketHandler.initBBucket();
 		
-		SCWorldGen.preInit();
+		//SCWorldGen.preInit();
 		SCWorldGen.setupWorldgen();
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		cproxy.init();
-		ModBlocks.registerRenders();
-		ModItems.registerRenders();
-		ModRecipes.init();
+		//cproxy.init();
+		//ModBlocks.registerRenders();
+		//ModItems.registerRenders();
+		//ModRecipes.init();
 		ModEntities.init();
 		Achievements.init();
 	}

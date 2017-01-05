@@ -8,8 +8,8 @@ public class ToolSteelAxe extends ItemAxe {
 
 	public static final String name = "steelAxe";
 
-	public ToolSteelAxe(ToolMaterial material) {
-		super(material);
+	public ToolSteelAxe(ToolMaterial material, int i, int j) {
+		super(material, i, j);
 		this.setCreativeTab(CreativeTab.TabStarcraftTools);
 		this.setUnlocalizedName(Reference.UN_BASE + name);
 	}

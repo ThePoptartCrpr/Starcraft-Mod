@@ -16,9 +16,9 @@ public class Registry {
 	
 	@SubscribeEvent
 	public static void register(Register<Item> registry) {
-		registry.getRegistry().registerAll(items); //Register items
-		registry.getRegistry().registerAll(ModTools.TOOLS); //Register tools
-		registry.getRegistry().registerAll(ModArmour.ARMOURS); //Register armour
-		registry.getRegistry().registerAll(ModWeapons.WEAPONS); //Register weapons
+		//registry.getRegistry().registerAll(items); //Register items
+		//registry.getRegistry().registerAll(ModTools.TOOLS); //Register tools
+		//registry.getRegistry().registerAll(ModArmour.ARMOURS); //Register armour
+		//registry.getRegistry().registerAll(ModWeapons.WEAPONS); //Register weapons
 	}
 }
