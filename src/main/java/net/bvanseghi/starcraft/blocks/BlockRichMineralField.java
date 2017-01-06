@@ -25,8 +25,8 @@ public class BlockRichMineralField extends BlockContainer {
 
 	public BlockRichMineralField(Material material) {
 		super(material);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "rich_mineral_field"));
-		setUnlocalizedName(Reference.UN_BASE + "richMineralField");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_RICH_MINERAL_FIELD.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_RICH_MINERAL_FIELD.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(3.0F);
 		setResistance(15.0F);

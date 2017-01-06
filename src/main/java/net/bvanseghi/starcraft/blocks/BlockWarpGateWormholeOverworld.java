@@ -1,6 +1,7 @@
 package net.bvanseghi.starcraft.blocks;
 
 import net.bvanseghi.starcraft.lib.Library;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeOverworld;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
@@ -11,24 +12,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class BlockWarpGateWormholeOverworld extends BlockContainer {
-	public static final String name = "warpGateWormholeOverworld";
-
+	
 	public BlockWarpGateWormholeOverworld(Material material) {
 		super(material);
-
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_WARP_GATE_WORMHOLE_OW.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_WARP_GATE_WORMHOLE_OW.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(0.0F);
 		this.setLightLevel(1.0F);
 		this.setCreativeTab(null);
 	}
-
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon(REFERENCE.MODID + ":" + "mineralField");
-	}*/
-
 	public int getRenderType() {
 		return -1;
 	}

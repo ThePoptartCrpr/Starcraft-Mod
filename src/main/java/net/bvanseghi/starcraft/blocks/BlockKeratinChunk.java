@@ -8,8 +8,8 @@ import net.minecraft.util.ResourceLocation;
 public class BlockKeratinChunk extends ModBlocks {
 	public BlockKeratinChunk() {
 		super(Material.GROUND);
-		setRegistryName(new ResourceLocation(Reference.MODID + ":keratin_chunk"));
-		setUnlocalizedName("keratinChunk");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_KERATIN_CHUNK.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_KERATIN_CHUNK.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(15.0F);

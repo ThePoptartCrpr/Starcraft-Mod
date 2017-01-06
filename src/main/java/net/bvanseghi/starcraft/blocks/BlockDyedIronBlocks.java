@@ -24,8 +24,8 @@ public class BlockDyedIronBlocks extends Block {
 
 	public BlockDyedIronBlocks() {
 		super(Material.IRON);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "dyed_iron"));
-		setUnlocalizedName(Reference.UN_BASE + "dyedIron");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_DYED_IRON.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_DYED_IRON.getRegistryRL());
 		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setResistance(30.0F);

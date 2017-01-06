@@ -28,8 +28,8 @@ public class BlockCharMagma extends Block {
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setRegistryName(new ResourceLocation(Reference.MODID + ":magma"));
-		setUnlocalizedName("magma");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_MAGMA_C.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_MAGMA_C.getRegistryRL());
 	}
 	
 	@Override

@@ -18,7 +18,7 @@ public class OreCharAlien extends ModBlocks {
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
 		setUnlocalizedName(Reference.ModBlocks.ORE_ALIEN_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_ALIEN_C.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_ALIEN_C.getRegistryRL());
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 	

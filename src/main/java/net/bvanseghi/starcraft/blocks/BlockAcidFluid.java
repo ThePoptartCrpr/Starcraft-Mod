@@ -19,8 +19,8 @@ public class BlockAcidFluid extends BlockFluidClassic {
 	public BlockAcidFluid(Fluid fluid, Material material) {
 		super(ModFluids.acid, Material.WATER);
 		setCreativeTab(null);
-		setRegistryName(REGISTRY_RL);
-		setUnlocalizedName(Reference.MODID + "_acidFluid");
+		setUnlocalizedName(Reference.ModBlocks.FLUID_ACID.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.FLUID_ACID.getRegistryRL());
 	}
 
 	@Override

@@ -19,7 +19,7 @@ public class OreOWTitanium extends ModBlocks {
 		setHarvestLevel("pickaxe", 2);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_TITANIUM_OW.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {

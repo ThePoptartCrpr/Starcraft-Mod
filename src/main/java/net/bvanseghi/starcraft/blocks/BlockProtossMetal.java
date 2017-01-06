@@ -25,8 +25,8 @@ public class BlockProtossMetal extends Block {
 	
 	public BlockProtossMetal() {
 		super(Material.IRON);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "protoss_metal"));
-		setUnlocalizedName(Reference.UN_BASE + "protossMetal");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_METAL.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_METAL.getRegistryRL());
 		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setResistance(25.0F);

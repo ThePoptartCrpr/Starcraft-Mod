@@ -10,8 +10,8 @@ import net.minecraft.util.ResourceLocation;
 public class BlockProtossEnergyStabilizerDark extends Block {
 	public BlockProtossEnergyStabilizerDark() {
 		super(Material.ROCK);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "protoss_energy_stabilizer_d"));
-		setUnlocalizedName(Reference.UN_BASE + "protossEnergyStabilizerD");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getRegistryRL());
 		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setLightLevel(1.0F);

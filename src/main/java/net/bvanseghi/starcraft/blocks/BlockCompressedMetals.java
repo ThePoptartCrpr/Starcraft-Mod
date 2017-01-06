@@ -24,8 +24,8 @@ public class BlockCompressedMetals extends Block {
 	
 	public BlockCompressedMetals() {
 		super(Material.IRON);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "compressed_metals")); //TODO: match with textures
-		setUnlocalizedName(Reference.UN_BASE + "compressedMetals");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_METAL.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_COMP_METAL.getRegistryRL());
 		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setResistance(10.0F);

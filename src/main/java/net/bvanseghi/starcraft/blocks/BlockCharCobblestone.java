@@ -10,8 +10,8 @@ import net.minecraft.util.ResourceLocation;
 public class BlockCharCobblestone extends Block {
 	public BlockCharCobblestone() {
 		super(Material.ROCK);
-		setRegistryName(new ResourceLocation(Reference.MODID + ":char_cobble"));
-		setUnlocalizedName("charCobble");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_COBBLESTONE_C.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_C.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(2.0F);
 		setResistance(5.0F);

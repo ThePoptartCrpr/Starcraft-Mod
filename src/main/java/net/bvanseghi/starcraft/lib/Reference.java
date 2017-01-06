@@ -1,9 +1,12 @@
 package net.bvanseghi.starcraft.lib;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Reference {
 	public static final String MODID = "starcraft";
 	public static final String NAME = "Starcraft";
 	public static final String VERSION = "1.5-port";
+	public static final String CLIENT_SIDE_PROXY = "net.bvanseghi.starcraft.proxy.ClientProxy";
 
 	public static final String RL_BASE = MODID + ":";
 	public static final String UN_BASE = MODID + "_";
@@ -35,11 +38,12 @@ public class Reference {
 		
 		private String unlocalizedName;
 		private String registryName;
+		private ResourceLocation registryRL;
 		
 		ModItems(String unlocalizedName, String registryName) {
-			this.unlocalizedName = unlocalizedName;
-			this.registryName = registryName;
-		}
+	        this.unlocalizedName = unlocalizedName;
+	        registryRL = new ResourceLocation(RL_BASE + registryName); //no "Reference." because nested class
+	    }
 		
 		public String getUnlocalizedName() {
 			return unlocalizedName;
@@ -48,10 +52,14 @@ public class Reference {
 		public String getRegistryName() {
 			return registryName;
 		}
+		
+		public ResourceLocation getRegistryRL() {
+            return registryRL;
+        }
 	}
 	
 	public static enum ModBlocks {
-		ORE_COPPER_OW("oreCopperOW", "oreCopperOW"),
+		ORE_COPPER_OW("overworldOreCopper", "overworld_ore_copper"),
 		ORE_TITANIUM_OW("oreTitaniumOW", "oreTitaniumOW"),
 		ORE_URANIUM_OW("oreUraniumOW", "oreUraniumOW"),
 		
@@ -89,8 +97,10 @@ public class Reference {
 		
 		//Protoss Objects
 		BLOCK_COMP_METAL("block_comp_metal", "block_comp_metal"),
+		BLOCK_PROTOSS_METAL("protossMetal", "protoss_metal"),
 		BLOCK_PROTOSS_ENERGY_STABILIZER("block_protoss_energy_stabilizer", "block_protoss_energy_stabilizer"),
 		BLOCK_PROTOSS_ENERGY_CHANNEL("block_protoss_energy_channel", "block_protoss_energy_channel"),
+		BLOCK_PROTOSS_DARK_ENERGY_CHANNEL("protossEnergyChannel", "protoss_energy_channel"),
 		BLOCK_PROTOSS_DARK_ENERGY_STABILIZER("block_protoss_dark_energy_stabilizer", "block_protoss_dark_energy_stabilizer"),
 		BLOCK_ENERGY("block_energy", "block_energy"),
 		BLOCK_VOID_ENERGY("block_void_energy", "block_void_energy"),
@@ -128,6 +138,7 @@ public class Reference {
 		
 		//Shakuras Objects
 		BLOCK_DIRT_S("block_dirt_s", "block_dirt_s"),
+		BLOCK_SAND_S("shakurasSand", "shakuras_sand"),
 		BLOCK_STONE_S("block_stone_s", "block_stone_s"),
 		BLOCK_COBBLESTONE_S("block_cobblestone_s", "block_cobblestone_s"),
 		BLOCK_VESPENE_GEYSER_S("block_vespene_geyser_s", "block_vespene_geyser_s"),
@@ -143,10 +154,11 @@ public class Reference {
 		
 		private String unlocalizedName;
 		private String registryName;
+		private ResourceLocation registryRL;
 		
 		ModBlocks(String unlocalizedName, String registryName) {
-			this.unlocalizedName = unlocalizedName;
-			this.registryName = registryName;
+            this.unlocalizedName = unlocalizedName;
+            registryRL = new ResourceLocation(RL_BASE + registryName); //no "Reference." because nested class
 		}
 		
 		public String getUnlocalizedName() {
@@ -156,5 +168,9 @@ public class Reference {
 		public String getRegistryName() {
 			return registryName;
 		}
+		
+		public ResourceLocation getRegistryRL() {
+            return registryRL;
+        }
 	}
 }

@@ -20,8 +20,8 @@ public class BlockCharStone extends Block {
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setUnlocalizedName("charStone");
-		setRegistryName(Reference.MODID + ":char_stone");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_STONE_C.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_STONE_C.getRegistryRL());
 	}
 	
 	@Override

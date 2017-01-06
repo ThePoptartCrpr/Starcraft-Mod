@@ -19,7 +19,7 @@ public class OreShakurasCopper extends ModBlocks {
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_COPPER_S.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_COPPER_S.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_COPPER_S.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {

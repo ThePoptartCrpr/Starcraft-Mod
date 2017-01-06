@@ -20,7 +20,7 @@ public class OreCharDiamond extends ModBlocks {
 		setHarvestLevel("pickaxe", 2);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_DIAMOND_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_DIAMOND_C.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_DIAMOND_C.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {

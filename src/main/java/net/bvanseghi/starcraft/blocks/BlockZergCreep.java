@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.blocks;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.SoundType;
@@ -20,6 +21,8 @@ public class BlockZergCreep extends ModBlocks {
 
 	public BlockZergCreep() {
 		super(Material.GROUND);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL());
 		setSoundType(SoundType.SAND);
 		setHardness(5.0F);
 		setResistance(10.0F);

@@ -11,8 +11,8 @@ import net.minecraft.world.World;
 //FIXME: find the source of the ash-makes-snow bug. it's probably due to a missing override
 public class BlockAsh extends BlockSnow {
 	public BlockAsh() {
-		setRegistryName(new ResourceLocation(Reference.MODID + ":ash"));
-		setUnlocalizedName("ash");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_C.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ASH_C.getRegistryRL());
 	}
     
 	//No @Override because the super method is private
