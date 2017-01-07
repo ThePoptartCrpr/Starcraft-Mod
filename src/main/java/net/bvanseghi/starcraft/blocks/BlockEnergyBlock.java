@@ -8,8 +8,8 @@ import net.minecraft.util.ResourceLocation;
 public class BlockEnergyBlock extends ModBlocks {
 	public BlockEnergyBlock() {
 		super(Material.REDSTONE_LIGHT);
-		setRegistryName(new ResourceLocation(Reference.MODID + ":energy_block"));
-		setUnlocalizedName("energyBlock");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ENERGY.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ENERGY.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(3.0F);

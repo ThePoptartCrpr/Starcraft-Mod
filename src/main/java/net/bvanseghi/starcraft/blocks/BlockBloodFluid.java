@@ -1,5 +1,6 @@
 package net.bvanseghi.starcraft.blocks;
 
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -11,6 +12,8 @@ public class BlockBloodFluid extends BlockFluidClassic {
 	public BlockBloodFluid(Fluid fluid, Material material) {
 		super(fluid, material);
 		setCreativeTab(null);
+		setUnlocalizedName(Reference.ModBlocks.FLUID_BLOOD.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.FLUID_BLOOD.getRegistryRL());
 	}
 
 	@Override

@@ -28,8 +28,8 @@ public class BlockPylonCrystal extends Block {
 	
 	public BlockPylonCrystal() {
 		super(Material.ROCK);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "pylon_crystal"));
-		setUnlocalizedName(Reference.UN_BASE + "pylonCrystal");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_CRYSTAL.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_CRYSTAL.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(20.0F);

@@ -19,7 +19,7 @@ public class OreShakurasGold extends ModBlocks {
 		setHarvestLevel("pickaxe", 2);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_GOLD_S.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_GOLD_S.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_GOLD_S.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {

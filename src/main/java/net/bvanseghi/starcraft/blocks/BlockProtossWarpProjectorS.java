@@ -16,8 +16,8 @@ import net.minecraft.world.World;
 public class BlockProtossWarpProjectorS extends ModBlocks {
 	public BlockProtossWarpProjectorS() {
 		super(Material.ROCK);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "protoss_warp_proj_s"));
-		setUnlocalizedName(Reference.UN_BASE + "protossWarpProjS");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_S.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_S.getRegistryRL());
 		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setLightLevel(1.0F);

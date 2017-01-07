@@ -23,8 +23,8 @@ import net.minecraft.world.World;
 public class BlockMineralField extends BlockContainer {
 	public BlockMineralField(Material material) {
 		super(material);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "mineral_field"));
-		setUnlocalizedName(Reference.UN_BASE + "mineralField");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_MINERAL_FIELD.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_MINERAL_FIELD.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(3.0F);
 		setResistance(15.0F);

@@ -20,7 +20,7 @@ public class OreCharRedstone extends ModBlocks {
 		setHarvestLevel("pickaxe", 2);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_REDSTONE_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_REDSTONE_C.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_REDSTONE_C.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {

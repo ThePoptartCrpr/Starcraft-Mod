@@ -29,8 +29,8 @@ public class BlockZergStructureFlesh extends Block {
 	
 	public BlockZergStructureFlesh() {
 		super(Material.CLAY);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "zerg_flesh"));
-		setUnlocalizedName(Reference.UN_BASE + "zergFlesh");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_FLESH.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ZERG_FLESH.getRegistryRL());
 		setSoundType(SoundType.GROUND);
 		setResistance(10.0F);
 		setHardness(5.0F);

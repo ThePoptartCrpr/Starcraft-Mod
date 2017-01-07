@@ -10,15 +10,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class BlockZergCreep extends ModBlocks {
 	public BlockZergCreep() {
 		super(Material.GROUND);
-		setRegistryName(new ResourceLocation(Reference.RL_BASE + "zerg_creep"));
-		setUnlocalizedName(Reference.UN_BASE + "zergCreep");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL());
 		setSoundType(SoundType.SAND);
 		setHardness(5.0F);
 		setResistance(10.0F);

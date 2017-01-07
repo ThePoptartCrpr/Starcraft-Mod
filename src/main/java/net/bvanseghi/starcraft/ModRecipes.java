@@ -17,7 +17,7 @@ public class ModRecipes {
 		//Steel Dust from Carbon and Iron Grains
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 2), new ItemStack(ModItems.dust, 1, 2)});
 		
-		//Iron Grain x2 from Iron Ore
+		//Iron Grain x2 from Iron Ores
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 2, 1), new Object[] {Blocks.IRON_ORE});
 		
 		//Iron Ore from Iron Grain x2 + Stone

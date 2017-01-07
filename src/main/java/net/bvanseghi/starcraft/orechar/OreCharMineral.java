@@ -20,7 +20,7 @@ public class OreCharMineral extends ModBlocks {
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_MINERAL_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_MINERAL_C.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_MINERAL_C.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {

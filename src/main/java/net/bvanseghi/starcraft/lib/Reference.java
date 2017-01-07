@@ -1,15 +1,69 @@
 package net.bvanseghi.starcraft.lib;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Reference {
 	public static final String MODID = "starcraft";
 	public static final String NAME = "Starcraft";
 	public static final String VERSION = "1.5-port";
+	public static final String CLIENT_SIDE_PROXY = "net.bvanseghi.starcraft.proxy.ClientProxy";
 
 	public static final String RL_BASE = MODID + ":";
 	public static final String UN_BASE = MODID + "_";
 	
+	public static enum ModItems {
+		ITEM_MINERAL_SHARD("mineralShard", "mineral_shard"),
+		ITEM_RICHMINERAL_SHARD("mineralRichShard", "mineral_rich_shard"),
+		ITEM_VESPENE("vespene"),
+		ITEM_PSIBLADEFOCUSER_UNCHARGED("focuserUnchargedPsiBlade", "focuser_uncharged_psi_blade"),
+		ITEM_DARK_PSIBLADEFOCUSER_UNCHARGED("focuserDarkUnchargedPsiBlade", "focuser_dark_uncharged_psi_blade"),
+		ITEM_ENERGY("energy"),
+		ITEM_PROTOSS_ARTIFACT("protossArtifact", "protoss_artifact"),
+		ITEM_URAJ("uraj"),
+		ITEM_ESSENCE("essence"),
+		ITEM_PART_C14_GAUSS("partC14Gauss", "part_c14_gauss"),
+		ITEM_INGOT("ingot"),
+		ITEM_DUST("dust"),
+		ITEM_COORDINATE("coordinate"),
+		WEAPON_RIFLE_C14_GAUSS("rifleC14Gauss", "weapon_rifle_c14_gauss"),
+		BULLET_RIFLE_C14_GAUSS("bulletRifleC14Gauss", "bullet_rifle_c14_gauss"),
+		ITEM_ZERG_CARAPACE("zergCarapace", "zerg_carapace"),
+		ITEM_ZERG_CREEP_RESIN("zergCreepResin", "zerg_creep_resin"),
+		ITEM_ZERG_ORGANIC_TISSUE("zergOrganicTissue", "zerg_organic_tissue"),
+		ITEM_BUCKET_ACID("bucketAcid", "bucket_acid"),
+		ITEM_BUCKET_BLOOD("bucketBlood", "bucket_blood"),
+		ITEM_PROTOSS_MODULE("protossModule", "protoss_module"),
+		ITEM_KEYSTONE("keystone");
+		
+		private String unlocalizedName;
+		private String registryName;
+		private ResourceLocation registryRL;
+		
+		private ModItems(String names) {
+			this(names, names);
+		}
+		
+		private ModItems(String unlocalizedName, String registryName) {
+	        this.unlocalizedName = unlocalizedName;
+	        this.registryName = registryName;
+	        registryRL = new ResourceLocation(RL_BASE + registryName);
+	    }
+		
+		public String getUnlocalizedName() {
+			return unlocalizedName;
+		}
+		
+		public String getRegistryName() {
+			return registryName;
+		}
+		
+		public ResourceLocation getRegistryRL() {
+            return registryRL;
+        }
+	}
+	
 	public static enum ModBlocks {
-		ORE_COPPER_OW("oreCopperOW", "oreCopperOW"),
+		ORE_COPPER_OW("overworldOreCopper", "overworld_ore_copper"),
 		ORE_TITANIUM_OW("oreTitaniumOW", "oreTitaniumOW"),
 		ORE_URANIUM_OW("oreUraniumOW", "oreUraniumOW"),
 		
@@ -39,6 +93,7 @@ public class Reference {
 		ORE_TITANIUM_S("oreTitaniumS", "oreTitaniumS"),
 		ORE_URANIUM_S("oreUraniumS", "oreUraniumS"),
 		
+		//TODO: all the unlocalized names need to be made to lowerCamelCase
 		//Zerg Objects
 		BLOCK_ZERG_CARAPACE("block_zerg_carapace", "block_zerg_carapace"),
 		BLOCK_ZERG_FLESH("block_zerg_flesh", "block_zerg_flesh"),
@@ -47,8 +102,10 @@ public class Reference {
 		
 		//Protoss Objects
 		BLOCK_COMP_METAL("block_comp_metal", "block_comp_metal"),
+		BLOCK_PROTOSS_METAL("protossMetal", "protoss_metal"),
 		BLOCK_PROTOSS_ENERGY_STABILIZER("block_protoss_energy_stabilizer", "block_protoss_energy_stabilizer"),
 		BLOCK_PROTOSS_ENERGY_CHANNEL("block_protoss_energy_channel", "block_protoss_energy_channel"),
+		BLOCK_PROTOSS_DARK_ENERGY_CHANNEL("protossEnergyChannel", "protoss_energy_channel"),
 		BLOCK_PROTOSS_DARK_ENERGY_STABILIZER("block_protoss_dark_energy_stabilizer", "block_protoss_dark_energy_stabilizer"),
 		BLOCK_ENERGY("block_energy", "block_energy"),
 		BLOCK_VOID_ENERGY("block_void_energy", "block_void_energy"),
@@ -86,6 +143,7 @@ public class Reference {
 		
 		//Shakuras Objects
 		BLOCK_DIRT_S("block_dirt_s", "block_dirt_s"),
+		BLOCK_SAND_S("shakurasSand", "shakuras_sand"),
 		BLOCK_STONE_S("block_stone_s", "block_stone_s"),
 		BLOCK_COBBLESTONE_S("block_cobblestone_s", "block_cobblestone_s"),
 		BLOCK_VESPENE_GEYSER_S("block_vespene_geyser_s", "block_vespene_geyser_s"),
@@ -96,15 +154,16 @@ public class Reference {
 		//Dimension Objects
 		BLOCK_DIM_PORTAL_C("block_dim_portal_c", "block_dim_portal_c"),
 		BLOCK_DIM_PORTAL_OW("block_dim_portal_ow", "block_dim_portal_ow"),
-		BLOCK_DIM_PORTAL_S("block_dim_portal_s", "block_dim_portal_s"),
-		;
+		BLOCK_DIM_PORTAL_S("block_dim_portal_s", "block_dim_portal_s");
 		
 		private String unlocalizedName;
 		private String registryName;
+		private ResourceLocation registryRL;
 		
 		ModBlocks(String unlocalizedName, String registryName) {
-			this.unlocalizedName = unlocalizedName;
-			this.registryName = registryName;
+            this.unlocalizedName = unlocalizedName;
+            this.registryName = registryName;
+            registryRL = new ResourceLocation(RL_BASE + registryName);
 		}
 		
 		public String getUnlocalizedName() {
@@ -114,5 +173,9 @@ public class Reference {
 		public String getRegistryName() {
 			return registryName;
 		}
+		
+		public ResourceLocation getRegistryRL() {
+            return registryRL;
+        }
 	}
 }

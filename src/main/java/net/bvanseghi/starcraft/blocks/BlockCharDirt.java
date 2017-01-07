@@ -10,8 +10,8 @@ import net.minecraft.util.ResourceLocation;
 public class BlockCharDirt extends Block {
 	public BlockCharDirt() {
 		super(Material.GROUND);
-		setRegistryName(new ResourceLocation(Reference.MODID + ":char_dirt"));
-		setUnlocalizedName("charDirt");
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIRT_C.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_DIRT_C.getRegistryRL());
 		setSoundType(SoundType.SAND);
 		setHardness(0.5F);
 		setResistance(2.5F);

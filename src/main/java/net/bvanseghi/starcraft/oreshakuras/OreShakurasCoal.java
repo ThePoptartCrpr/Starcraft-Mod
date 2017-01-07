@@ -20,7 +20,7 @@ public class OreShakurasCoal extends ModBlocks {
 		setHarvestLevel("pickaxe", 0);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_COAL_S.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_COAL_S.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_COAL_S.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {

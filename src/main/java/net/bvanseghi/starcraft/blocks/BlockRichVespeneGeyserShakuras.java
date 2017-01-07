@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichVespeneGeyserShakuras;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
@@ -19,7 +20,8 @@ public class BlockRichVespeneGeyserShakuras extends BlockContainer {
 
 	public BlockRichVespeneGeyserShakuras(Material material) {
 		super(material);
-
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_S.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_S.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(3.0F);

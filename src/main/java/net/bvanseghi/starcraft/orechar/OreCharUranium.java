@@ -19,7 +19,7 @@ public class OreCharUranium extends ModBlocks {
 		setHarvestLevel("pickaxe", 2);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_URANIUM_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.ORE_URANIUM_C.getRegistryName());
+		setRegistryName(Reference.ModBlocks.ORE_URANIUM_C.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {
