@@ -12,15 +12,15 @@ import net.minecraft.item.Item;
 
 public class OreOWCopper extends ModBlocks {
 
-	public OreOWCopper(String registryName, String unlocalizedName, Material material) {
-		super(material);
+	public OreOWCopper() {
+		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-		setUnlocalizedName(unlocalizedName);
-		setRegistryName(Reference.MODID + ":" + registryName);
+		setUnlocalizedName(Reference.ModBlocks.ORE_COPPER_OW.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL());
 	}
 	
 	public int damageDropped(int par1) {

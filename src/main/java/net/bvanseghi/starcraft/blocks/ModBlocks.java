@@ -147,12 +147,12 @@ public class ModBlocks extends Block {
 	}
  	
  	public static void instantiate() {
- 		ORE_COPPER_OW = new OreOWCopper("copper","copper", Material.ROCK);
+ 		ORE_COPPER_OW = new OreOWCopper();
  	}
 
 	public static void register() {
 			GameRegistry.register(ORE_COPPER_OW);
-			GameRegistry.register(new ItemBlock(ORE_COPPER_OW).setRegistryName(ORE_COPPER_OW.getRegistryName()));
+			GameRegistry.register(new ItemBlock(ORE_COPPER_OW).setRegistryName(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL()));
 	}
 
 	public static void registerModels() {
