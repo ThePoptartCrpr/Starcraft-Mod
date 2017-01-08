@@ -1,5 +1,8 @@
 package net.bvanseghi.starcraft.blocks;
 
+import net.bvanseghi.starcraft.debug.DimPortalChar;
+import net.bvanseghi.starcraft.debug.DimPortalOverworld;
+import net.bvanseghi.starcraft.debug.DimPortalShakuras;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.ore.OreOWCopper;
 import net.bvanseghi.starcraft.ore.OreOWTitanium;
@@ -172,6 +175,7 @@ public class ModBlocks extends Block {
 		ORE_TITANIUM_OW = new OreOWTitanium();
 		ORE_URANIUM_OW = new OreOWUranium();
 
+		DIM_PORTAL_OVERWORLD = new DimPortalOverworld();
 		
 		ORE_COAL_CHAR = new OreCharCoal();
 		ORE_COPPER_CHAR = new OreCharCopper();
@@ -189,6 +193,7 @@ public class ModBlocks extends Block {
 		COBBLESTONE_CHAR = new BlockCharCobblestone();
 		MAGMA_CHAR = new BlockCharMagma();
 		DIRT_CHAR = new BlockCharDirt();
+		DIM_PORTAL_CHAR = new DimPortalChar();
 		
 		ORE_COAL_SHAKURAS = new OreShakurasCoal();
 		ORE_COPPER_SHAKURAS = new OreShakurasCopper();
@@ -205,6 +210,7 @@ public class ModBlocks extends Block {
 		STONE_SHAKURAS = new BlockShakurasStone();
 		COBBLESTONE_SHAKURAS = new BlockShakurasCobblestone();
 		SAND_SHAKURAS = new BlockShakurasSand();
+		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
 	}
 
 	public static void register() {
@@ -217,6 +223,10 @@ public class ModBlocks extends Block {
 		GameRegistry.register(ORE_URANIUM_OW);
 		GameRegistry.register(
 				new ItemBlock(ORE_URANIUM_OW).setRegistryName(Reference.ModBlocks.ORE_URANIUM_OW.getRegistryRL()));
+		
+		GameRegistry.register(DIM_PORTAL_OVERWORLD);
+		GameRegistry.register(
+				new ItemBlock(DIM_PORTAL_OVERWORLD).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_OW.getRegistryRL()));
 		
 		
 		GameRegistry.register(ORE_COAL_CHAR);
@@ -266,6 +276,9 @@ public class ModBlocks extends Block {
 		GameRegistry.register(DIRT_CHAR);
 		GameRegistry.register(new ItemBlock(DIRT_CHAR)
 				.setRegistryName(Reference.ModBlocks.BLOCK_DIRT_C.getRegistryRL()));
+		GameRegistry.register(DIM_PORTAL_CHAR);
+		GameRegistry.register(
+				new ItemBlock(DIM_PORTAL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL()));
 		
 		
 		GameRegistry.register(ORE_COAL_SHAKURAS);
@@ -311,6 +324,10 @@ public class ModBlocks extends Block {
 		GameRegistry.register(SAND_SHAKURAS);
 		GameRegistry.register(new ItemBlock(SAND_SHAKURAS)
 				.setRegistryName(Reference.ModBlocks.BLOCK_SAND_S.getRegistryRL()));
+		
+		GameRegistry.register(DIM_PORTAL_SHAKURAS);
+		GameRegistry.register(
+				new ItemBlock(DIM_PORTAL_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL()));
 	}
 
 	public static void registerModels() {
@@ -320,6 +337,9 @@ public class ModBlocks extends Block {
 				new ModelResourceLocation(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryRL(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_URANIUM_OW), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_URANIUM_OW.getRegistryRL(), "inventory"));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIM_PORTAL_OVERWORLD), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_OW.getRegistryRL(), "inventory"));
 
 		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COAL_CHAR), 0,
@@ -354,6 +374,9 @@ public class ModBlocks extends Block {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIRT_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIRT_C.getRegistryRL(), "inventory"));
 		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIM_PORTAL_CHAR), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL(), "inventory"));
+		
 		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COAL_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_COAL_S.getRegistryRL(), "inventory"));
@@ -384,6 +407,9 @@ public class ModBlocks extends Block {
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_COBBLESTONE_S.getRegistryRL(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SAND_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_SAND_S.getRegistryRL(), "inventory"));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIM_PORTAL_SHAKURAS), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL(), "inventory"));
 	}
 
 }

@@ -153,9 +153,9 @@ public class Reference {
 		
 		
 		//Dimension Objects
-		BLOCK_DIM_PORTAL_C("block_dim_portal_c", "block_dim_portal_c"),
-		BLOCK_DIM_PORTAL_OW("block_dim_portal_ow", "block_dim_portal_ow"),
-		BLOCK_DIM_PORTAL_S("block_dim_portal_s", "block_dim_portal_s");
+		BLOCK_DIM_PORTAL_C("charDimPortal", "char_dim_portal"),
+		BLOCK_DIM_PORTAL_OW("overworldDimPortal", "overworld_dim_portal"),
+		BLOCK_DIM_PORTAL_S("shakurasDimPortal", "shakuras_dim_portal");
 		
 		private String unlocalizedName;
 		private String registryName;

@@ -21,6 +21,7 @@ import net.bvanseghi.starcraft.worldgen.structure.StructureZergSpire;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkGenerator;
@@ -36,11 +37,9 @@ public class SCWorldGen implements IWorldGenerator {
 	ChunkProviderGenerate o;
 
 	public static void setupWorldgen() {
-		// Char
-			//DimensionManager.registerDimension(StarcraftConfig.dimChar, StarcraftConfig.dimChar);
+			DimensionManager.registerDimension(StarcraftConfig.dimChar, DimensionType.OVERWORLD);
 
-		// Shakuras
-			//DimensionManager.registerDimension(StarcraftConfig.dimShakuras, new WorldProviderShakuras());
+			DimensionManager.registerDimension(StarcraftConfig.dimShakuras, DimensionType.OVERWORLD);
 		//TODO: figure out how to register dimensions using dimType
 	}
 
@@ -79,32 +78,33 @@ public class SCWorldGen implements IWorldGenerator {
 		TITANIUM_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_TITANIUM_OW.getDefaultState(), 8);
 		URANIUM_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_URANIUM_OW.getDefaultState(), 8);
 		
-		TITANIUM_CHAR = new WorldGenMinable(ModBlocks.ORE_TITANIUM_CHAR.getDefaultState(), 8);
-		//ALIEN_CHAR = new WorldGenMinable(ModBlocks.ORE_ALIEN_CHAR.getDefaultState(), 8);
-		COAL_CHAR = new WorldGenMinable(ModBlocks.ORE_COAL_CHAR.getDefaultState(), 8);
-		COPPER_CHAR = new WorldGenMinable(ModBlocks.ORE_COPPER_CHAR.getDefaultState(), 8);
-		DIAMOND_CHAR = new WorldGenMinable(ModBlocks.ORE_DIAMOND_CHAR.getDefaultState(), 8);
-		GOLD_CHAR = new WorldGenMinable(ModBlocks.ORE_GOLD_CHAR.getDefaultState(), 8);
-		IRON_CHAR = new WorldGenMinable(ModBlocks.ORE_IRON_CHAR.getDefaultState(), 8);
-		LAPIS_CHAR = new WorldGenMinable(ModBlocks.ORE_LAPIS_CHAR.getDefaultState(), 8);
-		MINERAL_CHAR = new WorldGenMinable(ModBlocks.ORE_MINERAL_CHAR.getDefaultState(), 8);
-		REDSTONE_CHAR = new WorldGenMinable(ModBlocks.ORE_REDSTONE_CHAR.getDefaultState(), 8);
-		RICHMINERAL_CHAR = new WorldGenMinable(ModBlocks.ORE_RICHMINERAL_CHAR.getDefaultState(), 8);
-		URANIUM_CHAR = new WorldGenMinable(ModBlocks.ORE_URANIUM_CHAR.getDefaultState(), 8);
+		TITANIUM_CHAR = new CharWorldGenMinable(ModBlocks.ORE_TITANIUM_CHAR.getDefaultState(), 8);
+		//ALIEN_CHAR = new CharWorldGenMinable(ModBlocks.ORE_ALIEN_CHAR.getDefaultState(), 8);
+		COAL_CHAR = new CharWorldGenMinable(ModBlocks.ORE_COAL_CHAR.getDefaultState(), 8);
+		COPPER_CHAR = new CharWorldGenMinable(ModBlocks.ORE_COPPER_CHAR.getDefaultState(), 8);
+		DIAMOND_CHAR = new CharWorldGenMinable(ModBlocks.ORE_DIAMOND_CHAR.getDefaultState(), 8);
+		GOLD_CHAR = new CharWorldGenMinable(ModBlocks.ORE_GOLD_CHAR.getDefaultState(), 8);
+		IRON_CHAR = new CharWorldGenMinable(ModBlocks.ORE_IRON_CHAR.getDefaultState(), 8);
+		LAPIS_CHAR = new CharWorldGenMinable(ModBlocks.ORE_LAPIS_CHAR.getDefaultState(), 8);
+		MINERAL_CHAR = new CharWorldGenMinable(ModBlocks.ORE_MINERAL_CHAR.getDefaultState(), 8);
+		REDSTONE_CHAR = new CharWorldGenMinable(ModBlocks.ORE_REDSTONE_CHAR.getDefaultState(), 8);
+		RICHMINERAL_CHAR = new CharWorldGenMinable(ModBlocks.ORE_RICHMINERAL_CHAR.getDefaultState(), 8);
+		URANIUM_CHAR = new CharWorldGenMinable(ModBlocks.ORE_URANIUM_CHAR.getDefaultState(), 8);
 		
-		TITANIUM_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
-		//ALIEN_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_ALIEN_SHAKURAS.getDefaultState(), 8);
-		COAL_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_COAL_SHAKURAS.getDefaultState(), 8);
-		COPPER_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_COPPER_SHAKURAS.getDefaultState(), 8);
-		DIAMOND_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_DIAMOND_SHAKURAS.getDefaultState(), 8);
-		GOLD_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_GOLD_SHAKURAS.getDefaultState(), 8);
-		IRON_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_IRON_SHAKURAS.getDefaultState(), 8);
-		LAPIS_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_LAPIS_SHAKURAS.getDefaultState(), 8);
-		MINERAL_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_MINERAL_SHAKURAS.getDefaultState(), 8);
-		REDSTONE_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_REDSTONE_SHAKURAS.getDefaultState(), 8);
-		RICHMINERAL_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_RICHMINERAL_SHAKURAS.getDefaultState(), 8);
-		TITANIUM_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
-		URANIUM_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_URANIUM_SHAKURAS.getDefaultState(), 8);
+	
+		TITANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
+		//ALIEN_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_ALIEN_SHAKURAS.getDefaultState(), 8);
+		COAL_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_COAL_SHAKURAS.getDefaultState(), 8);
+		COPPER_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_COPPER_SHAKURAS.getDefaultState(), 8);
+		DIAMOND_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_DIAMOND_SHAKURAS.getDefaultState(), 8);
+		GOLD_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_GOLD_SHAKURAS.getDefaultState(), 8);
+		IRON_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_IRON_SHAKURAS.getDefaultState(), 8);
+		LAPIS_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_LAPIS_SHAKURAS.getDefaultState(), 8);
+		MINERAL_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_MINERAL_SHAKURAS.getDefaultState(), 8);
+		REDSTONE_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_REDSTONE_SHAKURAS.getDefaultState(), 8);
+		RICHMINERAL_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_RICHMINERAL_SHAKURAS.getDefaultState(), 8);
+		TITANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
+		URANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_URANIUM_SHAKURAS.getDefaultState(), 8);
 	}
 	@Override
 	

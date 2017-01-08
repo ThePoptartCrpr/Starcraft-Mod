@@ -42,7 +42,7 @@ public class Starcraft {
 		FuelHandler.preInit();
 		ModItems.registerModels();
 		ModBlocks.registerModels();
-		
+		SCWorldGen.setupWorldgen();
 		SCWorldGen.preInit();
 		proxy.preInit(event);
 		
