@@ -39,6 +39,7 @@ public class Starcraft {
 		FuelHandler.preInit();
 		ModBlocks.registerModels();
 		proxy.preInit(event);
+		
 	}
 
 	@EventHandler

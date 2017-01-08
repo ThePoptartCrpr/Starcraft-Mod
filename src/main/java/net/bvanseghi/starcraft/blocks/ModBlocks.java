@@ -140,8 +140,6 @@ public class ModBlocks extends Block {
 	public static Block DIM_PORTAL_CHAR;
 	public static Block DIM_PORTAL_OVERWORLD;
 	public static Block DIM_PORTAL_SHAKURAS;
-
-	public static Map<String, Block> BLOCKS = new HashMap<String, Block>();
 	
  	public static void init() {
  		instantiate();
@@ -149,21 +147,18 @@ public class ModBlocks extends Block {
 	}
  	
  	public static void instantiate() {
- 		new OreOWCopper("copper","copper", Material.ROCK);
+ 		ORE_COPPER_OW = new OreOWCopper("copper","copper", Material.ROCK);
  	}
 
 	public static void register() {
-		for (Block block : BLOCKS.values()) {
-			GameRegistry.register(block);
-			GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-		}
+			GameRegistry.register(ORE_COPPER_OW);
+			GameRegistry.register(new ItemBlock(ORE_COPPER_OW).setRegistryName(ORE_COPPER_OW.getRegistryName()));
 	}
 
 	public static void registerModels() {
-		for (Block block : BLOCKS.values()) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-					new ModelResourceLocation(block.getRegistryName(), "inventory"));
-		}
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COPPER_OW), 0,
+					new ModelResourceLocation(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL(), "inventory"));
+		
 	}
 	
 }

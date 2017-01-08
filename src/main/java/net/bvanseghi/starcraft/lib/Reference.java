@@ -64,7 +64,7 @@ public class Reference {
 	}
 	
 	public static enum ModBlocks {
-		ORE_COPPER_OW("overworldOreCopper", "overworld_ore_copper"),
+		ORE_COPPER_OW("copper", "copper"),
 		ORE_TITANIUM_OW("oreTitaniumOW", "oreTitaniumOW"),
 		ORE_URANIUM_OW("oreUraniumOW", "oreUraniumOW"),
 		
