@@ -18,19 +18,13 @@ import net.bvanseghi.starcraft.armour.ArmourTitaniumHelmet;
 import net.bvanseghi.starcraft.armour.ArmourTitaniumLeggings;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.worldgen.SCWorldGen;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
-public class ClientProxy extends CommonProxy {
+public class ClientProxy extends ServerProxy {
 
-	public void registerRenders() {
-		ModBlocks.registerRenders();
-	}
-	
 	public void setModels() {
 		
 		///
@@ -65,8 +59,8 @@ public class ClientProxy extends CommonProxy {
 	
 	
 	
-	public void init() {
-		ModBlocks.registerRenders();
+	public void preInit(FMLPreInitializationEvent event) {
+		ModBlocks.registerModels();
 		//GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
 	}
 }
