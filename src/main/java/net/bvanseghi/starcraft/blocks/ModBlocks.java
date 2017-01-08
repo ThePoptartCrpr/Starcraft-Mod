@@ -185,6 +185,7 @@ public class ModBlocks extends Block {
 		ORE_TITANIUM_CHAR = new OreCharTitanium();
 		ORE_URANIUM_CHAR = new OreCharUranium();
 		
+		STONE_CHAR = new BlockCharStone();
 		COBBLESTONE_CHAR = new BlockCharCobblestone();
 		MAGMA_CHAR = new BlockCharMagma();
 		DIRT_CHAR = new BlockCharDirt();
@@ -201,6 +202,8 @@ public class ModBlocks extends Block {
 		ORE_TITANIUM_SHAKURAS = new OreShakurasTitanium();
 		ORE_URANIUM_SHAKURAS = new OreShakurasUranium();
 		
+		STONE_SHAKURAS = new BlockShakurasStone();
+		COBBLESTONE_SHAKURAS = new BlockShakurasCobblestone();
 		SAND_SHAKURAS = new BlockShakurasSand();
 	}
 
