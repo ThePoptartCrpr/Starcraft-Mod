@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.blocks;
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
 import net.bvanseghi.starcraft.debug.DimPortalShakuras;
+import net.bvanseghi.starcraft.items.ItemBlockMeta;
 import net.bvanseghi.starcraft.lib.LogHelper;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.ore.OreOWCopper;
@@ -213,123 +214,121 @@ public class ModBlocks extends Block {
 		COBBLESTONE_SHAKURAS = new BlockShakurasCobblestone();
 		SAND_SHAKURAS = new BlockShakurasSand();
 		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
+		
+		PROTOSS_METAL  = new BlockProtossMetal();
 	}
 
 	public static void register() {
+		
 		GameRegistry.register(ORE_COPPER_OW);
-		GameRegistry.register(
-				new ItemBlock(ORE_COPPER_OW).setRegistryName(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_COPPER_OW).setRegistryName(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL()));
+		
 		GameRegistry.register(ORE_TITANIUM_OW);
-		GameRegistry.register(
-				new ItemBlock(ORE_TITANIUM_OW).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_TITANIUM_OW).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryRL()));
+		
 		GameRegistry.register(ORE_URANIUM_OW);
-		GameRegistry.register(
-				new ItemBlock(ORE_URANIUM_OW).setRegistryName(Reference.ModBlocks.ORE_URANIUM_OW.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_URANIUM_OW).setRegistryName(Reference.ModBlocks.ORE_URANIUM_OW.getRegistryRL()));
 		
 		GameRegistry.register(DIM_PORTAL_OVERWORLD);
-		GameRegistry.register(
-				new ItemBlock(DIM_PORTAL_OVERWORLD).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_OW.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(DIM_PORTAL_OVERWORLD).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_OW.getRegistryRL()));
 		
 		
 		GameRegistry.register(ORE_COAL_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_COAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_COAL_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_COAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_COAL_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_COPPER_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_COPPER_CHAR).setRegistryName(Reference.ModBlocks.ORE_COPPER_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_COPPER_CHAR).setRegistryName(Reference.ModBlocks.ORE_COPPER_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_DIAMOND_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_DIAMOND_CHAR).setRegistryName(Reference.ModBlocks.ORE_DIAMOND_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_DIAMOND_CHAR).setRegistryName(Reference.ModBlocks.ORE_DIAMOND_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_GOLD_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_GOLD_CHAR).setRegistryName(Reference.ModBlocks.ORE_GOLD_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_GOLD_CHAR).setRegistryName(Reference.ModBlocks.ORE_GOLD_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_IRON_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_IRON_CHAR).setRegistryName(Reference.ModBlocks.ORE_IRON_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_IRON_CHAR).setRegistryName(Reference.ModBlocks.ORE_IRON_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_LAPIS_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_LAPIS_CHAR).setRegistryName(Reference.ModBlocks.ORE_LAPIS_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_LAPIS_CHAR).setRegistryName(Reference.ModBlocks.ORE_LAPIS_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_MINERAL_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_MINERAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_MINERAL_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_MINERAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_MINERAL_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_REDSTONE_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_REDSTONE_CHAR).setRegistryName(Reference.ModBlocks.ORE_REDSTONE_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_REDSTONE_CHAR).setRegistryName(Reference.ModBlocks.ORE_REDSTONE_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_RICHMINERAL_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_RICHMINERAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_RICHMINERAL_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_RICHMINERAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_RICHMINERAL_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_TITANIUM_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_TITANIUM_CHAR).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_TITANIUM_CHAR).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_C.getRegistryRL()));
+		
 		GameRegistry.register(ORE_URANIUM_CHAR);
-		GameRegistry.register(
-				new ItemBlock(ORE_URANIUM_CHAR).setRegistryName(Reference.ModBlocks.ORE_URANIUM_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_URANIUM_CHAR).setRegistryName(Reference.ModBlocks.ORE_URANIUM_C.getRegistryRL()));
 		
 		
 		GameRegistry.register(STONE_CHAR);
-		GameRegistry.register(new ItemBlock(STONE_CHAR)
-				.setRegistryName(Reference.ModBlocks.BLOCK_STONE_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(STONE_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_STONE_C.getRegistryRL()));
+		
 		GameRegistry.register(COBBLESTONE_CHAR);
-		GameRegistry.register(new ItemBlock(COBBLESTONE_CHAR)
-				.setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(COBBLESTONE_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_C.getRegistryRL()));
+		
 		GameRegistry.register(MAGMA_CHAR);
-		GameRegistry.register(new ItemBlock(MAGMA_CHAR)
-				.setRegistryName(Reference.ModBlocks.BLOCK_MAGMA_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(MAGMA_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_MAGMA_C.getRegistryRL()));
+		
 		GameRegistry.register(DIRT_CHAR);
-		GameRegistry.register(new ItemBlock(DIRT_CHAR)
-				.setRegistryName(Reference.ModBlocks.BLOCK_DIRT_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(DIRT_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIRT_C.getRegistryRL()));
+		
 		GameRegistry.register(DIM_PORTAL_CHAR);
-		GameRegistry.register(
-				new ItemBlock(DIM_PORTAL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(DIM_PORTAL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL()));
 		
 		
 		GameRegistry.register(ORE_COAL_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_COAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_COAL_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_COAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_COAL_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_COPPER_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_COPPER_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_COPPER_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_COPPER_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_COPPER_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_DIAMOND_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_DIAMOND_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_DIAMOND_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_DIAMOND_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_DIAMOND_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_GOLD_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_GOLD_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_GOLD_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_GOLD_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_GOLD_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_IRON_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_IRON_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_IRON_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_IRON_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_IRON_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_LAPIS_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_LAPIS_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_LAPIS_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_LAPIS_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_LAPIS_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_MINERAL_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_MINERAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_MINERAL_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_MINERAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_MINERAL_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_REDSTONE_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_REDSTONE_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_REDSTONE_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_REDSTONE_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_REDSTONE_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_RICHMINERAL_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_RICHMINERAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_RICHMINERAL_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_RICHMINERAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_RICHMINERAL_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_TITANIUM_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_TITANIUM_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_TITANIUM_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_S.getRegistryRL()));
+		
 		GameRegistry.register(ORE_URANIUM_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(ORE_URANIUM_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_URANIUM_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ORE_URANIUM_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_URANIUM_S.getRegistryRL()));
 		
 		GameRegistry.register(STONE_SHAKURAS);
-		GameRegistry.register(new ItemBlock(STONE_SHAKURAS)
-				.setRegistryName(Reference.ModBlocks.BLOCK_STONE_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(STONE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_STONE_S.getRegistryRL()));
+		
 		GameRegistry.register(COBBLESTONE_SHAKURAS);
-		GameRegistry.register(new ItemBlock(COBBLESTONE_SHAKURAS)
-				.setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(COBBLESTONE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_S.getRegistryRL()));
+		
 		GameRegistry.register(SAND_SHAKURAS);
-		GameRegistry.register(new ItemBlock(SAND_SHAKURAS)
-				.setRegistryName(Reference.ModBlocks.BLOCK_SAND_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(SAND_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_SAND_S.getRegistryRL()));
 		
 		GameRegistry.register(DIM_PORTAL_SHAKURAS);
-		GameRegistry.register(
-				new ItemBlock(DIM_PORTAL_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(DIM_PORTAL_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL()));
+		
+		GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
 	}
 
 	public static void registerModels() {
@@ -472,6 +471,9 @@ public class ModBlocks extends Block {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIM_PORTAL_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + DIM_PORTAL_SHAKURAS.getUnlocalizedName().substring(5));
+		
+		BlockRenderRegister.registerBlockRenderer();
+	
 	}
 
 }

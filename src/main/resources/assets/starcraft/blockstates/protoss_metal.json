@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "TYPE=aiur": { "model":"starcraft:protoss_metal_aiur" },
+        "TYPE=dark": { "model":"starcraft:protoss_metal_dark" },
+         "TYPE=blue": { "model":"starcraft:protoss_metal_blue" },
+          "TYPE=green": { "model":"starcraft:protoss_metal_green" }
+    }
+}

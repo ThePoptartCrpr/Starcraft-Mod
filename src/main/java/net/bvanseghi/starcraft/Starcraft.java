@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Level;
 
 import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ModArmour;
+import net.bvanseghi.starcraft.blocks.BlockRenderRegister;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.ModEntities;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
@@ -113,15 +114,31 @@ public class Starcraft {
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Configuration failed to initialize! Report this to the developer(s) of the mod!");
 		}
+
+		//try {
+		BlockRenderRegister.preInit();
+		LogHelper.logger.log(Level.INFO, "Starcraft Meta Blocks initialized.");
+		//}catch(Exception e) {
+			//LogHelper.logger.log(Level.ERROR, "Starcraft Meta Blocks failed to initialize! Report this to the developer(s) of the mod!");
+		//}
 		
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+	
+		try {
 		ModEntities.init();
 		LogHelper.logger.log(Level.INFO, "Starcraft Entities initialized.");
+		}catch(Exception e) {
+			LogHelper.logger.log(Level.ERROR, "Starcraft Entities failed to initialize! Report this to the developer(s) of the mod!");
+		}
+		try {
 		Achievements.init();
 		LogHelper.logger.log(Level.INFO, "Starcraft Achievements initialized.");
+		}catch(Exception e) {
+			LogHelper.logger.log(Level.ERROR, "Starcraft Achievements failed to initialize! Report this to the developer(s) of the mod!");
+		}
 		proxy.init(event);
 		
 	}

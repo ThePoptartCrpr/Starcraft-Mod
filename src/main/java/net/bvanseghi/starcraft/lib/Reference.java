@@ -104,6 +104,10 @@ public class Reference {
 		//Protoss Objects
 		BLOCK_COMP_METAL("block_comp_metal", "block_comp_metal"),
 		BLOCK_PROTOSS_METAL("protossMetal", "protoss_metal"),
+		BLOCK_PROTOSS_METAL_AIUR("protossMetalAiur", "protoss_metal_aiur"),
+		BLOCK_PROTOSS_METAL_DARK("protossMetalDark", "protoss_metal_dark"),
+		BLOCK_PROTOSS_METAL_BLUE("protossMetalBlue", "protoss_metal_blue"),
+		BLOCK_PROTOSS_METAL_GREEN("protossMetalGreen", "protoss_metal_green"),
 		BLOCK_PROTOSS_ENERGY_STABILIZER("block_protoss_energy_stabilizer", "block_protoss_energy_stabilizer"),
 		BLOCK_PROTOSS_ENERGY_CHANNEL("block_protoss_energy_channel", "block_protoss_energy_channel"),
 		BLOCK_PROTOSS_DARK_ENERGY_CHANNEL("protossEnergyChannel", "protoss_energy_channel"),

@@ -1,10 +1,13 @@
 package net.bvanseghi.starcraft.items;
 
+import org.apache.logging.log4j.Level;
+
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
 import net.bvanseghi.starcraft.debug.DimPortalShakuras;
 import net.bvanseghi.starcraft.fluids.ModFluids;
+import net.bvanseghi.starcraft.lib.LogHelper;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.material.ModMaterials;
 import net.bvanseghi.starcraft.ore.OreOWCopper;
@@ -125,5 +128,6 @@ public class ModItems extends Item {
 	public static void registerModels() {
 		ModelLoader.setCustomModelResourceLocation(psiBladeFocuserUncharged, 0,
 				new ModelResourceLocation(Reference.ModItems.ITEM_PSIBLADEFOCUSER_UNCHARGED.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Item: " + psiBladeFocuserUncharged.getUnlocalizedName().substring(5));
 	}
 }
