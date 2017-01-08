@@ -15,6 +15,17 @@ import net.bvanseghi.starcraft.orechar.OreCharRedstone;
 import net.bvanseghi.starcraft.orechar.OreCharRichMineral;
 import net.bvanseghi.starcraft.orechar.OreCharTitanium;
 import net.bvanseghi.starcraft.orechar.OreCharUranium;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasCoal;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasCopper;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasDiamond;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasGold;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasIron;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasLapis;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasMineral;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasRedstone;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasRichMineral;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasTitanium;
+import net.bvanseghi.starcraft.oreshakuras.OreShakurasUranium;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -158,6 +169,9 @@ public class ModBlocks extends Block {
 			ORE_GOLD_CHAR, ORE_IRON_CHAR, ORE_LAPIS_CHAR, ORE_MINERAL_CHAR, ORE_REDSTONE_CHAR, ORE_RICHMINERAL_CHAR,
 			ORE_TITANIUM_CHAR, ORE_URANIUM_CHAR, COBBLESTONE_CHAR, MAGMA_CHAR, DIRT_CHAR,
 			
+			ORE_COAL_SHAKURAS, ORE_DIAMOND_SHAKURAS,
+			ORE_GOLD_SHAKURAS, ORE_IRON_SHAKURAS, ORE_LAPIS_SHAKURAS, ORE_MINERAL_SHAKURAS, ORE_REDSTONE_SHAKURAS, ORE_RICHMINERAL_SHAKURAS,
+			ORE_TITANIUM_SHAKURAS, ORE_URANIUM_SHAKURAS, COBBLESTONE_SHAKURAS, SAND_SHAKURAS,
 			
 
 	};
@@ -187,6 +201,20 @@ public class ModBlocks extends Block {
 		COBBLESTONE_CHAR = new BlockCharCobblestone();
 		MAGMA_CHAR = new BlockCharMagma();
 		DIRT_CHAR = new BlockCharDirt();
+		
+		ORE_COAL_SHAKURAS = new OreShakurasCoal();
+		ORE_COPPER_SHAKURAS = new OreShakurasCopper();
+		ORE_DIAMOND_SHAKURAS = new OreShakurasDiamond();
+		ORE_GOLD_SHAKURAS = new OreShakurasGold();
+		ORE_IRON_SHAKURAS = new OreShakurasIron();
+		ORE_LAPIS_SHAKURAS = new OreShakurasLapis();
+		ORE_MINERAL_SHAKURAS = new OreShakurasMineral();
+		ORE_REDSTONE_SHAKURAS = new OreShakurasRedstone();
+		ORE_RICHMINERAL_SHAKURAS = new OreShakurasRichMineral();
+		ORE_TITANIUM_SHAKURAS = new OreShakurasTitanium();
+		ORE_URANIUM_SHAKURAS = new OreShakurasUranium();
+		
+		SAND_SHAKURAS = new BlockShakurasSand();
 	}
 
 	public static void register() {
