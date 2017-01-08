@@ -215,6 +215,20 @@ public class ModBlocks extends Block {
 		SAND_SHAKURAS = new BlockShakurasSand();
 		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
 		
+		
+		PROTOSS_WARPPROJECTOR_CHAR = new BlockProtossWarpProjectorC();
+		PROTOSS_WARPPROJECTOR_OVERWORLD = new BlockProtossWarpProjectorO();
+		PROTOSS_WARPPROJECTOR_SHAKURAS = new BlockProtossWarpProjectorS();
+		
+		
+		ZERG_CREEP = new BlockZergCreep();
+		KERATIN_CHUNK = new BlockKeratinChunk();
+		
+		
+		VESPENE_GEYSER_BASE = new BlockVespeneGeyserBase();
+		VESPENE_GEYSER_BASE_CHAR = new BlockVespeneGeyserBaseChar();
+		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
+		
 		//PROTOSS_METAL  = new BlockProtossMetal();
 	}
 
@@ -327,6 +341,33 @@ public class ModBlocks extends Block {
 		
 		GameRegistry.register(DIM_PORTAL_SHAKURAS);
 		GameRegistry.register(new ItemBlock(DIM_PORTAL_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL()));
+		
+		
+		GameRegistry.register(PROTOSS_WARPPROJECTOR_CHAR);
+		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_C.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_WARPPROJECTOR_OVERWORLD);
+		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_OVERWORLD).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_OW.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_WARPPROJECTOR_SHAKURAS);
+		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_S.getRegistryRL()));
+		
+		
+		GameRegistry.register(ZERG_CREEP);
+		GameRegistry.register(new ItemBlock(ZERG_CREEP).setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL()));
+		
+		GameRegistry.register(KERATIN_CHUNK);
+		GameRegistry.register(new ItemBlock(KERATIN_CHUNK).setRegistryName(Reference.ModBlocks.BLOCK_KERATIN_CHUNK.getRegistryRL()));
+		
+		
+		GameRegistry.register(VESPENE_GEYSER_BASE);
+		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE.getRegistryRL()));
+		
+		GameRegistry.register(VESPENE_GEYSER_BASE_CHAR);
+		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_C.getRegistryRL()));
+		
+		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
+		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
 		
 		//GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
 	}
@@ -471,6 +512,41 @@ public class ModBlocks extends Block {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIM_PORTAL_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + DIM_PORTAL_SHAKURAS.getUnlocalizedName().substring(5));
+		
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(PROTOSS_WARPPROJECTOR_CHAR), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + PROTOSS_WARPPROJECTOR_CHAR.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(PROTOSS_WARPPROJECTOR_OVERWORLD), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_OW.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + PROTOSS_WARPPROJECTOR_OVERWORLD.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(PROTOSS_WARPPROJECTOR_SHAKURAS), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + PROTOSS_WARPPROJECTOR_SHAKURAS.getUnlocalizedName().substring(5));
+		
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ZERG_CREEP), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ZERG_CREEP.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(KERATIN_CHUNK), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_KERATIN_CHUNK.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + KERATIN_CHUNK.getUnlocalizedName().substring(5));
+		
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(VESPENE_GEYSER_BASE), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + VESPENE_GEYSER_BASE.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(VESPENE_GEYSER_BASE_CHAR), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + VESPENE_GEYSER_BASE_CHAR.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(VESPENE_GEYSER_BASE_SHAKURAS), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + VESPENE_GEYSER_BASE_SHAKURAS.getUnlocalizedName().substring(5));
 		
 		//BlockRenderRegister.registerBlockRenderer();
 	
