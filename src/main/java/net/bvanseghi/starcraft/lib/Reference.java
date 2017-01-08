@@ -13,37 +13,41 @@ public class Reference {
 	public static final String UN_BASE = MODID + "_";
 	
 	public static enum ModItems {
-		ITEM_MINERAL_SHARD("MineralShard", "mineral_shard"),
-		ITEM_RICHMINERAL_SHARD("MineralRichShard", "mineral_rich_shard"),
-		ITEM_VESPENE("Vespene", "vespene"),
-		ITEM_PSIBLADEFOCUSER_UNCHARGED("FocuserUnchargedPsiBlade", "focuser_uncharged_psi_blade"),
-		ITEM_DARK_PSIBLADEFOCUSER_UNCHARGED("FocuserDarkUnchargedPsiBlade", "focuser_dark_uncharged_psi_blade"),
-		ITEM_ENERGY("Energy", "energy"),
-		ITEM_PROTOSS_ARTIFACT("ProtossArtifact", "protoss_artifact"),
-		ITEM_URAJ("Uraj", "uraj"),
-		ITEM_ESSENCE("Essence", "essence"),
-		ITEM_PART_C14_GAUSS("PartC14Gauss", "part_c14_gauss"),
-		ITEM_INGOT("Ingot", "ingot"),
-		ITEM_DUST("Dust", "dust"),
-		ITEM_COORDINATE("Coordinate", "coordinate"),
-		WEAPON_RIFLE_C14_GAUSS("RifleC14Gauss", "weapon_rifle_c14_gauss"),
-		BULLET_RIFLE_C14_GAUSS("BulletRifleC14Gauss", "bullet_rifle_c14_gauss"),
-		ITEM_ZERG_CARAPACE("ZergCarapace", "zerg_carapace"),
-		ITEM_ZERG_CREEP_RESIN("ZergCreepResin", "zerg_creep_resin"),
-		ITEM_ZERG_ORGANIC_TISSUE("ZergOrganicTissue", "zerg_organic_tissue"),
-		ITEM_BUCKET_ACID("BucketAcid", "bucket_acid"),
-		ITEM_BUCKET_BLOOD("BucketBlood", "bucket_blood"),
-		ITEM_PROTOSS_MODULE("ProtossModule", "protoss_module"),
-		ITEM_KEYSTONE("Keystone", "keystone"),
-		;
+		ITEM_MINERAL_SHARD("mineralShard", "mineral_shard"),
+		ITEM_RICHMINERAL_SHARD("mineralRichShard", "mineral_rich_shard"),
+		ITEM_VESPENE("vespene"),
+		ITEM_PSIBLADEFOCUSER_UNCHARGED("focuserUnchargedPsiBlade", "focuser_uncharged_psi_blade"),
+		ITEM_DARK_PSIBLADEFOCUSER_UNCHARGED("focuserDarkUnchargedPsiBlade", "focuser_dark_uncharged_psi_blade"),
+		ITEM_ENERGY("energy"),
+		ITEM_PROTOSS_ARTIFACT("protossArtifact", "protoss_artifact"),
+		ITEM_URAJ("uraj"),
+		ITEM_ESSENCE("essence"),
+		ITEM_PART_C14_GAUSS("partC14Gauss", "part_c14_gauss"),
+		ITEM_INGOT("ingot"),
+		ITEM_DUST("dust"),
+		ITEM_COORDINATE("coordinate"),
+		WEAPON_RIFLE_C14_GAUSS("rifleC14Gauss", "weapon_rifle_c14_gauss"),
+		BULLET_RIFLE_C14_GAUSS("bulletRifleC14Gauss", "bullet_rifle_c14_gauss"),
+		ITEM_ZERG_CARAPACE("zergCarapace", "zerg_carapace"),
+		ITEM_ZERG_CREEP_RESIN("zergCreepResin", "zerg_creep_resin"),
+		ITEM_ZERG_ORGANIC_TISSUE("zergOrganicTissue", "zerg_organic_tissue"),
+		ITEM_BUCKET_ACID("bucketAcid", "bucket_acid"),
+		ITEM_BUCKET_BLOOD("bucketBlood", "bucket_blood"),
+		ITEM_PROTOSS_MODULE("protossModule", "protoss_module"),
+		ITEM_KEYSTONE("keystone");
 		
 		private String unlocalizedName;
 		private String registryName;
 		private ResourceLocation registryRL;
 		
-		ModItems(String unlocalizedName, String registryName) {
+		private ModItems(String names) {
+			this(names, names);
+		}
+		
+		private ModItems(String unlocalizedName, String registryName) {
 	        this.unlocalizedName = unlocalizedName;
-	        registryRL = new ResourceLocation(RL_BASE + registryName); //no "Reference." because nested class
+	        this.registryName = registryName;
+	        registryRL = new ResourceLocation(RL_BASE + registryName);
 	    }
 		
 		public String getUnlocalizedName() {
@@ -90,6 +94,7 @@ public class Reference {
 		ORE_TITANIUM_S("oreTitaniumS", "oreTitaniumS"),
 		ORE_URANIUM_S("oreUraniumS", "oreUraniumS"),
 		
+		//TODO: all the unlocalized names need to be made to lowerCamelCase
 		//Zerg Objects
 		BLOCK_ZERG_CARAPACE("block_zerg_carapace", "block_zerg_carapace"),
 		BLOCK_ZERG_FLESH("block_zerg_flesh", "block_zerg_flesh"),
@@ -150,8 +155,7 @@ public class Reference {
 		//Dimension Objects
 		BLOCK_DIM_PORTAL_C("block_dim_portal_c", "block_dim_portal_c"),
 		BLOCK_DIM_PORTAL_OW("block_dim_portal_ow", "block_dim_portal_ow"),
-		BLOCK_DIM_PORTAL_S("block_dim_portal_s", "block_dim_portal_s"),
-		;
+		BLOCK_DIM_PORTAL_S("block_dim_portal_s", "block_dim_portal_s");
 		
 		private String unlocalizedName;
 		private String registryName;
@@ -159,7 +163,8 @@ public class Reference {
 		
 		ModBlocks(String unlocalizedName, String registryName) {
             this.unlocalizedName = unlocalizedName;
-            registryRL = new ResourceLocation(RL_BASE + registryName); //no "Reference." because nested class
+            this.registryName = registryName;
+            registryRL = new ResourceLocation(RL_BASE + registryName);
 		}
 		
 		public String getUnlocalizedName() {
