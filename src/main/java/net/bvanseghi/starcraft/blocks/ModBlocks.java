@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.blocks;
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
 import net.bvanseghi.starcraft.debug.DimPortalShakuras;
+import net.bvanseghi.starcraft.lib.LogHelper;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.ore.OreOWCopper;
 import net.bvanseghi.starcraft.ore.OreOWTitanium;
@@ -36,6 +37,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import org.apache.logging.log4j.Level;
 
 /**
  * When wundr marks {@link Blockz} as done, then scrap this class!!!<br>
@@ -333,83 +335,143 @@ public class ModBlocks extends Block {
 	public static void registerModels() {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COPPER_OW), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_COPPER_OW.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_TITANIUM_OW), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_TITANIUM_OW.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_URANIUM_OW), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_URANIUM_OW.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_URANIUM_OW.getUnlocalizedName().substring(5));
 		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIM_PORTAL_OVERWORLD), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_OW.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + DIM_PORTAL_OVERWORLD.getUnlocalizedName().substring(5));
 
-		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COAL_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_COAL_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_COAL_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COPPER_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_COPPER_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_COPPER_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_DIAMOND_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_DIAMOND_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_DIAMOND_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_GOLD_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_GOLD_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_GOLD_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_IRON_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_IRON_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_IRON_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_LAPIS_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_LAPIS_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_LAPIS_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_MINERAL_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_MINERAL_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_MINERAL_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_REDSTONE_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_REDSTONE_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_REDSTONE_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_RICHMINERAL_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_RICHMINERAL_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_RICHMINERAL_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_TITANIUM_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_TITANIUM_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_TITANIUM_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_URANIUM_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_URANIUM_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_URANIUM_CHAR.getUnlocalizedName().substring(5));
 
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(STONE_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_STONE_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + STONE_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(COBBLESTONE_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_COBBLESTONE_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + COBBLESTONE_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(MAGMA_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_MAGMA_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + MAGMA_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIRT_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIRT_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + DIRT_CHAR.getUnlocalizedName().substring(5));
 		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIM_PORTAL_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL(), "inventory"));
-		
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + DIM_PORTAL_CHAR.getUnlocalizedName().substring(5));
 		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COAL_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_COAL_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_COAL_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COPPER_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_COPPER_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_COPPER_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_DIAMOND_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_DIAMOND_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_DIAMOND_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_GOLD_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_GOLD_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_GOLD_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_IRON_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_IRON_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_IRON_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_LAPIS_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_LAPIS_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_LAPIS_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_MINERAL_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_MINERAL_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_MINERAL_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_REDSTONE_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_REDSTONE_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_REDSTONE_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_RICHMINERAL_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_RICHMINERAL_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_RICHMINERAL_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_TITANIUM_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_TITANIUM_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_TITANIUM_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_URANIUM_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.ORE_URANIUM_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ORE_URANIUM_SHAKURAS.getUnlocalizedName().substring(5));
 		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(STONE_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_STONE_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + STONE_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(COBBLESTONE_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_COBBLESTONE_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + COBBLESTONE_SHAKURAS.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SAND_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_SAND_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + SAND_SHAKURAS.getUnlocalizedName().substring(5));
 		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DIM_PORTAL_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + DIM_PORTAL_SHAKURAS.getUnlocalizedName().substring(5));
 	}
 
 }
