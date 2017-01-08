@@ -1,63 +1,153 @@
 {
-    "larva-live1": { "category": "entity", "sounds": ["Starcraft:larva-live1"], "subtitle": "starcraft.larva.larva-live1" },
-    // "larva-live1": {"category": "master", "sounds": ["larva-live1"]},
-    "larva-hurt": { "category": "entity", "sounds": ["Starcraft:larva-hurt"], "subtitle": "starcraft.larva.larva-hurt" },
-    // "larva-hurt": {"category": "master", "sounds": ["larva-hurt"]},
-    "larva-death": { "category": "entity", "sounds": ["Starcraft:larva-death"], "subtitle": "starcraft.larva.larva-death" },
-    // "larva-death": {"category": "master", "sounds": ["larva-death"]},
-    "overlord-live1": { "category": "entity", "sounds": ["Starcraft:overlord-live1"], "subtitle": "starcraft.overlord.overlord-live1" },
-    // "overlord-live1": {"category": "master", "sounds": ["overlord-live1"]},
-    "overlord-hurt": { "category": "entity", "sounds": ["Starcraft:overlord-hurt"], "subtitle": "starcraft.overlord.overlord-hurt" },
-    // "overlord-hurt": {"category": "master", "sounds": ["overlord-hurt"]},
-    "overlord-death": { "category": "entity", "sounds": ["Starcraft:overlord-death"], "subtitle": "starcraft.overlord.overlord-death" },
-    // "overlord-death": {"category": "master", "sounds": ["overlord-death"]},
-    "zergCocoon-live1": { "category": "entity", "sounds": ["Starcraft:zergCocoon-live1"], "subtitle": "starcraft.zergCocoon.zergCocoon-live1" },
-    // "zergCocoon-live1": {"category": "master", "sounds": ["zergCocoon-live1"]},
-    "zergCocoon-hurt": { "category": "entity", "sounds": ["Starcraft:zergCocoon-hurt"], "subtitle": "starcraft.zergCocoon.zergCocoon-hurt" },
-    // "zergCocoon-hurt": {"category": "master", "sounds": ["zergCocoon-hurt"]},
-    "zergCocoon-death": { "category": "entity", "sounds": ["Starcraft:zergCocoon-death"], "subtitle": "starcraft.zergCocoon.zergCocoon-death" },
-    // "zergCocoon-death": {"category": "master", "sounds": ["zergCocoon-death"]},
-    "zergling-live1": { "category": "entity", "sounds": ["Starcraft:zergling-live1"], "subtitle": "starcraft.zergling.zergling-live1" },
-    // "zergling-live1": {"category": "master", "sounds": ["zergling-live1"]},
-    "zergling-live2": { "category": "entity", "sounds": ["Starcraft:zergling-live2"], "subtitle": "starcraft.zergling.zergling-live2" },
-    //"zergling-live2": {"category": "master", "sounds": ["zergling-live2"]},
-    "zergling-live3": { "category": "entity", "sounds": ["Starcraft:zergling-live3"], "subtitle": "starcraft.zergling.zergling-live3" },
-    //"zergling-live3": {"category": "master", "sounds": ["zergling-live3"]},
-    "zergling-live4": { "category": "entity", "sounds": ["Starcraft:zergling-live4"], "subtitle": "starcraft.zergling.zergling-live4" },
-    //"zergling-live4": {"category": "master", "sounds": ["zergling-live4"]},
-    "zergling-hurt": { "category": "entity", "sounds": ["Starcraft:zergling-hurt"], "subtitle": "starcraft.zergling.zergling-hurt" },
-    // "zergling-hurt": {"category": "master", "sounds": ["zergling-hurt"]},
-    "zergling-death": { "category": "entity", "sounds": ["Starcraft:zergling-death"], "subtitle": "starcraft.zergling.zergling-death" },
-    // "zergling-death": {"category": "master", "sounds": ["zergling-death"]},
-    "probe-live1": { "category": "entity", "sounds": ["Starcraft:probe-live1"], "subtitle": "starcraft.probe.probe-live1" },
-    // "probe-live1": {"category": "master", "sounds": ["probe-live1"]},
-    "probe-hurt": { "category": "entity", "sounds": ["Starcraft:probe-hurt"], "subtitle": "starcraft.probe.probe-hurt" },
-    // "probe-hurt": {"category": "master", "sounds": ["probe-hurt"]},
-    "probe-death": { "category": "entity", "sounds": ["Starcraft:probe-death"], "subtitle": "starcraft.probe.probe-death" },
-    // "probe-death": {"category": "master", "sounds": ["probe-death"]},
-    "zealot-live1": { "category": "entity", "sounds": ["Starcraft:zealot-live1"], "subtitle": "starcraft.zealot.zealot-live1" },
-    // "zealot-live1": {"category": "master", "sounds": ["zealot-live1"]},
-    "zealot-live2": { "category": "entity", "sounds": ["Starcraft:zealot-live2"], "subtitle": "starcraft.zealot.zealot-live2" },
-    // "zealot-live2": {"category": "master", "sounds": ["zealot-live2"]},
-    "zealot-live3": { "category": "entity", "sounds": ["Starcraft:zealot-live3"], "subtitle": "starcraft.zealot.zealot-live3" },
-    // "zealot-live3": {"category": "master", "sounds": ["zealot-live3"]},
-    "zealot-live4": { "category": "entity", "sounds": ["Starcraft:zealot-live4"], "subtitle": "starcraft.zealot.zealot-live4" },
-    // "zealot-live4": {"category": "master", "sounds": ["zealot-live4"]},
-    "zealot-hurt": { "category": "entity", "sounds": ["Starcraft:zealot-hurt"], "subtitle": "starcraft.zealot.zealot-hurt" },
-    // "zealot-hurt": {"category": "master", "sounds": ["zealot-hurt"]},
-    "zealot-death": { "category": "entity", "sounds": ["Starcraft:zealot-death"], "subtitle": "starcraft.zealot.zealot-death" },
-    // "zealot-death": {"category": "master", "sounds": ["zealot-death"]},
-    "darkTemplar-live1": { "category": "entity", "sounds": ["Starcraft:darkTemplar-live1"], "subtitle": "starcraft.darkTemplar.darkTemplar-live1" },
-    // "darkTemplar-live1": {"category": "master", "sounds": ["darkTemplar-live1"]},
-    "darkTemplar-live2": { "category": "entity", "sounds": ["Starcraft:darkTemplar-live2"], "subtitle": "starcraft.darkTemplar.darkTemplar-live2" },
-    // "darkTemplar-live2": {"category": "master", "sounds": ["darkTemplar-live2"]},
-    "darkTemplar-hurt": { "category": "entity", "sounds": ["Starcraft:darkTemplar-hurt"], "subtitle": "starcraft.darkTemplar.darkTemplar-hurt" },
-    // "darkTemplar-hurt": {"category": "master", "sounds": ["darkTemplar-hurt"]},
-    "darkTemplar-death": { "category": "entity", "sounds": ["Starcraft:darkTemplar-death"], "subtitle": "starcraft.darkTemplar.darkTemplar-death" },
-    // "darkTemplar-death": {"category": "master", "sounds": ["darkTemplar-death"]},
-    "c14GaussRifle-firing": { "category": "entity", "sounds": ["Starcraft:c14GaussRifle-firing"], "subtitle": "starcraft.c14GaussRifle.c14GaussRifle-firing" },
-    // "c14GaussRifle-firing": {"category": "master", "sounds": ["c14GaussRifle-firing"]},
-    "c14GaussRifle-out": { "category": "entity", "sounds": ["Starcraft:c14GaussRifle-out"], "subtitle": "starcraft.c14GaussRifle.c14GaussRifle-out" },
-    //"c14GaussRifle-out": {"category": "master", "sounds": ["c14GaussRifle-out"]}
+    "larva-live1": { 
+    "category": "entity", 
+     "sounds": ["Starcraft:larva-live1"],
+    "subtitle": "starcraft.larva.larva-live1" },
+    
+     "larva-hurt": { 
+     "category": "entity", 
+     "sounds": ["Starcraft:larva-hurt"], 
+     "subtitle": "starcraft.larva.larva-hurt" },
+     
+    "larva-death": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:larva-death"], 
+    "subtitle": "starcraft.larva.larva-death" },
+   
+    "overlord-live1": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:overlord-live1"], 
+    "subtitle": "starcraft.overlord.overlord-live1" },
+   
+    "overlord-hurt": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:overlord-hurt"], 
+    "subtitle": "starcraft.overlord.overlord-hurt" },
+   
+    "overlord-death": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:overlord-death"], 
+    "subtitle": "starcraft.overlord.overlord-death" },
+
+    "zergCocoon-live1": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergCocoon-live1"], 
+    "subtitle": "starcraft.zergCocoon.zergCocoon-live1" },
+   
+    "zergCocoon-hurt": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergCocoon-hurt"], 
+    "subtitle": "starcraft.zergCocoon.zergCocoon-hurt" },
+
+    "zergCocoon-death": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergCocoon-death"], 
+    "subtitle": "starcraft.zergCocoon.zergCocoon-death" },
+    
+    "zergling-live1": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergling-live1"], 
+    "subtitle": "starcraft.zergling.zergling-live1" },
+
+    "zergling-live2": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergling-live2"], 
+    "subtitle": "starcraft.zergling.zergling-live2" },
+   
+    "zergling-live3": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergling-live3"], 
+    "subtitle": "starcraft.zergling.zergling-live3" },
+  
+    "zergling-live4": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergling-live4"], 
+    "subtitle": "starcraft.zergling.zergling-live4" },
+  
+    "zergling-hurt": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergling-hurt"], 
+    "subtitle": "starcraft.zergling.zergling-hurt" },
+ 
+    "zergling-death": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zergling-death"], 
+    "subtitle": "starcraft.zergling.zergling-death" },
+   
+    "probe-live1": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:probe-live1"], 
+    "subtitle": "starcraft.probe.probe-live1" },
+
+    "probe-hurt": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:probe-hurt"], 
+    "subtitle": "starcraft.probe.probe-hurt" },
+   
+    "probe-death": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:probe-death"], 
+    "subtitle": "starcraft.probe.probe-death" },
+  
+    "zealot-live1": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zealot-live1"], 
+    "subtitle": "starcraft.zealot.zealot-live1" },
+   
+    "zealot-live2": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zealot-live2"], 
+    "subtitle": "starcraft.zealot.zealot-live2" },
+    
+    "zealot-live3": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zealot-live3"], 
+    "subtitle": "starcraft.zealot.zealot-live3" },
+    
+    "zealot-live4": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zealot-live4"], 
+    "subtitle": "starcraft.zealot.zealot-live4" },
+   
+    "zealot-hurt": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zealot-hurt"], 
+    "subtitle": "starcraft.zealot.zealot-hurt" },
+    
+    "zealot-death": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:zealot-death"], 
+    "subtitle": "starcraft.zealot.zealot-death" },
+
+    "darkTemplar-live1": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:darkTemplar-live1"],
+    "subtitle": "starcraft.darkTemplar.darkTemplar-live1" },
+   
+    "darkTemplar-live2": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:darkTemplar-live2"], 
+    "subtitle": "starcraft.darkTemplar.darkTemplar-live2" },
+  
+    "darkTemplar-hurt": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:darkTemplar-hurt"], 
+    "subtitle": "starcraft.darkTemplar.darkTemplar-hurt" },
+    
+    "darkTemplar-death": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:darkTemplar-death"], 
+    "subtitle": "starcraft.darkTemplar.darkTemplar-death" },
+    
+    "c14GaussRifle-firing": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:c14GaussRifle-firing"], 
+    "subtitle": "starcraft.c14GaussRifle.c14GaussRifle-firing" },
+    
+    "c14GaussRifle-out": { 
+    "category": "entity", 
+    "sounds": ["Starcraft:c14GaussRifle-out"], 
+    "subtitle": "starcraft.c14GaussRifle.c14GaussRifle-out" }
+  
     
 }

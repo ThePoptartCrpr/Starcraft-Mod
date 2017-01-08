@@ -4,7 +4,6 @@ import org.apache.logging.log4j.Level;
 
 import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ModArmour;
-import net.bvanseghi.starcraft.blocks.BlockRenderRegister;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.ModEntities;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
@@ -13,7 +12,7 @@ import net.bvanseghi.starcraft.lib.LogHelper;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.material.ModMaterials;
-import net.bvanseghi.starcraft.proxy.ServerProxy;
+import net.bvanseghi.starcraft.proxy.ClientProxy;
 import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.bvanseghi.starcraft.worldgen.SCWorldGen;
@@ -32,7 +31,7 @@ public class Starcraft {
 	public static Starcraft instance;
 
 	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY, serverSide = Reference.SERVER_SIDE_PROXY)
-	public static ServerProxy proxy;
+	public static ClientProxy proxy;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -43,81 +42,86 @@ public class Starcraft {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Configuration failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		ModBlocks.init();
-		LogHelper.logger.log(Level.INFO, "Starcraft Blocks initialized.");
+			ModBlocks.init();
+			LogHelper.logger.log(Level.INFO, "Starcraft Blocks initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Blocks failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		ModItems.init();
-		LogHelper.logger.log(Level.INFO, "Starcraft Items initialized.");
+			ModItems.init();
+			LogHelper.logger.log(Level.INFO, "Starcraft Items initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Items failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		ModMaterials.preInit();
-		LogHelper.logger.log(Level.INFO, "Starcraft Materials initialized.");
+			ModMaterials.preInit();
+			LogHelper.logger.log(Level.INFO, "Starcraft Materials initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Materials failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		ModWeapons.preInit();
-		LogHelper.logger.log(Level.INFO, "Starcraft Weapons initialized.");
+			ModWeapons.preInit();
+			LogHelper.logger.log(Level.INFO, "Starcraft Weapons initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Weapons failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		ModArmour.preInit();
-		LogHelper.logger.log(Level.INFO, "Starcraft Armors initialized.");
+			ModArmour.preInit();
+			LogHelper.logger.log(Level.INFO, "Starcraft Armors initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Armors failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		ModTools.preInit();
-		LogHelper.logger.log(Level.INFO, "Starcraft Tools initialized.");
+			ModTools.preInit();
+			LogHelper.logger.log(Level.INFO, "Starcraft Tools initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Tools failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		FuelHandler.preInit();
-		LogHelper.logger.log(Level.INFO, "Starcraft Fuel Handler initialized.");
+			FuelHandler.preInit();
+			LogHelper.logger.log(Level.INFO, "Starcraft Fuel Handler initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Fuel Handler failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		ModItems.registerModels();
-		LogHelper.logger.log(Level.INFO, "Starcraft Item Models registered.");
+			ModItems.registerModels();
+			LogHelper.logger.log(Level.INFO, "Starcraft Item Models registered.");
 		}catch(Exception e) {
-			LogHelper.logger.log(Level.ERROR, "Starcraft Item Models failed to initialize! Report this to the developer(s) of the mod!");
+			LogHelper.logger.log(Level.ERROR, "Starcraft Item Models failed to register! Report this to the developer(s) of the mod!");
 		}
 		try {
-		ModBlocks.registerModels();
-		LogHelper.logger.log(Level.INFO, "Starcraft Block Models registered.");
+			ModBlocks.registerModels();
+			LogHelper.logger.log(Level.INFO, "Starcraft Block Models registered.");
 		}catch(Exception e) {
-			LogHelper.logger.log(Level.ERROR, "Starcraft Block Models failed to initialize! Report this to the developer(s) of the mod!");
+			LogHelper.logger.log(Level.ERROR, "Starcraft Block Models failed to register! Report this to the developer(s) of the mod!");
 		}
 		try {
-		SCWorldGen.setupWorldgen();
-		LogHelper.logger.log(Level.INFO, "Starcraft Dimensions registered.");
+			SCWorldGen.setupWorldgen();
+			LogHelper.logger.log(Level.INFO, "Starcraft Dimensions registered.");
 		}catch(Exception e) {
-			LogHelper.logger.log(Level.ERROR, "Starcraft Dimensions failed to initialize! Report this to the developer(s) of the mod!");
+			LogHelper.logger.log(Level.ERROR, "Starcraft Dimensions failed to register! Report this to the developer(s) of the mod!");
 		}
 		try {
-		SCWorldGen.preInit();
-		LogHelper.logger.log(Level.INFO, "Starcraft World Generation initialized.");
+			SCWorldGen.preInit();
+			LogHelper.logger.log(Level.INFO, "Starcraft World Generation initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Configuration failed to initialize! Report this to the developer(s) of the mod!");
 		}
 		try {
-		proxy.preInit(event);
-		LogHelper.logger.log(Level.INFO, "Starcraft Proxy initialized.");
+			proxy.preInit(event);
+			LogHelper.logger.log(Level.INFO, "Starcraft Proxy initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Configuration failed to initialize! Report this to the developer(s) of the mod!");
 		}
-
+		try {
+			ModEntities.registerEntities();
+			LogHelper.logger.log(Level.INFO, "Starcraft Entities registered.");
+		}catch(Exception e) {
+			LogHelper.logger.log(Level.ERROR, "Starcraft Entities failed to register! Report this to the developer(s) of the mod!");
+		}
 		//try {
-		BlockRenderRegister.preInit();
-		LogHelper.logger.log(Level.INFO, "Starcraft Meta Blocks initialized.");
+		//BlockRenderRegister.preInit();
+		//LogHelper.logger.log(Level.INFO, "Starcraft Meta Blocks initialized.");
 		//}catch(Exception e) {
 			//LogHelper.logger.log(Level.ERROR, "Starcraft Meta Blocks failed to initialize! Report this to the developer(s) of the mod!");
 		//}
@@ -128,14 +132,26 @@ public class Starcraft {
 	public void init(FMLInitializationEvent event) {
 	
 		try {
-		ModEntities.init();
-		LogHelper.logger.log(Level.INFO, "Starcraft Entities initialized.");
+			ModEntities.setEntityToSpawn();
+			LogHelper.logger.log(Level.INFO, "Starcraft Entity Spawns registered.");
 		}catch(Exception e) {
-			LogHelper.logger.log(Level.ERROR, "Starcraft Entities failed to initialize! Report this to the developer(s) of the mod!");
+			LogHelper.logger.log(Level.ERROR, "Starcraft Entity Spawns failed to register! Report this to the developer(s) of the mod!");
 		}
 		try {
-		Achievements.init();
-		LogHelper.logger.log(Level.INFO, "Starcraft Achievements initialized.");
+			ModEntities.generateSpawnEgg();
+			LogHelper.logger.log(Level.INFO, "Starcraft Entity Spawn Eggs registered.");
+		}catch(Exception e) {
+			LogHelper.logger.log(Level.ERROR, "Starcraft Entity Spawn Eggs failed to register! Report this to the developer(s) of the mod!");
+		}
+		try {
+			proxy.registerEntityRenders();
+			LogHelper.logger.log(Level.INFO, "Starcraft Entity Renders registered.");
+		}catch(Exception e) {
+			LogHelper.logger.log(Level.ERROR, "Starcraft Entity Renders failed to register! Report this to the developer(s) of the mod!");
+		}
+		try {
+			Achievements.init();
+			LogHelper.logger.log(Level.INFO, "Starcraft Achievements initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Achievements failed to initialize! Report this to the developer(s) of the mod!");
 		}

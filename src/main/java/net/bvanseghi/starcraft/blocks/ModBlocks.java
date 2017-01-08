@@ -215,7 +215,7 @@ public class ModBlocks extends Block {
 		SAND_SHAKURAS = new BlockShakurasSand();
 		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
 		
-		PROTOSS_METAL  = new BlockProtossMetal();
+		//PROTOSS_METAL  = new BlockProtossMetal();
 	}
 
 	public static void register() {
@@ -328,7 +328,7 @@ public class ModBlocks extends Block {
 		GameRegistry.register(DIM_PORTAL_SHAKURAS);
 		GameRegistry.register(new ItemBlock(DIM_PORTAL_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL()));
 		
-		GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
+		//GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
 	}
 
 	public static void registerModels() {
@@ -472,7 +472,7 @@ public class ModBlocks extends Block {
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + DIM_PORTAL_SHAKURAS.getUnlocalizedName().substring(5));
 		
-		BlockRenderRegister.registerBlockRenderer();
+		//BlockRenderRegister.registerBlockRenderer();
 	
 	}
 
