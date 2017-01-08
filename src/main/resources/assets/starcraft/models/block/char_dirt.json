@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "starcraft:blocks/overworld_ore_copper"
+        "all": "starcraft:blocks/char_dirt"
     }
 }

@@ -1,10 +1,20 @@
 package net.bvanseghi.starcraft.blocks;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.ore.OreOWCopper;
+import net.bvanseghi.starcraft.ore.OreOWTitanium;
+import net.bvanseghi.starcraft.ore.OreOWUranium;
+import net.bvanseghi.starcraft.orechar.OreCharCoal;
+import net.bvanseghi.starcraft.orechar.OreCharCopper;
+import net.bvanseghi.starcraft.orechar.OreCharDiamond;
+import net.bvanseghi.starcraft.orechar.OreCharGold;
+import net.bvanseghi.starcraft.orechar.OreCharIron;
+import net.bvanseghi.starcraft.orechar.OreCharLapis;
+import net.bvanseghi.starcraft.orechar.OreCharMineral;
+import net.bvanseghi.starcraft.orechar.OreCharRedstone;
+import net.bvanseghi.starcraft.orechar.OreCharRichMineral;
+import net.bvanseghi.starcraft.orechar.OreCharTitanium;
+import net.bvanseghi.starcraft.orechar.OreCharUranium;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -140,25 +150,58 @@ public class ModBlocks extends Block {
 	public static Block DIM_PORTAL_CHAR;
 	public static Block DIM_PORTAL_OVERWORLD;
 	public static Block DIM_PORTAL_SHAKURAS;
-	
- 	public static void init() {
- 		instantiate();
- 		register();
+
+	public static Block[] blocks = { 
+			ORE_COPPER_OW, ORE_TITANIUM_OW, ORE_URANIUM_OW, 
+			
+			ORE_COAL_CHAR, ORE_DIAMOND_CHAR,
+			ORE_GOLD_CHAR, ORE_IRON_CHAR, ORE_LAPIS_CHAR, ORE_MINERAL_CHAR, ORE_REDSTONE_CHAR, ORE_RICHMINERAL_CHAR,
+			ORE_TITANIUM_CHAR, ORE_URANIUM_CHAR, COBBLESTONE_CHAR, MAGMA_CHAR, DIRT_CHAR,
+			
+			
+
+	};
+
+	public static void init() {
+		instantiate();
+		register();
 	}
- 	
- 	public static void instantiate() {
- 		ORE_COPPER_OW = new OreOWCopper();
- 	}
+
+	public static void instantiate() {
+		ORE_COPPER_OW = new OreOWCopper();
+		ORE_TITANIUM_OW = new OreOWTitanium();
+		ORE_URANIUM_OW = new OreOWUranium();
+
+		ORE_COAL_CHAR = new OreCharCoal();
+		ORE_COPPER_CHAR = new OreCharCopper();
+		ORE_DIAMOND_CHAR = new OreCharDiamond();
+		ORE_GOLD_CHAR = new OreCharGold();
+		ORE_IRON_CHAR = new OreCharIron();
+		ORE_LAPIS_CHAR = new OreCharLapis();
+		ORE_MINERAL_CHAR = new OreCharMineral();
+		ORE_REDSTONE_CHAR = new OreCharRedstone();
+		ORE_RICHMINERAL_CHAR = new OreCharRichMineral();
+		ORE_TITANIUM_CHAR = new OreCharTitanium();
+		ORE_URANIUM_CHAR = new OreCharUranium();
+
+		COBBLESTONE_CHAR = new BlockCharCobblestone();
+		MAGMA_CHAR = new BlockCharMagma();
+		DIRT_CHAR = new BlockCharDirt();
+	}
 
 	public static void register() {
-			GameRegistry.register(ORE_COPPER_OW);
-			GameRegistry.register(new ItemBlock(ORE_COPPER_OW).setRegistryName(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL()));
+		for (int x = 0; x < blocks.length; x++) {
+			GameRegistry.register(blocks[x]);
+			GameRegistry.register(
+					new ItemBlock(blocks[x]).setRegistryName(Reference.RL_BASE + blocks[x].getRegistryName()));
+		}
 	}
 
 	public static void registerModels() {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ORE_COPPER_OW), 0,
-					new ModelResourceLocation(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL(), "inventory"));
-		
-	}
+		for (int x = 0; x < blocks.length; x++){
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blocks[x]), 0,
+					new ModelResourceLocation(Reference.RL_BASE + blocks[x].getRegistryName(), "inventory"));
+		}
 	
+	}
 }
