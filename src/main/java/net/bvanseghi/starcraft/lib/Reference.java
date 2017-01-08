@@ -81,25 +81,25 @@ public class Reference {
 		ORE_TITANIUM_C("charOreTitanium", "char_ore_titanium"),
 		ORE_URANIUM_C("charOreUranium", "char_ore_uranium"),
 		
-		ORE_ALIEN_S("oreAlienS", "oreAlienS"),
-		ORE_COAL_S("oreCoalS", "OreCoalS"),
-		ORE_COPPER_S("oreCopperS", "oreCopperS"),
-		ORE_DIAMOND_S("oreDiamondS", "oreDiamondS"),
-		ORE_GOLD_S("oreGoldS", "oreGoldS"),
-		ORE_IRON_S("oreIronS", "oreIronS"),
-		ORE_LAPIS_S("oreLapisS", "oreLapisS"),
-		ORE_MINERAL_S("oreMineralS", "oreMineralS"),
-		ORE_REDSTONE_S("oreRedstoneS", "oreRedstoneS"),
-		ORE_RICHMINERAL_S("oreRichMineralS", "oreRichMineralS"),
-		ORE_TITANIUM_S("oreTitaniumS", "oreTitaniumS"),
-		ORE_URANIUM_S("oreUraniumS", "oreUraniumS"),
+		ORE_ALIEN_S("shakurasOreAlien", "shakuras_ore_alien"),
+		ORE_COAL_S("shakurasOreCoal", "shakuras_ore_coal"),
+		ORE_COPPER_S("shakurasOreCopper", "shakuras_ore_copper"),
+		ORE_DIAMOND_S("shakurasOreDiamond", "shakuras_ore_diamond"),
+		ORE_GOLD_S("shakurasOreGold", "shakuras_ore_gold"),
+		ORE_IRON_S("shakurasOreIron", "shakuras_ore_iron"),
+		ORE_LAPIS_S("shakurasOreLapis", "shakuras_ore_lapis"),
+		ORE_MINERAL_S("shakurasOreMineral", "shakuras_ore_mineral"),
+		ORE_REDSTONE_S("shakurasOreRedstone", "shakuras_ore_redstone"),
+		ORE_RICHMINERAL_S("shakurasOreMineralRich", "shakuras_ore_mineral_rich"),
+		ORE_TITANIUM_S("shakurasOreTitanium", "shakuras_ore_titanium"),
+		ORE_URANIUM_S("shakurasOreUranium", "shakuras_ore_uranium"),
 		
 		//TODO: all the unlocalized names need to be made to lowerCamelCase
 		//Zerg Objects
-		BLOCK_ZERG_CARAPACE("block_zerg_carapace", "block_zerg_carapace"),
-		BLOCK_ZERG_FLESH("block_zerg_flesh", "block_zerg_flesh"),
-		BLOCK_ZERG_CREEP("block_zerg_creep", "block_zerg_creep"),
-		BLOCK_KERATIN_CHUNK("block_keratin_chunk", "block_keratin_chunk"),
+		BLOCK_ZERG_CARAPACE("zergCarapace", "zerg_carapace"),
+		BLOCK_ZERG_FLESH("zergFlesh", "zerg_flesh"),
+		BLOCK_ZERG_CREEP("zergCreep", "zerg_creep"),
+		BLOCK_KERATIN_CHUNK("zergKeratinChunk", "zerg_keratin_chunk"),
 		
 		//Protoss Objects
 		BLOCK_COMP_METAL("block_comp_metal", "block_comp_metal"),
@@ -133,7 +133,7 @@ public class Reference {
 		FLUID_BLOOD("fluid_blood", "fluid_blood"),
 		
 		//Char Objects
-		BLOCK_DIRT_C("block_dirt_c", "block_dirt_c"),
+		BLOCK_DIRT_C("charDirt", "char_dirt"),
 		BLOCK_STONE_C("charStone", "char_stone"),
 		BLOCK_COBBLESTONE_C("charCobblestone", "char_cobblestone"),
 		BLOCK_ASH_C("charAsh", "char_ash"),
@@ -143,10 +143,10 @@ public class Reference {
 		BLOCK_VESPENE_GEYSER_BASE_C("block_vespene_geyser_base_c", "block_vespene_geyser_base_c"),
 		
 		//Shakuras Objects
-		BLOCK_DIRT_S("block_dirt_s", "block_dirt_s"),
+		BLOCK_DIRT_S("shakurasDirt", "shakuras_dirt"),
 		BLOCK_SAND_S("shakurasSand", "shakuras_sand"),
-		BLOCK_STONE_S("block_stone_s", "block_stone_s"),
-		BLOCK_COBBLESTONE_S("block_cobblestone_s", "block_cobblestone_s"),
+		BLOCK_STONE_S("shakurasStone", "shakuras_stone"),
+		BLOCK_COBBLESTONE_S("shakurasStone", "shakuras_cobblestone"),
 		BLOCK_VESPENE_GEYSER_S("block_vespene_geyser_s", "block_vespene_geyser_s"),
 		BLOCK_RICH_VESPENE_GEYSER_S("block_rich_vespene_geyser_s", "block_rich_vespene_geyser_s"),
 		BLOCK_VESPENE_GEYSER_BASE_S("block_vespene_geyser_base_s", "block_vespene_geyser_base_s"),
