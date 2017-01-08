@@ -16,7 +16,7 @@ public class Reference {
 		ITEM_MINERAL_SHARD("mineralShard", "mineral_shard"),
 		ITEM_RICHMINERAL_SHARD("mineralRichShard", "mineral_rich_shard"),
 		ITEM_VESPENE("vespene"),
-		ITEM_PSIBLADEFOCUSER_UNCHARGED("focuserUnchargedPsiBlade", "focuser_uncharged_psi_blade"),
+		ITEM_PSIBLADEFOCUSER_UNCHARGED("protossPsiBladeFocuserUncharged", "protoss_psiblade_focuser_uncharged"),
 		ITEM_DARK_PSIBLADEFOCUSER_UNCHARGED("focuserDarkUnchargedPsiBlade", "focuser_dark_uncharged_psi_blade"),
 		ITEM_ENERGY("energy"),
 		ITEM_PROTOSS_ARTIFACT("protossArtifact", "protoss_artifact"),

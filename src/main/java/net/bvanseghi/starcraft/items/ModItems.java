@@ -37,6 +37,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -82,93 +83,47 @@ public class ModItems extends Item {
 	public static Item keystone;
 	
 	public static void init() {
-		
-		// Initialize items here.
-				mineralShard = new ItemMineralShard();
-				richMineralShard = new ItemRichMineralShard();
-
-				psiBladeFocuserUncharged = new ItemPsiBladeFocuserUncharged();
-				darkPsiBladeFocuserUncharged = new ItemDarkPsiBladeFocuserUncharged();
-				protossArtifact = new ItemProtossArtifact();
-				uraj = new ItemUraj();
-				protossModule = new ItemProtossModule();
-
-				C14GaussRifle = new ItemC14GaussRifle().setFull3D();
-				C14GaussRifleBullet = new ItemC14GaussRifleBullet();
-
-				creepResin = new ItemCreepResin();
-				organicTissue = new ItemOrganicTissue();
-				
-				keystone = new ItemKeystone();
-
-				acidBucket = new ItemAcidBucket(ModBlocks.FLUID_ACID);
-				bloodBucket = new ItemBloodBucket(ModBlocks.FLUID_ACID);
-				ingot = new ItemIngot();
-				dust = new ItemDust();
-				coord = new ItemProtossCoordinates();
-				essence = new ItemEssence();
-				c14Parts = new ItemC14GaussRifleParts();
-				vespene = new ItemVespene();
-				zergCarapace = new ItemZergCarapace();
-				energy = new ItemEnergy();
-				
-
+		instantiate();
+		register();
 	}
+	
+	public static void instantiate() {
+		mineralShard = new ItemMineralShard();
+		richMineralShard = new ItemRichMineralShard();
+
+		psiBladeFocuserUncharged = new ItemPsiBladeFocuserUncharged();
+		darkPsiBladeFocuserUncharged = new ItemDarkPsiBladeFocuserUncharged();
+		protossArtifact = new ItemProtossArtifact();
+		uraj = new ItemUraj();
+		protossModule = new ItemProtossModule();
+
+		C14GaussRifle = new ItemC14GaussRifle().setFull3D();
+		C14GaussRifleBullet = new ItemC14GaussRifleBullet();
+
+		creepResin = new ItemCreepResin();
+		organicTissue = new ItemOrganicTissue();
+		
+		keystone = new ItemKeystone();
+
+		acidBucket = new ItemAcidBucket(ModBlocks.FLUID_ACID);
+		bloodBucket = new ItemBloodBucket(ModBlocks.FLUID_BLOOD);
+		ingot = new ItemIngot();
+		dust = new ItemDust();
+		coord = new ItemProtossCoordinates();
+		essence = new ItemEssence();
+		c14Parts = new ItemC14GaussRifleParts();
+		vespene = new ItemVespene();
+		zergCarapace = new ItemZergCarapace();
+		energy = new ItemEnergy();
+	}
+
 
 	public static void register() {
-		GameRegistry.register(mineralShard);
-		GameRegistry.register(richMineralShard);
 		GameRegistry.register(psiBladeFocuserUncharged);
-		GameRegistry.register(darkPsiBladeFocuserUncharged);
-		GameRegistry.register(protossArtifact);
-		GameRegistry.register(uraj);
-		GameRegistry.register(protossModule);
-		GameRegistry.register(C14GaussRifle);
-		GameRegistry.register(C14GaussRifleBullet);
-		GameRegistry.register(creepResin);
-		GameRegistry.register(organicTissue);
-		GameRegistry.register(keystone);
-		GameRegistry.register(coord);
-		GameRegistry.register(ingot);
-		GameRegistry.register(dust);
-		GameRegistry.register(essence);
-		GameRegistry.register(c14Parts);
-		GameRegistry.register(vespene);
-		GameRegistry.register(zergCarapace);
-		GameRegistry.register(energy);
 	}
-
-	public static void registerRenders() {
-		
-		registerRender(mineralShard);
-		registerRender(richMineralShard);
-		registerRender(psiBladeFocuserUncharged);
-		registerRender(darkPsiBladeFocuserUncharged);
-		registerRender(protossArtifact);
-		registerRender(uraj);
-		registerRender(protossModule);
-		registerRender(C14GaussRifle);
-		registerRender(C14GaussRifleBullet);
-		registerRender(creepResin);
-		registerRender(organicTissue);
-		registerRender(keystone);
-		registerRender(coord);
-		
-		registerRender(ingot);
-		registerRender(dust);
-		registerRender(essence);
-		registerRender(c14Parts);
-		registerRender(vespene);
-		registerRender(zergCarapace);
-		registerRender(energy);
-	}
-
-	public static void registerItem(Item item) {
-		GameRegistry.register(item);
-	}
-
-	public static void registerRender(Item item) {
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(
-				Reference.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+	
+	public static void registerModels() {
+		ModelLoader.setCustomModelResourceLocation(psiBladeFocuserUncharged, 0,
+				new ModelResourceLocation(Reference.ModItems.ITEM_PSIBLADEFOCUSER_UNCHARGED.getRegistryRL(), "inventory"));
 	}
 }

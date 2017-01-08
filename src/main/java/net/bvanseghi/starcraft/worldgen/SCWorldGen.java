@@ -79,7 +79,8 @@ public class SCWorldGen implements IWorldGenerator {
 		TITANIUM_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_TITANIUM_OW.getDefaultState(), 8);
 		URANIUM_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_URANIUM_OW.getDefaultState(), 8);
 		
-		ALIEN_CHAR = new WorldGenMinable(ModBlocks.ORE_ALIEN_CHAR.getDefaultState(), 8);
+		TITANIUM_CHAR = new WorldGenMinable(ModBlocks.ORE_TITANIUM_CHAR.getDefaultState(), 8);
+		//ALIEN_CHAR = new WorldGenMinable(ModBlocks.ORE_ALIEN_CHAR.getDefaultState(), 8);
 		COAL_CHAR = new WorldGenMinable(ModBlocks.ORE_COAL_CHAR.getDefaultState(), 8);
 		COPPER_CHAR = new WorldGenMinable(ModBlocks.ORE_COPPER_CHAR.getDefaultState(), 8);
 		DIAMOND_CHAR = new WorldGenMinable(ModBlocks.ORE_DIAMOND_CHAR.getDefaultState(), 8);
@@ -92,7 +93,7 @@ public class SCWorldGen implements IWorldGenerator {
 		URANIUM_CHAR = new WorldGenMinable(ModBlocks.ORE_URANIUM_CHAR.getDefaultState(), 8);
 		
 		TITANIUM_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
-		ALIEN_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_ALIEN_SHAKURAS.getDefaultState(), 8);
+		//ALIEN_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_ALIEN_SHAKURAS.getDefaultState(), 8);
 		COAL_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_COAL_SHAKURAS.getDefaultState(), 8);
 		COPPER_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_COPPER_SHAKURAS.getDefaultState(), 8);
 		DIAMOND_SHAKURAS = new WorldGenMinable(ModBlocks.ORE_DIAMOND_SHAKURAS.getDefaultState(), 8);

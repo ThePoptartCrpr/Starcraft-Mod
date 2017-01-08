@@ -9,8 +9,8 @@ public class ItemBloodBucket extends ItemBucket {
 
 	public ItemBloodBucket(Block block) {
 		super(block);
-
-		setRegistryName(Reference.MODID + ":bloodBucket");
+		setUnlocalizedName(Reference.ModItems.ITEM_BUCKET_BLOOD.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_BUCKET_BLOOD.getRegistryRL());
 		this.setCreativeTab(CreativeTab.TabStarcraftMisc);
 
 	}

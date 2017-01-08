@@ -20,8 +20,8 @@ public class ItemC14GaussRifle extends ItemSword {
 		super(ModWeapons.GUN);
 		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
 		this.setFull3D();
-		this.setUnlocalizedName(Reference.UN_BASE + "c14GaussRifle");
-		this.setRegistryName(Reference.RL_BASE + "c14GaussRifle");
+		setUnlocalizedName(Reference.ModItems.WEAPON_RIFLE_C14_GAUSS.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.WEAPON_RIFLE_C14_GAUSS.getRegistryRL());
 	}
 
 	// TODO: fix type of sound emitted

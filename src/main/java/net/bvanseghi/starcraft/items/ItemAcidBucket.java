@@ -9,8 +9,8 @@ public class ItemAcidBucket extends ItemBucket {
 
 	public ItemAcidBucket(Block block) {
 		super(block);
-
-		this.setRegistryName(Reference.MODID + ":acidBucket");
+		setUnlocalizedName(Reference.ModItems.ITEM_BUCKET_ACID.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_BUCKET_ACID.getRegistryRL());
 		this.setCreativeTab(CreativeTab.TabStarcraftMisc);
 
 	}

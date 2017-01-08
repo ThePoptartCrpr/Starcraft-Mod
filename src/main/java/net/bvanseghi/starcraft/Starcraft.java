@@ -5,12 +5,14 @@ import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.ModEntities;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
+import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.material.ModMaterials;
 import net.bvanseghi.starcraft.proxy.ServerProxy;
 import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
+import net.bvanseghi.starcraft.worldgen.SCWorldGen;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -32,12 +34,16 @@ public class Starcraft {
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
 		ModBlocks.init();
+		ModItems.init();
 		ModMaterials.preInit();
 		ModWeapons.preInit();
 		ModArmour.preInit();
 		ModTools.preInit();
 		FuelHandler.preInit();
+		ModItems.registerModels();
 		ModBlocks.registerModels();
+		
+		SCWorldGen.preInit();
 		proxy.preInit(event);
 		
 	}
