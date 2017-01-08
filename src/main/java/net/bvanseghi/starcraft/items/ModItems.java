@@ -123,11 +123,16 @@ public class ModItems extends Item {
 
 	public static void register() {
 		GameRegistry.register(psiBladeFocuserUncharged);
+		GameRegistry.register(uraj);
 	}
 	
 	public static void registerModels() {
 		ModelLoader.setCustomModelResourceLocation(psiBladeFocuserUncharged, 0,
 				new ModelResourceLocation(Reference.ModItems.ITEM_PSIBLADEFOCUSER_UNCHARGED.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Item: " + psiBladeFocuserUncharged.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(uraj, 0,
+				new ModelResourceLocation(Reference.ModItems.ITEM_URAJ.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Item: " + uraj.getUnlocalizedName().substring(5));
 	}
 }

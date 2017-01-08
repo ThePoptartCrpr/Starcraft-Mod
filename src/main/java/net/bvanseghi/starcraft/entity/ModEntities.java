@@ -18,12 +18,12 @@ public class ModEntities {
 		registerEntity(EntityProbe.class, "probe", 64, 20, true);
 		registerEntity(EntityDarkProbe.class, "probe_dark", 64, 20, true);
 		
-		registerEntity(EntityZealot.class, "zergling", 64, 20, true);
-		registerEntity(EntityZealot.class, "larva", 64, 20, true);
-		registerEntity(EntityZealot.class, "cocoon_larva", 64, 20, true);
-		registerEntity(EntityZealot.class, "broodling", 64, 20, true);
+		registerEntity(EntityZergling.class, "zergling", 64, 20, true);
+		registerEntity(EntityLarva.class, "larva", 64, 20, true);
+		registerEntity(EntityLarvaCocoon.class, "cocoon_larva", 64, 20, true);
+		registerEntity(EntityBroodling.class, "broodling", 64, 20, true);
 		
-		registerEntity(EntityZealot.class, "civilian", 64, 20, true);
+		registerEntity(EntityCivilian.class, "civilian", 64, 20, true);
 	}
 	
 	public static void setEntityToSpawn() {
