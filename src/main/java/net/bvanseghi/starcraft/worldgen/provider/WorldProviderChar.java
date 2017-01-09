@@ -2,6 +2,7 @@ package net.bvanseghi.starcraft.worldgen.provider;
 
 import javax.annotation.Nullable;
 
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -48,6 +49,7 @@ public abstract class WorldProviderChar
         this.terrainType = worldIn.getWorldInfo().getTerrainType();
         this.generatorSettings = worldIn.getWorldInfo().getGeneratorOptions();
         this.createBiomeProvider();
+        this.setDimension(StarcraftConfig.dimChar);
         this.generateLightBrightnessTable();
     }
 

@@ -132,7 +132,7 @@ public class Reference {
 		
 		BLOCK_VESPENE_GEYSER("block_vespene_geyser", "block_vespene_geyser"),
 		BLOCK_RICH_VESPENE_GEYSER("block_rich_vespene_geyser", "block_rich_vespene_geyser"),
-		BLOCK_VESPENE_GEYSER_BASE("block_vespene_geyser_base", "block_vespene_geyser_base"),
+		BLOCK_VESPENE_GEYSER_BASE("geyserVespeneBase", "geyser_vespene_base"),
 		FLUID_ACID("fluid_acid", "fluid_acid"),
 		FLUID_BLOOD("fluid_blood", "fluid_blood"),
 		
@@ -144,7 +144,7 @@ public class Reference {
 		BLOCK_MAGMA_C("charMagma", "char_magma"),
 		BLOCK_VESPENE_GEYSER_C("block_vespene_geyser_c", "block_vespene_geyser_c"),
 		BLOCK_RICH_VESPENE_GEYSER_C("block_rich_vespene_geyser_c", "block_rich_vespene_geyser_c"),
-		BLOCK_VESPENE_GEYSER_BASE_C("block_vespene_geyser_base_c", "block_vespene_geyser_base_c"),
+		BLOCK_VESPENE_GEYSER_BASE_C("charGeyserVespeneBase", "char_geyser_vespene_base"),
 		
 		//Shakuras Objects
 		BLOCK_DIRT_S("shakurasDirt", "shakuras_dirt"),
@@ -153,7 +153,7 @@ public class Reference {
 		BLOCK_COBBLESTONE_S("shakurasStone", "shakuras_cobblestone"),
 		BLOCK_VESPENE_GEYSER_S("block_vespene_geyser_s", "block_vespene_geyser_s"),
 		BLOCK_RICH_VESPENE_GEYSER_S("block_rich_vespene_geyser_s", "block_rich_vespene_geyser_s"),
-		BLOCK_VESPENE_GEYSER_BASE_S("block_vespene_geyser_base_s", "block_vespene_geyser_base_s"),
+		BLOCK_VESPENE_GEYSER_BASE_S("shakurasGeyserVespeneBase", "shakuras_geyser_vespene_base"),
 		
 		
 		//Dimension Objects
