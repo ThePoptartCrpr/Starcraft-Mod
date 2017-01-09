@@ -19,6 +19,7 @@ import net.bvanseghi.starcraft.armour.ArmourTitaniumLeggings;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
+import net.bvanseghi.starcraft.entity.EntityBrutalisk;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
 import net.bvanseghi.starcraft.entity.EntityDarkProbe;
 import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
@@ -28,6 +29,7 @@ import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.bvanseghi.starcraft.model.ModelBroodling;
+import net.bvanseghi.starcraft.model.ModelBrutalisk;
 import net.bvanseghi.starcraft.model.ModelCivilian;
 import net.bvanseghi.starcraft.model.ModelDarkProbe;
 import net.bvanseghi.starcraft.model.ModelDarkTemplar;
@@ -37,6 +39,7 @@ import net.bvanseghi.starcraft.model.ModelProbe;
 import net.bvanseghi.starcraft.model.ModelZealot;
 import net.bvanseghi.starcraft.model.ModelZergling;
 import net.bvanseghi.starcraft.renderer.RenderBroodling;
+import net.bvanseghi.starcraft.renderer.RenderBrutalisk;
 import net.bvanseghi.starcraft.renderer.RenderCivilian;
 import net.bvanseghi.starcraft.renderer.RenderDarkProbe;
 import net.bvanseghi.starcraft.renderer.RenderDarkTemplar;
@@ -92,6 +95,7 @@ public class ClientProxy extends ServerProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class, new RenderProbe(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f)); //use depricated method
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class, new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f)); //use depricated method
 		
+		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class, new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 0.4f)); //use depricated method
 		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class, new RenderZergling(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f)); //use depricated method
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class, new RenderLarva(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f)); //use depricated method
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarvaCocoon.class, new RenderLarvaCocoon(Minecraft.getMinecraft().getRenderManager(), new ModelLarvaCocoon(), 0.4f)); //use depricated method
