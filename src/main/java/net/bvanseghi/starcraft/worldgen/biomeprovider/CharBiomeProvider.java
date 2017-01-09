@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
 
+import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.init.Biomes;
@@ -22,7 +23,7 @@ import net.minecraft.world.storage.WorldInfo;
 
 public class CharBiomeProvider extends BiomeProvider
 {
-    public static List<Biome> allowedBiomes = Lists.newArrayList(/*CHAR BIOMES GO HERE*/);
+    public static List<Biome> allowedBiomes = Lists.newArrayList(BiomesSC.biomeAshPlains, BiomesSC.biomeCreepInfestationChar, BiomesSC.biomeMoltenInferno);
     private GenLayer genBiomes;
     /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
     private GenLayer biomeIndexLayer;

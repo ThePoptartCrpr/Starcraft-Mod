@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.worldgen.provider;
 import javax.annotation.Nullable;
 
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
+import net.bvanseghi.starcraft.worldgen.biomeprovider.CharBiomeProvider;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -30,7 +31,7 @@ public abstract class WorldProviderChar
     private WorldType terrainType;
     private String generatorSettings;
     /** World chunk manager being used to generate chunks */
-    protected BiomeProvider biomeProvider;
+    protected CharBiomeProvider biomeProvider;
     /** States whether the Hell world provider is used(true) or if the normal world provider is used(false) */
     protected boolean isHellWorld;
     /** A boolean that tells if a world does not have a sky. Used in calculating weather and skylight */
@@ -72,7 +73,7 @@ public abstract class WorldProviderChar
      */
     protected void createBiomeProvider()
     {
-        this.biomeProvider = terrainType.getBiomeProvider(worldObj);
+        this.biomeProvider = (CharBiomeProvider) terrainType.getBiomeProvider(worldObj);
     }
 
     public IChunkGenerator createChunkGenerator()
@@ -395,7 +396,7 @@ public abstract class WorldProviderChar
      */
     public int getRespawnDimension(net.minecraft.entity.player.EntityPlayerMP player)
     {
-        return 0;
+        return this.dimensionId;
     }
 
     /**

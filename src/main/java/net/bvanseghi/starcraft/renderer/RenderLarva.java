@@ -22,14 +22,6 @@ public class RenderLarva<T> extends RenderLiving<EntityLarva> {
 
 		modelEntity = ((ModelLarva) mainModel);
 	}
-
-	public void renderLarva(EntityLarva entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderLarva((EntityLarva) entityLiving, x, y, z, u, v);
-	}
 	
 	public void doRender(EntityLarva entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

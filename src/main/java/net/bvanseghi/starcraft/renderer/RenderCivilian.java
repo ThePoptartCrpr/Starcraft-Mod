@@ -22,14 +22,6 @@ public class RenderCivilian<T> extends RenderLiving<EntityCivilian> {
 
 		modelEntity = ((ModelCivilian) mainModel);
 	}
-
-	public void renderCivilian(EntityCivilian entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderCivilian((EntityCivilian) entityLiving, x, y, z, u, v);
-	}
 	
 	public void doRender(EntityCivilian entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

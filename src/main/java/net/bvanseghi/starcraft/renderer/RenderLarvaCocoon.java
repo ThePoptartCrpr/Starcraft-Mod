@@ -22,14 +22,6 @@ public class RenderLarvaCocoon<T> extends RenderLiving<EntityLarvaCocoon> {
 
 		modelEntity = ((ModelLarvaCocoon) mainModel);
 	}
-
-	public void renderLarvaCocoon(EntityLarvaCocoon entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderLarvaCocoon((EntityLarvaCocoon) entityLiving, x, y, z, u, v);
-	}
 	
 	public void doRender(EntityLarvaCocoon entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

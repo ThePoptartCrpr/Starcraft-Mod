@@ -22,14 +22,6 @@ public class RenderProbe<T> extends RenderLiving<EntityProbe> {
 
 		modelEntity = ((ModelProbe) mainModel);
 	}
-
-	public void renderProbe(EntityProbe entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderProbe((EntityProbe) entityLiving, x, y, z, u, v);
-	}
 	
 	public void doRender(EntityProbe entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

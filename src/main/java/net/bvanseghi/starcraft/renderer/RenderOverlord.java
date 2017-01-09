@@ -22,14 +22,6 @@ public class RenderOverlord<T> extends RenderLiving<EntityOverlord> {
 
 		modelEntity = ((ModelOverlord) mainModel);
 	}
-
-	public void renderOverlord(EntityOverlord entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderOverlord((EntityOverlord) entityLiving, x, y, z, u, v);
-	}
 	
 	public void doRender(EntityOverlord entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

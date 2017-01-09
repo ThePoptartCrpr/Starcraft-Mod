@@ -22,14 +22,6 @@ public class RenderScourge<T> extends RenderLiving<EntityScourge> {
 
 		modelEntity = ((ModelScourge) mainModel);
 	}
-
-	public void renderScourge(EntityScourge entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderScourge((EntityScourge) entityLiving, x, y, z, u, v);
-	}
 	
 	public void doRender(EntityScourge entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

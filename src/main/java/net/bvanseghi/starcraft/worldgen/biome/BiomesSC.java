@@ -38,6 +38,8 @@ public class BiomesSC extends Biome {
 		
 		BiomeManager.addSpawnBiome(BiomesSC.biomeCreepInfestationChar);
 		BiomeManager.addSpawnBiome(BiomesSC.biomeAshPlains);
+		BiomeManager.addSpawnBiome(BiomesSC.biomeShakurasDesert);
+		
 		BiomeManager.removeSpawnBiome(BiomesSC.biomeMoltenInferno);
 		
 

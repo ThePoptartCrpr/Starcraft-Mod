@@ -22,14 +22,6 @@ public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
 
 		modelEntity = ((ModelBroodling) mainModel);
 	}
-
-	public void renderBroodling(EntityBroodling entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderBroodling((EntityBroodling) entityLiving, x, y, z, u, v);
-	}
 	
 	public void doRender(EntityBroodling entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

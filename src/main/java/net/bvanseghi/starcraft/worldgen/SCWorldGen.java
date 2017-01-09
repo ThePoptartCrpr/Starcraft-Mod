@@ -121,7 +121,6 @@ public class SCWorldGen implements IWorldGenerator {
 			
 		default: //check for OUR dimensions
 			if(world.provider.getDimension() == StarcraftConfig.dimChar) {
-				this.runGenerator(ALIEN_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				this.runGenerator(COAL_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				this.runGenerator(COPPER_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				this.runGenerator(DIAMOND_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
@@ -135,7 +134,6 @@ public class SCWorldGen implements IWorldGenerator {
 				this.runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				
 			}else if(world.provider.getDimension() == StarcraftConfig.dimShakuras){
-				this.runGenerator(ALIEN_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				this.runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				this.runGenerator(COPPER_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				this.runGenerator(DIAMOND_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);

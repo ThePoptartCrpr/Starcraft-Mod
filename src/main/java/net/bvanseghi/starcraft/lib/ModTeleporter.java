@@ -35,10 +35,10 @@ public class ModTeleporter extends Teleporter {
     /**
      * Place an entity in a nearby portal, creating one if necessary.
      */
-    public void placeInPortal(Entity entity, double x, double y, double z, float par5float) {
+    public void placeInPortal(Entity entity, float rotationYaw) {
         int entityX = MathHelper.floor_double(entity.posX);
-        int entityY = MathHelper.floor_double(entity.posZ);
-        int entityZ = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(new BlockPos(entityX, y, entityY)).getY());
+        int entityY = MathHelper.floor_double(entity.posY) - 1;
+        int entityZ = MathHelper.floor_double(entity.posZ);
         byte b0 = 1;
         byte b1 = 0;
 

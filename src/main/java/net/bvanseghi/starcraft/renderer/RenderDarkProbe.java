@@ -22,14 +22,6 @@ public class RenderDarkProbe<T> extends RenderLiving<EntityDarkProbe> {
 
 		modelEntity = ((ModelDarkProbe) mainModel);
 	}
-
-	public void renderDarkProbe(EntityDarkProbe entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderDarkProbe((EntityDarkProbe) entityLiving, x, y, z, u, v);
-	}
 	
 	public void doRender(EntityDarkProbe entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

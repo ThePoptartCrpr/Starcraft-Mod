@@ -3,6 +3,8 @@ package net.bvanseghi.starcraft.debug;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
@@ -38,9 +40,11 @@ public class DimPortalShakuras extends ModBlocks {
 		
 	}
 	
-	public void addCollisionBoxesToList(BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, AxisAlignedBB blockBox) {
+	@Override
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn)
+    {
 		
-	}
+    }
 
 	@Override
 	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {

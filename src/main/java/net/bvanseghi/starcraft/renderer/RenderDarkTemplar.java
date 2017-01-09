@@ -25,14 +25,6 @@ public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
 		modelEntity = ((ModelDarkTemplar) mainModel);
 	}
 
-	public void renderDarkTemplar(EntityDarkTemplar entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderDarkTemplar((EntityDarkTemplar) entityLiving, x, y, z, u, v);
-	}
-
 	public void doRender(EntityDarkTemplar entity, double x, double y, double z, float entityYaw, float partialTicks) {
 		super.doRender(entity, x, y, z, entityYaw, partialTicks);
 

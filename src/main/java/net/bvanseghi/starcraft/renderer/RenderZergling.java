@@ -8,8 +8,6 @@ import net.bvanseghi.starcraft.model.ModelZergling;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderZergling<T> extends RenderLiving<EntityZergling> {
@@ -23,14 +21,6 @@ public class RenderZergling<T> extends RenderLiving<EntityZergling> {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 
 		modelEntity = ((ModelZergling) mainModel);
-	}
-
-	public void renderZergling(EntityZergling entity, double x, double y, double z, float u, float v) {
-		super.doRender(entity, x, y, z, u, v);
-	}
-
-	public void doRenderLiving(EntityLiving entityLiving, double x, double y, double z, float u, float v) {
-		renderZergling((EntityZergling) entityLiving, x, y, z, u, v);
 	}
 	
 	public void doRender(EntityZergling entity, double x, double y, double z, float entityYaw, float partialTicks)
@@ -48,9 +38,9 @@ public class RenderZergling<T> extends RenderLiving<EntityZergling> {
 		return ZERGLING_TEXTURES;
 	}
 	
-	//TODO: Fix this
-		protected void preRenderCallback(T entitylivingbaseIn, float partialTickTime) {
-			GL11.glScalef(1.25F, 1.25F, 1.25F);
-	    	GL11.glRotatef(28F, 0F, 1F, 0F);
-		}
+	protected void preRenderCallback(EntityZergling entitylivingbaseIn, float partialTickTime)
+    {
+		GL11.glScalef(1.25F, 1.25F, 1.25F);
+    	GL11.glRotatef(28F, 0F, 1F, 0F);
+    }
 }
