@@ -15,12 +15,13 @@ import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-//TODO: keep an eye on this; expect changes
 public class BlockMineralField extends BlockContainer {
+	
 	public BlockMineralField(Material material) {
 		super(material);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_MINERAL_FIELD.getUnlocalizedName());
@@ -29,10 +30,9 @@ public class BlockMineralField extends BlockContainer {
 		setHardness(3.0F);
 		setResistance(15.0F);
 		setHarvestLevel("pickaxe", 1);
-//		setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.85F, 1.0F); //FIXME: frickin' this
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
-
+	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return ModItems.mineralShard;
@@ -57,6 +57,12 @@ public class BlockMineralField extends BlockContainer {
 	public boolean isNormalCube(IBlockState state, IBlockAccess access, BlockPos pos) {
 		return false;
 	}
+
+	protected static final AxisAlignedBB THIS_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+    {
+        return THIS_AABB;
+    }
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {

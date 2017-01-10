@@ -10,13 +10,17 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockVespeneGeyser extends BlockContainer {
-
-	public static final String name = "vespeneGeyser";
 
 	public BlockVespeneGeyser(Material material) {
 		super(material);
@@ -26,7 +30,6 @@ public class BlockVespeneGeyser extends BlockContainer {
 		setHardness(5.0F);
 		setResistance(3.0F);
 		setHarvestLevel("pickaxe", 1);
-	//	this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
 		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 
@@ -43,25 +46,33 @@ public class BlockVespeneGeyser extends BlockContainer {
 		return 4 + par1.nextInt(2);
 	}
 
-	protected boolean canSilkHarvest() {
+	@Override
+	public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
 		return true;
 	}
-	
-	//TODO: Figure out how textures work now.
-	/*@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon(REFERENCE.MODID + ":" + "vespeneGeyserBase");
-	}*/
 
-	public int getRenderType() {
-		return -1;
-	}
-
-	public boolean isOpaqueCube(IBlockState state) {
+	@Override
+	public boolean isBlockSolid(IBlockAccess access, BlockPos pos, EnumFacing side) {
 		return false;
 	}
 
-	public boolean renderAsNormalBlock() {
+	@Override
+	public boolean isNormalCube(IBlockState state, IBlockAccess access, BlockPos pos) {
+		return false;
+	}
+
+	protected static final AxisAlignedBB THIS_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+    {
+        return THIS_AABB;
+    }
+	
+	public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
+    }
+
+	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
 

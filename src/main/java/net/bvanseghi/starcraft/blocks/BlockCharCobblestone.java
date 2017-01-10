@@ -15,7 +15,7 @@ public class BlockCharCobblestone extends Block {
 		setSoundType(SoundType.STONE);
 		setHardness(2.0F);
 		setResistance(5.0F);
-		setHarvestLevel("pickaxe", 0); //TODO: ensure this is correct
+		setHarvestLevel("pickaxe", 0);
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
 	}
 }

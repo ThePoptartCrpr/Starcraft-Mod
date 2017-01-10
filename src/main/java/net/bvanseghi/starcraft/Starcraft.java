@@ -130,7 +130,7 @@ public class Starcraft {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-	
+		
 		try {
 			ModEntities.setEntityToSpawn();
 			LogHelper.logger.log(Level.INFO, "Starcraft Entity Spawns registered.");
@@ -154,6 +154,12 @@ public class Starcraft {
 			LogHelper.logger.log(Level.INFO, "Starcraft Achievements initialized.");
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Achievements failed to initialize! Report this to the developer(s) of the mod!");
+		}
+		try {
+			proxy.setModels();
+			LogHelper.logger.log(Level.INFO, "Starcraft Armors registered.");
+		}catch(Exception e) {
+			LogHelper.logger.log(Level.ERROR, "Starcraft Armors failed to register! Report this to the developer(s) of the mod!");
 		}
 		proxy.init(event);
 		
