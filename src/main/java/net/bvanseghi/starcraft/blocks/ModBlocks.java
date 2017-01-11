@@ -551,5 +551,9 @@ public class ModBlocks extends Block {
 		//BlockRenderRegister.registerBlockRenderer();
 	
 	}
+	
+	public boolean PoweredByPSI(boolean bool) {
+		return bool;
+	}
 
 }

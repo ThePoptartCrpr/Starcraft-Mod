@@ -1,12 +1,11 @@
 package net.bvanseghi.starcraft.entity;
 
-import java.util.Random;
-
+import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
+import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
-import net.bvanseghi.starcraft.events.SCSoundEvent;
-import net.bvanseghi.starcraft.events.SCSoundEvents;
+import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
+import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -17,9 +16,34 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityCaveSpider;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityEndermite;
+import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.monster.EntityPolarBear;
+import net.minecraft.entity.monster.EntityShulker;
+import net.minecraft.entity.monster.EntitySilverfish;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.entity.monster.EntitySnowman;
+import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.passive.EntityBat;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityMooshroom;
+import net.minecraft.entity.passive.EntityOcelot;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntityRabbit;
+import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
@@ -30,7 +54,7 @@ import net.minecraft.world.World;
 public class EntityBrutalisk extends EntityZergMob {
 	public EntityBrutalisk(World world) {
 		super(world);
-        this.setSize(1.0F, 1.75F);
+        this.setSize(7.0F, 7.0F);
 	}
 	
 	protected void initEntityAI()
@@ -46,21 +70,57 @@ public class EntityBrutalisk extends EntityZergMob {
 
     protected void applyEntityAI()
     {
-        this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+    	this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] {EntityPigZombie.class}));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityProtossPassive.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
+        
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityVillager.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+        
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySkeleton.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySlime.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityZombie.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityCaveSpider.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityBlaze.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityEndermite.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityGolem.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityMagmaCube.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPigZombie.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySnowman.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityWitch.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySilverfish.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityShulker.class, true));
+        
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityWolf.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityCow.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntitySheep.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPolarBear.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityMooshroom.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPig.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityOcelot.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityHorse.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityBat.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityRabbit.class, true));
+        
     }
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		
 		//To be modified by bvanseghi
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2000000417232513D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.brutaliskHP);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2700000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.brutaliskDmg);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
 	}
 	
 	public int getTalkInterval()
@@ -109,12 +169,8 @@ public class EntityBrutalisk extends EntityZergMob {
 		super.onUpdate();
 	}
 	
-	public boolean attackEntityAsMob(Entity target) {
-		//TODO: make this
-		return target.attackEntityFrom(DamageSource.causeMobDamage(this), 1 /* will be modified */);
-	}
-	
-	public boolean attackEntityFrom(DamageSource damageSource, float damage /* I have no clue what to call it */) {
-		return super.attackEntityFrom(damageSource, damage);
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float damageDealt) {
+		return super.attackEntityFrom(source, damageDealt);
 	}
 }

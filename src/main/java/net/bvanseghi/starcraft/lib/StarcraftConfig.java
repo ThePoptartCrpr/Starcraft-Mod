@@ -5,11 +5,13 @@ import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 
 public class StarcraftConfig {
+	
 	public static boolean useSubCfg;
 	
 	public static boolean dTempVis = false;
 	
 	public static double broodlingHP = 15;
+	public static double brutaliskHP = 750;
 	public static double civHP = 20;
 	public static double dProbeHP = 20;
 	public static double dTempHP = 60;
@@ -22,6 +24,7 @@ public class StarcraftConfig {
 	public static double zerglingHP = 25;
 	
 	public static double broodlingDmg = 2;
+	public static double brutaliskDmg = 25;
 	public static double dTempDmg = 24.5;
 	public static double zealotDmg = 8;
 	public static double zerglingDmg = 5;
@@ -33,6 +36,8 @@ public class StarcraftConfig {
 	public static boolean vanillaSpawn;
 	public static int dimChar;
 	public static int dimShakuras;
+	
+	public static float MAX_VALUE  = 1000;
 
 	public static void preInit() {
 		Configuration config = new Configuration(new File("config/Starcraft.cfg"));
@@ -128,32 +133,35 @@ public class StarcraftConfig {
 			subCfg.setCategoryComment("Terran", "Terran mob modifications");
 			subCfg.setCategoryComment("Zerg", "Zerg mob modifications");
 			
-			broodlingHP = subCfg.getFloat("Broodling HP", "Zerg", 15, 1, Float.MAX_VALUE, "Health of the Broodling. Be sane else you might break something");
-			broodlingDmg = subCfg.getFloat("Broodling Damage", "Zerg", 2, 1, Float.MAX_VALUE, "Damage the Broodling deals. Be sane else you might break something");
+			broodlingHP = subCfg.getFloat("Broodling HP", "Zerg", 15, 1, MAX_VALUE, "Health of the Broodling. Be sane else you might break something");
+			broodlingDmg = subCfg.getFloat("Broodling Damage", "Zerg", 2, 1, MAX_VALUE, "Damage the Broodling deals. Be sane else you might break something");
 			
-			civHP = subCfg.getFloat("Civilian HP", "Terran", 20, 1, Float.MAX_VALUE, "Health of the Civilian. Be sane else you might break something");
+			brutaliskHP = subCfg.getFloat("Brutalisk HP", "Zerg", 750, 1, MAX_VALUE, "Health of the Brutalisk. Be sane else you might break something");
+			brutaliskDmg = subCfg.getFloat("Brutalisk Damage", "Zerg", 25, 1, MAX_VALUE, "Damage the Brutalisk deals. Be sane else you might break something");
 			
-			dProbeHP = subCfg.getFloat("Dark Probe HP", "Protoss", 20, 1, Float.MAX_VALUE, "Health of the Dark Probe. Be sane else you might break something");
+			civHP = subCfg.getFloat("Civilian HP", "Terran", 20, 1, MAX_VALUE, "Health of the Civilian. Be sane else you might break something");
 			
-			droneHP  =subCfg.getFloat("Drone HP", "Zerg", 20, 1, Float.MAX_VALUE, "Health of the Drone. Be sane else you might break something");
+			dProbeHP = subCfg.getFloat("Dark Probe HP", "Protoss", 20, 1, MAX_VALUE, "Health of the Dark Probe. Be sane else you might break something");
+			
+			droneHP  =subCfg.getFloat("Drone HP", "Zerg", 20, 1, MAX_VALUE, "Health of the Drone. Be sane else you might break something");
 			
 			dTempVis = subCfg.getBoolean("Dark Templar Visibility", "Protoss", false, "If true, the Dark Templar will be visible");
-			dTempHP = subCfg.getFloat("Dark Templar HP", "Protoss", 60, 1, Float.MAX_VALUE, "Health of the Dark Templar. Be sane else you might break something");
-			dTempDmg = subCfg.getFloat("Dark Templar Damage", "Protoss", 24.5f, 1, Float.MAX_VALUE, "Damage the Dark Templar deals. Be sane else you\'ll break something");
+			dTempHP = subCfg.getFloat("Dark Templar HP", "Protoss", 60, 1, MAX_VALUE, "Health of the Dark Templar. Be sane else you might break something");
+			dTempDmg = subCfg.getFloat("Dark Templar Damage", "Protoss", 24.5f, 1, MAX_VALUE, "Damage the Dark Templar deals. Be sane else you\'ll break something");
 			
-			larvaHP = subCfg.getFloat("Larva HP", "Zerg", 12.5f, 1, Float.MAX_VALUE, "Health of the Larva. Be sane else you might break something");
+			larvaHP = subCfg.getFloat("Larva HP", "Zerg", 12.5f, 1, MAX_VALUE, "Health of the Larva. Be sane else you might break something");
 			
-			larvaCocoonHP = subCfg.getFloat("Larva Cocoon HP", "Zerg", 100, 1, Float.MAX_VALUE, "Health of the Larva Cocoon. Be sane else you might break something");
+			larvaCocoonHP = subCfg.getFloat("Larva Cocoon HP", "Zerg", 100, 1, MAX_VALUE, "Health of the Larva Cocoon. Be sane else you might break something");
 			
-			overlordHP = subCfg.getFloat("Overlord HP", "Zerg", 100, 1, Float.MAX_VALUE, "Health of the Overlord. Be sane else you might break something");
+			overlordHP = subCfg.getFloat("Overlord HP", "Zerg", 100, 1, MAX_VALUE, "Health of the Overlord. Be sane else you might break something");
 			
-			probeHP = subCfg.getFloat("Probe HP", "Protoss", 20, 1, Float.MAX_VALUE, "Health of the Probe. Be sane else you might break something");
+			probeHP = subCfg.getFloat("Probe HP", "Protoss", 20, 1, MAX_VALUE, "Health of the Probe. Be sane else you might break something");
 			
-			zealotHP = subCfg.getFloat("Zealot HP", "Protoss", 100, 1, Float.MAX_VALUE, "Health of the Zealot. Be sane else you might break something");
-			zealotDmg = subCfg.getFloat("Zealot Damage", "Protoss", 8, 1, Float.MAX_VALUE, "Damage the Zealot deals. Be sane else you might break something");
+			zealotHP = subCfg.getFloat("Zealot HP", "Protoss", 100, 1, MAX_VALUE, "Health of the Zealot. Be sane else you might break something");
+			zealotDmg = subCfg.getFloat("Zealot Damage", "Protoss", 8, 1, MAX_VALUE, "Damage the Zealot deals. Be sane else you might break something");
 			
-			zerglingHP = subCfg.getFloat("Zergling HP", "Zerg", 25, 1, Float.MAX_VALUE, "Health of the Zergling. Be sane else you might break something");
-			zerglingDmg = subCfg.getFloat("Zergling Damage", "Zerg", 5, 1, Float.MAX_VALUE, "Damage the Zergling deals. Be sane else you might break something");
+			zerglingHP = subCfg.getFloat("Zergling HP", "Zerg", 25, 1, MAX_VALUE, "Health of the Zergling. Be sane else you might break something");
+			zerglingDmg = subCfg.getFloat("Zergling Damage", "Zerg", 5, 1, MAX_VALUE, "Damage the Zergling deals. Be sane else you might break something");
 			
 			subCfg.save();
 		}
