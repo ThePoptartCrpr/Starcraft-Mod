@@ -1,9 +1,10 @@
 package net.bvanseghi.starcraft.blocks;
 
+import org.apache.logging.log4j.Level;
+
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
 import net.bvanseghi.starcraft.debug.DimPortalShakuras;
-import net.bvanseghi.starcraft.items.ItemBlockMeta;
 import net.bvanseghi.starcraft.lib.LogHelper;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.ore.OreOWCopper;
@@ -38,7 +39,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import org.apache.logging.log4j.Level;
 
 /**
  * When wundr marks {@link Blockz} as done, then scrap this class!!!<br>

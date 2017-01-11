@@ -5,9 +5,7 @@ import org.lwjgl.opengl.GL11;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelVespeneGeyserShakuras;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.ITextComponent;
 
 public class RenderVespeneGeyserShakuras<T> extends TileEntitySpecialRenderer {
 

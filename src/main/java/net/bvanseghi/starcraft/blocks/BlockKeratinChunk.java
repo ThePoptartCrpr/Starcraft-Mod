@@ -3,7 +3,6 @@ package net.bvanseghi.starcraft.blocks;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.ResourceLocation;
 
 public class BlockKeratinChunk extends ModBlocks {
 	public BlockKeratinChunk() {

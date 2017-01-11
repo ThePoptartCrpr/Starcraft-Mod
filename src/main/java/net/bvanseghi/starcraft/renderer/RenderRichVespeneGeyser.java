@@ -5,7 +5,6 @@ import org.lwjgl.opengl.GL11;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelRichVespeneGeyser;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderRichVespeneGeyser<T> extends TileEntitySpecialRenderer {

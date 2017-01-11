@@ -3,7 +3,6 @@ package net.bvanseghi.starcraft.events;
 import net.minecraft.init.Bootstrap;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
 
 public class SCSoundEvents extends SoundEvents {
 

@@ -2,7 +2,6 @@ package net.bvanseghi.starcraft.ore;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.SoundType;

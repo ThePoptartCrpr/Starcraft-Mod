@@ -3,7 +3,6 @@ package net.bvanseghi.starcraft.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 
 public class ItemBlockMeta extends ItemBlock {
 

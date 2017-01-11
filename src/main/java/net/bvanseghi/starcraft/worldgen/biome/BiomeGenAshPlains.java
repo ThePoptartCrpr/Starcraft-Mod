@@ -2,9 +2,7 @@ package net.bvanseghi.starcraft.worldgen.biome;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.blocks.BlockAsh;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

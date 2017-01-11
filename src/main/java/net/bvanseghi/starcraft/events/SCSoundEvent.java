@@ -1,7 +1,6 @@
 package net.bvanseghi.starcraft.events;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.registry.RegistryNamespaced;
 
 public class SCSoundEvent extends SoundEvent {
 	

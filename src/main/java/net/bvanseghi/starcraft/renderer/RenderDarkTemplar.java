@@ -8,8 +8,6 @@ import net.bvanseghi.starcraft.model.ModelDarkTemplar;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
