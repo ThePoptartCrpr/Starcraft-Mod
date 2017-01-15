@@ -2,24 +2,13 @@ package net.bvanseghi.starcraft.blocks;
 
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 
 public class BlockRenderRegister {
-
-	public static void preInit() {
-		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.PROTOSS_METAL),
-				new ResourceLocation("starcraft:protoss_metal_aiur"),
-				new ResourceLocation("starcraft:protoss_metal_dark"),
-				new ResourceLocation("starcraft:protoss_metal_blue"),
-				new ResourceLocation("starcraft:protoss_metal_green"));
-	}
-	
-	public static void reg(Block block, int meta, String file) {
-	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(Reference.MODID + ":" + file, "inventory"));
+	public static void reg(Block block, int meta, String fullName) {
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(Reference.RL_BASE + fullName, "inventory"));
 	}
 	
 	public static void registerBlockRenderer() {
