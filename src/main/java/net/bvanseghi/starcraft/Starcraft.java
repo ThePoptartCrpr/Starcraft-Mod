@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Level;
 
 import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ModArmour;
+import net.bvanseghi.starcraft.blocks.BlockRenderRegister;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.ModEntities;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
@@ -12,7 +13,7 @@ import net.bvanseghi.starcraft.lib.LogHelper;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.material.ModMaterials;
-import net.bvanseghi.starcraft.proxy.ClientProxy;
+import net.bvanseghi.starcraft.proxy.IProxy;
 import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.bvanseghi.starcraft.worldgen.SCWorldGen;
@@ -21,7 +22,6 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = "[1.10], [1.10.2]")
@@ -30,8 +30,8 @@ public class Starcraft {
 	@Instance(Reference.MODID)
 	public static Starcraft instance;
 
-	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY, serverSide = Reference.SERVER_SIDE_PROXY)
-	public static ClientProxy proxy;
+	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY)
+	public static IProxy proxy;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -119,18 +119,17 @@ public class Starcraft {
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Entities failed to register! Report this to the developer(s) of the mod!");
 		}
-		//try {
-		//BlockRenderRegister.preInit();
-		//LogHelper.logger.log(Level.INFO, "Starcraft Meta Blocks initialized.");
-		//}catch(Exception e) {
-			//LogHelper.logger.log(Level.ERROR, "Starcraft Meta Blocks failed to initialize! Report this to the developer(s) of the mod!");
-		//}
+		try {
+			BlockRenderRegister.registerBlockRenderer();
+			LogHelper.logger.log(Level.INFO, "Starcraft Meta Blocks initialized.");
+		}catch(Exception e) {
+			LogHelper.logger.log(Level.ERROR, "Starcraft Meta Blocks failed to initialize! Report this to the developer(s) of the mod!");
+		}
 		
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		
 		try {
 			ModEntities.setEntityToSpawn();
 			LogHelper.logger.log(Level.INFO, "Starcraft Entity Spawns registered.");
@@ -161,12 +160,5 @@ public class Starcraft {
 		}catch(Exception e) {
 			LogHelper.logger.log(Level.ERROR, "Starcraft Armors failed to register! Report this to the developer(s) of the mod!");
 		}
-		proxy.init(event);
-		
-	}
-	
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-		proxy.postInit(event);
 	}
 }

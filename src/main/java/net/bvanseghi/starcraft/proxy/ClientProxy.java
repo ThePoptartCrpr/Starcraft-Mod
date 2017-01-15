@@ -17,6 +17,7 @@ import net.bvanseghi.starcraft.armour.ArmourTitaniumChestplate;
 import net.bvanseghi.starcraft.armour.ArmourTitaniumHelmet;
 import net.bvanseghi.starcraft.armour.ArmourTitaniumLeggings;
 import net.bvanseghi.starcraft.armour.ModArmour;
+import net.bvanseghi.starcraft.blocks.BlockRenderRegister;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityBrutalisk;
@@ -54,8 +55,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@SuppressWarnings({"rawtypes", "unchecked"})
-public class ClientProxy extends ServerProxy {
+@SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
+public class ClientProxy implements IProxy {
 
 	public void setModels() {
 		
@@ -87,6 +88,9 @@ public class ClientProxy extends ServerProxy {
 		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumChestplate, 0, new ModelResourceLocation(ArmourTitaniumChestplate.REGISTRY_RL, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumHelmet, 0, new ModelResourceLocation(ArmourTitaniumHelmet.REGISTRY_RL, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumLeggings, 0, new ModelResourceLocation(ArmourTitaniumLeggings.REGISTRY_RL, "inventory"));
+		
+		//Protoss metal or sumfin idek
+		BlockRenderRegister.registerBlockRenderer();
 	}
 	
 	public void registerEntityRenders() {
@@ -109,6 +113,6 @@ public class ClientProxy extends ServerProxy {
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		ModBlocks.registerModels();
-		//GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
+//		GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
 	}
 }
