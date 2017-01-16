@@ -29,6 +29,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityZealot extends EntityProtossMob {
     
 	public EntityZealot(World world) {

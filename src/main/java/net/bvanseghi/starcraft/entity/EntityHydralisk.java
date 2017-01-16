@@ -16,7 +16,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
-import net.minecraft.entity.ai.EntityAIAttackRangedBow;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
@@ -79,6 +78,7 @@ import net.minecraft.world.World;
  * Work in progress
  * @author bvanseghi
  */
+@SuppressWarnings({"unchecked","rawtypes"})
 public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	public EntityHydralisk(World world) {
 		super(world);

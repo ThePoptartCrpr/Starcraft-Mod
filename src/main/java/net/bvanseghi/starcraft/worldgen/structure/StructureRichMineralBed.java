@@ -51,7 +51,7 @@ public class StructureRichMineralBed extends WorldGenerator {
 			} else if (block == Blocks.SNOW_LAYER && blockBelow == i) {
 				return true;
 			} else if (m == Material.PLANTS && blockBelow == i) {
-				block.getMaterial(block.getDefaultState());
+				world.getBlockState(pos).getMaterial();
 				return true;
 			}
 		}
