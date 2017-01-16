@@ -2,12 +2,12 @@ package net.bvanseghi.starcraft.entity;
 
 import java.util.Random;
 
+import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
-import net.bvanseghi.starcraft.events.SCSoundEvent;
-import net.bvanseghi.starcraft.events.SCSoundEvents;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityLarvaCocoon extends EntityZergPassive {
@@ -38,16 +38,16 @@ public class EntityLarvaCocoon extends EntityZergPassive {
         return 160;
     }
 	
-	public SCSoundEvent getLivingSound() {
-		return SCSoundEvents.ENTITY_ZERGCOCOON_LIVE1;
+	public SoundEvent getAmbientSound() {
+		return StarcraftSoundEvents.ENTITY_ZERGCOCOON_LIVE1;
 	}
 	
-	public SCSoundEvent getHurtSound() {
-		return SCSoundEvents.ENTITY_ZERGCOCOON_HURT;
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_ZERGCOCOON_HURT;
 	}
 	
-	public SCSoundEvent getDeathSound() {
-		return SCSoundEvents.ENTITY_ZERGCOCOON_DEATH;
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH;
 	}
 
 	@Override

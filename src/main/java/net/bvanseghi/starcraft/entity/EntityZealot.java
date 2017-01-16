@@ -1,5 +1,8 @@
 package net.bvanseghi.starcraft.entity;
 
+import java.util.Random;
+
+import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
@@ -23,6 +26,7 @@ import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityZealot extends EntityProtossMob {
@@ -56,7 +60,7 @@ public class EntityZealot extends EntityProtossMob {
     protected void applyEntityAI()
     {
     	this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] {EntityPigZombie.class}));
+    	this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZergMob.class, true));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
         
@@ -68,27 +72,25 @@ public class EntityZealot extends EntityProtossMob {
         this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
     }
 	
-    /*
-	public SCSoundEvent getLivingSound() {
+    public SoundEvent getAmbientSound() {
 		Random rand = new Random();
-		if(rand.nextInt(2) == 0) {
-			return SCSoundEvents.ENTITY_ZEALOT_LIVE1;
+		if(rand.nextInt(3) == 0) {
+			return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE1;
 		}else if(rand.nextInt(2) == 1) {
-			return SCSoundEvents.ENTITY_ZEALOT_LIVE2;
+			return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE2;
 		}else if(rand.nextInt(2) == 2) {
-			return SCSoundEvents.ENTITY_ZEALOT_LIVE3;
+			return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE3;
 		}
-		return SCSoundEvents.ENTITY_ZEALOT_LIVE4;
+		return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE4;
 	}
 	
-	public SCSoundEvent getHurtSound() {
-		return SCSoundEvents.ENTITY_ZEALOT_HURT;
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_ZEALOT_HURT;
 	}
 	
-	public SCSoundEvent getDeathSound() {
-		return SCSoundEvents.ENTITY_ZEALOT_DEATH;
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_ZEALOT_DEATH;
 	}
-	*/
     
 	public int getTalkInterval()
     {

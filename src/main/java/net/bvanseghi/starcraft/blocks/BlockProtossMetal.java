@@ -3,7 +3,6 @@ package net.bvanseghi.starcraft.blocks;
 import java.util.List;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.items.IMetaBlockName;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -13,18 +12,14 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 //Copyright 2017 the Starcraft Minecraft mod team
-public class BlockProtossMetal extends Block implements IMetaBlockName {
+public class BlockProtossMetal extends Block {
 	private static final IProperty<Subblocks> SUBBLOCKS_PROPERTY = PropertyEnum.create("subblocks", Subblocks.class);
 	
 	public BlockProtossMetal() {
@@ -112,24 +107,4 @@ public class BlockProtossMetal extends Block implements IMetaBlockName {
 		}
 	}
 
-	@Override
-	public String getSpecialName(ItemStack stack) {
-		switch(stack.getItemDamage()) {
-		case 0:
-			return "Aiur";
-		case 1:
-			return "Dark";
-		case 2:
-			return "Blue";
-		case 3:
-			return "Green";
-		default:
-		 return "Aiur";
-		}
-	}
-	
-	@Override
-	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-	    return new ItemStack(Item.getItemFromBlock(this), 1, this.getMetaFromState(world.getBlockState(pos)));
-	}
 }

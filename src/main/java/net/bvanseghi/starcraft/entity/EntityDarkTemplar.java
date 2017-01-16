@@ -1,12 +1,11 @@
 package net.bvanseghi.starcraft.entity;
 
+import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
-import net.bvanseghi.starcraft.events.SCSoundEvent;
-import net.bvanseghi.starcraft.events.SCSoundEvents;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
@@ -27,6 +26,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityDarkTemplar extends EntityProtossMob {
@@ -78,19 +78,19 @@ public class EntityDarkTemplar extends EntityProtossMob {
         return 160;
     }
 	
-	public SCSoundEvent getLivingSound() {
+	public SoundEvent getAmbientSound() {
 		if(rand.nextInt(2) == 0) {
-			return SCSoundEvents.ENTITY_DARKTEMPLAR_LIVE1;
+			return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_LIVE1;
 		}
-		return SCSoundEvents.ENTITY_DARKTEMPLAR_LIVE2;
+		return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_LIVE2;
 	}
 	
-	public SCSoundEvent getHurtSound() {
-		return SCSoundEvents.ENTITY_DARKTEMPLAR_HURT;
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_HURT;
 	}
 	
-	public SCSoundEvent getDeathSound() {
-		return SCSoundEvents.ENTITY_DARKTEMPLAR_DEATH;
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_DEATH;
 	}
 	
 	/**

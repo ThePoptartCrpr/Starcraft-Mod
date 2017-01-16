@@ -1,5 +1,7 @@
 package net.bvanseghi.starcraft.proxy;
 
+import net.bvanseghi.starcraft.StarcraftSoundEvents;
+import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ArmourCopperBoots;
 import net.bvanseghi.starcraft.armour.ArmourCopperChestplate;
 import net.bvanseghi.starcraft.armour.ArmourCopperHelmet;
@@ -23,16 +25,23 @@ import net.bvanseghi.starcraft.entity.EntityBrutalisk;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
 import net.bvanseghi.starcraft.entity.EntityDarkProbe;
 import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
+import net.bvanseghi.starcraft.entity.EntityHydralisk;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityProbe;
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityZergling;
+import net.bvanseghi.starcraft.entity.ModEntities;
+import net.bvanseghi.starcraft.handlers.FuelHandler;
+import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.StarcraftConfig;
+import net.bvanseghi.starcraft.material.ModMaterials;
 import net.bvanseghi.starcraft.model.ModelBroodling;
 import net.bvanseghi.starcraft.model.ModelBrutalisk;
 import net.bvanseghi.starcraft.model.ModelCivilian;
 import net.bvanseghi.starcraft.model.ModelDarkProbe;
 import net.bvanseghi.starcraft.model.ModelDarkTemplar;
+import net.bvanseghi.starcraft.model.ModelHydralisk;
 import net.bvanseghi.starcraft.model.ModelLarva;
 import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
 import net.bvanseghi.starcraft.model.ModelProbe;
@@ -43,15 +52,21 @@ import net.bvanseghi.starcraft.renderer.RenderBrutalisk;
 import net.bvanseghi.starcraft.renderer.RenderCivilian;
 import net.bvanseghi.starcraft.renderer.RenderDarkProbe;
 import net.bvanseghi.starcraft.renderer.RenderDarkTemplar;
+import net.bvanseghi.starcraft.renderer.RenderHydralisk;
 import net.bvanseghi.starcraft.renderer.RenderLarva;
 import net.bvanseghi.starcraft.renderer.RenderLarvaCocoon;
 import net.bvanseghi.starcraft.renderer.RenderProbe;
 import net.bvanseghi.starcraft.renderer.RenderZealot;
 import net.bvanseghi.starcraft.renderer.RenderZergling;
+import net.bvanseghi.starcraft.tools.ModTools;
+import net.bvanseghi.starcraft.weapons.ModWeapons;
+import net.bvanseghi.starcraft.worldgen.SCWorldGen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
@@ -96,6 +111,7 @@ public class ClientProxy extends ServerProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class, new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f)); //use depricated method
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class, new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 0.4f)); //use depricated method
+		RenderingRegistry.registerEntityRenderingHandler(EntityHydralisk.class, new RenderHydralisk(Minecraft.getMinecraft().getRenderManager(), new ModelHydralisk(), 0.4f)); //use depricated method
 		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class, new RenderZergling(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f)); //use depricated method
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class, new RenderLarva(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f)); //use depricated method
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarvaCocoon.class, new RenderLarvaCocoon(Minecraft.getMinecraft().getRenderManager(), new ModelLarvaCocoon(), 0.4f)); //use depricated method
@@ -105,10 +121,31 @@ public class ClientProxy extends ServerProxy {
 		
 	}
 	
-	
-	
 	public void preInit(FMLPreInitializationEvent event) {
+		StarcraftConfig.preInit();
+		ModBlocks.init();
+		ModItems.init();
+		ModMaterials.preInit();
+		ModWeapons.preInit();
+		ModArmour.preInit();
+		ModTools.preInit();
+		FuelHandler.preInit();
 		ModBlocks.registerModels();
-		//GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
+		SCWorldGen.setupWorldgen();
+		SCWorldGen.preInit();
+		ModEntities.registerEntities();
+		StarcraftSoundEvents.registerSounds();
+	}
+	
+	public void init(FMLInitializationEvent event) {
+		ModEntities.setEntityToSpawn();
+		ModEntities.generateSpawnEgg();
+		registerEntityRenders();
+		Achievements.init();
+		setModels();
+	}
+	
+	public void postInit(FMLPostInitializationEvent event) {
+
 	}
 }
