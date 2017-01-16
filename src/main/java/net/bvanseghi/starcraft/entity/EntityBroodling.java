@@ -47,6 +47,7 @@ import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityBroodling extends EntityZergMob {
 
 	public EntityBroodling(World world) {
@@ -64,7 +65,7 @@ public class EntityBroodling extends EntityZergMob {
         this.tasks.addTask(8, new EntityAILookIdle(this));
         this.applyEntityAI();
     }
-
+	
     protected void applyEntityAI()
     {
     	this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));

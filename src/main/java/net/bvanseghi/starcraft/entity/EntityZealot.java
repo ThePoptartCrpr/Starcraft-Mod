@@ -25,6 +25,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityZealot extends EntityProtossMob {
     
 	public EntityZealot(World world) {

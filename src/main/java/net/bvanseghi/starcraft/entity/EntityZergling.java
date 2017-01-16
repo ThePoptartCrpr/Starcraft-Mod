@@ -52,6 +52,7 @@ import net.minecraft.world.World;
  * May or may not have been totally stolen from {@link EntityZealot}
  * @author wundrweapon
  */
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityZergling extends EntityZergMob {
 	public EntityZergling(World world) {
 		super(world);

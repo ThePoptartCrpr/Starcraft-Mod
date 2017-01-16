@@ -29,6 +29,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityDarkTemplar extends EntityProtossMob {
 	World world;
 	public EntityDarkTemplar(World world) {

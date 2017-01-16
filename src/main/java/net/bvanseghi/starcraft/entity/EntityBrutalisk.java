@@ -51,6 +51,7 @@ import net.minecraft.world.World;
 /**
  * @author bvanseghi
  */
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityBrutalisk extends EntityZergMob {
 	public EntityBrutalisk(World world) {
 		super(world);
