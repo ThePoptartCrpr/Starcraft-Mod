@@ -44,7 +44,7 @@ public class EntityAIAttackHydralisk extends EntityAIBase
 
     protected boolean isBowInMainhand()
     {
-        return this.entity.getHeldItemMainhand() != null && this.entity.getHeldItemMainhand().getItem() == Items.BOW;
+        return true;
     }
 
     /**
