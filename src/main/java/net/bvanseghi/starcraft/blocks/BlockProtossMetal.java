@@ -12,9 +12,13 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -53,7 +57,7 @@ public class BlockProtossMetal extends Block {
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		switch(meta) {
-			case 0:
+			default:
 				return getDefaultState();
 			case 1:
 				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.DARK);
@@ -61,8 +65,6 @@ public class BlockProtossMetal extends Block {
 				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.BLUE);
 			case 3:
 				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.GREEN);
-			default:
-				return getDefaultState();
 		}
 	}
 	
@@ -70,7 +72,7 @@ public class BlockProtossMetal extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		String[] subblocks = new String[] {"Aiur", "Dark", "Blue", "Green"};
+		String[] subblocks = new String[] {"aiur", "dark", "blue", "green"};
 		
 		for (int i = 0; i < subblocks.length; i++) {
 			list.add(new ItemStack(block, 1, i));
@@ -82,17 +84,20 @@ public class BlockProtossMetal extends Block {
 		return getMetaFromState(state);
 	}
 	
+	@Override
+	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+	    return new ItemStack(Item.getItemFromBlock(this), 1, this.getMetaFromState(world.getBlockState(pos)));
+	}
+	
 	private enum Subblocks implements IStringSerializable {
-		AIUR(0, "Aiur"),
-		DARK(1, "Dark"),
-		BLUE(2, "Blue"),
-		GREEN(3, "Green");
+		AIUR("aiur"),
+		DARK("dark"),
+		BLUE("blue"),
+		GREEN("green");
 		
-		private int meta;
 		private String name;
 		
-		private Subblocks(int meta, String name) {
-			this.meta = meta;
+		private Subblocks(String name) {
 			this.name = name;
 		}
 		
@@ -106,5 +111,4 @@ public class BlockProtossMetal extends Block {
 		    return getName();
 		}
 	}
-
 }

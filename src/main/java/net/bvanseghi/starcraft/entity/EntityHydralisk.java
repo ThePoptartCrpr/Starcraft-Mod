@@ -9,8 +9,12 @@ import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
+import net.minecraft.entity.ai.EntityAIAttackRangedBow;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
@@ -36,6 +40,7 @@ import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.monster.SkeletonType;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityCow;
@@ -48,19 +53,40 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityTippedArrow;
+import net.minecraft.init.Enchantments;
+import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 /**
- * May or may not have been totally stolen from {@link EntityZealot}
- * @author wundrweapon
+ * Work in progress
+ * @author bvanseghi
  */
-public class EntityHydralisk extends EntityZergMob {
+public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	public EntityHydralisk(World world) {
 		super(world);
         this.setSize(1.0F, 1.75F);
+        this.setCombatTask();
 	}
+	
+	private static final DataParameter<Integer> SKELETON_VARIANT = EntityDataManager.<Integer>createKey(EntitySkeleton.class, DataSerializers.VARINT);
+	private final EntityAIAttackRangedBow aiArrowAttack = new EntityAIAttackRangedBow(null, 1.0D, 20, 15.0F);
+    private final EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false);
+	   
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -125,6 +151,33 @@ public class EntityHydralisk extends EntityZergMob {
         this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityBat.class, true));
         this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityRabbit.class, true));
     }
+    
+    public void setCombatTask()
+    {
+        if (this.worldObj != null && !this.worldObj.isRemote)
+        {
+            this.tasks.removeTask(this.aiAttackOnCollide);
+            this.tasks.removeTask(this.aiArrowAttack);
+            ItemStack itemstack = this.getHeldItemMainhand();
+
+            if (itemstack != null && itemstack.getItem() == Items.BOW)
+            {
+                int i = 20;
+
+                if (this.worldObj.getDifficulty() != EnumDifficulty.HARD)
+                {
+                    i = 40;
+                }
+
+                this.aiArrowAttack.setAttackCooldown(i);
+                this.tasks.addTask(4, this.aiArrowAttack);
+            }
+            else
+            {
+                this.tasks.addTask(4, this.aiAttackOnCollide);
+            }
+        }
+    }
 	
 	public int getTalkInterval()
     {
@@ -171,4 +224,55 @@ public class EntityHydralisk extends EntityZergMob {
 	public boolean attackEntityFrom(DamageSource source, float damageDealt) {
 		return super.attackEntityFrom(source, damageDealt);
 	}
+
+	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_)
+    {
+        EntityTippedArrow entitytippedarrow = new EntityTippedArrow(this.worldObj, this);
+        double d0 = target.posX - this.posX;
+        double d1 = target.getEntityBoundingBox().minY + (double)(target.height / 3.0F) - entitytippedarrow.posY;
+        double d2 = target.posZ - this.posZ;
+        double d3 = (double)MathHelper.sqrt_double(d0 * d0 + d2 * d2);
+        entitytippedarrow.setThrowableHeading(d0, d1 + d3 * 0.20000000298023224D, d2, 1.6F, (float)(14 - this.worldObj.getDifficulty().getDifficultyId() * 4));
+        int i = EnchantmentHelper.getMaxEnchantmentLevel(Enchantments.POWER, this);
+        int j = EnchantmentHelper.getMaxEnchantmentLevel(Enchantments.PUNCH, this);
+        DifficultyInstance difficultyinstance = this.worldObj.getDifficultyForLocation(new BlockPos(this));
+        entitytippedarrow.setDamage((double)(p_82196_2_ * 2.0F) + this.rand.nextGaussian() * 0.25D + (double)((float)this.worldObj.getDifficulty().getDifficultyId() * 0.11F));
+
+        if (i > 0)
+        {
+            entitytippedarrow.setDamage(entitytippedarrow.getDamage() + (double)i * 0.5D + 0.5D);
+        }
+
+        if (j > 0)
+        {
+            entitytippedarrow.setKnockbackStrength(j);
+        }
+
+        boolean flag = this.isBurning() && difficultyinstance.func_190083_c() && this.rand.nextBoolean() || this.func_189771_df() == SkeletonType.WITHER;
+        flag = flag || EnchantmentHelper.getMaxEnchantmentLevel(Enchantments.FLAME, this) > 0;
+
+        if (flag)
+        {
+            entitytippedarrow.setFire(100);
+        }
+
+        ItemStack itemstack = this.getHeldItem(EnumHand.OFF_HAND);
+
+        if (itemstack != null && itemstack.getItem() == Items.TIPPED_ARROW)
+        {
+            entitytippedarrow.setPotionEffect(itemstack);
+        }
+        else if (this.func_189771_df() == SkeletonType.STRAY)
+        {
+            entitytippedarrow.addEffect(new PotionEffect(MobEffects.SLOWNESS, 600));
+        }
+
+        this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+        this.worldObj.spawnEntityInWorld(entitytippedarrow);
+    }
+	
+	public SkeletonType func_189771_df()
+    {
+        return SkeletonType.func_190134_a(((Integer)this.dataManager.get(SKELETON_VARIANT)).intValue());
+    }
 }

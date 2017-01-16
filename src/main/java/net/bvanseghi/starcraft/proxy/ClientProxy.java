@@ -69,7 +69,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@SuppressWarnings({"rawtypes", "unchecked"})
+@SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
 public class ClientProxy extends ServerProxy {
 
 	public void setModels() {
@@ -147,5 +147,6 @@ public class ClientProxy extends ServerProxy {
 	
 	public void postInit(FMLPostInitializationEvent event) {
 
+//		GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
 	}
 }
