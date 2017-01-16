@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.entity;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
+import net.bvanseghi.starcraft.entity.ai.EntityAIAttackHydralisk;
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
@@ -14,7 +15,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
-import net.minecraft.entity.ai.EntityAIAttackRangedBow;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
@@ -80,18 +80,12 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	public EntityHydralisk(World world) {
 		super(world);
         this.setSize(1.0F, 1.75F);
-        this.setCombatTask();
 	}
-	
-	private static final DataParameter<Integer> SKELETON_VARIANT = EntityDataManager.<Integer>createKey(EntitySkeleton.class, DataSerializers.VARINT);
-	private final EntityAIAttackRangedBow aiArrowAttack = new EntityAIAttackRangedBow(null, 1.0D, 20, 15.0F);
-    private final EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false);
-	   
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.hydraliskHP);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
@@ -113,6 +107,7 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
     {
         this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.targetTasks.addTask(2, new EntityAIAttackHydralisk(this, 1.0D, 20, 15.0F));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, true));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
         
@@ -152,33 +147,6 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
         this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityRabbit.class, true));
     }
     
-    public void setCombatTask()
-    {
-        if (this.worldObj != null && !this.worldObj.isRemote)
-        {
-            this.tasks.removeTask(this.aiAttackOnCollide);
-            this.tasks.removeTask(this.aiArrowAttack);
-            ItemStack itemstack = this.getHeldItemMainhand();
-
-            if (itemstack != null && itemstack.getItem() == Items.BOW)
-            {
-                int i = 20;
-
-                if (this.worldObj.getDifficulty() != EnumDifficulty.HARD)
-                {
-                    i = 40;
-                }
-
-                this.aiArrowAttack.setAttackCooldown(i);
-                this.tasks.addTask(4, this.aiArrowAttack);
-            }
-            else
-            {
-                this.tasks.addTask(4, this.aiAttackOnCollide);
-            }
-        }
-    }
-	
 	public int getTalkInterval()
     {
         return 160;
@@ -225,54 +193,9 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 		return super.attackEntityFrom(source, damageDealt);
 	}
 
-	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_)
-    {
-        EntityTippedArrow entitytippedarrow = new EntityTippedArrow(this.worldObj, this);
-        double d0 = target.posX - this.posX;
-        double d1 = target.getEntityBoundingBox().minY + (double)(target.height / 3.0F) - entitytippedarrow.posY;
-        double d2 = target.posZ - this.posZ;
-        double d3 = (double)MathHelper.sqrt_double(d0 * d0 + d2 * d2);
-        entitytippedarrow.setThrowableHeading(d0, d1 + d3 * 0.20000000298023224D, d2, 1.6F, (float)(14 - this.worldObj.getDifficulty().getDifficultyId() * 4));
-        int i = EnchantmentHelper.getMaxEnchantmentLevel(Enchantments.POWER, this);
-        int j = EnchantmentHelper.getMaxEnchantmentLevel(Enchantments.PUNCH, this);
-        DifficultyInstance difficultyinstance = this.worldObj.getDifficultyForLocation(new BlockPos(this));
-        entitytippedarrow.setDamage((double)(p_82196_2_ * 2.0F) + this.rand.nextGaussian() * 0.25D + (double)((float)this.worldObj.getDifficulty().getDifficultyId() * 0.11F));
-
-        if (i > 0)
-        {
-            entitytippedarrow.setDamage(entitytippedarrow.getDamage() + (double)i * 0.5D + 0.5D);
-        }
-
-        if (j > 0)
-        {
-            entitytippedarrow.setKnockbackStrength(j);
-        }
-
-        boolean flag = this.isBurning() && difficultyinstance.func_190083_c() && this.rand.nextBoolean() || this.func_189771_df() == SkeletonType.WITHER;
-        flag = flag || EnchantmentHelper.getMaxEnchantmentLevel(Enchantments.FLAME, this) > 0;
-
-        if (flag)
-        {
-            entitytippedarrow.setFire(100);
-        }
-
-        ItemStack itemstack = this.getHeldItem(EnumHand.OFF_HAND);
-
-        if (itemstack != null && itemstack.getItem() == Items.TIPPED_ARROW)
-        {
-            entitytippedarrow.setPotionEffect(itemstack);
-        }
-        else if (this.func_189771_df() == SkeletonType.STRAY)
-        {
-            entitytippedarrow.addEffect(new PotionEffect(MobEffects.SLOWNESS, 600));
-        }
-
-        this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
-        this.worldObj.spawnEntityInWorld(entitytippedarrow);
-    }
-	
-	public SkeletonType func_189771_df()
-    {
-        return SkeletonType.func_190134_a(((Integer)this.dataManager.get(SKELETON_VARIANT)).intValue());
-    }
+	@Override
+	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_) {
+		// TODO Auto-generated method stub
+		
+	}
 }
