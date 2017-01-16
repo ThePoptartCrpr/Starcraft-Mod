@@ -1,11 +1,11 @@
 package net.bvanseghi.starcraft.entity;
 
-import net.bvanseghi.starcraft.events.SCSoundEvent;
-import net.bvanseghi.starcraft.events.SCSoundEvents;
+import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityOverlord extends EntityFlying {
@@ -42,16 +42,16 @@ public class EntityOverlord extends EntityFlying {
         return 160;
     }
 	
-	public SCSoundEvent getLivingSound() {
-		return SCSoundEvents.ENTITY_OVERLORD_LIVE1;
+	public SoundEvent getAmbientSound() {
+		return StarcraftSoundEvents.ENTITY_OVERLORD_LIVE1;
 	}
 	
-	public SCSoundEvent getHurtSound() {
-		return SCSoundEvents.ENTITY_OVERLORD_HURT;
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_OVERLORD_HURT;
 	}
 	
-	public SCSoundEvent getDeathSound() {
-		return SCSoundEvents.ENTITY_OVERLORD_DEATH;
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_OVERLORD_DEATH;
 	}
 
 	}

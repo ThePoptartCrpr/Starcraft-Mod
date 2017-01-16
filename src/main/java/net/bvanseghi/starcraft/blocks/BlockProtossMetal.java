@@ -3,7 +3,6 @@ package net.bvanseghi.starcraft.blocks;
 import java.util.List;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.items.IMetaBlockName;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -24,7 +23,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 //Copyright 2017 the Starcraft Minecraft mod team
-public class BlockProtossMetal extends Block implements IMetaBlockName {
+public class BlockProtossMetal extends Block {
 	private static final IProperty<Subblocks> SUBBLOCKS_PROPERTY = PropertyEnum.create("subblocks", Subblocks.class);
 	
 	public BlockProtossMetal() {
@@ -58,7 +57,7 @@ public class BlockProtossMetal extends Block implements IMetaBlockName {
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		switch(meta) {
-			case 0:
+			default:
 				return getDefaultState();
 			case 1:
 				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.DARK);
@@ -66,8 +65,6 @@ public class BlockProtossMetal extends Block implements IMetaBlockName {
 				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.BLUE);
 			case 3:
 				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.GREEN);
-			default:
-				return getDefaultState();
 		}
 	}
 	
@@ -75,7 +72,7 @@ public class BlockProtossMetal extends Block implements IMetaBlockName {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		String[] subblocks = new String[] {"Aiur", "Dark", "Blue", "Green"};
+		String[] subblocks = new String[] {"aiur", "dark", "blue", "green"};
 		
 		for (int i = 0; i < subblocks.length; i++) {
 			list.add(new ItemStack(block, 1, i));
@@ -87,17 +84,20 @@ public class BlockProtossMetal extends Block implements IMetaBlockName {
 		return getMetaFromState(state);
 	}
 	
+	@Override
+	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+	    return new ItemStack(Item.getItemFromBlock(this), 1, this.getMetaFromState(world.getBlockState(pos)));
+	}
+	
 	private enum Subblocks implements IStringSerializable {
-		AIUR(0, "Aiur"),
-		DARK(1, "Dark"),
-		BLUE(2, "Blue"),
-		GREEN(3, "Green");
+		AIUR("aiur"),
+		DARK("dark"),
+		BLUE("blue"),
+		GREEN("green");
 		
-		private int meta;
 		private String name;
 		
-		private Subblocks(int meta, String name) {
-			this.meta = meta;
+		private Subblocks(String name) {
 			this.name = name;
 		}
 		
@@ -110,26 +110,5 @@ public class BlockProtossMetal extends Block implements IMetaBlockName {
 		public String toString() {
 		    return getName();
 		}
-	}
-
-	@Override
-	public String getSpecialName(ItemStack stack) {
-		switch(stack.getItemDamage()) {
-		case 0:
-			return "Aiur";
-		case 1:
-			return "Dark";
-		case 2:
-			return "Blue";
-		case 3:
-			return "Green";
-		default:
-		 return "Aiur";
-		}
-	}
-	
-	@Override
-	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-	    return new ItemStack(Item.getItemFromBlock(this), 1, this.getMetaFromState(world.getBlockState(pos)));
 	}
 }

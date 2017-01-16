@@ -1,5 +1,8 @@
 package net.bvanseghi.starcraft.entity;
 
+import java.util.Random;
+
+import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
@@ -46,6 +49,7 @@ import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 /**
@@ -83,7 +87,7 @@ public class EntityZergling extends EntityZergMob {
     protected void applyEntityAI()
     {
         this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] {EntityPigZombie.class}));
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, true));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
         
@@ -110,17 +114,17 @@ public class EntityZergling extends EntityZergMob {
         this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySilverfish.class, true));
         this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityShulker.class, true));
         
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityWolf.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityCow.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySheep.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPolarBear.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityMooshroom.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPig.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityOcelot.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityHorse.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityBat.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityRabbit.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityWolf.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityCow.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntitySheep.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPolarBear.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityMooshroom.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPig.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityOcelot.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityHorse.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityBat.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityRabbit.class, true));
     }
 	
 	public int getTalkInterval()
@@ -128,27 +132,26 @@ public class EntityZergling extends EntityZergMob {
         return 160;
     }
 	
-	/*
-	public SCSoundEvent getLivingSound() {
+	public SoundEvent getAmbientSound() {
 		Random rand = new Random();
-		if(rand.nextInt(2) == 0) {
-			return SCSoundEvents.ENTITY_ZERGLING_LIVE1;
+		if(rand.nextInt(3) == 0) {
+			return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE1;
 		}else if(rand.nextInt(2) == 1) {
-			return SCSoundEvents.ENTITY_ZERGLING_LIVE2;
+			return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE2;
 		}else if(rand.nextInt(2) == 2) {
-			return SCSoundEvents.ENTITY_ZERGLING_LIVE3;
+			return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE3;
 		}
-		return SCSoundEvents.ENTITY_ZERGLING_LIVE4;
+		return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE4;
 	}
 	
-	public SCSoundEvent getHurtSound() {
-		return SCSoundEvents.ENTITY_ZERGLING_HURT;
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_ZERGLING_HURT;
 	}
 	
-	public SCSoundEvent getDeathSound() {
-		return SCSoundEvents.ENTITY_ZERGLING_DEATH;
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_ZERGLING_DEATH;
 	}
-	*/
+	
 	
 	/**
 	 * Drop up to 2 items when killed

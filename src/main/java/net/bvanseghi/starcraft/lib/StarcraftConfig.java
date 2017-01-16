@@ -12,6 +12,7 @@ public class StarcraftConfig {
 	
 	public static double broodlingHP = 15;
 	public static double brutaliskHP = 750;
+	public static double hydraliskHP = 50;
 	public static double civHP = 20;
 	public static double dProbeHP = 20;
 	public static double dTempHP = 60;
