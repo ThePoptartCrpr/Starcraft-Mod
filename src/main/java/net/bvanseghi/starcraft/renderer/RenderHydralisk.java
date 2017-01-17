@@ -40,5 +40,6 @@ public class RenderHydralisk<T> extends RenderLiving<EntityHydralisk> {
 	
 	protected void preRenderCallback(EntityHydralisk entitylivingbaseIn, float partialTickTime)
     {
+		GL11.glScalef(1.3F, 1.3F, 1.3F);
     }
 }

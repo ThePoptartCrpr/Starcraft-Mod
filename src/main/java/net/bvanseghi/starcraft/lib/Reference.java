@@ -115,12 +115,12 @@ public class Reference {
 		BLOCK_ENERGY("block_energy", "block_energy"),
 		BLOCK_VOID_ENERGY("block_void_energy", "block_void_energy"),
 		BLOCK_CRYSTAL("block_crystal", "block_crystal"),
-		BLOCK_WARP_GATE_WORMHOLE_C("block_warp_gate_wormhole_c", "block_warp_gate_wormhole_c"),
-		BLOCK_WARP_GATE_WORMHOLE_OW("block_warp_gate_wormhole_ow", "block_warp_gate_wormhole_ow"),
-		BLOCK_WARP_GATE_WORMHOLE_S("block_warp_gate_wormhole_s", "block_warp_gate_wormhole_s"),
-		BLOCK_PROTOSS_WARP_PROJECTOR_C("block_warp_gate_wormhole_c", "block_warp_gate_wormhole_c"),
-		BLOCK_PROTOSS_WARP_PROJECTOR_OW("block_warp_gate_wormhole_ow", "block_warp_gate_wormhole_ow"),
-		BLOCK_PROTOSS_WARP_PROJECTOR_S("block_warp_gate_wormhole_s", "block_warp_gate_wormhole_s"),
+		BLOCK_WARP_GATE_WORMHOLE_C("charWarpGateWormhole", "char_warp_gate_wormhole"),
+		BLOCK_WARP_GATE_WORMHOLE_OW("overworldWarpGateWormhole", "overworld_warp_gate_wormhole"),
+		BLOCK_WARP_GATE_WORMHOLE_S("shakurasWarpGateWormhole", "shakuras_warp_gate_wormhole"),
+		BLOCK_PROTOSS_WARP_PROJECTOR_C("charWarpGateProjector", "char_warp_projector"),
+		BLOCK_PROTOSS_WARP_PROJECTOR_OW("overworldWarpGateProjector", "overworld_warp_projector"),
+		BLOCK_PROTOSS_WARP_PROJECTOR_S("shakurasWarpGateProjector", "shakuras_warp_projector"),
 		
 		//Terran Objects
 		BLOCK_DYED_IRON("block_dyed_iron", "block_dyed_iron"),
@@ -130,7 +130,7 @@ public class Reference {
 		BLOCK_MINERAL_FIELD("block_mineral_field", "block_mineral_field"),
 		BLOCK_RICH_MINERAL_FIELD("block_rich_mineral_field", "block_rich_mineral_field"),
 		
-		BLOCK_VESPENE_GEYSER("block_vespene_geyser", "block_vespene_geyser"),
+		BLOCK_VESPENE_GEYSER("geyserVespene", "geyser_vespene"),
 		BLOCK_RICH_VESPENE_GEYSER("block_rich_vespene_geyser", "block_rich_vespene_geyser"),
 		BLOCK_VESPENE_GEYSER_BASE("geyserVespeneBase", "geyser_vespene_base"),
 		FLUID_ACID("fluid_acid", "fluid_acid"),

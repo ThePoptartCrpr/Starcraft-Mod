@@ -1,12 +1,10 @@
 package net.bvanseghi.starcraft.items;
 
-import org.apache.logging.log4j.Level;
-
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.lib.LogHelper;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -52,6 +50,7 @@ public class ModItems extends Item {
 	
 	public static Item keystone;
 	
+
 	public static void init() {
 		instantiate();
 		register();
@@ -86,13 +85,24 @@ public class ModItems extends Item {
 		zergCarapace = new ItemZergCarapace();
 		energy = new ItemEnergy();
 	}
-
-
+	
 	public static void register() {
-		//GameRegistry.register(mineralShard);
+		registerItem(mineralShard);
 	}
 	
-	public static void registerModels() {
-		
+	public static void registerRenders() {
+		registerRender(mineralShard);
+	}
+	
+	public static void registerItem(Item item) {
+		GameRegistry.register(item);
+	}
+	
+	public static void registerRender(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
+	}
+	
+	public static void registerRender(Item item, int meta, String fileName) {
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MODID, fileName), "inventory"));
 	}
 }

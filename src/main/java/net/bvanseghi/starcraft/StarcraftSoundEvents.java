@@ -14,6 +14,13 @@ public class StarcraftSoundEvents
 	public static SoundEvent ENTITY_ZERGLING_HURT;
 	public static SoundEvent ENTITY_ZERGLING_DEATH;
 	
+	public static SoundEvent ENTITY_HYDRALISK_LIVE1;
+	public static SoundEvent ENTITY_HYDRALISK_LIVE2;
+	public static SoundEvent ENTITY_HYDRALISK_LIVE3;
+	public static SoundEvent ENTITY_HYDRALISK_LIVE4;
+	public static SoundEvent ENTITY_HYDRALISK_HURT;
+	public static SoundEvent ENTITY_HYDRALISK_DEATH;
+	
 	public static SoundEvent ENTITY_LARVA_LIVE1;
 	public static SoundEvent ENTITY_LARVA_HURT;
 	public static SoundEvent ENTITY_LARVA_DEATH;
@@ -50,6 +57,13 @@ public class StarcraftSoundEvents
 		ENTITY_ZERGLING_LIVE4 = registerSound("mob.zergling.live4");
 		ENTITY_ZERGLING_HURT = registerSound("mob.zergling.hurt");
 		ENTITY_ZERGLING_DEATH = registerSound("mob.zergling.death");
+		
+		ENTITY_HYDRALISK_LIVE1 = registerSound("mob.hydralisk.live1");
+		ENTITY_HYDRALISK_LIVE2 = registerSound("mob.hydralisk.live2");
+		ENTITY_HYDRALISK_LIVE3 = registerSound("mob.hydralisk.live3");
+		ENTITY_HYDRALISK_LIVE4 = registerSound("mob.hydralisk.live4");
+		ENTITY_HYDRALISK_HURT = registerSound("mob.hydralisk.hurt");
+		ENTITY_HYDRALISK_DEATH = registerSound("mob.hydralisk.death");
 		
 		ENTITY_LARVA_LIVE1 = registerSound("mob.larva.live1");
 		ENTITY_LARVA_HURT = registerSound("mob.larva.hurt");

@@ -32,6 +32,7 @@ import net.bvanseghi.starcraft.oreshakuras.OreShakurasRedstone;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasRichMineral;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasTitanium;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasUranium;
+import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyser;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -230,6 +231,7 @@ public class ModBlocks extends Block {
 		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
 		
 		PROTOSS_METAL  = new BlockProtossMetal();
+		
 	}
 
 	public static void register() {
@@ -368,6 +370,7 @@ public class ModBlocks extends Block {
 		
 		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
 		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
+		
 		
 		//GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
 	}

@@ -22,6 +22,7 @@ public class Starcraft {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		proxy.preInit(event);
+		proxy.registerTileEntities();
 		
 	}
 

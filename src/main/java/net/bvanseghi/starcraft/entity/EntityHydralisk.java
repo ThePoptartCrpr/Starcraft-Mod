@@ -11,7 +11,6 @@ import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -67,7 +66,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
@@ -78,7 +76,6 @@ import net.minecraft.world.World;
  * Work in progress
  * @author bvanseghi
  */
-@SuppressWarnings({"unchecked","rawtypes"})
 public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	public EntityHydralisk(World world) {
 		super(world);
@@ -86,58 +83,15 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
         this.setCombatTask();
 	}
 	
-	 private static final DataParameter<Integer> SKELETON_VARIANT = EntityDataManager.<Integer>createKey(EntitySkeleton.class, DataSerializers.VARINT);
-	    private static final DataParameter<Boolean> SWINGING_ARMS = EntityDataManager.<Boolean>createKey(EntitySkeleton.class, DataSerializers.BOOLEAN);
-	    private final EntityAIAttackHydralisk aiArrowAttack = new EntityAIAttackHydralisk(this, 1.0D, 20, 15.0F);
-	    private final EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false)
-	    {
-	        /**
-	         * Resets the task
-	         */
-	        public void resetTask()
-	        {
-	            super.resetTask();
-	        }
-	        /**
-	         * Execute a one shot task or start executing a continuous task
-	         */
-	        public void startExecuting()
-	        {
-	            super.startExecuting();
-	        }
-	    };
-	    
-	 public void setCombatTask()
-	    {
-	        if (this.worldObj != null && !this.worldObj.isRemote)
-	        {
-	            this.tasks.removeTask(this.aiAttackOnCollide);
-	            this.tasks.removeTask(this.aiArrowAttack);
-	            ItemStack itemstack = this.getHeldItemMainhand();
-
-	            if (itemstack != null && itemstack.getItem() == Items.BOW)
-	            {
-	                int i = 20;
-
-	                if (this.worldObj.getDifficulty() != EnumDifficulty.HARD)
-	                {
-	                    i = 40;
-	                }
-
-	                this.aiArrowAttack.setAttackCooldown(i);
-	                this.tasks.addTask(4, this.aiArrowAttack);
-	            }
-	            else
-	            {
-	                this.tasks.addTask(4, this.aiAttackOnCollide);
-	            }
-	        }
-	    }
-	 
+	private static final DataParameter<Integer> SKELETON_VARIANT = EntityDataManager.<Integer>createKey(EntitySkeleton.class, DataSerializers.VARINT);
+	private final EntityAIAttackHydralisk aiArrowAttack = new EntityAIAttackHydralisk(this, 1.0D, 20, 15.0F);
+    private final EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false);
+	   
+	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.hydraliskHP);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
@@ -147,7 +101,7 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	protected void initEntityAI()
     {
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIAttackHydralisk(this, 1.0D, 20, 15.0F));
+        this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -198,6 +152,33 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
         this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityRabbit.class, true));
     }
     
+    public void setCombatTask()
+    {
+        if (this.worldObj != null && !this.worldObj.isRemote)
+        {
+            this.tasks.removeTask(this.aiAttackOnCollide);
+            this.tasks.removeTask(this.aiArrowAttack);
+            ItemStack itemstack = this.getHeldItemMainhand();
+
+            if (itemstack != null && itemstack.getItem() == Items.BOW)
+            {
+                int i = 20;
+
+                if (this.worldObj.getDifficulty() != EnumDifficulty.HARD)
+                {
+                    i = 40;
+                }
+
+                this.aiArrowAttack.setAttackCooldown(i);
+                this.tasks.addTask(4, this.aiArrowAttack);
+            }
+            else
+            {
+                this.tasks.addTask(4, this.aiAttackOnCollide);
+            }
+        }
+    }
+	
 	public int getTalkInterval()
     {
         return 160;
@@ -206,21 +187,21 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	public SoundEvent getAmbientSound() {
 		Random rand = new Random();
 		if(rand.nextInt(3) == 0) {
-			return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE1;
+			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE1;
 		}else if(rand.nextInt(2) == 1) {
-			return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE2;
+			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE2;
 		}else if(rand.nextInt(2) == 2) {
-			return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE3;
+			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE3;
 		}
-		return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE4;
+		return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE4;
 	}
 	
 	public SoundEvent getHurtSound() {
-		return StarcraftSoundEvents.ENTITY_ZERGLING_HURT;
+		return StarcraftSoundEvents.ENTITY_HYDRALISK_HURT;
 	}
 	
 	public SoundEvent getDeathSound() {
-		return StarcraftSoundEvents.ENTITY_ZERGLING_DEATH;
+		return StarcraftSoundEvents.ENTITY_HYDRALISK_DEATH;
 	}
 	
 	
@@ -244,9 +225,9 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 		return super.attackEntityFrom(source, damageDealt);
 	}
 
-	@Override
-	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_) {
-		EntityTippedArrow entitytippedarrow = new EntityTippedArrow(this.worldObj, this);
+	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_)
+    {
+        EntityTippedArrow entitytippedarrow = new EntityTippedArrow(this.worldObj, this);
         double d0 = target.posX - this.posX;
         double d1 = target.getEntityBoundingBox().minY + (double)(target.height / 3.0F) - entitytippedarrow.posY;
         double d2 = target.posZ - this.posZ;
@@ -288,34 +269,10 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
         this.worldObj.spawnEntityInWorld(entitytippedarrow);
-	}
+    }
 	
 	public SkeletonType func_189771_df()
     {
         return SkeletonType.func_190134_a(((Integer)this.dataManager.get(SKELETON_VARIANT)).intValue());
-    }
-
-    public void func_189768_a(SkeletonType p_189768_1_)
-    {
-        this.dataManager.set(SKELETON_VARIANT, Integer.valueOf(p_189768_1_.func_190135_a()));
-        this.isImmuneToFire = p_189768_1_ == SkeletonType.WITHER;
-        this.func_189769_b(p_189768_1_);
-    }
-
-    private void func_189769_b(SkeletonType p_189769_1_)
-    {
-        if (p_189769_1_ == SkeletonType.WITHER)
-        {
-            this.setSize(0.7F, 2.4F);
-        }
-        else
-        {
-            this.setSize(0.6F, 1.99F);
-        }
-    }
-
-    public static void func_189772_b(DataFixer p_189772_0_)
-    {
-        EntityLiving.func_189752_a(p_189772_0_, "Skeleton");
     }
 }

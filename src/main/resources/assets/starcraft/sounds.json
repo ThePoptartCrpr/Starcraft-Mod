@@ -107,7 +107,7 @@
     "category": "master",
     "sounds": [
     {
-        "name": "starcraft:/mob/zealot/darkTemplar-live2","stream":false
+        "name": "starcraft:/mob/darktemplar/darkTemplar-live2","stream":false
     }
     ]
 },
@@ -220,6 +220,54 @@
     "sounds": [
     {
         "name": "starcraft:/mob/overlord/overlord-death","stream":false
+    }
+    ]
+},
+"mob.hydralisk.live1": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/hydralisk/hydralisk-live1","stream":false
+    }
+    ]
+},
+"mob.hydralisk.live2": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/hydralisk/hydralisk-live2","stream":false
+    }
+    ]
+},
+"mob.hydralisk.live3": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/hydralisk/hydralisk-live3","stream":false
+    }
+    ]
+},
+"mob.hydralisk.live4": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/hydralisk/hydralisk-live4","stream":false
+    }
+    ]
+},
+"mob.hydralisk.hurt": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/hydralisk/hydralisk-hurt","stream":false
+    }
+    ]
+},
+"mob.hydralisk.death": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/hydralisk/hydralisk-death","stream":false
     }
     ]
 }

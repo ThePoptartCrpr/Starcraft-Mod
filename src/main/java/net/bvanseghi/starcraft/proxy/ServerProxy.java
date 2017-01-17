@@ -1,8 +1,11 @@
 package net.bvanseghi.starcraft.proxy;
 
+import net.bvanseghi.starcraft.lib.Reference;
+import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyser;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ServerProxy {
 
@@ -19,6 +22,12 @@ public class ServerProxy {
 	}
 	
 	public void registerModelBakeryVariants() {
+		
+	}
+	
+
+	public void registerTileEntities() {
+		GameRegistry.registerTileEntity(TileEntityBlockVespeneGeyser.class, Reference.RL_BASE + "geyserVespene");
 		
 	}
 }
