@@ -16,7 +16,6 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 
 	public boolean isOnChar;
 
-	@SuppressWarnings("unchecked")
 	public CharBiomeGenCreepInfestation(BiomeProperties id) {
 		super(id);
 
