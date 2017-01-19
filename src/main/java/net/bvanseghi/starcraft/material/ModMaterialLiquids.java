@@ -4,11 +4,8 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 
 public class ModMaterialLiquids extends Material {
-	private static final String __OBFID = "CL_00000541";
-	private int mobilityFlag;
-
-	public ModMaterialLiquids(MapColor p_i2114_1_) {
-		super(p_i2114_1_);
+	public ModMaterialLiquids(MapColor mapColor) {
+		super(mapColor);
 		this.setReplaceable();
 		this.setNoPushMobility();
 	}
@@ -32,7 +29,7 @@ public class ModMaterialLiquids extends Material {
 	}
 
 	public Material setNoPushMobility() {
-		this.mobilityFlag = 1;
+		//No flag because it did exactly 0 things
 		return this;
 	}
 }

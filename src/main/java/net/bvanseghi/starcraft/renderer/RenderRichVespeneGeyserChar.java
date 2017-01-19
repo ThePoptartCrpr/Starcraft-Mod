@@ -7,10 +7,10 @@ import net.bvanseghi.starcraft.model.ModelRichVespeneGeyserChar;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 
+@SuppressWarnings("rawtypes")
 public class RenderRichVespeneGeyserChar<T> extends TileEntitySpecialRenderer {
 
-	private static final ResourceLocation texture = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/richVespeneGeyserChar.png");
+	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/richVespeneGeyserChar.png"); //And again
 
 	private ModelRichVespeneGeyserChar model;
 

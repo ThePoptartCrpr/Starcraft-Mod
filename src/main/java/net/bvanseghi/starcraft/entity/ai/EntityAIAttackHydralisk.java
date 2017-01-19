@@ -3,8 +3,6 @@ package net.bvanseghi.starcraft.entity.ai;
 import net.bvanseghi.starcraft.entity.EntityHydralisk;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemBow;
 import net.minecraft.util.EnumHand;
 

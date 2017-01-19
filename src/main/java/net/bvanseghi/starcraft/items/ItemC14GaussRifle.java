@@ -41,7 +41,8 @@ public class ItemC14GaussRifle extends ItemSword {
 			world.playSound(player, player.getPosition(), StarcraftSoundEvents.ENTITY_LARVA_LIVE1, SoundCategory.NEUTRAL, 0.4F,
 					0.4F / (itemRand.nextFloat() * 0.5F + 0.8F));
 		}
-		return new ActionResult(EnumActionResult.PASS, 0);
+		
+		return ActionResult.newResult(EnumActionResult.PASS, itemStack);
 	}
 
 }

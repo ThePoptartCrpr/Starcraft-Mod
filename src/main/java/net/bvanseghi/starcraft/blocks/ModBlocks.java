@@ -32,7 +32,6 @@ import net.bvanseghi.starcraft.oreshakuras.OreShakurasRedstone;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasRichMineral;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasTitanium;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasUranium;
-import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyser;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;

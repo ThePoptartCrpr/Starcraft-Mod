@@ -57,8 +57,6 @@ public abstract class WorldProviderShakuras
      */
     protected void generateLightBrightnessTable()
     {
-        float f = 0.0F;
-
         for (int i = 0; i <= 15; ++i)
         {
             float f1 = 1.0F - (float)i / 15.0F;
@@ -131,9 +129,7 @@ public abstract class WorldProviderShakuras
     @SideOnly(Side.CLIENT)
     public float[] calcSunriseSunsetColors(float celestialAngle, float partialTicks)
     {
-        float f = 0.4F;
         float f1 = MathHelper.cos(celestialAngle * ((float)Math.PI * 2F)) - 0.0F;
-        float f2 = -0.0F;
 
         if (f1 >= -0.4F && f1 <= 0.4F)
         {

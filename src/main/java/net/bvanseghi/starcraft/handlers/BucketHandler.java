@@ -23,8 +23,8 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+@SuppressWarnings("deprecation")
 public class BucketHandler {
-
 	public static Item acidBucket;
 	public static Item bloodBucket;
 	public static Map<Block, Item> bucketMap = new HashMap<Block, Item>();
