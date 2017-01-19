@@ -29,6 +29,7 @@ import net.bvanseghi.starcraft.entity.EntityHydralisk;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityProbe;
+import net.bvanseghi.starcraft.entity.EntitySpiderMine;
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.bvanseghi.starcraft.entity.ModEntities;
@@ -45,6 +46,7 @@ import net.bvanseghi.starcraft.model.ModelHydralisk;
 import net.bvanseghi.starcraft.model.ModelLarva;
 import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
 import net.bvanseghi.starcraft.model.ModelProbe;
+import net.bvanseghi.starcraft.model.ModelSpiderMine;
 import net.bvanseghi.starcraft.model.ModelZealot;
 import net.bvanseghi.starcraft.model.ModelZergling;
 import net.bvanseghi.starcraft.renderer.RenderBroodling;
@@ -56,6 +58,7 @@ import net.bvanseghi.starcraft.renderer.RenderHydralisk;
 import net.bvanseghi.starcraft.renderer.RenderLarva;
 import net.bvanseghi.starcraft.renderer.RenderLarvaCocoon;
 import net.bvanseghi.starcraft.renderer.RenderProbe;
+import net.bvanseghi.starcraft.renderer.RenderSpiderMine;
 import net.bvanseghi.starcraft.renderer.RenderZealot;
 import net.bvanseghi.starcraft.renderer.RenderZergling;
 import net.bvanseghi.starcraft.tools.ModTools;
@@ -118,6 +121,7 @@ public class ClientProxy extends ServerProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityBroodling.class, new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f)); //use depricated method
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class, new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f)); //use depricated method
+		RenderingRegistry.registerEntityRenderingHandler(EntitySpiderMine.class, new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f)); //use depricated method
 		
 	}
 	

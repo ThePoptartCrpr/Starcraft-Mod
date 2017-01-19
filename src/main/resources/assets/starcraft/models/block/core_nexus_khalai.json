@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "starcraft:blocks/core_pylon_khalai"
+        "all": "starcraft:blocks/core_nexus_khalai"
     }
 }

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "starcraft:core_pylon_dark" }
+        "normal": { "model": "starcraft:core_nexus_dark" }
     }
 }
