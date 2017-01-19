@@ -1,4 +1,3 @@
-
 package net.bvanseghi.starcraft.worldgen.structure;
 
 import java.util.Random;

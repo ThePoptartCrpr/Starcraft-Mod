@@ -90,8 +90,8 @@ public class ModBlocks extends Block {
 	public static Block ORE_URANIUM_SHAKURAS;
 
 	public static Block ZERG_STRUCTURE_CARAPACE;
-	public static Block ZERG_STRUCTURE_FLESH;
-	public static Block PROTOSS_METAL;
+	public static BlockZergStructureFlesh ZERG_STRUCTURE_FLESH;
+	public static BlockProtossMetal PROTOSS_METAL;
 	public static Block COMP_MINERAL;
 	public static Block DYED_IRON;
 
@@ -103,7 +103,7 @@ public class ModBlocks extends Block {
 
 	public static Block ENERGY_BLOCK;
 	public static Block VOID_ENERGY_BLOCK;
-	public static Block CRYSTAL;
+	public static BlockPylonCrystal CRYSTAL;
 	public static Block WARPGATE_WORMHOLE_CHAR;
 	public static Block WARPGATE_WORMHOLE_OVERWORLD;
 	public static Block WARPGATE_WORMHOLE_SHAKURAS;
@@ -137,7 +137,7 @@ public class ModBlocks extends Block {
 	public static Block terranMetal;
 	public static Block terranMetalDec1;
 
-	public static Block COMP_METAL;
+	public static BlockCompressedMetals COMP_METAL;
 
 	// Will be used in Xel'Naga temples and shrines.
 	public static Block xelnagaMetal;
