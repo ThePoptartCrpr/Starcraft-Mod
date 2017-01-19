@@ -49,6 +49,11 @@ public class StarcraftSoundEvents
 	public static SoundEvent ENTITY_PROBE_HURT;
 	public static SoundEvent ENTITY_PROBE_DEATH;
 	
+	public static SoundEvent ENTITY_BRUTALISK_LIVE1;
+	public static SoundEvent ENTITY_BRUTALISK_HURT;
+	public static SoundEvent ENTITY_BRUTALISK_DEATH;
+	public static SoundEvent ENTITY_BRUTALISK_STEP;
+	
 	public static void registerSounds()
 	{
 		ENTITY_ZERGLING_LIVE1 = registerSound("mob.zergling.live1");
@@ -92,6 +97,11 @@ public class StarcraftSoundEvents
 		ENTITY_PROBE_LIVE1 = registerSound("mob.probe.live1");
 		ENTITY_PROBE_HURT = registerSound("mob.probe.hurt");
 		ENTITY_PROBE_DEATH = registerSound("mob.probe.death");
+		
+		ENTITY_BRUTALISK_LIVE1 = registerSound("mob.brutalisk.live1");
+		ENTITY_BRUTALISK_HURT = registerSound("mob.brutalisk.hurt");
+		ENTITY_BRUTALISK_DEATH = registerSound("mob.brutalisk.death");
+		ENTITY_BRUTALISK_STEP = registerSound("mob.brutalisk.step");
 	}
 	
 	private static SoundEvent registerSound(String soundName)
