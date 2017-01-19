@@ -2,7 +2,15 @@ package net.bvanseghi.starcraft.blocks;
 
 import org.apache.logging.log4j.Level;
 
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreNexusDark;
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreNexusKhalai;
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreNexusVoid;
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCorePylonDark;
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCorePylonKhalai;
 import net.bvanseghi.starcraft.blocks.coreblocks.BlockCorePylonVoid;
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateDark;
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateKhalai;
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateVoid;
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
 import net.bvanseghi.starcraft.debug.DimPortalShakuras;
@@ -172,6 +180,17 @@ public class ModBlocks extends Block {
 	
 	//Core Blocks
 	public static Block CORE_PYLON_VOID;
+	public static Block CORE_PYLON_DARK;
+	public static Block CORE_PYLON_KHALAI;
+	
+	public static Block CORE_WARPGATE_VOID;
+	public static Block CORE_WARPGATE_DARK;
+	public static Block CORE_WARPGATE_KHALAI;
+	
+	public static Block CORE_NEXUS_VOID;
+	public static Block CORE_NEXUS_DARK;
+	public static Block CORE_NEXUS_KHALAI;
+	
 
 	public static void init() {
 		instantiate();
@@ -238,6 +257,16 @@ public class ModBlocks extends Block {
 		
 		//Core Blocks
 		CORE_PYLON_VOID = new BlockCorePylonVoid();
+		CORE_PYLON_DARK = new BlockCorePylonDark();
+		CORE_PYLON_KHALAI = new BlockCorePylonKhalai();
+		
+		CORE_WARPGATE_VOID = new BlockCoreWarpGateVoid();
+		CORE_WARPGATE_DARK = new BlockCoreWarpGateDark();
+		CORE_WARPGATE_KHALAI = new BlockCoreWarpGateKhalai();
+		
+		CORE_NEXUS_VOID = new BlockCoreNexusVoid();
+		CORE_NEXUS_DARK = new BlockCoreNexusDark();
+		CORE_NEXUS_KHALAI = new BlockCoreNexusKhalai();
 		
 	}
 
@@ -380,6 +409,30 @@ public class ModBlocks extends Block {
 		
 		GameRegistry.register(CORE_PYLON_VOID);
 		GameRegistry.register(new ItemBlock(CORE_PYLON_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL()));
+		
+		GameRegistry.register(CORE_PYLON_DARK);
+		GameRegistry.register(new ItemBlock(CORE_PYLON_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_DARK.getRegistryRL()));
+		
+		GameRegistry.register(CORE_PYLON_KHALAI);
+		GameRegistry.register(new ItemBlock(CORE_PYLON_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_KHALAI.getRegistryRL()));
+		
+		GameRegistry.register(CORE_NEXUS_VOID);
+		GameRegistry.register(new ItemBlock(CORE_NEXUS_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_NEXUS_VOID.getRegistryRL()));
+		
+		GameRegistry.register(CORE_NEXUS_DARK);
+		GameRegistry.register(new ItemBlock(CORE_NEXUS_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_NEXUS_DARK.getRegistryRL()));
+		
+		GameRegistry.register(CORE_NEXUS_KHALAI);
+		GameRegistry.register(new ItemBlock(CORE_NEXUS_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_NEXUS_KHALAI.getRegistryRL()));
+		
+		GameRegistry.register(CORE_WARPGATE_VOID);
+		GameRegistry.register(new ItemBlock(CORE_WARPGATE_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_VOID.getRegistryRL()));
+		
+		GameRegistry.register(CORE_WARPGATE_DARK);
+		GameRegistry.register(new ItemBlock(CORE_WARPGATE_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_DARK.getRegistryRL()));
+		
+		GameRegistry.register(CORE_WARPGATE_KHALAI);
+		GameRegistry.register(new ItemBlock(CORE_WARPGATE_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_KHALAI.getRegistryRL()));
 		
 		
 		//GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
@@ -565,6 +618,38 @@ public class ModBlocks extends Block {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_PYLON_VOID), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_PYLON_VOID.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_PYLON_DARK), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_PYLON_DARK.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_PYLON_DARK.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_PYLON_KHALAI), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_PYLON_KHALAI.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_PYLON_KHALAI.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_NEXUS_VOID), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_NEXUS_VOID.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_NEXUS_VOID.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_NEXUS_DARK), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_NEXUS_DARK.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_NEXUS_DARK.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_NEXUS_KHALAI), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_NEXUS_KHALAI.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_NEXUS_KHALAI.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_WARPGATE_VOID), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_WARPGATE_VOID.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_WARPGATE_VOID.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_WARPGATE_DARK), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_WARPGATE_DARK.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_WARPGATE_DARK.getUnlocalizedName().substring(5));
+		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_WARPGATE_KHALAI), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_WARPGATE_KHALAI.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_WARPGATE_KHALAI.getUnlocalizedName().substring(5));
 		
 		//BlockRenderRegister.registerBlockRenderer();
 	
