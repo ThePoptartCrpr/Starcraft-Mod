@@ -2,6 +2,7 @@ package net.bvanseghi.starcraft.blocks;
 
 import org.apache.logging.log4j.Level;
 
+import net.bvanseghi.starcraft.blocks.coreblocks.BlockCorePylonVoid;
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
 import net.bvanseghi.starcraft.debug.DimPortalShakuras;
@@ -32,7 +33,6 @@ import net.bvanseghi.starcraft.oreshakuras.OreShakurasRedstone;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasRichMineral;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasTitanium;
 import net.bvanseghi.starcraft.oreshakuras.OreShakurasUranium;
-import net.bvanseghi.starcraft.tileentity.TileEntityBlockVespeneGeyser;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -82,8 +82,8 @@ public class ModBlocks extends Block {
 	public static Block ORE_URANIUM_SHAKURAS;
 
 	public static Block ZERG_STRUCTURE_CARAPACE;
-	public static BlockZergStructureFlesh ZERG_STRUCTURE_FLESH;
-	public static BlockProtossMetal PROTOSS_METAL;
+	public static Block ZERG_STRUCTURE_FLESH;
+	public static Block PROTOSS_METAL;
 	public static Block COMP_MINERAL;
 	public static Block DYED_IRON;
 
@@ -95,7 +95,7 @@ public class ModBlocks extends Block {
 
 	public static Block ENERGY_BLOCK;
 	public static Block VOID_ENERGY_BLOCK;
-	public static BlockPylonCrystal CRYSTAL;
+	public static Block CRYSTAL;
 	public static Block WARPGATE_WORMHOLE_CHAR;
 	public static Block WARPGATE_WORMHOLE_OVERWORLD;
 	public static Block WARPGATE_WORMHOLE_SHAKURAS;
@@ -129,7 +129,7 @@ public class ModBlocks extends Block {
 	public static Block terranMetal;
 	public static Block terranMetalDec1;
 
-	public static BlockCompressedMetals COMP_METAL;
+	public static Block COMP_METAL;
 
 	// Will be used in Xel'Naga temples and shrines.
 	public static Block xelnagaMetal;
@@ -168,6 +168,10 @@ public class ModBlocks extends Block {
 	public static Block DIM_PORTAL_CHAR;
 	public static Block DIM_PORTAL_OVERWORLD;
 	public static Block DIM_PORTAL_SHAKURAS;
+	
+	
+	//Core Blocks
+	public static Block CORE_PYLON_VOID;
 
 	public static void init() {
 		instantiate();
@@ -231,6 +235,9 @@ public class ModBlocks extends Block {
 		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
 		
 		PROTOSS_METAL  = new BlockProtossMetal();
+		
+		//Core Blocks
+		CORE_PYLON_VOID = new BlockCorePylonVoid();
 		
 	}
 
@@ -370,6 +377,9 @@ public class ModBlocks extends Block {
 		
 		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
 		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
+		
+		GameRegistry.register(CORE_PYLON_VOID);
+		GameRegistry.register(new ItemBlock(CORE_PYLON_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL()));
 		
 		
 		//GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
@@ -550,6 +560,11 @@ public class ModBlocks extends Block {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(VESPENE_GEYSER_BASE_SHAKURAS), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + VESPENE_GEYSER_BASE_SHAKURAS.getUnlocalizedName().substring(5));
+		
+		//Core Blocks
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_PYLON_VOID), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_PYLON_VOID.getUnlocalizedName().substring(5));
 		
 		//BlockRenderRegister.registerBlockRenderer();
 	

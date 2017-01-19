@@ -159,7 +159,20 @@ public class Reference {
 		//Dimension Objects
 		BLOCK_DIM_PORTAL_C("charDimPortal", "char_dim_portal"),
 		BLOCK_DIM_PORTAL_OW("overworldDimPortal", "overworld_dim_portal"),
-		BLOCK_DIM_PORTAL_S("shakurasDimPortal", "shakuras_dim_portal");
+		BLOCK_DIM_PORTAL_S("shakurasDimPortal", "shakuras_dim_portal"),
+		
+		//Core Blocks
+		BLOCK_CORE_PYLON_VOID("corePylonVoid", "core_pylon_void"),
+		BLOCK_CORE_PYLON_KHALAI("corePylonKhalai", "core_pylon_khalai"),
+		BLOCK_CORE_PYLON_DARK("corePylonDark", "core_pylon_dark"),
+		
+		BLOCK_CORE_WARPGATE_DARK("coreWarpGateDark", "core_warpgate_dark"),
+		BLOCK_CORE_WARPGATE_KHALAI("coreWarpGateKhalai", "core_warpgate_khalai"),
+		BLOCK_CORE_WARPGATE_VOID("coreWarpGateVoid", "core_warpgate_void"),
+		
+		BLOCK_CORE_NEXUS_DARK("coreNexusDark", "core_nexus_dark"),
+		BLOCK_CORE_NEXUS_KHALAI("coreNexusKhalai", "core_nexus_khalai"),
+		BLOCK_CORE_NEXUS_VOID("coreNexusVoid", "core_nexus_void");
 		
 		private String unlocalizedName;
 		private String registryName;
