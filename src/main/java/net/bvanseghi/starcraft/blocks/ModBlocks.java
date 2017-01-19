@@ -95,7 +95,7 @@ public class ModBlocks extends Block {
 
 	public static Block ENERGY_BLOCK;
 	public static Block VOID_ENERGY_BLOCK;
-	public static Block CRYSTAL;
+	public static BlockPylonCrystal CRYSTAL;
 	public static Block WARPGATE_WORMHOLE_CHAR;
 	public static Block WARPGATE_WORMHOLE_OVERWORLD;
 	public static Block WARPGATE_WORMHOLE_SHAKURAS;

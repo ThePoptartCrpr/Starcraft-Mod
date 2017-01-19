@@ -113,43 +113,43 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
     {
         this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
         
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityProtossPassive.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
         
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityVillager>(this, EntityVillager.class, false));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityIronGolem>(this, EntityIronGolem.class, true));
         
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySkeleton.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySlime.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityZombie.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityCaveSpider.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityBlaze.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityEndermite.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityGolem.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityMagmaCube.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPigZombie.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySnowman.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityWitch.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySilverfish.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityShulker.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntitySkeleton>(this, EntitySkeleton.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntitySlime>(this, EntitySlime.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntitySpider>(this, EntitySpider.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityZombie>(this, EntityZombie.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityEnderman>(this, EntityEnderman.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityCaveSpider>(this, EntityCaveSpider.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityBlaze>(this, EntityBlaze.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityEndermite>(this, EntityEndermite.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityGolem>(this, EntityGolem.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityMagmaCube>(this, EntityMagmaCube.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityPigZombie>(this, EntityPigZombie.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntitySnowman>(this, EntitySnowman.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityWitch>(this, EntityWitch.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntitySilverfish>(this, EntitySilverfish.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityShulker>(this, EntityShulker.class, true));
         
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityWolf.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityCow.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntitySheep.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPolarBear.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityMooshroom.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPig.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityOcelot.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityHorse.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityBat.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityRabbit.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityWolf>(this, EntityWolf.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityCow>(this, EntityCow.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityChicken>(this, EntityChicken.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntitySheep>(this, EntitySheep.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityPolarBear>(this, EntityPolarBear.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityMooshroom>(this, EntityMooshroom.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityPig>(this, EntityPig.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityOcelot>(this, EntityOcelot.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityHorse>(this, EntityHorse.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityBat>(this, EntityBat.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityRabbit>(this, EntityRabbit.class, true));
     }
     
     public void setCombatTask()
