@@ -23,11 +23,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class DimPortalShakuras extends ModBlocks {
-	public static boolean field_149948_a;
-	
-	private static final String __OBFID = "CL_00000236";
-	
 	private int dim = StarcraftConfig.dimShakuras;
+	
 	public DimPortalShakuras() {
 		super(Material.ROCK);
 		this.setLightLevel(1.0F);

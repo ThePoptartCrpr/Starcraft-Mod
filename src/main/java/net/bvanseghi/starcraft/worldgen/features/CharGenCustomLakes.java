@@ -160,9 +160,7 @@ public class CharGenCustomLakes extends WorldGenerator
                 {
                     for (int l3 = 0; l3 < 16; ++l3)
                     {
-                        int l4 = 4;
-
-                        if (worldIn.canBlockFreezeWater(position.add(k2, 4, l3)))
+                    	if (worldIn.canBlockFreezeWater(position.add(k2, 4, l3)))
                         {
                             worldIn.setBlockState(position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), 2);
                         }

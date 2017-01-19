@@ -101,7 +101,7 @@ public class EntityDarkProbe extends EntityProtossPassive {
 
             if (flag)
             {
-                for (double d6 = 0.05D; x != 0.0D && this.worldObj.getCollisionBoxes(this, this.getEntityBoundingBox().offset(x, -1.0D, 0.0D)).isEmpty(); d3 = x)
+                for (; x != 0.0D && this.worldObj.getCollisionBoxes(this, this.getEntityBoundingBox().offset(x, -1.0D, 0.0D)).isEmpty(); d3 = x)
                 {
                     if (x < 0.05D && x >= -0.05D)
                     {

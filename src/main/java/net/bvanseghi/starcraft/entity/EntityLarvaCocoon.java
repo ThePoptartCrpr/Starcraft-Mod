@@ -1,7 +1,5 @@
 package net.bvanseghi.starcraft.entity;
 
-import java.util.Random;
-
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
@@ -11,11 +9,6 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityLarvaCocoon extends EntityZergPassive {
-
-	private int nextStepDistance;
-	private int fire;
-	Random random = new Random();
-
 	public EntityLarvaCocoon(World world) {
 		super(world);
 		this.setSize(0.7F, 0.8F);

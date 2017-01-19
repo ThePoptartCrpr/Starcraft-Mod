@@ -7,10 +7,10 @@ import net.bvanseghi.starcraft.model.ModelWarpGateWormholeShakuras;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 
+@SuppressWarnings("rawtypes")
 public class RenderWarpGateWormholeShakuras<T> extends TileEntitySpecialRenderer {
 
-	private static final ResourceLocation texture = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/warpGateWormholeShakuras.png");
+	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/warpGateWormholeShakuras.png"); //Done
 
 	private ModelWarpGateWormholeShakuras model;
 

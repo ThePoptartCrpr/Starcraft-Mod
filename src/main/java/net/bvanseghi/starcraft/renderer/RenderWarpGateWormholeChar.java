@@ -7,10 +7,10 @@ import net.bvanseghi.starcraft.model.ModelWarpGateWormholeChar;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 
+@SuppressWarnings("rawtypes")
 public class RenderWarpGateWormholeChar<T> extends TileEntitySpecialRenderer {
 
-	private static final ResourceLocation texture = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/warpGateWormholeChar.png");
+	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/warpGateWormholeChar.png"); //Not
 
 	private ModelWarpGateWormholeChar model;
 

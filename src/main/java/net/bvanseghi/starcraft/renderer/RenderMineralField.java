@@ -7,10 +7,9 @@ import net.bvanseghi.starcraft.model.ModelMineralField;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 
+@SuppressWarnings("rawtypes")
 public class RenderMineralField<T> extends TileEntitySpecialRenderer {
-
-	private static final ResourceLocation texture = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/mineralField.png");
+	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/mineralField.png"); //TODO: ensure that this is set to the proper value
 
 	private ModelMineralField model;
 

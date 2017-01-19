@@ -23,9 +23,8 @@ public class SCWorldGen implements IWorldGenerator {
 	ChunkProviderGenerate o;
 
 	public static void setupWorldgen() {
-			DimensionManager.registerDimension(StarcraftConfig.dimChar, DimensionType.OVERWORLD);
-
-			DimensionManager.registerDimension(StarcraftConfig.dimShakuras, DimensionType.OVERWORLD);
+		DimensionManager.registerDimension(StarcraftConfig.dimChar, DimensionType.OVERWORLD);
+		DimensionManager.registerDimension(StarcraftConfig.dimShakuras, DimensionType.OVERWORLD);
 		//TODO: figure out how to register dimensions using dimType
 	}
 
@@ -33,7 +32,7 @@ public class SCWorldGen implements IWorldGenerator {
 	private WorldGenerator TITANIUM_OVERWORLD;
 	private WorldGenerator URANIUM_OVERWORLD;
 	
-	private WorldGenerator ALIEN_CHAR;
+//	private WorldGenerator ALIEN_CHAR;
 	private WorldGenerator COAL_CHAR;
 	private WorldGenerator COPPER_CHAR;
 	private WorldGenerator DIAMOND_CHAR;
@@ -46,7 +45,7 @@ public class SCWorldGen implements IWorldGenerator {
 	private WorldGenerator TITANIUM_CHAR;
 	private WorldGenerator URANIUM_CHAR;
 	
-	private WorldGenerator ALIEN_SHAKURAS;
+//	private WorldGenerator ALIEN_SHAKURAS;
 	private WorldGenerator COAL_SHAKURAS;
 	private WorldGenerator COPPER_SHAKURAS;
 	private WorldGenerator DIAMOND_SHAKURAS;
