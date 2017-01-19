@@ -270,5 +270,37 @@
         "name": "starcraft:/mob/hydralisk/hydralisk-death","stream":false
     }
     ]
+},
+"mob.brutalisk.live1": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/brutalisk/brutalisk-live1","stream":false
+    }
+    ]
+},
+"mob.brutalisk.hurt": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/brutalisk/brutalisk-hurt","stream":false
+    }
+    ]
+},
+"mob.brutalisk.death": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/brutalisk/brutalisk-death","stream":false
+    }
+    ]
+},
+"mob.brutalisk.step": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/brutalisk/brutalisk-step","stream":false
+    }
+    ]
 }
 }

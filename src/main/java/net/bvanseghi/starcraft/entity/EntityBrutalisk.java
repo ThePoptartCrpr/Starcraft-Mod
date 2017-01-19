@@ -1,11 +1,13 @@
 package net.bvanseghi.starcraft.entity;
 
+import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
+import net.minecraft.block.Block;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -30,7 +32,10 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
@@ -98,27 +103,23 @@ public class EntityBrutalisk extends EntityZergMob {
         return 160;
     }
 	
-	/*
-	public SCSoundEvent getLivingSound() {
-		Random rand = new Random();
-		if(rand.nextInt(2) == 0) {
-			return SCSoundEvents.ENTITY_ZERGLING_LIVE1;
-		}else if(rand.nextInt(2) == 1) {
-			return SCSoundEvents.ENTITY_ZERGLING_LIVE2;
-		}else if(rand.nextInt(2) == 2) {
-			return SCSoundEvents.ENTITY_ZERGLING_LIVE3;
-		}
-		return SCSoundEvents.ENTITY_ZERGLING_LIVE4;
+	public SoundEvent getLivingSound() {
+		return StarcraftSoundEvents.ENTITY_BRUTALISK_LIVE1;
 	}
 	
-	public SCSoundEvent getHurtSound() {
-		return SCSoundEvents.ENTITY_ZERGLING_HURT;
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_BRUTALISK_HURT;
 	}
 	
-	public SCSoundEvent getDeathSound() {
-		return SCSoundEvents.ENTITY_ZERGLING_DEATH;
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_BRUTALISK_DEATH;
 	}
-	*/
+	
+	protected void playStepSound(BlockPos pos, Block blockIn)
+    {
+        this.playSound(StarcraftSoundEvents.ENTITY_BRUTALISK_STEP, 0.15F, 1.0F);
+    }
+	
 	
 	/**
 	 * Drop up to 2 items when killed
