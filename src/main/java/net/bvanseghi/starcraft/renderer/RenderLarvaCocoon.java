@@ -1,5 +1,7 @@
 package net.bvanseghi.starcraft.renderer;
 
+import org.lwjgl.opengl.GL11;
+
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
@@ -36,4 +38,8 @@ public class RenderLarvaCocoon<T> extends RenderLiving<EntityLarvaCocoon> {
 		return LARVA_COCOON_TEXTURES;
 	}
 
+	protected void preRenderCallback(EntityLarvaCocoon entitylivingbaseIn, float partialTickTime)
+    {
+		GL11.glScalef(1.7F, 1.7F, 1.7F);
+    }
 }
