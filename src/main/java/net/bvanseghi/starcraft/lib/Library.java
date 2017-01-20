@@ -124,4 +124,46 @@ public class Library {
 					((ModBlocks) blockstate).PoweredByPSI(false);
 				}
 	}
+	
+	public static void createShields(World world, BlockPos pos, int domeHeight) {
+		//creates peak block of which we will build layers down from
+		world.setBlockState(pos.up(domeHeight), ModBlocks.COBBLESTONE_CHAR.getDefaultState());
+		//some useful integers to help us keep track of stuff
+		int level = 0;
+		int domeLevelLength = 2;
+		int factorX = 1;
+		int factorZ = 1;
+		int cornerOffset = 1;
+		//start by counting layers of our dome! As we finish off layers, we go down a level and generate the next level
+		for(int h = domeHeight; h > 0; h--) {
+			//we start at -(cornerOffset) because that is our corner we want to start generating from. Our Maximum is our entire side length, or domeLevelLength. After every single level, we increase those numbers
+			for(int x = -cornerOffset; x < domeLevelLength; x++) {
+				world.setBlockState(pos.add(pos.getX() + (-cornerOffset), pos.getY() + h, pos.getZ()), ModBlocks.COBBLESTONE_CHAR.getDefaultState());
+			}
+			//we generate the next side length of our dome!
+			for(int z = -cornerOffset; z < domeLevelLength; z++) {
+				world.setBlockState(pos.add(pos.getX(), pos.getY() + h, pos.getZ() + (-cornerOffset)), ModBlocks.COBBLESTONE_CHAR.getDefaultState());
+				
+			}
+			//Now we REVERSE our dome generation using the first for loop, but just going backwards now :p
+			for(int x = cornerOffset; x < domeLevelLength; x++) {
+				world.setBlockState(pos.add(pos.getX() + cornerOffset, pos.getY() + h, pos.getZ()), ModBlocks.COBBLESTONE_CHAR.getDefaultState());
+			}
+			//Same for the Z axis!
+			for(int z = cornerOffset; z < domeLevelLength; z++) {
+				world.setBlockState(pos.add(pos.getX(), pos.getY() + h, pos.getZ() + cornerOffset), ModBlocks.COBBLESTONE_CHAR.getDefaultState());
+				
+			}
+			//Here we offset our corner by incrementing it, so we get a nice new layer thats larger than the previous. We also increase our Dome Length to be larger
+			cornerOffset++;
+			domeLevelLength += 2;
+		}
+		
+	}
+	
+	//To be created!
+	public static void regenerateShields() {
+		
+	}
+
 }
