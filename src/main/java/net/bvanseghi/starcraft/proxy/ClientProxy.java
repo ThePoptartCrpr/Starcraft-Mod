@@ -107,6 +107,7 @@ public class ClientProxy extends ServerProxy {
 		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumLeggings, 0, new ModelResourceLocation(ArmourTitaniumLeggings.REGISTRY_RL, "inventory"));
 	}
 	
+	//TODO: get all of this into registry
 	public void registerEntityRenders() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class, new RenderZealot(Minecraft.getMinecraft().getRenderManager(), new ModelZealot(), 0.4f)); //use depricated method
 		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class, new RenderProbe(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f)); //use depricated method
