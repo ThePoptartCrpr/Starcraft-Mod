@@ -176,7 +176,7 @@ public class Library {
 		
 	}
 	
-	public static void larvaMorph(World world, EntityLarva larva, Random rand, BlockPos pos, double x, double y, double z) {
+	public static void larvaMorph(World world, EntityLarva larva, Random rand, double x, double y, double z) {
 		if(!world.isRemote){
 			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
 			cocoon.posX = x;

@@ -66,7 +66,7 @@ public class EntityLarva extends EntityZergPassive {
 	public void onUpdate() {
 		int chance = this.rand.nextInt(1000);
 		if(chance < 10) {
-			Library.larvaMorph(this.worldObj, this, random, pos, this.posX, this.posY, this.posZ);
+			Library.larvaMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
 		}else{
 			
 		}

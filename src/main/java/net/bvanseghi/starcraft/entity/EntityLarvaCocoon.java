@@ -53,7 +53,7 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 	public void onUpdate() {
 		int chance = this.rand.nextInt(1000);
 		if(chance < 10) {
-			Library.larvaCocoonMorph(this.worldObj, this, random, pos, this.posX, this.posY, this.posZ);
+			Library.larvaCocoonMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
 		}else{
 			
 		}
