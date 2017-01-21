@@ -6,8 +6,10 @@ import java.util.Random;
 import org.apache.logging.log4j.Level;
 
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.entity.EntityHydralisk;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
+import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -174,14 +176,26 @@ public class Library {
 		
 	}
 	
-	public static void larvaMorph(World world, EntityLarva larva, Random rand, double x, double y, double z) {
-		world.removeEntity(larva);
-		EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
-		cocoon.posX = x;
-		cocoon.posY = y;
-		cocoon.posZ = z;
-		world.spawnEntityInWorld(cocoon);
+	public static void larvaMorph(World world, EntityLarva larva, Random rand, BlockPos pos, double x, double y, double z) {
+		if(!world.isRemote){
+			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
+			cocoon.posX = x;
+			cocoon.posY = y;
+			cocoon.posZ = z;
+			world.spawnEntityInWorld(cocoon);
+			larva.setDead();
+		}
 	}
 	
+	public static void larvaCocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand, double x, double y, double z) {
+		if(!world.isRemote){
+			EntityZergling zergling = new EntityZergling(world);
+			zergling.posX = x;
+			zergling.posY = y;
+			zergling.posZ = z;
+			world.spawnEntityInWorld(zergling);
+			cocoon.setDead();
+		}
+	}
 
 }

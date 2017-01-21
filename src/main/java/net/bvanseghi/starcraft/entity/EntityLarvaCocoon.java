@@ -1,11 +1,15 @@
 package net.bvanseghi.starcraft.entity;
 
+import java.util.Random;
+
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
+import net.bvanseghi.starcraft.lib.Library;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class EntityLarvaCocoon extends EntityZergPassive {
@@ -13,6 +17,8 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 		super(world);
 		this.setSize(0.7F, 0.8F);
 	}
+	Random random = new Random();
+	BlockPos pos;
 
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -41,6 +47,17 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 	
 	public SoundEvent getDeathSound() {
 		return StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH;
+	}
+	
+	@Override
+	public void onUpdate() {
+		int chance = this.rand.nextInt(1000);
+		if(chance < 10) {
+			Library.larvaCocoonMorph(this.worldObj, this, random, pos, this.posX, this.posY, this.posZ);
+		}else{
+			
+		}
+		super.onUpdate();
 	}
 
 	@Override

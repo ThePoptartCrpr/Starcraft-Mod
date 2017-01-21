@@ -38,6 +38,7 @@ public class EntityLarva extends EntityZergPassive {
 	public boolean playerRequestMob = false;
 	private int fire;
 	Random random = new Random();
+	BlockPos pos;
 
 	public EntityLarva(World world) {
 		super(world);
@@ -62,15 +63,14 @@ public class EntityLarva extends EntityZergPassive {
     }
 	
 	@Override
-	public void onLivingUpdate() {
+	public void onUpdate() {
 		int chance = this.rand.nextInt(1000);
-		if(chance == 10) {
-			Library.larvaMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
-		}else {
+		if(chance < 10) {
+			Library.larvaMorph(this.worldObj, this, random, pos, this.posX, this.posY, this.posZ);
+		}else{
 			
 		}
-		
-		super.onLivingUpdate();
+		super.onUpdate();
 	}
 	
 	public SoundEvent getAmbientSound() {
