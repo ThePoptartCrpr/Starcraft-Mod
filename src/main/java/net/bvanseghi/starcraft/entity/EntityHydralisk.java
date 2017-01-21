@@ -3,14 +3,12 @@ package net.bvanseghi.starcraft.entity;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
-import net.bvanseghi.starcraft.entity.ai.EntityAIAttackHydralisk;
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -25,8 +23,6 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityPolarBear;
-import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.entity.monster.SkeletonType;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityCow;
@@ -40,22 +36,9 @@ import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityTippedArrow;
-import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
-import net.minecraft.init.MobEffects;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 /**
@@ -151,6 +134,7 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	 */
 	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
 		//TODO: make this
+		dropItem(Items.STICK, Integer.MAX_VALUE);
 	}
 	
 	public void onUpdate() {
@@ -164,7 +148,7 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 
 	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_)
    	{
-        EntityTippedArrow entitytippedarrow = new EntityTippedArrow(this.worldObj, this);
-	this.worldObj.spawnEntityInWorld(entitytippedarrow);
+		EntityTippedArrow entitytippedarrow = new EntityTippedArrow(this.worldObj, this);
+		this.worldObj.spawnEntityInWorld(entitytippedarrow);
 	}  
 }
