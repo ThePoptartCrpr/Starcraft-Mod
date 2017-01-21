@@ -2,9 +2,12 @@ package net.bvanseghi.starcraft.lib;
 
 import java.util.ArrayList;
 
+import org.apache.logging.log4j.Level;
+
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -124,4 +127,48 @@ public class Library {
 					((ModBlocks) blockstate).PoweredByPSI(false);
 				}
 	}
+	
+	public static void createShields(World world, BlockPos pos, int domeHeight) {
+		//creates peak block of which we will build layers down from
+		world.setBlockState(pos.up(domeHeight), Blocks.GLASS.getDefaultState());
+		//some useful integers to help us keep track of stuff
+		int level = 0;
+		int domeLevelLength = 2;
+		int factorX = 1;
+		int factorZ = 1;
+		int cornerOffset = 1;
+		//start by counting layers of our dome! As we finish off layers, we go down a level and generate the next level
+		for(int h = domeHeight; h > 0; h--) {
+			//we start at -(cornerOffset) because that is our corner we want to start generating from. Our Maximum is our entire side length, or domeLevelLength. After every single level, we increase those numbers
+			for(int x = -cornerOffset; x < domeLevelLength; x++) {
+				world.setBlockState(pos.add(x + (-cornerOffset), h, 0), Blocks.GLASS.getDefaultState());
+				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
+			}
+			//we generate the next side length of our dome!
+			for(int z = -cornerOffset; z < domeLevelLength; z++) {
+				world.setBlockState(pos.add(0, h, z + (-cornerOffset)), Blocks.GLASS.getDefaultState());
+				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
+			}
+			//Now we REVERSE our dome generation using the first for loop, but just going backwards now :p
+			for(int x = cornerOffset; x < domeLevelLength; x++) {
+				world.setBlockState(pos.add(x + cornerOffset, pos.getY() + h, 0), Blocks.GLASS.getDefaultState());
+				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
+			}
+			//Same for the Z axis!
+			for(int z = cornerOffset; z < domeLevelLength; z++) {
+				world.setBlockState(pos.add(0, h, z + cornerOffset), Blocks.GLASS.getDefaultState());
+				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
+			}
+			//Here we offset our corner by incrementing it, so we get a nice new layer thats larger than the previous. We also increase our Dome Length to be larger
+			cornerOffset++;
+			domeLevelLength += 2;
+		}
+		
+	}
+	
+	//To be created!
+	public static void regenerateShields() {
+		
+	}
+
 }

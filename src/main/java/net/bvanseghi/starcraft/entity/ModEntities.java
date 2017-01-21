@@ -24,6 +24,7 @@ public class ModEntities {
 		registerEntity(EntityBroodling.class, "broodling", 64, 1, true);
 		
 		registerEntity(EntityCivilian.class, "civilian", 64, 1, true);
+		registerEntity(EntitySpiderMine.class, "mine_spider", 64, 1, true);
 	}
 	
 	public static void setEntityToSpawn() {
@@ -40,6 +41,7 @@ public class ModEntities {
 		EntityRegistry.addSpawn(EntityBroodling.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		
 		EntityRegistry.addSpawn(EntityCivilian.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntitySpiderMine.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		
 	}
 	
@@ -57,6 +59,7 @@ public class ModEntities {
 		EntityRegistry.registerEgg(EntityBroodling.class, 11403519, 7684608);
 		
 		EntityRegistry.registerEgg(EntityCivilian.class, 7566195, 16639);
+		EntityRegistry.registerEgg(EntitySpiderMine.class, 7566195, 16639);
 	}
 	
 	private static void registerEntity(Class<? extends Entity> entityClass, String entityName, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {

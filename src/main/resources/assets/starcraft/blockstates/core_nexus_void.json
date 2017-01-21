@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "starcraft:core_pylon_void" }
+        "normal": { "model": "starcraft:core_nexus_void" }
     }
 }

@@ -78,6 +78,7 @@ public class EntityLarva extends EntityZergPassive {
 			this.entityDropItem(new ItemStack(ModItems.zergCarapace, 1, 0), 1);
 		}
 	}
+	
 	public void moveEntity(double x, double y, double z)
     {
         if (this.noClip)
