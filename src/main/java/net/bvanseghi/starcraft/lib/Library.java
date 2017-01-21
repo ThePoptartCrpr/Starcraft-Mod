@@ -1,10 +1,13 @@
 package net.bvanseghi.starcraft.lib;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import org.apache.logging.log4j.Level;
 
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.entity.EntityLarva;
+import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -167,8 +170,18 @@ public class Library {
 	}
 	
 	//To be created!
-	public static void regenerateShields() {
+	public void regenerateShields() {
 		
 	}
+	
+	public static void larvaMorph(World world, EntityLarva larva, Random rand, double x, double y, double z) {
+		world.removeEntity(larva);
+		EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
+		cocoon.posX = x;
+		cocoon.posY = y;
+		cocoon.posZ = z;
+		world.spawnEntityInWorld(cocoon);
+	}
+	
 
 }

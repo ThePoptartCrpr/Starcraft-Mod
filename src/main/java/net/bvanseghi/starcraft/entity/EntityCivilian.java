@@ -9,7 +9,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityCivilian extends EntityTerranPassive{
+public class EntityCivilian extends EntityTerranPassive {
 
 	Random random = new Random();
 

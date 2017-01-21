@@ -7,6 +7,7 @@ import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.items.ModItems;
+import net.bvanseghi.starcraft.lib.Library;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
@@ -14,6 +15,7 @@ import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
@@ -45,7 +47,7 @@ public class EntityLarva extends EntityZergPassive {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.larvaHP);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.15D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.19241212312D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
 	}
 	
@@ -58,6 +60,18 @@ public class EntityLarva extends EntityZergPassive {
     {
         return 160;
     }
+	
+	@Override
+	public void onLivingUpdate() {
+		int chance = this.rand.nextInt(1000);
+		if(chance == 10) {
+			Library.larvaMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
+		}else {
+			
+		}
+		
+		super.onLivingUpdate();
+	}
 	
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_LARVA_LIVE1;
@@ -365,7 +379,7 @@ public class EntityLarva extends EntityZergPassive {
             			|| block == ModBlocks.ZERG_STRUCTURE_CARAPACE || block == ModBlocks.ZERG_STRUCTURE_FLESH) {
 
             	} else {
-            		this.kill();
+            		//this.kill();
             	}
 
                 if (block != null && this.onGround)
