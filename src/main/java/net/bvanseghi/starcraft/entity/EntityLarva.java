@@ -15,7 +15,6 @@ import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
@@ -31,13 +30,12 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class EntityLarva extends EntityZergPassive {
-
 	private int nextStepDistance;
 	public boolean enoughMinerals = false;
 	public boolean enoughVespene = false;
 	public boolean playerRequestMob = false;
 	private int fire;
-	Random random = new Random();
+	private Random random = new Random();
 
 	public EntityLarva(World world) {
 		super(world);
