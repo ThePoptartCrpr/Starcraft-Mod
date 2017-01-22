@@ -1,0 +1,18 @@
+{
+    "variants": {
+        "type=purple": { "model":"starcraft:dyed_iron_purple" },
+        "type=brown": { "model":"starcraft:dyed_iron_brown" },
+         "type=pink": { "model":"starcraft:dyed_iron_pink" },
+         "type=blue": { "model":"starcraft:dyed_iron_blue" },
+         "type=cyan": { "model":"starcraft:dyed_iron_cyan" },
+         "type=gray": { "model":"starcraft:dyed_iron_gray" },
+         "type=green": { "model":"starcraft:dyed_iron_green" },
+         "type=lightblue": { "model":"starcraft:dyed_iron_lightblue" },
+         "type=lime": { "model":"starcraft:dyed_iron_lime" },
+         "type=magenta": { "model":"starcraft:dyed_iron_magenta" },
+         "type=orange": { "model":"starcraft:dyed_iron_orange" },
+         "type=red": { "model":"starcraft:dyed_iron_red" },
+         "type=silver": { "model":"starcraft:dyed_iron_silver" },
+         "type=yellow": { "model":"starcraft:dyed_iron_yellow" }
+    }
+}

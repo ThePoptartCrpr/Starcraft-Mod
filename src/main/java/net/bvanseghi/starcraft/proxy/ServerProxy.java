@@ -30,4 +30,9 @@ public class ServerProxy {
 		GameRegistry.registerTileEntity(TileEntityBlockVespeneGeyser.class, Reference.RL_BASE + "geyserVespene");
 		
 	}
+
+	public void registerModelBakeryStuff() {
+		// TODO Auto-generated method stub
+		
+	}
 }

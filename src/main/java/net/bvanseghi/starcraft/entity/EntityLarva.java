@@ -5,6 +5,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.Library;
@@ -19,6 +20,13 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -36,6 +44,7 @@ public class EntityLarva extends EntityZergPassive {
 	public boolean playerRequestMob = false;
 	private int fire;
 	private Random random = new Random();
+//	private BlockPos pos;
 
 	public EntityLarva(World world) {
 		super(world);
@@ -49,6 +58,21 @@ public class EntityLarva extends EntityZergPassive {
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
 	}
 	
+	protected void initEntityAI()
+    {
+        this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
+        this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(8, new EntityAILookIdle(this));
+        this.applyEntityAI();
+    }
+
+    protected void applyEntityAI()
+    {
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+    }
+	
 	protected boolean canDespawn()
     {
         return false;
@@ -60,15 +84,15 @@ public class EntityLarva extends EntityZergPassive {
     }
 	
 	@Override
-	public void onLivingUpdate() {
-		int chance = this.rand.nextInt(1000);
-		if(chance == 10) {
-			Library.larvaMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
-		}else {
-			
+	public void onUpdate() {
+		super.onUpdate();
+		if(!this.worldObj.isRemote){
+			if((this.ticksExisted + rand.nextInt(1000) > 4000)) {
+				Library.larvaMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
+			}else{
+				
+			}
 		}
-		
-		super.onLivingUpdate();
 	}
 	
 	public SoundEvent getAmbientSound() {
@@ -374,7 +398,7 @@ public class EntityLarva extends EntityZergPassive {
                 }
                 
                 if (block == ModBlocks.ZERG_CREEP || block == Blocks.AIR || block == ModBlocks.KERATIN_CHUNK
-            			|| block == ModBlocks.ZERG_STRUCTURE_CARAPACE || block == ModBlocks.ZERG_STRUCTURE_FLESH) {
+            			|| block == ModMetaBlocks.ZERG_CARAPACE || block == ModMetaBlocks.ZERG_FLESH) {
 
             	} else {
             		//this.kill();

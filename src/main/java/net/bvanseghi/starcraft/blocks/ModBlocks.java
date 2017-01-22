@@ -11,6 +11,10 @@ import net.bvanseghi.starcraft.blocks.coreblocks.BlockCorePylonVoid;
 import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateDark;
 import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateKhalai;
 import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateVoid;
+import net.bvanseghi.starcraft.blocks.metablocks.BlockCompressedMetals;
+import net.bvanseghi.starcraft.blocks.metablocks.BlockProtossMetal;
+import net.bvanseghi.starcraft.blocks.metablocks.BlockPylonCrystal;
+import net.bvanseghi.starcraft.blocks.metablocks.BlockZergStructureFlesh;
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
 import net.bvanseghi.starcraft.debug.DimPortalShakuras;
@@ -88,12 +92,6 @@ public class ModBlocks extends Block {
 	public static Block ORE_RICHMINERAL_SHAKURAS;
 	public static Block ORE_TITANIUM_SHAKURAS;
 	public static Block ORE_URANIUM_SHAKURAS;
-
-	public static Block ZERG_STRUCTURE_CARAPACE;
-	public static BlockZergStructureFlesh ZERG_STRUCTURE_FLESH;
-	public static BlockProtossMetal PROTOSS_METAL;
-	public static Block COMP_MINERAL;
-	public static Block DYED_IRON;
 
 	public static Block PROTOSS_ENERGY_STABILIZER;
 	public static Block PROTOSS_ENERGY_CHANNEL;
@@ -252,8 +250,6 @@ public class ModBlocks extends Block {
 		VESPENE_GEYSER_BASE = new BlockVespeneGeyserBase();
 		VESPENE_GEYSER_BASE_CHAR = new BlockVespeneGeyserBaseChar();
 		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
-		
-		PROTOSS_METAL  = new BlockProtossMetal();
 		
 		//Core Blocks
 		CORE_PYLON_VOID = new BlockCorePylonVoid();

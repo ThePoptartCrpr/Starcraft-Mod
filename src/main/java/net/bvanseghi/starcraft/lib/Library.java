@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
+import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -122,11 +124,19 @@ public class Library {
 	 * @param blockstate to check if the block is a Protoss machine
 	 */
 	public static void feedPower(BlockPos pos, IBlockState blockstate) {
+<<<<<<< HEAD
 		if(blockstate == ModBlocks.PROTOSS_METAL.getDefaultState()) {
 			((ModBlocks) blockstate).PoweredByPSI(true);
 		} else {
 			((ModBlocks) blockstate).PoweredByPSI(false);
 		}
+=======
+		if(blockstate == ModMetaBlocks.PROTOSS_METAL.getDefaultState()) {
+					((ModBlocks) blockstate).PoweredByPSI(true);
+				}else {
+					((ModBlocks) blockstate).PoweredByPSI(false);
+				}
+>>>>>>> c8522041c13b85a60de2180154c7b9bc6769ced2
 	}
 	
 	/**
@@ -190,6 +200,7 @@ public class Library {
 	}
 	
 	public static void larvaMorph(World world, EntityLarva larva, Random rand, double x, double y, double z) {
+<<<<<<< HEAD
 		world.removeEntity(larva);
 		
 		EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
@@ -213,4 +224,23 @@ public class Library {
 	public static void larvaMorph(World world, EntityLarva larva, Random rand) {
 		larvaMorph(world, larva, rand, larva.posX, larva.posY, larva.posZ);
 	}
+=======
+		if(!world.isRemote){
+			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
+			cocoon.setLocationAndAngles(x, y, z, 0F, 0F);
+			world.spawnEntityInWorld(cocoon);
+			larva.setDead();
+		}
+	}
+	
+	public static void larvaCocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand, double x, double y, double z) {
+		if(!world.isRemote){
+			EntityZergling zergling = new EntityZergling(world);
+			zergling.setLocationAndAngles(x, y, z, 0F, 0F);
+			world.spawnEntityInWorld(zergling);
+			cocoon.setDead();
+		}
+	}
+
+>>>>>>> c8522041c13b85a60de2180154c7b9bc6769ced2
 }

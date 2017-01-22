@@ -1,6 +1,6 @@
 package net.bvanseghi.starcraft;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.handlers.BucketHandler;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.tools.ModTools;
@@ -14,14 +14,14 @@ public class CreativeTab {
 	public static CreativeTabs TabStarcraftBuildingBlocks = new CreativeTabs("StarcraftBuildingBlocks") {
 		@Override
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(ModBlocks.PROTOSS_METAL);
+			return Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL);
 		}
 	};
 	
 	public static CreativeTabs TabStarcraftDecorativeBlocks = new CreativeTabs("StarcraftDecorativeBlocks") {
 		@Override
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(ModBlocks.DYED_IRON);
+			return Item.getItemFromBlock(ModMetaBlocks.DYED_IRON);
 		}
 	};
 

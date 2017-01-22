@@ -3,6 +3,7 @@ package net.bvanseghi.starcraft.entity;
 import java.util.Random;
 
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
+import net.bvanseghi.starcraft.entity.ai.EntityAIAttackHydralisk;
 import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
 import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
@@ -64,7 +65,7 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	protected void initEntityAI()
     {
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+        this.tasks.addTask(2, new EntityAIAttackHydralisk(this, 1.0D, 20, 15.0F));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
