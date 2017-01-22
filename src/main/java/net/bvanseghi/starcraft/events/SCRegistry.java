@@ -1,11 +1,11 @@
 package net.bvanseghi.starcraft.events;
 
-import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+//Thiis will come l a t e r...
 @EventBusSubscriber
 public class SCRegistry {
 	// private static Item[] items = {BucketHandler.acidBucket,
@@ -16,8 +16,7 @@ public class SCRegistry {
 	// ModItems.essence, ModItems.ingot, ModItems.mineralShard,
 	// ModItems.organicTissue, ModItems.protossArtifact, ModItems.protossModule,
 	// ModItems.psiBladeFocuserUncharged, ModItems.richMineralShard,
-	// ModItems.uraj, ModItems.vespene, ModItems.zergCarapace}; //TODO: add the
-	// other items
+	// ModItems.uraj, ModItems.vespene, ModItems.zergCarapace}; //TODO: add the other items
 
 	@SubscribeEvent
 	public static void register(Register<Item> registry) {
