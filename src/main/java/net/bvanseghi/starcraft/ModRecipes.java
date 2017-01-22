@@ -2,6 +2,7 @@ package net.bvanseghi.starcraft;
 
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
@@ -39,10 +40,10 @@ public class ModRecipes {
 		//The rest is not my doing, so there aren't any notes!//
 		////////////////////////////////////////////////////////
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.PROTOSS_METAL, 1, 0),
+		GameRegistry.addRecipe(new ItemStack(ModMetaBlocks.PROTOSS_METAL, 1, 0),
 				new Object[] { "AAA", "AAA", "AAA", 'A', new ItemStack(ModItems.ingot, 0, 1) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.PROTOSS_METAL, 1, 1),
+		GameRegistry.addRecipe(new ItemStack(ModMetaBlocks.PROTOSS_METAL, 1, 1),
 				new Object[] { "DDD", "DDD", "DDD", 'D', new ItemStack(ModItems.ingot, 0, 2) });
 
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.ENERGY_BLOCK),
@@ -60,28 +61,28 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.COMP_METAL, 1, 2),
 				new Object[] { "SSS", "SSS", "SSS", 'S', new ItemStack(ModItems.ingot, 0, 4) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.COMP_MINERAL, 1, 0),
+		GameRegistry.addRecipe(new ItemStack(ModMetaBlocks.COMP_MINERAL, 1, 0),
 				new Object[] { "MMM", "MMM", "MMM", 'M', new ItemStack(ModItems.mineralShard) });
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.COMP_MINERAL, 1, 1),
+		GameRegistry.addRecipe(new ItemStack(ModMetaBlocks.COMP_MINERAL, 1, 1),
 				new Object[] { "RRR", "RRR", "RRR", 'R', new ItemStack(ModItems.richMineralShard) });
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 0),
+		GameRegistry.addRecipe(new ItemStack(ModMetaBlocks.ZERG_CARAPACE, 1, 0),
 				new Object[] { "CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.zergCarapace, 1, 0) });
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 1),
+		GameRegistry.addRecipe(new ItemStack(ModMetaBlocks.ZERG_CARAPACE, 1, 1),
 				new Object[] { "CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.zergCarapace, 1, 1) });
 		
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 2),
+		GameRegistry.addRecipe(new ItemStack(ModMetaBlocks.ZERG_CARAPACE, 1, 2),
 				new Object[] { "CCC", "CCC", "CCC", 'C', new ItemStack(ModItems.zergCarapace, 1, 2) });
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.PROTOSS_WARPPROJECTOR_CHAR),
-				new Object[] { "AEA", "ACA", "AMA", 'A', new ItemStack(ModBlocks.PROTOSS_METAL, 1, 0), 'E',
+				new Object[] { "AEA", "ACA", "AMA", 'A', new ItemStack(ModMetaBlocks.PROTOSS_METAL, 1, 0), 'E',
 						new ItemStack(ModBlocks.ENERGY_BLOCK), 'M', new ItemStack(ModItems.protossModule), 'C',
 						new ItemStack(ModItems.coord, 1, 0) });
 
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.PROTOSS_WARPPROJECTOR_SHAKURAS),
-				new Object[] { "AEA", "ASA", "AMA", 'A', new ItemStack(ModBlocks.PROTOSS_METAL, 1, 0), 'E',
+				new Object[] { "AEA", "ASA", "AMA", 'A', new ItemStack(ModMetaBlocks.PROTOSS_METAL, 1, 0), 'E',
 						new ItemStack(ModBlocks.ENERGY_BLOCK), 'M', new ItemStack(ModItems.protossModule), 'S',
 						new ItemStack(ModItems.coord, 1, 1) });
 		
@@ -90,16 +91,16 @@ public class ModRecipes {
 						new ItemStack(ModItems.energy, 1, 0), 'D', new ItemStack(Items.DIAMOND)});
 		
 		GameRegistry.addRecipe(new ItemStack(ModItems.mineralShard, 9),
-				new Object[] { "M", 'M', new ItemStack(ModBlocks.COMP_MINERAL, 1, 0) });
+				new Object[] { "M", 'M', new ItemStack(ModMetaBlocks.COMP_MINERAL, 1, 0) });
 		
 		GameRegistry.addRecipe(new ItemStack(ModItems.richMineralShard, 9),
-				new Object[] { "M", 'M', new ItemStack(ModBlocks.COMP_MINERAL, 1, 1) });
+				new Object[] { "M", 'M', new ItemStack(ModMetaBlocks.COMP_MINERAL, 1, 1) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.ingot, 9, 2),
-				new Object[] { "D", 'D', new ItemStack(ModBlocks.PROTOSS_METAL, 1, 1) });
+				new Object[] { "D", 'D', new ItemStack(ModMetaBlocks.PROTOSS_METAL, 1, 1) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.ingot, 9, 1),
-				new Object[] { "A", 'A', new ItemStack(ModBlocks.PROTOSS_METAL, 1, 0) });
+				new Object[] { "A", 'A', new ItemStack(ModMetaBlocks.PROTOSS_METAL, 1, 0) });
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.energy, 9, 0), new Object[] { ModBlocks.ENERGY_BLOCK });
 
@@ -107,13 +108,13 @@ public class ModRecipes {
 				new Object[] { ModBlocks.VOID_ENERGY_BLOCK });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.zergCarapace, 9, 0),
-				new Object[] { "C", 'C', new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 0) });
+				new Object[] { "C", 'C', new ItemStack(ModMetaBlocks.ZERG_CARAPACE, 1, 0) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.zergCarapace, 9, 1),
-				new Object[] { "C", 'C', new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 1) });
+				new Object[] { "C", 'C', new ItemStack(ModMetaBlocks.ZERG_CARAPACE, 1, 1) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.zergCarapace, 9, 2),
-				new Object[] { "C", 'C', new ItemStack(ModBlocks.ZERG_STRUCTURE_CARAPACE, 1, 2) });
+				new Object[] { "C", 'C', new ItemStack(ModMetaBlocks.ZERG_CARAPACE, 1, 2) });
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ingot, 1, 2),
 				new Object[] { new ItemStack(Items.DYE, 0, 0), new ItemStack(ModItems.ingot, 0, 1) });

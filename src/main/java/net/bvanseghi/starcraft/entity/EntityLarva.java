@@ -5,6 +5,7 @@ import java.util.Random;
 
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.Library;
@@ -15,7 +16,6 @@ import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
@@ -64,13 +64,14 @@ public class EntityLarva extends EntityZergPassive {
 	
 	@Override
 	public void onUpdate() {
-		int chance = this.rand.nextInt(1000);
-		if(chance < 10) {
-			Library.larvaMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
-		}else{
-			
-		}
 		super.onUpdate();
+		if(!this.worldObj.isRemote){
+			if((this.ticksExisted + rand.nextInt(1000) > 4000)) {
+				Library.larvaMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
+			}else{
+				
+			}
+		}
 	}
 	
 	public SoundEvent getAmbientSound() {
@@ -376,7 +377,7 @@ public class EntityLarva extends EntityZergPassive {
                 }
                 
                 if (block == ModBlocks.ZERG_CREEP || block == Blocks.AIR || block == ModBlocks.KERATIN_CHUNK
-            			|| block == ModBlocks.ZERG_STRUCTURE_CARAPACE || block == ModBlocks.ZERG_STRUCTURE_FLESH) {
+            			|| block == ModMetaBlocks.ZERG_CARAPACE || block == ModMetaBlocks.ZERG_FLESH) {
 
             	} else {
             		//this.kill();

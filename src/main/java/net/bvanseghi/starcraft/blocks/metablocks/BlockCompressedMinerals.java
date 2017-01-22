@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.blocks;
+package net.bvanseghi.starcraft.blocks.metablocks;
 
 import java.util.List;
 
@@ -18,19 +18,19 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCompressedMetals extends Block {
+public class BlockCompressedMinerals extends Block {
 	private static final IProperty<Subblocks> SUBBLOCKS_PROPERTY = PropertyEnum.create("subblocks", Subblocks.class);
 	
-	public BlockCompressedMetals() {
+	public BlockCompressedMinerals() {
 		super(Material.IRON);
-		setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_METAL.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_COMP_METAL.getRegistryRL());
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getRegistryRL());
 		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
 		setResistance(10.0F);
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setDefaultState(blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.COPPER));
+		setDefaultState(blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.BLUE));
 	}
 	
 	@Override
@@ -40,7 +40,7 @@ public class BlockCompressedMetals extends Block {
 	
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < 2; i++) {
 			if(state.equals(getStateFromMeta(i))) {
 				return i;
 			}
@@ -55,9 +55,7 @@ public class BlockCompressedMetals extends Block {
 			case 0:
 				return getDefaultState();
 			case 1:
-				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.STEEL);
-			case 2:
-				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.TITANIUM);
+				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.RICH);
 			default:
 				return getDefaultState();
 		}
@@ -67,7 +65,7 @@ public class BlockCompressedMetals extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		String[] subblocks = new String[] {"Copper", "Titanium", "Steel"};
+		String[] subblocks = new String[] {"Blue", "Rich"};
 		
 		for (int i = 0; i < subblocks.length; i++) {
 			list.add(new ItemStack(block, 1, i));
@@ -80,9 +78,8 @@ public class BlockCompressedMetals extends Block {
 	}
 	
 	private enum Subblocks implements IStringSerializable {
-		COPPER("Copper"),
-		TITANIUM("Titanium"),
-		STEEL("Steel");
+		BLUE("Blue"),
+		RICH("Rich");
 		
 		private String name;
 		

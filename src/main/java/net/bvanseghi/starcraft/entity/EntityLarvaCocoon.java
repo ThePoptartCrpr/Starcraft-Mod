@@ -51,13 +51,14 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 	
 	@Override
 	public void onUpdate() {
-		int chance = this.rand.nextInt(1000);
-		if(chance < 10) {
-			Library.larvaCocoonMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
-		}else{
-			
-		}
 		super.onUpdate();
+		if(!this.worldObj.isRemote){
+			if((this.ticksExisted + rand.nextInt(1000) > 4000)) {
+				Library.larvaCocoonMorph(this.worldObj, this, random, this.posX, this.posY, this.posZ);
+			}else{
+				
+			}
+		}
 	}
 
 	@Override

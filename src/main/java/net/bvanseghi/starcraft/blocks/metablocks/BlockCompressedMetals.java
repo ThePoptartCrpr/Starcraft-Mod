@@ -1,12 +1,8 @@
-package net.bvanseghi.starcraft.blocks;
+package net.bvanseghi.starcraft.blocks.metablocks;
 
 import java.util.List;
-import java.util.Random;
-
-import javax.annotation.Nullable;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -22,20 +18,19 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockPylonCrystal extends Block {
+public class BlockCompressedMetals extends Block {
 	private static final IProperty<Subblocks> SUBBLOCKS_PROPERTY = PropertyEnum.create("subblocks", Subblocks.class);
 	
-	public BlockPylonCrystal() {
-		super(Material.ROCK);
-		setUnlocalizedName(Reference.ModBlocks.BLOCK_CRYSTAL.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_CRYSTAL.getRegistryRL());
-		setSoundType(SoundType.STONE);
+	public BlockCompressedMetals() {
+		super(Material.IRON);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_METAL.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_COMP_METAL.getRegistryRL());
+		setSoundType(SoundType.METAL);
 		setHardness(5.0F);
-		setResistance(20.0F);
-		setLightLevel(4.0F);
+		setResistance(10.0F);
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setDefaultState(blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.PURE));
+		setDefaultState(blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.COPPER));
 	}
 	
 	@Override
@@ -60,9 +55,9 @@ public class BlockPylonCrystal extends Block {
 			case 0:
 				return getDefaultState();
 			case 1:
-				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.DARK);
+				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.STEEL);
 			case 2:
-				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.VOID);
+				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.TITANIUM);
 			default:
 				return getDefaultState();
 		}
@@ -72,7 +67,7 @@ public class BlockPylonCrystal extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		String[] subblocks = new String[] {"Pure", "Dark", "Void"};
+		String[] subblocks = new String[] {"Copper", "Titanium", "Steel"};
 		
 		for (int i = 0; i < subblocks.length; i++) {
 			list.add(new ItemStack(block, 1, i));
@@ -80,32 +75,14 @@ public class BlockPylonCrystal extends Block {
 	}
 	
 	@Override
-	@Nullable
-	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		if(rand.nextInt(9) == 0){
-			return ModItems.energy;
-		} else {
-			return null;
-		}
-    }
-	
-	@Override
 	public int damageDropped(IBlockState state) {
-		if(getMetaFromState(state) == 0) {
-			return this == ModBlocks.CRYSTAL ? 0 : 0;
-		}else if(getMetaFromState(state) == 1) {
-			return this == ModBlocks.CRYSTAL ? 1 : 0;
-		}else if(getMetaFromState(state) == 2) {
-			return this == ModBlocks.CRYSTAL ? 2 : 0;
-		} else {
-			return 0;
-		}
-    }
+		return getMetaFromState(state);
+	}
 	
 	private enum Subblocks implements IStringSerializable {
-		PURE("Pure"),
-		DARK("Dark"),
-		VOID("Void");
+		COPPER("Copper"),
+		TITANIUM("Titanium"),
+		STEEL("Steel");
 		
 		private String name;
 		

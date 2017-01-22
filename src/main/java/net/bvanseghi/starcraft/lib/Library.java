@@ -6,7 +6,7 @@ import java.util.Random;
 import org.apache.logging.log4j.Level;
 
 import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.entity.EntityHydralisk;
+import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityZergling;
@@ -126,7 +126,7 @@ public class Library {
 	 * If a block is NOT a Protoss machine, it is set to unpowered by default.
 	 */
 	public static void feedPower(BlockPos pos, IBlockState blockstate) {
-		if(blockstate == ModBlocks.PROTOSS_METAL.getDefaultState()) {
+		if(blockstate == ModMetaBlocks.PROTOSS_METAL.getDefaultState()) {
 					((ModBlocks) blockstate).PoweredByPSI(true);
 				}else {
 					((ModBlocks) blockstate).PoweredByPSI(false);
@@ -179,9 +179,7 @@ public class Library {
 	public static void larvaMorph(World world, EntityLarva larva, Random rand, double x, double y, double z) {
 		if(!world.isRemote){
 			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
-			cocoon.posX = x;
-			cocoon.posY = y;
-			cocoon.posZ = z;
+			cocoon.setLocationAndAngles(x, y, z, 0F, 0F);
 			world.spawnEntityInWorld(cocoon);
 			larva.setDead();
 		}
@@ -190,9 +188,7 @@ public class Library {
 	public static void larvaCocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand, double x, double y, double z) {
 		if(!world.isRemote){
 			EntityZergling zergling = new EntityZergling(world);
-			zergling.posX = x;
-			zergling.posY = y;
-			zergling.posZ = z;
+			zergling.setLocationAndAngles(x, y, z, 0F, 0F);
 			world.spawnEntityInWorld(zergling);
 			cocoon.setDead();
 		}

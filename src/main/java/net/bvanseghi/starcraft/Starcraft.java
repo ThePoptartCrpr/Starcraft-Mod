@@ -29,6 +29,7 @@ public class Starcraft {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
+		proxy.registerModelBakeryStuff();
 	}
 	
 	@EventHandler
