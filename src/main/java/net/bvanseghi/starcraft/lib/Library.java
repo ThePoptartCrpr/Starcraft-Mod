@@ -124,19 +124,11 @@ public class Library {
 	 * @param blockstate to check if the block is a Protoss machine
 	 */
 	public static void feedPower(BlockPos pos, IBlockState blockstate) {
-<<<<<<< HEAD
-		if(blockstate == ModBlocks.PROTOSS_METAL.getDefaultState()) {
+		if(blockstate == ModMetaBlocks.PROTOSS_METAL.getDefaultState()) {
 			((ModBlocks) blockstate).PoweredByPSI(true);
 		} else {
 			((ModBlocks) blockstate).PoweredByPSI(false);
 		}
-=======
-		if(blockstate == ModMetaBlocks.PROTOSS_METAL.getDefaultState()) {
-					((ModBlocks) blockstate).PoweredByPSI(true);
-				}else {
-					((ModBlocks) blockstate).PoweredByPSI(false);
-				}
->>>>>>> c8522041c13b85a60de2180154c7b9bc6769ced2
 	}
 	
 	/**
@@ -146,6 +138,7 @@ public class Library {
 	 * @param domeHeight difference in height between
 	 * {@code pos} and the peak of the dome
 	 */
+	@SuppressWarnings("unused")
 	public static void createShields(World world, BlockPos pos, int domeHeight) {
 		
 		//creates peak block of which we will build layers down from
@@ -200,31 +193,15 @@ public class Library {
 	}
 	
 	public static void larvaMorph(World world, EntityLarva larva, Random rand, double x, double y, double z) {
-<<<<<<< HEAD
-		world.removeEntity(larva);
-		
-		EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
-		cocoon.posX = x;
-		cocoon.posY = y;
-		cocoon.posZ = z;
-		
-		world.spawnEntityInWorld(cocoon);
-	}
-	
-	/**
-	 * <em>Use this one because it saves three params.
-	 * At some point, I'll eliminate the other and just
-	 * use this, but for now I did some lazy method invocation</em><br>
-	 * Larva -> cocoon. Simple
-	 * @param world the world
-	 * @param larva the larva in question
-	 * @param rand {@link Random} instance which will eventually
-	 * determine what gets pooped out later
-	 */
-	public static void larvaMorph(World world, EntityLarva larva, Random rand) {
-		larvaMorph(world, larva, rand, larva.posX, larva.posY, larva.posZ);
-	}
-=======
+//		world.removeEntity(larva);
+//		
+//		EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
+//		cocoon.posX = x;
+//		cocoon.posY = y;
+//		cocoon.posZ = z;
+//		
+//		world.spawnEntityInWorld(cocoon);
+
 		if(!world.isRemote){
 			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
 			cocoon.setLocationAndAngles(x, y, z, 0F, 0F);
@@ -241,6 +218,32 @@ public class Library {
 			cocoon.setDead();
 		}
 	}
-
->>>>>>> c8522041c13b85a60de2180154c7b9bc6769ced2
+	
+	/**
+	 * <em>Use this one because it saves three params.
+	 * At some point, I'll eliminate the other and just
+	 * use this, but for now I did some lazy method invocation</em><br>
+	 * Larva -> cocoon. Simple
+	 * @param world the world
+	 * @param larva the larva in question
+	 * @param rand {@link Random} instance which will eventually
+	 * determine what gets pooped out later
+	 */
+	public static void larvaMorph(World world, EntityLarva larva, Random rand) {
+		larvaMorph(world, larva, rand, larva.posX, larva.posY, larva.posZ);
+	}
+	
+	/**
+	 * <em>Use this one because it saves three params.
+	 * At some point, I'll eliminate the other and just
+	 * use this, but for now I did some lazy method invocation</em><br>
+	 * Larva -> cocoon. Simple
+	 * @param world the world
+	 * @param cocoon the larva in question
+	 * @param rand {@link Random} instance which will eventually
+	 * determine what gets pooped out later
+	 */
+	public static void larvaCocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
+		larvaCocoonMorph(world, cocoon, rand, cocoon.posX, cocoon.posY, cocoon.posZ);
+	}
 }
