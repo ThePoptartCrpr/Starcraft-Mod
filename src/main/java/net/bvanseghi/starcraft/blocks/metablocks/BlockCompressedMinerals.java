@@ -2,94 +2,106 @@ package net.bvanseghi.starcraft.blocks.metablocks;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.CreativeTab;
+import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.CompressedMineralType;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IStringSerializable;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
 
-public class BlockCompressedMinerals extends Block {
-	private static final IProperty<Subblocks> SUBBLOCKS_PROPERTY = PropertyEnum.create("subblocks", Subblocks.class);
+/**
+ * This block has three variants. Refer to {@link CompressedMineralType}
+ * 
+ */
+public class BlockCompressedMinerals extends Block implements IMetaBlockName {
+
+	/**
+	 * The type property
+	 */
+	public static final PropertyEnum TYPE = PropertyEnum.create("type", CompressedMineralType.class);
 	
-	public BlockCompressedMinerals() {
-		super(Material.IRON);
-		setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getRegistryRL());
-		setSoundType(SoundType.METAL);
-		setHardness(5.0F);
-		setResistance(10.0F);
-		setHarvestLevel("pickaxe", 2);
-		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
-		setDefaultState(blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.BLUE));
+	/**
+	 * Default constructor
+	 * @param unlocalizedName The block's unlocalized name
+	 * @param registryName The block's registry name - defaultly the unlocalized name
+	 */
+	public BlockCompressedMinerals(String unlocalizedName, String registryName) {
+		super(Material.ROCK);
+		this.setUnlocalizedName(unlocalizedName);
+		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setHardness(20); //Sets how hard the block is to break
+		this.setResistance(20); //Sets the blocks blast resitance to explosions
+		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMineralType.BLUE)); //Default state
 	}
 	
+	/**
+	 * All the different item variants for the block
+	 */
 	@Override
-	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, SUBBLOCKS_PROPERTY);
-	}
-	
-	@Override
-	public int getMetaFromState(IBlockState state) {
-		for(int i = 0; i < 2; i++) {
-			if(state.equals(getStateFromMeta(i))) {
-				return i;
-			}
-		}
-		
-		return 0;
-	}
-	
-	@Override
-	public IBlockState getStateFromMeta(int meta) {
-		switch(meta) {
-			case 0:
-				return getDefaultState();
-			case 1:
-				return blockState.getBaseState().withProperty(SUBBLOCKS_PROPERTY, Subblocks.RICH);
-			default:
-				return getDefaultState();
+	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
+		for(int i = 0; i < CompressedMineralType.values().length; i++) {
+			list.add(new ItemStack(itemIn, 1, i));
 		}
 	}
 	
-	@SuppressWarnings({"rawtypes", "unchecked"})
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		String[] subblocks = new String[] {"Blue", "Rich"};
-		
-		for (int i = 0; i < subblocks.length; i++) {
-			list.add(new ItemStack(block, 1, i));
-		}
-	}
-	
+	/**
+	 * Makes sure the block drops the correct version of itself
+	 */
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
 	
-	private enum Subblocks implements IStringSerializable {
-		BLUE("Blue"),
-		RICH("Rich");
-		
-		private String name;
-		
-		private Subblocks(String name) {
-			this.name = name;
-		}
-		
-		@Override
-		public String getName() {
-			return name;
-		}
+	/**
+	 * Makes sure when you pick block it will work correctly
+	 */
+	@Override
+	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos,
+			EntityPlayer player) {
+		return new ItemStack(Item.getItemFromBlock(this), 1, getMetaFromState(state));
 	}
+	
+	/**
+	 * Adds the properties to the block
+	 */
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] {TYPE});
+	}
+	
+	/**
+	 * Gets the right meta data from the {@link IBlockState}
+	 */
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		CompressedMineralType type = (CompressedMineralType) state.getValue(TYPE);
+		return type.getID();
+	}
+	
+	/**
+	 * Gets the correct {@link IBlockState} from the meta data
+	 */
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState().withProperty(TYPE, CompressedMineralType.values()[meta]);
+	}
+
+	/**
+	 * Inherited from the {@link IMetaBlockName}
+	 */
+	@Override
+	public String getSpecialName(ItemStack stack) {
+		return CompressedMineralType.values()[stack.getItemDamage()].getName();
+	}
+
 }

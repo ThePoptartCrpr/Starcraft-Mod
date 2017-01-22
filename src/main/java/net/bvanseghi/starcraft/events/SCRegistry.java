@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @EventBusSubscriber
-public class Registry {
+public class SCRegistry {
 	// private static Item[] items = {BucketHandler.acidBucket,
 	// BucketHandler.bloodBucket, ModItems.acidBucket, ModItems.bloodBucket,
 	// ModItems.C14GaussRifle, ModItems.C14GaussRifleBullet, ModItems.c14Parts,
@@ -22,7 +22,7 @@ public class Registry {
 	public static void register(Register<Item> registry) {
 //		registry.getRegistry().registerAll(items); //Register items
 		// registry.getRegistry().registerAll(ModTools.TOOLS); //Register tools
-		// registry.getRegistry().registerAll(ModArmour.ARMOURS); //Register
+		 //registry.getRegistry().registerAll(ModArmour.ARMOURS); //Register
 		// armour
 		// registry.getRegistry().registerAll(ModWeapons.WEAPONS); //Register
 		// weapons

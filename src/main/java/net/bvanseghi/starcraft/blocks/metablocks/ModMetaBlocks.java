@@ -17,6 +17,7 @@ public class ModMetaBlocks {
 	 * State our blocks
 	 */
 	public static Block PROTOSS_METAL;
+	public static Block PYLON_CRYSTAL;
 	public static Block ZERG_CARAPACE;
 	public static Block COMP_METAL;
 	public static Block DYED_IRON;
@@ -30,9 +31,12 @@ public class ModMetaBlocks {
 	 */
 	public static void init() {
 		PROTOSS_METAL = new BlockProtossMetal("protoss_metal", "protoss_metal");
+		PYLON_CRYSTAL = new BlockPylonCrystal("crystal", "crystal");
 		ZERG_CARAPACE = new BlockZergStructureCarapace("zerg_carapace", "zerg_carapace");
 		ZERG_FLESH = new BlockZergStructureFlesh("zerg_flesh", "zerg_flesh");
 		DYED_IRON = new BlockDyedIronBlocks("dyed_iron", "dyed_iron");
+		COMP_METAL = new BlockCompressedMetals("compressed_metal", "compressed_metal");
+		COMP_MINERAL = new BlockCompressedMinerals("compressed_mineral", "compressed_mineral");
 	}
 	
 	/**
@@ -40,9 +44,12 @@ public class ModMetaBlocks {
 	 */
 	public static void register() {
 		registerBlock(PROTOSS_METAL, new ItemBlockMeta(PROTOSS_METAL)); //Says that the block uses the ItemBlockMeta as the item block
+		registerBlock(PYLON_CRYSTAL, new ItemBlockMeta(PYLON_CRYSTAL));
 		registerBlock(ZERG_CARAPACE, new ItemBlockMeta(ZERG_CARAPACE));
 		registerBlock(ZERG_FLESH, new ItemBlockMeta(ZERG_FLESH));
 		registerBlock(DYED_IRON, new ItemBlockMeta(DYED_IRON));
+		registerBlock(COMP_METAL, new ItemBlockMeta(COMP_METAL));
+		registerBlock(COMP_MINERAL, new ItemBlockMeta(COMP_MINERAL));
 	}
 	
 	/**
@@ -52,6 +59,9 @@ public class ModMetaBlocks {
 		for(int i = 0; i < EnumHandler.ProtossMetalType.values().length; i++) {
 			registerRender(PROTOSS_METAL, i, "protoss_metal_" + EnumHandler.ProtossMetalType.values()[i].getName());
 		}
+		for(int i = 0; i < EnumHandler.PylonCrystalType.values().length; i++) {
+			registerRender(PYLON_CRYSTAL, i, "crystal_" + EnumHandler.PylonCrystalType.values()[i].getName());
+		}
 		for(int i = 0; i < EnumHandler.ZergStructureCarapaceType.values().length; i++) {
 			registerRender(ZERG_CARAPACE, i, "zerg_carapace_" + EnumHandler.ZergStructureCarapaceType.values()[i].getName());
 		}
@@ -60,6 +70,12 @@ public class ModMetaBlocks {
 		}
 		for(int i = 0; i < EnumHandler.DyedIronType.values().length; i++) {
 			registerRender(DYED_IRON, i, "dyed_iron_" + EnumHandler.DyedIronType.values()[i].getName());
+		}
+		for(int i = 0; i < EnumHandler.CompressedMetalType.values().length; i++) {
+			registerRender(COMP_METAL, i, "compressed_metal_" + EnumHandler.CompressedMetalType.values()[i].getName());
+		}
+		for(int i = 0; i < EnumHandler.CompressedMineralType.values().length; i++) {
+			registerRender(COMP_MINERAL, i, "compressed_mineral_" + EnumHandler.CompressedMineralType.values()[i].getName());
 		}
 	}
 	

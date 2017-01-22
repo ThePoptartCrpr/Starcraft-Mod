@@ -226,6 +226,11 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "protoss_metal_green"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_blue"));
 		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PYLON_CRYSTAL),
+				new ResourceLocation(Reference.MODID, "crystal_pure"),
+				new ResourceLocation(Reference.MODID, "crystal_dark"),
+				new ResourceLocation(Reference.MODID, "crystal_void"));
+		
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.ZERG_CARAPACE),
 				new ResourceLocation(Reference.MODID, "zerg_carapace_t1"),
 				new ResourceLocation(Reference.MODID, "zerg_carapace_t2"),
@@ -239,7 +244,7 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "zerg_flesh_cyan"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_gray"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_green"),
-				new ResourceLocation(Reference.MODID, "zerg_flesh_light_blue"),
+				new ResourceLocation(Reference.MODID, "zerg_flesh_lightblue"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_lime"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_magenta"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_orange"),
@@ -256,12 +261,23 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "dyed_iron_cyan"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_gray"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_green"),
-				new ResourceLocation(Reference.MODID, "dyed_iron_light_blue"),
+				new ResourceLocation(Reference.MODID, "dyed_iron_lightblue"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_lime"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_magenta"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_orange"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_red"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_silver"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_yellow"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_METAL),
+				new ResourceLocation(Reference.MODID, "compressed_metal_copper"),
+				new ResourceLocation(Reference.MODID, "compressed_metal_steel"),
+				new ResourceLocation(Reference.MODID, "compressed_metal_titanium"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_MINERAL),
+				new ResourceLocation(Reference.MODID, "compressed_mineral_blue"),
+				new ResourceLocation(Reference.MODID, "compressed_mineral_rich"));
+		
+		
 	}	
 }

@@ -34,6 +34,34 @@ public class EnumHandler {
 			return getName();
 		}
 	}
+	
+	public static enum PylonCrystalType implements IStringSerializable {
+		PURE("pure", 0),
+		DARK("dark", 1),
+		VOID("void", 2);
+		
+		private int ID;
+		private String name;
+		
+		private PylonCrystalType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
 
 	
 	public static enum ZergStructureCarapaceType implements IStringSerializable {
@@ -120,13 +148,69 @@ public class EnumHandler {
 		ORANGE("orange", 10),
 		RED("red", 11),
 		SILVER("silver", 12),
-		WHITE("white", 13),
-		YELLOW("yellow", 14);
+		YELLOW("yellow", 13);
 		
 		private int ID;
 		private String name;
 		
 		private DyedIronType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
+	
+	
+	public static enum CompressedMineralType implements IStringSerializable {
+		BLUE("blue", 0),
+		RICH("rich", 1);
+		
+		private int ID;
+		private String name;
+		
+		private CompressedMineralType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
+	
+	
+	public static enum CompressedMetalType implements IStringSerializable {
+		COPPER("copper", 0),
+		STEEL("steel", 1),
+		TITANIUM("titanium", 2);
+		
+		private int ID;
+		private String name;
+		
+		private CompressedMetalType(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}
