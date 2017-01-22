@@ -190,6 +190,8 @@ public class ClientProxy extends ServerProxy {
 		StarcraftConfig.preInit();
 		ModBlocks.init();
 		ModItems.init();
+		ModItems.register();
+		ModItems.registerRenders();
 		ModMaterials.preInit();
 		ModWeapons.preInit();
 		ModArmour.preInit();
@@ -220,26 +222,84 @@ public class ClientProxy extends ServerProxy {
 
 	@Override
 	public void registerModelBakeryStuff() {
+		ModelBakery.registerItemVariants(ModItems.mineralShard, 
+				new ResourceLocation(Reference.MODID, "shard_blue"),
+				new ResourceLocation(Reference.MODID, "shard_rich"));
+		
+		ModelBakery.registerItemVariants(ModItems.vespene, 
+				new ResourceLocation(Reference.MODID, "vespene_raw"),
+				new ResourceLocation(Reference.MODID, "vespene_protoss"),
+				new ResourceLocation(Reference.MODID, "vespene_terran"),
+				new ResourceLocation(Reference.MODID, "vespene_zerg"));
+
+		ModelBakery.registerItemVariants(ModItems.energy, 
+				new ResourceLocation(Reference.MODID, "energy_pure"),
+				new ResourceLocation(Reference.MODID, "energy_corrupted"),
+				new ResourceLocation(Reference.MODID, "energy_void"));
+		
+		ModelBakery.registerItemVariants(ModItems.dust, 
+				new ResourceLocation(Reference.MODID, "dust_iron"),
+				new ResourceLocation(Reference.MODID, "dust_steel"),
+				new ResourceLocation(Reference.MODID, "dust_carbon"));
+		
+		ModelBakery.registerItemVariants(ModItems.essence, 
+				new ResourceLocation(Reference.MODID, "essence_protoss"),
+				new ResourceLocation(Reference.MODID, "essence_terran"),
+				new ResourceLocation(Reference.MODID, "essence_zerg"));
+		
+		ModelBakery.registerItemVariants(ModItems.ingot, 
+				new ResourceLocation(Reference.MODID, "ingot_copper"),
+				new ResourceLocation(Reference.MODID, "ingot_alien"),
+				new ResourceLocation(Reference.MODID, "ingot_aliendark"),
+				new ResourceLocation(Reference.MODID, "ingot_titanium"),
+				new ResourceLocation(Reference.MODID, "ingot_steel"));
+		
+		ModelBakery.registerItemVariants(ModItems.coord, 
+				new ResourceLocation(Reference.MODID, "coordinate_char"),
+				new ResourceLocation(Reference.MODID, "coordinate_shakuras"));
+		
+		ModelBakery.registerItemVariants(ModItems.psiBladeFocuserUncharged, 
+				new ResourceLocation(Reference.MODID, "protoss_psiblade_focuser_uncharged_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_psiblade_focuser_uncharged_dark"));
+		
+		ModelBakery.registerItemVariants(ModItems.crystal, 
+				new ResourceLocation(Reference.MODID, "crystal_khaydarin"),
+				new ResourceLocation(Reference.MODID, "crystal_bloodshard"),
+				new ResourceLocation(Reference.MODID, "crystal_uraj"));
+		
+		ModelBakery.registerItemVariants(ModItems.c14Parts, 
+				new ResourceLocation(Reference.MODID, "part_c14_gauss_body"),
+				new ResourceLocation(Reference.MODID, "part_c14_gauss_barrel"),
+				new ResourceLocation(Reference.MODID, "part_c14_gauss_grip"));
+		
+		ModelBakery.registerItemVariants(ModItems.bullet, 
+				new ResourceLocation(Reference.MODID, "bullet_rifle_c14_gauss"));
+		
+		ModelBakery.registerItemVariants(ModItems.zergCarapace, 
+				new ResourceLocation(Reference.MODID, "zerg_icarapace_t1"),
+				new ResourceLocation(Reference.MODID, "zerg_icarapace_t2"),
+				new ResourceLocation(Reference.MODID, "zerg_icarapace_t3"));
+		
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL),
 				new ResourceLocation(Reference.MODID, "protoss_metal_aiur"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_dark"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_green"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_blue"));
-		
+
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PYLON_CRYSTAL),
 				new ResourceLocation(Reference.MODID, "crystal_pure"),
 				new ResourceLocation(Reference.MODID, "crystal_dark"),
 				new ResourceLocation(Reference.MODID, "crystal_void"));
-		
+
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.ZERG_CARAPACE),
 				new ResourceLocation(Reference.MODID, "zerg_carapace_t1"),
 				new ResourceLocation(Reference.MODID, "zerg_carapace_t2"),
 				new ResourceLocation(Reference.MODID, "zerg_carapace_t3"));
-		
+
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.ZERG_FLESH),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_purple"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_brown"),
-				new ResourceLocation(Reference.MODID, "zerg_flesh_pink"), 
+				new ResourceLocation(Reference.MODID, "zerg_flesh_pink"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_blue"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_cyan"),
 				new ResourceLocation(Reference.MODID, "zerg_flesh_gray"),
@@ -256,7 +316,7 @@ public class ClientProxy extends ServerProxy {
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.DYED_IRON),
 				new ResourceLocation(Reference.MODID, "dyed_iron_purple"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_brown"),
-				new ResourceLocation(Reference.MODID, "dyed_iron_pink"), 
+				new ResourceLocation(Reference.MODID, "dyed_iron_pink"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_blue"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_cyan"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_gray"),
@@ -268,16 +328,15 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "dyed_iron_red"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_silver"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_yellow"));
-		
+
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_METAL),
 				new ResourceLocation(Reference.MODID, "compressed_metal_copper"),
 				new ResourceLocation(Reference.MODID, "compressed_metal_steel"),
 				new ResourceLocation(Reference.MODID, "compressed_metal_titanium"));
-		
+
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_MINERAL),
 				new ResourceLocation(Reference.MODID, "compressed_mineral_blue"),
 				new ResourceLocation(Reference.MODID, "compressed_mineral_rich"));
-		
-		
-	}	
+
+	}
 }

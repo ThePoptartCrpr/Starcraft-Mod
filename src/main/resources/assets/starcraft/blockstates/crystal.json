@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=pure": { "model":"starcraft:crystal_pure" },
-        "type=dark": { "model":"starcraft:crystal_dark" },
-         "type=void": { "model":"starcraft:crystal_void" }
-    }
-}

@@ -31,7 +31,7 @@ public class ModMetaBlocks {
 	 */
 	public static void init() {
 		PROTOSS_METAL = new BlockProtossMetal("protoss_metal", "protoss_metal");
-		PYLON_CRYSTAL = new BlockPylonCrystal("crystal", "crystal");
+		PYLON_CRYSTAL = new BlockPylonCrystal("pcrystal", "pcrystal");
 		ZERG_CARAPACE = new BlockZergStructureCarapace("zerg_carapace", "zerg_carapace");
 		ZERG_FLESH = new BlockZergStructureFlesh("zerg_flesh", "zerg_flesh");
 		DYED_IRON = new BlockDyedIronBlocks("dyed_iron", "dyed_iron");
@@ -60,7 +60,7 @@ public class ModMetaBlocks {
 			registerRender(PROTOSS_METAL, i, "protoss_metal_" + EnumHandler.ProtossMetalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.PylonCrystalType.values().length; i++) {
-			registerRender(PYLON_CRYSTAL, i, "crystal_" + EnumHandler.PylonCrystalType.values()[i].getName());
+			registerRender(PYLON_CRYSTAL, i, "pcrystal_" + EnumHandler.PylonCrystalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.ZergStructureCarapaceType.values().length; i++) {
 			registerRender(ZERG_CARAPACE, i, "zerg_carapace_" + EnumHandler.ZergStructureCarapaceType.values()[i].getName());

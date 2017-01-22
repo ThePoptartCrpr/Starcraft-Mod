@@ -27,7 +27,7 @@ public class ItemC14GaussRifle extends ItemSword {
 	// TODO: fix type of sound emitted
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStack, World world, EntityPlayer player,
 			EnumHand hand) {
-		int index = player.inventory.getSlotFor(new ItemStack(ModItems.C14GaussRifleBullet));
+		int index = player.inventory.getSlotFor(new ItemStack(ModItems.bullet));
 		player.inventory.decrStackSize(index, 1);
 			
 		if (player.capabilities.isCreativeMode || index >= 0) {

@@ -1,5 +1,6 @@
 package net.bvanseghi.starcraft.events;
 
+import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -24,7 +25,7 @@ public class SCRegistry {
 		// registry.getRegistry().registerAll(ModTools.TOOLS); //Register tools
 		 //registry.getRegistry().registerAll(ModArmour.ARMOURS); //Register
 		// armour
-		// registry.getRegistry().registerAll(ModWeapons.WEAPONS); //Register
+		//registry.getRegistry().registerAll(ModWeapons.WEAPONS); //Register
 		// weapons
 	}
 }

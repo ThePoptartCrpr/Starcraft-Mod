@@ -265,7 +265,7 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModArmour.titaniumBoots),
 				new Object[] { "   ", "T T", "T T", 'T', new ItemStack(ModItems.ingot, 0, 3) });
 
-		GameRegistry.addRecipe(new ItemStack(ModItems.C14GaussRifleBullet, 6),
+		GameRegistry.addRecipe(new ItemStack(ModItems.bullet, 6),
 				new Object[] { " S ", " P ", " S ", 'S', new ItemStack(ModItems.ingot, 0, 4), 'P', Items.GUNPOWDER });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.c14Parts, 1, 0), new Object[] { "SSS", "STT", "S  ", 'S',
