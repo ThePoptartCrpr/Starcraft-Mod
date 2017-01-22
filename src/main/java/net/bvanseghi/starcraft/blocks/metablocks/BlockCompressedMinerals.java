@@ -25,10 +25,8 @@ import net.minecraft.world.World;
  */
 public class BlockCompressedMinerals extends Block implements IMetaBlockName {
 
-	/**
-	 * The type property
-	 */
-	public static final PropertyEnum TYPE = PropertyEnum.create("type", CompressedMineralType.class);
+	/** The type property */
+	public static final PropertyEnum<CompressedMineralType> TYPE = PropertyEnum.create("type", CompressedMineralType.class);
 	
 	/**
 	 * Default constructor

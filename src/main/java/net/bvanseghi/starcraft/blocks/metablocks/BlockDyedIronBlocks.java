@@ -25,10 +25,8 @@ import net.minecraft.world.World;
  */
 public class BlockDyedIronBlocks extends Block implements IMetaBlockName {
 
-	/**
-	 * The type property
-	 */
-	public static final PropertyEnum TYPE = PropertyEnum.create("type", DyedIronType.class);
+	/** The type property */
+	public static final PropertyEnum<DyedIronType> TYPE = PropertyEnum.create("type", DyedIronType.class);
 	
 	/**
 	 * Default constructor

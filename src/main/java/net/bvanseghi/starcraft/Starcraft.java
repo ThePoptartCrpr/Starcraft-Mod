@@ -1,6 +1,5 @@
 package net.bvanseghi.starcraft;
 
-import net.bvanseghi.starcraft.events.SCRegistry;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.proxy.ClientProxy;
 import net.minecraftforge.fml.common.Mod;

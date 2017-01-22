@@ -25,10 +25,8 @@ import net.minecraft.world.World;
  */
 public class BlockPylonCrystal extends Block implements IMetaBlockName {
 
-	/**
-	 * The type property
-	 */
-	public static final PropertyEnum TYPE = PropertyEnum.create("type", PylonCrystalType.class);
+	/** The type property */
+	public static final PropertyEnum<PylonCrystalType> TYPE = PropertyEnum.create("type", PylonCrystalType.class);
 	
 	/**
 	 * Default constructor

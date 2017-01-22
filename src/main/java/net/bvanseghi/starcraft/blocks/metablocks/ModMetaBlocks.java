@@ -16,12 +16,12 @@ public class ModMetaBlocks {
 	/**
 	 * State our blocks
 	 */
-	public static Block PROTOSS_METAL;
-	public static Block PYLON_CRYSTAL;
-	public static Block ZERG_CARAPACE;
-	public static Block COMP_METAL;
-	public static Block DYED_IRON;
-	public static Block ZERG_FLESH;
+	public static BlockProtossMetal PROTOSS_METAL;
+	public static BlockPylonCrystal PYLON_CRYSTAL;
+	public static BlockZergStructureCarapace ZERG_CARAPACE;
+	public static BlockCompressedMetals COMP_METAL;
+	public static BlockDyedIronBlocks DYED_IRON;
+	public static BlockZergStructureFlesh ZERG_FLESH;
 	
 	public static Block COMP_MINERAL;
 	

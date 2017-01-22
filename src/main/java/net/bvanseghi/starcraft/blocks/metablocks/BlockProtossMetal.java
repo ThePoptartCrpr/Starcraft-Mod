@@ -25,10 +25,8 @@ import net.minecraft.world.World;
  */
 public class BlockProtossMetal extends Block implements IMetaBlockName {
 
-	/**
-	 * The type property
-	 */
-	public static final PropertyEnum TYPE = PropertyEnum.create("type", ProtossMetalType.class);
+	/** The type property */
+	public static final PropertyEnum<ProtossMetalType> TYPE = PropertyEnum.create("type", ProtossMetalType.class);
 	
 	/**
 	 * Default constructor

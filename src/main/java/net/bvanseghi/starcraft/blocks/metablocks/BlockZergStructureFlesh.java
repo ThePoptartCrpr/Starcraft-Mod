@@ -25,10 +25,8 @@ import net.minecraft.world.World;
  */
 public class BlockZergStructureFlesh extends Block implements IMetaBlockName {
 
-	/**
-	 * The type property
-	 */
-	public static final PropertyEnum TYPE = PropertyEnum.create("type", ZergFleshType.class);
+	/** The type property */
+	public static final PropertyEnum<ZergFleshType> TYPE = PropertyEnum.create("type", ZergFleshType.class);
 	
 	/**
 	 * Default constructor

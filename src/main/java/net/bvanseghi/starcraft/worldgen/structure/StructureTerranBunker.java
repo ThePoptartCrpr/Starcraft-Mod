@@ -2,7 +2,6 @@ package net.bvanseghi.starcraft.worldgen.structure;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.minecraft.block.Block;
