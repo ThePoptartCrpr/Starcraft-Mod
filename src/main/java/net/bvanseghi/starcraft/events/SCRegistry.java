@@ -5,7 +5,7 @@ import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-//Thiis will come l a t e r...
+//This will come l a t e r...
 @EventBusSubscriber
 public class SCRegistry {
 	// private static Item[] items = {BucketHandler.acidBucket,

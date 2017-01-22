@@ -1,8 +1,8 @@
-package net.bvanseghi.starcraft.items.metaitems;
+package net.bvanseghi.starcraft.items.meta;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler.EnergyType;
+import net.bvanseghi.starcraft.items.meta.ItemEnumHandler.EnergyType;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -17,7 +17,7 @@ public class ItemEnergy extends Item {
 	 */
 	public ItemEnergy(String unlocalizedName) {
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
+		this.setRegistryName(new ResourceLocation(Reference.RL_BASE + unlocalizedName));
 		this.setHasSubtypes(true); //This just says the item has metadata
 	}
 	

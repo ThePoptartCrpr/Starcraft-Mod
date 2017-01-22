@@ -1,36 +1,33 @@
 package net.bvanseghi.starcraft.items;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.items.metaitems.ItemBullet;
-import net.bvanseghi.starcraft.items.metaitems.ItemC14GaussRifleParts;
-import net.bvanseghi.starcraft.items.metaitems.ItemCrystal;
-import net.bvanseghi.starcraft.items.metaitems.ItemDust;
-import net.bvanseghi.starcraft.items.metaitems.ItemEnergy;
-import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler;
-import net.bvanseghi.starcraft.items.metaitems.ItemEssence;
-import net.bvanseghi.starcraft.items.metaitems.ItemIngot;
-import net.bvanseghi.starcraft.items.metaitems.ItemMineralShard;
-import net.bvanseghi.starcraft.items.metaitems.ItemProtossCoordinates;
-import net.bvanseghi.starcraft.items.metaitems.ItemPsiBladeFocuserUncharged;
-import net.bvanseghi.starcraft.items.metaitems.ItemVespene;
-import net.bvanseghi.starcraft.items.metaitems.ItemZergCarapace;
+import net.bvanseghi.starcraft.fluids.ModFluids;
+import net.bvanseghi.starcraft.items.meta.ItemBullet;
+import net.bvanseghi.starcraft.items.meta.ItemC14GaussRifleParts;
+import net.bvanseghi.starcraft.items.meta.ItemCrystal;
+import net.bvanseghi.starcraft.items.meta.ItemDust;
+import net.bvanseghi.starcraft.items.meta.ItemEnergy;
+import net.bvanseghi.starcraft.items.meta.ItemEnumHandler;
+import net.bvanseghi.starcraft.items.meta.ItemEssence;
+import net.bvanseghi.starcraft.items.meta.ItemIngot;
+import net.bvanseghi.starcraft.items.meta.ItemMineralShard;
+import net.bvanseghi.starcraft.items.meta.ItemProtossCoordinates;
+import net.bvanseghi.starcraft.items.meta.ItemPsiBladeFocuserUncharged;
+import net.bvanseghi.starcraft.items.meta.ItemVespene;
+import net.bvanseghi.starcraft.items.meta.ItemZergCarapace;
 import net.bvanseghi.starcraft.lib.LogHelper;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Copyright 2017 the Starcraft Minecraft mod team
  */
 public class ModItems extends Item {
-
-	public ModItems() {
-		super();
-	}
-
 	public static Item mineralShard;
 	public static Item richMineralShard;
 
@@ -65,8 +62,7 @@ public class ModItems extends Item {
 	
 	
 	public static void init() {
-		
-		keystone = new ItemKeystone("keystone", "keystone");
+		keystone = new ItemKeystone("keystone");
 		mineralShard = new ItemMineralShard("shard");
 		vespene = new ItemVespene("vespene");
 		energy = new ItemEnergy("energy");
@@ -82,6 +78,9 @@ public class ModItems extends Item {
 	}
 	
 	public static void register() {
+		FluidRegistry.addBucketForFluid(ModFluids.acid);
+		FluidRegistry.addBucketForFluid(ModFluids.blood);
+		
 		registerItem(keystone);
 		registerItem(mineralShard);
 		registerItem(vespene);
@@ -152,7 +151,7 @@ public class ModItems extends Item {
 	 * @param item The item
 	 */
 	public static void registerRender(Item item) {
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.RL_BASE + item.getUnlocalizedName().substring(5)), "inventory")); //This shit's like 30% cheating
 		LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
 	}
 	
