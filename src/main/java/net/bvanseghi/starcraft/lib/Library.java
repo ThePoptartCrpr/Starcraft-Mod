@@ -3,8 +3,6 @@ package net.bvanseghi.starcraft.lib;
 import java.util.ArrayList;
 import java.util.Random;
 
-import org.apache.logging.log4j.Level;
-
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.entity.EntityLarva;
@@ -118,65 +116,92 @@ public class Library {
 	}
 	
 	/**
-	 * 
-	 * @param pos for the position of the block taken from pylonSearch();
-	 * @param block to check if the block is a Protoss machine.
+	 * "Unlimited POWER!!!" -Palpatine, I think<br>
 	 * This method can be adapted to manipulate integers to set speeds of the machines
-	 * based on the distance the power is traveling. 
+	 * based on the distance the power is traveling<br>
 	 * If a block is NOT a Protoss machine, it is set to unpowered by default.
+	 * @param pos for the position of the block taken from {@link #pylonSearch}
+	 * @param blockstate to check if the block is a Protoss machine
 	 */
 	public static void feedPower(BlockPos pos, IBlockState blockstate) {
 		if(blockstate == ModMetaBlocks.PROTOSS_METAL.getDefaultState()) {
-					((ModBlocks) blockstate).PoweredByPSI(true);
-				}else {
-					((ModBlocks) blockstate).PoweredByPSI(false);
-				}
+			((ModBlocks) blockstate).PoweredByPSI(true);
+		} else {
+			((ModBlocks) blockstate).PoweredByPSI(false);
+		}
 	}
 	
+	/**
+	 * Creates the glorious shields
+	 * @param world the world
+	 * @param pos the bottom-middle of the shield
+	 * @param domeHeight difference in height between
+	 * {@code pos} and the peak of the dome
+	 */
+	@SuppressWarnings("unused")
 	public static void createShields(World world, BlockPos pos, int domeHeight) {
+		
 		//creates peak block of which we will build layers down from
 		world.setBlockState(pos.up(domeHeight), Blocks.GLASS.getDefaultState());
+		
 		//some useful integers to help us keep track of stuff
 		int level = 0;
 		int domeLevelLength = 2;
 		int factorX = 1;
 		int factorZ = 1;
 		int cornerOffset = 1;
+		
 		//start by counting layers of our dome! As we finish off layers, we go down a level and generate the next level
 		for(int h = domeHeight; h > 0; h--) {
+			
 			//we start at -(cornerOffset) because that is our corner we want to start generating from. Our Maximum is our entire side length, or domeLevelLength. After every single level, we increase those numbers
 			for(int x = -cornerOffset; x < domeLevelLength; x++) {
-				world.setBlockState(pos.add(x + (-cornerOffset), h, 0), Blocks.GLASS.getDefaultState());
-				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
+				world.setBlockState(pos.add(x - cornerOffset, h, 0), Blocks.GLASS.getDefaultState());
+				System.out.println("(" + pos.add(x - cornerOffset, h, 0).getX() + ", " + pos.add(x - cornerOffset, h, 0).getY() + ", " + pos.add(x - cornerOffset, h, 0).getZ() + ")");
+//				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
 			}
+			
 			//we generate the next side length of our dome!
 			for(int z = -cornerOffset; z < domeLevelLength; z++) {
 				world.setBlockState(pos.add(0, h, z + (-cornerOffset)), Blocks.GLASS.getDefaultState());
-				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
+//				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
 			}
+			
 			//Now we REVERSE our dome generation using the first for loop, but just going backwards now :p
 			for(int x = cornerOffset; x < domeLevelLength; x++) {
 				world.setBlockState(pos.add(x + cornerOffset, pos.getY() + h, 0), Blocks.GLASS.getDefaultState());
-				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
+//				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
 			}
+			
 			//Same for the Z axis!
 			for(int z = cornerOffset; z < domeLevelLength; z++) {
 				world.setBlockState(pos.add(0, h, z + cornerOffset), Blocks.GLASS.getDefaultState());
-				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
+//				LogHelper.logger.log(Level.INFO, pos.getX() + ":" + pos.getY() + ":" + pos.getZ());
 			}
+			
 			//Here we offset our corner by incrementing it, so we get a nice new layer thats larger than the previous. We also increase our Dome Length to be larger
 			cornerOffset++;
 			domeLevelLength += 2;
 		}
-		
 	}
 	
-	//To be created!
-	public void regenerateShields() {
-		
+	/**
+	 * Later...
+	 */
+	public static void regenerateShields() {
+		//TODO: this
 	}
 	
 	public static void larvaMorph(World world, EntityLarva larva, Random rand, double x, double y, double z) {
+//		world.removeEntity(larva);
+//		
+//		EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
+//		cocoon.posX = x;
+//		cocoon.posY = y;
+//		cocoon.posZ = z;
+//		
+//		world.spawnEntityInWorld(cocoon);
+
 		if(!world.isRemote){
 			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
 			cocoon.setLocationAndAngles(x, y, z, 0F, 0F);
@@ -193,5 +218,32 @@ public class Library {
 			cocoon.setDead();
 		}
 	}
-
+	
+	/**
+	 * <em>Use this one because it saves three params.
+	 * At some point, I'll eliminate the other and just
+	 * use this, but for now I did some lazy method invocation</em><br>
+	 * Larva -> cocoon. Simple
+	 * @param world the world
+	 * @param larva the larva in question
+	 * @param rand {@link Random} instance which will eventually
+	 * determine what gets pooped out later
+	 */
+	public static void larvaMorph(World world, EntityLarva larva, Random rand) {
+		larvaMorph(world, larva, rand, larva.posX, larva.posY, larva.posZ);
+	}
+	
+	/**
+	 * <em>Use this one because it saves three params.
+	 * At some point, I'll eliminate the other and just
+	 * use this, but for now I did some lazy method invocation</em><br>
+	 * Larva -> cocoon. Simple
+	 * @param world the world
+	 * @param cocoon the larva in question
+	 * @param rand {@link Random} instance which will eventually
+	 * determine what gets pooped out later
+	 */
+	public static void larvaCocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
+		larvaCocoonMorph(world, cocoon, rand, cocoon.posX, cocoon.posY, cocoon.posZ);
+	}
 }

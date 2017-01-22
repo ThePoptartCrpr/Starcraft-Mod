@@ -28,7 +28,7 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	/**
 	 * The type property
 	 */
-	public static final PropertyEnum TYPE = PropertyEnum.create("type", ZergStructureCarapaceType.class);
+	public static final PropertyEnum<ZergStructureCarapaceType> TYPE = PropertyEnum.create("type", ZergStructureCarapaceType.class);
 	
 	/**
 	 * Default constructor

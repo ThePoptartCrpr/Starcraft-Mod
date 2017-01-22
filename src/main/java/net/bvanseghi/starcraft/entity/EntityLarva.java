@@ -6,11 +6,6 @@ import java.util.Random;
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
-import net.bvanseghi.starcraft.entity.ai.EntityAIAttackHydralisk;
-import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
-import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
-import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
-import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.Library;
@@ -27,25 +22,10 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
-import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityIronGolem;
-import net.minecraft.entity.monster.EntityPolarBear;
-import net.minecraft.entity.passive.EntityBat;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityHorse;
-import net.minecraft.entity.passive.EntityMooshroom;
-import net.minecraft.entity.passive.EntityOcelot;
-import net.minecraft.entity.passive.EntityPig;
-import net.minecraft.entity.passive.EntityRabbit;
-import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -58,14 +38,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class EntityLarva extends EntityZergPassive {
-
 	private int nextStepDistance;
 	public boolean enoughMinerals = false;
 	public boolean enoughVespene = false;
 	public boolean playerRequestMob = false;
 	private int fire;
-	Random random = new Random();
-	BlockPos pos;
+	private Random random = new Random();
+//	private BlockPos pos;
 
 	public EntityLarva(World world) {
 		super(world);
