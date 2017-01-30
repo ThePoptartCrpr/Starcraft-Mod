@@ -34,7 +34,12 @@ public class Reference {
 		ITEM_BUCKET_ACID("bucketAcid", "bucket_acid"),
 		ITEM_BUCKET_BLOOD("bucketBlood", "bucket_blood"),
 		ITEM_PROTOSS_MODULE("protossModule", "protoss_module"),
-		ITEM_KEYSTONE("keystone");
+		ITEM_KEYSTONE("keystone", "keystone"),
+		
+		ARMOR_COPPER_HELMET("helmetCopper", "helmet_copper"),
+		ARMOR_COPPER_CHESTPLATE("chestplateCopper", "chestplate_copper"),
+		ARMOR_COPPER_LEGGINGS("LeggingsCopper", "leggings_copper"),
+		ARMOR_COPPER_BOOTS("bootsCopper", "boots_copper");
 		
 		private String unlocalizedName;
 		private String registryName;
@@ -172,7 +177,10 @@ public class Reference {
 		
 		BLOCK_CORE_NEXUS_DARK("coreNexusDark", "core_nexus_dark"),
 		BLOCK_CORE_NEXUS_KHALAI("coreNexusKhalai", "core_nexus_khalai"),
-		BLOCK_CORE_NEXUS_VOID("coreNexusVoid", "core_nexus_void");
+		BLOCK_CORE_NEXUS_VOID("coreNexusVoid", "core_nexus_void"),
+		
+		
+		BLOCK_MOVING_LIGHT_SOURCE("movingLightSource", "moving_light_source");
 		
 		private String unlocalizedName;
 		private String registryName;

@@ -13,7 +13,7 @@ public class ArmourCopperChestplate extends ItemArmor {
 	public ArmourCopperChestplate(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setCreativeTab(CreativeTab.TabStarcraftCombat);
-		setRegistryName(REGISTRY_RL);
-		setUnlocalizedName(Reference.UN_BASE + name);
+		setUnlocalizedName(Reference.ModItems.ARMOR_COPPER_CHESTPLATE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ARMOR_COPPER_CHESTPLATE.getRegistryRL());
 	}
 }

@@ -48,16 +48,16 @@ public class Achievements {
 				(Achievement) null).initIndependentStat().registerStat();
 
 		achievementGetPsiBladeDark = new Achievement("achievement.getPsiBladeDark", "getPsiBladeDark", 4, 1,
-				new ItemStack(ModWeapons.darkPsiBlade), achievementGetPsiBladeFocuserDark).initIndependentStat().registerStat();
+				new ItemStack(ModWeapons.DARK_PSI_BLADE), achievementGetPsiBladeFocuserDark).initIndependentStat().registerStat();
 
 		achievementGetPsiBlade = new Achievement("achievement.getPsiBlade", "getPsiBlade", 3, 1,
-				new ItemStack(ModWeapons.psiBlade), achievementGetPsiBladeFocuser).initIndependentStat().registerStat();
+				new ItemStack(ModWeapons.PSI_BLADE), achievementGetPsiBladeFocuser).initIndependentStat().registerStat();
 
 		achievementGetWarpBlade = new Achievement("achievement.getWarpBlade", "getWarpBlade", 3, 2,
-				new ItemStack(ModWeapons.warpBlade), achievementGetPsiBladeFocuser).initIndependentStat().registerStat();
+				new ItemStack(ModWeapons.WARP_BLADE), achievementGetPsiBladeFocuser).initIndependentStat().registerStat();
 
 		achievementGetMasterPsiBlade = new Achievement("achievement.getMasterPsiBlade", "getMasterPsiBlade", 3, 3,
-				new ItemStack(ModWeapons.masterPsiBlade), achievementGetPsiBladeFocuser).initIndependentStat().registerStat();
+				new ItemStack(ModWeapons.MASTER_PSI_BLADE), achievementGetPsiBladeFocuser).initIndependentStat().registerStat();
 		
 		// Dimension Achievements
 		

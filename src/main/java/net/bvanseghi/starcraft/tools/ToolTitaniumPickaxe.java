@@ -1,17 +1,15 @@
 package net.bvanseghi.starcraft.tools;
 
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraft.util.ResourceLocation;
 
 public class ToolTitaniumPickaxe extends ItemPickaxe {
 
-	public static final String name = "titaniumPickaxe";
-
-	public ToolTitaniumPickaxe(ToolMaterial material) {
+	public ToolTitaniumPickaxe(ToolMaterial material, String unlocalizedName) {
 		super(material);
-		this.setCreativeTab(CreativeTab.TabStarcraftTools);
-		this.setUnlocalizedName(Reference.UN_BASE + name);
+		this.setUnlocalizedName(unlocalizedName);
+		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
 	}
 
 }

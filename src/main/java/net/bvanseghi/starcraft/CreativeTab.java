@@ -35,14 +35,14 @@ public class CreativeTab {
 	public static CreativeTabs TabStarcraftTools = new CreativeTabs("StarcraftTools") {
 		@Override
 		public Item getTabIconItem() {
-			return ModTools.titaniumPickaxe;
+			return ModTools.TITANIUM_PICKAXE;
 		}
 	};
 
 	public static CreativeTabs TabStarcraftCombat = new CreativeTabs("StarcraftCombat") {
 		@Override
 		public Item getTabIconItem() {
-			return ModWeapons.masterPsiBlade;
+			return ModWeapons.MASTER_PSI_BLADE;
 		}
 	};
 

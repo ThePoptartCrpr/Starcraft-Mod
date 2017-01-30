@@ -1,10 +1,13 @@
 package net.bvanseghi.starcraft.armour;
 
+import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import scala.tools.nsc.backend.icode.TypeKinds.REFERENCE;
 
 public class ModArmour {
 	
@@ -69,5 +72,27 @@ public class ModArmour {
 		ghostChestplate = new ArmourGhostChestplate(ghostArmourMaterial, 0, EntityEquipmentSlot.CHEST);
 		ghostLeggings = new ArmourGhostLeggings(ghostArmourMaterial, 0, EntityEquipmentSlot.LEGS);
 		ghostBoots = new ArmourGhostBoots(ghostArmourMaterial, 0, EntityEquipmentSlot.FEET);
+		
+		
+		GameRegistry.register(titaniumHelmet);
+		GameRegistry.register(titaniumChestplate);
+		GameRegistry.register(titaniumLeggings);
+		GameRegistry.register(titaniumBoots);
+
+		GameRegistry.register(copperHelmet);
+		GameRegistry.register(copperChestplate);
+		GameRegistry.register(copperLeggings);
+		GameRegistry.register(copperBoots);
+
+		GameRegistry.register(steelHelmet);
+		GameRegistry.register(steelChestplate);
+		GameRegistry.register(steelLeggings);
+		GameRegistry.register(steelBoots);
+		
+		GameRegistry.register(ghostHelmet);
+		GameRegistry.register(ghostChestplate);
+		GameRegistry.register(ghostLeggings);
+		GameRegistry.register(ghostBoots);
+
 	}
 }

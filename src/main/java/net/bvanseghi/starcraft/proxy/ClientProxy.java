@@ -63,6 +63,7 @@ import net.bvanseghi.starcraft.renderer.RenderProbe;
 import net.bvanseghi.starcraft.renderer.RenderSpiderMine;
 import net.bvanseghi.starcraft.renderer.RenderZealot;
 import net.bvanseghi.starcraft.renderer.RenderZergling;
+import net.bvanseghi.starcraft.tileentity.ModTileEntities;
 import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.bvanseghi.starcraft.worldgen.SCWorldGen;
@@ -193,9 +194,14 @@ public class ClientProxy extends ServerProxy {
 		ModItems.register();
 		ModItems.registerRenders();
 		ModMaterials.preInit();
-		ModWeapons.preInit();
+		ModWeapons.init();
+		ModWeapons.register();
+		ModWeapons.registerRenders();
+		ModTileEntities.preInit();
 		ModArmour.preInit();
-		ModTools.preInit();
+		ModTools.init();
+		ModTools.register();
+		ModTools.registerRenders();
 		FuelHandler.preInit();
 		ModBlocks.registerModels();
 		ModMetaBlocks.init();
@@ -211,6 +217,7 @@ public class ClientProxy extends ServerProxy {
 		ModEntities.setEntityToSpawn();
 		ModEntities.generateSpawnEgg();
 		registerEntityRenders();
+		setModels();
 		Achievements.init();
 		setModels();
 	}

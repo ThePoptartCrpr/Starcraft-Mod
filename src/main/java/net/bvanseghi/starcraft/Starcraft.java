@@ -1,7 +1,9 @@
 package net.bvanseghi.starcraft;
 
+import net.bvanseghi.starcraft.events.PlayerTickEventHandler;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.proxy.ClientProxy;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -32,6 +34,7 @@ public class Starcraft {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
+		MinecraftForge.EVENT_BUS.register(new PlayerTickEventHandler());
 		proxy.registerModelBakeryStuff();
 	}
 	

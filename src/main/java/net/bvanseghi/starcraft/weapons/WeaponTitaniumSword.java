@@ -1,16 +1,15 @@
 package net.bvanseghi.starcraft.weapons;
 
-import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.ResourceLocation;
 
 public class WeaponTitaniumSword extends ItemSword {
 
-	public static final String name = "titaniumSword";
-
-	public WeaponTitaniumSword(ToolMaterial material) {
+	public WeaponTitaniumSword(ToolMaterial material, String unlocalizedName) {
 		super(material);
-		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
-		this.setUnlocalizedName(Reference.UN_BASE + name);
+		this.setUnlocalizedName(unlocalizedName);
+		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
 	}
+
 }

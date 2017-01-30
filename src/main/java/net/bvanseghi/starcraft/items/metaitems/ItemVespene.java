@@ -1,21 +1,21 @@
-package net.bvanseghi.starcraft.items.meta;
+package net.bvanseghi.starcraft.items.metaitems;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.items.meta.ItemEnumHandler.MineralType;
+import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler.VespeneType;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class ItemMineralShard extends Item {
+public class ItemVespene extends Item {
 	
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
 	 * @param unlocalizedName
 	 */
-	public ItemMineralShard(String unlocalizedName) {
+	public ItemVespene(String unlocalizedName) {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.RL_BASE + unlocalizedName));
 		this.setHasSubtypes(true); //This just says the item has metadata
@@ -26,24 +26,24 @@ public class ItemMineralShard extends Item {
 	 */
 	@Override
 	public void getSubItems(Item item, CreativeTabs tab, List<ItemStack> items) {
-		for(int i = 0; i < MineralType.values().length; i++) {
+		for(int i = 0; i < VespeneType.values().length; i++) {
 			items.add(new ItemStack(item, 1, i));
 		}
 	}
 	
 	/**
-	 * Gets the correct unlocalized name using the {@link MineralType} enum
+	 * Gets the correct unlocalized name using the {@link VespeneType} enum
 	 */
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		for(int i = 0; i < MineralType.values().length; i++) {
+		for(int i = 0; i < VespeneType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + MineralType.values()[i].getName();
+				return this.getUnlocalizedName() + "." + VespeneType.values()[i].getName();
 			}
 			else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + MineralType.BLUE.getName();
+		return this.getUnlocalizedName() + "." + VespeneType.RAW.getName();
 	}
 }

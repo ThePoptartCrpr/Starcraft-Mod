@@ -104,7 +104,7 @@ public class EntityZealot extends EntityProtossMob {
     {
         int j = this.rand.nextInt(50);
         if(j == 50) {
-            this.dropItem(ModWeapons.psiBlade, 1);
+            this.dropItem(ModWeapons.PSI_BLADE, 1);
         }else if(j < 5) {
         	this.dropItem(ModItems.energy, 1);
         }

@@ -7,8 +7,6 @@ import java.util.Map;
 
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.fluids.ModFluids;
-import net.bvanseghi.starcraft.items.ItemAcidBucket;
-import net.bvanseghi.starcraft.items.ItemBloodBucket;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;

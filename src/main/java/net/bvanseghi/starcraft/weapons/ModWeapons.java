@@ -1,14 +1,19 @@
 package net.bvanseghi.starcraft.weapons;
 
+import net.bvanseghi.starcraft.CreativeTab;
+import net.bvanseghi.starcraft.lib.LogHelper;
+import net.bvanseghi.starcraft.lib.Reference;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemSword;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModWeapons {
-
-	// Tool Materials, harvest level, maxUses, efficiency, damage
-	// (added), enchantability
-
+	
 	public static final ToolMaterial PSIBLADE = EnumHelper.addToolMaterial("PSIBLADE", 0, 150, 9.5F, 4.0F, 0);
 	public static final ToolMaterial WARPBLADE = EnumHelper.addToolMaterial("WARPBLADE", 0, 250, 9.5F, 18.5F, 0);
 //	public static final ToolMaterial DUALWARPBLADE = EnumHelper.addToolMaterial("DUALWARPBLADE", 0, 500, 9.5F, 18.5F, 0);
@@ -20,37 +25,72 @@ public class ModWeapons {
 	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial("STEEL", 2, 753, 6.5F, 3.0F, 10);
 
 	public static final ToolMaterial GUN = EnumHelper.addToolMaterial("GUN", 0, 0, 9.5F, -3.0F, 0);
+	
+	
+	public static Item PSI_BLADE;
+	public static Item DARK_PSI_BLADE;
 
-	// Weapons
-
-	public static Item psiBlade;
-	public static Item darkPsiBlade;
-
-	public static Item warpBlade;
-	public static Item darkWarpBlade;
+	public static Item WARP_BLADE;
+	public static Item DARK_WARP_BLADE;
 //	public static Item darkDualWarpBlade;
 
-	public static Item masterPsiBlade;
+	public static Item MASTER_PSI_BLADE;
 
-	public static Item titaniumSword;
-	public static Item copperSword;
-	public static Item steelSword;
+	public static Item TITANIUM_SWORD;
+	public static Item COPPER_SWORD;
+	public static Item STEEL_SWORD;
 	
-	public static final Item[] WEAPONS = {psiBlade, darkPsiBlade, warpBlade, darkWarpBlade, masterPsiBlade, titaniumSword, copperSword, steelSword};
-
-	public static void preInit() {
-
-		psiBlade = new WeaponPsiBlade(PSIBLADE);
-		darkPsiBlade = new WeaponDarkPsiBlade(PSIBLADE);
-
-		warpBlade = new WeaponWarpBlade(WARPBLADE);
-		darkWarpBlade = new WeaponDarkWarpBlade(WARPBLADE);
-//		darkDualWarpBlade = new WeaponDarkDualWarpBlade(DUALWARPBLADE);
-
-		masterPsiBlade = new WeaponMasterPsiBlade(MASTERPSIBLADE);
-
-		titaniumSword = new WeaponTitaniumSword(TITANIUM);
-		copperSword = new WeaponCopperSword(COPPER);
-		steelSword = new WeaponSteelSword(STEEL);
+	public static void init() {
+		PSI_BLADE = new WeaponPsiBlade(PSIBLADE, "psi_blade");
+		DARK_PSI_BLADE = new WeaponDarkPsiBlade(PSIBLADE, "dark_psi_blade");
+		
+		WARP_BLADE = new WeaponWarpBlade(WARPBLADE, "warp_blade");
+		DARK_WARP_BLADE = new WeaponDarkWarpBlade(WARPBLADE, "dark_warp_blade");
+		
+		MASTER_PSI_BLADE = new WeaponMasterPsiBlade(MASTERPSIBLADE, "master_warp_blade");
+		
+		COPPER_SWORD = new WeaponCopperSword(COPPER, "copper_sword");
+		TITANIUM_SWORD = new WeaponTitaniumSword(TITANIUM, "titanium_sword");
+		STEEL_SWORD = new WeaponSteelSword(STEEL, "steel_sword");
 	}
+
+	public static void register() {
+		registerItem(PSI_BLADE);
+		registerItem(DARK_PSI_BLADE);
+		
+		registerItem(WARP_BLADE);
+		registerItem(DARK_WARP_BLADE);
+		
+		registerItem(MASTER_PSI_BLADE);
+		
+		registerItem(COPPER_SWORD);
+		registerItem(TITANIUM_SWORD);
+		registerItem(STEEL_SWORD);
+	}
+	
+	public static void registerRenders() {
+		registerRender(PSI_BLADE);
+		registerRender(DARK_PSI_BLADE);
+		
+		registerRender(WARP_BLADE);
+		registerRender(DARK_WARP_BLADE);
+
+		registerRender(MASTER_PSI_BLADE);
+		
+		registerRender(COPPER_SWORD);
+		registerRender(TITANIUM_SWORD);
+		registerRender(STEEL_SWORD);
+	}
+	
+	public static void registerItem(Item item) {
+		item.setCreativeTab(CreativeTab.TabStarcraftCombat);
+		GameRegistry.register(item);
+		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
+	}
+
+	public static void registerRender(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
+		LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
+	}
+
 }

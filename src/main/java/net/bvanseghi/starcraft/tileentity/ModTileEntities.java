@@ -20,5 +20,7 @@ public class ModTileEntities {
 		GameRegistry.registerTileEntity(TileEntityBlockWarpGateWormholeChar.class, "WarpGateWormholeChar");
 		GameRegistry.registerTileEntity(TileEntityBlockWarpGateWormholeShakuras.class, "WarpGateWormholeShakuras");
 		GameRegistry.registerTileEntity(TileEntityBlockWarpGateWormholeOverworld.class, "WarpGateWormholeOverworld");
+		
+		GameRegistry.registerTileEntity(TileEntityMovingLightSource.class, "MovingLightSource");
 	}
 }

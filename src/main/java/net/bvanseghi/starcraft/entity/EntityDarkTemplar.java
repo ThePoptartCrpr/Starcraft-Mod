@@ -105,7 +105,7 @@ public class EntityDarkTemplar extends EntityProtossMob {
 		int j = rand.nextInt(50);
         
 		if(j == 50) {
-			dropItem(ModWeapons.darkWarpBlade, 1);
+			dropItem(ModWeapons.DARK_WARP_BLADE, 1);
         } else if(j < 5) {
         	entityDropItem(new ItemStack(ModItems.energy, 1, 1), 1);
         }

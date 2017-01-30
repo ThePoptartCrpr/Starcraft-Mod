@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.items.meta;
+package net.bvanseghi.starcraft.items.metaitems;
 
 
 import net.minecraft.util.IStringSerializable;

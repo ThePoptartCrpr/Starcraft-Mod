@@ -178,42 +178,42 @@ public class ModRecipes {
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_TITANIUM_SHAKURAS), new ItemStack(ModItems.ingot, 1, 3), 0);
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.ORE_COPPER_SHAKURAS), new ItemStack(ModItems.ingot, 1, 0), 0);
 
-		GameRegistry.addRecipe(new ItemStack(ModWeapons.psiBlade), new Object[] { " A ", "AEA", " AA", 'A',
+		GameRegistry.addRecipe(new ItemStack(ModWeapons.PSI_BLADE), new Object[] { " A ", "AEA", " AA", 'A',
 				new ItemStack(ModItems.ingot, 0, 1), 'E', new ItemStack(ModItems.energy, 0, 0) });
 
-		GameRegistry.addShapelessRecipe(new ItemStack(ModWeapons.psiBlade),
+		GameRegistry.addShapelessRecipe(new ItemStack(ModWeapons.PSI_BLADE),
 				new Object[] { ModItems.psiBladeFocuserUncharged, new ItemStack(ModItems.energy, 0, 0) });
 
-		GameRegistry.addRecipe(new ItemStack(ModWeapons.warpBlade), new Object[] { " A ", "ACA", " AA", 'A',
+		GameRegistry.addRecipe(new ItemStack(ModWeapons.WARP_BLADE), new Object[] { " A ", "ACA", " AA", 'A',
 				new ItemStack(ModItems.ingot, 0, 1), 'C', new ItemStack(ModItems.energy, 0, 1) });
 
-		GameRegistry.addShapelessRecipe(new ItemStack(ModWeapons.warpBlade),
+		GameRegistry.addShapelessRecipe(new ItemStack(ModWeapons.WARP_BLADE),
 				new Object[] { ModItems.psiBladeFocuserUncharged, new ItemStack(ModItems.energy, 0, 1) });
 
-		GameRegistry.addRecipe(new ItemStack(ModWeapons.darkPsiBlade), new Object[] { " D ", "DVD", " DD", 'D',
+		GameRegistry.addRecipe(new ItemStack(ModWeapons.DARK_PSI_BLADE), new Object[] { " D ", "DVD", " DD", 'D',
 				new ItemStack(ModItems.ingot, 0, 2), 'V', new ItemStack(ModItems.energy, 0, 2) });
 
-		GameRegistry.addShapelessRecipe(new ItemStack(ModWeapons.darkPsiBlade),
+		GameRegistry.addShapelessRecipe(new ItemStack(ModWeapons.DARK_PSI_BLADE),
 				new Object[] { ModItems.darkPsiBladeFocuserUncharged, new ItemStack(ModItems.energy, 0, 2) });
 
-		GameRegistry.addRecipe(new ItemStack(ModWeapons.darkWarpBlade), new Object[] { " D ", "DCD", " DD", 'D',
+		GameRegistry.addRecipe(new ItemStack(ModWeapons.DARK_WARP_BLADE), new Object[] { " D ", "DCD", " DD", 'D',
 				new ItemStack(ModItems.ingot, 0, 2), 'C', new ItemStack(ModItems.energy, 0, 1) });
 
-		GameRegistry.addShapelessRecipe(new ItemStack(ModWeapons.darkWarpBlade),
+		GameRegistry.addShapelessRecipe(new ItemStack(ModWeapons.DARK_WARP_BLADE),
 				new Object[] { ModItems.darkPsiBladeFocuserUncharged, new ItemStack(ModItems.energy, 0, 1) });
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.energy, 1, 1),
 				new Object[] { new ItemStack(ModItems.energy, 0, 0), new ItemStack(ModItems.energy, 0, 2) });
 
-		GameRegistry.addRecipe(new ItemStack(ModTools.copperShovel),
+		GameRegistry.addRecipe(new ItemStack(ModTools.COPPER_SHOVEL),
 				new Object[] { " C ", " S ", " S ", 'C', new ItemStack(ModItems.ingot, 0, 0), 'S', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.copperAxe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.COPPER_AXE),
 				new Object[] { " CC", " SC", " S ", 'C', new ItemStack(ModItems.ingot, 0, 0), 'S', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.copperPickaxe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.COPPER_PICKAXE),
 				new Object[] { "CCC", " S ", " S ", 'C', new ItemStack(ModItems.ingot, 0, 0), 'S', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.copperHoe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.COPPER_HOE),
 				new Object[] { " CC", " S ", " S ", 'C', new ItemStack(ModItems.ingot, 0, 0), 'S', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModWeapons.copperSword),
+		GameRegistry.addRecipe(new ItemStack(ModWeapons.COPPER_SWORD),
 				new Object[] { " C ", " C ", " S ", 'C', new ItemStack(ModItems.ingot, 0, 0), 'S', Items.STICK });
 
 		GameRegistry.addRecipe(new ItemStack(ModArmour.copperHelmet),
@@ -225,15 +225,15 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModArmour.copperBoots),
 				new Object[] { "   ", "C C", "C C", 'C', new ItemStack(ModItems.ingot, 0, 0) });
 
-		GameRegistry.addRecipe(new ItemStack(ModTools.steelShovel),
+		GameRegistry.addRecipe(new ItemStack(ModTools.STEEL_SHOVEL),
 				new Object[] { " S ", " I ", " I ", 'S', new ItemStack(ModItems.ingot, 0, 4), 'I', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.steelAxe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.STEEL_AXE),
 				new Object[] { " SS", " IS", " I ", 'S', new ItemStack(ModItems.ingot, 0, 4), 'I', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.steelPickaxe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.STEEL_PICKAXE),
 				new Object[] { "SSS", " I ", " I ", 'S', new ItemStack(ModItems.ingot, 0, 4), 'I', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.steelHoe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.STEEL_HOE),
 				new Object[] { " SS", " I ", " I ", 'S', new ItemStack(ModItems.ingot, 0, 4), 'I', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModWeapons.steelSword),
+		GameRegistry.addRecipe(new ItemStack(ModWeapons.STEEL_SWORD),
 				new Object[] { " S ", " S ", " I ", 'S', new ItemStack(ModItems.ingot, 0, 4), 'I', Items.STICK });
 
 		GameRegistry.addRecipe(new ItemStack(ModArmour.steelHelmet),
@@ -245,15 +245,15 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModArmour.steelBoots),
 				new Object[] { "   ", "S S", "S S", 'S', new ItemStack(ModItems.ingot, 0, 4) });
 
-		GameRegistry.addRecipe(new ItemStack(ModTools.titaniumShovel),
+		GameRegistry.addRecipe(new ItemStack(ModTools.TITANIUM_SHOVEL),
 				new Object[] { " T ", " S ", " S ", 'T', new ItemStack(ModItems.ingot, 0, 3), 'S', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.titaniumAxe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.TITANIUM_AXE),
 				new Object[] { " TT", " ST", " S ", 'T', new ItemStack(ModItems.ingot, 0, 3), 'S', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.titaniumPickaxe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.TITANIUM_PICKAXE),
 				new Object[] { "TTT", " S ", " S ", 'T', new ItemStack(ModItems.ingot, 0, 3), 'S', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModTools.titaniumHoe),
+		GameRegistry.addRecipe(new ItemStack(ModTools.TITANIUM_HOE),
 				new Object[] { " TT", " S ", " S ", 'T', new ItemStack(ModItems.ingot, 0, 3), 'S', Items.STICK });
-		GameRegistry.addRecipe(new ItemStack(ModWeapons.titaniumSword),
+		GameRegistry.addRecipe(new ItemStack(ModWeapons.TITANIUM_SWORD),
 				new Object[] { " T ", " T ", " S ", 'T', new ItemStack(ModItems.ingot, 0, 3), 'S', Items.STICK });
 
 		GameRegistry.addRecipe(new ItemStack(ModArmour.titaniumHelmet),

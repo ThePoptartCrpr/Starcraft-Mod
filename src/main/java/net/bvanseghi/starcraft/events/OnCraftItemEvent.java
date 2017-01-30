@@ -29,7 +29,7 @@ public class OnCraftItemEvent {
 	
 	@SubscribeEvent
 	public static void onWarpBladeObtained(PlayerEvent.ItemCraftedEvent e) {
-		if (e.crafting.isItemEqual((new ItemStack(ModWeapons.warpBlade)))) {
+		if (e.crafting.isItemEqual((new ItemStack(ModWeapons.WARP_BLADE)))) {
 			e.player.addStat(Achievements.achievementGetPsiBladeFocuserDark, 1);
 			// add sound here
 		}
@@ -37,7 +37,7 @@ public class OnCraftItemEvent {
 	
 	@SubscribeEvent
 	public static void onDarkWarpBladeObtained(PlayerEvent.ItemCraftedEvent e) {
-		if (e.crafting.isItemEqual((new ItemStack(ModWeapons.darkWarpBlade)))) {
+		if (e.crafting.isItemEqual((new ItemStack(ModWeapons.DARK_WARP_BLADE)))) {
 			e.player.addStat(Achievements.achievementGetPsiBladeFocuserDark, 1);
 			// add sound here
 		}
@@ -46,7 +46,7 @@ public class OnCraftItemEvent {
 	
 	@SubscribeEvent
 	public static void onPsiBladeObtained(PlayerEvent.ItemCraftedEvent e) {
-		if (e.crafting.isItemEqual((new ItemStack(ModWeapons.psiBlade)))) {
+		if (e.crafting.isItemEqual((new ItemStack(ModWeapons.PSI_BLADE)))) {
 			e.player.addStat(Achievements.achievementGetPsiBlade, 1);
 			// add sound here
 		}
@@ -54,7 +54,7 @@ public class OnCraftItemEvent {
 	
 	@SubscribeEvent
 	public static void onDarkPsiBladeObtained(PlayerEvent.ItemCraftedEvent e) {
-		if (e.crafting.isItemEqual((new ItemStack(ModWeapons.darkPsiBlade)))) {
+		if (e.crafting.isItemEqual((new ItemStack(ModWeapons.DARK_PSI_BLADE)))) {
 			e.player.addStat(Achievements.achievementGetPsiBladeDark, 1);
 			// add sound here
 		}

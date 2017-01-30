@@ -1,8 +1,8 @@
-package net.bvanseghi.starcraft.items.meta;
+package net.bvanseghi.starcraft.items.metaitems;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.items.meta.ItemEnumHandler.EssenceType;
+import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler.EssenceType;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

@@ -37,7 +37,7 @@ public class OnPickupItemEvent {
 
 	@SubscribeEvent
 	public static void onMasterPsiBladeObtained(PlayerEvent.ItemPickupEvent e) {
-		if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModWeapons.masterPsiBlade))) {
+		if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModWeapons.MASTER_PSI_BLADE))) {
 			e.player.addStat(Achievements.achievementGetMasterPsiBlade, 1);
 			// add sound here
 		}

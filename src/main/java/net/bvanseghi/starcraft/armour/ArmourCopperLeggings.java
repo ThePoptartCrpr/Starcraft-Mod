@@ -13,7 +13,7 @@ public class ArmourCopperLeggings extends ItemArmor {
 	public ArmourCopperLeggings(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setCreativeTab(CreativeTab.TabStarcraftCombat);
-		setRegistryName(REGISTRY_RL);
-		setUnlocalizedName(Reference.UN_BASE + name);
+		setUnlocalizedName(Reference.ModItems.ARMOR_COPPER_LEGGINGS.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ARMOR_COPPER_LEGGINGS.getRegistryRL());
 	}
 }
