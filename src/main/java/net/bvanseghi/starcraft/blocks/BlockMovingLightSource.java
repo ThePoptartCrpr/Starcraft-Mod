@@ -8,8 +8,6 @@ import net.bvanseghi.starcraft.tileentity.TileEntityMovingLightSource;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -23,15 +21,13 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockMovingLightSource extends Block implements ITileEntityProvider
-{
-	
+public class BlockMovingLightSource extends Block implements ITileEntityProvider {
 	public static final AxisAlignedBB FULL_BLOCK_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D);
 	
-    public static List<Item> lightSourceList = new ArrayList<Item>() {
+	//This method hurts my brain oof
+    @SuppressWarnings("serial")
+	public static List<Item> lightSourceList = new ArrayList<Item>() {
         {
             add(Item.getItemFromBlock(Blocks.TORCH));
             add(Item.getItemFromBlock(Blocks.REDSTONE_TORCH));
