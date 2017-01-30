@@ -5,15 +5,16 @@ import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
+@EventBusSubscriber
 public class PlayerTickEventHandler {
 	
-	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
-	public void onEvent(PlayerTickEvent event)
+	@SubscribeEvent(receiveCanceled = true)
+	public void onPlayerTick(PlayerTickEvent event)
 	{        
 	    if (event.phase == TickEvent.Phase.START && !event.player.worldObj.isRemote)
 	    {
@@ -48,13 +49,8 @@ public class PlayerTickEventHandler {
 	                                event.player.getLookVec().zCoord), 
 	                                ModBlocks.BLOCKMOVINGLIGHTSOURCE.getDefaultState());
 	                }
-	            }else{
-	            	
 	            }
-	        }else {
-	        	
 	        }
 	    }
 	}
-	
 }

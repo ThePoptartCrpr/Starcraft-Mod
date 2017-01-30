@@ -8,7 +8,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ServerProxy {
-
 	public void preInit(FMLPreInitializationEvent event) {
 		
 	}
@@ -25,14 +24,11 @@ public class ServerProxy {
 		
 	}
 	
-
 	public void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileEntityBlockVespeneGeyser.class, Reference.RL_BASE + "geyserVespene");
-		
 	}
 
 	public void registerModelBakeryStuff() {
-		// TODO Auto-generated method stub
 		
 	}
 }

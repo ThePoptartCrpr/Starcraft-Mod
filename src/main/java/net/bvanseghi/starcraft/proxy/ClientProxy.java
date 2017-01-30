@@ -78,9 +78,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@SuppressWarnings({ "deprecation", "rawtypes", "unchecked" })
+@SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
 public class ClientProxy extends ServerProxy {
-
 	public void setModels() {
 
 		///
