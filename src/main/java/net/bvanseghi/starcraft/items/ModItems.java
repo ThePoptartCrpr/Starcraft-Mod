@@ -53,8 +53,8 @@ public class ModItems extends Item {
 	public static Item creepResin;
 	public static Item organicTissue;
 
-	public static Item acidBucket;
-	public static Item bloodBucket;
+//	public static Item acidBucket;
+//	public static Item bloodBucket;
 	
 	public static Item protossModule;
 	
@@ -78,8 +78,8 @@ public class ModItems extends Item {
 	}
 	
 	public static void register() {
-		FluidRegistry.addBucketForFluid(ModFluids.acid);
-		FluidRegistry.addBucketForFluid(ModFluids.blood);
+		FluidRegistry.addBucketForFluid(ModFluids.acid); //Register acid fluid and add it to the universal bucket
+		FluidRegistry.addBucketForFluid(ModFluids.blood); //Register blood fluid and add it to the universal bucket
 		
 		registerItem(keystone);
 		registerItem(mineralShard);

@@ -1,16 +1,18 @@
 package net.bvanseghi.starcraft;
 
 import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
-import net.bvanseghi.starcraft.handlers.BucketHandler;
+import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ForgeModContainer;
+import net.minecraftforge.fluids.UniversalBucket;
 
 public class CreativeTab {
 
-	//TODO: fix
+	//TODO: fix (do we still have to fix this, or is it already?)
 	public static CreativeTabs TabStarcraftBuildingBlocks = new CreativeTabs("StarcraftBuildingBlocks") {
 		@Override
 		public Item getTabIconItem() {
@@ -49,7 +51,7 @@ public class CreativeTab {
 	public static CreativeTabs TabStarcraftMisc = new CreativeTabs("StarcraftMisc") {
 		@Override
 		public Item getTabIconItem() {
-			return BucketHandler.acidBucket;
+			return UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem();
 		}
 	};
 }
