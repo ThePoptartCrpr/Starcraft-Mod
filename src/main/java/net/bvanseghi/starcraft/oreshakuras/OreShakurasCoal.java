@@ -18,7 +18,7 @@ public class OreShakurasCoal extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 0);
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_COAL_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_COAL_S.getRegistryRL());
 	}

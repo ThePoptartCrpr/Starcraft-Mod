@@ -15,6 +15,6 @@ public class BlockCoreNexusKhalai extends Block {
 		//setHardness(2.0F);
 		//setResistance(5.0F);
 		//setHarvestLevel("pickaxe", 0);
-		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 }

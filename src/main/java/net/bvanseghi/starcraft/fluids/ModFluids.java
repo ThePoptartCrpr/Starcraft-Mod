@@ -5,6 +5,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 
 public class ModFluids {
-	public static Fluid acid = new Fluid("acid", new ResourceLocation(Reference.RL_BASE + "acid_fluid_still"), new ResourceLocation(Reference.RL_BASE + "acid_fluid_flowing"));
-	public static Fluid blood = new Fluid("acid", new ResourceLocation(Reference.RL_BASE + "blood_fluid_still"), new ResourceLocation(Reference.RL_BASE + "blood_fluid_flowing"));
+	public static Fluid acid = new Fluid("acid", new ResourceLocation(Reference.RL_BASE + "acid_fluid_still"), new ResourceLocation(Reference.RL_BASE + "acid_fluid_still")); //FIXME: get a flowing texture and set it here
+	public static Fluid blood = new Fluid("blood", new ResourceLocation(Reference.RL_BASE + "blood_fluid_still"), new ResourceLocation(Reference.RL_BASE + "blood_fluid_flowing"));
 }

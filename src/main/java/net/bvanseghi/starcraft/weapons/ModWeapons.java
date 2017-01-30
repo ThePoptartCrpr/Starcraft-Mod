@@ -82,7 +82,7 @@ public class ModWeapons {
 	}
 	
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.TabStarcraftCombat);
+		item.setCreativeTab(CreativeTab.tabStarcraftCombat);
 		GameRegistry.register(item);
 		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

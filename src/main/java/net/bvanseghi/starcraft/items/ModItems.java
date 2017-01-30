@@ -78,8 +78,12 @@ public class ModItems extends Item {
 	}
 	
 	public static void register() {
-		FluidRegistry.addBucketForFluid(ModFluids.acid); //Register acid fluid and add it to the universal bucket
-		FluidRegistry.addBucketForFluid(ModFluids.blood); //Register blood fluid and add it to the universal bucket
+		
+		//Register acid fluid and add it to the universal bucket
+		FluidRegistry.addBucketForFluid(ModFluids.acid);
+		
+		//Register blood fluid and add it to the universal bucket
+		FluidRegistry.addBucketForFluid(ModFluids.blood);
 		
 		registerItem(keystone);
 		registerItem(mineralShard);
@@ -141,7 +145,7 @@ public class ModItems extends Item {
 	 * @param item The item
 	 */
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.TabStarcraftMaterials); //Sets the creative tab
+		item.setCreativeTab(CreativeTab.tabStarcraftMaterials); //Sets the creative tab
 		GameRegistry.register(item);
 		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

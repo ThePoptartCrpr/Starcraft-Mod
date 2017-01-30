@@ -29,7 +29,7 @@ public class BlockMineralField extends BlockContainer {
 		setHardness(3.0F);
 		setResistance(15.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 	
 	@Override

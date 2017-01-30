@@ -18,7 +18,7 @@ public class OreShakurasLapis extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_LAPIS_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_LAPIS_S.getRegistryRL());
 	}

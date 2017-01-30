@@ -1,11 +1,11 @@
+fluid.acid=Acid
+fluid.blood=S‚nge
 
 itemGroup.StarcraftMaterials=Materiale Din Starcraft
 itemGroup.StarcraftBuildingBlocks=Cuburi De Construc»õie Din Starcraft
 itemGroup.StarcraftTools=Unelte Din Starcraft
 itemGroup.StarcraftCombat=Arme Din Starcraft
 itemGroup.StarcraftMisc=Diverse Din Starcraft
-
-
 
 tile.energyBlock.name=Cub De Energie
 tile.voidEnergyBlock.name=Cub De Energie Vida

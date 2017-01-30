@@ -16,6 +16,6 @@ public class BlockProtossEnergyStabilizerDark extends Block {
 		setLightLevel(1.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 3);
-		setCreativeTab(CreativeTab.TabStarcraftDecorativeBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftDecorativeBlocks);
 	}
 }

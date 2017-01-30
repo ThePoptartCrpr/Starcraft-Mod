@@ -31,7 +31,7 @@ public class BlockVespeneGeyser extends BlockContainer implements ITileEntityPro
 		setHardness(5.0F);
 		setResistance(3.0F);
 		setHarvestLevel("pickaxe", 1);
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 
 	@Override

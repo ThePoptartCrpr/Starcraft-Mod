@@ -15,11 +15,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
- * A bunch of stuff that does stuff. No really
- * "good" name for it that I can think of, so
- * it's called Library<br>
- * Copyright 2017 the Starcraft Minecraft mod team
+ * A set of utilities that simplify code in other areas<br>
+ * <em><b>Copyright 2017 the Starcraft Minecraft mod team</b></em>
  * @author wundrweapon
+ * @author bvanseghi
  */
 public class Library {
 	
@@ -88,7 +87,7 @@ public class Library {
 	
 	
 	/**
-	 * 
+	 * Searches for Pylons... I think
 	 * @param world for world
 	 * @param pos
 	 * @param sideLength the length of the cube's sides. Must be an odd number.
@@ -99,19 +98,23 @@ public class Library {
 	 */
 	public static ArrayList<BlockPos> pylonSearch(World world, BlockPos pos, int sideLength,  IBlockState... blockState) {
 		ArrayList<BlockPos> posList = new ArrayList<BlockPos>();
-		int flag = 0;
+		int counter = 0;
+		
 		for(int x = -sideLength/2; x < sideLength/2 + 1; x++) {
 			for(int y = -sideLength/2; y < sideLength/2 + 1; y++) {
 				for(int z = -sideLength/2; z < sideLength/2 + 1; z++) {
 					BlockPos currPos = new BlockPos(pos.getX() + x, pos.getY() + y, pos.getZ() + z);
-					if(world.getBlockState(currPos) == blockState[flag]) {
+					
+					if(world.getBlockState(currPos) == blockState[counter]) {
 						posList.add(currPos);
-						feedPower(currPos, blockState[flag]);
+						feedPower(currPos, blockState[counter]);
 					}
-					flag++;
+					
+					counter++;
 				}
 			}
 		}
+		
 		return posList;
 	}
 	
@@ -237,7 +240,7 @@ public class Library {
 	 * <em>Use this one because it saves three params.
 	 * At some point, I'll eliminate the other and just
 	 * use this, but for now I did some lazy method invocation</em><br>
-	 * Larva -> cocoon. Simple
+	 * Cocoon -> Zergling. Simple
 	 * @param world the world
 	 * @param cocoon the larva in question
 	 * @param rand {@link Random} instance which will eventually

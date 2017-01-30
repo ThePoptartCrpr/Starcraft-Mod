@@ -18,7 +18,7 @@ public class OreCharRedstone extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_REDSTONE_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_REDSTONE_C.getRegistryRL());
 	}

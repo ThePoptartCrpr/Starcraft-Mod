@@ -31,7 +31,7 @@ public class BlockRichMineralField extends BlockContainer {
 		setResistance(15.0F);
 		setHarvestLevel("pickaxe", 1);
 //		setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.85F, 1.0F); FIXME: this
-		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 
 	@Override

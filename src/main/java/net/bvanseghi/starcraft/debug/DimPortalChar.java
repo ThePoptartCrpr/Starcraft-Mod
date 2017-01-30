@@ -30,7 +30,7 @@ public class DimPortalChar extends ModBlocks {
 		this.setResistance(0.0F);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL());
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		
 	}
 	

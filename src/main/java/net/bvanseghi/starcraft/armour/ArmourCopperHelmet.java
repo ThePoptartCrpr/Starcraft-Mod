@@ -12,7 +12,7 @@ public class ArmourCopperHelmet extends ItemArmor {
 
 	public ArmourCopperHelmet(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
-		setCreativeTab(CreativeTab.TabStarcraftCombat);
+		setCreativeTab(CreativeTab.tabStarcraftCombat);
 		setUnlocalizedName(Reference.ModItems.ARMOR_COPPER_HELMET.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ARMOR_COPPER_HELMET.getRegistryRL());
 	}

@@ -1,6 +1,6 @@
 package net.bvanseghi.starcraft.proxy;
 
-import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
+import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.achievement.Achievements;
 import net.bvanseghi.starcraft.armour.ArmourCopperBoots;
@@ -21,6 +21,7 @@ import net.bvanseghi.starcraft.armour.ArmourTitaniumHelmet;
 import net.bvanseghi.starcraft.armour.ArmourTitaniumLeggings;
 import net.bvanseghi.starcraft.armour.ModArmour;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
+import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
 import net.bvanseghi.starcraft.entity.EntityBroodling;
 import net.bvanseghi.starcraft.entity.EntityBrutalisk;
 import net.bvanseghi.starcraft.entity.EntityCivilian;
@@ -34,6 +35,7 @@ import net.bvanseghi.starcraft.entity.EntitySpiderMine;
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.bvanseghi.starcraft.entity.ModEntities;
+import net.bvanseghi.starcraft.fluids.ModFluids;
 import net.bvanseghi.starcraft.handlers.FuelHandler;
 import net.bvanseghi.starcraft.items.ModItems;
 import net.bvanseghi.starcraft.lib.Reference;
@@ -73,6 +75,8 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.ForgeModContainer;
+import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -135,53 +139,53 @@ public class ClientProxy extends ServerProxy {
 	public void registerEntityRenders() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class,
 				new RenderZealot(Minecraft.getMinecraft().getRenderManager(), new ModelZealot(), 0.4f)); // use
-																											// depricated
+																											// deprecated
 																											// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class,
 				new RenderProbe(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f)); // use
-																										// depricated
+																										// deprecated
 																										// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkTemplar.class,
 				new RenderDarkTemplar(Minecraft.getMinecraft().getRenderManager(), new ModelDarkTemplar(), 0.4f)); // use
-																													// depricated
+																													// deprecated
 																													// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
 				new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f)); // use
-																												// depricated
+																												// deprecated
 																												// method
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class,
 				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 0.4f)); // use
-																												// depricated
+																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityHydralisk.class,
 				new RenderHydralisk(Minecraft.getMinecraft().getRenderManager(), new ModelHydralisk(), 0.4f)); // use
-																												// depricated
+																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class,
 				new RenderZergling(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f)); // use
-																												// depricated
+																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class,
 				new RenderLarva(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f)); // use
-																										// depricated
+																										// deprecated
 																										// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarvaCocoon.class,
 				new RenderLarvaCocoon(Minecraft.getMinecraft().getRenderManager(), new ModelLarvaCocoon(), 0.4f)); // use
-																													// depricated
+																													// deprecated
 																													// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityBroodling.class,
 				new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f)); // use
-																												// depricated
+																												// deprecated
 																												// method
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class,
 				new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f)); // use
-																												// depricated
+																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpiderMine.class,
 				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f)); // use
-																													// depricated
+																													// deprecated
 																													// method
 
 	}
@@ -190,7 +194,10 @@ public class ClientProxy extends ServerProxy {
 		StarcraftConfig.preInit();
 		ModBlocks.init();
 		ModItems.init();
-		ModItems.register();
+		ModItems.register(); //Does stuff, including bucket-y stuff
+		CreativeTab.setMisc(); //Add the misc tab after doing bucket-y stuff
+		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem().setCreativeTab(CreativeTab.tabStarcraftMisc); //Put the acid bucket into the misc tab
+		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(CreativeTab.tabStarcraftMisc); //Put the blood bucket into the misc tab
 		ModItems.registerRenders();
 		ModMaterials.preInit();
 		ModWeapons.init();

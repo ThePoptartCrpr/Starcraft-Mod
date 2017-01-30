@@ -29,7 +29,7 @@ public class DimPortalOverworld extends ModBlocks {
 		this.setResistance(0.0F);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIM_PORTAL_OW.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_OW.getRegistryRL());
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 
 	}
 	
