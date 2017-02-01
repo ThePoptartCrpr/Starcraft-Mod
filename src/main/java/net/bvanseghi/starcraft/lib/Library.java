@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 /**
  * A set of utilities that simplify code in other areas<br>
- * <em><b>Copyright 2017 the Starcraft Minecraft mod team</b></em>
+ * <em><b>Copyright (c) 2017 The Starcraft Minecraft (SCMC) Mod Team</b></em>
  * @author wundrweapon
  * @author bvanseghi
  */
@@ -45,7 +45,7 @@ public class Library {
 					if(x == 0 && y == 0 && z== 0) {
 						continue;
 					} else {
-						world.setBlockState(new BlockPos(pos.getX() + x, pos.getY() + y, pos.getZ() + z), blockState);
+						world.setBlockState(pos.add(x, y, z), blockState);
 					}
 				}
 			}
@@ -73,7 +73,7 @@ public class Library {
 		for(int x = -sideLength/2; x < sideLength/2 + 1; x++) {
 			for(int y = -sideLength/2; y < sideLength/2 + 1; y++) {
 				for(int z = -sideLength/2; z < sideLength/2 + 1; z++) {
-					BlockPos currPos = new BlockPos(pos.getX() + x, pos.getY() + y, pos.getZ() + z);
+					BlockPos currPos = pos.add(x, y, z);
 					
 					if(world.getBlockState(currPos) == blockState) {
 						posList.add(currPos);
@@ -103,7 +103,7 @@ public class Library {
 		for(int x = -sideLength/2; x < sideLength/2 + 1; x++) {
 			for(int y = -sideLength/2; y < sideLength/2 + 1; y++) {
 				for(int z = -sideLength/2; z < sideLength/2 + 1; z++) {
-					BlockPos currPos = new BlockPos(pos.getX() + x, pos.getY() + y, pos.getZ() + z);
+					BlockPos currPos = pos.add(x, y, z);
 					
 					if(world.getBlockState(currPos) == blockState[counter]) {
 						posList.add(currPos);
@@ -195,33 +195,6 @@ public class Library {
 		//TODO: this
 	}
 	
-	public static void larvaMorph(World world, EntityLarva larva, Random rand, double x, double y, double z) {
-//		world.removeEntity(larva);
-//		
-//		EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
-//		cocoon.posX = x;
-//		cocoon.posY = y;
-//		cocoon.posZ = z;
-//		
-//		world.spawnEntityInWorld(cocoon);
-
-		if(!world.isRemote){
-			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
-			cocoon.setLocationAndAngles(x, y, z, 0F, 0F);
-			world.spawnEntityInWorld(cocoon);
-			larva.setDead();
-		}
-	}
-	
-	public static void larvaCocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand, double x, double y, double z) {
-		if(!world.isRemote){
-			EntityZergling zergling = new EntityZergling(world);
-			zergling.setLocationAndAngles(x, y, z, 0F, 0F);
-			world.spawnEntityInWorld(zergling);
-			cocoon.setDead();
-		}
-	}
-	
 	/**
 	 * <em>Use this one because it saves three params.
 	 * At some point, I'll eliminate the other and just
@@ -233,7 +206,12 @@ public class Library {
 	 * determine what gets pooped out later
 	 */
 	public static void larvaMorph(World world, EntityLarva larva, Random rand) {
-		larvaMorph(world, larva, rand, larva.posX, larva.posY, larva.posZ);
+		if(!world.isRemote){
+			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
+			cocoon.setLocationAndAngles(larva.posX, larva.posY, larva.posZ, 0, 0);
+			world.spawnEntityInWorld(cocoon);
+			larva.setDead();
+		}
 	}
 	
 	/**
@@ -247,6 +225,11 @@ public class Library {
 	 * determine what gets pooped out later
 	 */
 	public static void larvaCocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
-		larvaCocoonMorph(world, cocoon, rand, cocoon.posX, cocoon.posY, cocoon.posZ);
+		if(!world.isRemote){
+			EntityZergling zergling = new EntityZergling(world);
+			zergling.setLocationAndAngles(cocoon.posX, cocoon.posY, cocoon.posZ, 0, 0);
+			world.spawnEntityInWorld(zergling);
+			cocoon.setDead();
+		}
 	}
 }

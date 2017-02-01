@@ -5,15 +5,12 @@ import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.world.World;
 
 public class EntityZergPassive extends EntityTameable {
-
-	public EntityZergPassive(World p_i1604_1_) {
-		super(p_i1604_1_);
+	public EntityZergPassive(World world) {
+		super(world);
 	}
 
 	@Override
-	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
+	public EntityAgeable createChild(EntityAgeable entity) {
 		return null;
 	}
-
-
 }
