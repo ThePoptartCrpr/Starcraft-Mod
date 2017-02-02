@@ -28,7 +28,7 @@ public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
         if (!this.renderOutlines)
         {
             this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
+        }	
     }
 
 	@Override

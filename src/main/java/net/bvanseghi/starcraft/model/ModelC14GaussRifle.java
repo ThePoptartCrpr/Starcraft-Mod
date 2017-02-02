@@ -3,12 +3,17 @@ package net.bvanseghi.starcraft.model;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
 /**
  * Gauss Rifle - SCMCDevTeam
  * Created using Tabula 5.1.0
  */
+
 public class ModelC14GaussRifle extends ModelBase {
+	
+	public static ResourceLocation texture = new ResourceLocation("starcraft", "textures\\model\\c14gaussrifle.png");
+	
     public ModelRenderer main1;
     public ModelRenderer main2;
     public ModelRenderer main3;
