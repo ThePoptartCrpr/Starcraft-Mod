@@ -6,7 +6,6 @@ import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemSword;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
@@ -83,7 +82,7 @@ public class ModWeapons {
 	}
 	
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.TabStarcraftCombat);
+		item.setCreativeTab(CreativeTab.tabStarcraftCombat);
 		GameRegistry.register(item);
 		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

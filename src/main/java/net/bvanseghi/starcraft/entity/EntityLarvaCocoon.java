@@ -9,42 +9,45 @@ import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class EntityLarvaCocoon extends EntityZergPassive {
+	private Random random = new Random();
+	
 	public EntityLarvaCocoon(World world) {
 		super(world);
 		this.setSize(0.7F, 0.8F);
 	}
-	Random random = new Random();
-	BlockPos pos;
 
+	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.larvaCocoonHP);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.larvaCocoonHP);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0);
+		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999);
 	}
 	
-	protected boolean canDespawn()
-    {
+	@Override
+	protected boolean canDespawn() {
         return false;
     }
 	
-	public int getTalkInterval()
-    {
+	@Override
+	public int getTalkInterval() {
         return 160;
     }
 	
+	@Override
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_ZERGCOCOON_LIVE1;
 	}
 	
+	@Override
 	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_ZERGCOCOON_HURT;
 	}
 	
+	@Override
 	public SoundEvent getDeathSound() {
 		return StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH;
 	}
@@ -52,33 +55,41 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
-		if(!this.worldObj.isRemote){
-			if((this.ticksExisted > 340)) {
-				Library.larvaCocoonMorph(this.worldObj, this, random);
-			}else{
-				
+		
+		if(!worldObj.isRemote) {
+			if((ticksExisted > 340)) {
+				Library.larvaCocoonMorph(worldObj, this, random);
 			}
 		}
 	}
 
+	/**
+	 * Why doesn't this do anything?
+	 */
 	@Override
-	public void moveEntity(double x, double y, double z)
-    {
+	public void moveEntity(double x, double y, double z) {
        
     }
 	
+	@Override
 	public boolean isPushedByWater() {
 		return false;
 	}
 
+	/**
+	 * <em>Reset</em> rotation?
+	 */
+	@Override
 	protected void setRotation(float par1, float par2) {
-		this.rotationYaw = 0;
-		this.rotationPitch = 0;
+		rotationYaw = 0;
+		rotationPitch = 0;
 	}
 
+	/**
+	 * ...?
+	 */
 	@Override
-	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
+	public EntityAgeable createChild(EntityAgeable entity) {
 		return null;
 	}
-
 }

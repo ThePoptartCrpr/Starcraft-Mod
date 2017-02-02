@@ -13,7 +13,7 @@ public class ArmourSteelBoots extends ItemArmor {
 	public ArmourSteelBoots(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setRegistryName(REGISTRY_RL);
-		setCreativeTab(CreativeTab.TabStarcraftCombat);
+		setCreativeTab(CreativeTab.tabStarcraftCombat);
 		setUnlocalizedName(Reference.UN_BASE + name);
 	}
 }

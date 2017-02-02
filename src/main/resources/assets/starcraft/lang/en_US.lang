@@ -1,3 +1,5 @@
+fluid.acid=Acid
+fluid.blood=Blood
 
 itemGroup.StarcraftMaterials=Starcraft Materials
 itemGroup.StarcraftBuildingBlocks=Starcraft Building Blocks
@@ -5,8 +7,6 @@ itemGroup.StarcraftDecorativeBlocks=Starcraft Decorative Blocks
 itemGroup.StarcraftTools=Starcraft Tools
 itemGroup.StarcraftCombat=Starcraft Combat
 itemGroup.StarcraftMisc=Starcraft Miscellaneous
-
-
 
 tile.energyBlock.name=Block Of Energy
 tile.voidEnergyBlock.name=Block Of Void Energy

@@ -1,11 +1,11 @@
+fluid.acid=Acide
+fluid.blood=Sang
 
 itemGroup.StarcraftMaterials=Matériaux (Starcraft)
 itemGroup.StarcraftBuildingBlocks=Blocs De Construction (Starcraft)
 itemGroup.StarcraftTools=Outils (Starcraft)
 itemGroup.StarcraftCombat=Armes Et Armures (Starcraft)
 itemGroup.StarcraftMisc=Autres (Starcraft)
-
-
 
 tile.energyBlock.name=Bloc D'énérgie
 tile.voidEnergyBlock.name=Bloc D'énérgie Du Vide

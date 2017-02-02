@@ -10,6 +10,8 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.bvanseghi.starcraft.lib.Reference;
+import net.bvanseghi.starcraft.proxy.ServerProxy;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -35,9 +37,9 @@ public class Starcraft {
 	@Instance(Reference.MODID)
 	public static Starcraft instance;
 
-	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY)
-	public static ClientProxy proxy;
-
+	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY, serverSide = Reference.SERVER_SIDE_PROXY)
+	public static ServerProxy proxy;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		proxy.preInit(event);
@@ -47,7 +49,6 @@ public class Starcraft {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
-		MinecraftForge.EVENT_BUS.register(new PlayerTickEventHandler());
 		proxy.registerModelBakeryStuff();
 		
 		MinecraftForge.EVENT_BUS.register(this);

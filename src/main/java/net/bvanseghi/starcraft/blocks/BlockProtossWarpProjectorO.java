@@ -22,7 +22,7 @@ public class BlockProtossWarpProjectorO extends ModBlocks {
 		setLightLevel(1.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 3);
-		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 	
 	@Override

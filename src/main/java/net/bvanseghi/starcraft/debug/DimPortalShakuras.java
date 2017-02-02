@@ -32,7 +32,7 @@ public class DimPortalShakuras extends ModBlocks {
 		this.setResistance(0.0F);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL());
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		
 	}
 	

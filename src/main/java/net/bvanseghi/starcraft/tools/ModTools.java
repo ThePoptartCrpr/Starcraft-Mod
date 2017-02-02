@@ -94,7 +94,7 @@ public class ModTools {
 	}
 	
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.TabStarcraftTools);
+		item.setCreativeTab(CreativeTab.tabStarcraftTools);
 		GameRegistry.register(item);
 		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

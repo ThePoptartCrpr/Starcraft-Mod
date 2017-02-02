@@ -12,7 +12,7 @@ public class ArmourSteelChestplate extends ItemArmor {
 
 	public ArmourSteelChestplate(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
-		setCreativeTab(CreativeTab.TabStarcraftCombat);
+		setCreativeTab(CreativeTab.tabStarcraftCombat);
 		setRegistryName(REGISTRY_RL);
 		setUnlocalizedName(Reference.UN_BASE + name);
 	}

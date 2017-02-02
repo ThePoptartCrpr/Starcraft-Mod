@@ -26,7 +26,7 @@ public class BlockCharMagma extends Block {
 		setHardness(1.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_MAGMA_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_MAGMA_C.getRegistryRL());
 	}

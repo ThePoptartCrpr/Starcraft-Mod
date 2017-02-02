@@ -10,8 +10,16 @@ import net.minecraft.world.World;
 public class ItemC14GaussRifle extends Item {
 
 	public ItemC14GaussRifle() {
+<<<<<<< HEAD
 		super();
 		this.setCreativeTab(CreativeTab.TabStarcraftCombat);
+=======
+		super(ModWeapons.GUN);
+		this.setCreativeTab(CreativeTab.tabStarcraftCombat);
+		this.setFull3D();
+		setUnlocalizedName(Reference.ModItems.WEAPON_RIFLE_C14_GAUSS.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.WEAPON_RIFLE_C14_GAUSS.getRegistryRL());
+>>>>>>> 9bc3d3439873a8d50d86344bdc19af949a0a32f3
 	}
 
 	@Override

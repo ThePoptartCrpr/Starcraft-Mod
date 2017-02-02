@@ -14,7 +14,7 @@ public class BlockShakurasCobblestone extends ModBlocks {
 		setSoundType(SoundType.STONE);
 		setHardness(2.0F);
 		setResistance(5.0F);
-		this.setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 
 	public int damageDropped(int par1) {

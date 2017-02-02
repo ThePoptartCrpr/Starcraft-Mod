@@ -15,6 +15,6 @@ public class BlockCharDirt extends Block {
 		setHardness(0.5F);
 		setResistance(2.5F);
 		setHarvestLevel("shovel", 0);
-		setCreativeTab(CreativeTab.TabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 }
