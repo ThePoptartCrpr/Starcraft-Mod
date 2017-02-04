@@ -11,11 +11,8 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 
-
-public class RenderItemC14GaussRifle extends ItemRenderer
-{
+public class RenderItemC14GaussRifle extends ItemRenderer {
 	public static final ModelC14GaussRifle model = new ModelC14GaussRifle();
 
 	public RenderItemC14GaussRifle()

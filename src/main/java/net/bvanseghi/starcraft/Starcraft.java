@@ -1,17 +1,14 @@
 package net.bvanseghi.starcraft;
 
-import net.bvanseghi.starcraft.events.PlayerTickEventHandler;
 import net.bvanseghi.starcraft.items.ItemC14GaussRifle;
 import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.proxy.ClientProxy;
+import net.bvanseghi.starcraft.proxy.ServerProxy;
 import net.bvanseghi.starcraft.renderer.RenderItemC14GaussRifle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.proxy.ServerProxy;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -31,6 +28,7 @@ public class Starcraft {
 		FluidRegistry.enableUniversalBucket();
 	}
 
+	//Testing the C14 Gauss Rifle
 	public static ItemC14GaussRifle itemTest = (ItemC14GaussRifle) new ItemC14GaussRifle().setFull3D()
 			.setUnlocalizedName("c14gaussrifle").setCreativeTab(CreativeTabs.TOOLS).setRegistryName("c14gaussrifle");
 
@@ -61,10 +59,10 @@ public class Starcraft {
 		proxy.postInit(event);
 	}
 
+	//Probably more C14 Gauss Rifle testing
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
-	public void onModelBake(ModelBakeEvent event)
-	{
+	public void onModelBake(ModelBakeEvent event) {
 	    event.getModelRegistry().putObject(new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"), new RenderItemC14GaussRifle());
 	}
 }
