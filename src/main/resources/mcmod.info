@@ -5,12 +5,13 @@
   "description": "The Void hungers! Prepare for epic conquest, as three races battle each other to the death! Choose your side, conquer the universe... all while a horrible evil stirs in The Void...",
   "version": "1.5-port",
   "mcversion": "1.10.2",
-  "url": "http//www.scmcmod.x10host.com",
+  "url": "http://scmc.ga",
   "updateUrl": "",
-  "authorList": ["bvanseghi", "valiec2019", "wundrweapon", "CraftSpider"],
+  "authorList": ["bvanseghi", "valiec2019", "wundrweapon", "CraftSpider", "ccc", "sugarrush", "Cybercat", "Justaguy", "LittleMac", "Ruthless", "YordleKing"],
   "credits": "",
   "logoFile": "",
   "screenshots": [],
+  "useDependencyInformation": true,
   "dependencies": []
 }
 ]
