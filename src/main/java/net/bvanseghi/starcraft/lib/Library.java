@@ -40,7 +40,7 @@ public class Library {
 	 */
 	public static void blockCube(World world, IBlockState blockState, BlockPos pos, int sideLength) {
 		for(int x = -sideLength/2; x < sideLength/2 + 1; x++) {
-			for(int y = -sideLength/2; y < sideLength/2 + 1; y++) {
+			for(int y = 0; y < sideLength + 1; y++) {
 				for(int z = -sideLength/2; z < sideLength/2 + 1; z++) {
 					if(x == 0 && y == 0 && z== 0) {
 						continue;
@@ -88,6 +88,7 @@ public class Library {
 	
 	/**
 	 * Searches for Pylons... I think
+	 * TODO: ensure that this works
 	 * @param world for world
 	 * @param pos
 	 * @param sideLength the length of the cube's sides. Must be an odd number.
@@ -224,7 +225,7 @@ public class Library {
 	 * @param rand {@link Random} instance which will eventually
 	 * determine what gets pooped out later
 	 */
-	public static void larvaCocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
+	public static void cocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
 		if(!world.isRemote){
 			EntityZergling zergling = new EntityZergling(world);
 			zergling.setLocationAndAngles(cocoon.posX, cocoon.posY, cocoon.posZ, 0, 0);
