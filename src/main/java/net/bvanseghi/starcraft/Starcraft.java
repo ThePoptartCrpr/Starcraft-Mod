@@ -29,8 +29,7 @@ public class Starcraft {
 	}
 
 	//Testing the C14 Gauss Rifle
-	public static ItemC14GaussRifle itemTest = (ItemC14GaussRifle) new ItemC14GaussRifle().setFull3D()
-			.setUnlocalizedName("c14gaussrifle").setCreativeTab(CreativeTabs.TOOLS).setRegistryName("c14gaussrifle");
+	public static ItemC14GaussRifle itemTest = (ItemC14GaussRifle) new ItemC14GaussRifle().setFull3D().setUnlocalizedName("c14gaussrifle").setCreativeTab(CreativeTabs.TOOLS).setRegistryName("starcraft:weapon_rifle_c14_gauss");
 
 	@Instance(Reference.MODID)
 	public static Starcraft instance;
@@ -51,7 +50,7 @@ public class Starcraft {
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		GameRegistry.register(itemTest);
-	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemTest, 0, new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"));
+	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemTest, 0, new ModelResourceLocation("starcraft:weapon_rifle_c14_gauss", "inventory"));
 	}
 
 	@EventHandler
@@ -63,6 +62,6 @@ public class Starcraft {
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void onModelBake(ModelBakeEvent event) {
-	    event.getModelRegistry().putObject(new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"), new RenderItemC14GaussRifle());
+	    event.getModelRegistry().putObject(new ModelResourceLocation("starcraft:weapon_rifle_c14_gauss", "inventory"), new RenderItemC14GaussRifle());
 	}
 }
