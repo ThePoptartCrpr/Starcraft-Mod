@@ -23,8 +23,8 @@ public class ModArmour {
 			new int[] { 3, 7, 5, 3 }, 9, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
 	static final ItemArmor.ArmorMaterial titaniumArmourMaterial = EnumHelper.addArmorMaterial("titaniumArmorMaterial", "Starcraft:textures/model/armor/titanium_layer_1.png",
 			21, new int[] { 3, 6, 5, 2 }, 30, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
-//	
-//	//terran armours
+
+	//terran armours
 	static final ItemArmor.ArmorMaterial ghostArmourMaterial = EnumHelper.addArmorMaterial("ghostArmourMaterial", "Starcraft:textures/model/armor/ghost_invis_layer_1.png", 20, 
 			new int[] { 2, 6, 4, 2 }, 0, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
 
