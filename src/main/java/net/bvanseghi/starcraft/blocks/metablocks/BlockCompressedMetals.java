@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.blocks.metablocks;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.CompressedMetalType;
+import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.CompressedMetalTier1Type;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -20,13 +20,13 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 /**
- * This block has three variants. Refer to {@link CompressedMetalType}
+ * This block has three variants. Refer to {@link CompressedMetalTier1Type}
  * 
  */
 public class BlockCompressedMetals extends Block implements IMetaBlockName {
 
 	/** The type property */
-	public static final PropertyEnum<CompressedMetalType> TYPE = PropertyEnum.create("type", CompressedMetalType.class);
+	public static final PropertyEnum<CompressedMetalTier1Type> TYPE = PropertyEnum.create("type", CompressedMetalTier1Type.class);
 	
 	/**
 	 * Default constructor
@@ -39,7 +39,7 @@ public class BlockCompressedMetals extends Block implements IMetaBlockName {
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
 		this.setHardness(20); //Sets how hard the block is to break
 		this.setResistance(20); //Sets the blocks blast resitance to explosions
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMetalType.COPPER)); //Default state
+		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMetalTier1Type.COPPER)); //Default state
 	}
 	
 	/**
@@ -47,7 +47,7 @@ public class BlockCompressedMetals extends Block implements IMetaBlockName {
 	 */
 	@Override
 	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
-		for(int i = 0; i < CompressedMetalType.values().length; i++) {
+		for(int i = 0; i < CompressedMetalTier1Type.values().length; i++) {
 			list.add(new ItemStack(itemIn, 1, i));
 		}
 	}
@@ -82,7 +82,7 @@ public class BlockCompressedMetals extends Block implements IMetaBlockName {
 	 */
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		CompressedMetalType type = (CompressedMetalType) state.getValue(TYPE);
+		CompressedMetalTier1Type type = (CompressedMetalTier1Type) state.getValue(TYPE);
 		return type.getID();
 	}
 	
@@ -91,7 +91,7 @@ public class BlockCompressedMetals extends Block implements IMetaBlockName {
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, CompressedMetalType.values()[meta]);
+		return this.getDefaultState().withProperty(TYPE, CompressedMetalTier1Type.values()[meta]);
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class BlockCompressedMetals extends Block implements IMetaBlockName {
 	 */
 	@Override
 	public String getSpecialName(ItemStack stack) {
-		return CompressedMetalType.values()[stack.getItemDamage()].getName();
+		return CompressedMetalTier1Type.values()[stack.getItemDamage()].getName();
 	}
 
 }
