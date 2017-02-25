@@ -39,8 +39,9 @@ public class BlockProtossMetalT1 extends Block implements IMetaBlockName {
 		this.setSoundType(SoundType.METAL);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
-		this.setHardness(20); //Sets how hard the block is to break
-		this.setResistance(20); //Sets the blocks blast resitance to explosions
+		setHardness(5.0F);
+		setResistance(25.0F);
+		setHarvestLevel("pickaxe", 3);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ProtossMetalTier1Type.AIUR)); //Default state
 	}
 	

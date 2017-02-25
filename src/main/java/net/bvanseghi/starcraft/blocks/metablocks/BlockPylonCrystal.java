@@ -39,8 +39,10 @@ public class BlockPylonCrystal extends Block implements IMetaBlockName {
 		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
-		this.setHardness(20); //Sets how hard the block is to break
-		this.setResistance(20); //Sets the blocks blast resitance to explosions
+		setHardness(5.0F);
+		setResistance(20.0F);
+		setLightLevel(4.0F);
+		setHarvestLevel("pickaxe", 2);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, PylonCrystalType.PURE)); //Default state
 	}
 	

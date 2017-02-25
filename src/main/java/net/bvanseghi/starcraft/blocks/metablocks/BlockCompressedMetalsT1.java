@@ -40,7 +40,7 @@ public class BlockCompressedMetalsT1 extends Block implements IMetaBlockName {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
 		this.setHardness(20); //Sets how hard the block is to break
-		this.setResistance(20); //Sets the blocks blast resitance to explosions
+		this.setResistance(20); //Sets the blocks blast resistance to explosions
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMetalTier1Type.COPPER)); //Default state
 	}
 	
