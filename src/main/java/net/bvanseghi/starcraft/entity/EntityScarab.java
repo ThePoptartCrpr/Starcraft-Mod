@@ -2,165 +2,212 @@ package net.bvanseghi.starcraft.entity;
 
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
 import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAttackMelee;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
+import net.minecraft.entity.ai.EntityAICreeperSwell;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.passive.EntityOcelot;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityScarab extends EntityCreeper {
 
-	Random random = new Random();
+    /**
+     * Time when this creeper was last in an active state (Messed up code here, probably causes creeper animation to go
+     * weird)
+     */
+    private int lastActiveTime;
+    /** The amount of time since the creeper was close enough to the player to ignite */
+    private int timeSinceIgnited;
+    private int fuseTime = 10;
+    /** Explosion radius for this creeper. */
+    private int explosionRadius = 3;
+    private int droppedSkulls;
 
-	public EntityScarab(World world) {
-		super(world);
-		this.setSize(0.5F, 1.3F);
-		/*
-		 * TODO: recreate entity ai.
-		 */
-	}
-	
-	 public boolean isAIEnabled()
-	    {
-	        return true;
-	    }
+    public EntityScarab(World worldIn)
+    {
+        super(worldIn);
+        this.setSize(0.8F, 0.8F);
+    }
 
-	protected void applyEntityAttributes() {
-		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.probeHP);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.43000000417232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
-	}
-	
-	public SoundEvent getAmbientSound() {
-		return StarcraftSoundEvents.ENTITY_PROBE_LIVE1;
-	}
-	
-	public SoundEvent getHurtSound() {
-		return StarcraftSoundEvents.ENTITY_PROBE_HURT;
-	}
-	
-	public SoundEvent getDeathSound() {
-		return StarcraftSoundEvents.ENTITY_PROBE_DEATH;
-	}
+    protected void initEntityAI()
+    {
+        this.tasks.addTask(4, new EntityAIAttackMelee(this, 1.0D, false));
+        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
+        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false, new Class[0]));
+    }
 
-	/*
-	@SuppressWarnings({"rawtypes", "unused"})
-	public void moveEntity(double p_70091_1_, double p_70091_3_, double p_70091_5_) {
-		if (this.noClip) {
-			this.boundingBox.offset(p_70091_1_, p_70091_3_, p_70091_5_);
-			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) / 2.0D;
-			this.posY = this.boundingBox.minY + (double) this.yOffset - (double) this.ySize;
-			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) / 2.0D;
-		} else {
-			this.worldObj.theProfiler.startSection("move");
-			this.ySize *= 0.4F;
-			double d3 = this.posX;
-			double d4 = this.posY;
-			double d5 = this.posZ;
+    protected void applyEntityAttributes()
+    {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0999976374163468D);
+    }
 
-			if (this.isInWeb) {
-				this.isInWeb = false;
-				p_70091_1_ *= 0.25D;
-				p_70091_3_ *= 0.05000000074505806D;
-				p_70091_5_ *= 0.25D;
-				this.motionX = 0.0D;
-				this.motionY = 0.0D;
-				this.motionZ = 0.0D;
-			}
+    /**
+     * The maximum height from where the entity is alowed to jump (used in pathfinder)
+     */
+    public int getMaxFallHeight()
+    {
+        return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
+    }
 
-			double d6 = p_70091_1_;
-			double d7 = p_70091_3_;
-			double d8 = p_70091_5_;
-			AxisAlignedBB axisalignedbb = this.boundingBox.copy();
+    public void fall(float distance, float damageMultiplier)
+    {
+        super.fall(distance, damageMultiplier);
+        this.timeSinceIgnited = (int)((float)this.timeSinceIgnited + distance * 1.5F);
 
-			List list = this.worldObj.getCollidingBoundingBoxes(this,
-					this.boundingBox.addCoord(p_70091_1_, p_70091_3_, p_70091_5_));
+        if (this.timeSinceIgnited > this.fuseTime - 5)
+        {
+            this.timeSinceIgnited = this.fuseTime - 5;
+        }
+    }
 
-			for (int i = 0; i < list.size(); ++i) {
-				p_70091_3_ = ((AxisAlignedBB) list.get(i)).calculateYOffset(this.boundingBox, p_70091_3_);
-			}
+    /**
+     * Called to update the entity's position/logic.
+     */
+    public void onUpdate()
+    {
+        if (this.isEntityAlive())
+        {
+            this.lastActiveTime = this.timeSinceIgnited;
 
-			if (p_70091_3_ > 0) {
-				p_70091_3_ = 0.0D;
-			}
+            if (this.hasIgnited())
+            {
+                this.setCreeperState(1);
+            }
 
-			this.boundingBox.offset(0.0D, p_70091_3_, 0.0D);
+            int i = this.getCreeperState();
 
-			if (!this.field_70135_K && d7 != p_70091_3_) {
-				p_70091_5_ = 0.0D;
-				p_70091_3_ = 0.0D;
-				p_70091_1_ = 0.0D;
-			}
+            this.timeSinceIgnited += i;
 
-			for (int j = 0; j < list.size(); ++j) {
-				p_70091_1_ = ((AxisAlignedBB) list.get(j)).calculateXOffset(this.boundingBox, p_70091_1_);
-			}
+            if (this.timeSinceIgnited < 0)
+            {
+                this.timeSinceIgnited = 0;
+            }
 
-			this.boundingBox.offset(p_70091_1_, 0.0D, 0.0D);
+            if (this.timeSinceIgnited >= this.fuseTime)
+            {
+                this.timeSinceIgnited = this.fuseTime;
+                this.explode();
+            }
+        }
 
-			if (!this.field_70135_K && d6 != p_70091_1_) {
-				p_70091_5_ = 0.0D;
-				p_70091_3_ = 0.0D;
-				p_70091_1_ = 0.0D;
-			}
+        super.onUpdate();
+    }
 
-			for (int j = 0; j < list.size(); ++j) {
-				p_70091_5_ = ((AxisAlignedBB) list.get(j)).calculateZOffset(this.boundingBox, p_70091_5_);
-			}
+    protected SoundEvent getDeathSound()
+    {
+        return SoundEvents.ENTITY_CREEPER_DEATH;
+    }
 
-			this.boundingBox.offset(0.0D, 0.0D, p_70091_5_);
+    /**
+     * Called when the mob's health reaches 0.
+     */
+    public void onDeath(DamageSource cause)
+    {
+        super.onDeath(cause);
 
-			if (!this.field_70135_K && d8 != p_70091_5_) {
-				p_70091_5_ = 0.0D;
-				p_70091_3_ = 0.0D;
-				p_70091_1_ = 0.0D;
-			}
+        if (this.worldObj.getGameRules().getBoolean("doMobLoot"))
+        {
+            if (cause.getEntity() instanceof EntitySkeleton)
+            {
+                int i = Item.getIdFromItem(Items.RECORD_13);
+                int j = Item.getIdFromItem(Items.RECORD_WAIT);
+                int k = i + this.rand.nextInt(j - i + 1);
+                this.dropItem(Item.getItemById(k), 1);
+            }
+            else if (cause.getEntity() instanceof EntityCreeper && cause.getEntity() != this && ((EntityCreeper)cause.getEntity()).getPowered() && ((EntityCreeper)cause.getEntity()).isAIEnabled())
+            {
+                ((EntityCreeper)cause.getEntity()).incrementDroppedSkulls();
+                this.entityDropItem(new ItemStack(Items.SKULL, 1, 4), 0.0F);
+            }
+        }
+    }
 
-			double d10;
-			double d11;
-			int k;
-			double d12;
+    public boolean attackEntityAsMob(Entity entityIn)
+    {
+        return true;
+    }
 
-			this.worldObj.theProfiler.endSection();
-			this.worldObj.theProfiler.startSection("rest");
-			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) / 2.0D;
-			this.posY = this.boundingBox.minY + (double) this.yOffset - (double) this.ySize;
-			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) / 2.0D;
-			this.isCollidedHorizontally = d6 != p_70091_1_ || d8 != p_70091_5_;
-			this.isCollidedVertically = d7 != p_70091_3_;
-			this.onGround = d7 != p_70091_3_ && d7 < 0.0D;
-			this.isCollided = this.isCollidedHorizontally || this.isCollidedVertically;
-			this.updateFallState(p_70091_3_, this.onGround);
+    /**
+     * Params: (Float)Render tick. Returns the intensity of the creeper's flash when it is ignited.
+     */
+    @SideOnly(Side.CLIENT)
+    public float getCreeperFlashIntensity(float p_70831_1_)
+    {
+        return ((float)this.lastActiveTime + (float)(this.timeSinceIgnited - this.lastActiveTime) * p_70831_1_) / (float)(this.fuseTime - 2);
+    }
 
-			if (d6 != p_70091_1_) {
-				this.motionX = 0.0D;
-			}
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return LootTableList.ENTITIES_CREEPER;
+    }
 
-			if (d7 != p_70091_3_) {
-				this.motionY = 0.0D;
-			}
+    protected boolean processInteract(EntityPlayer player, EnumHand hand, @Nullable ItemStack stack)
+    {
+        if (stack != null && stack.getItem() == Items.FLINT_AND_STEEL)
+        {
+            this.worldObj.playSound(player, this.posX, this.posY, this.posZ, SoundEvents.ITEM_FLINTANDSTEEL_USE, this.getSoundCategory(), 1.0F, this.rand.nextFloat() * 0.4F + 0.8F);
+            player.swingArm(hand);
 
-			if (d8 != p_70091_5_) {
-				this.motionZ = 0.0D;
-			}
+            if (!this.worldObj.isRemote)
+            {
+                this.ignite();
+                stack.damageItem(1, player);
+                return true;
+            }
+        }
 
-			try {
-				this.func_145775_I();
-			} catch (Throwable throwable) {
-				CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Checking entity block collision");
-				CrashReportCategory crashreportcategory = crashreport
-						.makeCategory("Entity being checked for collision");
-				this.addEntityCrashInfo(crashreportcategory);
-				throw new ReportedException(crashreport);
-			}
+        return super.processInteract(player, hand, stack);
+    }
 
-			this.worldObj.theProfiler.endSection();
-		}
-	}
-	*/
-
+    /**
+     * Creates an explosion as determined by this creeper's power and explosion radius.
+     */
+    private void explode()
+    {
+        if (!this.worldObj.isRemote)
+        {
+            boolean flag = this.worldObj.getGameRules().getBoolean("mobGriefing");
+            float f = this.getPowered() ? 2.0F : 1.0F;
+            this.dead = true;
+            this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius * f, flag);
+            this.setDead();
+        }
+    }
 }
