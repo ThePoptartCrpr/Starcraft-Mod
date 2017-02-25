@@ -5,7 +5,6 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import net.bvanseghi.starcraft.StarcraftSoundEvents;
-import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;

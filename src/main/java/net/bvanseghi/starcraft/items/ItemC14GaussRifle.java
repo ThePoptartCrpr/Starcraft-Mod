@@ -1,11 +1,7 @@
 package net.bvanseghi.starcraft.items;
 
 import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 
 public class ItemC14GaussRifle extends Item {
 	public ItemC14GaussRifle() {
