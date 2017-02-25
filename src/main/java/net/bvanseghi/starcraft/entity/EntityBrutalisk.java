@@ -44,7 +44,7 @@ import net.minecraft.world.World;
 public class EntityBrutalisk extends EntityZergMob {
 	public EntityBrutalisk(World world) {
 		super(world);
-        this.setSize(7.0F, 7.0F);
+        this.setSize(10.0F, 10.0F);
 	}
 	
 	protected void initEntityAI()

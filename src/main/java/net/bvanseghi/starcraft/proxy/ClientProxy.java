@@ -168,7 +168,7 @@ public class ClientProxy extends ServerProxy {
 																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class,
-				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 0.4f)); // use
+				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f)); // use
 																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityHydralisk.class,

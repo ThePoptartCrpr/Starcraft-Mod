@@ -48,7 +48,7 @@ import net.minecraft.world.World;
 public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	public EntityHydralisk(World world) {
 		super(world);
-        this.setSize(1.0F, 1.75F);
+        this.setSize(2.0F, 2.0F);
 	}
 	   
 	protected void applyEntityAttributes() {
@@ -133,8 +133,7 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	 * weapon
 	 */
 	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
-		//TODO: make this
-		dropItem(Items.STICK, Integer.MAX_VALUE);
+	
 	}
 	
 	public void onUpdate() {
