@@ -5,6 +5,7 @@ import java.util.List;
 import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.PylonCrystalType;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -35,6 +36,7 @@ public class BlockPylonCrystal extends Block implements IMetaBlockName {
 	 */
 	public BlockPylonCrystal(String unlocalizedName, String registryName) {
 		super(Material.ROCK);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
 		this.setHardness(20); //Sets how hard the block is to break

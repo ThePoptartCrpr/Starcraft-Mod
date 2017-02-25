@@ -11,7 +11,7 @@ import net.bvanseghi.starcraft.blocks.coreblocks.BlockCorePylonVoid;
 import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateDark;
 import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateKhalai;
 import net.bvanseghi.starcraft.blocks.coreblocks.BlockCoreWarpGateVoid;
-import net.bvanseghi.starcraft.blocks.metablocks.BlockCompressedMetals;
+import net.bvanseghi.starcraft.blocks.metablocks.BlockCompressedMetalsT1;
 import net.bvanseghi.starcraft.blocks.metablocks.BlockPylonCrystal;
 import net.bvanseghi.starcraft.debug.DimPortalChar;
 import net.bvanseghi.starcraft.debug.DimPortalOverworld;
@@ -132,7 +132,7 @@ public class ModBlocks extends Block {
 	public static Block terranMetal;
 	public static Block terranMetalDec1;
 
-	public static BlockCompressedMetals COMP_METAL;
+	public static BlockCompressedMetalsT1 COMP_METAL;
 
 	// Will be used in Xel'Naga temples and shrines.
 	public static Block xelnagaMetal;

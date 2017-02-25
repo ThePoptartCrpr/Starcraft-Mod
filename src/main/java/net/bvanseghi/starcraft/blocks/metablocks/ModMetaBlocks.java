@@ -16,10 +16,10 @@ public class ModMetaBlocks {
 	/**
 	 * State our blocks
 	 */
-	public static BlockProtossMetal PROTOSS_METAL;
+	public static BlockProtossMetalT1 PROTOSS_METAL;
 	public static BlockPylonCrystal PYLON_CRYSTAL;
 	public static BlockZergStructureCarapace ZERG_CARAPACE;
-	public static BlockCompressedMetals COMP_METAL;
+	public static BlockCompressedMetalsT1 COMP_METAL;
 	public static BlockDyedIronBlocks DYED_IRON;
 	public static BlockZergStructureFlesh ZERG_FLESH;
 	
@@ -30,12 +30,12 @@ public class ModMetaBlocks {
 	 * Initialize the blocks
 	 */
 	public static void init() {
-		PROTOSS_METAL = new BlockProtossMetal("protoss_metal", "protoss_metal");
+		PROTOSS_METAL = new BlockProtossMetalT1("protoss_metal", "protoss_metal");
 		PYLON_CRYSTAL = new BlockPylonCrystal("pcrystal", "pcrystal");
 		ZERG_CARAPACE = new BlockZergStructureCarapace("zerg_carapace", "zerg_carapace");
 		ZERG_FLESH = new BlockZergStructureFlesh("zerg_flesh", "zerg_flesh");
 		DYED_IRON = new BlockDyedIronBlocks("dyed_iron", "dyed_iron");
-		COMP_METAL = new BlockCompressedMetals("compressed_metal", "compressed_metal");
+		COMP_METAL = new BlockCompressedMetalsT1("compressed_metal", "compressed_metal");
 		COMP_MINERAL = new BlockCompressedMinerals("compressed_mineral", "compressed_mineral");
 	}
 	
