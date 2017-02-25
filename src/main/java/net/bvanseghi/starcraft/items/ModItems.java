@@ -9,7 +9,7 @@ import net.bvanseghi.starcraft.items.metaitems.ItemDust;
 import net.bvanseghi.starcraft.items.metaitems.ItemEnergy;
 import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler;
 import net.bvanseghi.starcraft.items.metaitems.ItemEssence;
-import net.bvanseghi.starcraft.items.metaitems.ItemIngot;
+import net.bvanseghi.starcraft.items.metaitems.ItemIngotT1;
 import net.bvanseghi.starcraft.items.metaitems.ItemMineralShard;
 import net.bvanseghi.starcraft.items.metaitems.ItemProtossCoordinates;
 import net.bvanseghi.starcraft.items.metaitems.ItemPsiBladeFocuserUncharged;
@@ -68,7 +68,7 @@ public class ModItems extends Item {
 		energy = new ItemEnergy("energy");
 		dust = new ItemDust("dust");
 		essence = new ItemEssence("essence");
-		ingot = new ItemIngot("ingot");
+		ingot = new ItemIngotT1("ingot");
 		crystal = new ItemCrystal("crystal");
 		c14Parts = new ItemC14GaussRifleParts("part_c14_gauss");
 		bullet = new ItemBullet("bullet");
@@ -117,8 +117,8 @@ public class ModItems extends Item {
 		for(int i = 0; i < ItemEnumHandler.EssenceType.values().length; i++) {
 			registerRender(essence, i, "essence_" + ItemEnumHandler.EssenceType.values()[i].getName());
 		}
-		for(int i = 0; i < ItemEnumHandler.IngotType.values().length; i++) {
-			registerRender(ingot, i, "ingot_" + ItemEnumHandler.IngotType.values()[i].getName());
+		for(int i = 0; i < ItemEnumHandler.IngotTypeT1.values().length; i++) {
+			registerRender(ingot, i, "ingot_" + ItemEnumHandler.IngotTypeT1.values()[i].getName());
 		}
 		for(int i = 0; i < ItemEnumHandler.CrystalType.values().length; i++) {
 			registerRender(crystal, i, "crystal_" + ItemEnumHandler.CrystalType.values()[i].getName());

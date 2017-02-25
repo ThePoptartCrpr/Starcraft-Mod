@@ -151,7 +151,7 @@ public class ItemEnumHandler {
 	}
 	
 	
-	public static enum IngotType implements IStringSerializable {
+	public static enum IngotTypeT1 implements IStringSerializable {
 		COPPER("copper", 0),
 		ALIEN("alien", 1),
 		ALIENDARK("aliendark", 2),
@@ -161,7 +161,7 @@ public class ItemEnumHandler {
 		private int ID;
 		private String name;
 		
-		private IngotType(String name, int ID) {
+		private IngotTypeT1(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}
