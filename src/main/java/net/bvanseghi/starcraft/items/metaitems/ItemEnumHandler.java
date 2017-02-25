@@ -151,7 +151,7 @@ public class ItemEnumHandler {
 	}
 	
 	
-	public static enum IngotTypeT1 implements IStringSerializable {
+	public static enum IngotType implements IStringSerializable {
 		COPPER("copper", 0),
 		ALIEN("alien", 1),
 		ALIENDARK("aliendark", 2),
@@ -161,7 +161,7 @@ public class ItemEnumHandler {
 		private int ID;
 		private String name;
 		
-		private IngotTypeT1(String name, int ID) {
+		private IngotType(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}
@@ -180,7 +180,6 @@ public class ItemEnumHandler {
 			return getName();
 		}
 	}
-	
 	
 	public static enum CoordinateType implements IStringSerializable {
 		CHAR("char", 0),

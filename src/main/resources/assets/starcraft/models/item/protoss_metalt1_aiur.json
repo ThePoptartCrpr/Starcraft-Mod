@@ -1,5 +1,5 @@
 {
-    "parent":"starcraft:block/protoss_metal_blue",
+    "parent":"starcraft:block/protoss_metalt2_aiur",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

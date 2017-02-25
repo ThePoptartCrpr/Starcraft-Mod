@@ -128,7 +128,7 @@ public class Library {
 	 * @param blockstate to check if the block is a Protoss machine
 	 */
 	public static void feedPower(BlockPos pos, IBlockState blockstate) {
-		if(blockstate == ModMetaBlocks.PROTOSS_METAL.getDefaultState()) {
+		if(blockstate == ModMetaBlocks.PROTOSS_METAL_T1.getDefaultState()) {
 			((ModBlocks) blockstate).PoweredByPSI(true);
 		} else {
 			((ModBlocks) blockstate).PoweredByPSI(false);

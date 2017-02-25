@@ -6,7 +6,7 @@ import net.minecraft.util.IStringSerializable;
 
 public class EnumHandler {
 
-	public static enum ProtossMetalTier1Type implements IStringSerializable {
+	public static enum ProtossMetalType implements IStringSerializable {
 		AIUR("aiur", 0),
 		DARK("dark", 1),
 		GREEN("green", 2),
@@ -15,7 +15,7 @@ public class EnumHandler {
 		private int ID;
 		private String name;
 		
-		private ProtossMetalTier1Type(String name, int ID) {
+		private ProtossMetalType(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}
@@ -64,7 +64,7 @@ public class EnumHandler {
 	}
 
 	
-	public static enum ZergStructureCarapaceTier1Type implements IStringSerializable {
+	public static enum ZergStructureCarapaceType implements IStringSerializable {
 		T1("t1", 0),
 		T2("t2", 1),
 		T3("t3", 2);
@@ -72,7 +72,7 @@ public class EnumHandler {
 		private int ID;
 		private String name;
 		
-		private ZergStructureCarapaceTier1Type(String name, int ID) {
+		private ZergStructureCarapaceType(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}
@@ -202,7 +202,7 @@ public class EnumHandler {
 	}
 	
 	
-	public static enum CompressedMetalTier1Type implements IStringSerializable {
+	public static enum CompressedMetalType implements IStringSerializable {
 		COPPER("copper", 0),
 		STEEL("steel", 1),
 		TITANIUM("titanium", 2);
@@ -210,7 +210,7 @@ public class EnumHandler {
 		private int ID;
 		private String name;
 		
-		private CompressedMetalTier1Type(String name, int ID) {
+		private CompressedMetalType(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}

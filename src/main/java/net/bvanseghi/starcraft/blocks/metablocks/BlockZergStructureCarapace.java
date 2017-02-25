@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.blocks.metablocks;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.ZergStructureCarapaceTier1Type;
+import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.ZergStructureCarapaceType;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -20,7 +20,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 /**
- * This block has three variants. Refer to {@link ZergStructureCarapaceTier1Type}
+ * This block has three variants. Refer to {@link ZergStructureCarapaceType}
  * 
  */
 public class BlockZergStructureCarapace extends Block implements IMetaBlockName {
@@ -28,7 +28,7 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	/**
 	 * The type property
 	 */
-	public static final PropertyEnum<ZergStructureCarapaceTier1Type> TYPE = PropertyEnum.create("type", ZergStructureCarapaceTier1Type.class);
+	public static final PropertyEnum<ZergStructureCarapaceType> TYPE = PropertyEnum.create("type", ZergStructureCarapaceType.class);
 	
 	/**
 	 * Default constructor
@@ -41,7 +41,7 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
 		this.setHardness(20); //Sets how hard the block is to break
 		this.setResistance(20); //Sets the blocks blast resistance to explosions
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ZergStructureCarapaceTier1Type.T1)); //Default state
+		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ZergStructureCarapaceType.T1)); //Default state
 	}
 	
 	/**
@@ -49,7 +49,7 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	 */
 	@Override
 	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
-		for(int i = 0; i < ZergStructureCarapaceTier1Type.values().length; i++) {
+		for(int i = 0; i < ZergStructureCarapaceType.values().length; i++) {
 			list.add(new ItemStack(itemIn, 1, i));
 		}
 	}
@@ -84,7 +84,7 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	 */
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		ZergStructureCarapaceTier1Type type = (ZergStructureCarapaceTier1Type) state.getValue(TYPE);
+		ZergStructureCarapaceType type = (ZergStructureCarapaceType) state.getValue(TYPE);
 		return type.getID();
 	}
 	
@@ -93,7 +93,7 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, ZergStructureCarapaceTier1Type.values()[meta]);
+		return this.getDefaultState().withProperty(TYPE, ZergStructureCarapaceType.values()[meta]);
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	 */
 	@Override
 	public String getSpecialName(ItemStack stack) {
-		return ZergStructureCarapaceTier1Type.values()[stack.getItemDamage()].getName();
+		return ZergStructureCarapaceType.values()[stack.getItemDamage()].getName();
 	}
 
 }

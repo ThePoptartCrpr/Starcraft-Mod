@@ -31,6 +31,8 @@ import net.bvanseghi.starcraft.entity.EntityHydralisk;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityProbe;
+import net.bvanseghi.starcraft.entity.EntityProtossReaver;
+import net.bvanseghi.starcraft.entity.EntityScarab;
 import net.bvanseghi.starcraft.entity.EntitySpiderMine;
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.bvanseghi.starcraft.entity.EntityZergling;
@@ -50,6 +52,8 @@ import net.bvanseghi.starcraft.model.ModelHydralisk;
 import net.bvanseghi.starcraft.model.ModelLarva;
 import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
 import net.bvanseghi.starcraft.model.ModelProbe;
+import net.bvanseghi.starcraft.model.ModelProtossReaver;
+import net.bvanseghi.starcraft.model.ModelScarab;
 import net.bvanseghi.starcraft.model.ModelSpiderMine;
 import net.bvanseghi.starcraft.model.ModelZealot;
 import net.bvanseghi.starcraft.model.ModelZergling;
@@ -62,6 +66,8 @@ import net.bvanseghi.starcraft.renderer.RenderHydralisk;
 import net.bvanseghi.starcraft.renderer.RenderLarva;
 import net.bvanseghi.starcraft.renderer.RenderLarvaCocoon;
 import net.bvanseghi.starcraft.renderer.RenderProbe;
+import net.bvanseghi.starcraft.renderer.RenderProtossReaver;
+import net.bvanseghi.starcraft.renderer.RenderScarab;
 import net.bvanseghi.starcraft.renderer.RenderSpiderMine;
 import net.bvanseghi.starcraft.renderer.RenderZealot;
 import net.bvanseghi.starcraft.renderer.RenderZergling;
@@ -145,6 +151,14 @@ public class ClientProxy extends ServerProxy {
 				new RenderProbe(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f)); // use
 																										// deprecated
 																										// method
+		RenderingRegistry.registerEntityRenderingHandler(EntityProtossReaver.class,
+				new RenderProtossReaver(Minecraft.getMinecraft().getRenderManager(), new ModelProtossReaver(), 0.4f)); // use
+																											// deprecated
+																											// method
+		RenderingRegistry.registerEntityRenderingHandler(EntityScarab.class,
+				new RenderScarab(Minecraft.getMinecraft().getRenderManager(), new ModelScarab(), 0.4f)); // use
+																										// deprecated
+																										// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkTemplar.class,
 				new RenderDarkTemplar(Minecraft.getMinecraft().getRenderManager(), new ModelDarkTemplar(), 0.4f)); // use
 																													// deprecated
@@ -153,7 +167,6 @@ public class ClientProxy extends ServerProxy {
 				new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f)); // use
 																												// deprecated
 																												// method
-
 		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class,
 				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 0.4f)); // use
 																												// deprecated
@@ -178,7 +191,6 @@ public class ClientProxy extends ServerProxy {
 				new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f)); // use
 																												// deprecated
 																												// method
-
 		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class,
 				new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f)); // use
 																												// deprecated
@@ -260,12 +272,26 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "essence_terran"),
 				new ResourceLocation(Reference.MODID, "essence_zerg"));
 		
-		ModelBakery.registerItemVariants(ModItems.ingot, 
-				new ResourceLocation(Reference.MODID, "ingot_copper"),
-				new ResourceLocation(Reference.MODID, "ingot_alien"),
-				new ResourceLocation(Reference.MODID, "ingot_aliendark"),
-				new ResourceLocation(Reference.MODID, "ingot_titanium"),
-				new ResourceLocation(Reference.MODID, "ingot_steel"));
+		ModelBakery.registerItemVariants(ModItems.ingot1, 
+				new ResourceLocation(Reference.MODID, "ingot1_copper"),
+				new ResourceLocation(Reference.MODID, "ingot1_alien"),
+				new ResourceLocation(Reference.MODID, "ingot1_aliendark"),
+				new ResourceLocation(Reference.MODID, "ingot1_titanium"),
+				new ResourceLocation(Reference.MODID, "ingot1_steel"));
+		
+		ModelBakery.registerItemVariants(ModItems.ingot2, 
+				new ResourceLocation(Reference.MODID, "ingot2_copper"),
+				new ResourceLocation(Reference.MODID, "ingot2_alien"),
+				new ResourceLocation(Reference.MODID, "ingot2_aliendark"),
+				new ResourceLocation(Reference.MODID, "ingot2_titanium"),
+				new ResourceLocation(Reference.MODID, "ingot2_steel"));
+		
+		ModelBakery.registerItemVariants(ModItems.ingot3, 
+				new ResourceLocation(Reference.MODID, "ingot3_copper"),
+				new ResourceLocation(Reference.MODID, "ingot3_alien"),
+				new ResourceLocation(Reference.MODID, "ingot3_aliendark"),
+				new ResourceLocation(Reference.MODID, "ingot3_titanium"),
+				new ResourceLocation(Reference.MODID, "ingot3_steel"));
 		
 		ModelBakery.registerItemVariants(ModItems.coord, 
 				new ResourceLocation(Reference.MODID, "coordinate_char"),
@@ -293,11 +319,23 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t2"),
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t3"));
 		
-		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL),
-				new ResourceLocation(Reference.MODID, "protoss_metal_aiur"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_dark"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_green"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_blue"));
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1),
+				new ResourceLocation(Reference.MODID, "protoss_metalt1_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt1_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt1_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt1_blue"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T2),
+				new ResourceLocation(Reference.MODID, "protoss_metalt2_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt2_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt2_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt2_blue"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T3),
+				new ResourceLocation(Reference.MODID, "protoss_metalt3_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt3_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt3_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt3_blue"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PYLON_CRYSTAL),
 				new ResourceLocation(Reference.MODID, "crystal_pure"),
@@ -342,7 +380,7 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "dyed_iron_silver"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_yellow"));
 
-		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_METAL),
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_METAL_T1),
 				new ResourceLocation(Reference.MODID, "compressed_metal_copper"),
 				new ResourceLocation(Reference.MODID, "compressed_metal_steel"),
 				new ResourceLocation(Reference.MODID, "compressed_metal_titanium"));

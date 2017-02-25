@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.blocks.metablocks;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.ProtossMetalTier1Type;
+import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.ProtossMetalType;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -21,13 +21,13 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 /**
- * This block has three variants. Refer to {@link ProtossMetalTier1Type}
+ * This block has three variants. Refer to {@link ProtossMetalType}
  * 
  */
 public class BlockProtossMetalT3 extends Block implements IMetaBlockName {
 
 	/** The type property */
-	public static final PropertyEnum<ProtossMetalTier1Type> TYPE = PropertyEnum.create("type", ProtossMetalTier1Type.class);
+	public static final PropertyEnum<ProtossMetalType> TYPE = PropertyEnum.create("type", ProtossMetalType.class);
 	
 	/**
 	 * Default constructor
@@ -42,7 +42,7 @@ public class BlockProtossMetalT3 extends Block implements IMetaBlockName {
 		setHardness(5.0F);
 		setResistance(25.0F);
 		setHarvestLevel("pickaxe", 3);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ProtossMetalTier1Type.AIUR)); //Default state
+		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ProtossMetalType.AIUR)); //Default state
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class BlockProtossMetalT3 extends Block implements IMetaBlockName {
 	 */
 	@Override
 	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
-		for(int i = 0; i < ProtossMetalTier1Type.values().length; i++) {
+		for(int i = 0; i < ProtossMetalType.values().length; i++) {
 			list.add(new ItemStack(itemIn, 1, i));
 		}
 	}
@@ -85,7 +85,7 @@ public class BlockProtossMetalT3 extends Block implements IMetaBlockName {
 	 */
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		ProtossMetalTier1Type type = (ProtossMetalTier1Type) state.getValue(TYPE);
+		ProtossMetalType type = (ProtossMetalType) state.getValue(TYPE);
 		return type.getID();
 	}
 	
@@ -94,7 +94,7 @@ public class BlockProtossMetalT3 extends Block implements IMetaBlockName {
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, ProtossMetalTier1Type.values()[meta]);
+		return this.getDefaultState().withProperty(TYPE, ProtossMetalType.values()[meta]);
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class BlockProtossMetalT3 extends Block implements IMetaBlockName {
 	 */
 	@Override
 	public String getSpecialName(ItemStack stack) {
-		return ProtossMetalTier1Type.values()[stack.getItemDamage()].getName();
+		return ProtossMetalType.values()[stack.getItemDamage()].getName();
 	}
 
 }

@@ -10,6 +10,8 @@ import net.bvanseghi.starcraft.items.metaitems.ItemEnergy;
 import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler;
 import net.bvanseghi.starcraft.items.metaitems.ItemEssence;
 import net.bvanseghi.starcraft.items.metaitems.ItemIngotT1;
+import net.bvanseghi.starcraft.items.metaitems.ItemIngotT2;
+import net.bvanseghi.starcraft.items.metaitems.ItemIngotT3;
 import net.bvanseghi.starcraft.items.metaitems.ItemMineralShard;
 import net.bvanseghi.starcraft.items.metaitems.ItemProtossCoordinates;
 import net.bvanseghi.starcraft.items.metaitems.ItemPsiBladeFocuserUncharged;
@@ -42,7 +44,9 @@ public class ModItems extends Item {
 	public static Item essence;
 	public static Item c14Parts;
 
-	public static Item ingot;
+	public static Item ingot1;
+	public static Item ingot2;
+	public static Item ingot3;
 	public static Item dust;
 	public static Item coord;
 
@@ -68,7 +72,9 @@ public class ModItems extends Item {
 		energy = new ItemEnergy("energy");
 		dust = new ItemDust("dust");
 		essence = new ItemEssence("essence");
-		ingot = new ItemIngotT1("ingot");
+		ingot1 = new ItemIngotT1("ingot1");
+		ingot2 = new ItemIngotT2("ingot2");
+		ingot3 = new ItemIngotT3("ingot3");
 		crystal = new ItemCrystal("crystal");
 		c14Parts = new ItemC14GaussRifleParts("part_c14_gauss");
 		bullet = new ItemBullet("bullet");
@@ -91,7 +97,9 @@ public class ModItems extends Item {
 		registerItem(energy);
 		registerItem(dust);
 		registerItem(essence);
-		registerItem(ingot);
+		registerItem(ingot1);
+		registerItem(ingot2);
+		registerItem(ingot3);
 		registerItem(crystal);
 		registerItem(c14Parts);
 		registerItem(bullet);
@@ -117,8 +125,14 @@ public class ModItems extends Item {
 		for(int i = 0; i < ItemEnumHandler.EssenceType.values().length; i++) {
 			registerRender(essence, i, "essence_" + ItemEnumHandler.EssenceType.values()[i].getName());
 		}
-		for(int i = 0; i < ItemEnumHandler.IngotTypeT1.values().length; i++) {
-			registerRender(ingot, i, "ingot_" + ItemEnumHandler.IngotTypeT1.values()[i].getName());
+		for(int i = 0; i < ItemEnumHandler.IngotType.values().length; i++) {
+			registerRender(ingot1, i, "ingot1_" + ItemEnumHandler.IngotType.values()[i].getName());
+		}
+		for(int i = 0; i < ItemEnumHandler.IngotType.values().length; i++) {
+			registerRender(ingot2, i, "ingot2_" + ItemEnumHandler.IngotType.values()[i].getName());
+		}
+		for(int i = 0; i < ItemEnumHandler.IngotType.values().length; i++) {
+			registerRender(ingot3, i, "ingot3_" + ItemEnumHandler.IngotType.values()[i].getName());
 		}
 		for(int i = 0; i < ItemEnumHandler.CrystalType.values().length; i++) {
 			registerRender(crystal, i, "crystal_" + ItemEnumHandler.CrystalType.values()[i].getName());

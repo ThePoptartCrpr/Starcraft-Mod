@@ -2,7 +2,7 @@ package net.bvanseghi.starcraft.items.metaitems;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler.IngotTypeT1;
+import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler.IngotType;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -26,24 +26,24 @@ public class ItemIngotT2 extends Item {
 	 */
 	@Override
 	public void getSubItems(Item item, CreativeTabs tab, List<ItemStack> items) {
-		for(int i = 0; i < IngotTypeT1.values().length; i++) {
+		for(int i = 0; i < IngotType.values().length; i++) {
 			items.add(new ItemStack(item, 1, i));
 		}
 	}
 	
 	/**
-	 * Gets the correct unlocalized name using the {@link IngotTypeT1} enum
+	 * Gets the correct unlocalized name using the {@link IngotType} enum
 	 */
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		for(int i = 0; i < IngotTypeT1.values().length; i++) {
+		for(int i = 0; i < IngotType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + IngotTypeT1.values()[i].getName();
+				return this.getUnlocalizedName() + "." + IngotType.values()[i].getName();
 			}
 			else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + IngotTypeT1.COPPER.getName();
+		return this.getUnlocalizedName() + "." + IngotType.COPPER.getName();
 	}
 }
