@@ -45,6 +45,14 @@ public class StarcraftSoundEvents
 	public static SoundEvent ENTITY_DARKTEMPLAR_HURT;
 	public static SoundEvent ENTITY_DARKTEMPLAR_DEATH;
 	
+	public static SoundEvent ENTITY_PREAVER_LIVE1;
+	public static SoundEvent ENTITY_PREAVER_LIVE2;
+	public static SoundEvent ENTITY_PREAVER_LIVE3;
+	public static SoundEvent ENTITY_PREAVER_LIVE4;
+	public static SoundEvent ENTITY_PREAVER_LIVE5;
+	public static SoundEvent ENTITY_PREAVER_HURT;
+	public static SoundEvent ENTITY_PREAVER_DEATH;
+	
 	public static SoundEvent ENTITY_PROBE_LIVE1;
 	public static SoundEvent ENTITY_PROBE_HURT;
 	public static SoundEvent ENTITY_PROBE_DEATH;
@@ -93,6 +101,14 @@ public class StarcraftSoundEvents
 		ENTITY_DARKTEMPLAR_LIVE2 = registerSound("mob.darktemplar.live2");
 		ENTITY_DARKTEMPLAR_HURT = registerSound("mob.darktemplar.hurt");
 		ENTITY_DARKTEMPLAR_DEATH = registerSound("mob.darktemplar.death");
+		
+		ENTITY_PREAVER_LIVE1 = registerSound("mob.preaver.live1");
+		ENTITY_PREAVER_LIVE2 = registerSound("mob.preaver.live2");
+		ENTITY_PREAVER_LIVE3 = registerSound("mob.preaver.live3");
+		ENTITY_PREAVER_LIVE4 = registerSound("mob.preaver.live4");
+		ENTITY_PREAVER_LIVE5 = registerSound("mob.preaver.live5");
+		ENTITY_PREAVER_HURT = registerSound("mob.preaver.hurt");
+		ENTITY_PREAVER_DEATH = registerSound("mob.preaver.death");
 		
 		ENTITY_PROBE_LIVE1 = registerSound("mob.probe.live1");
 		ENTITY_PROBE_HURT = registerSound("mob.probe.hurt");
