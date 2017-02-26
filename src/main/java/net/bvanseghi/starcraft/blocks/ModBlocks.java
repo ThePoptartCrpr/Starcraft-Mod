@@ -185,7 +185,6 @@ public class ModBlocks extends Block {
 	public static Block CORE_NEXUS_VOID;
 	public static Block CORE_NEXUS_DARK;
 	public static Block CORE_NEXUS_KHALAI;
-	public static Block BLOCKMOVINGLIGHTSOURCE;
 	
 
 	public static void init() {
@@ -261,8 +260,6 @@ public class ModBlocks extends Block {
 		CORE_NEXUS_VOID = new BlockCoreNexusVoid();
 		CORE_NEXUS_DARK = new BlockCoreNexusDark();
 		CORE_NEXUS_KHALAI = new BlockCoreNexusKhalai();
-		
-		BLOCKMOVINGLIGHTSOURCE = new BlockMovingLightSource();
 	}
 
 	public static void register() {
@@ -428,12 +425,6 @@ public class ModBlocks extends Block {
 		
 		GameRegistry.register(CORE_WARPGATE_KHALAI);
 		GameRegistry.register(new ItemBlock(CORE_WARPGATE_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_KHALAI.getRegistryRL()));
-		
-		
-		GameRegistry.register(BLOCKMOVINGLIGHTSOURCE);
-		GameRegistry.register(new ItemBlock(BLOCKMOVINGLIGHTSOURCE).setRegistryName(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL()));
-		
-		
 		//GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
 	}
 
@@ -649,11 +640,6 @@ public class ModBlocks extends Block {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CORE_WARPGATE_KHALAI), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_CORE_WARPGATE_KHALAI.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_WARPGATE_KHALAI.getUnlocalizedName().substring(5));
-		
-		
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BLOCKMOVINGLIGHTSOURCE), 0,
-				new ModelResourceLocation(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL(), "inventory"));
-		LogHelper.logger.log(Level.INFO, "Registered Block: " + BLOCKMOVINGLIGHTSOURCE.getUnlocalizedName().substring(5));
 		
 		//BlockRenderRegister.registerBlockRenderer();
 	
