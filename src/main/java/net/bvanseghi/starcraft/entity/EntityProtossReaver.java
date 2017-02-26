@@ -40,15 +40,25 @@ public class EntityProtossReaver extends EntityProtossPassive {
     }
 	
 	public SoundEvent getAmbientSound() {
-		return StarcraftSoundEvents.ENTITY_PROBE_LIVE1;
+		Random rand = new Random();
+		if(rand.nextInt(3) == 0) {
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE1;
+		}else if(rand.nextInt(3) == 1) {
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE2;
+		}else if(rand.nextInt(3) == 2) {
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE3;
+		}else if(rand.nextInt(3) == 3) {
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE4;
+		}
+		return StarcraftSoundEvents.ENTITY_PREAVER_LIVE5;
 	}
 	
 	public SoundEvent getHurtSound() {
-		return StarcraftSoundEvents.ENTITY_PROBE_HURT;
+		return StarcraftSoundEvents.ENTITY_PREAVER_HURT;
 	}
 	
 	public SoundEvent getDeathSound() {
-		return StarcraftSoundEvents.ENTITY_PROBE_DEATH;
+		return StarcraftSoundEvents.ENTITY_PREAVER_DEATH;
 	}
 
 	/*
