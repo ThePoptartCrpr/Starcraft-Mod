@@ -102,13 +102,13 @@ public class StarcraftSoundEvents
 		ENTITY_DARKTEMPLAR_HURT = registerSound("mob.darktemplar.hurt");
 		ENTITY_DARKTEMPLAR_DEATH = registerSound("mob.darktemplar.death");
 		
-		ENTITY_PREAVER_LIVE1 = registerSound("mob.preaver.live1");
-		ENTITY_PREAVER_LIVE2 = registerSound("mob.preaver.live2");
-		ENTITY_PREAVER_LIVE3 = registerSound("mob.preaver.live3");
-		ENTITY_PREAVER_LIVE4 = registerSound("mob.preaver.live4");
-		ENTITY_PREAVER_LIVE5 = registerSound("mob.preaver.live5");
-		ENTITY_PREAVER_HURT = registerSound("mob.preaver.hurt");
-		ENTITY_PREAVER_DEATH = registerSound("mob.preaver.death");
+		ENTITY_PREAVER_LIVE1 = registerSound("mob.reaver.live1");
+		ENTITY_PREAVER_LIVE2 = registerSound("mob.reaver.live2");
+		ENTITY_PREAVER_LIVE3 = registerSound("mob.reaver.live3");
+		ENTITY_PREAVER_LIVE4 = registerSound("mob.reaver.live4");
+		ENTITY_PREAVER_LIVE5 = registerSound("mob.reaver.live5");
+		ENTITY_PREAVER_HURT = registerSound("mob.reaver.hurt");
+		ENTITY_PREAVER_DEATH = registerSound("mob.reaver.death");
 		
 		ENTITY_PROBE_LIVE1 = registerSound("mob.probe.live1");
 		ENTITY_PROBE_HURT = registerSound("mob.probe.hurt");
