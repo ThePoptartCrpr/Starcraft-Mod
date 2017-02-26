@@ -47,6 +47,14 @@ public class EntityBrutalisk extends EntityZergMob {
         this.setSize(10.0F, 10.0F);
 	}
 	
+	public boolean canBeCollidedWith() {
+		return false;
+	}
+	
+	public boolean canBePushed() {
+		return false;
+	}
+	
 	protected void initEntityAI()
     {
         this.tasks.addTask(0, new EntityAISwimming(this));

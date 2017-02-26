@@ -50,7 +50,7 @@ public class EntityProtossReaver extends EntityProtossMob implements IRangedAtta
 	 protected void initEntityAI()
 	    {
 	        this.tasks.addTask(0, new EntityAISwimming(this));
-	        this.tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 120, 30.0F));
+	        this.tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 100, 30.0F));
 	        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
 	        this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
 	        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));

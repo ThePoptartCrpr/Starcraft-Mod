@@ -137,15 +137,7 @@ public class EntityScarab extends EntityMob
             this.timeSinceIgnited = this.fuseTime - 5;
         }
     }
-
-    protected void entityInit()
-    {
-        super.entityInit();
-        this.dataManager.register(STATE, Integer.valueOf(-1));
-        this.dataManager.register(POWERED, Boolean.valueOf(false));
-        this.dataManager.register(IGNITED, Boolean.valueOf(false));
-    }
-
+    
     public static void func_189762_b(DataFixer p_189762_0_)
     {
         EntityLiving.func_189752_a(p_189762_0_, "Creeper");
@@ -231,10 +223,23 @@ public class EntityScarab extends EntityMob
 			if((ticksExisted > 1000)) {
 				this.explode();
 			}
-			this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
 		}
         
         super.onUpdate();
+    }
+    
+    public void onLivingUpdate()
+    {
+
+        if (!this.worldObj.isRemote)
+        {
+        	for (int i = 0; i < 2; ++i)
+            {
+                this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
+            }
+        }
+
+        super.onLivingUpdate();
     }
 
     protected SoundEvent getHurtSound()
