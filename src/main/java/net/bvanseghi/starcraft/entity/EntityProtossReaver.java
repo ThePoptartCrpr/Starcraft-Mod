@@ -16,7 +16,7 @@ public class EntityProtossReaver extends EntityProtossPassive {
 
 	public EntityProtossReaver(World world) {
 		super(world);
-		this.setSize(0.5F, 1.3F);
+		this.setSize(6.0F, 3.0F);
 		/*
 		 * TODO: recreate entity ai.
 		 */
