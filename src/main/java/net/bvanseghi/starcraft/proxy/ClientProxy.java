@@ -28,6 +28,7 @@ import net.bvanseghi.starcraft.entity.EntityCivilian;
 import net.bvanseghi.starcraft.entity.EntityDarkProbe;
 import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
 import net.bvanseghi.starcraft.entity.EntityHydralisk;
+import net.bvanseghi.starcraft.entity.EntityHydraliskSpike;
 import net.bvanseghi.starcraft.entity.EntityLarva;
 import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityProbe;
@@ -49,6 +50,7 @@ import net.bvanseghi.starcraft.model.ModelCivilian;
 import net.bvanseghi.starcraft.model.ModelDarkProbe;
 import net.bvanseghi.starcraft.model.ModelDarkTemplar;
 import net.bvanseghi.starcraft.model.ModelHydralisk;
+import net.bvanseghi.starcraft.model.ModelHydraliskSpike;
 import net.bvanseghi.starcraft.model.ModelLarva;
 import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
 import net.bvanseghi.starcraft.model.ModelProbe;
@@ -63,6 +65,7 @@ import net.bvanseghi.starcraft.renderer.RenderCivilian;
 import net.bvanseghi.starcraft.renderer.RenderDarkProbe;
 import net.bvanseghi.starcraft.renderer.RenderDarkTemplar;
 import net.bvanseghi.starcraft.renderer.RenderHydralisk;
+import net.bvanseghi.starcraft.renderer.RenderHydraliskSpike;
 import net.bvanseghi.starcraft.renderer.RenderLarva;
 import net.bvanseghi.starcraft.renderer.RenderLarvaCocoon;
 import net.bvanseghi.starcraft.renderer.RenderProbe;
@@ -191,6 +194,7 @@ public class ClientProxy extends ServerProxy {
 				new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f)); // use
 																												// deprecated
 																												// method
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class,
 				new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f)); // use
 																												// deprecated

@@ -33,7 +33,6 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
@@ -151,9 +150,9 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
         float f1 = MathHelper.sqrt_float(distance) * 0.5F;
         for (int i = 0; i < 1; ++i)
         {
-        	 EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.worldObj, this, d0 + this.rand.nextGaussian() * (double)f1, d1, d2 + this.rand.nextGaussian() * (double)f1);
-        	 entitysmallfireball.posY = this.posY + (double)(this.height / 2.0F) + 0.5D;
-        	 this.worldObj.spawnEntityInWorld(entitysmallfireball);
+        	 EntityHydraliskSpike entityhydraliskspike = new EntityHydraliskSpike(this.worldObj, d0 + this.rand.nextGaussian() * (double)f1, d1, d2 + this.rand.nextGaussian() * (double)f1);
+        	 entityhydraliskspike.posY = this.posY + (double)(this.height / 2.0F) + 0.5D;
+        	 this.worldObj.spawnEntityInWorld(entityhydraliskspike);
         }
 	}
 }
