@@ -10,6 +10,7 @@ import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
 import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -196,40 +197,61 @@ public class Library {
 	}
 	
 	/**
-	 * <em>Use this one because it saves three params.
-	 * At some point, I'll eliminate the other and just
-	 * use this, but for now I did some lazy method invocation</em><br>
 	 * Larva -> cocoon. Simple
 	 * @param world the world
 	 * @param larva the larva in question
 	 * @param rand {@link Random} instance which will eventually
 	 * determine what gets pooped out later
 	 */
+	@Deprecated
 	public static void larvaMorph(World world, EntityLarva larva, Random rand) {
-		if(!world.isRemote){
-			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
-			cocoon.setLocationAndAngles(larva.posX, larva.posY, larva.posZ, 0, 0);
-			world.spawnEntityInWorld(cocoon);
-			larva.setDead();
-		}
+//		if(!world.isRemote) {
+//			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
+//			cocoon.setLocationAndAngles(larva.posX, larva.posY, larva.posZ, 0, 0);
+//			world.spawnEntityInWorld(cocoon);
+//			larva.setDead();
+//		}
+		
+		replaceEntity(larva, new EntityLarvaCocoon(larva.worldObj), false);
 	}
 	
 	/**
-	 * <em>Use this one because it saves three params.
-	 * At some point, I'll eliminate the other and just
-	 * use this, but for now I did some lazy method invocation</em><br>
 	 * Cocoon -> Zergling. Simple
 	 * @param world the world
 	 * @param cocoon the larva in question
-	 * @param rand {@link Random} instance which will eventually
+	 * @param rand RNG which will eventually
 	 * determine what gets pooped out later
 	 */
+	@Deprecated
 	public static void cocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
-		if(!world.isRemote){
-			EntityZergling zergling = new EntityZergling(world);
-			zergling.setLocationAndAngles(cocoon.posX, cocoon.posY, cocoon.posZ, 0, 0);
-			world.spawnEntityInWorld(zergling);
-			cocoon.setDead();
+//		if(!world.isRemote) {
+//			EntityZergling zergling = new EntityZergling(world);
+//			zergling.setLocationAndAngles(cocoon.posX, cocoon.posY, cocoon.posZ, 0, 0);
+//			world.spawnEntityInWorld(zergling);
+//			cocoon.setDead();
+//		}
+		
+		replaceEntity(cocoon, new EntityZergling(cocoon.worldObj), false);
+	}
+	
+	/**
+	 * Replaces {@code current} with {@code next} in the same
+	 * world. Can transfer pitch and yaw rotation angles
+	 * @param current the entity to replace
+	 * @param next the replacement
+	 * @param keepRot whether or not to transfer the pitch
+	 * and yaw rotation angles of {@code current} to {@code next}
+	 */
+	public static void replaceEntity(Entity current, Entity next, boolean keepRot) {
+		if(!current.worldObj.isRemote) {
+			if(keepRot) {
+				next.setLocationAndAngles(current.posX, current.posY, current.posZ, current.rotationYaw, current.rotationPitch);
+			} else {
+				next.setLocationAndAngles(current.posX, current.posY, current.posZ, 0, 0);
+			}
+			
+			current.worldObj.spawnEntityInWorld(next);
+			current.setDead();
 		}
 	}
 }
