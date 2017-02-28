@@ -37,11 +37,6 @@ public class EntityProtossReaver extends EntityProtossMob implements IRangedAtta
 	{
 		return true;
 	}
-	 
-	@Override
-	public boolean canBePushed() {
-		return false; 
-	}
 
 	protected void initEntityAI()
 	{

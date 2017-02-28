@@ -34,12 +34,12 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -116,7 +116,7 @@ public class EntityScarab extends EntityMob
 	{
 		return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
 	}
-
+	
     public void fall(float distance, float damageMultiplier)
     {
         super.fall(distance, damageMultiplier);
@@ -127,7 +127,15 @@ public class EntityScarab extends EntityMob
             this.timeSinceIgnited = this.fuseTime - 5;
         }
     }
-    
+
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(STATE, Integer.valueOf(-1));
+        this.dataManager.register(POWERED, Boolean.valueOf(false));
+        this.dataManager.register(IGNITED, Boolean.valueOf(false));
+    }
+
     public static void func_189762_b(DataFixer p_189762_0_)
     {
         EntityLiving.func_189752_a(p_189762_0_, "Creeper");
@@ -209,37 +217,7 @@ public class EntityScarab extends EntityMob
             }
         }
 
-        if(!worldObj.isRemote) {
-			if((ticksExisted > 1000)) {
-				this.explode();
-			}
-		}
-        
         super.onUpdate();
-    }
-    
-    public void onLivingUpdate()
-    {
-
-        if (!this.worldObj.isRemote)
-        {
-        	for (int i = 0; i < 2; ++i)
-            {
-                this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
-            }
-        }
-
-        super.onLivingUpdate();
-    }
-
-    protected SoundEvent getHurtSound()
-    {
-        return SoundEvents.ENTITY_CREEPER_HURT;
-    }
-
-    protected SoundEvent getDeathSound()
-    {
-        return SoundEvents.ENTITY_CREEPER_DEATH;
     }
 
     /**
@@ -258,9 +236,9 @@ public class EntityScarab extends EntityMob
                 int k = i + this.rand.nextInt(j - i + 1);
                 this.dropItem(Item.getItemById(k), 1);
             }
-            else if (cause.getEntity() instanceof EntityCreeper && cause.getEntity() != this && ((EntityCreeper)cause.getEntity()).getPowered() && ((EntityCreeper)cause.getEntity()).isAIEnabled())
+            else if (cause.getEntity() instanceof EntityScarab && cause.getEntity() != this && ((EntityScarab)cause.getEntity()).getPowered() && ((EntityScarab)cause.getEntity()).isAIEnabled())
             {
-                ((EntityCreeper)cause.getEntity()).incrementDroppedSkulls();
+                ((EntityScarab)cause.getEntity()).incrementDroppedSkulls();
                 this.entityDropItem(new ItemStack(Items.SKULL, 1, 4), 0.0F);
             }
         }
@@ -286,6 +264,12 @@ public class EntityScarab extends EntityMob
     public float getCreeperFlashIntensity(float p_70831_1_)
     {
         return ((float)this.lastActiveTime + (float)(this.timeSinceIgnited - this.lastActiveTime) * p_70831_1_) / (float)(this.fuseTime - 2);
+    }
+
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return LootTableList.ENTITIES_CREEPER;
     }
 
     /**
@@ -338,9 +322,10 @@ public class EntityScarab extends EntityMob
     {
         if (!this.worldObj.isRemote)
         {
+            boolean flag = this.worldObj.getGameRules().getBoolean("mobGriefing");
             float f = this.getPowered() ? 2.0F : 1.0F;
             this.dead = true;
-            this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius * f, false);
+            this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius * f, flag);
             this.setDead();
         }
     }
