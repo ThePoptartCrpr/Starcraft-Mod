@@ -7,11 +7,11 @@ import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
 import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
 import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
@@ -20,9 +20,9 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -34,20 +34,19 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.datafix.DataFixer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityScarab extends EntityMob
 {
-    private static final DataParameter<Integer> STATE = EntityDataManager.<Integer>createKey(EntityCreeper.class, DataSerializers.VARINT);
-    private static final DataParameter<Boolean> POWERED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
-    private static final DataParameter<Boolean> IGNITED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Integer> STATE = EntityDataManager.<Integer>createKey(EntityScarab.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> POWERED = EntityDataManager.<Boolean>createKey(EntityScarab.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> IGNITED = EntityDataManager.<Boolean>createKey(EntityScarab.class, DataSerializers.BOOLEAN);
     /**
      * Time when this creeper was last in an active state (Messed up code here, probably causes creeper animation to go
      * weird)
@@ -63,20 +62,9 @@ public class EntityScarab extends EntityMob
     public EntityScarab(World worldIn)
     {
         super(worldIn);
-        this.setSize(0.1F, 0.1F);
+        this.setSize(0.6F, 1.7F);
     }
 
-    @Override
-    public boolean canBeCollidedWith() {
-    	return false; 
-    }
-    
-    @Override
-    public float getExplosionResistance(Explosion explosionIn, World worldIn, BlockPos pos, IBlockState blockStateIn)
-    {
-        return 10000.0F;
-    }
-    
     protected void initEntityAI()
     {
         this.tasks.addTask(1, new EntityAISwimming(this));
@@ -85,33 +73,31 @@ public class EntityScarab extends EntityMob
         this.tasks.addTask(5, new EntityAIWander(this, 0.8D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(6, new EntityAILookIdle(this));
+        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.applyEntityAI();
     }
-
+    
     protected void applyEntityAI()
     {
-    	 tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-         targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZergMob.class, true));
-         targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
-         
-         targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-         
-         targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityZergPassive.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
-      
+    	tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+        targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+        targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZergMob.class, true));
+        targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        
+        targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        
+        targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityZergPassive.class, true));
+        targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
     }
 
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
     }
 
     /**
-     * The maximum height from where the entity is allowed to jump (used in pathfinder)
+     * The maximum height from where the entity is alowed to jump (used in pathfinder)
      */
     public int getMaxFallHeight()
     {
@@ -128,7 +114,15 @@ public class EntityScarab extends EntityMob
             this.timeSinceIgnited = this.fuseTime - 5;
         }
     }
-    
+
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(STATE, Integer.valueOf(-1));
+        this.dataManager.register(POWERED, Boolean.valueOf(false));
+        this.dataManager.register(IGNITED, Boolean.valueOf(false));
+    }
+
     public static void func_189762_b(DataFixer p_189762_0_)
     {
         EntityLiving.func_189752_a(p_189762_0_, "Creeper");
@@ -210,27 +204,7 @@ public class EntityScarab extends EntityMob
             }
         }
 
-        if(!worldObj.isRemote) {
-			if((ticksExisted > 1000)) {
-				this.explode();
-			}
-		}
-        
         super.onUpdate();
-    }
-    
-    public void onLivingUpdate()
-    {
-
-        if (!this.worldObj.isRemote)
-        {
-        	for (int i = 0; i < 2; ++i)
-            {
-                this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
-            }
-        }
-
-        super.onLivingUpdate();
     }
 
     protected SoundEvent getHurtSound()
@@ -259,9 +233,9 @@ public class EntityScarab extends EntityMob
                 int k = i + this.rand.nextInt(j - i + 1);
                 this.dropItem(Item.getItemById(k), 1);
             }
-            else if (cause.getEntity() instanceof EntityCreeper && cause.getEntity() != this && ((EntityCreeper)cause.getEntity()).getPowered() && ((EntityCreeper)cause.getEntity()).isAIEnabled())
+            else if (cause.getEntity() instanceof EntityScarab && cause.getEntity() != this && ((EntityScarab)cause.getEntity()).getPowered() && ((EntityScarab)cause.getEntity()).isAIEnabled())
             {
-                ((EntityCreeper)cause.getEntity()).incrementDroppedSkulls();
+                ((EntityScarab)cause.getEntity()).incrementDroppedSkulls();
                 this.entityDropItem(new ItemStack(Items.SKULL, 1, 4), 0.0F);
             }
         }
@@ -287,6 +261,12 @@ public class EntityScarab extends EntityMob
     public float getCreeperFlashIntensity(float p_70831_1_)
     {
         return ((float)this.lastActiveTime + (float)(this.timeSinceIgnited - this.lastActiveTime) * p_70831_1_) / (float)(this.fuseTime - 2);
+    }
+
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return LootTableList.ENTITIES_CREEPER;
     }
 
     /**
@@ -339,9 +319,10 @@ public class EntityScarab extends EntityMob
     {
         if (!this.worldObj.isRemote)
         {
+            boolean flag = this.worldObj.getGameRules().getBoolean("mobGriefing");
             float f = this.getPowered() ? 2.0F : 1.0F;
             this.dead = true;
-            this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius * f, false);
+            this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius * f, flag);
             this.setDead();
         }
     }
