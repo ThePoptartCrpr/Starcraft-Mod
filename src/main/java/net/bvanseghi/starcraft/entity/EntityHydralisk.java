@@ -19,19 +19,6 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityIronGolem;
-import net.minecraft.entity.monster.EntityPolarBear;
-import net.minecraft.entity.passive.EntityBat;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityHorse;
-import net.minecraft.entity.passive.EntityMooshroom;
-import net.minecraft.entity.passive.EntityOcelot;
-import net.minecraft.entity.passive.EntityPig;
-import net.minecraft.entity.passive.EntityRabbit;
-import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -70,29 +57,15 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 
     protected void applyEntityAI()
     {
-    	 tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-         targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-         targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
-         targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-         
-         targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
-         targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
-         
-         targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-         targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityVillager>(this, EntityVillager.class, false));
-         targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityIronGolem>(this, EntityIronGolem.class, true));
-         
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityWolf>(this, EntityWolf.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityCow>(this, EntityCow.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityChicken>(this, EntityChicken.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntitySheep>(this, EntitySheep.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityPolarBear>(this, EntityPolarBear.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityMooshroom>(this, EntityMooshroom.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityPig>(this, EntityPig.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityOcelot>(this, EntityOcelot.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityHorse>(this, EntityHorse.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityBat>(this, EntityBat.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityRabbit>(this, EntityRabbit.class, true));
+    	tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+        targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+        targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, true));
+        targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        
+        targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        
+        targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityProtossPassive.class, true));
+        targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
     }
 	
 	public int getTalkInterval()
