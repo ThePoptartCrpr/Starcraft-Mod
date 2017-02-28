@@ -191,6 +191,7 @@ public class ClientProxy extends ServerProxy {
 				new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f)); // use
 																												// deprecated
 																												// method
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class,
 				new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f)); // use
 																												// deprecated
