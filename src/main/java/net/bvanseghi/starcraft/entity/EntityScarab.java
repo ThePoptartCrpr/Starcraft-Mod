@@ -45,78 +45,77 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityScarab extends EntityMob
 {
-    private static final DataParameter<Integer> STATE = EntityDataManager.<Integer>createKey(EntityCreeper.class, DataSerializers.VARINT);
-    private static final DataParameter<Boolean> POWERED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
-    private static final DataParameter<Boolean> IGNITED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
-    /**
-     * Time when this creeper was last in an active state (Messed up code here, probably causes creeper animation to go
-     * weird)
-     */
-    private int lastActiveTime;
-    /** The amount of time since the creeper was close enough to the player to ignite */
-    private int timeSinceIgnited;
-    private int fuseTime = 10;
-    /** Explosion radius for this creeper. */
-    private int explosionRadius = 6;
-    private int droppedSkulls;
+	private static final DataParameter<Integer> STATE = EntityDataManager.<Integer>createKey(EntityCreeper.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> POWERED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> IGNITED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
+	/**
+	 * Time when this creeper was last in an active state (Messed up code here, probably causes creeper animation to go
+	 * weird)
+	 */
+	private int lastActiveTime;
+	/** The amount of time since the creeper was close enough to the player to ignite */
+	private int timeSinceIgnited;
+	private int fuseTime = 10;
+	/** Explosion radius for this creeper. */
+	private int explosionRadius = 6;
+	private int droppedSkulls;
+	
+	public EntityScarab(World worldIn)
+	{
+		super(worldIn);
+		this.setSize(0.1F, 0.1F);
+	}
 
-    public EntityScarab(World worldIn)
-    {
-        super(worldIn);
-        this.setSize(0.1F, 0.1F);
-    }
-
-    @Override
-    public boolean canBeCollidedWith() {
-    	return false; 
-    }
-    
-    @Override
-    public float getExplosionResistance(Explosion explosionIn, World worldIn, BlockPos pos, IBlockState blockStateIn)
-    {
-        return 10000.0F;
-    }
-    
-    protected void initEntityAI()
-    {
-        this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIScarabExplode(this));
-        this.tasks.addTask(4, new EntityAIAttackMelee(this, 1.0D, false));
-        this.tasks.addTask(5, new EntityAIWander(this, 0.8D));
-        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(6, new EntityAILookIdle(this));
-        this.applyEntityAI();
-    }
-
-    protected void applyEntityAI()
-    {
-    	 tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-         targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZergMob.class, true));
-         targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
-         
-         targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-         
-         targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityZergPassive.class, true));
-         targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
-      
+	@Override
+	public boolean canBeCollidedWith() {
+		return false; 
+	}
+	
+	@Override
+	public float getExplosionResistance(Explosion explosionIn, World worldIn, BlockPos pos, IBlockState blockStateIn)
+	{
+		return 10000.0F;
+	}
+	
+	protected void initEntityAI()
+	{
+		this.tasks.addTask(1, new EntityAISwimming(this));
+		this.tasks.addTask(2, new EntityAIScarabExplode(this));
+		this.tasks.addTask(4, new EntityAIAttackMelee(this, 1.0D, false));
+		this.tasks.addTask(5, new EntityAIWander(this, 0.8D));
+		this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		this.tasks.addTask(6, new EntityAILookIdle(this));
+		this.applyEntityAI();
     }
 
-    protected void applyEntityAttributes()
-    {
-        super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+	protected void applyEntityAI()
+	{
+		tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityZergMob>(this, EntityZergMob.class, true));
+		targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
+		
+		targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+		
+		targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityZergPassive>(this, EntityZergPassive.class, true));
+		targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
+	}
+
+	protected void applyEntityAttributes()
+	{
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
-    }
+	}
 
-    /**
-     * The maximum height from where the entity is allowed to jump (used in pathfinder)
-     */
-    public int getMaxFallHeight()
-    {
-        return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
-    }
+	/**
+	 * The maximum height from where the entity is allowed to jump (used in pathfinder)
+	 */
+	public int getMaxFallHeight()
+	{
+		return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
+	}
 
     public void fall(float distance, float damageMultiplier)
     {

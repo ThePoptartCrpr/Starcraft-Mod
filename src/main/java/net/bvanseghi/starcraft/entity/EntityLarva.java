@@ -88,7 +88,7 @@ public class EntityLarva extends EntityZergPassive {
 		super.onUpdate();
 		if(!this.worldObj.isRemote){
 			if((this.ticksExisted + rand.nextInt(1000) > 4000)) {
-				Library.larvaMorph(this.worldObj, this, random);
+				Library.replaceEntity(this, new EntityLarvaCocoon(worldObj), false);
 			}else{
 				
 			}
