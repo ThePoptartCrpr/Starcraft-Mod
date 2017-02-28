@@ -209,16 +209,6 @@ public class EntityScarab extends EntityMob
         super.onUpdate();
     }
 
-    protected SoundEvent getHurtSound()
-    {
-        return SoundEvents.ENTITY_CREEPER_HURT;
-    }
-
-    protected SoundEvent getDeathSound()
-    {
-        return SoundEvents.ENTITY_CREEPER_DEATH;
-    }
-
     /**
      * Called when the mob's health reaches 0.
      */
