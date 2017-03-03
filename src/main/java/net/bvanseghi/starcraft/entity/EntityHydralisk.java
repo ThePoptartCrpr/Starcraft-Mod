@@ -59,13 +59,13 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
     {
     	tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, true));
-        targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
+        targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
         
-        targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
         
-        targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityProtossPassive.class, true));
-        targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
+        targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
+        targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
     }
 	
 	public int getTalkInterval()

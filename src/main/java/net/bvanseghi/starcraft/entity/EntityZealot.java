@@ -58,13 +58,13 @@ public class EntityZealot extends EntityProtossMob {
     {
     	tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZergMob.class, true));
-        targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityZergMob>(this, EntityZergMob.class, true));
+        targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
         
-        targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
         
-        targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityZergPassive.class, true));
-        targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
+        targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityZergPassive>(this, EntityZergPassive.class, true));
+        targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
     }
 	
     public SoundEvent getAmbientSound() {
@@ -117,6 +117,3 @@ public class EntityZealot extends EntityProtossMob {
 		return super.attackEntityFrom(source, damageDealt);
 	}
 }
-
-
-
