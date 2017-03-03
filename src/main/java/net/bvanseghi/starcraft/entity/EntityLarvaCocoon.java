@@ -57,7 +57,7 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 		super.onUpdate();
 		
 		if(!worldObj.isRemote) {
-			if((ticksExisted > 340)) {
+			if((ticksExisted > 1020)) {
 				Library.cocoonMorph(worldObj, this, random);
 			}
 		}

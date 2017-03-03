@@ -1,6 +1,6 @@
 {   "parent": "block/thin_block",
     "textures": {
-        "texture": "starcraft:block/zerg_creep"
+        "texture": "starcraft:blocks/zerg_creep"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],
