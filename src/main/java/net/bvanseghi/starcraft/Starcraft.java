@@ -1,9 +1,11 @@
 package net.bvanseghi.starcraft;
 
+import net.bvanseghi.starcraft.events.CommandDimensionTp;
 import net.bvanseghi.starcraft.items.ItemC14GaussRifle;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.proxy.ServerProxy;
 import net.bvanseghi.starcraft.renderer.RenderItemC14GaussRifle;
+import net.bvanseghi.starcraft.worldgen.DimensionRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,6 +19,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -51,11 +54,17 @@ public class Starcraft {
 		MinecraftForge.EVENT_BUS.register(this);
 		GameRegistry.register(itemTest);
 	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemTest, 0, new ModelResourceLocation("starcraft:weapon_rifle_c14_gauss", "inventory"));
+	   // DimensionRegistry.mainRegistry();
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		proxy.postInit(event);
+	}
+	
+	@EventHandler
+	public void serverLoad(FMLServerStartingEvent event) {
+		event.registerServerCommand(new CommandDimensionTp());
 	}
 
 	//Probably more C14 Gauss Rifle testing

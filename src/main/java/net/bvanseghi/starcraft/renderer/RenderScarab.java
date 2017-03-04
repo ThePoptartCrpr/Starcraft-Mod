@@ -1,5 +1,7 @@
 package net.bvanseghi.starcraft.renderer;
 
+import org.lwjgl.opengl.GL11;
+
 import net.bvanseghi.starcraft.entity.EntityScarab;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.model.ModelScarab;
@@ -33,6 +35,7 @@ public class RenderScarab<T> extends RenderLiving<EntityScarab> {
 	
 	protected void preRenderCallback(EntityScarab entitylivingbaseIn, float partialTickTime)
     {
+		GL11.glTranslatef(0.0F, 0.25F, 0.0F);
     }
 	
 	@Override

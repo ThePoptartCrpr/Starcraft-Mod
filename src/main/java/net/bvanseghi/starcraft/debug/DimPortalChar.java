@@ -3,11 +3,14 @@ package net.bvanseghi.starcraft.debug;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import net.bvanseghi.starcraft.CreativeTab;
 import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.bvanseghi.starcraft.lib.ModTeleporter;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.lib.StarcraftConfig;
+import net.bvanseghi.starcraft.worldgen.DimensionRegistry;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -34,9 +37,11 @@ public class DimPortalChar extends ModBlocks {
 		
 	}
 	
-	public void addCollisionBoxesToList(BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, AxisAlignedBB blockBox) {
+	@Override
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn)
+    {
 		
-	}
+    }
 
 	@Override
 	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
@@ -63,7 +68,7 @@ public class DimPortalChar extends ModBlocks {
 			try {
 				EntityPlayerMP player = (EntityPlayerMP) entity;
 				if (player.dimension != this.dim) {
-					player.getServer().getPlayerList().transferPlayerToDimension(player, this.dim, new ModTeleporter(player.mcServer.worldServerForDimension(this.dim)));
+					player.mcServer.getPlayerList().transferPlayerToDimension(player, DimensionRegistry.AiurDimensionID, new ModTeleporter(player.mcServer.worldServerForDimension(DimensionRegistry.AiurDimensionID)));
 				}
 			} catch (ClassCastException e) {
 				return; // not a player

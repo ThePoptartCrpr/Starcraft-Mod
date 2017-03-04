@@ -20,6 +20,7 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -108,12 +109,21 @@ public class EntityDarkTemplar extends EntityProtossMob {
 	
 	@Override
 	public void onUpdate() {
-		for (int i = 0; i < 2; ++i)
-        {
-			this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, null);
-        }
 		super.onUpdate();
 	}
+	
+	public void onLivingUpdate()
+    {
+        if (this.worldObj.isRemote)
+        {
+            for (int i = 0; i < 2; ++i)
+            {
+                this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
+            }
+        }
+
+        super.onLivingUpdate();
+    }
 	
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float damageDealt) {
