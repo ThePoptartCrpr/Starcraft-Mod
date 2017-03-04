@@ -18,6 +18,10 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 	private float xTrans = 1.2699993f;
 	private float yTrans = -.28f;
 	private float zTrans = 1;
+	private float xRot = -.01f;
+	private float yRot = -.00000007f; //.009999925f
+	private float zRot = 0;
+	private float angle = -7.860085f;
 	public static final ModelC14GaussRifle model = new ModelC14GaussRifle();
 
 	public RenderItemC14GaussRifle() {
@@ -97,6 +101,7 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
     	GlStateManager.rotate(0F, 1.0F, 0.0F, 0.0F);
     	GlStateManager.rotate(-40F, 0.0F, 1.0F, 0.0F);
     	GlStateManager.rotate(0F, 0.0F, 0.0F, 1.0F);
+    	GlStateManager.rotate(angle, xRot, yRot, zRot);
     	GlStateManager.translate(xTrans, yTrans, zTrans);
     	GlStateManager.scale(tempScale, tempScale, tempScale);
     	GL11.glDisable(GL11.GL_CULL_FACE);
@@ -113,6 +118,8 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 //    		System.out.println(zTrans);
 //    		xTrans += .01f;
 //    		System.out.println(xTrans);
+    		zRot += .01f;
+    		System.out.println(zRot);
     	} else if(Mouse.isButtonDown(1)) {
 //    		tempScale -= .01f;
 //    		System.out.println(tempScale);
@@ -122,6 +129,8 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 //    		System.out.println(zTrans);
 //    		xTrans -= .01f;
 //    		System.out.println(xTrans);
+    		zRot -= .01f;
+    		System.out.println(zRot);
     	}
     }
 
