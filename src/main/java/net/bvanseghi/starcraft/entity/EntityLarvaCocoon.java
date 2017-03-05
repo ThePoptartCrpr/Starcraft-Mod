@@ -53,8 +53,8 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 		super.onUpdate();
 		
 		if(!worldObj.isRemote) {
-			if((ticksExisted > 1020)) {
-				Library.replaceEntity(false, this, new EntityZergling(worldObj));
+			if((ticksExisted > 740)) {
+				Library.replaceEntity(false, this, new EntityZergling(worldObj), new EntityZergling(worldObj));
 			}
 		}
 	}
