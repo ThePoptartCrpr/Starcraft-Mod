@@ -54,7 +54,7 @@ public class Starcraft {
 		MinecraftForge.EVENT_BUS.register(this);
 		GameRegistry.register(itemTest);
 	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemTest, 0, new ModelResourceLocation("starcraft:weapon_rifle_c14_gauss", "inventory"));
-	   // DimensionRegistry.mainRegistry();
+	    DimensionRegistry.mainRegistry();
 	}
 
 	@EventHandler

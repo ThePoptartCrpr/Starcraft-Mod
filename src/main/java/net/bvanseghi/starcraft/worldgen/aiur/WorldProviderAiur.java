@@ -1,7 +1,7 @@
 package net.bvanseghi.starcraft.worldgen.aiur;
 
 import net.bvanseghi.starcraft.worldgen.DimensionRegistry;
-import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
+import net.minecraft.init.Biomes;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
@@ -14,11 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class WorldProviderAiur extends WorldProvider {
 
 	public World worldIn;
-
-	@Override
-	public void createBiomeProvider() {
-		this.biomeProvider = new BiomeProviderSingle(BiomesSC.biomeMoltenInferno);
-	}
 	
 	@Override
 	public DimensionType getDimensionType() {
@@ -49,7 +44,7 @@ public class WorldProviderAiur extends WorldProvider {
 	
 	@Override
 	public IChunkGenerator createChunkGenerator() {
-		return new ChunkProviderAiur(worldObj, worldObj.getSeed());
+		return new ChunkProviderAiur(worldObj);
 	}
 	
 }

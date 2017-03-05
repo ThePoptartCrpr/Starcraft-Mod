@@ -59,6 +59,7 @@ import net.bvanseghi.starcraft.tileentity.ModTileEntities;
 import net.bvanseghi.starcraft.tools.ModTools;
 import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.bvanseghi.starcraft.worldgen.SCWorldGen;
+import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.Item;
@@ -165,6 +166,7 @@ public class ClientProxy extends ServerProxy {
 		SCWorldGen.preInit();
 		ModEntities.registerEntities();
 		StarcraftSoundEvents.registerSounds();
+		BiomesSC.init();
 	}
 
 	public void init(FMLInitializationEvent event) {

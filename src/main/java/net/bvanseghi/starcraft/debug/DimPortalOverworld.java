@@ -66,7 +66,7 @@ public class DimPortalOverworld extends ModBlocks {
 			try {
 				EntityPlayerMP player = (EntityPlayerMP) entity;
 				if (player.dimension != this.dim) {
-					player.getServer().getPlayerList().transferPlayerToDimension(player, this.dim, new ModTeleporter(player.mcServer.worldServerForDimension(this.dim)));
+					player.getServer().getPlayerList().transferPlayerToDimension(player, this.dim, new ModTeleporter(player.mcServer.worldServerForDimension(this.dim), 0, 0, 0));
 				}
 			} catch (ClassCastException e) {
 				return; // not a player

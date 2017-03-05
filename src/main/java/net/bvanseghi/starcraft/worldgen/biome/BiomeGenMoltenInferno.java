@@ -15,7 +15,7 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 		super(id);
 
 
-		this.topBlock = ModBlocks.ASH_CHAR.getDefaultState();
+		this.topBlock = Blocks.OBSIDIAN.getDefaultState();
 		this.fillerBlock = Blocks.OBSIDIAN.getDefaultState();
 
 		this.spawnableMonsterList.clear();

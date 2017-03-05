@@ -67,7 +67,7 @@ public class CommandDimensionTp implements ICommand{
 		else if(Arrays.asList(args).contains(String.valueOf(DimensionRegistry.AiurDimensionID))) {
 			sender.addChatMessage(new TextComponentTranslation("Sending %s to the Tutorial Dimension.", sender.getName()));
 			thePlayer.timeUntilPortal = 10;
-			thePlayer.mcServer.getPlayerList().transferPlayerToDimension(thePlayer, DimensionRegistry.AiurDimensionID, new ModTeleporter(thePlayer.mcServer.worldServerForDimension(DimensionRegistry.AiurDimensionID)));
+			thePlayer.mcServer.getPlayerList().transferPlayerToDimension(thePlayer, DimensionRegistry.AiurDimensionID, new ModTeleporter(thePlayer.mcServer.worldServerForDimension(DimensionRegistry.AiurDimensionID), 0, 0, 0));
 		}
 		else if(Arrays.asList(args).contains("help")) {
 			sender.addChatMessage(new TextComponentTranslation("Please choose either 0 for Overworld, -1 for Nether, 1 for End, and 2 for the Tutorial Dimension."));

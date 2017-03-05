@@ -1,38 +1,60 @@
 package net.bvanseghi.starcraft.lib;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
-public class ModTeleporter extends Teleporter
-{
+import javax.annotation.Nonnull;
 
-	public ModTeleporter(WorldServer worldIn)
-	{
-		super(worldIn);
-	}
+public class ModTeleporter extends Teleporter {
 
-	@Override
-	public void placeInPortal(Entity entityIn, float rotationYaw)
-    {
-		
+    public ModTeleporter(WorldServer world, double x, double y, double z) {
+        super(world);
+        this.worldServer = world;
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
-	
-	@Override
-	public boolean placeInExistingPortal(Entity entityIn, float p_180620_2_)
-    {
-		return true;
-    }
-	
-	@Override
-	public boolean makePortal(Entity p_85188_1_)
-    {
-		return true;
-    }
-	
+
+    private final WorldServer worldServer;
+    private double x;
+    private double y;
+    private double z;
+
     @Override
-	public void removeStalePortalLocations(long p_85189_1_)
-    {
-    	
+    public void placeInPortal(@Nonnull Entity entity, float rotationYaw) {
+        this.worldServer.getBlockState(new BlockPos((int) this.x, (int) this.y, (int) this.z));
+
+        entity.setPosition(this.x, this.y, this.z);
+        entity.motionX = 0.0f;
+        entity.motionY = 0.0f;
+        entity.motionZ = 0.0f;
     }
+
+
+    public static void teleportToDimension(EntityPlayer player, int dimension, double x, double y, double z) {
+        int oldDimension = player.worldObj.provider.getDimension();
+        EntityPlayerMP entityPlayerMP = (EntityPlayerMP) player;
+        MinecraftServer server = ((EntityPlayerMP) player).worldObj.getMinecraftServer();
+        WorldServer worldServer = server.worldServerForDimension(dimension);
+        player.addExperienceLevel(0);
+
+        if (worldServer == null || worldServer.getMinecraftServer() == null){ //Dimension doesn't exist
+            throw new IllegalArgumentException("Dimension: "+dimension+" doesn't exist!");
+        }
+
+        worldServer.getMinecraftServer().getPlayerList().transferPlayerToDimension(entityPlayerMP, dimension, new ModTeleporter(worldServer, x, y, z));
+        player.setPositionAndUpdate(x, y, z);
+        if (oldDimension == 1) {
+            // For some reason teleporting out of the end does weird things.
+            player.setPositionAndUpdate(x, y, z);
+            worldServer.spawnEntityInWorld(player);
+            worldServer.updateEntityWithOptionalForce(player, false);
+        }
+    }
+
 }
