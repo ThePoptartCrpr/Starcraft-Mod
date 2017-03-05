@@ -5,7 +5,6 @@ import net.bvanseghi.starcraft.items.ItemC14GaussRifle;
 import net.bvanseghi.starcraft.lib.Reference;
 import net.bvanseghi.starcraft.proxy.ServerProxy;
 import net.bvanseghi.starcraft.renderer.RenderItemC14GaussRifle;
-import net.bvanseghi.starcraft.worldgen.DimensionRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;

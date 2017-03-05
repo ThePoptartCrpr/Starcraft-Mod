@@ -11,7 +11,6 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
@@ -129,7 +128,6 @@ public class ChunkProviderAiur implements IChunkGenerator
 
                 for (int i2 = 0; i2 < 32; ++i2)
                 {
-                    double d0 = 0.125D;
                     double d1 = this.heightMap[i1 + i2];
                     double d2 = this.heightMap[j1 + i2];
                     double d3 = this.heightMap[k1 + i2];
@@ -141,7 +139,6 @@ public class ChunkProviderAiur implements IChunkGenerator
 
                     for (int j2 = 0; j2 < 8; ++j2)
                     {
-                        double d9 = 0.25D;
                         double d10 = d1;
                         double d11 = d2;
                         double d12 = (d3 - d1) * 0.25D;
@@ -149,7 +146,6 @@ public class ChunkProviderAiur implements IChunkGenerator
 
                         for (int k2 = 0; k2 < 4; ++k2)
                         {
-                            double d14 = 0.25D;
                             double d16 = (d11 - d10) * 0.25D;
                             double lvt_45_1_ = d10 - d16;
 
@@ -182,7 +178,6 @@ public class ChunkProviderAiur implements IChunkGenerator
     public void replaceBiomeBlocks(int x, int z, ChunkPrimer primer, Biome[] biomesIn)
     {
         if (!net.minecraftforge.event.ForgeEventFactory.onReplaceBiomeBlocks(this, x, z, primer, this.worldObj)) return;
-        double d0 = 0.03125D;
         this.depthBuffer = this.surfaceNoise.getRegion(this.depthBuffer, (double)(x * 16), (double)(z * 16), 16, 16, 0.0625D, 0.0625D, 1.0D);
 
         for (int i = 0; i < 16; ++i)
@@ -243,7 +238,6 @@ public class ChunkProviderAiur implements IChunkGenerator
                 float f2 = 0.0F;
                 float f3 = 0.0F;
                 float f4 = 0.0F;
-                int i1 = 2;
                 Biome biome = this.biomesForGeneration[k + 2 + (l + 2) * 10];
 
                 for (int j1 = -2; j1 <= 2; ++j1)
@@ -354,7 +348,6 @@ public class ChunkProviderAiur implements IChunkGenerator
         long l = this.rand.nextLong() / 2L * 2L + 1L;
         this.rand.setSeed((long)x * k + (long)z * l ^ this.worldObj.getSeed());
         boolean flag = false;
-        ChunkPos chunkpos = new ChunkPos(x, z);
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(true, this, this.worldObj, this.rand, x, z, flag);
 
