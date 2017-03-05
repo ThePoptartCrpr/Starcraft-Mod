@@ -74,8 +74,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
 public class ClientProxy extends ServerProxy {
 
-
-	// TODO: get all of this into registry
 	public void registerEntityRenders() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class,
 				new RenderZealot(Minecraft.getMinecraft().getRenderManager(), new ModelZealot(), 0.4f)); // use
@@ -162,7 +160,6 @@ public class ClientProxy extends ServerProxy {
 		ModWeapons.init();
 		ModWeapons.register();
 		ModWeapons.registerRenders();
-		SCWorldGen.setupWorldgen();
 		SCWorldGen.preInit();
 		ModEntities.registerEntities();
 		StarcraftSoundEvents.registerSounds();

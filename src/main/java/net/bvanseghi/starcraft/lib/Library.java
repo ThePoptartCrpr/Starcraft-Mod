@@ -143,7 +143,6 @@ public class Library {
 	 * @param domeHeight difference in height between
 	 * {@code pos} and the peak of the dome
 	 */
-	@SuppressWarnings("unused")
 	public static void createShields(World world, BlockPos pos, int domeHeight) {
 		
 		//creates peak block of which we will build layers down from

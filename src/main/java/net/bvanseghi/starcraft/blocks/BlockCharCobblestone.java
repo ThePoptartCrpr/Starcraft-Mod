@@ -6,6 +6,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
+/**
+ * Char Cobblestone block.<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
+ * @author bvanseghi
+ */
 public class BlockCharCobblestone extends Block {
 	public BlockCharCobblestone() {
 		super(Material.ROCK);

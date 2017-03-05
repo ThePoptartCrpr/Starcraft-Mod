@@ -35,7 +35,7 @@ public class BlockCharMagma extends Block {
 	public void breakBlock(World world, BlockPos pos, IBlockState state) {
 		world.setBlockState(pos, Blocks.FLOWING_LAVA.getDefaultState());
 	}
-	
+
 	@Override
 	public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
 		if(!Library.checkCube(world, Blocks.FLOWING_LAVA.getDefaultState(), pos, 3).isEmpty()) {

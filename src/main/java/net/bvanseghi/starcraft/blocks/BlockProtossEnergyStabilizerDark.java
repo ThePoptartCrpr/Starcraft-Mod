@@ -6,6 +6,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
+/**
+ * Dark Protoss Energy Stabilizer block.<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
+ * @author bvanseghi
+ */
 public class BlockProtossEnergyStabilizerDark extends Block {
 	public BlockProtossEnergyStabilizerDark() {
 		super(Material.ROCK);

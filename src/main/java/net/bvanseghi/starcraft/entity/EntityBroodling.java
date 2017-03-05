@@ -50,7 +50,7 @@ public class EntityBroodling extends EntityZergMob {
         targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityProtossPassive.class, true));
         targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
     }
-
+    
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.broodlingHP);
