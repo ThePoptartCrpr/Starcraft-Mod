@@ -213,7 +213,7 @@ public class Library {
 //			larva.setDead();
 //		}
 		
-		replaceEntity(larva, new EntityLarvaCocoon(larva.worldObj), false);
+		replaceEntity(false, larva, new EntityLarvaCocoon(larva.worldObj));
 	}
 	
 	/**
@@ -232,7 +232,7 @@ public class Library {
 //			cocoon.setDead();
 //		}
 		
-		replaceEntity(cocoon, new EntityZergling(cocoon.worldObj), false);
+		replaceEntity(false, cocoon, new EntityZergling(cocoon.worldObj));
 	}
 	
 	/**
@@ -243,15 +243,22 @@ public class Library {
 	 * @param keepRot whether or not to transfer the pitch
 	 * and yaw rotation angles of {@code current} to {@code next}
 	 */
-	public static void replaceEntity(Entity current, Entity next, boolean keepRot) {
+	public static void replaceEntity(boolean keepRot, Entity current, Entity... next) {
 		if(!current.worldObj.isRemote) {
 			if(keepRot) {
-				next.setLocationAndAngles(current.posX, current.posY, current.posZ, current.rotationYaw, current.rotationPitch);
+				for(Entity e : next) {
+					e.setLocationAndAngles(current.posX, current.posY, current.posZ, current.rotationYaw, current.rotationPitch);
+				}
 			} else {
-				next.setLocationAndAngles(current.posX, current.posY, current.posZ, 0, 0);
+				for(Entity e : next) {
+					e.setLocationAndAngles(current.posX, current.posY, current.posZ, 0, 0);
+				}
 			}
 			
-			current.worldObj.spawnEntityInWorld(next);
+			for(Entity e : next) {
+				current.worldObj.spawnEntityInWorld(e);
+			}
+			
 			current.setDead();
 		}
 	}

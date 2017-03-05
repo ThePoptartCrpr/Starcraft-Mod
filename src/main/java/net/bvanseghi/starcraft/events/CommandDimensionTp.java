@@ -2,6 +2,7 @@ package net.bvanseghi.starcraft.events;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import net.bvanseghi.starcraft.lib.ModTeleporter;
 import net.bvanseghi.starcraft.worldgen.DimensionRegistry;
 import net.minecraft.command.CommandException;
@@ -15,11 +16,10 @@ import net.minecraft.world.Teleporter;
 import scala.actors.threadpool.Arrays;
 
 public class CommandDimensionTp implements ICommand{
-	
-	private final List aliases;
+	private final List<String> aliases;
 	
 	public CommandDimensionTp() {
-		aliases = new ArrayList();
+		aliases = new ArrayList<String>();
 		aliases.add("dimensiontp");
 	}
 	

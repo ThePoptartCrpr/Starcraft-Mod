@@ -1,5 +1,7 @@
 package net.bvanseghi.starcraft.lib;
 
+import javax.annotation.Nonnull;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -7,8 +9,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
-
-import javax.annotation.Nonnull;
 
 public class ModTeleporter extends Teleporter {
 
