@@ -12,7 +12,6 @@ import com.google.common.collect.Lists;
 
 import net.bvanseghi.starcraft.entity.EntityZealot;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Biomes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;

@@ -149,10 +149,10 @@ public class Library {
 		world.setBlockState(pos.up(domeHeight), Blocks.GLASS.getDefaultState());
 		
 		//some useful integers to help us keep track of stuff
-		int level = 0;
+//		int level = 0;
 		int domeLevelLength = 2;
-		int factorX = 1;
-		int factorZ = 1;
+//		int factorX = 1;
+//		int factorZ = 1;
 		int cornerOffset = 1;
 		
 		//start by counting layers of our dome! As we finish off layers, we go down a level and generate the next level

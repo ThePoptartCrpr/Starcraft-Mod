@@ -8,13 +8,11 @@ import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.bvanseghi.starcraft.worldgen.features.CharWorldGenMinable;
 import net.bvanseghi.starcraft.worldgen.features.ShakurasWorldGenMinable;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
