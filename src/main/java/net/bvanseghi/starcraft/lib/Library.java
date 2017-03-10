@@ -236,7 +236,30 @@ public class Library {
 	
 	/**
 	 * Replaces {@code current} with {@code next} in the same
-	 * world. Can transfer pitch and yaw rotation angles
+	 * world. Sets the pitch/yaw all objects on {@code next} to
+	 * {@code pitch} and {@code yaw}, respectively.<br>
+	 * This is done by setting {@code current}'s pitch/yaw, then
+	 * calling {@link #replaceEntity(boolean, Entity, Entity)}
+	 * with parameters {@code true}, {@code current}, and
+	 * {@code next} as a means of transferring {@code current}'s
+	 * new pitch/yaw angles
+	 * @param pitch the pitch to use
+	 * @param yaw the yaw to use
+	 * @param current the {@link Entity} to replace
+	 * @param next the {@link Entity} objects to replace
+	 * {@code current]
+	 */
+	public static void replaceEntity(float pitch, float yaw, Entity current, Entity... next) {
+		if(!current.worldObj.isRemote) {
+			current.setAngles(yaw, pitch);
+			replaceEntity(true, current, next);
+		}
+	}
+	
+	/**
+	 * Replaces {@code current} with {@code next} in the same
+	 * world. Can transfer pitch and yaw rotation angles from
+	 * {@code current} to {@code next}.
 	 * @param current the entity to replace
 	 * @param next the replacement
 	 * @param keepRot whether or not to transfer the pitch
