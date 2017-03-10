@@ -18,8 +18,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class VanillaEntityHandler {
 	
 	@SubscribeEvent
-	public void onEntitySpawn(EntityJoinWorldEvent event) {
-		
+	public static void onEntitySpawn(EntityJoinWorldEvent event) {
 		if(StarcraftConfig.vanillaSpawn == true) {
 			if (event.getEntity() instanceof EntityCaveSpider || event.getEntity() instanceof EntitySilverfish
 					|| event.getEntity() instanceof EntityWitch || event.getEntity() instanceof EntitySlime
