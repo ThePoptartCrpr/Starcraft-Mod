@@ -1,6 +1,6 @@
 Minecraft mod based on Starcraft. To install:  
 
-1. In project directory, run command `git clone https://github.com/bvanseghi/Starcraft-Mod.git --branch MC1.10.2 --single-branch SCMC`  
+1. In project directory, run command `git clone https://github.com/wundrweapon/Starcraft-Mod.git --branch MC1.10.2 --single-branch SCMC`  
 
 2. Extract Forge 12.18.2.2099 source into {SCMC}  
 
