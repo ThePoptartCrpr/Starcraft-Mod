@@ -204,7 +204,9 @@ public class ClientProxy extends ServerProxy {
 		ModWeapons.register();
 		ModWeapons.registerRenders();
 		ModTileEntities.preInit();
-		ModArmour.preInit();
+		ModArmour.init();
+		ModArmour.register();
+		ModArmour.registerRenders();
 		ModTools.init();
 		ModTools.register();
 		ModTools.registerRenders();

@@ -3,7 +3,6 @@ package scmc.armour;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.util.ResourceLocation;
-import scmc.CreativeTab;
 import scmc.lib.Reference;
 
 public class ArmourSteelBoots extends ItemArmor {
@@ -13,7 +12,6 @@ public class ArmourSteelBoots extends ItemArmor {
 	public ArmourSteelBoots(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setRegistryName(REGISTRY_RL);
-		setCreativeTab(CreativeTab.tabStarcraftCombat);
-		setUnlocalizedName(Reference.UN_BASE + name);
+		setUnlocalizedName(name);
 	}
 }

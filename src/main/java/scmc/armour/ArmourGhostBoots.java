@@ -11,8 +11,7 @@ public class ArmourGhostBoots extends ItemArmor {
 
 	public ArmourGhostBoots(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
- 		setCreativeTab(null);
  		setRegistryName(REGISTRY_RL);
-		setUnlocalizedName(Reference.UN_BASE + name);
+		setUnlocalizedName(name);
 	}
 }

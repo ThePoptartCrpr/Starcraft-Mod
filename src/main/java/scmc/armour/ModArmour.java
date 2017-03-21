@@ -1,11 +1,17 @@
 package scmc.armour;
 
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.CreativeTab;
+import scmc.lib.LogHelper;
+import scmc.lib.Reference;
 
 public class ModArmour {
 	
@@ -50,7 +56,7 @@ public class ModArmour {
 	
 	public static final Item[] ARMOURS = {titaniumHelmet, titaniumChestplate, titaniumLeggings, titaniumBoots, copperHelmet, copperChestplate, copperLeggings, copperBoots, steelHelmet, steelChestplate, steelLeggings, steelBoots, ghostHelmet, ghostChestplate, ghostLeggings, ghostBoots};
 
-	public static void preInit() {
+	public static void init() {
 		titaniumHelmet = new ArmourTitaniumHelmet(titaniumArmourMaterial, 0, EntityEquipmentSlot.HEAD);
 		titaniumChestplate = new ArmourTitaniumChestplate(titaniumArmourMaterial, 0, EntityEquipmentSlot.CHEST);
 		titaniumLeggings = new ArmourTitaniumLeggings(titaniumArmourMaterial, 0, EntityEquipmentSlot.LEGS);
@@ -70,27 +76,60 @@ public class ModArmour {
 		ghostChestplate = new ArmourGhostChestplate(ghostArmourMaterial, 0, EntityEquipmentSlot.CHEST);
 		ghostLeggings = new ArmourGhostLeggings(ghostArmourMaterial, 0, EntityEquipmentSlot.LEGS);
 		ghostBoots = new ArmourGhostBoots(ghostArmourMaterial, 0, EntityEquipmentSlot.FEET);
-		
-		
-		GameRegistry.register(titaniumHelmet);
-		GameRegistry.register(titaniumChestplate);
-		GameRegistry.register(titaniumLeggings);
-		GameRegistry.register(titaniumBoots);
+	}
+	
+	public static void register() {
+		registerItem(titaniumHelmet);
+		registerItem(titaniumChestplate);
+		registerItem(titaniumLeggings);
+		registerItem(titaniumBoots);
 
-		GameRegistry.register(copperHelmet);
-		GameRegistry.register(copperChestplate);
-		GameRegistry.register(copperLeggings);
-		GameRegistry.register(copperBoots);
+		registerItem(copperHelmet);
+		registerItem(copperChestplate);
+		registerItem(copperLeggings);
+		registerItem(copperBoots);
 
-		GameRegistry.register(steelHelmet);
-		GameRegistry.register(steelChestplate);
-		GameRegistry.register(steelLeggings);
-		GameRegistry.register(steelBoots);
+		registerItem(steelHelmet);
+		registerItem(steelChestplate);
+		registerItem(steelLeggings);
+		registerItem(steelBoots);
 		
-		GameRegistry.register(ghostHelmet);
-		GameRegistry.register(ghostChestplate);
-		GameRegistry.register(ghostLeggings);
-		GameRegistry.register(ghostBoots);
+		registerItem(ghostHelmet);
+		registerItem(ghostChestplate);
+		registerItem(ghostLeggings);
+		registerItem(ghostBoots);
+	}
+	
+	public static void registerRenders() {
+		registerRender(titaniumHelmet);
+		registerRender(titaniumChestplate);
+		registerRender(titaniumLeggings);
+		registerRender(titaniumBoots);
 
+		registerRender(copperHelmet);
+		registerRender(copperChestplate);
+		registerRender(copperLeggings);
+		registerRender(copperBoots);
+
+		registerRender(steelHelmet);
+		registerRender(steelChestplate);
+		registerRender(steelLeggings);
+		registerRender(steelBoots);
+		
+		registerRender(ghostHelmet);
+		registerRender(ghostChestplate);
+		registerRender(ghostLeggings);
+		registerRender(ghostBoots);
+	}
+	
+	public static void registerItem(Item item) {
+		item.setCreativeTab(CreativeTab.tabStarcraftCombat);
+		GameRegistry.register(item);
+		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
+	}
+	
+	public static void registerRender(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
+		LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
 	}
 }

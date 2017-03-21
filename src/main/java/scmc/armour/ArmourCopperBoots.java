@@ -3,7 +3,6 @@ package scmc.armour;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.util.ResourceLocation;
-import scmc.CreativeTab;
 import scmc.lib.Reference;
 
 public class ArmourCopperBoots extends ItemArmor {
@@ -12,8 +11,7 @@ public class ArmourCopperBoots extends ItemArmor {
 
 	public ArmourCopperBoots(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
-		setCreativeTab(CreativeTab.tabStarcraftCombat);
-		setUnlocalizedName(Reference.ModItems.ARMOR_COPPER_BOOTS.getUnlocalizedName());
-		setRegistryName(Reference.ModItems.ARMOR_COPPER_BOOTS.getRegistryRL());
+		setRegistryName(REGISTRY_RL);
+		setUnlocalizedName(name);
 	}
 }

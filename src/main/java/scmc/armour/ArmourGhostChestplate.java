@@ -11,8 +11,7 @@ public class ArmourGhostChestplate extends ItemArmor {
 
 	public ArmourGhostChestplate(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
- 		setCreativeTab(null);
  		setRegistryName(REGISTRY_RL);
-		setUnlocalizedName(Reference.UN_BASE + name);
+		setUnlocalizedName(name);
 	}
 }
