@@ -1,7 +1,5 @@
-package net.bvanseghi.starcraft.events;
+package scmc.events;
 
-import net.bvanseghi.starcraft.blocks.BlockMovingLightSource;
-import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -9,6 +7,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import scmc.blocks.BlockMovingLightSource;
+import scmc.blocks.ModBlocks;
 
 @EventBusSubscriber
 public class PlayerTickEventHandler {

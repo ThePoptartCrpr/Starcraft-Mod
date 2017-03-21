@@ -1,10 +1,10 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import scmc.CreativeTab;
+import scmc.lib.Reference;
 
 public class BlockCharCobblestone extends Block {
 	public BlockCharCobblestone() {

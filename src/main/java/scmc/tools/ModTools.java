@@ -1,8 +1,5 @@
-package net.bvanseghi.starcraft.tools;
+package scmc.tools;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.LogHelper;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -10,6 +7,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.CreativeTab;
+import scmc.lib.LogHelper;
+import scmc.lib.Reference;
 
 /**
  * Handles the tool registration and render

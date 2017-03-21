@@ -1,11 +1,11 @@
-package net.bvanseghi.starcraft.tools;
+package scmc.tools;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import scmc.lib.Reference;
 
 public class ToolSteelAxe extends ItemAxe {
 	public ToolSteelAxe(ToolMaterial material, String unlocalizedName) {

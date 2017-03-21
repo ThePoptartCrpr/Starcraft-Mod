@@ -1,17 +1,17 @@
-package net.bvanseghi.starcraft.events;
+package scmc.events;
 
-import net.bvanseghi.starcraft.armour.ArmourGhostBoots;
-import net.bvanseghi.starcraft.armour.ArmourGhostChestplate;
-import net.bvanseghi.starcraft.armour.ArmourGhostHelmet;
-import net.bvanseghi.starcraft.armour.ArmourGhostLeggings;
-import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 //import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import scmc.armour.ArmourGhostBoots;
+import scmc.armour.ArmourGhostChestplate;
+import scmc.armour.ArmourGhostHelmet;
+import scmc.armour.ArmourGhostLeggings;
+import scmc.entity.EntityDarkTemplar;
+import scmc.lib.StarcraftConfig;
 
 @EventBusSubscriber
 public class LivingUpdateEventHandler {

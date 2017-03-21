@@ -1,10 +1,10 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.world.World;
+import scmc.lib.StarcraftConfig;
 
 public class EntityDrone extends EntityAnimal {
 

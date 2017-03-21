@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.entity.passive;
+package scmc.entity.passive;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.passive.EntityTameable;

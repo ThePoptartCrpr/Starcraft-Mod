@@ -1,12 +1,12 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
-import net.bvanseghi.starcraft.entity.EntityLarva;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.model.ModelLarva;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import scmc.entity.EntityLarva;
+import scmc.lib.Reference;
+import scmc.model.ModelLarva;
 
 public class RenderLarva<T> extends RenderLiving<EntityLarva> {
 

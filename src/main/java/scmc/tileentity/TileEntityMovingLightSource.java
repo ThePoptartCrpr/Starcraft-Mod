@@ -1,13 +1,13 @@
-package net.bvanseghi.starcraft.tileentity;
+package scmc.tileentity;
 
-import net.bvanseghi.starcraft.blocks.BlockMovingLightSource;
-import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.blocks.BlockMovingLightSource;
+import scmc.blocks.ModBlocks;
 
 public class TileEntityMovingLightSource extends TileEntity implements ITickable
 {

@@ -1,13 +1,13 @@
-package net.bvanseghi.starcraft.items.metaitems;
+package scmc.items.metaitems;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler.BulletType;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import scmc.items.metaitems.ItemEnumHandler.BulletType;
+import scmc.lib.Reference;
 
 public class ItemBullet extends Item {
 	

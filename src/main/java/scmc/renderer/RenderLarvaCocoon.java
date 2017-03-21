@@ -1,14 +1,14 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
 import org.lwjgl.opengl.GL11;
 
-import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.model.ModelLarvaCocoon;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import scmc.entity.EntityLarvaCocoon;
+import scmc.lib.Reference;
+import scmc.model.ModelLarvaCocoon;
 
 public class RenderLarvaCocoon<T> extends RenderLiving<EntityLarvaCocoon> {
 

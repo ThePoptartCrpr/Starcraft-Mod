@@ -1,12 +1,7 @@
-package net.bvanseghi.starcraft.worldgen;
+package scmc.worldgen;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.lib.ChunkProviderGenerate;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.bvanseghi.starcraft.worldgen.features.CharWorldGenMinable;
-import net.bvanseghi.starcraft.worldgen.features.ShakurasWorldGenMinable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
@@ -17,6 +12,11 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.blocks.ModBlocks;
+import scmc.lib.ChunkProviderGenerate;
+import scmc.lib.StarcraftConfig;
+import scmc.worldgen.features.CharWorldGenMinable;
+import scmc.worldgen.features.ShakurasWorldGenMinable;
 
 public class SCWorldGen implements IWorldGenerator {
 

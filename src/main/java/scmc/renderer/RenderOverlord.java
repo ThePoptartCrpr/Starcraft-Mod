@@ -1,12 +1,12 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
-import net.bvanseghi.starcraft.entity.EntityOverlord;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.model.ModelOverlord;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import scmc.entity.EntityOverlord;
+import scmc.lib.Reference;
+import scmc.model.ModelOverlord;
 
 public class RenderOverlord<T> extends RenderLiving<EntityOverlord> {
 

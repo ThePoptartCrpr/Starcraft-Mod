@@ -1,14 +1,14 @@
-package net.bvanseghi.starcraft.oreshakuras;
+package scmc.oreshakuras;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import scmc.CreativeTab;
+import scmc.blocks.ModBlocks;
+import scmc.items.ModItems;
+import scmc.lib.Reference;
 
 public class OreShakurasMineral extends ModBlocks {
 

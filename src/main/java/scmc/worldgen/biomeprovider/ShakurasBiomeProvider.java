@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.worldgen.biomeprovider;
+package scmc.worldgen.biomeprovider;
 
 import java.util.List;
 import java.util.Random;
@@ -7,7 +7,6 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
 
-import net.bvanseghi.starcraft.worldgen.biome.BiomesSC;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.init.Biomes;
@@ -20,6 +19,7 @@ import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraft.world.storage.WorldInfo;
+import scmc.worldgen.biome.BiomesSC;
 
 public class ShakurasBiomeProvider extends BiomeProvider
 {

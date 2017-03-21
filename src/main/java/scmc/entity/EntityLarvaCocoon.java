@@ -1,15 +1,15 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.StarcraftSoundEvents;
-import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
-import net.bvanseghi.starcraft.lib.Library;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
+import scmc.StarcraftSoundEvents;
+import scmc.entity.passive.EntityZergPassive;
+import scmc.lib.Library;
+import scmc.lib.StarcraftConfig;
 
 public class EntityLarvaCocoon extends EntityZergPassive {
 	private Random random = new Random();

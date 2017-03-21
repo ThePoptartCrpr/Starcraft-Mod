@@ -1,9 +1,7 @@
-package net.bvanseghi.starcraft.worldgen.provider;
+package scmc.worldgen.provider;
 
 import javax.annotation.Nullable;
 
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.bvanseghi.starcraft.worldgen.biomeprovider.CharBiomeProvider;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -20,6 +18,8 @@ import net.minecraft.world.border.WorldBorder;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import scmc.lib.StarcraftConfig;
+import scmc.worldgen.biomeprovider.CharBiomeProvider;
 
 public abstract class WorldProviderChar
 {

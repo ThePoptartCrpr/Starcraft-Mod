@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.GUI;
+package scmc.GUI;
 
 import org.lwjgl.opengl.GL11;
 

@@ -1,9 +1,9 @@
-package net.bvanseghi.starcraft.armour;
+package scmc.armour;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.util.ResourceLocation;
+import scmc.lib.Reference;
 
 public class ArmourGhostHelmet extends ItemArmor {
 	private static String name = "ghost_helmet";

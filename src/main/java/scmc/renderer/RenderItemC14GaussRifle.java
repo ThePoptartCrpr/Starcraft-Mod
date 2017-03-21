@@ -1,16 +1,16 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
-import net.bvanseghi.starcraft.items.ItemC14GaussRifle;
-import net.bvanseghi.starcraft.model.ModelC14GaussRifle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import scmc.items.ItemC14GaussRifle;
+import scmc.model.ModelC14GaussRifle;
 
 public class RenderItemC14GaussRifle extends ItemRenderer {
 	public static final ModelC14GaussRifle model = new ModelC14GaussRifle();

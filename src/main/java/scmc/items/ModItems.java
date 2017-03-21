@@ -1,28 +1,28 @@
-package net.bvanseghi.starcraft.items;
+package scmc.items;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.fluids.ModFluids;
-import net.bvanseghi.starcraft.items.metaitems.ItemBullet;
-import net.bvanseghi.starcraft.items.metaitems.ItemC14GaussRifleParts;
-import net.bvanseghi.starcraft.items.metaitems.ItemCrystal;
-import net.bvanseghi.starcraft.items.metaitems.ItemDust;
-import net.bvanseghi.starcraft.items.metaitems.ItemEnergy;
-import net.bvanseghi.starcraft.items.metaitems.ItemEnumHandler;
-import net.bvanseghi.starcraft.items.metaitems.ItemEssence;
-import net.bvanseghi.starcraft.items.metaitems.ItemIngot;
-import net.bvanseghi.starcraft.items.metaitems.ItemMineralShard;
-import net.bvanseghi.starcraft.items.metaitems.ItemProtossCoordinates;
-import net.bvanseghi.starcraft.items.metaitems.ItemPsiBladeFocuserUncharged;
-import net.bvanseghi.starcraft.items.metaitems.ItemVespene;
-import net.bvanseghi.starcraft.items.metaitems.ItemZergCarapace;
-import net.bvanseghi.starcraft.lib.LogHelper;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.CreativeTab;
+import scmc.fluids.ModFluids;
+import scmc.items.metaitems.ItemBullet;
+import scmc.items.metaitems.ItemC14GaussRifleParts;
+import scmc.items.metaitems.ItemCrystal;
+import scmc.items.metaitems.ItemDust;
+import scmc.items.metaitems.ItemEnergy;
+import scmc.items.metaitems.ItemEnumHandler;
+import scmc.items.metaitems.ItemEssence;
+import scmc.items.metaitems.ItemIngot;
+import scmc.items.metaitems.ItemMineralShard;
+import scmc.items.metaitems.ItemProtossCoordinates;
+import scmc.items.metaitems.ItemPsiBladeFocuserUncharged;
+import scmc.items.metaitems.ItemVespene;
+import scmc.items.metaitems.ItemZergCarapace;
+import scmc.lib.LogHelper;
+import scmc.lib.Reference;
 
 /**
  * Copyright 2017 the Starcraft Minecraft mod team

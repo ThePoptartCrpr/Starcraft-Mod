@@ -1,7 +1,5 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
-import net.bvanseghi.starcraft.fluids.ModFluids;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -10,6 +8,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
+import scmc.fluids.ModFluids;
+import scmc.lib.Reference;
 
 public class BlockAcidFluid extends BlockFluidClassic {
 	public BlockAcidFluid(Fluid fluid, Material material) {

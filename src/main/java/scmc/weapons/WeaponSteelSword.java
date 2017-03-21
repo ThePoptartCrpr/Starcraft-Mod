@@ -1,8 +1,8 @@
-package net.bvanseghi.starcraft.weapons;
+package scmc.weapons;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.ResourceLocation;
+import scmc.lib.Reference;
 
 public class WeaponSteelSword extends ItemSword {
 

@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.worldgen.chunk;
+package scmc.worldgen.chunk;
 
 import java.util.List;
 import java.util.Random;

@@ -1,8 +1,8 @@
-package net.bvanseghi.starcraft.worldgen.biome;
+package scmc.worldgen.biome;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
+import scmc.blocks.ModBlocks;
 
 public class BiomeGenCreepInfestation extends Biome {
 

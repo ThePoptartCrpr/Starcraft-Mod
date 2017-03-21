@@ -1,9 +1,9 @@
-package net.bvanseghi.starcraft.handlers;
+package scmc.handlers;
 
-import net.bvanseghi.starcraft.items.ModItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.IFuelHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.items.ModItems;
 
 public class FuelHandler implements IFuelHandler {
 

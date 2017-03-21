@@ -1,14 +1,5 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
-import net.bvanseghi.starcraft.StarcraftSoundEvents;
-import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
-import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
-import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
-import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
-import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
-import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -28,6 +19,15 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
+import scmc.StarcraftSoundEvents;
+import scmc.entity.monster.EntityProtossMob;
+import scmc.entity.monster.EntityTerranMob;
+import scmc.entity.monster.EntityZergMob;
+import scmc.entity.passive.EntityTerranPassive;
+import scmc.entity.passive.EntityZergPassive;
+import scmc.items.ModItems;
+import scmc.lib.StarcraftConfig;
+import scmc.weapons.ModWeapons;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityDarkTemplar extends EntityProtossMob {

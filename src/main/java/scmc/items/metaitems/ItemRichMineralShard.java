@@ -1,7 +1,7 @@
-package net.bvanseghi.starcraft.items.metaitems;
+package scmc.items.metaitems;
 
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.Reference;
+import scmc.items.ModItems;
+import scmc.lib.Reference;
 
 public class ItemRichMineralShard extends ModItems {
 

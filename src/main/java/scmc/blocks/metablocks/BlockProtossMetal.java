@@ -1,9 +1,7 @@
-package net.bvanseghi.starcraft.blocks.metablocks;
+package scmc.blocks.metablocks;
 
 import java.util.List;
 
-import net.bvanseghi.starcraft.blocks.metablocks.EnumHandler.ProtossMetalType;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -18,6 +16,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.blocks.metablocks.EnumHandler.ProtossMetalType;
+import scmc.lib.Reference;
 
 /**
  * This block has three variants. Refer to {@link ProtossMetalType}

@@ -1,7 +1,5 @@
-package net.bvanseghi.starcraft;
+package scmc;
 
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.proxy.ServerProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -11,6 +9,8 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import scmc.lib.Reference;
+import scmc.proxy.ServerProxy;
 
 @Mod(modid = Reference.MODID, acceptedMinecraftVersions = "[1.10.2]", useMetadata = true)
 public class Starcraft {

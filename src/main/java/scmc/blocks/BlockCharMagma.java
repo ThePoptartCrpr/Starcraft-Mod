@@ -1,10 +1,7 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Library;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -12,6 +9,9 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.CreativeTab;
+import scmc.lib.Library;
+import scmc.lib.Reference;
 
 /**
  * Magma block. Makes lava source when broken or

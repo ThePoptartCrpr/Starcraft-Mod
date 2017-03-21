@@ -1,8 +1,8 @@
-package net.bvanseghi.starcraft.tools;
+package scmc.tools;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.util.ResourceLocation;
+import scmc.lib.Reference;
 
 public class ToolCopperHoe extends ItemHoe {
 

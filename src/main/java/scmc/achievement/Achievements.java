@@ -1,11 +1,11 @@
-package net.bvanseghi.starcraft.achievement;
+package scmc.achievement;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
+import scmc.blocks.ModBlocks;
+import scmc.items.ModItems;
+import scmc.weapons.ModWeapons;
 
 public class Achievements {
 

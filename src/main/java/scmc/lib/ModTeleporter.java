@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.lib;
+package scmc.lib;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;

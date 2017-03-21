@@ -1,11 +1,8 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
 import java.util.List;
 import java.util.Random;
 
-import net.bvanseghi.starcraft.StarcraftSoundEvents;
-import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;
@@ -24,6 +21,9 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import scmc.StarcraftSoundEvents;
+import scmc.entity.passive.EntityProtossPassive;
+import scmc.lib.StarcraftConfig;
 
 public class EntityDarkProbe extends EntityProtossPassive {
 

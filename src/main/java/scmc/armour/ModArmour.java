@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.armour;
+package scmc.armour;
 
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;

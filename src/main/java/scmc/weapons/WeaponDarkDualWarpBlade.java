@@ -1,10 +1,10 @@
-package net.bvanseghi.starcraft.weapons;
+package scmc.weapons;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import scmc.CreativeTab;
+import scmc.lib.Reference;
 
 public class WeaponDarkDualWarpBlade extends ItemSword {
 

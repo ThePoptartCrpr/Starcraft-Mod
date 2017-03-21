@@ -1,3 +1,4 @@
+package scmc.handlers;
 //package net.bvanseghi.starcraft.handlers;
 //
 //import net.minecraft.block.Block;

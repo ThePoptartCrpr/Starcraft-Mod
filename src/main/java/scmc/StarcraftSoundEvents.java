@@ -1,9 +1,9 @@
-package net.bvanseghi.starcraft;
+package scmc;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.lib.Reference;
 
 public class StarcraftSoundEvents 
 {

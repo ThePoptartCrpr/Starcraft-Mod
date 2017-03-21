@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;

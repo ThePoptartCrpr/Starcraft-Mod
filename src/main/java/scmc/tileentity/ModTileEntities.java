@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.tileentity;
+package scmc.tileentity;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 

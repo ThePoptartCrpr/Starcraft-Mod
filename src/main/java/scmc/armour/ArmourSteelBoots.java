@@ -1,10 +1,10 @@
-package net.bvanseghi.starcraft.armour;
+package scmc.armour;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.util.ResourceLocation;
+import scmc.CreativeTab;
+import scmc.lib.Reference;
 
 public class ArmourSteelBoots extends ItemArmor {
 	private static String name = "steel_boots";

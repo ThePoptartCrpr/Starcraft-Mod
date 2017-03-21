@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.events;
+package scmc.events;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent.Register;

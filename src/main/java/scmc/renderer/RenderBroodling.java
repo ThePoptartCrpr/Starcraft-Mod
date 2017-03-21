@@ -1,12 +1,12 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
-import net.bvanseghi.starcraft.entity.EntityBroodling;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.model.ModelBroodling;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import scmc.entity.EntityBroodling;
+import scmc.lib.Reference;
+import scmc.model.ModelBroodling;
 
 public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
 

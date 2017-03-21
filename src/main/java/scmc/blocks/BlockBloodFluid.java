@@ -1,12 +1,12 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
+import scmc.lib.Reference;
 
 public class BlockBloodFluid extends BlockFluidClassic {
 	public BlockBloodFluid(Fluid fluid, Material material) {

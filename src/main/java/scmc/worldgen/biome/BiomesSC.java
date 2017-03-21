@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.worldgen.biome;
+package scmc.worldgen.biome;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;

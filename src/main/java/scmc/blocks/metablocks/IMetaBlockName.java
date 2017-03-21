@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.blocks.metablocks;
+package scmc.blocks.metablocks;
 
 import net.minecraft.item.ItemStack;
 

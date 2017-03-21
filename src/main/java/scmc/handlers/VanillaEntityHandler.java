@@ -1,6 +1,5 @@
-package net.bvanseghi.starcraft.handlers;
+package scmc.handlers;
 
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -12,6 +11,7 @@ import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import scmc.lib.StarcraftConfig;
 
 public class VanillaEntityHandler {
 	

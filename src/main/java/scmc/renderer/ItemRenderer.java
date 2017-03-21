@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
 import java.util.Collections;
 import java.util.List;

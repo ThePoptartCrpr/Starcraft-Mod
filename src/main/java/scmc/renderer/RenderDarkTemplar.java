@@ -1,14 +1,14 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
 import org.lwjgl.opengl.GL11;
 
-import net.bvanseghi.starcraft.entity.EntityDarkTemplar;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.model.ModelDarkTemplar;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import scmc.entity.EntityDarkTemplar;
+import scmc.lib.Reference;
+import scmc.model.ModelDarkTemplar;
 
 public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
 

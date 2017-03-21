@@ -1,16 +1,16 @@
-package net.bvanseghi.starcraft.worldgen.features;
+package scmc.worldgen.features;
 
 import java.util.Random;
 
 import com.google.common.base.Predicate;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import scmc.blocks.ModBlocks;
 
 public class CharWorldGenMinable extends WorldGenerator
 {

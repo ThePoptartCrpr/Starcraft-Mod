@@ -1,12 +1,5 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
-import net.bvanseghi.starcraft.StarcraftSoundEvents;
-import net.bvanseghi.starcraft.entity.monster.EntityProtossMob;
-import net.bvanseghi.starcraft.entity.monster.EntityTerranMob;
-import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
-import net.bvanseghi.starcraft.entity.passive.EntityProtossPassive;
-import net.bvanseghi.starcraft.entity.passive.EntityTerranPassive;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.block.Block;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
@@ -36,6 +29,13 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.StarcraftSoundEvents;
+import scmc.entity.monster.EntityProtossMob;
+import scmc.entity.monster.EntityTerranMob;
+import scmc.entity.monster.EntityZergMob;
+import scmc.entity.passive.EntityProtossPassive;
+import scmc.entity.passive.EntityTerranPassive;
+import scmc.lib.StarcraftConfig;
 
 /**
  * @author bvanseghi

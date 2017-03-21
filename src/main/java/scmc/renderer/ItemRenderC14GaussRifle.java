@@ -1,14 +1,14 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
 import org.lwjgl.opengl.GL11;
 
-import net.bvanseghi.starcraft.model.ModelC14GaussRifle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import scmc.model.ModelC14GaussRifle;
 
 public class ItemRenderC14GaussRifle extends ItemRenderer {
 	public ItemRenderC14GaussRifle()

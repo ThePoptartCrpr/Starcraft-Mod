@@ -1,10 +1,8 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.tileentity.TileEntityMovingLightSource;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -21,6 +19,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import scmc.items.ModItems;
+import scmc.tileentity.TileEntityMovingLightSource;
 
 public class BlockMovingLightSource extends Block implements ITileEntityProvider {
 	public static final AxisAlignedBB FULL_BLOCK_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D);

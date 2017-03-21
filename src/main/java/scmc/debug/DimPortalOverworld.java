@@ -1,12 +1,8 @@
-package net.bvanseghi.starcraft.debug;
+package scmc.debug;
 
 import java.util.List;
 import java.util.Random;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.lib.ModTeleporter;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -18,6 +14,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import scmc.CreativeTab;
+import scmc.blocks.ModBlocks;
+import scmc.lib.ModTeleporter;
+import scmc.lib.Reference;
 
 public class DimPortalOverworld extends ModBlocks {
 	private int dim = 0;

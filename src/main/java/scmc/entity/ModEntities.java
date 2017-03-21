@@ -1,10 +1,10 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
-import net.bvanseghi.starcraft.Starcraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import scmc.Starcraft;
 
 public class ModEntities {
 

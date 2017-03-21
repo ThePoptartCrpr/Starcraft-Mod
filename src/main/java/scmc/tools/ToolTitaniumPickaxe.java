@@ -1,8 +1,8 @@
-package net.bvanseghi.starcraft.tools;
+package scmc.tools;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.util.ResourceLocation;
+import scmc.lib.Reference;
 
 public class ToolTitaniumPickaxe extends ItemPickaxe {
 

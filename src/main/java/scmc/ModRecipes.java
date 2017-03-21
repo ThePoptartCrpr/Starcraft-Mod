@@ -1,15 +1,15 @@
-package net.bvanseghi.starcraft;
+package scmc;
 
-import net.bvanseghi.starcraft.armour.ModArmour;
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.tools.ModTools;
-import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.armour.ModArmour;
+import scmc.blocks.ModBlocks;
+import scmc.blocks.metablocks.ModMetaBlocks;
+import scmc.items.ModItems;
+import scmc.tools.ModTools;
+import scmc.weapons.ModWeapons;
 
 public class ModRecipes {
 

@@ -1,14 +1,14 @@
-package net.bvanseghi.starcraft.orechar;
+package scmc.orechar;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import scmc.CreativeTab;
+import scmc.blocks.ModBlocks;
+import scmc.lib.Reference;
 
 public class OreCharLapis extends ModBlocks {
 

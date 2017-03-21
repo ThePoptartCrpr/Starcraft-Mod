@@ -1,16 +1,16 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
 import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import scmc.CreativeTab;
+import scmc.lib.Reference;
 
 public class BlockCharStone extends Block {
 	public BlockCharStone() {

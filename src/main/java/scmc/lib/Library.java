@@ -1,18 +1,18 @@
-package net.bvanseghi.starcraft.lib;
+package scmc.lib;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
-import net.bvanseghi.starcraft.entity.EntityLarva;
-import net.bvanseghi.starcraft.entity.EntityLarvaCocoon;
-import net.bvanseghi.starcraft.entity.EntityZergling;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.blocks.ModBlocks;
+import scmc.blocks.metablocks.ModMetaBlocks;
+import scmc.entity.EntityLarva;
+import scmc.entity.EntityLarvaCocoon;
+import scmc.entity.EntityZergling;
 
 /**
  * A set of utilities that simplify code in other areas<br>

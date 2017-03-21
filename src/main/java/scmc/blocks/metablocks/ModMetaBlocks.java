@@ -1,8 +1,5 @@
-package net.bvanseghi.starcraft.blocks.metablocks;
+package scmc.blocks.metablocks;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.lib.LogHelper;
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -10,6 +7,9 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.CreativeTab;
+import scmc.lib.LogHelper;
+import scmc.lib.Reference;
 
 public class ModMetaBlocks {
 

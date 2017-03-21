@@ -1,12 +1,12 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
-import net.bvanseghi.starcraft.Starcraft;
-import net.bvanseghi.starcraft.entity.EntityC14GaussRifleBullet;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import scmc.Starcraft;
+import scmc.entity.EntityC14GaussRifleBullet;
 
 @SuppressWarnings("rawtypes")
 public class RenderC14GaussRifleBullet extends Render {

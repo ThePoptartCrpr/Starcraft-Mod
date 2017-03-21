@@ -1,7 +1,7 @@
-package net.bvanseghi.starcraft.items;
+package scmc.items;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.util.ResourceLocation;
+import scmc.lib.Reference;
 
 public class ItemKeystone extends ModItems {
 

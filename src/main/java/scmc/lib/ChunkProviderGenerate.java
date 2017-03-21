@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.lib;
+package scmc.lib;
 
 import java.util.List;
 import java.util.Random;

@@ -1,12 +1,12 @@
-package net.bvanseghi.starcraft.events;
+package scmc.events;
 
-import net.bvanseghi.starcraft.achievement.Achievements;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+import scmc.achievement.Achievements;
+import scmc.items.ModItems;
+import scmc.weapons.ModWeapons;
 
 @EventBusSubscriber
 public class OnPickupItemEvent {

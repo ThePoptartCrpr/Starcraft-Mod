@@ -1,3 +1,4 @@
+package scmc.handlers;
 ////NOTE: Code borrowed from Buildcraft.
 //
 //package net.bvanseghi.starcraft.handlers;

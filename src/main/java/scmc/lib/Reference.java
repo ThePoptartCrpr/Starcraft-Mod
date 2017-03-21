@@ -1,11 +1,11 @@
-package net.bvanseghi.starcraft.lib;
+package scmc.lib;
 
 import net.minecraft.util.ResourceLocation;
 
 public class Reference {
 	public static final String MODID = "starcraft";
-	public static final String CLIENT_SIDE_PROXY = "net.bvanseghi.starcraft.proxy.ClientProxy";
-	public static final String SERVER_SIDE_PROXY = "net.bvanseghi.starcraft.proxy.ServerProxy";
+	public static final String CLIENT_SIDE_PROXY = "scmc.proxy.ClientProxy";
+	public static final String SERVER_SIDE_PROXY = "scmc.proxy.ServerProxy";
 	public static final String RL_BASE = MODID + ":";
 	public static final String UN_BASE = MODID + "_";
 	

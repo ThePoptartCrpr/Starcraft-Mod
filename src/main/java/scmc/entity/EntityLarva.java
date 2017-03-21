@@ -1,15 +1,8 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
 import java.util.List;
 import java.util.Random;
 
-import net.bvanseghi.starcraft.StarcraftSoundEvents;
-import net.bvanseghi.starcraft.blocks.ModBlocks;
-import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
-import net.bvanseghi.starcraft.entity.passive.EntityZergPassive;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.Library;
-import net.bvanseghi.starcraft.lib.StarcraftConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;
@@ -36,6 +29,13 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import scmc.StarcraftSoundEvents;
+import scmc.blocks.ModBlocks;
+import scmc.blocks.metablocks.ModMetaBlocks;
+import scmc.entity.passive.EntityZergPassive;
+import scmc.items.ModItems;
+import scmc.lib.Library;
+import scmc.lib.StarcraftConfig;
 
 public class EntityLarva extends EntityZergPassive {
 	private int nextStepDistance;

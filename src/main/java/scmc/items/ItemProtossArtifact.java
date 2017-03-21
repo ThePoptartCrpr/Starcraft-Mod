@@ -1,6 +1,6 @@
-package net.bvanseghi.starcraft.items;
+package scmc.items;
 
-import net.bvanseghi.starcraft.lib.Reference;
+import scmc.lib.Reference;
 
 public class ItemProtossArtifact extends ModItems {
 

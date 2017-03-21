@@ -1,8 +1,5 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
-import net.bvanseghi.starcraft.lib.Library;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.tileentity.TileEntityBlockWarpGateWormholeShakuras;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -10,6 +7,9 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.lib.Library;
+import scmc.lib.Reference;
+import scmc.tileentity.TileEntityBlockWarpGateWormholeShakuras;
 
 public class BlockWarpGateWormholeShakuras extends BlockContainer {
 	

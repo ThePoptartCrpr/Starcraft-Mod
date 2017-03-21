@@ -1,8 +1,8 @@
-package net.bvanseghi.starcraft.entity;
+package scmc.entity;
 
-import net.bvanseghi.starcraft.entity.monster.EntityZergMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.world.World;
+import scmc.entity.monster.EntityZergMob;
 
 public class EntityScourge extends EntityZergMob {
 

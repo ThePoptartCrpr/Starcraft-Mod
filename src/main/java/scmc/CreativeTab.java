@@ -1,14 +1,14 @@
-package net.bvanseghi.starcraft;
+package scmc;
 
-import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
-import net.bvanseghi.starcraft.fluids.ModFluids;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.tools.ModTools;
-import net.bvanseghi.starcraft.weapons.ModWeapons;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fluids.UniversalBucket;
+import scmc.blocks.metablocks.ModMetaBlocks;
+import scmc.fluids.ModFluids;
+import scmc.items.ModItems;
+import scmc.tools.ModTools;
+import scmc.weapons.ModWeapons;
 
 public class CreativeTab {
 

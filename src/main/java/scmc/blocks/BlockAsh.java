@@ -1,11 +1,11 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
-import net.bvanseghi.starcraft.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSnow;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.lib.Reference;
 
 //FIXME: find the source of the ash-makes-snow bug. it's probably due to a missing override
 public class BlockAsh extends BlockSnow {

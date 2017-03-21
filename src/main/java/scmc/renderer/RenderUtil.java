@@ -1,4 +1,4 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainerCreative;

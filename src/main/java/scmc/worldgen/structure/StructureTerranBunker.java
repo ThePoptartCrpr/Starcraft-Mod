@@ -1,9 +1,7 @@
-package net.bvanseghi.starcraft.worldgen.structure;
+package scmc.worldgen.structure;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.blocks.metablocks.ModMetaBlocks;
-import net.bvanseghi.starcraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -12,6 +10,8 @@ import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import scmc.blocks.metablocks.ModMetaBlocks;
+import scmc.items.ModItems;
 
 public class StructureTerranBunker extends WorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {

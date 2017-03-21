@@ -1,11 +1,7 @@
-package net.bvanseghi.starcraft.blocks;
+package scmc.blocks;
 
 import java.util.Random;
 
-import net.bvanseghi.starcraft.CreativeTab;
-import net.bvanseghi.starcraft.items.ModItems;
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.tileentity.TileEntityBlockRichVespeneGeyserShakuras;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -19,6 +15,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import scmc.CreativeTab;
+import scmc.items.ModItems;
+import scmc.lib.Reference;
+import scmc.tileentity.TileEntityBlockRichVespeneGeyserShakuras;
 
 public class BlockRichVespeneGeyserShakuras extends BlockContainer {
 

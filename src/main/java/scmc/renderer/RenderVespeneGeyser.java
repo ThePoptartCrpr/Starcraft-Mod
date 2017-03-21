@@ -1,11 +1,11 @@
-package net.bvanseghi.starcraft.renderer;
+package scmc.renderer;
 
 import org.lwjgl.opengl.GL11;
 
-import net.bvanseghi.starcraft.lib.Reference;
-import net.bvanseghi.starcraft.model.ModelVespeneGeyser;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
+import scmc.lib.Reference;
+import scmc.model.ModelVespeneGeyser;
 
 @SuppressWarnings("rawtypes")
 public class RenderVespeneGeyser<T> extends TileEntitySpecialRenderer {
