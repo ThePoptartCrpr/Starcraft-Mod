@@ -7,12 +7,11 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
-import net.minecraftforge.fluids.Fluid;
 import scmc.fluids.ModFluids;
 import scmc.lib.Reference;
 
 public class BlockAcidFluid extends BlockFluidClassic {
-	public BlockAcidFluid(Fluid fluid, Material material) {
+	public BlockAcidFluid(/*Fluid fluid, Material material*/) {
 		super(ModFluids.acid, Material.WATER);
 		setCreativeTab(null);
 		setUnlocalizedName(Reference.ModBlocks.FLUID_ACID.getUnlocalizedName());

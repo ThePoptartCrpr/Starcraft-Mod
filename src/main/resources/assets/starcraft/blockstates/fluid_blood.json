@@ -6,11 +6,11 @@
     "variants": {
         "normal": {
         	"model": "forge:fluid",
-        	"custom": { "fluid": "fluidAcid" }
+        	"custom": { "fluid": "fluid_blood" }
         },
         "fluid": {
 	        "model": "forge:fluid",
-        	"custom": { "fluid": "fluidAcid" }
+        	"custom": { "fluid": "fluid_blood" }
         }
     }
 }

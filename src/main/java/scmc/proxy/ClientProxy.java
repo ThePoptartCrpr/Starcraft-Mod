@@ -192,6 +192,7 @@ public class ClientProxy extends ServerProxy {
 
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
+		ModFluids.register();
 		ModBlocks.init();
 		ModItems.init();
 		ModItems.register(); //Does stuff, including bucket-y stuff

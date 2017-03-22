@@ -4,9 +4,13 @@ import org.apache.logging.log4j.Level;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import scmc.blocks.coreblocks.BlockCoreNexusDark;
@@ -263,6 +267,9 @@ public class ModBlocks extends Block {
 		CORE_NEXUS_KHALAI = new BlockCoreNexusKhalai();
 		
 		BLOCKMOVINGLIGHTSOURCE = new BlockMovingLightSource();
+		
+		FLUID_ACID = new BlockAcidFluid();
+		FLUID_BLOOD = new BlockBloodFluid();
 	}
 
 	public static void register() {
@@ -433,6 +440,11 @@ public class ModBlocks extends Block {
 		GameRegistry.register(BLOCKMOVINGLIGHTSOURCE);
 		GameRegistry.register(new ItemBlock(BLOCKMOVINGLIGHTSOURCE).setRegistryName(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL()));
 		
+		GameRegistry.register(FLUID_ACID);
+		GameRegistry.register(new ItemBlock(FLUID_ACID).setRegistryName(Reference.ModBlocks.FLUID_ACID.getRegistryRL()));
+		
+		GameRegistry.register(FLUID_BLOOD);
+		GameRegistry.register(new ItemBlock(FLUID_BLOOD).setRegistryName(Reference.ModBlocks.FLUID_BLOOD.getRegistryRL()));
 		
 		//GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class, "protoss_metal");
 	}
@@ -654,6 +666,33 @@ public class ModBlocks extends Block {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BLOCKMOVINGLIGHTSOURCE), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + BLOCKMOVINGLIGHTSOURCE.getUnlocalizedName().substring(5));
+		
+		//Fluid Registration
+		ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(FLUID_ACID), new ItemMeshDefinition() {
+			@Override
+			public ModelResourceLocation getModelLocation(ItemStack stack) {
+				return new ModelResourceLocation(Reference.RL_BASE + "fluid_acid", "fluid");
+			}
+		});
+		ModelLoader.setCustomStateMapper(FLUID_ACID, new StateMapperBase() {
+            @Override
+            protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
+                return new ModelResourceLocation(Reference.RL_BASE + "fluid_acid", "fluid");
+            }
+        });
+		
+		ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(FLUID_BLOOD), new ItemMeshDefinition() {
+			@Override
+			public ModelResourceLocation getModelLocation(ItemStack stack) {
+				return new ModelResourceLocation(Reference.RL_BASE + "fluid_blood", "fluid");
+			}
+		});
+		ModelLoader.setCustomStateMapper(FLUID_BLOOD, new StateMapperBase() {
+            @Override
+            protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
+                return new ModelResourceLocation(Reference.RL_BASE + "fluid_blood", "fluid");
+            }
+        });
 		
 		//BlockRenderRegister.registerBlockRenderer();
 	
