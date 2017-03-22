@@ -21,7 +21,8 @@ import scmc.lib.Reference;
 import scmc.tileentity.TileEntityBlockVespeneGeyserShakuras;
 
 public class BlockVespeneGeyserShakuras extends BlockContainer {
-
+	private static final AxisAlignedBB THIS_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+	
 	public BlockVespeneGeyserShakuras(Material material) {
 		super(material);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_S.getUnlocalizedName());
@@ -30,7 +31,7 @@ public class BlockVespeneGeyserShakuras extends BlockContainer {
 		setHardness(5.0F);
 		setResistance(3.0F);
 		setHarvestLevel("pickaxe", 1);
-		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 
 	@Override
@@ -38,10 +39,12 @@ public class BlockVespeneGeyserShakuras extends BlockContainer {
 		return ModItems.vespene;
 	}
 	
-	public int damageDropped(int meta) {
+	@Override
+	public int damageDropped(IBlockState state) {
 		return 3;
 	}
 
+	@Override
 	public int quantityDropped(Random par1) {
 		return 4 + par1.nextInt(2);
 	}
@@ -60,18 +63,18 @@ public class BlockVespeneGeyserShakuras extends BlockContainer {
 	public boolean isNormalCube(IBlockState state, IBlockAccess access, BlockPos pos) {
 		return false;
 	}
-
-	protected static final AxisAlignedBB THIS_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
+	
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return THIS_AABB;
     }
 	
-	public EnumBlockRenderType getRenderType(IBlockState state)
-    {
+	@Override
+	public EnumBlockRenderType getRenderType(IBlockState state) {
         return EnumBlockRenderType.MODEL;
     }
 
+	@Override
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
@@ -80,5 +83,4 @@ public class BlockVespeneGeyserShakuras extends BlockContainer {
 	public TileEntity createNewTileEntity(World par1, int par2) {
 		return new TileEntityBlockVespeneGeyserShakuras();
 	}
-
 }

@@ -8,44 +8,36 @@ import scmc.StarcraftSoundEvents;
 import scmc.lib.StarcraftConfig;
 
 public class EntityOverlord extends EntityFlying {
-
-	public int courseChangeCooldown;
-    public double waypointX;
-    public double waypointY;
-    public double waypointZ;
-    public int prevAttackCounter;
-    public int attackCounter;
-//    /** The explosion radius of spawned fireballs. */
-//    private int explosionStrength = 1;
-
 	public EntityOverlord(World world) {
 		super(world);
-		this.setSize(4.0F, 4.0F);
-
+		setSize(4, 4);
 	}
 	
+	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.overlordHP);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.015D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.015);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999);
 	}
 	
-	public int getTalkInterval()
-    {
+	@Override
+	public int getTalkInterval() {
         return 160;
     }
 	
+	@Override
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_OVERLORD_LIVE1;
 	}
 	
+	@Override
 	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_OVERLORD_HURT;
 	}
 	
+	@Override
 	public SoundEvent getDeathSound() {
 		return StarcraftSoundEvents.ENTITY_OVERLORD_DEATH;
 	}
-
-	}
+}

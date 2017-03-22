@@ -4,12 +4,12 @@ import java.util.Random;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import scmc.CreativeTab;
 import scmc.lib.Reference;
 
 public class BlockShakurasStone extends ModBlocks {
-
 	public BlockShakurasStone() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_STONE_S.getUnlocalizedName());
@@ -18,19 +18,16 @@ public class BlockShakurasStone extends ModBlocks {
 		setHardness(1.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 
-	public int damageDropped(int par1) {
-		return par1;
-
+//	@Override
+//	public int damageDropped(IBlockState state) {
+//		return getMetaFromState(state);
+//	}
+	
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		return Item.getItemFromBlock(ModBlocks.COBBLESTONE_SHAKURAS);
 	}
-	
-	 public Item getItemDropped(int par1, Random rand, int par3)
-	    {
-	        return Item.getItemFromBlock(ModBlocks.COBBLESTONE_SHAKURAS);
-	    }
-	
-	
-
 }

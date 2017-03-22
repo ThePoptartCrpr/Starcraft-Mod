@@ -28,20 +28,16 @@ public class DimPortalChar extends ModBlocks {
 	
 	public DimPortalChar() {
 		super(Material.ROCK);
-		this.setLightLevel(1.0F);
-		this.setHardness(5.0F);
-		this.setResistance(0.0F);
+		setLightLevel(1.0F);
+		setHardness(5.0F);
+		setResistance(0.0F);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL());
-		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
-		
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 	
 	@Override
-    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn)
-    {
-		
-    }
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn) {}
 
 	@Override
 	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
@@ -62,21 +58,23 @@ public class DimPortalChar extends ModBlocks {
 	 * Triggered whenever an entity collides with this block (enters into the
 	 * block). Args: world, x, y, z, entity
 	 */
+	@Override
 	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
-		if (!entity.isRiding() && !entity.isBeingRidden() && !world.isRemote) {
+		if(!entity.isRiding() && !entity.isBeingRidden() && !world.isRemote) {
 
 			try {
 				EntityPlayerMP player = (EntityPlayerMP) entity;
-				if (player.dimension != this.dim) {
+				if(player.dimension != dim) {
 					player.mcServer.getPlayerList().transferPlayerToDimension(player, DimensionRegistry.AiurDimensionID, new ModTeleporter(player.mcServer.worldServerForDimension(DimensionRegistry.AiurDimensionID), 0, 0, 0));
 				}
-			} catch (ClassCastException e) {
-				return; // not a player
+			} catch(@SuppressWarnings("unused") ClassCastException e) {
+				return; //Not a player
 			}
 		}
 	}
 
-	public MapColor getMapColor(int par1) {
+	@Override
+	public MapColor getMapColor(IBlockState state) {
 		return MapColor.OBSIDIAN;
 	}
 }

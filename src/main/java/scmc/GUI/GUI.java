@@ -17,7 +17,7 @@ public class GUI extends Gui {
 
 	//Draw stuff when XP bar is overlayed
 	@SubscribeEvent
-	public void onRenderXPBar(RenderGameOverlayEvent event) {
+	public void onRenderXPBar(@SuppressWarnings("unused") RenderGameOverlayEvent event) {
 
 //		int xPos = 123; //X offset on screen
 //		int yPos = 202; //Y offset on screen

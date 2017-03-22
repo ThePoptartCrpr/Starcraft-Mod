@@ -14,6 +14,7 @@ public class ToolSteelAxe extends ItemAxe {
 		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
 	}
 	
+	@Override
     public float getStrVsBlock(ItemStack stack, IBlockState state) {
         Material material = state.getMaterial();
         return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;

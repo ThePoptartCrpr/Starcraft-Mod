@@ -73,7 +73,6 @@ import scmc.worldgen.biome.BiomesSC;
 
 @SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
 public class ClientProxy extends ServerProxy {
-
 	public void registerEntityRenders() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class,
 				new RenderZealot(Minecraft.getMinecraft().getRenderManager(), new ModelZealot(), 0.4f)); // use
@@ -135,6 +134,7 @@ public class ClientProxy extends ServerProxy {
 
 	}
 
+	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
 		ModBlocks.init();
@@ -166,6 +166,7 @@ public class ClientProxy extends ServerProxy {
 		BiomesSC.init();
 	}
 
+	@Override
 	public void init(FMLInitializationEvent event) {
 		ModEntities.setEntityToSpawn();
 		ModEntities.generateSpawnEgg();
@@ -173,9 +174,9 @@ public class ClientProxy extends ServerProxy {
 		Achievements.init();
 	}
 
+	@Override
 	public void postInit(FMLPostInitializationEvent event) {
-
-		// GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
+		//GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
 	}
 
 	@Override

@@ -52,10 +52,9 @@ import scmc.oreshakuras.OreShakurasTitanium;
 import scmc.oreshakuras.OreShakurasUranium;
 
 /**
- * Copyright 2017 the Starcraft Minecraft mod team
+ * Copyright (c) 2017 the Starcraft Minecraft (SCMC) mod team
  */
 public class ModBlocks extends Block {
-
 	public ModBlocks(Material material) {
 		super(material);
 	}
@@ -642,11 +641,14 @@ public class ModBlocks extends Block {
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_WARPGATE_KHALAI.getUnlocalizedName().substring(5));
 		
 		//BlockRenderRegister.registerBlockRenderer();
-	
 	}
 	
+	/**
+	 * ...?
+	 * @param bool 'tis a bool
+	 * @return {@code bool}
+	 */
 	public boolean PoweredByPSI(boolean bool) {
 		return bool;
 	}
-
 }

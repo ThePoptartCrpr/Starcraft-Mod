@@ -25,11 +25,8 @@ import scmc.tileentity.TileEntityBlockMineralField;
  * @author bvanseghi
  */
 public class BlockMineralField extends BlockContainer {
+	private static final AxisAlignedBB THIS_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
 	
-	/**
-	 * Constructor for the class
-	 * @param material the material the block takes on
-	 */
 	public BlockMineralField(Material material) {
 		super(material);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_MINERAL_FIELD.getUnlocalizedName());
@@ -94,8 +91,6 @@ public class BlockMineralField extends BlockContainer {
 	public boolean isNormalCube(IBlockState state, IBlockAccess access, BlockPos pos) {
 		return false;
 	}
-
-	protected static final AxisAlignedBB THIS_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
 	
 	/**
 	 * Returns the bounding box of this block
@@ -103,8 +98,8 @@ public class BlockMineralField extends BlockContainer {
 	 * @param source allows you to grab the state of the block via its position
 	 * @param pos the position of the block
 	 */
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return THIS_AABB;
     }
 
