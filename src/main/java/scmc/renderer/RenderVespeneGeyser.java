@@ -10,7 +10,8 @@ import scmc.model.ModelVespeneGeyser;
 @SuppressWarnings("rawtypes")
 public class RenderVespeneGeyser<T> extends TileEntitySpecialRenderer {
 
-	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/vespeneGeyser.png"); //Of course not
+	private static final ResourceLocation texture = new ResourceLocation(
+			Reference.RL_BASE + "textures/model/vespeneGeyser.png"); //Of course not
 
 	private ModelVespeneGeyser model;
 

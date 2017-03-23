@@ -13,7 +13,7 @@ import scmc.model.ModelHydralisk;
 public class RenderHydralisk<T> extends RenderLiving<EntityHydralisk> {
 
 	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/hydralisk.png");
+			Reference.RL_BASE + "textures/entity/hydralisk.png");
 
 	protected ModelHydralisk modelEntity;
 

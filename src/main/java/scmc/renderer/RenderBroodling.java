@@ -11,7 +11,7 @@ import scmc.model.ModelBroodling;
 public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
 
 	private static final ResourceLocation BROODLING_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/broodling.png");
+			Reference.RL_BASE + "textures/entity/broodling.png");
 
 	protected ModelBroodling modelEntity;
 

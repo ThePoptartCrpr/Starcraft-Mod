@@ -11,7 +11,7 @@ import scmc.model.ModelScourge;
 public class RenderScourge<T> extends RenderLiving<EntityScourge> {
 
 	private static final ResourceLocation SCOURGE_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/scourge.png");
+			Reference.RL_BASE + "textures/entity/scourge.png");
 
 	protected ModelScourge modelEntity;
 

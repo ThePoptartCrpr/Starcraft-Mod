@@ -11,7 +11,7 @@ import scmc.model.ModelOverlord;
 public class RenderOverlord<T> extends RenderLiving<EntityOverlord> {
 
 	private static final ResourceLocation OVERLORD_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/overlord.png");
+			Reference.RL_BASE + "textures/entity/overlord.png");
 
 	protected ModelOverlord modelEntity;
 

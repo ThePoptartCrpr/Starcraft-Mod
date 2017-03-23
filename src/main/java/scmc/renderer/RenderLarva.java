@@ -11,7 +11,7 @@ import scmc.model.ModelLarva;
 public class RenderLarva<T> extends RenderLiving<EntityLarva> {
 
 	private static final ResourceLocation LARVA_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/larva.png");
+			Reference.RL_BASE + "textures/entity/larva.png");
 
 	protected ModelLarva modelEntity;
 
