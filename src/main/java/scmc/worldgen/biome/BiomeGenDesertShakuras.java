@@ -6,43 +6,45 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkPrimer;
 import scmc.blocks.BlockShakurasSand;
 import scmc.blocks.ModBlocks;
 
+//FIXME: this. all of this
 public class BiomeGenDesertShakuras extends BiomesSC {
 
 	public BiomeGenDesertShakuras(BiomeProperties id) {
 		super(id);
+		
+		topBlock = ModBlocks.SAND_SHAKURAS.getDefaultState();
+		fillerBlock = ModBlocks.STONE_SHAKURAS.getDefaultState();
 
-		this.topBlock = ModBlocks.SAND_SHAKURAS.getDefaultState();
-		this.fillerBlock = ModBlocks.STONE_SHAKURAS.getDefaultState();
-
-		this.spawnableMonsterList.clear();
-		this.spawnableCreatureList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCaveCreatureList.clear();
+		spawnableMonsterList.clear();
+		spawnableCreatureList.clear();
+		spawnableWaterCreatureList.clear();
+		spawnableCaveCreatureList.clear();
 	}
 
+	@Override
 	public int getSkyColorByTemp(float par1) {
 		return 0;
 	}
 
-	public void genTerrainBlocks(World world, Random rand, Block[] block, byte[] par1, int par2, int par3,
-			double par4) {
-		this.genBiomeTerrainShakuras(world, rand, block, par1, par2, par3, par4);
+	@Override
+	public void genTerrainBlocks(World world, Random rand, ChunkPrimer primer, int x, int z, double noiseVal) {
+		genBiomeTerrainShakuras(rand, primer, x, z, noiseVal);
 	}
 
-	public final void genBiomeTerrainShakuras(World world, Random rand, Block[] blockArray, byte[] par1, int par2, int par3,
-			double par4) {
+	public final void genBiomeTerrainShakuras(Random rand, ChunkPrimer primer, int x, int z, double noiseVal) {
 //		boolean flag = true;
-		Block block = this.topBlock.getBlock();
+		Block block = topBlock.getBlock();
 		byte b0 = (byte) (0 & 255);
 		//WARNING FOR B0
-		Block block1 = this.fillerBlock.getBlock();
+		Block block1 = fillerBlock.getBlock();
 		int k = -1;
-		int l = (int) (par4 / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
-		int i1 = par2 & 15;
-		int j1 = par3 & 15;
+		int l = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
+		int i1 = x & 15;
+		int j1 = z & 15;
 		int k1 = blockArray.length / 256;
 
 		for (int l1 = 255; l1 >= 0; --l1) {
@@ -61,10 +63,10 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 								b0 = 0;
 								block1 = ModBlocks.STONE_SHAKURAS;
 							} else if (l1 >= 59 && l1 <= 64) {
-								block = this.topBlock.getBlock();
+								block = topBlock.getBlock();
 								b0 = (byte) (0 & 255);
 								//WARNING FOR B0
-								block1 = this.fillerBlock.getBlock();
+								block1 = fillerBlock.getBlock();
 							}
 							Material mat = block.getBlockState().getBaseState().getMaterial();
 							if (l1 < 63 && (block == null || mat == Material.AIR)) {
@@ -78,7 +80,7 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 								if (block instanceof BlockShakurasSand) {
 									int i3 = (j1 * 16 + i1) * k1 + (l1 + 1);
 									blockArray[i3] = block;
-									block = this.fillerBlock.getBlock();
+									block = fillerBlock.getBlock();
 								}
 								blockArray[i2] = block;
 								par1[i2] = b0;

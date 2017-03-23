@@ -26,86 +26,84 @@ import scmc.entity.passive.EntityZergPassive;
 import scmc.lib.StarcraftConfig;
 
 public class EntityProtossReaver extends EntityProtossMob implements IRangedAttackMob {
-	Random random = new Random();
-
 	public EntityProtossReaver(World world) {
 		super(world);
-		this.setSize(6.0F, 3.0F);
+		setSize(6, 3);
 	}
 	
-	public boolean isAIEnabled()
-	{
-		return true;
+	//FIXME: this
+	//	public boolean isAIEnabled() {
+	//		return true;
+	//	}
+	
+	@Override
+	protected void initEntityAI() {
+		tasks.addTask(0, new EntityAISwimming(this));
+		tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 100, 30));
+		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
+		tasks.addTask(7, new EntityAIWander(this, 1));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
+		tasks.addTask(8, new EntityAILookIdle(this));
+		applyEntityAI();
 	}
-
-	protected void initEntityAI()
-	{
-		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 100, 30.0F));
-		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
-		this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
-		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		this.tasks.addTask(8, new EntityAILookIdle(this));
-		this.applyEntityAI();
-	}
-
-	protected void applyEntityAI()
-	{
-		tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+	
+	protected void applyEntityAI() {
+		tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1, false));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityZergMob>(this, EntityZergMob.class, true));
 		targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-		
 		targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-		
 		targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityZergPassive>(this, EntityZergPassive.class, true));
 		targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
 	}
 	
+	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.preaverHP);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.24000000417232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.reaverHP);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.24000000417232513);
+		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
+		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999);
 	}
 	
-	public int getTalkInterval()
-	{
+	@Override
+	public int getTalkInterval() {
 		return 160;
 	}
 	
+	@Override
 	public SoundEvent getAmbientSound() {
 		Random rand = new Random();
-		if(rand.nextInt(3) == 0) {
+		
+		if(rand.nextInt(5) == 0) {
 			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE1;
-		}else if(rand.nextInt(3) == 1) {
+		} else if(rand.nextInt(5) == 1) {
 			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE2;
-		}else if(rand.nextInt(3) == 2) {
+		} else if(rand.nextInt(5) == 2) {
 			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE3;
-		}else if(rand.nextInt(3) == 3) {
+		} else if(rand.nextInt(5) == 3) {
 			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE4;
+		} else {
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE5;
 		}
-		return StarcraftSoundEvents.ENTITY_PREAVER_LIVE5;
 	}
 	
+	@Override
 	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_PREAVER_HURT;
 	}
 	
+	@Override
 	public SoundEvent getDeathSound() {
 		return StarcraftSoundEvents.ENTITY_PREAVER_DEATH;
 	}
-
+	
 	@Override
-    public void attackEntityWithRangedAttack(EntityLivingBase entity, float distance) {
-		if(!worldObj.isRemote){
-			for (int i = 0; i < 1; ++i)
-	        {
+	public void attackEntityWithRangedAttack(EntityLivingBase entity, float distance) {
+		if(!worldObj.isRemote) {
 			EntityScarab scarab = new EntityScarab(worldObj);
-			scarab.setLocationAndAngles(this.posX, this.posY, this.posZ, 0, 0);
+			scarab.setLocationAndAngles(posX, posY, posZ, 0, 0);
 			worldObj.spawnEntityInWorld(scarab);
-	        }
 		}
 	}
 }

@@ -33,8 +33,8 @@ public class CharBiomeProvider extends BiomeProvider
 
     protected CharBiomeProvider()
     {
-        this.biomeCache = new BiomeCache(this);
-        this.biomesToSpawnIn = Lists.newArrayList(allowedBiomes);
+        biomeCache = new BiomeCache(this);
+        biomesToSpawnIn = Lists.newArrayList(allowedBiomes);
     }
 
     private CharBiomeProvider(long seed, WorldType worldTypeIn, String options)
@@ -42,8 +42,8 @@ public class CharBiomeProvider extends BiomeProvider
         this();
         GenLayer[] agenlayer = GenLayer.initializeAllBiomeGenerators(seed, worldTypeIn, options);
         agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
-        this.genBiomes = agenlayer[0];
-        this.biomeIndexLayer = agenlayer[1];
+        genBiomes = agenlayer[0];
+        biomeIndexLayer = agenlayer[1];
     }
 
     public CharBiomeProvider(WorldInfo info)
@@ -51,28 +51,32 @@ public class CharBiomeProvider extends BiomeProvider
         this(info.getSeed(), info.getTerrainType(), info.getGeneratorOptions());
     }
 
-    public List<Biome> getBiomesToSpawnIn()
+    @Override
+	public List<Biome> getBiomesToSpawnIn()
     {
-        return this.biomesToSpawnIn;
+        return biomesToSpawnIn;
     }
 
     /**
      * Returns the biome generator
      */
-    public Biome getBiomeGenerator(BlockPos pos)
+    @Override
+	public Biome getBiomeGenerator(BlockPos pos)
     {
-        return this.getBiomeGenerator(pos, (Biome)null);
+        return getBiomeGenerator(pos, (Biome)null);
     }
 
-    public Biome getBiomeGenerator(BlockPos pos, Biome biomeGenBaseIn)
+    @Override
+	public Biome getBiomeGenerator(BlockPos pos, Biome biomeGenBaseIn)
     {
-        return this.biomeCache.getBiome(pos.getX(), pos.getZ(), biomeGenBaseIn);
+        return biomeCache.getBiome(pos.getX(), pos.getZ(), biomeGenBaseIn);
     }
 
     /**
      * Return an adjusted version of a given temperature based on the y height
      */
-    public float getTemperatureAtHeight(float p_76939_1_, int p_76939_2_)
+    @Override
+	public float getTemperatureAtHeight(float p_76939_1_, int p_76939_2_)
     {
         return p_76939_1_;
     }
@@ -80,7 +84,8 @@ public class CharBiomeProvider extends BiomeProvider
     /**
      * Returns an array of biomes for the location input.
      */
-    public Biome[] getBiomesForGeneration(Biome[] biomes, int x, int z, int width, int height)
+    @Override
+	public Biome[] getBiomesForGeneration(Biome[] biomes, int x, int z, int width, int height)
     {
         IntCache.resetIntCache();
 
@@ -89,7 +94,7 @@ public class CharBiomeProvider extends BiomeProvider
             biomes = new Biome[width * height];
         }
 
-        int[] aint = this.genBiomes.getInts(x, z, width, height);
+        int[] aint = genBiomes.getInts(x, z, width, height);
 
         try
         {
@@ -117,15 +122,17 @@ public class CharBiomeProvider extends BiomeProvider
      * Gets biomes to use for the blocks and loads the other data like temperature and humidity onto the
      * WorldChunkManager.
      */
-    public Biome[] loadBlockGeneratorData(@Nullable Biome[] oldBiomeList, int x, int z, int width, int depth)
+    @Override
+	public Biome[] loadBlockGeneratorData(@Nullable Biome[] oldBiomeList, int x, int z, int width, int depth)
     {
-        return this.getBiomeGenAt(oldBiomeList, x, z, width, depth, true);
+        return getBiomeGenAt(oldBiomeList, x, z, width, depth, true);
     }
 
     /**
      * Gets a list of biomes for the specified blocks.
      */
-    public Biome[] getBiomeGenAt(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
+    @Override
+	public Biome[] getBiomeGenAt(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
     {
         IntCache.resetIntCache();
 
@@ -136,13 +143,13 @@ public class CharBiomeProvider extends BiomeProvider
 
         if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (z & 15) == 0)
         {
-            Biome[] abiome = this.biomeCache.getCachedBiomes(x, z);
+            Biome[] abiome = biomeCache.getCachedBiomes(x, z);
             System.arraycopy(abiome, 0, listToReuse, 0, width * length);
             return listToReuse;
         }
         else
         {
-            int[] aint = this.biomeIndexLayer.getInts(x, z, width, length);
+            int[] aint = biomeIndexLayer.getInts(x, z, width, length);
 
             for (int i = 0; i < width * length; ++i)
             {
@@ -156,7 +163,8 @@ public class CharBiomeProvider extends BiomeProvider
     /**
      * checks given Chunk's Biomes against List of allowed ones
      */
-    public boolean areBiomesViable(int x, int z, int radius, List<Biome> allowed)
+    @Override
+	public boolean areBiomesViable(int x, int z, int radius, List<Biome> allowed)
     {
         IntCache.resetIntCache();
         int i = x - radius >> 2;
@@ -165,7 +173,7 @@ public class CharBiomeProvider extends BiomeProvider
         int l = z + radius >> 2;
         int i1 = k - i + 1;
         int j1 = l - j + 1;
-        int[] aint = this.genBiomes.getInts(i, j, i1, j1);
+        int[] aint = genBiomes.getInts(i, j, i1, j1);
 
         try
         {
@@ -185,7 +193,7 @@ public class CharBiomeProvider extends BiomeProvider
         {
             CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
             CrashReportCategory crashreportcategory = crashreport.makeCategory("Layer");
-            crashreportcategory.addCrashSection("Layer", this.genBiomes.toString());
+            crashreportcategory.addCrashSection("Layer", genBiomes.toString());
             crashreportcategory.addCrashSection("x", Integer.valueOf(x));
             crashreportcategory.addCrashSection("z", Integer.valueOf(z));
             crashreportcategory.addCrashSection("radius", Integer.valueOf(radius));
@@ -194,7 +202,8 @@ public class CharBiomeProvider extends BiomeProvider
         }
     }
 
-    @Nullable
+    @Override
+	@Nullable
     public BlockPos findBiomePosition(int x, int z, int range, List<Biome> biomes, Random random)
     {
         IntCache.resetIntCache();
@@ -204,7 +213,7 @@ public class CharBiomeProvider extends BiomeProvider
         int l = z + range >> 2;
         int i1 = k - i + 1;
         int j1 = l - j + 1;
-        int[] aint = this.genBiomes.getInts(i, j, i1, j1);
+        int[] aint = genBiomes.getInts(i, j, i1, j1);
         BlockPos blockpos = null;
         int k1 = 0;
 
@@ -227,12 +236,14 @@ public class CharBiomeProvider extends BiomeProvider
     /**
      * Calls the WorldChunkManager's biomeCache.cleanupCache()
      */
-    public void cleanupCache()
+    @Override
+	public void cleanupCache()
     {
-        this.biomeCache.cleanupCache();
+        biomeCache.cleanupCache();
     }
 
-    public GenLayer[] getModdedBiomeGenerators(WorldType worldType, long seed, GenLayer[] original)
+    @Override
+	public GenLayer[] getModdedBiomeGenerators(WorldType worldType, long seed, GenLayer[] original)
     {
         net.minecraftforge.event.terraingen.WorldTypeEvent.InitBiomeGens event = new net.minecraftforge.event.terraingen.WorldTypeEvent.InitBiomeGens(worldType, seed, original);
         net.minecraftforge.common.MinecraftForge.TERRAIN_GEN_BUS.post(event);

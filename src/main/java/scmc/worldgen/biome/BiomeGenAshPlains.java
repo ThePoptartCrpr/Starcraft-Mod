@@ -25,13 +25,14 @@ public class BiomeGenAshPlains extends BiomesSC {
 		this.spawnableCaveCreatureList.clear();
 	}
 
+	@Override
 	public int getSkyColorByTemp(float par1) {
 		return 0;
 	}
 	
-	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal)
-    {
-        this.genBiomeTerrainChar(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
+	@Override
+	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
+        genBiomeTerrainChar(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
     }
 
 	public final void genBiomeTerrainChar(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {

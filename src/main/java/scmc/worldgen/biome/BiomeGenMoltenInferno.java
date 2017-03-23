@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 import scmc.blocks.BlockAsh;
 import scmc.blocks.ModBlocks;
 
+//FIXME: repeat the desertshakuras stuff here
 public class BiomeGenMoltenInferno extends BiomesSC {
 
 	public BiomeGenMoltenInferno(BiomeProperties id) {
@@ -24,6 +25,7 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 		this.spawnableCaveCreatureList.clear();
 	}
 
+	@Override
 	public int getSkyColorByTemp(float par1) {
 		return 0;
 	}

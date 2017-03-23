@@ -50,19 +50,19 @@ public class EntityAIScarabExplode extends EntityAIBase {
     public void updateTask() {
         if (scarabAttackTarget == null)
         {
-            swellingScarab.setCreeperState(-1);
+            swellingScarab.setScarabState(-1);
         }
         else if (swellingScarab.getDistanceSqToEntity(scarabAttackTarget) > 49)
         {
-            swellingScarab.setCreeperState(-1);
+            swellingScarab.setScarabState(-1);
         }
         else if (!swellingScarab.getEntitySenses().canSee(scarabAttackTarget))
         {
-            swellingScarab.setCreeperState(-1);
+            swellingScarab.setScarabState(-1);
         }
         else
         {
-            swellingScarab.setCreeperState(1);
+            swellingScarab.setScarabState(1);
         }
     }
 }
