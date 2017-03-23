@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import scmc.CreativeTab;
@@ -18,25 +19,23 @@ public class OreCharLapis extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_LAPIS_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_LAPIS_C.getRegistryRL());
 	}
 	
-	public int damageDropped(int par1) {
+	@Override
+	public int damageDropped(IBlockState state) {
 		return 4;
+	}
 
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int par3) {
+		return Items.DYE;
 	}
 	
-	 public Item getItemDropped(int par1, Random rand, int par3)
-	    {
-	        return Items.DYE;
-	    }
-	 
-	 public int quantityDropped(Random rand)
-	    {
-		 return 4 + rand.nextInt(4);
-	    }
-	 
-	 
+	@Override
+	public int quantityDropped(Random rand) {
+		return 4 + rand.nextInt(4);
+	}
 }

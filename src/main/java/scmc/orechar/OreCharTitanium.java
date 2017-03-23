@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import scmc.CreativeTab;
 import scmc.blocks.ModBlocks;
@@ -17,18 +18,18 @@ public class OreCharTitanium extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
-		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		setUnlocalizedName(Reference.ModBlocks.ORE_TITANIUM_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_TITANIUM_C.getRegistryRL());
 	}
 	
-	public int damageDropped(int par1) {
-		return par1;
-
+	@Override
+	public int damageDropped(IBlockState state) {
+		return getMetaFromState(state);
 	}
 	
-	 public Item getItemDropped(int par1, Random rand, int par3)
-	    {
-	        return Item.getItemFromBlock(this);
-	    }
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int par3) {
+	    return Item.getItemFromBlock(this);
+	}
 }

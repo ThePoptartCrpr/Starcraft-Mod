@@ -165,7 +165,7 @@ public class ClientProxy extends ServerProxy {
 		SCWorldGen.preInit();
 		ModEntities.registerEntities();
 		StarcraftSoundEvents.registerSounds();
-		BiomesSC.init();
+//		BiomesSC.init();
 	}
 
 	@Override
