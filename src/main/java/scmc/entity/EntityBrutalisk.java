@@ -89,7 +89,7 @@ public class EntityBrutalisk extends EntityZergMob {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		
-		//To be modified by bvanseghi
+		//TODO apparently this needs modified
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.brutaliskHP);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2700000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
@@ -97,8 +97,7 @@ public class EntityBrutalisk extends EntityZergMob {
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
 	}
 	
-	public int getTalkInterval()
-    {
+	public int getTalkInterval() {
         return 160;
     }
 	
@@ -114,8 +113,7 @@ public class EntityBrutalisk extends EntityZergMob {
 		return StarcraftSoundEvents.ENTITY_BRUTALISK_DEATH;
 	}
 	
-	protected void playStepSound(BlockPos pos, Block blockIn)
-    {
+	protected void playStepSound(BlockPos pos, Block blockIn) {
         this.playSound(StarcraftSoundEvents.ENTITY_BRUTALISK_STEP, 0.15F, 1.0F);
     }
 	

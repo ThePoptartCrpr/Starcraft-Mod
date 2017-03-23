@@ -2,6 +2,6 @@
     "parent": "block/cube_all",
     "textures": {
         "top": "starcraft:blocks/char_warp_projector_top",
-        "side": "starcraft:blocks/protoss_metal_aiur"
+        "side": "starcraft:blocks/protoss_metalt1_aiur"
     }
 }

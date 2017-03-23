@@ -13,7 +13,7 @@ import scmc.model.ModelDarkTemplar;
 public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
 
 	private static final ResourceLocation DARK_TEMPLAR_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/darktemplar.png");
+			Reference.RL_BASE + "textures/entity/darktemplar.png");
 
 	protected ModelDarkTemplar modelEntity;
 

@@ -11,7 +11,7 @@ import scmc.model.ModelDarkProbe;
 public class RenderDarkProbe<T> extends RenderLiving<EntityDarkProbe> {
 
 	private static final ResourceLocation DARK_PROBE_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/darkprobe.png");
+			Reference.RL_BASE + "textures/entity/darkprobe.png");
 
 	protected ModelDarkProbe modelEntity;
 

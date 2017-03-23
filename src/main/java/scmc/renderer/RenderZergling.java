@@ -13,7 +13,7 @@ import scmc.model.ModelZergling;
 public class RenderZergling<T> extends RenderLiving<EntityZergling> {
 
 	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/zergling.png");
+			Reference.RL_BASE + "textures/entity/zergling.png");
 
 	protected ModelZergling modelEntity;
 

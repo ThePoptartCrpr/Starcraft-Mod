@@ -13,7 +13,7 @@ import scmc.model.ModelProtossReaver;
 public class RenderProtossReaver<T> extends RenderLiving<EntityProtossReaver> {
 
 	private static final ResourceLocation PREAVER_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/preaver.png");
+			Reference.RL_BASE + "textures/entity/preaver.png");
 			
 	protected ModelProtossReaver modelEntity;
 

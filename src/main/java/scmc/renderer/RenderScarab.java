@@ -13,7 +13,7 @@ import scmc.model.ModelScarab;
 public class RenderScarab<T> extends RenderLiving<EntityScarab> {
 
 	private static final ResourceLocation SCARAB_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/scarab.png");
+			Reference.RL_BASE + "textures/entity/scarab.png");
 			
 	protected ModelScarab modelEntity;
 
