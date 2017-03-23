@@ -12,6 +12,11 @@ import net.minecraft.item.Item;
 import scmc.CreativeTab;
 import scmc.lib.Reference;
 
+/**
+ * Char Stone block.<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
+ * @author bvanseghi
+ */
 public class BlockCharStone extends Block {
 	public BlockCharStone() {
 		super(Material.ROCK);
@@ -24,6 +29,12 @@ public class BlockCharStone extends Block {
 		setRegistryName(Reference.ModBlocks.BLOCK_STONE_C.getRegistryRL());
 	}
 	
+	/**
+	 * Gets the item dropped
+	 * @param state the state of the block
+	 * @param rand an object of the Random class
+	 * @param fortune the magnitude of the fortune enchantment effect on this block
+	 */
 	@Override
 	@Nullable
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {

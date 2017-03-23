@@ -10,14 +10,15 @@ import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import scmc.lib.StarcraftConfig;
 
+@EventBusSubscriber
 public class VanillaEntityHandler {
 	
 	@SubscribeEvent
-	public void onEntitySpawn(EntityJoinWorldEvent event) {
-		
+	public static void onEntitySpawn(EntityJoinWorldEvent event) {
 		if(StarcraftConfig.vanillaSpawn == true) {
 			if (event.getEntity() instanceof EntityCaveSpider || event.getEntity() instanceof EntitySilverfish
 					|| event.getEntity() instanceof EntityWitch || event.getEntity() instanceof EntitySlime

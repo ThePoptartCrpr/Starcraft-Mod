@@ -181,7 +181,6 @@ public class ItemEnumHandler {
 		}
 	}
 	
-	
 	public static enum CoordinateType implements IStringSerializable {
 		CHAR("char", 0),
 		SHAKURAS("shakuras", 1);
@@ -350,5 +349,4 @@ public class ItemEnumHandler {
 			return getName();
 		}
 	}
-	
 }

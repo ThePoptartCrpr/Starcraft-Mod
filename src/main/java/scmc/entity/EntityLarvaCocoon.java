@@ -1,7 +1,5 @@
 package scmc.entity;
 
-import java.util.Random;
-
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.SoundEvent;
@@ -12,8 +10,6 @@ import scmc.lib.Library;
 import scmc.lib.StarcraftConfig;
 
 public class EntityLarvaCocoon extends EntityZergPassive {
-	private Random random = new Random();
-	
 	public EntityLarvaCocoon(World world) {
 		super(world);
 		this.setSize(0.7F, 0.8F);
@@ -57,8 +53,8 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 		super.onUpdate();
 		
 		if(!worldObj.isRemote) {
-			if((ticksExisted > 340)) {
-				Library.cocoonMorph(worldObj, this, random);
+			if((ticksExisted > 740)) {
+				Library.replaceEntity(false, this, new EntityZergling(worldObj), new EntityZergling(worldObj));
 			}
 		}
 	}

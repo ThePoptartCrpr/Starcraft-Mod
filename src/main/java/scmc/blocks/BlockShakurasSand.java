@@ -22,5 +22,4 @@ public class BlockShakurasSand extends BlockFalling {
 		return par1;
 
 	}
-
 }

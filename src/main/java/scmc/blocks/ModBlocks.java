@@ -22,7 +22,7 @@ import scmc.blocks.coreblocks.BlockCorePylonVoid;
 import scmc.blocks.coreblocks.BlockCoreWarpGateDark;
 import scmc.blocks.coreblocks.BlockCoreWarpGateKhalai;
 import scmc.blocks.coreblocks.BlockCoreWarpGateVoid;
-import scmc.blocks.metablocks.BlockCompressedMetals;
+import scmc.blocks.metablocks.BlockCompressedMetalsT1;
 import scmc.blocks.metablocks.BlockPylonCrystal;
 import scmc.debug.DimPortalChar;
 import scmc.debug.DimPortalOverworld;
@@ -56,7 +56,7 @@ import scmc.oreshakuras.OreShakurasTitanium;
 import scmc.oreshakuras.OreShakurasUranium;
 
 /**
- * Copyright 2017 the Starcraft Minecraft mod team
+ * Copyright (c) 2017 the Starcraft Minecraft (SCMC) mod team
  */
 public class ModBlocks extends Block {
 
@@ -136,7 +136,7 @@ public class ModBlocks extends Block {
 	public static Block terranMetal;
 	public static Block terranMetalDec1;
 
-	public static BlockCompressedMetals COMP_METAL;
+	public static BlockCompressedMetalsT1 COMP_METAL;
 
 	// Will be used in Xel'Naga temples and shrines.
 	public static Block xelnagaMetal;
@@ -698,8 +698,12 @@ public class ModBlocks extends Block {
 	
 	}
 	
+	/**
+	 * ...?
+	 * @param bool 'tis a bool
+	 * @return {@code bool}
+	 */
 	public boolean PoweredByPSI(boolean bool) {
 		return bool;
 	}
-
 }

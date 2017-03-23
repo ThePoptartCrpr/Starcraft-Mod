@@ -11,5 +11,4 @@ public class WeaponMasterPsiBlade extends ItemSword {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
 	}
-
 }

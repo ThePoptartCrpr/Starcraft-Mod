@@ -8,19 +8,18 @@ import net.minecraft.world.World;
 
 public class EntityC14GaussRifleBullet extends EntityThrowable {
 	private double speed = 5.0;
-	public EntityLivingBase shootingEntity;
-	float explosionRadius = 0;
+	private EntityLivingBase shootingEntity;
 
 	public EntityC14GaussRifleBullet(World par1World) {
 		super(par1World);
-		this.setSize(0.05F, 0.05F);
+		setSize(0.05F, 0.05F);
 	}
 
 	public EntityC14GaussRifleBullet(World par1World, EntityLivingBase par2EntityLivingBase) {
 		super(par1World, par2EntityLivingBase);
-		this.motionX *= speed;
-		this.motionY *= speed;
-		this.motionZ *= speed;
+		motionX *= speed;
+		motionY *= speed;
+		motionZ *= speed;
 	}
 
 	public EntityC14GaussRifleBullet(World par1World, double par2, double par4, double par6) {
@@ -34,17 +33,16 @@ public class EntityC14GaussRifleBullet extends EntityThrowable {
 
 	@Override
 	protected void onImpact(RayTraceResult result) {
-		if (!this.worldObj.isRemote) {
+		if (!worldObj.isRemote) {
 			if (result.entityHit != null) {
-				if (!result.entityHit.isImmuneToFire() && result.entityHit
-						.attackEntityFrom(DamageSource.causeThrownDamage(this, this.shootingEntity), 6.0F)) {
-
+				if (!result.entityHit.isImmuneToFire() && result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, shootingEntity), 6)) {
+					//...?
 				}
 			} else {
-
+				//...?
 			}
-			this.setDead();
+			
+			setDead();
 		}
 	}
-
 }

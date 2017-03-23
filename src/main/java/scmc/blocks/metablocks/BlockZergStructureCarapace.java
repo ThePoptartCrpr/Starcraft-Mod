@@ -40,7 +40,7 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
 		this.setHardness(20); //Sets how hard the block is to break
-		this.setResistance(20); //Sets the blocks blast resitance to explosions
+		this.setResistance(20); //Sets the blocks blast resistance to explosions
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ZergStructureCarapaceType.T1)); //Default state
 	}
 	
@@ -103,5 +103,4 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	public String getSpecialName(ItemStack stack) {
 		return ZergStructureCarapaceType.values()[stack.getItemDamage()].getName();
 	}
-
 }

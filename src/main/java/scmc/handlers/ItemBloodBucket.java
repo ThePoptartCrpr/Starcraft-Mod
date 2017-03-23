@@ -1,5 +1,5 @@
 package scmc.handlers;
-//package net.bvanseghi.starcraft.handlers;
+//package scmc.handlers;
 //
 //import net.minecraft.block.Block;
 //import net.minecraft.item.Item;

@@ -2878,5 +2878,4 @@ public class StructureZergSpawningPool extends WorldGenerator {
 		return true;
 
 	}
-
 }

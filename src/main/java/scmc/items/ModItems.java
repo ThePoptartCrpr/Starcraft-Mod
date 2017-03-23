@@ -15,7 +15,9 @@ import scmc.items.metaitems.ItemDust;
 import scmc.items.metaitems.ItemEnergy;
 import scmc.items.metaitems.ItemEnumHandler;
 import scmc.items.metaitems.ItemEssence;
-import scmc.items.metaitems.ItemIngot;
+import scmc.items.metaitems.ItemIngotT1;
+import scmc.items.metaitems.ItemIngotT2;
+import scmc.items.metaitems.ItemIngotT3;
 import scmc.items.metaitems.ItemMineralShard;
 import scmc.items.metaitems.ItemProtossCoordinates;
 import scmc.items.metaitems.ItemPsiBladeFocuserUncharged;
@@ -42,7 +44,9 @@ public class ModItems extends Item {
 	public static Item essence;
 	public static Item c14Parts;
 
-	public static Item ingot;
+	public static Item ingot1;
+	public static Item ingot2;
+	public static Item ingot3;
 	public static Item dust;
 	public static Item coord;
 
@@ -68,7 +72,9 @@ public class ModItems extends Item {
 		energy = new ItemEnergy("energy");
 		dust = new ItemDust("dust");
 		essence = new ItemEssence("essence");
-		ingot = new ItemIngot("ingot");
+		ingot1 = new ItemIngotT1("ingot1");
+		ingot2 = new ItemIngotT2("ingot2");
+		ingot3 = new ItemIngotT3("ingot3");
 		crystal = new ItemCrystal("crystal");
 		c14Parts = new ItemC14GaussRifleParts("part_c14_gauss");
 		bullet = new ItemBullet("bullet");
@@ -91,7 +97,9 @@ public class ModItems extends Item {
 		registerItem(energy);
 		registerItem(dust);
 		registerItem(essence);
-		registerItem(ingot);
+		registerItem(ingot1);
+		registerItem(ingot2);
+		registerItem(ingot3);
 		registerItem(crystal);
 		registerItem(c14Parts);
 		registerItem(bullet);
@@ -118,7 +126,13 @@ public class ModItems extends Item {
 			registerRender(essence, i, "essence_" + ItemEnumHandler.EssenceType.values()[i].getName());
 		}
 		for(int i = 0; i < ItemEnumHandler.IngotType.values().length; i++) {
-			registerRender(ingot, i, "ingot_" + ItemEnumHandler.IngotType.values()[i].getName());
+			registerRender(ingot1, i, "ingot1_" + ItemEnumHandler.IngotType.values()[i].getName());
+		}
+		for(int i = 0; i < ItemEnumHandler.IngotType.values().length; i++) {
+			registerRender(ingot2, i, "ingot2_" + ItemEnumHandler.IngotType.values()[i].getName());
+		}
+		for(int i = 0; i < ItemEnumHandler.IngotType.values().length; i++) {
+			registerRender(ingot3, i, "ingot3_" + ItemEnumHandler.IngotType.values()[i].getName());
 		}
 		for(int i = 0; i < ItemEnumHandler.CrystalType.values().length; i++) {
 			registerRender(crystal, i, "crystal_" + ItemEnumHandler.CrystalType.values()[i].getName());

@@ -1,41 +1,60 @@
 package scmc.lib;
 
+import javax.annotation.Nonnull;
+
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
 public class ModTeleporter extends Teleporter {
-    private final WorldServer worldServerInstance;
-    
-    public ModTeleporter(WorldServer worldSrv) {
-    	super(worldSrv);
-        worldServerInstance = worldSrv;
+
+    public ModTeleporter(WorldServer world, double x, double y, double z) {
+        super(world);
+        this.worldServer = world;
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
-    /**
-     * Place an entity in a nearby portal, creating one if necessary.
-     */
-    public void placeInPortal(Entity entity, float rotationYaw) {
-        int entityX = MathHelper.floor_double(entity.posX);
-        int entityY = MathHelper.floor_double(entity.posY) - 1;
-        int entityZ = MathHelper.floor_double(entity.posZ);
-        byte b0 = 1;
-        byte b1 = 0;
+    private final WorldServer worldServer;
+    private double x;
+    private double y;
+    private double z;
 
-        for (int l = -2; l <= 2; ++l) {
-            for (int i1 = -2; i1 <= 2; ++i1) {
-                for (int j1 = -1; j1 < 3; ++j1) {
-                    int k1 = entityX + i1 * b0 + l * b1;
-                    int l1 = entityZ + j1;
-                    int i2 = entityY + i1 * b1 - l * b0;
-                    this.worldServerInstance.setBlockState(new BlockPos(k1, l1, i2), Blocks.AIR.getDefaultState());
-                }
-            }
+    @Override
+    public void placeInPortal(@Nonnull Entity entity, float rotationYaw) {
+        this.worldServer.getBlockState(new BlockPos((int) this.x, (int) this.y, (int) this.z));
+
+        entity.setPosition(this.x, this.y, this.z);
+        entity.motionX = 0.0f;
+        entity.motionY = 0.0f;
+        entity.motionZ = 0.0f;
+    }
+
+
+    public static void teleportToDimension(EntityPlayer player, int dimension, double x, double y, double z) {
+        int oldDimension = player.worldObj.provider.getDimension();
+        EntityPlayerMP entityPlayerMP = (EntityPlayerMP) player;
+        MinecraftServer server = ((EntityPlayerMP) player).worldObj.getMinecraftServer();
+        WorldServer worldServer = server.worldServerForDimension(dimension);
+        player.addExperienceLevel(0);
+
+        if (worldServer == null || worldServer.getMinecraftServer() == null){ //Dimension doesn't exist
+            throw new IllegalArgumentException("Dimension: "+dimension+" doesn't exist!");
         }
-        entity.setLocationAndAngles((double) entityX, (double) entityZ, (double) entityY, entity.rotationYaw, 0.0F);
-        entity.motionX = entity.motionY = entity.motionZ = 0;
+
+        worldServer.getMinecraftServer().getPlayerList().transferPlayerToDimension(entityPlayerMP, dimension, new ModTeleporter(worldServer, x, y, z));
+        player.setPositionAndUpdate(x, y, z);
+        if (oldDimension == 1) {
+            // For some reason teleporting out of the end does weird things.
+            player.setPositionAndUpdate(x, y, z);
+            worldServer.spawnEntityInWorld(player);
+            worldServer.updateEntityWithOptionalForce(player, false);
+        }
     }
+
 }

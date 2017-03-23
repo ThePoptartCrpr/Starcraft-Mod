@@ -3,6 +3,7 @@ package scmc.blocks.metablocks;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -35,10 +36,11 @@ public class BlockCompressedMinerals extends Block implements IMetaBlockName {
 	 */
 	public BlockCompressedMinerals(String unlocalizedName, String registryName) {
 		super(Material.ROCK);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
 		this.setHardness(20); //Sets how hard the block is to break
-		this.setResistance(20); //Sets the blocks blast resitance to explosions
+		this.setResistance(20); //Sets the blocks blast resistance to explosions
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMineralType.BLUE)); //Default state
 	}
 	
@@ -101,5 +103,4 @@ public class BlockCompressedMinerals extends Block implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return CompressedMineralType.values()[stack.getItemDamage()].getName();
 	}
-
 }

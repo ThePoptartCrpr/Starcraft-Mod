@@ -31,5 +31,4 @@ public class GenLayerChar extends GenLayer {
 
 		return null;
 	}
-
 }

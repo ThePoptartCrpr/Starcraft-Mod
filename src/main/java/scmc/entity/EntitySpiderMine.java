@@ -54,5 +54,4 @@ public class EntitySpiderMine extends EntityTerranPassive{
 	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
 		return null;
 	}
-
 }

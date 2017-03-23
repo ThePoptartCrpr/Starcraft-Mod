@@ -14,5 +14,4 @@ public interface IMetaBlockName {
 	 * @return The name of the variant that specific item is
 	 */
 	String getSpecialName(ItemStack stack);
-
 }

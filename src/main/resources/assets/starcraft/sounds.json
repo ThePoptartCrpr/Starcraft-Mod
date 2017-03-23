@@ -302,5 +302,61 @@
         "name": "starcraft:/mob/brutalisk/brutalisk-step","stream":false
     }
     ]
+},
+"mob.reaver.live1": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/preaver/reaver-live1","stream":false
+    }
+    ]
+},
+"mob.reaver.live2": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/preaver/reaver-live2","stream":false
+    }
+    ]
+},
+"mob.reaver.live3": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/preaver/reaver-live3","stream":false
+    }
+    ]
+},
+"mob.reaver.live4": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/preaver/reaver-live4","stream":false
+    }
+    ]
+},
+"mob.reaver.live5": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/preaver/reaver-live5","stream":false
+    }
+    ]
+},
+"mob.reaver.hurt": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/preaver/reaver-hurt","stream":false
+    }
+    ]
+},
+"mob.reaver.death": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/preaver/reaver-death","stream":false
+    }
+    ]
 }
 }

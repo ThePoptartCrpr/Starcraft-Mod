@@ -6,6 +6,11 @@ import net.minecraft.block.material.Material;
 import scmc.CreativeTab;
 import scmc.lib.Reference;
 
+/**
+ * Char Dirt block.<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
+ * @author bvanseghi
+ */
 public class BlockCharDirt extends Block {
 	public BlockCharDirt() {
 		super(Material.GROUND);

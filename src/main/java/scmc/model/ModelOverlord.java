@@ -4,11 +4,6 @@
 // Keep in mind that you still need to fill in some blanks
 // - ZeuX
 
-
-
-
-
-
 package scmc.model;
 
 import net.minecraft.client.model.ModelBase;

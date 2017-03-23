@@ -6,6 +6,11 @@ import net.minecraft.block.material.Material;
 import scmc.CreativeTab;
 import scmc.lib.Reference;
 
+/**
+ * Protoss Energy Stabilizer block.<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
+ * @author bvanseghi
+ */
 public class BlockProtossEnergyStabilizer extends Block {
 	public BlockProtossEnergyStabilizer() {
 		super(Material.ROCK);

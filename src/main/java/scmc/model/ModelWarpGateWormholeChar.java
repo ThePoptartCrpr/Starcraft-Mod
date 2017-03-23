@@ -1,4 +1,3 @@
-
 package scmc.model;
 
 import net.minecraft.client.model.ModelBase;

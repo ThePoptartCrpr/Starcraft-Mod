@@ -12,6 +12,8 @@ public class ModEntities {
 	
 	public static void registerEntities() {
 		registerEntity(EntityZealot.class, "zealot", 64, 1, true);
+		registerEntity(EntityProtossReaver.class, "protoss_reaver", 64, 1, true);
+		registerEntity(EntityScarab.class, "scarab", 64, 1, true);
 		registerEntity(EntityProbe.class, "probe", 64, 1, true);
 		registerEntity(EntityDarkTemplar.class, "templar_dark", 64, 1, true);
 		registerEntity(EntityDarkProbe.class, "probe_dark", 64, 1, true);
@@ -30,6 +32,8 @@ public class ModEntities {
 	public static void setEntityToSpawn() {
 		EntityRegistry.addSpawn(EntityZealot.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityProbe.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityProtossReaver.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityScarab.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityDarkTemplar.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityDarkProbe.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		
@@ -48,6 +52,8 @@ public class ModEntities {
 	public static void generateSpawnEgg() {
 		EntityRegistry.registerEgg(EntityZealot.class, 13022529, 2412228);
 		EntityRegistry.registerEgg(EntityProbe.class, 13022529, 2412228);
+		EntityRegistry.registerEgg(EntityProtossReaver.class, 13022529, 2412228);
+		EntityRegistry.registerEgg(EntityScarab.class, 13022529, 2412228);
 		EntityRegistry.registerEgg(EntityDarkTemplar.class, 1447446, 45824);
 		EntityRegistry.registerEgg(EntityDarkProbe.class, 1447446, 12648448);
 		

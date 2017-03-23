@@ -16,7 +16,7 @@ public class CreativeTab {
 	public static CreativeTabs tabStarcraftBuildingBlocks = new CreativeTabs("StarcraftBuildingBlocks") {
 		@Override
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL);
+			return Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1);
 		}
 	};
 	

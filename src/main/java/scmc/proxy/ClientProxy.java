@@ -2,10 +2,8 @@ package scmc.proxy;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -15,22 +13,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import scmc.CreativeTab;
 import scmc.StarcraftSoundEvents;
 import scmc.achievement.Achievements;
-import scmc.armour.ArmourCopperBoots;
-import scmc.armour.ArmourCopperChestplate;
-import scmc.armour.ArmourCopperHelmet;
-import scmc.armour.ArmourCopperLeggings;
-import scmc.armour.ArmourGhostBoots;
-import scmc.armour.ArmourGhostChestplate;
-import scmc.armour.ArmourGhostHelmet;
-import scmc.armour.ArmourGhostLeggings;
-import scmc.armour.ArmourSteelBoots;
-import scmc.armour.ArmourSteelChestplate;
-import scmc.armour.ArmourSteelHelmet;
-import scmc.armour.ArmourSteelLeggings;
-import scmc.armour.ArmourTitaniumBoots;
-import scmc.armour.ArmourTitaniumChestplate;
-import scmc.armour.ArmourTitaniumHelmet;
-import scmc.armour.ArmourTitaniumLeggings;
 import scmc.armour.ModArmour;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
@@ -43,6 +25,8 @@ import scmc.entity.EntityHydralisk;
 import scmc.entity.EntityLarva;
 import scmc.entity.EntityLarvaCocoon;
 import scmc.entity.EntityProbe;
+import scmc.entity.EntityProtossReaver;
+import scmc.entity.EntityScarab;
 import scmc.entity.EntitySpiderMine;
 import scmc.entity.EntityZealot;
 import scmc.entity.EntityZergling;
@@ -62,6 +46,8 @@ import scmc.model.ModelHydralisk;
 import scmc.model.ModelLarva;
 import scmc.model.ModelLarvaCocoon;
 import scmc.model.ModelProbe;
+import scmc.model.ModelProtossReaver;
+import scmc.model.ModelScarab;
 import scmc.model.ModelSpiderMine;
 import scmc.model.ModelZealot;
 import scmc.model.ModelZergling;
@@ -74,6 +60,8 @@ import scmc.renderer.RenderHydralisk;
 import scmc.renderer.RenderLarva;
 import scmc.renderer.RenderLarvaCocoon;
 import scmc.renderer.RenderProbe;
+import scmc.renderer.RenderProtossReaver;
+import scmc.renderer.RenderScarab;
 import scmc.renderer.RenderSpiderMine;
 import scmc.renderer.RenderZealot;
 import scmc.renderer.RenderZergling;
@@ -81,59 +69,10 @@ import scmc.tileentity.ModTileEntities;
 import scmc.tools.ModTools;
 import scmc.weapons.ModWeapons;
 import scmc.worldgen.SCWorldGen;
+import scmc.worldgen.biome.BiomesSC;
 
 @SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
 public class ClientProxy extends ServerProxy {
-	public void setModels() {
-
-		///
-		/// TO USE: ModelLoader.setCustomModelResourceLocation(item instance,
-		/// metadata, new ModelResourceLocation(item class.REGISTRY_RL,
-		/// "inventory"));
-		/// IF NO "REGISTRY_RL" IS DEFINED MAKE ONE USING THE CONVENTIONS FOUND
-		/// IN THE ARMOURS
-		///
-
-		// Copper armour
-		ModelLoader.setCustomModelResourceLocation(ModArmour.copperBoots, 0,
-				new ModelResourceLocation(ArmourCopperBoots.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.copperChestplate, 0,
-				new ModelResourceLocation(ArmourCopperChestplate.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.copperHelmet, 0,
-				new ModelResourceLocation(ArmourCopperHelmet.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.copperLeggings, 0,
-				new ModelResourceLocation(ArmourCopperLeggings.REGISTRY_RL, "inventory"));
-
-		// Ghost armour
-		ModelLoader.setCustomModelResourceLocation(ModArmour.ghostBoots, 0,
-				new ModelResourceLocation(ArmourGhostBoots.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.ghostChestplate, 0,
-				new ModelResourceLocation(ArmourGhostChestplate.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.ghostHelmet, 0,
-				new ModelResourceLocation(ArmourGhostHelmet.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.ghostLeggings, 0,
-				new ModelResourceLocation(ArmourGhostLeggings.REGISTRY_RL, "inventory"));
-
-		// Steel armour
-		ModelLoader.setCustomModelResourceLocation(ModArmour.steelBoots, 0,
-				new ModelResourceLocation(ArmourSteelBoots.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.steelChestplate, 0,
-				new ModelResourceLocation(ArmourSteelChestplate.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.steelHelmet, 0,
-				new ModelResourceLocation(ArmourSteelHelmet.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.steelLeggings, 0,
-				new ModelResourceLocation(ArmourSteelLeggings.REGISTRY_RL, "inventory"));
-
-		// Titanium armour
-		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumBoots, 0,
-				new ModelResourceLocation(ArmourTitaniumBoots.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumChestplate, 0,
-				new ModelResourceLocation(ArmourTitaniumChestplate.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumHelmet, 0,
-				new ModelResourceLocation(ArmourTitaniumHelmet.REGISTRY_RL, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ModArmour.titaniumLeggings, 0,
-				new ModelResourceLocation(ArmourTitaniumLeggings.REGISTRY_RL, "inventory"));
-	}
 
 	// TODO: get all of this into registry
 	public void registerEntityRenders() {
@@ -145,6 +84,14 @@ public class ClientProxy extends ServerProxy {
 				new RenderProbe(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f)); // use
 																										// deprecated
 																										// method
+		RenderingRegistry.registerEntityRenderingHandler(EntityProtossReaver.class,
+				new RenderProtossReaver(Minecraft.getMinecraft().getRenderManager(), new ModelProtossReaver(), 0.4f)); // use
+																											// deprecated
+																											// method
+		RenderingRegistry.registerEntityRenderingHandler(EntityScarab.class,
+				new RenderScarab(Minecraft.getMinecraft().getRenderManager(), new ModelScarab(), 0.4f)); // use
+																										// deprecated
+																										// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkTemplar.class,
 				new RenderDarkTemplar(Minecraft.getMinecraft().getRenderManager(), new ModelDarkTemplar(), 0.4f)); // use
 																													// deprecated
@@ -153,9 +100,8 @@ public class ClientProxy extends ServerProxy {
 				new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f)); // use
 																												// deprecated
 																												// method
-
 		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class,
-				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 0.4f)); // use
+				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f)); // use
 																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityHydralisk.class,
@@ -187,9 +133,9 @@ public class ClientProxy extends ServerProxy {
 				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f)); // use
 																													// deprecated
 																													// method
-
 	}
 
+	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
 		ModFluids.register();
@@ -216,24 +162,23 @@ public class ClientProxy extends ServerProxy {
 		ModMetaBlocks.init();
 		ModMetaBlocks.register();
 		ModMetaBlocks.registerRenders();
-		SCWorldGen.setupWorldgen();
 		SCWorldGen.preInit();
 		ModEntities.registerEntities();
 		StarcraftSoundEvents.registerSounds();
+		BiomesSC.init();
 	}
 
+	@Override
 	public void init(FMLInitializationEvent event) {
 		ModEntities.setEntityToSpawn();
 		ModEntities.generateSpawnEgg();
 		registerEntityRenders();
-		setModels();
 		Achievements.init();
-		setModels();
 	}
 
+	@Override
 	public void postInit(FMLPostInitializationEvent event) {
-
-		// GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
+		//GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
 	}
 
 	@Override
@@ -263,12 +208,26 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "essence_terran"),
 				new ResourceLocation(Reference.MODID, "essence_zerg"));
 		
-		ModelBakery.registerItemVariants(ModItems.ingot, 
-				new ResourceLocation(Reference.MODID, "ingot_copper"),
-				new ResourceLocation(Reference.MODID, "ingot_alien"),
-				new ResourceLocation(Reference.MODID, "ingot_aliendark"),
-				new ResourceLocation(Reference.MODID, "ingot_titanium"),
-				new ResourceLocation(Reference.MODID, "ingot_steel"));
+		ModelBakery.registerItemVariants(ModItems.ingot1, 
+				new ResourceLocation(Reference.MODID, "ingot1_copper"),
+				new ResourceLocation(Reference.MODID, "ingot1_alien"),
+				new ResourceLocation(Reference.MODID, "ingot1_aliendark"),
+				new ResourceLocation(Reference.MODID, "ingot1_titanium"),
+				new ResourceLocation(Reference.MODID, "ingot1_steel"));
+		
+		ModelBakery.registerItemVariants(ModItems.ingot2, 
+				new ResourceLocation(Reference.MODID, "ingot2_copper"),
+				new ResourceLocation(Reference.MODID, "ingot2_alien"),
+				new ResourceLocation(Reference.MODID, "ingot2_aliendark"),
+				new ResourceLocation(Reference.MODID, "ingot2_titanium"),
+				new ResourceLocation(Reference.MODID, "ingot2_steel"));
+		
+		ModelBakery.registerItemVariants(ModItems.ingot3, 
+				new ResourceLocation(Reference.MODID, "ingot3_copper"),
+				new ResourceLocation(Reference.MODID, "ingot3_alien"),
+				new ResourceLocation(Reference.MODID, "ingot3_aliendark"),
+				new ResourceLocation(Reference.MODID, "ingot3_titanium"),
+				new ResourceLocation(Reference.MODID, "ingot3_steel"));
 		
 		ModelBakery.registerItemVariants(ModItems.coord, 
 				new ResourceLocation(Reference.MODID, "coordinate_char"),
@@ -296,11 +255,23 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t2"),
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t3"));
 		
-		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL),
-				new ResourceLocation(Reference.MODID, "protoss_metal_aiur"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_dark"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_green"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_blue"));
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1),
+				new ResourceLocation(Reference.MODID, "protoss_metalt1_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt1_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt1_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt1_blue"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T2),
+				new ResourceLocation(Reference.MODID, "protoss_metalt2_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt2_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt2_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt2_blue"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T3),
+				new ResourceLocation(Reference.MODID, "protoss_metalt3_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt3_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt3_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metalt3_blue"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PYLON_CRYSTAL),
 				new ResourceLocation(Reference.MODID, "crystal_pure"),
@@ -345,7 +316,7 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "dyed_iron_silver"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_yellow"));
 
-		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_METAL),
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_METAL_T1),
 				new ResourceLocation(Reference.MODID, "compressed_metal_copper"),
 				new ResourceLocation(Reference.MODID, "compressed_metal_steel"),
 				new ResourceLocation(Reference.MODID, "compressed_metal_titanium"));

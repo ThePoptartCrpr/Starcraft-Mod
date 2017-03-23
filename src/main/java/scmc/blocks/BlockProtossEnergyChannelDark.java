@@ -11,6 +11,11 @@ import scmc.CreativeTab;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 
+/**
+ * Dark Protoss Energy Channel block.<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
+ * @author bvanseghi
+ */
 public class BlockProtossEnergyChannelDark extends Block {
 	public BlockProtossEnergyChannelDark() {
 		super(Material.ROCK);
@@ -24,11 +29,21 @@ public class BlockProtossEnergyChannelDark extends Block {
 		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
 	
+	/**
+	 * Returns the item dropped by this block
+	 * @param state the state of the block
+	 * @param rand an object of the Random class
+	 * @param fortune the magnitude of the fortune enchantment effect
+	 */
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return ModItems.energy;
     }
 	
+	/**
+	 * Gets the state of the block being dropped
+	 * @param state the state of the block
+	 */
 	@Override
 	public int damageDropped(IBlockState state) {
 		return 1;

@@ -7,21 +7,19 @@ import net.minecraft.world.World;
 import scmc.lib.StarcraftConfig;
 
 public class EntityDrone extends EntityAnimal {
-
 	public EntityDrone(World world) {
 		super(world);
-
 	}
 	
+	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.droneHP);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.droneHP);
+		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999);
 	}
 
 	@Override
-	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
+	public EntityAgeable createChild(EntityAgeable entity) {
 		return null;
 	}
-
 }

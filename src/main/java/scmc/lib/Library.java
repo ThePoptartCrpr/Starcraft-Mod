@@ -5,6 +5,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -128,7 +129,7 @@ public class Library {
 	 * @param blockstate to check if the block is a Protoss machine
 	 */
 	public static void feedPower(BlockPos pos, IBlockState blockstate) {
-		if(blockstate == ModMetaBlocks.PROTOSS_METAL.getDefaultState()) {
+		if(blockstate == ModMetaBlocks.PROTOSS_METAL_T1.getDefaultState()) {
 			((ModBlocks) blockstate).PoweredByPSI(true);
 		} else {
 			((ModBlocks) blockstate).PoweredByPSI(false);
@@ -142,17 +143,16 @@ public class Library {
 	 * @param domeHeight difference in height between
 	 * {@code pos} and the peak of the dome
 	 */
-	@SuppressWarnings("unused")
 	public static void createShields(World world, BlockPos pos, int domeHeight) {
 		
 		//creates peak block of which we will build layers down from
 		world.setBlockState(pos.up(domeHeight), Blocks.GLASS.getDefaultState());
 		
 		//some useful integers to help us keep track of stuff
-		int level = 0;
+//		int level = 0;
 		int domeLevelLength = 2;
-		int factorX = 1;
-		int factorZ = 1;
+//		int factorX = 1;
+//		int factorZ = 1;
 		int cornerOffset = 1;
 		
 		//start by counting layers of our dome! As we finish off layers, we go down a level and generate the next level
@@ -197,40 +197,91 @@ public class Library {
 	}
 	
 	/**
-	 * <em>Use this one because it saves three params.
-	 * At some point, I'll eliminate the other and just
-	 * use this, but for now I did some lazy method invocation</em><br>
 	 * Larva -> cocoon. Simple
 	 * @param world the world
 	 * @param larva the larva in question
 	 * @param rand {@link Random} instance which will eventually
 	 * determine what gets pooped out later
 	 */
+	@Deprecated
 	public static void larvaMorph(World world, EntityLarva larva, Random rand) {
-		if(!world.isRemote){
-			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
-			cocoon.setLocationAndAngles(larva.posX, larva.posY, larva.posZ, 0, 0);
-			world.spawnEntityInWorld(cocoon);
-			larva.setDead();
+//		if(!world.isRemote) {
+//			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
+//			cocoon.setLocationAndAngles(larva.posX, larva.posY, larva.posZ, 0, 0);
+//			world.spawnEntityInWorld(cocoon);
+//			larva.setDead();
+//		}
+		
+		replaceEntity(false, larva, new EntityLarvaCocoon(larva.worldObj));
+	}
+	
+	/**
+	 * Cocoon -> Zergling. Simple
+	 * @param world the world
+	 * @param cocoon the larva in question
+	 * @param rand RNG which will eventually
+	 * determine what gets pooped out later
+	 */
+	@Deprecated
+	public static void cocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
+//		if(!world.isRemote) {
+//			EntityZergling zergling = new EntityZergling(world);
+//			zergling.setLocationAndAngles(cocoon.posX, cocoon.posY, cocoon.posZ, 0, 0);
+//			world.spawnEntityInWorld(zergling);
+//			cocoon.setDead();
+//		}
+		
+		replaceEntity(false, cocoon, new EntityZergling(cocoon.worldObj));
+	}
+	
+	/**
+	 * Replaces {@code current} with {@code next} in the same
+	 * world. Sets the pitch/yaw of all objects on {@code next} to
+	 * {@code pitch} and {@code yaw}, respectively.<br>
+	 * This is done by setting {@code current}'s pitch/yaw, then
+	 * calling {@link #replaceEntity(boolean, Entity, Entity)}
+	 * with parameters {@code true}, {@code current}, and
+	 * {@code next} as a means of transferring {@code current}'s
+	 * new pitch/yaw angles to {@code next}
+	 * @param pitch the pitch to use
+	 * @param yaw the yaw to use
+	 * @param current the {@link Entity} to replace
+	 * @param next the {@link Entity} objects to replace {@code current}
+	 */
+	public static void replaceEntity(float pitch, float yaw, Entity current, Entity... next) {
+		if(!current.worldObj.isRemote) {
+			current.setAngles(yaw, pitch);
+			replaceEntity(true, current, next);
 		}
 	}
 	
 	/**
-	 * <em>Use this one because it saves three params.
-	 * At some point, I'll eliminate the other and just
-	 * use this, but for now I did some lazy method invocation</em><br>
-	 * Cocoon -> Zergling. Simple
-	 * @param world the world
-	 * @param cocoon the larva in question
-	 * @param rand {@link Random} instance which will eventually
-	 * determine what gets pooped out later
+	 * Replaces {@code current} with {@code next} in the same
+	 * world. Can transfer pitch and yaw rotation angles from
+	 * {@code current} to {@code next}. If pitch/yaw not
+	 * transferred, they are both set to {@code 0}
+	 * @param current the entity to replace
+	 * @param next the replacement
+	 * @param keepRot whether or not to transfer the pitch
+	 * and yaw rotation angles of {@code current} to {@code next}
 	 */
-	public static void cocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
-		if(!world.isRemote){
-			EntityZergling zergling = new EntityZergling(world);
-			zergling.setLocationAndAngles(cocoon.posX, cocoon.posY, cocoon.posZ, 0, 0);
-			world.spawnEntityInWorld(zergling);
-			cocoon.setDead();
+	public static void replaceEntity(boolean keepRot, Entity current, Entity... next) {
+		if(!current.worldObj.isRemote) {
+			if(keepRot) {
+				for(Entity e : next) {
+					e.setLocationAndAngles(current.posX, current.posY, current.posZ, current.rotationYaw, current.rotationPitch);
+				}
+			} else {
+				for(Entity e : next) {
+					e.setLocationAndAngles(current.posX, current.posY, current.posZ, 0, 0);
+				}
+			}
+			
+			for(Entity e : next) {
+				current.worldObj.spawnEntityInWorld(e);
+			}
+			
+			current.setDead();
 		}
 	}
 }

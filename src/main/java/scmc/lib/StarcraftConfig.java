@@ -22,6 +22,7 @@ public class StarcraftConfig {
 	public static double overlordHP = 100;
 	public static double probeHP = 20;
 	public static double zealotHP = 100;
+	public static double preaverHP = 200;
 	public static double zerglingHP = 25;
 	
 	public static double broodlingDmg = 2;

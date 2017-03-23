@@ -21,7 +21,8 @@ import scmc.lib.Reference;
 import scmc.tileentity.TileEntityBlockRichVespeneGeyserChar;
 
 public class BlockRichVespeneGeyserChar extends BlockContainer {
-
+	private static final AxisAlignedBB THIS_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+	
 	public BlockRichVespeneGeyserChar(Material material) {
 		super(material);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_RICH_VESPENE_GEYSER_C.getUnlocalizedName());
@@ -38,12 +39,22 @@ public class BlockRichVespeneGeyserChar extends BlockContainer {
 		return ModItems.vespene;
 	}
 	
-	public int damageDropped(int meta) {
+	/**
+	 * Return the meta of the item to drop
+	 * @param state the block's state
+	 */
+	@Override
+	public int damageDropped(IBlockState state) {
 		return 3;
 	}
 
-	public int quantityDropped(Random par1) {
-		return 7 + par1.nextInt(2);
+	/**
+	 * Return the amount to drop
+	 * @param rand any Random object
+	 */
+	@Override
+	public int quantityDropped(Random rand) {
+		return 7 + rand.nextInt(2);
 	}
 
 	@Override
@@ -61,17 +72,17 @@ public class BlockRichVespeneGeyserChar extends BlockContainer {
 		return false;
 	}
 
-	protected static final AxisAlignedBB THIS_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return THIS_AABB;
     }
 	
-	public EnumBlockRenderType getRenderType(IBlockState state)
-    {
+	@Override
+	public EnumBlockRenderType getRenderType(IBlockState state) {
         return EnumBlockRenderType.MODEL;
     }
 
+	@Override
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
@@ -80,5 +91,4 @@ public class BlockRichVespeneGeyserChar extends BlockContainer {
 	public TileEntity createNewTileEntity(World par1, int par2) {
 		return new TileEntityBlockRichVespeneGeyserChar();
 	}
-
 }

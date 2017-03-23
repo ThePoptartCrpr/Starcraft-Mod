@@ -3,6 +3,7 @@ package scmc.blocks.metablocks;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -34,11 +35,13 @@ public class BlockZergStructureFlesh extends Block implements IMetaBlockName {
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
 	public BlockZergStructureFlesh(String unlocalizedName, String registryName) {
-		super(Material.ROCK);
+		super(Material.CLAY);
+		this.setSoundType(SoundType.GROUND);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
-		this.setHardness(20); //Sets how hard the block is to break
-		this.setResistance(20); //Sets the blocks blast resitance to explosions
+		setResistance(10.0F);
+		setHardness(5.0F);
+		setHarvestLevel("axe", 2);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ZergFleshType.PURPLE)); //Default state
 	}
 	
@@ -101,5 +104,4 @@ public class BlockZergStructureFlesh extends Block implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return ZergFleshType.values()[stack.getItemDamage()].getName();
 	}
-
 }

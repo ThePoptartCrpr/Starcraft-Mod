@@ -8,6 +8,11 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import scmc.fluids.ModFluids;
 import scmc.lib.Reference;
 
+/**
+ * Blood fluid.<br>
+ * Copyright 2017 the Starcraft Minecraft mod team
+ * @author bvanseghi
+ */
 public class BlockBloodFluid extends BlockFluidClassic {
 	public BlockBloodFluid(/*Fluid fluid, Material material*/) {
 		super(ModFluids.blood, Material.WATER);
@@ -16,6 +21,11 @@ public class BlockBloodFluid extends BlockFluidClassic {
 		setRegistryName(Reference.ModBlocks.FLUID_BLOOD.getRegistryRL());
 	}
 
+	/**
+	 * Checks if other fluids can override this fluid?
+	 * @param world allows to get block states based on their position
+	 * @param pos the position of the block
+	 */
 	@Override
 	public boolean canDisplace(IBlockAccess world, BlockPos pos) {
 		if(world.getBlockState(pos).getMaterial().isLiquid()) {
@@ -25,6 +35,11 @@ public class BlockBloodFluid extends BlockFluidClassic {
 		return super.canDisplace(world, pos);
 	}
 
+	/**
+	 * Allows other fluids to displace this fluid if possible
+	 * @param world the world
+	 * @param the position of the block
+	 */
 	@Override
 	public boolean displaceIfPossible(World world, BlockPos pos) {
 		if(world.getBlockState(pos).getMaterial().isLiquid()) {

@@ -1,14 +1,14 @@
 package scmc.handlers;
 ////NOTE: Code borrowed from Buildcraft.
 //
-//package net.bvanseghi.starcraft.handlers;
+//package scmc.handlers;
 //
 //import java.util.HashMap;
 //import java.util.Map;
 //
-//import net.bvanseghi.starcraft.blocks.ModBlocks;
-//import net.bvanseghi.starcraft.fluids.ModFluids;
-//import net.bvanseghi.starcraft.lib.Reference;
+//import scmc.blocks.ModBlocks;
+//import scmc.fluids.ModFluids;
+//import scmc.lib.Reference;
 //import net.minecraft.block.Block;
 //import net.minecraft.init.Items;
 //import net.minecraft.item.Item;
