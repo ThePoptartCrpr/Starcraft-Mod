@@ -7,17 +7,19 @@ import scmc.CreativeTab;
 import scmc.lib.Reference;
 
 public class WeaponDarkDualWarpBlade extends ItemSword {
-	private static final String name = "darkDualWarpBlade";
+
+	public static final String name = "darkDualWarpBlade";
 
 	public WeaponDarkDualWarpBlade(ToolMaterial material) {
 		super(material);
-		setCreativeTab(CreativeTab.tabStarcraftCombat);
-		setUnlocalizedName(Reference.UN_BASE + name);
+		this.setCreativeTab(CreativeTab.tabStarcraftCombat);
+		this.setUnlocalizedName(Reference.UN_BASE + name);
 	}
 	
-	@Override
 	@SideOnly(Side.CLIENT)
-    public boolean isFull3D() {
+    public boolean isFull3D()
+    {
         return true;
-    }	
+    }
+	
 }

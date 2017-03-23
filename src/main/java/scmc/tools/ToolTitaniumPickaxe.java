@@ -11,5 +11,4 @@ public class ToolTitaniumPickaxe extends ItemPickaxe {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
 	}
-
 }

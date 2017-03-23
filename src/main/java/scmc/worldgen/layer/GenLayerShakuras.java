@@ -31,5 +31,4 @@ public class GenLayerShakuras extends GenLayer {
 
 		return null;
 	}
-
 }

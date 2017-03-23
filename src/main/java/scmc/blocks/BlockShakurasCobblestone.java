@@ -21,5 +21,4 @@ public class BlockShakurasCobblestone extends ModBlocks {
 		return par1;
 
 	}
-
 }

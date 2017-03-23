@@ -104,5 +104,4 @@ public class BlockDyedIronBlocks extends Block implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return DyedIronType.values()[stack.getItemDamage()].getName();
 	}
-
 }

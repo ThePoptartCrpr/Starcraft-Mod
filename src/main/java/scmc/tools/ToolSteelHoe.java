@@ -11,5 +11,4 @@ public class ToolSteelHoe extends ItemHoe {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
 	}
-
 }

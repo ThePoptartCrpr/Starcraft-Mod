@@ -104,5 +104,4 @@ public class BlockZergStructureFlesh extends Block implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return ZergFleshType.values()[stack.getItemDamage()].getName();
 	}
-
 }

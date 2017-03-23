@@ -1489,5 +1489,4 @@ public class StructureTerranBunker extends WorldGenerator {
 		return true;
 
 	}
-
 }

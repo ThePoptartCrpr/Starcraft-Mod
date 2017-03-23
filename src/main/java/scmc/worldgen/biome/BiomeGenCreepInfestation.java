@@ -21,5 +21,4 @@ public class BiomeGenCreepInfestation extends Biome {
 	public int getSkyColorByTemp(float par1) {
 		return 0;
 	}
-
 }

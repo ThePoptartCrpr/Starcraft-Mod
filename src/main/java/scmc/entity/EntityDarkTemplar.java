@@ -10,6 +10,9 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -26,73 +29,78 @@ import scmc.items.ModItems;
 import scmc.lib.StarcraftConfig;
 import scmc.weapons.ModWeapons;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityDarkTemplar extends EntityProtossMob {
+	World world;
 	public EntityDarkTemplar(World world) {
 		super(world);
-	    setSize(1.5F, 2.5F);
+	    this.setSize(1.5F, 2.5F);
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.dTempHP);
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.39000000417232513);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513);
 		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
 		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.dTempDmg);
-		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
 	}
 	
-	@Override
-	protected void initEntityAI() {
-        tasks.addTask(0, new EntityAISwimming(this));
-        tasks.addTask(2, new EntityAIAttackMelee(this, 1, false));
-        tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
-        tasks.addTask(7, new EntityAIWander(this, 1));
-        tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
-        tasks.addTask(8, new EntityAILookIdle(this));
-        applyEntityAI();
+	protected void initEntityAI()
+    {
+        this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
+        this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(8, new EntityAILookIdle(this));
+        this.applyEntityAI();
     }
 
-    protected void applyEntityAI() {
-    	tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1, false));
-        targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityZergMob>(this, EntityZergMob.class, true));
-        targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-        targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-        targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityZergPassive>(this, EntityZergPassive.class, true));
-        targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
+    protected void applyEntityAI()
+    {
+    	this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] {EntityPigZombie.class}));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZergMob.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZergPassive.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
+        
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
     }
     
 	@Override
-	public int getTalkInterval() {
+	public int getTalkInterval()
+    {
         return 160;
     }
 	
-	@Override
 	public SoundEvent getAmbientSound() {
 		if(rand.nextInt(2) == 0) {
 			return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_LIVE1;
 		}
-		
 		return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_LIVE2;
 	}
 	
-	@Override
 	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_HURT;
 	}
 	
-	@Override
 	public SoundEvent getDeathSound() {
 		return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_DEATH;
 	}
 	
 	/**
 	 * Drop 0-2 items on death
-	 * @param recentPlayerDmg {@code true} if a player recently dealt damage to this entity
-	 * @param lootingLvl level of Looting enchant used to deliver killing blow of entity
+	 * @param recentPlayerDmg {@code true} if a player
+	 * recently dealt damage to this entity
+	 * @param lootingLvl level of Looting enchant
+	 * used to deliver killing blow of entity
 	 */
-	@Override
 	protected void dropFewItems(boolean recentPlayerDmg, int lootingLvl) {
 		int j = rand.nextInt(50);
         
@@ -105,19 +113,12 @@ public class EntityDarkTemplar extends EntityProtossMob {
 	
 	@Override
 	public void onUpdate() {
+		for (int i = 0; i < 2; ++i)
+        {
+			this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, null);
+        }
 		super.onUpdate();
 	}
-	
-	@Override
-	public void onLivingUpdate() {
-        if(worldObj.isRemote) {
-            for (int i = 0; i < 2; ++i) {
-                worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, posX + (rand.nextDouble() - 0.5D) * (double) width, posY + rand.nextDouble() * (double) height, posZ + (rand.nextDouble() - 0.5D) * (double) width, 0, 0, 0);
-            }
-        }
-
-        super.onLivingUpdate();
-    }
 	
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float damageDealt) {

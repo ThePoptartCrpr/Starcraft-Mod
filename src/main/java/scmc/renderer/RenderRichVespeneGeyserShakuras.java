@@ -33,4 +33,3 @@ public class RenderRichVespeneGeyserShakuras<T> extends TileEntitySpecialRendere
     }
 
 }
-

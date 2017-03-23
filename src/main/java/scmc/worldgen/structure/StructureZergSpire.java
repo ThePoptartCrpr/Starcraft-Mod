@@ -1,4 +1,3 @@
-
 package scmc.worldgen.structure;
 
 import java.util.Random;
@@ -26420,5 +26419,4 @@ public class StructureZergSpire extends WorldGenerator {
 		return true;
 
 	}
-
 }

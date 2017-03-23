@@ -103,5 +103,4 @@ public class BlockCompressedMinerals extends Block implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return CompressedMineralType.values()[stack.getItemDamage()].getName();
 	}
-
 }

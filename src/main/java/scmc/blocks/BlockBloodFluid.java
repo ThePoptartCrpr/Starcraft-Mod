@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
-import net.minecraftforge.fluids.Fluid;
+import scmc.fluids.ModFluids;
 import scmc.lib.Reference;
 
 /**
@@ -14,13 +14,8 @@ import scmc.lib.Reference;
  * @author bvanseghi
  */
 public class BlockBloodFluid extends BlockFluidClassic {
-	
-	/**
-	 * @param fluid the fluid
-	 * @param material the material of the fluid
-	 */
-	public BlockBloodFluid(Fluid fluid, Material material) {
-		super(fluid, material);
+	public BlockBloodFluid(/*Fluid fluid, Material material*/) {
+		super(ModFluids.blood, Material.WATER);
 		setCreativeTab(null);
 		setUnlocalizedName(Reference.ModBlocks.FLUID_BLOOD.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.FLUID_BLOOD.getRegistryRL());

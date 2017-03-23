@@ -73,6 +73,8 @@ import scmc.worldgen.biome.BiomesSC;
 
 @SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
 public class ClientProxy extends ServerProxy {
+
+	// TODO: get all of this into registry
 	public void registerEntityRenders() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class,
 				new RenderZealot(Minecraft.getMinecraft().getRenderManager(), new ModelZealot(), 0.4f)); // use
@@ -122,7 +124,7 @@ public class ClientProxy extends ServerProxy {
 				new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f)); // use
 																												// deprecated
 																												// method
-		
+
 		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class,
 				new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f)); // use
 																												// deprecated
@@ -131,12 +133,12 @@ public class ClientProxy extends ServerProxy {
 				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f)); // use
 																													// deprecated
 																													// method
-
 	}
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
+		ModFluids.register();
 		ModBlocks.init();
 		ModItems.init();
 		ModItems.register(); //Does stuff, including bucket-y stuff
@@ -145,21 +147,21 @@ public class ClientProxy extends ServerProxy {
 		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(CreativeTab.tabStarcraftMisc); //Put the blood bucket into the misc tab
 		ModItems.registerRenders();
 		ModMaterials.preInit();
+		ModWeapons.init();
+		ModWeapons.register();
+		ModWeapons.registerRenders();
 		ModTileEntities.preInit();
-		ModTools.init();
-		ModTools.register();
-		ModTools.registerRenders();
 		ModArmour.init();
 		ModArmour.register();
 		ModArmour.registerRenders();
+		ModTools.init();
+		ModTools.register();
+		ModTools.registerRenders();
 		FuelHandler.preInit();
 		ModBlocks.registerModels();
 		ModMetaBlocks.init();
 		ModMetaBlocks.register();
 		ModMetaBlocks.registerRenders();
-		ModWeapons.init();
-		ModWeapons.register();
-		ModWeapons.registerRenders();
 		SCWorldGen.preInit();
 		ModEntities.registerEntities();
 		StarcraftSoundEvents.registerSounds();

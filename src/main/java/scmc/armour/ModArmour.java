@@ -23,15 +23,15 @@ public class ModArmour {
 	 * DIAMOND(33, new int[]{3, 8, 6, 3}, 10);
 	 */
 
-	static final ItemArmor.ArmorMaterial copperArmourMaterial = EnumHelper.addArmorMaterial("copper", Reference.MODID + ":copper", 11,
+	static final ItemArmor.ArmorMaterial copperArmourMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", Reference.RL_BASE + "copper", 11,
 			new int[] { 2, 5, 4, 1 }, 12, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC , 0f);
-	static final ItemArmor.ArmorMaterial steelArmourMaterial = EnumHelper.addArmorMaterial("steel", Reference.MODID + ":steel", 29,
+	static final ItemArmor.ArmorMaterial steelArmourMaterial = EnumHelper.addArmorMaterial("steelArmorMaterial", Reference.RL_BASE + "steel", 29,
 			new int[] { 3, 7, 5, 3 }, 9, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
-	static final ItemArmor.ArmorMaterial titaniumArmourMaterial = EnumHelper.addArmorMaterial("titanium", Reference.MODID + ":titanium",
+	static final ItemArmor.ArmorMaterial titaniumArmourMaterial = EnumHelper.addArmorMaterial("titaniumArmorMaterial", Reference.RL_BASE + "titanium",
 			21, new int[] { 3, 6, 5, 2 }, 30, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
-
-	//terran armours
-	static final ItemArmor.ArmorMaterial ghostArmourMaterial = EnumHelper.addArmorMaterial("ghost", Reference.MODID + ":ghost", 20, 
+//	
+//	//terran armours
+	static final ItemArmor.ArmorMaterial ghostArmourMaterial = EnumHelper.addArmorMaterial("ghostArmourMaterial", Reference.RL_BASE + "ghost_invis", 20, 
 			new int[] { 2, 6, 4, 2 }, 0, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
 
 	public static Item titaniumHelmet;
@@ -54,26 +54,28 @@ public class ModArmour {
 	public static Item ghostLeggings;
 	public static Item ghostBoots;
 	
+	public static final Item[] ARMOURS = {titaniumHelmet, titaniumChestplate, titaniumLeggings, titaniumBoots, copperHelmet, copperChestplate, copperLeggings, copperBoots, steelHelmet, steelChestplate, steelLeggings, steelBoots, ghostHelmet, ghostChestplate, ghostLeggings, ghostBoots};
+
 	public static void init() {
-		titaniumHelmet = new ItemModArmour(titaniumArmourMaterial, 1, EntityEquipmentSlot.HEAD, "helmet_titanium");
-		titaniumChestplate = new ItemModArmour(titaniumArmourMaterial, 1, EntityEquipmentSlot.CHEST, "chestplate_titanium");
-		titaniumLeggings = new ItemModArmour(titaniumArmourMaterial, 2, EntityEquipmentSlot.LEGS, "leggings_titanium");
-		titaniumBoots = new ItemModArmour(titaniumArmourMaterial, 1, EntityEquipmentSlot.FEET, "boots_titanium");
+		titaniumHelmet = new ArmourTitaniumHelmet(titaniumArmourMaterial, 0, EntityEquipmentSlot.HEAD);
+		titaniumChestplate = new ArmourTitaniumChestplate(titaniumArmourMaterial, 0, EntityEquipmentSlot.CHEST);
+		titaniumLeggings = new ArmourTitaniumLeggings(titaniumArmourMaterial, 0, EntityEquipmentSlot.LEGS);
+		titaniumBoots = new ArmourTitaniumBoots(titaniumArmourMaterial, 0, EntityEquipmentSlot.FEET);
 
-		copperHelmet = new ItemModArmour(copperArmourMaterial, 1, EntityEquipmentSlot.HEAD, "helmet_copper");
-		copperChestplate = new ItemModArmour(copperArmourMaterial, 1, EntityEquipmentSlot.CHEST, "chestplate_copper");
-		copperLeggings = new ItemModArmour(copperArmourMaterial, 2, EntityEquipmentSlot.LEGS, "leggings_copper");
-		copperBoots = new ItemModArmour(copperArmourMaterial, 1, EntityEquipmentSlot.FEET, "boots_copper");
+		copperHelmet = new ArmourCopperHelmet(copperArmourMaterial, 0, EntityEquipmentSlot.HEAD);
+		copperChestplate = new ArmourCopperChestplate(copperArmourMaterial, 0, EntityEquipmentSlot.CHEST);
+		copperLeggings = new ArmourCopperLeggings(copperArmourMaterial, 0, EntityEquipmentSlot.LEGS);
+		copperBoots = new ArmourCopperBoots(copperArmourMaterial, 0, EntityEquipmentSlot.FEET);
 
-		steelHelmet = new ItemModArmour(steelArmourMaterial, 1, EntityEquipmentSlot.HEAD, "helmet_steel");
-		steelChestplate = new ItemModArmour(steelArmourMaterial, 1, EntityEquipmentSlot.CHEST, "chestplate_steel");
-		steelLeggings = new ItemModArmour(steelArmourMaterial, 2, EntityEquipmentSlot.LEGS, "leggings_steel");
-		steelBoots = new ItemModArmour(steelArmourMaterial, 1, EntityEquipmentSlot.FEET, "boots_steel");
+		steelHelmet = new ArmourSteelHelmet(steelArmourMaterial, 0, EntityEquipmentSlot.HEAD);
+		steelChestplate = new ArmourSteelChestplate(steelArmourMaterial, 0, EntityEquipmentSlot.CHEST);
+		steelLeggings = new ArmourSteelLeggings(steelArmourMaterial, 0, EntityEquipmentSlot.LEGS);
+		steelBoots = new ArmourSteelBoots(steelArmourMaterial, 0, EntityEquipmentSlot.FEET);
 
-		ghostHelmet = new ItemModArmour(ghostArmourMaterial, 1, EntityEquipmentSlot.HEAD, "helmet_ghost");
-		ghostChestplate = new ItemModArmour(ghostArmourMaterial, 1, EntityEquipmentSlot.CHEST, "chestplate_ghost");
-		ghostLeggings = new ItemModArmour(ghostArmourMaterial, 2, EntityEquipmentSlot.LEGS, "leggings_ghost");
-		ghostBoots = new ItemModArmour(ghostArmourMaterial, 1, EntityEquipmentSlot.FEET, "boots_ghost");
+		ghostHelmet = new ArmourGhostHelmet(ghostArmourMaterial, 0, EntityEquipmentSlot.HEAD);
+		ghostChestplate = new ArmourGhostChestplate(ghostArmourMaterial, 0, EntityEquipmentSlot.CHEST);
+		ghostLeggings = new ArmourGhostLeggings(ghostArmourMaterial, 0, EntityEquipmentSlot.LEGS);
+		ghostBoots = new ArmourGhostBoots(ghostArmourMaterial, 0, EntityEquipmentSlot.FEET);
 	}
 	
 	public static void register() {
@@ -120,33 +122,14 @@ public class ModArmour {
 		registerRender(ghostBoots);
 	}
 	
-	/**
-	 * Register an item
-	 * @param item The item
-	 */
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.tabStarcraftMaterials); //Sets the creative tab
+		item.setCreativeTab(CreativeTab.tabStarcraftCombat);
 		GameRegistry.register(item);
 		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}
 	
-	/**
-	 * Registers the item render MUST BE CALLED IN THE PRE INIT METHOD IN YOUR MAIN CLASS
-	 * @param item The item
-	 */
 	public static void registerRender(Item item) {
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.RL_BASE + item.getUnlocalizedName().substring(5)), "inventory")); //This shit's like 30% cheating
-		LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
-	}
-	
-	/**
-	 * Registers the item render for an item which has meta data
-	 * @param item The item
-	 * @param meta The meta data
-	 * @param fileName The file name
-	 */
-	public static void registerRender(Item item, int meta, String fileName) {
-		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MODID, fileName), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
 		LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
 	}
 }

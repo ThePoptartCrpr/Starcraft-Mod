@@ -33,5 +33,3 @@ public class RenderRichMineralField<T> extends TileEntitySpecialRenderer {
     }
 
 }
-
-

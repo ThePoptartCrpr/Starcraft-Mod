@@ -107,6 +107,3 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 	}
 
 }
-
-
-

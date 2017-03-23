@@ -11,5 +11,4 @@ public class ToolCopperShovel extends ItemSpade {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
 	}
-
 }

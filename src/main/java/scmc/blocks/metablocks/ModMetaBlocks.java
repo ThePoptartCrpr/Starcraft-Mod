@@ -133,5 +133,4 @@ public class ModMetaBlocks {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(Reference.MODID, fileName), "inventory"));
 		LogHelper.logger.info("Register render for " + block.getUnlocalizedName().substring(5));
 	}
-	
 }

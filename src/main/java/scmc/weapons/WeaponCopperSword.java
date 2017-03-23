@@ -11,5 +11,4 @@ public class WeaponCopperSword extends ItemSword {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
 	}
-
 }

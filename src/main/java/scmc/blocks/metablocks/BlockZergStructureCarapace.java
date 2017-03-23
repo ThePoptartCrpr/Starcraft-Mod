@@ -103,5 +103,4 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	public String getSpecialName(ItemStack stack) {
 		return ZergStructureCarapaceType.values()[stack.getItemDamage()].getName();
 	}
-
 }

@@ -105,5 +105,4 @@ public class BlockPylonCrystal extends Block implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return PylonCrystalType.values()[stack.getItemDamage()].getName();
 	}
-
 }

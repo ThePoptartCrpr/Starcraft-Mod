@@ -1,12 +1,5 @@
 {
     "variants": {
-        "layers=1":  { "model": "creep_height2" },
-        "layers=2":  { "model": "creep_height4" },
-        "layers=3":  { "model": "creep_height6" },
-        "layers=4":  { "model": "creep_height8" },
-        "layers=5":  { "model": "creep_height10" },
-        "layers=6":  { "model": "creep_height12" },
-        "layers=7":  { "model": "creep_height14" },
-        "layers=8":  { "model": "creep" }
+        "normal": { "model": "starcraft:zerg_creep" }
     }
 }

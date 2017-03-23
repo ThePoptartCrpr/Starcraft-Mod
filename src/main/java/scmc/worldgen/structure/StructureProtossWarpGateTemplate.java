@@ -2272,5 +2272,4 @@ public class StructureProtossWarpGateTemplate extends WorldGenerator {
 		return true;
 
 	}
-
 }
