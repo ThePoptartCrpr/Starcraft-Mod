@@ -18,10 +18,11 @@ public class CharGenCustomLakes extends WorldGenerator
 
     public CharGenCustomLakes(Block blockIn)
     {
-        this.block = blockIn;
+        block = blockIn;
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
+    @Override
+	public boolean generate(World worldIn, Random rand, BlockPos position)
     {
         for (position = position.add(-8, 0, -8); position.getY() > 5 && worldIn.isAirBlock(position); position = position.down())
         {
@@ -84,7 +85,7 @@ public class CharGenCustomLakes extends WorldGenerator
                                 return false;
                             }
 
-                            if (k < 4 && !material.isSolid() && worldIn.getBlockState(position.add(k1, k, l2)).getBlock() != this.block)
+                            if (k < 4 && !material.isSolid() && worldIn.getBlockState(position.add(k1, k, l2)).getBlock() != block)
                             {
                                 return false;
                             }
@@ -101,7 +102,7 @@ public class CharGenCustomLakes extends WorldGenerator
                     {
                         if (aboolean[(l1 * 16 + i3) * 8 + i4])
                         {
-                            worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
+                            worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : block.getDefaultState(), 2);
                         }
                     }
                 }
@@ -135,7 +136,7 @@ public class CharGenCustomLakes extends WorldGenerator
                 }
             }
 
-            if (this.block.getDefaultState().getMaterial() == Material.LAVA)
+            if (block.getDefaultState().getMaterial() == Material.LAVA)
             {
                 for (int j2 = 0; j2 < 16; ++j2)
                 {
@@ -154,7 +155,7 @@ public class CharGenCustomLakes extends WorldGenerator
                 }
             }
 
-            if (this.block.getDefaultState().getMaterial() == Material.WATER)
+            if (block.getDefaultState().getMaterial() == Material.WATER)
             {
                 for (int k2 = 0; k2 < 16; ++k2)
                 {

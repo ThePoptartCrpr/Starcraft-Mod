@@ -5,21 +5,19 @@ import net.minecraft.world.biome.Biome;
 import scmc.blocks.ModBlocks;
 
 public class BiomeGenCreepInfestation extends Biome {
-
 	public BiomeGenCreepInfestation(BiomeProperties id) {
 		super(id);
-
-
-		this.topBlock = ModBlocks.ZERG_CREEP.getDefaultState();
-		this.fillerBlock = Blocks.DIRT.getDefaultState();
-
-		this.spawnableMonsterList.clear();
-		this.spawnableCreatureList.clear();
-		this.spawnableWaterCreatureList.clear();
+		
+		topBlock = ModBlocks.ZERG_CREEP.getDefaultState();
+		fillerBlock = Blocks.DIRT.getDefaultState();
+		
+		spawnableMonsterList.clear();
+		spawnableCreatureList.clear();
+		spawnableWaterCreatureList.clear();
 	}
 
+	@Override
 	public int getSkyColorByTemp(float par1) {
 		return 0;
 	}
-
 }

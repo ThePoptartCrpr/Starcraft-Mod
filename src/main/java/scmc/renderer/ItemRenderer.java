@@ -27,12 +27,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.IPerspectiveAwareModel;
 
 /**
- * 
  * A neat class that removes the need for JSON in item rendering.
- * 
  * @author Ri5ux, creator of the AVP mod
- *
  */
+@SuppressWarnings("unused")
 public abstract class ItemRenderer implements IPerspectiveAwareModel, IBakedModel {
 	protected static final Minecraft mc = Minecraft.getMinecraft();
 	private ItemRenderList overrides;
@@ -107,13 +105,9 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel, IBakedMode
 		return selfPair;
 	}
 
-	public void renderPre(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {
-		;
-	}
+	public void renderPre(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {}
 
-	public void renderPost(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {
-		;
-	}
+	public void renderPost(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {}
 
 	public abstract void renderThirdPersonLeft(ItemStack itemstack, EntityLivingBase entity,
 			TransformType cameraTransformType);

@@ -21,6 +21,7 @@ public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
 		modelEntity = ((ModelBroodling) mainModel);
 	}
 	
+	@Override
 	public void doRender(EntityBroodling entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
@@ -28,7 +29,7 @@ public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
         if (!this.renderOutlines)
         {
             this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }	
+        }
     }
 
 	@Override

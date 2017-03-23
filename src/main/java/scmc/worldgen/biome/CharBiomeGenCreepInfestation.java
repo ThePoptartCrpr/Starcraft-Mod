@@ -12,6 +12,7 @@ import scmc.blocks.ModBlocks;
 import scmc.entity.EntityLarva;
 import scmc.entity.EntityLarvaCocoon;
 
+//FIXME: same desertshakuras stuff
 public class CharBiomeGenCreepInfestation extends BiomesSC {
 
 	public boolean isOnChar;
@@ -30,6 +31,7 @@ public class CharBiomeGenCreepInfestation extends BiomesSC {
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityLarvaCocoon.class, 8, 2, 3));
 	}
 
+	@Override
 	public int getSkyColorByTemp(float par1) {
 		return 0;
 	}

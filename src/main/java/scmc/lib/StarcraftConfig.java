@@ -5,6 +5,7 @@ import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 
 public class StarcraftConfig {
+	private static final float MAX_VALUE = 1000;
 	
 	public static boolean useSubCfg;
 	
@@ -22,7 +23,7 @@ public class StarcraftConfig {
 	public static double overlordHP = 100;
 	public static double probeHP = 20;
 	public static double zealotHP = 100;
-	public static double preaverHP = 200;
+	public static double reaverHP = 200;
 	public static double zerglingHP = 25;
 	
 	public static double broodlingDmg = 2;
@@ -30,20 +31,18 @@ public class StarcraftConfig {
 	public static double dTempDmg = 24.5;
 	public static double zealotDmg = 8;
 	public static double zerglingDmg = 5;
-
+	
 	public static boolean creepCanSpread;
 	public static boolean creepSpreadScalesWithDif;
 	public static int creepSpreadBaseVal;
-
+	
 	public static boolean vanillaSpawn;
 	public static int dimChar;
 	public static int dimShakuras;
 	
-	public static float MAX_VALUE  = 1000;
-
 	public static void preInit() {
 		Configuration config = new Configuration(new File("config/Starcraft.cfg"));
-
+		
 		// General
 		config.setCategoryComment("General", "General settings.");
 		
@@ -56,13 +55,13 @@ public class StarcraftConfig {
 		
 		creepSpreadBaseVal = config.getInt("Creep Spread Base Value", "General", 4, 0, 16,
 				"Base value for Creep Spread. WARNING, DO NOT SET THIS HIGH");
-
+		
 		// Dimensions
 		config.setCategoryComment("Dimension ID's", "Change the ID's of the dimensions");
 		dimChar = config.getInt("Char ID", "Dimension ID's", 2, -128, 127, "ID for the planet Char");
 		dimShakuras = config.getInt("Shakuras ID", "Dimension ID's", 3, -128, 127, "ID for the planet Shakuras");
 		// Biome Generation (Overworld)
-
+		
 		// Overall Structure Generation
 		config.setCategoryComment("World Generation", "Enable or disable structure generation.");
 		// Terran Structure Generation
@@ -96,7 +95,7 @@ public class StarcraftConfig {
 		// Mineral Bed", true).getBoolean(true);
 		// generateRichMineralBed = config.get("World Generation", "Neutral -
 		// Rich Mineral Bed", true).getBoolean(true);
-
+		
 		// Ore Generation
 		config.setCategoryComment("Ore Generation", "Enable or disable ore generation.");
 		// generateTitaniumOre = config.get("Ore Generation", "Titanium Ore",
@@ -109,7 +108,7 @@ public class StarcraftConfig {
 		// true).getBoolean(true);
 		// generateRichMineralOre = config.get("Ore Generation", "Rich Mineral
 		// Ore", true).getBoolean(true);
-
+		
 		// Mob Spawning
 		config.setCategoryComment("Mob Spawning", "Decide which mobs will spawn and which mobs will not.");
 		vanillaSpawn = config.get("Mob Spawning", "Vanilla - Disable Vanilla Mob Spawn", false).getBoolean(false);
@@ -117,11 +116,11 @@ public class StarcraftConfig {
 		// true).getBoolean(true);
 		// larvaCocoonCanSpawn = config.get("Mob Spawning", "Zerg - Larva
 		// Cocoon", true).getBoolean(true);
-
+		
 		// Dimension Id Configuration
-
+		
 		// Debugging/TESTING
-
+		
 		config.save();
 		
 		//////////////
@@ -158,6 +157,8 @@ public class StarcraftConfig {
 			overlordHP = subCfg.getFloat("Overlord HP", "Zerg", 100, 1, MAX_VALUE, "Health of the Overlord. Be sane else you might break something");
 			
 			probeHP = subCfg.getFloat("Probe HP", "Protoss", 20, 1, MAX_VALUE, "Health of the Probe. Be sane else you might break something");
+			
+			reaverHP = subCfg.getFloat("Reaver HP", "Protoss", 200, 1, MAX_VALUE, "Health of the Reaver. Be sane else you might break something");
 			
 			zealotHP = subCfg.getFloat("Zealot HP", "Protoss", 100, 1, MAX_VALUE, "Health of the Zealot. Be sane else you might break something");
 			zealotDmg = subCfg.getFloat("Zealot Damage", "Protoss", 8, 1, MAX_VALUE, "Damage the Zealot deals. Be sane else you might break something");
