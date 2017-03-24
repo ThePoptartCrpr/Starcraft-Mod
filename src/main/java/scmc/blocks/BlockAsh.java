@@ -5,6 +5,7 @@ import net.minecraft.block.BlockSnow;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.CreativeTab;
 import scmc.lib.Reference;
 
 //FIXME: find the source of the ash-makes-snow bug. it's probably due to a missing override
@@ -18,6 +19,7 @@ public class BlockAsh extends BlockSnow {
 	public BlockAsh() {
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_ASH_C.getRegistryRL());
+		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 	}
     
 	//No @Override because the super method is private

@@ -219,7 +219,7 @@ public class ModBlocks extends Block {
 		STONE_CHAR = new BlockCharStone();
 		COBBLESTONE_CHAR = new BlockCharCobblestone();
 		MAGMA_CHAR = new BlockCharMagma();
-//		ASH_CHAR = new BlockAsh();
+		ASH_CHAR = new BlockAsh();
 		DIRT_CHAR = new BlockCharDirt();
 		DIM_PORTAL_CHAR = new DimPortalChar();
 		
@@ -331,8 +331,8 @@ public class ModBlocks extends Block {
 		GameRegistry.register(MAGMA_CHAR);
 		GameRegistry.register(new ItemBlock(MAGMA_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_MAGMA_C.getRegistryRL()));
 		
-//		GameRegistry.register(ASH_CHAR);
-//		GameRegistry.register(new ItemBlock(ASH_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_ASH_C.getRegistryRL()));
+		GameRegistry.register(ASH_CHAR);
+		GameRegistry.register(new ItemBlock(ASH_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_ASH_C.getRegistryRL()));
 		
 		GameRegistry.register(DIRT_CHAR);
 		GameRegistry.register(new ItemBlock(DIRT_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIRT_C.getRegistryRL()));
@@ -522,6 +522,10 @@ public class ModBlocks extends Block {
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_COBBLESTONE_C.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + COBBLESTONE_CHAR.getUnlocalizedName().substring(5));
 		
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ASH_CHAR), 0,
+				new ModelResourceLocation(Reference.ModBlocks.BLOCK_ASH_C.getRegistryRL(), "inventory"));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + ASH_CHAR.getUnlocalizedName().substring(5));
+		
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(MAGMA_CHAR), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_MAGMA_C.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + MAGMA_CHAR.getUnlocalizedName().substring(5));
@@ -670,6 +674,21 @@ public class ModBlocks extends Block {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BLOCKMOVINGLIGHTSOURCE), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL(), "inventory"));
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + BLOCKMOVINGLIGHTSOURCE.getUnlocalizedName().substring(5));
+		
+		//Layer Registration
+		ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(ASH_CHAR), new ItemMeshDefinition() {
+			@Override
+			public ModelResourceLocation getModelLocation(ItemStack stack) {
+				return new ModelResourceLocation(Reference.RL_BASE + "char_ash", "layers");
+			}
+		});
+		ModelLoader.setCustomStateMapper(ASH_CHAR, new StateMapperBase() {
+			@Override
+			protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
+				char num = state.toString().charAt(state.toString().length()-2);
+				return new ModelResourceLocation(Reference.RL_BASE + "char_ash", "layers=" + num);
+			}
+		});
 		
 		//Fluid Registration
 		ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(FLUID_ACID), new ItemMeshDefinition() {
