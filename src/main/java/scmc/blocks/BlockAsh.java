@@ -19,7 +19,7 @@ public class BlockAsh extends BlockSnow {
 	public BlockAsh() {
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_ASH_C.getRegistryRL());
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(CreativeTab.tabStarcraftDecorativeBlocks);
 	}
     
 	//No @Override because the super method is private

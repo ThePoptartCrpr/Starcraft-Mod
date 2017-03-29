@@ -34,7 +34,7 @@ public class PlayerTickEventHandler {
 	                {
 	                    event.player.worldObj.setBlockState(
 	                          blockLocation, 
-	                          ModBlocks.BLOCKMOVINGLIGHTSOURCE.getDefaultState());
+	                          ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getDefaultState());
 	                }
 	                else if (event.player.worldObj.getBlockState(
 	                      blockLocation.add(
@@ -47,7 +47,7 @@ public class PlayerTickEventHandler {
 	                                event.player.getLookVec().xCoord, 
 	                                event.player.getLookVec().yCoord, 
 	                                event.player.getLookVec().zCoord), 
-	                                ModBlocks.BLOCKMOVINGLIGHTSOURCE.getDefaultState());
+	                                ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getDefaultState());
 	                }
 	            }
 	        }

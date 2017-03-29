@@ -12,8 +12,8 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import scmc.blocks.ModBlocks;
 import scmc.lib.StarcraftConfig;
-import scmc.worldgen.features.CharWorldGenMinable;
 import scmc.worldgen.features.ShakurasWorldGenMinable;
+import scmc.worldgen.worldchar.CharWorldGenMinable;
 
 public class SCWorldGen implements IWorldGenerator {
 	private WorldGenerator COPPER_OVERWORLD;

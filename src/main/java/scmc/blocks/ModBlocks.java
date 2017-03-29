@@ -189,7 +189,7 @@ public class ModBlocks extends Block {
 	public static Block CORE_NEXUS_VOID;
 	public static Block CORE_NEXUS_DARK;
 	public static Block CORE_NEXUS_KHALAI;
-	public static Block BLOCKMOVINGLIGHTSOURCE;
+	public static Block BLOCK_MOVING_LIGHT_SOURCE;
 	
 
 	public static void init() {
@@ -267,7 +267,7 @@ public class ModBlocks extends Block {
 		CORE_NEXUS_DARK = new BlockCoreNexusDark();
 		CORE_NEXUS_KHALAI = new BlockCoreNexusKhalai();
 		
-		BLOCKMOVINGLIGHTSOURCE = new BlockMovingLightSource();
+		BLOCK_MOVING_LIGHT_SOURCE = new BlockMovingLightSource();
 		
 		FLUID_ACID = new BlockAcidFluid();
 		FLUID_BLOOD = new BlockBloodFluid();
@@ -441,8 +441,8 @@ public class ModBlocks extends Block {
 		GameRegistry.register(new ItemBlock(CORE_WARPGATE_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_KHALAI.getRegistryRL()));
 		
 		
-		GameRegistry.register(BLOCKMOVINGLIGHTSOURCE);
-		GameRegistry.register(new ItemBlock(BLOCKMOVINGLIGHTSOURCE).setRegistryName(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL()));
+		GameRegistry.register(BLOCK_MOVING_LIGHT_SOURCE);
+		GameRegistry.register(new ItemBlock(BLOCK_MOVING_LIGHT_SOURCE).setRegistryName(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL()));
 		
 		GameRegistry.register(FLUID_ACID);
 		GameRegistry.register(new ItemBlock(FLUID_ACID).setRegistryName(Reference.ModBlocks.FLUID_ACID.getRegistryRL()));
@@ -671,15 +671,15 @@ public class ModBlocks extends Block {
 		LogHelper.logger.log(Level.INFO, "Registered Block: " + CORE_WARPGATE_KHALAI.getUnlocalizedName().substring(5));
 		
 		
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BLOCKMOVINGLIGHTSOURCE), 0,
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BLOCK_MOVING_LIGHT_SOURCE), 0,
 				new ModelResourceLocation(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL(), "inventory"));
-		LogHelper.logger.log(Level.INFO, "Registered Block: " + BLOCKMOVINGLIGHTSOURCE.getUnlocalizedName().substring(5));
+		LogHelper.logger.log(Level.INFO, "Registered Block: " + BLOCK_MOVING_LIGHT_SOURCE.getUnlocalizedName().substring(5));
 		
 		//Layer Registration
 		ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(ASH_CHAR), new ItemMeshDefinition() {
 			@Override
 			public ModelResourceLocation getModelLocation(ItemStack stack) {
-				return new ModelResourceLocation(Reference.RL_BASE + "char_ash", "layers");
+				return new ModelResourceLocation(Reference.RL_BASE + "char_ash", "normal");
 			}
 		});
 		ModelLoader.setCustomStateMapper(ASH_CHAR, new StateMapperBase() {

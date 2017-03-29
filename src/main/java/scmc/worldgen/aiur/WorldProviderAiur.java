@@ -15,7 +15,7 @@ public class WorldProviderAiur extends WorldProvider {
 	
 	@Override
 	public DimensionType getDimensionType() {
-		return DimensionRegistry.AiurDT;
+		return DimensionRegistry.AIUR_DT;
 	}
 	
 	@Override

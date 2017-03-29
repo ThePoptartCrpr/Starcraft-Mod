@@ -58,9 +58,9 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 
 			if (l1 <= 0 + rand.nextInt(5)) {
 //				blockArray[i2] = Blocks.BEDROCK;
-				primer.setBlockState(i1, j1, i2, Blocks.BEDROCK.getDefaultState());
+				primer.setBlockState(i1, i2, j1, BEDROCK);
 			} else {
-				Block block2 = primer.getBlockState(i1, j1, i2).getBlock();//blockArray[i2];
+				Block block2 = primer.getBlockState(i1, i2, j1).getBlock();//blockArray[i2];
 				Material mat2 = block2.getBlockState().getBaseState().getMaterial();
 				if (block2 != null && mat2 != Material.AIR) {
 					if (block2 == ModBlocks.STONE_SHAKURAS) {
@@ -86,26 +86,26 @@ public class BiomeGenDesertShakuras extends BiomesSC {
 							if (l1 >= 62) {
 								if (block instanceof BlockShakurasSand) {
 									int i3 = (j1 * 16 + i1) * k1 + (l1 + 1);
-									primer.setBlockState(i1, j1, i3, block.getDefaultState());
+									primer.setBlockState(i1, i3, j1, block.getDefaultState());
 //									blockArray[i3] = block;
 									block = fillerBlock.getBlock();
 								}
 //								blockArray[i2] = block;
-								primer.setBlockState(i1, j1, i2, block.getDefaultState());
+								primer.setBlockState(i1, i2, j1, block.getDefaultState());
 //								par1[i2] = b0; //TODO Figure out what this was for?
 							} else if (l1 < 56 - l) {
 								block = null;
 								block1 = ModBlocks.STONE_SHAKURAS;
 //								blockArray[i2] = Blocks.GRAVEL;
-								primer.setBlockState(i1, j1, i2, Blocks.GRAVEL.getDefaultState());
+								primer.setBlockState(i1, i2, j1, GRAVEL);
 							} else {
 //								blockArray[i2] = block1;
-								primer.setBlockState(i1, j1, i2, block1.getDefaultState());
+								primer.setBlockState(i1, i2, j1, block1.getDefaultState());
 							}
 						} else if (k > 0) {
 							--k;
 //							blockArray[i2] = block1;
-							primer.setBlockState(i1, j1, i2, block1.getDefaultState());
+							primer.setBlockState(i1, i2, j1, block1.getDefaultState());
 
 							if (k == 0 && block1 == ModBlocks.SAND_SHAKURAS) {
 								k = rand.nextInt(4) + Math.max(0, l1 - 63);

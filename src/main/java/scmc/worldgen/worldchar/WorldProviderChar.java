@@ -1,12 +1,14 @@
-package scmc.worldgen.provider;
+package scmc.worldgen.worldchar;
 
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.chunk.IChunkGenerator;
 import scmc.lib.StarcraftConfig;
 import scmc.worldgen.DimensionRegistry;
 
-public class WorldProviderShakuras extends WorldProvider {
-    
+public class WorldProviderChar extends WorldProvider {
+	    
     /**
      * A message to display to the user when they transfer to this dimension.
      *
@@ -14,8 +16,8 @@ public class WorldProviderShakuras extends WorldProvider {
      */
     @Override
     public String getWelcomeMessage() {
-        if (this instanceof WorldProviderShakuras) {
-            return "Entering Shakuras";
+        if (this instanceof WorldProviderChar) {
+            return "Entering Char";
         }
         return null;
     }
@@ -27,8 +29,8 @@ public class WorldProviderShakuras extends WorldProvider {
      */
     @Override
     public String getDepartMessage() {
-        if (this instanceof WorldProviderShakuras) {
-            return "Leaving Shakuras";
+        if (this instanceof WorldProviderChar) {
+            return "Leaving Char";
         }
         return null;
     }
@@ -40,13 +42,22 @@ public class WorldProviderShakuras extends WorldProvider {
      * @return The dimension to respawn the player in
      */
     @Override
-    public int getRespawnDimension(net.minecraft.entity.player.EntityPlayerMP player)
-    {
-        return StarcraftConfig.dimShakuras;
+    public int getRespawnDimension(EntityPlayerMP player) {
+        return StarcraftConfig.dimChar;
+    }
+    
+    @Override
+    protected void createBiomeProvider() {
+    	this.biomeProvider = new CharBiomeProvider(worldObj.getWorldInfo());
+    }
+    
+    @Override
+    public IChunkGenerator createChunkGenerator() {
+    	return new ChunkProviderChar(worldObj);
     }
 
 	@Override
 	public DimensionType getDimensionType() {
-		return DimensionRegistry.SHAKURAS_DT;
+		return DimensionRegistry.CHAR_DT;
 	}
 }

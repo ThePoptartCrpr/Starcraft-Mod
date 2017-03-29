@@ -68,6 +68,7 @@ import scmc.renderer.RenderZergling;
 import scmc.tileentity.ModTileEntities;
 import scmc.tools.ModTools;
 import scmc.weapons.ModWeapons;
+import scmc.worldgen.DimensionRegistry;
 import scmc.worldgen.SCWorldGen;
 import scmc.worldgen.biome.BiomesSC;
 
@@ -165,7 +166,8 @@ public class ClientProxy extends ServerProxy {
 		SCWorldGen.preInit();
 		ModEntities.registerEntities();
 		StarcraftSoundEvents.registerSounds();
-//		BiomesSC.init();
+		BiomesSC.init();
+		DimensionRegistry.mainRegistry();
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package scmc.worldgen.layer;
+package scmc.worldgen.worldchar;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;

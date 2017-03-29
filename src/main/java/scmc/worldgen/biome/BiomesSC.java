@@ -4,6 +4,11 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.common.BiomeManager.BiomeType;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BiomesSC extends Biome {
 
@@ -19,16 +24,25 @@ public class BiomesSC extends Biome {
 
 	public static void init() {
 		registerBiomes();
+		GameRegistry.register(biomeAshPlains);
 	}
 
 	public static void registerBiomes() {
 
 		//TODO: Edit these later, as these values are all the same
 		biomeCreepInfestationChar = new CharBiomeGenCreepInfestation((new Biome.BiomeProperties("Infestation Biome")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(0.05F).setRainfall(0.3F).setSnowEnabled());
-		biomeAshPlains = new BiomeGenAshPlains((new Biome.BiomeProperties("Ash Plains")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(0.05F).setRainfall(0.3F).setSnowEnabled());
+		biomeAshPlains = new BiomeGenAshPlains((new Biome.BiomeProperties("Ash Plains")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.5F).setRainfall(0.3F));
 		biomeMoltenInferno = new BiomeGenMoltenInferno((new Biome.BiomeProperties("Molten Inferno")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(0.05F).setRainfall(0.3F).setSnowEnabled());
 		biomeShakurasDesert = new BiomeGenDesertShakuras((new Biome.BiomeProperties("Shakuras Desert")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(0.05F).setRainfall(0.3F).setSnowEnabled());
 
+		/* FIXME Testing Code */
+		/*for (BiomeType type : BiomeType.values()) {
+			for (BiomeEntry biomeEntry : BiomeManager.getBiomes(type)) {
+				BiomeManager.removeBiome(type, biomeEntry);
+				BiomeManager.removeSpawnBiome(biomeEntry.biome);
+			}
+		}*/
+		
 		BiomeDictionary.registerBiomeType(biomeCreepInfestationChar, Type.FOREST);
 		BiomeDictionary.registerBiomeType(biomeAshPlains, Type.FOREST);
 		BiomeDictionary.registerBiomeType(biomeMoltenInferno, Type.FOREST);
@@ -36,13 +50,17 @@ public class BiomesSC extends Biome {
 
 		// add spawn biomes here
 		
-		BiomeManager.addSpawnBiome(BiomesSC.biomeCreepInfestationChar);
+		/* FIXME Testing code */
+		/*BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(biomeAshPlains, 100));
+		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(biomeAshPlains, 100));
+		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(biomeAshPlains, 100));
+		BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(biomeAshPlains, 100));
+		*/
+		
+//		BiomeManager.addSpawnBiome(BiomesSC.biomeCreepInfestationChar);
 		BiomeManager.addSpawnBiome(BiomesSC.biomeAshPlains);
-		BiomeManager.addSpawnBiome(BiomesSC.biomeShakurasDesert);
-		
-		BiomeManager.removeSpawnBiome(BiomesSC.biomeMoltenInferno);
-		
+//		BiomeManager.addSpawnBiome(BiomesSC.biomeShakurasDesert);
+//		BiomeManager.removeSpawnBiome(BiomesSC.biomeMoltenInferno);
 
 	}
-
 }

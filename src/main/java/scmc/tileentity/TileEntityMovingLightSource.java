@@ -31,7 +31,7 @@ public class TileEntityMovingLightSource extends TileEntity implements ITickable
         if (thePlayer == null)
         {
             if (worldObj.getBlockState(getPos()).getBlock() == 
-                  ModBlocks.BLOCKMOVINGLIGHTSOURCE)
+                  ModBlocks.BLOCK_MOVING_LIGHT_SOURCE)
             {
                 worldObj.setBlockToAir(getPos());
             }
@@ -41,7 +41,7 @@ public class TileEntityMovingLightSource extends TileEntity implements ITickable
                     thePlayer.getHeldItemMainhand().getItem()))
         {
             if (worldObj.getBlockState(getPos()).getBlock() == 
-                  ModBlocks.BLOCKMOVINGLIGHTSOURCE)
+                  ModBlocks.BLOCK_MOVING_LIGHT_SOURCE)
             {
                 worldObj.setBlockToAir(getPos());
             }            

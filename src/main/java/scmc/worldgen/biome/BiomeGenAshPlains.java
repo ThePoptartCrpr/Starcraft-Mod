@@ -3,11 +3,13 @@ package scmc.worldgen.biome;
 import java.util.Random;
 
 import net.minecraft.block.BlockSand;
+import net.minecraft.block.BlockSnow;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.chunk.ChunkPrimer;
 import scmc.blocks.ModBlocks;
 
@@ -15,8 +17,10 @@ public class BiomeGenAshPlains extends BiomesSC {
 
 	public BiomeGenAshPlains(BiomeProperties par1) {
 		super(par1);
+		
+		setRegistryName("ash_plains");
 
-		this.topBlock = ModBlocks.ASH_CHAR.getDefaultState();
+		this.topBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 		this.fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 
 		this.spawnableMonsterList.clear();
@@ -35,85 +39,90 @@ public class BiomeGenAshPlains extends BiomesSC {
         genBiomeTerrainChar(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
     }
 
+	@SuppressWarnings("deprecation")
 	public final void genBiomeTerrainChar(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 
-		int i = worldIn.getSeaLevel();
-        IBlockState iblockstate = this.topBlock;
-        IBlockState iblockstate1 = this.fillerBlock;
+		int seaLevel = worldIn.getSeaLevel();
+        IBlockState topBlock = this.topBlock;
+        IBlockState fillerBlock = this.fillerBlock;
         int j = -1;
-        int k = (int)(noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
-        int l = x & 15;
-        int i1 = z & 15;
+        int randHeight = (int)(noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
+        int xLoc = x & 15;
+        int zLoc = z & 15;
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
-        for (int j1 = 255; j1 >= 0; --j1)
+        for (int yLoc = 255; yLoc >= 0; --yLoc)
         {
-            if (j1 <= rand.nextInt(5))
+            if (yLoc <= rand.nextInt(5))
             {
-                chunkPrimerIn.setBlockState(i1, j1, l, BEDROCK);
+                chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, BEDROCK);
             }
             else
             {
-                IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
+                IBlockState origState = chunkPrimerIn.getBlockState(xLoc, yLoc, zLoc);
 
-                if (iblockstate2.getMaterial() == Material.AIR)
+                if (origState.getMaterial() == Material.AIR) //If we're still in the air...
                 {
                     j = -1;
                 }
-                else if (iblockstate2.getBlock() == Blocks.STONE)
+                else if (origState.getBlock() == Blocks.STONE) //If we've hit the ground...
                 {
-                    if (j == -1)
+                    if (j == -1) //If we were just in the air...
                     {
-                        if (k <= 0)
+                        if (randHeight <= 0)
                         {
-                            iblockstate = AIR;
-                            iblockstate1 = STONE;
+                            topBlock = AIR;
+                            fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();
                         }
-                        else if (j1 >= i - 4 && j1 <= i + 1)
+                        else if (yLoc >= seaLevel - 4 && yLoc <= seaLevel + 1)
                         {
-                            iblockstate = this.topBlock;
-                            iblockstate1 = this.fillerBlock;
+                            topBlock = this.topBlock;
+                            fillerBlock = this.fillerBlock;
                         }
 
-                        if (j1 < i && (iblockstate == null || iblockstate.getMaterial() == Material.AIR))
+                        if (yLoc < seaLevel && (topBlock == null || topBlock.getMaterial() == Material.AIR))
                         {
-                            if (this.getFloatTemperature(blockpos$mutableblockpos.setPos(x, j1, z)) < 0.15F)
+                            if (this.getFloatTemperature(blockpos$mutableblockpos.setPos(x, yLoc, z)) < 0.15F)
                             {
-                                iblockstate = ICE;
+                                topBlock = ICE;
                             }
                             else
                             {
-                                iblockstate = WATER;
+                                topBlock = WATER;
                             }
                         }
 
-                        j = k;
+                        j = randHeight;
 
-                        if (j1 >= i - 1)
+                        if (yLoc >= seaLevel - 1)
                         {
-                            chunkPrimerIn.setBlockState(i1, j1, l, iblockstate);
+                            chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, topBlock);
+                            chunkPrimerIn.setBlockState(xLoc, yLoc+1, zLoc,
+                            		ModBlocks.ASH_CHAR.getStateFromMeta(rand.nextInt(3)));
                         }
-                        else if (j1 < i - 7 - k)
+                        else if (yLoc < seaLevel - 7 - randHeight)
                         {
-                            iblockstate = AIR;
-                            iblockstate1 = STONE;
-                            chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
+                            topBlock = AIR;
+                            fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();
+                            chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, GRAVEL);
                         }
                         else
                         {
-                            chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
+                            chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, fillerBlock);
                         }
                     }
                     else if (j > 0)
                     {
                         --j;
-                        chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
+                        chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, fillerBlock);
 
-                        if (j == 0 && iblockstate1.getBlock() == Blocks.SAND && k > 1)
+                        if (j == 0 && fillerBlock.getBlock() == Blocks.SAND && randHeight > 1)
                         {
-                            j = rand.nextInt(4) + Math.max(0, j1 - 63);
-                            iblockstate1 = iblockstate1.getValue(BlockSand.VARIANT) == BlockSand.EnumType.RED_SAND ? RED_SANDSTONE : SANDSTONE;
+                            j = rand.nextInt(4) + Math.max(0, yLoc - 63);
+                            fillerBlock = fillerBlock.getValue(BlockSand.VARIANT) == BlockSand.EnumType.RED_SAND ? RED_SANDSTONE : SANDSTONE;
                         }
+                    } else if (j == 0) {
+                    	chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, ModBlocks.STONE_CHAR.getDefaultState());
                     }
                 }
             }
