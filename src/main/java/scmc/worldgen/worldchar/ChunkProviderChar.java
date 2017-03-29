@@ -22,7 +22,7 @@ import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import scmc.entity.EntityZealot;
-import scmc.worldgen.aiur.NormalTerrainGenerator;
+import scmc.weapons.NormalTerrainGenerator;
 
 public class ChunkProviderChar implements IChunkGenerator {
 	

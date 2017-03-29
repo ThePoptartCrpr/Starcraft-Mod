@@ -64,7 +64,8 @@ public class DimPortalShakuras extends ModBlocks {
 			try {
 				EntityPlayerMP player = (EntityPlayerMP) entity;
 				if(player.dimension != dim) {
-					player.getServer().getPlayerList().transferPlayerToDimension(player, this.dim, new ModTeleporter(player.mcServer.worldServerForDimension(this.dim), 0, 0, 0));
+					player.getServer().getPlayerList().transferPlayerToDimension(player, dim,
+							new ModTeleporter(player.mcServer.worldServerForDimension(dim), player.posX, player.posY, player.posZ));
 				}
 			} catch(@SuppressWarnings("unused") ClassCastException e) {
 				return; //Not a player

@@ -65,8 +65,8 @@ public class DimPortalChar extends ModBlocks {
 			try {
 				EntityPlayerMP player = (EntityPlayerMP) entity;
 				if(player.dimension != dim) {
-					player.getServer().getPlayerList().transferPlayerToDimension(player, DimensionRegistry.CHAR_DIMENSION_ID,
-							new ModTeleporter(player.mcServer.worldServerForDimension(DimensionRegistry.CHAR_DIMENSION_ID), player.posX, player.posY, player.posZ));
+					player.getServer().getPlayerList().transferPlayerToDimension(player, dim,
+							new ModTeleporter(player.mcServer.worldServerForDimension(dim), player.posX, player.posY, player.posZ));
 				}
 			} catch(@SuppressWarnings("unused") ClassCastException e) {
 				return; //Not a player

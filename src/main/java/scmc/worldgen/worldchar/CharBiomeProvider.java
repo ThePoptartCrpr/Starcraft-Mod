@@ -42,7 +42,7 @@ public class CharBiomeProvider extends BiomeProvider
 
     private CharBiomeProvider(long seed, WorldType worldTypeIn, String options) {
         this();
-        GenLayer[] agenlayer = GenLayer.initializeAllBiomeGenerators(seed, worldTypeIn, options);
+        GenLayer[] agenlayer = GenLayerChar.initializeAllBiomeGenerators(seed, worldTypeIn, options);
         agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
         
         genBiomes = agenlayer[0];
@@ -84,7 +84,7 @@ public class CharBiomeProvider extends BiomeProvider
 
         try
         {
-            for (int i = 1; i < width * height; ++i)
+            for (int i = 0; i < width * height; ++i)
             {
                 biomes[i] = Biome.getBiome(aint[i], BiomesSC.biomeAshPlains);
             }

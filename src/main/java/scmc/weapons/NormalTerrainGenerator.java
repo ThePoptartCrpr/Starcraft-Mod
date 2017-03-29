@@ -1,4 +1,4 @@
-package scmc.worldgen.aiur;
+package scmc.weapons;
 
 import java.util.Random;
 
