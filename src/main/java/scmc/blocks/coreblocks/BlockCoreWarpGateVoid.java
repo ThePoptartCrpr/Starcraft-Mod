@@ -1,12 +1,12 @@
 package scmc.blocks.coreblocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import scmc.CreativeTab;
+import scmc.blocks.ModBlocks;
 import scmc.lib.Reference;
 
-public class BlockCoreWarpGateVoid extends Block {
+public class BlockCoreWarpGateVoid extends ModBlocks {
 	public BlockCoreWarpGateVoid() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_VOID.getUnlocalizedName());

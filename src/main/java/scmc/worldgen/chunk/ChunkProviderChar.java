@@ -1,4 +1,4 @@
-package scmc.worldgen.worldchar;
+package scmc.worldgen.chunk;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 
@@ -22,7 +22,7 @@ import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import scmc.entity.EntityZealot;
-import scmc.weapons.NormalTerrainGenerator;
+import scmc.worldgen.NormalTerrainGenerator;
 
 public class ChunkProviderChar implements IChunkGenerator {
 	

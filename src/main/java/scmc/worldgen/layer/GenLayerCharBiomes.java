@@ -1,4 +1,4 @@
-package scmc.worldgen.worldchar;
+package scmc.worldgen.layer;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
@@ -6,7 +6,7 @@ import net.minecraft.world.gen.layer.IntCache;
 import scmc.worldgen.biome.BiomesSC;
 
 public class GenLayerCharBiomes extends GenLayer {
-	public Biome[] dimBiomes = {/*BiomesSC.biomeCreepInfestationChar, */BiomesSC.biomeAshPlains/*, BiomesSC.biomeMoltenInferno*/};
+	public Biome[] dimBiomes = {BiomesSC.biomeCharCreepInfestation, BiomesSC.biomeAshPlains, BiomesSC.biomeMoltenInferno};
 
 	public GenLayerCharBiomes(long par1) {
 		super(par1);

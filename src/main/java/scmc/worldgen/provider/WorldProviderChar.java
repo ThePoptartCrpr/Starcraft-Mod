@@ -1,4 +1,4 @@
-package scmc.worldgen.worldchar;
+package scmc.worldgen.provider;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.DimensionType;
@@ -6,6 +6,8 @@ import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkGenerator;
 import scmc.lib.StarcraftConfig;
 import scmc.worldgen.DimensionRegistry;
+import scmc.worldgen.biomeprovider.CharBiomeProvider;
+import scmc.worldgen.chunk.ChunkProviderChar;
 
 public class WorldProviderChar extends WorldProvider {
 	    

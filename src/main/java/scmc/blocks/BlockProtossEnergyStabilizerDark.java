@@ -1,6 +1,5 @@
 package scmc.blocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import scmc.CreativeTab;
@@ -11,7 +10,7 @@ import scmc.lib.Reference;
  * Copyright 2017 the Starcraft Minecraft mod team
  * @author bvanseghi
  */
-public class BlockProtossEnergyStabilizerDark extends Block {
+public class BlockProtossEnergyStabilizerDark extends ModBlocks {
 	public BlockProtossEnergyStabilizerDark() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getUnlocalizedName());

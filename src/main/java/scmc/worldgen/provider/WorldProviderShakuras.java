@@ -2,8 +2,11 @@ package scmc.worldgen.provider;
 
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.chunk.IChunkGenerator;
 import scmc.lib.StarcraftConfig;
 import scmc.worldgen.DimensionRegistry;
+import scmc.worldgen.biomeprovider.ShakurasBiomeProvider;
+import scmc.worldgen.chunk.ChunkProviderShakuras;
 
 public class WorldProviderShakuras extends WorldProvider {
     
@@ -43,6 +46,16 @@ public class WorldProviderShakuras extends WorldProvider {
     public int getRespawnDimension(net.minecraft.entity.player.EntityPlayerMP player)
     {
         return StarcraftConfig.dimShakuras;
+    }
+    
+    @Override
+    protected void createBiomeProvider() {
+    	this.biomeProvider = new ShakurasBiomeProvider(worldObj.getWorldInfo());
+    }
+	
+	@Override
+    public IChunkGenerator createChunkGenerator() {
+    	return new ChunkProviderShakuras(worldObj);
     }
 
 	@Override

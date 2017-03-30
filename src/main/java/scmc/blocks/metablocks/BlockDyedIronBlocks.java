@@ -2,7 +2,6 @@ package scmc.blocks.metablocks;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -17,6 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.DyedIronType;
 import scmc.lib.Reference;
 
@@ -24,7 +24,7 @@ import scmc.lib.Reference;
  * This block has three variants. Refer to {@link DyedIronType}
  * 
  */
-public class BlockDyedIronBlocks extends Block implements IMetaBlockName {
+public class BlockDyedIronBlocks extends ModBlocks implements IMetaBlockName {
 
 	/** The type property */
 	public static final PropertyEnum<DyedIronType> TYPE = PropertyEnum.create("type", DyedIronType.class);

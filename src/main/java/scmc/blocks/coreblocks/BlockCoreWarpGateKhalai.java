@@ -1,12 +1,12 @@
 package scmc.blocks.coreblocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import scmc.CreativeTab;
+import scmc.blocks.ModBlocks;
 import scmc.lib.Reference;
 
-public class BlockCoreWarpGateKhalai extends Block {
+public class BlockCoreWarpGateKhalai extends ModBlocks {
 	public BlockCoreWarpGateKhalai() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_KHALAI.getUnlocalizedName());

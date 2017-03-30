@@ -147,7 +147,7 @@ public class ModBlocks extends Block {
 	public static Block stoneAuir;
 	public static Block grassAuir;
 
-	public static Block dirtShakuras;
+	public static Block DIRT_SHAKURAS;
 	public static Block STONE_SHAKURAS;
 	public static Block COBBLESTONE_SHAKURAS;
 	public static Block SAND_SHAKURAS;
@@ -176,7 +176,6 @@ public class ModBlocks extends Block {
 	public static Block DIM_PORTAL_OVERWORLD;
 	public static Block DIM_PORTAL_SHAKURAS;
 	
-	
 	//Core Blocks
 	public static Block CORE_PYLON_VOID;
 	public static Block CORE_PYLON_DARK;
@@ -190,7 +189,6 @@ public class ModBlocks extends Block {
 	public static Block CORE_NEXUS_DARK;
 	public static Block CORE_NEXUS_KHALAI;
 	public static Block BLOCK_MOVING_LIGHT_SOURCE;
-	
 
 	public static void init() {
 		instantiate();

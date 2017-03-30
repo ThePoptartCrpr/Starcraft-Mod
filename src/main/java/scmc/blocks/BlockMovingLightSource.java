@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 import scmc.items.ModItems;
 import scmc.tileentity.TileEntityMovingLightSource;
 
-public class BlockMovingLightSource extends Block implements ITileEntityProvider {
+public class BlockMovingLightSource extends ModBlocks implements ITileEntityProvider {
 	public static final AxisAlignedBB FULL_BLOCK_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D);
 	
 	//This method hurts my brain oof

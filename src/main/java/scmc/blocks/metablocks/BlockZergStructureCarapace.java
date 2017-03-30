@@ -2,7 +2,6 @@ package scmc.blocks.metablocks;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -16,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.ZergStructureCarapaceType;
 import scmc.lib.Reference;
 
@@ -23,7 +23,7 @@ import scmc.lib.Reference;
  * This block has three variants. Refer to {@link ZergStructureCarapaceType}
  * 
  */
-public class BlockZergStructureCarapace extends Block implements IMetaBlockName {
+public class BlockZergStructureCarapace extends ModBlocks implements IMetaBlockName {
 
 	/**
 	 * The type property

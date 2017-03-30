@@ -1,16 +1,16 @@
 package scmc.blocks.coreblocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import scmc.CreativeTab;
+import scmc.blocks.ModBlocks;
 import scmc.lib.Library;
 import scmc.lib.Reference;
 
-public class BlockCoreNexusDark extends Block {
+public class BlockCoreNexusDark extends ModBlocks {
 	public BlockCoreNexusDark() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_CORE_NEXUS_DARK.getUnlocalizedName());

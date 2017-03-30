@@ -1,4 +1,4 @@
-package scmc.worldgen.worldchar;
+package scmc.worldgen.features;
 
 import java.util.Random;
 

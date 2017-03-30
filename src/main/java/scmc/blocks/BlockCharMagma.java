@@ -2,7 +2,6 @@ package scmc.blocks;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -19,7 +18,7 @@ import scmc.lib.Reference;
  * Copyright 2016 the Starcraft Minecraft mod team
  * @author wundrweapon
  */
-public class BlockCharMagma extends Block {
+public class BlockCharMagma extends ModBlocks {
 	public BlockCharMagma() {
 		super(Material.ROCK);
 		setSoundType(SoundType.STONE);

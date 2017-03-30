@@ -5,8 +5,8 @@ import net.minecraft.world.WorldType;
 import net.minecraftforge.common.DimensionManager;
 import scmc.lib.StarcraftConfig;
 import scmc.worldgen.aiur.WorldProviderAiur;
+import scmc.worldgen.provider.WorldProviderChar;
 import scmc.worldgen.provider.WorldProviderShakuras;
-import scmc.worldgen.worldchar.WorldProviderChar;
 
 public class DimensionRegistry {
 
@@ -18,6 +18,7 @@ public class DimensionRegistry {
 	public static final DimensionType SHAKURAS_DT = DimensionType.register("Shakuras", "_starcraft", SHAKURAS_DIMENSION_ID, WorldProviderShakuras.class, true);		
 	
 	public static final WorldType CHAR_WT = new WorldType("CHAR");
+	public static final WorldType SHAKURAS_WT = new WorldType("SHAKURAS");
 	
 	public static void mainRegistry() {
 		registerDimensions();

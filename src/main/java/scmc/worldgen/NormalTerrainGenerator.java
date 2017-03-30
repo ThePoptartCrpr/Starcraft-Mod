@@ -1,4 +1,4 @@
-package scmc.weapons;
+package scmc.worldgen;
 
 import java.util.Random;
 

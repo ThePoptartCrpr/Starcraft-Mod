@@ -4,7 +4,6 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -17,7 +16,7 @@ import scmc.lib.Reference;
  * Copyright 2017 the Starcraft Minecraft mod team
  * @author bvanseghi
  */
-public class BlockCharStone extends Block {
+public class BlockCharStone extends ModBlocks {
 	public BlockCharStone() {
 		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
