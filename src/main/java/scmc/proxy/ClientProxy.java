@@ -13,7 +13,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import scmc.CreativeTab;
 import scmc.StarcraftSoundEvents;
 import scmc.achievement.Achievements;
-import scmc.armour.ModArmour;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.entity.EntityBroodling;
@@ -66,8 +65,6 @@ import scmc.renderer.RenderSpiderMine;
 import scmc.renderer.RenderZealot;
 import scmc.renderer.RenderZergling;
 import scmc.tileentity.ModTileEntities;
-import scmc.tools.ModTools;
-import scmc.weapons.ModWeapons;
 import scmc.worldgen.DimensionRegistry;
 import scmc.worldgen.SCWorldGen;
 import scmc.worldgen.biome.BiomesSC;
@@ -148,21 +145,9 @@ public class ClientProxy extends ServerProxy {
 		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(CreativeTab.tabStarcraftMisc); //Put the blood bucket into the misc tab
 		ModItems.registerRenders();
 		ModMaterials.preInit();
-		ModWeapons.init();
-		ModWeapons.register();
-		ModWeapons.registerRenders();
 		ModTileEntities.preInit();
-		ModArmour.init();
-		ModArmour.register();
-		ModArmour.registerRenders();
-		ModTools.init();
-		ModTools.register();
-		ModTools.registerRenders();
 		FuelHandler.preInit();
 		ModBlocks.registerModels();
-		ModMetaBlocks.init();
-		ModMetaBlocks.register();
-		ModMetaBlocks.registerRenders();
 		SCWorldGen.preInit();
 		ModEntities.registerEntities();
 		StarcraftSoundEvents.registerSounds();
@@ -258,22 +243,22 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t3"));
 		
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1),
-				new ResourceLocation(Reference.MODID, "protoss_metalt1_aiur"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt1_dark"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt1_green"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt1_blue"));
+				new ResourceLocation(Reference.MODID, "protoss_metal_t1_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t1_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t1_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t1_blue"));
 		
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T2),
-				new ResourceLocation(Reference.MODID, "protoss_metalt2_aiur"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt2_dark"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt2_green"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt2_blue"));
+				new ResourceLocation(Reference.MODID, "protoss_metal_t2_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t2_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t2_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t2_blue"));
 		
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T3),
-				new ResourceLocation(Reference.MODID, "protoss_metalt3_aiur"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt3_dark"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt3_green"),
-				new ResourceLocation(Reference.MODID, "protoss_metalt3_blue"));
+				new ResourceLocation(Reference.MODID, "protoss_metal_t3_aiur"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t3_dark"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t3_green"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t3_blue"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PYLON_CRYSTAL),
 				new ResourceLocation(Reference.MODID, "crystal_pure"),
@@ -319,13 +304,13 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "dyed_iron_yellow"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_METAL_T1),
-				new ResourceLocation(Reference.MODID, "compressed_metal_copper"),
-				new ResourceLocation(Reference.MODID, "compressed_metal_steel"),
-				new ResourceLocation(Reference.MODID, "compressed_metal_titanium"));
+				new ResourceLocation(Reference.MODID, "comp_metal_copper"),
+				new ResourceLocation(Reference.MODID, "comp_metal_steel"),
+				new ResourceLocation(Reference.MODID, "comp_metal_titanium"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_MINERAL),
-				new ResourceLocation(Reference.MODID, "compressed_mineral_blue"),
-				new ResourceLocation(Reference.MODID, "compressed_mineral_rich"));
+				new ResourceLocation(Reference.MODID, "comp_mineral_blue"),
+				new ResourceLocation(Reference.MODID, "comp_mineral_rich"));
 
 	}
 }

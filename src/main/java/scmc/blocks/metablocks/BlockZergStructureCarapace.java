@@ -35,10 +35,10 @@ public class BlockZergStructureCarapace extends ModBlocks implements IMetaBlockN
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockZergStructureCarapace(String unlocalizedName, String registryName) {
+	public BlockZergStructureCarapace() {
 		super(Material.ROCK);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_CARAPACE.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CARAPACE.getRegistryRL());
 		this.setHardness(20); //Sets how hard the block is to break
 		this.setResistance(20); //Sets the blocks blast resistance to explosions
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ZergStructureCarapaceType.T1)); //Default state

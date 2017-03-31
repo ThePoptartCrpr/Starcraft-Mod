@@ -26,8 +26,8 @@ import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
+import scmc.items.weapons.ModWeapons;
 import scmc.lib.StarcraftConfig;
-import scmc.weapons.ModWeapons;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityDarkTemplar extends EntityProtossMob {

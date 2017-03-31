@@ -4,12 +4,12 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.armour.ModArmour;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.items.ModItems;
-import scmc.tools.ModTools;
-import scmc.weapons.ModWeapons;
+import scmc.items.armour.ModArmour;
+import scmc.items.tools.ModTools;
+import scmc.items.weapons.ModWeapons;
 
 public class ModRecipes {
 

@@ -13,8 +13,8 @@ import scmc.lib.Reference;
 public class BlockCharCobblestone extends ModBlocks {
 	public BlockCharCobblestone() {
 		super(Material.ROCK);
-		setUnlocalizedName(Reference.ModBlocks.BLOCK_COBBLESTONE_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_C.getRegistryRL());
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_COBBLESTONE_CHAR.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_CHAR.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(2.0F);
 		setResistance(5.0F);

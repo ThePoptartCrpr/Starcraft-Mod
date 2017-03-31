@@ -12,7 +12,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -34,11 +33,11 @@ public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockPylonCrystal(String unlocalizedName, String registryName) {
+	public BlockPylonCrystal() {
 		super(Material.ROCK);
 		this.setSoundType(SoundType.STONE);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_PYLON_CRYSTAL.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_PYLON_CRYSTAL.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(20.0F);
 		setLightLevel(4.0F);

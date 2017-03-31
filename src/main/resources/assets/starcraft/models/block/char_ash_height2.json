@@ -1,6 +1,7 @@
 {
 	"parent": "block/thin_block",
     "textures": {
+        "particle": "starcraft:blocks/char_ash",
         "texture": "starcraft:blocks/char_ash"
     },
     "elements": [

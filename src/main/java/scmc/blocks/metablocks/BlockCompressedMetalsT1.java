@@ -34,11 +34,11 @@ public class BlockCompressedMetalsT1 extends ModBlocks implements IMetaBlockName
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockCompressedMetalsT1(String unlocalizedName, String registryName) {
+	public BlockCompressedMetalsT1() {
 		super(Material.IRON);
 		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_METALT1.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_COMP_METALT1.getRegistryRL());
 		this.setHardness(20); //Sets how hard the block is to break
 		this.setResistance(20); //Sets the blocks blast resistance to explosions
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMetalType.COPPER)); //Default state

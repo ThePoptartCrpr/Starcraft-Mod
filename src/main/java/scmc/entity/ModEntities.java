@@ -12,21 +12,21 @@ public class ModEntities {
 	
 	public static void registerEntities() {
 		registerEntity(EntityZealot.class, "zealot", 64, 1, true);
-		registerEntity(EntityProtossReaver.class, "protoss_reaver", 64, 1, true);
+		registerEntity(EntityProtossReaver.class, "protossReaver", 64, 1, true);
 		registerEntity(EntityScarab.class, "scarab", 64, 1, true);
 		registerEntity(EntityProbe.class, "probe", 64, 1, true);
-		registerEntity(EntityDarkTemplar.class, "templar_dark", 64, 1, true);
-		registerEntity(EntityDarkProbe.class, "probe_dark", 64, 1, true);
+		registerEntity(EntityDarkTemplar.class, "darkTemplar", 64, 1, true);
+		registerEntity(EntityDarkProbe.class, "darkProbe", 64, 1, true);
 		
 		registerEntity(EntityBrutalisk.class, "brutalisk", 64, 1, true);
 		registerEntity(EntityHydralisk.class, "hydralisk", 64, 1, true);
 		registerEntity(EntityZergling.class, "zergling", 64, 1, true);
 		registerEntity(EntityLarva.class, "larva", 64, 1, true);
-		registerEntity(EntityLarvaCocoon.class, "cocoon_larva", 64, 1, true);
+		registerEntity(EntityLarvaCocoon.class, "larvaCocoon", 64, 1, true);
 		registerEntity(EntityBroodling.class, "broodling", 64, 1, true);
 		
 		registerEntity(EntityCivilian.class, "civilian", 64, 1, true);
-		registerEntity(EntitySpiderMine.class, "mine_spider", 64, 1, true);
+		registerEntity(EntitySpiderMine.class, "spiderMine", 64, 1, true);
 	}
 	
 	public static void setEntityToSpawn() {

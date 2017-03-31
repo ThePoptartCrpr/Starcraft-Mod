@@ -34,11 +34,11 @@ public class BlockCompressedMinerals extends ModBlocks implements IMetaBlockName
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockCompressedMinerals(String unlocalizedName, String registryName) {
+	public BlockCompressedMinerals() {
 		super(Material.ROCK);
 		this.setSoundType(SoundType.STONE);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getRegistryRL());
 		this.setHardness(20); //Sets how hard the block is to break
 		this.setResistance(20); //Sets the blocks blast resistance to explosions
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMineralType.BLUE)); //Default state

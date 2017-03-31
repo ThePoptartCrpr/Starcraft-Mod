@@ -10,7 +10,6 @@ import scmc.CreativeTab;
 import scmc.blocks.metablocks.ModBlockLayered;
 import scmc.lib.Reference;
 
-//FIXME: find the source of the ash-makes-snow bug. it's probably due to a missing override
 /**
  * Ash block. Thin layer of ash that generates commonly
  * on Char.<br>
@@ -21,8 +20,8 @@ public class BlockAsh extends ModBlockLayered {
 	
 	public BlockAsh() {
 		super(Material.CARPET);
-		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_ASH_C.getRegistryRL());
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_CHAR.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ASH_CHAR.getRegistryRL());
 		setSoundType(SoundType.SAND);
 		setCreativeTab(CreativeTab.tabStarcraftDecorativeBlocks);
 	}

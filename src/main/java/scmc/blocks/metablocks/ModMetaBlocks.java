@@ -17,8 +17,8 @@ public class ModMetaBlocks {
 	 * State our blocks
 	 */
 	public static BlockProtossMetalT1 PROTOSS_METAL_T1;
-	public static BlockProtossMetalT1 PROTOSS_METAL_T2;
-	public static BlockProtossMetalT1 PROTOSS_METAL_T3;
+	public static BlockProtossMetalT2 PROTOSS_METAL_T2;
+	public static BlockProtossMetalT3 PROTOSS_METAL_T3;
 	public static BlockPylonCrystal PYLON_CRYSTAL;
 	public static BlockZergStructureCarapace ZERG_CARAPACE;
 	public static BlockCompressedMetalsT1 COMP_METAL_T1;
@@ -27,26 +27,30 @@ public class ModMetaBlocks {
 	
 	public static Block COMP_MINERAL;
 	
+	public static void init() {
+		instantiate();
+		register();
+	}
 	
 	/**
 	 * Initialize the blocks
 	 */
-	public static void init() {
-		PROTOSS_METAL_T1 = new BlockProtossMetalT1("protoss_metalt1", "protoss_metalt1");
-		PROTOSS_METAL_T2 = new BlockProtossMetalT1("protoss_metalt2", "protoss_metalt2");
-		PROTOSS_METAL_T3 = new BlockProtossMetalT1("protoss_metalt3", "protoss_metalt3");
-		PYLON_CRYSTAL = new BlockPylonCrystal("pcrystal", "pcrystal");
-		ZERG_CARAPACE = new BlockZergStructureCarapace("zerg_carapace", "zerg_carapace");
-		ZERG_FLESH = new BlockZergStructureFlesh("zerg_flesh", "zerg_flesh");
-		DYED_IRON = new BlockDyedIronBlocks("dyed_iron", "dyed_iron");
-		COMP_METAL_T1 = new BlockCompressedMetalsT1("compressed_metal", "compressed_metal");
-		COMP_MINERAL = new BlockCompressedMinerals("compressed_mineral", "compressed_mineral");
+	private static void instantiate() {
+		PROTOSS_METAL_T1 = new BlockProtossMetalT1();
+		PROTOSS_METAL_T2 = new BlockProtossMetalT2();
+		PROTOSS_METAL_T3 = new BlockProtossMetalT3();
+		PYLON_CRYSTAL = new BlockPylonCrystal();
+		ZERG_CARAPACE = new BlockZergStructureCarapace();
+		ZERG_FLESH = new BlockZergStructureFlesh();
+		DYED_IRON = new BlockDyedIronBlocks();
+		COMP_METAL_T1 = new BlockCompressedMetalsT1();
+		COMP_MINERAL = new BlockCompressedMinerals();
 	}
 	
 	/**
 	 * Register the blocks
 	 */
-	public static void register() {
+	private static void register() {
 		registerBlock(PROTOSS_METAL_T1, new ItemBlockMeta(PROTOSS_METAL_T1)); //Says that the block uses the ItemBlockMeta as the item block
 		registerBlock(PROTOSS_METAL_T2, new ItemBlockMeta(PROTOSS_METAL_T2));
 		registerBlock(PROTOSS_METAL_T3, new ItemBlockMeta(PROTOSS_METAL_T3));
@@ -63,13 +67,13 @@ public class ModMetaBlocks {
 	 */
 	public static void registerRenders() {
 		for(int i = 0; i < EnumHandler.ProtossMetalType.values().length; i++) {
-			registerRender(PROTOSS_METAL_T1, i, "protoss_metalt1_" + EnumHandler.ProtossMetalType.values()[i].getName());
+			registerRender(PROTOSS_METAL_T1, i, "protoss_metal_t1_" + EnumHandler.ProtossMetalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.ProtossMetalType.values().length; i++) {
-			registerRender(PROTOSS_METAL_T2, i, "protoss_metalt2_" + EnumHandler.ProtossMetalType.values()[i].getName());
+			registerRender(PROTOSS_METAL_T2, i, "protoss_metal_t2_" + EnumHandler.ProtossMetalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.ProtossMetalType.values().length; i++) {
-			registerRender(PROTOSS_METAL_T3, i, "protoss_metalt3_" + EnumHandler.ProtossMetalType.values()[i].getName());
+			registerRender(PROTOSS_METAL_T3, i, "protoss_metal_t3_" + EnumHandler.ProtossMetalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.PylonCrystalType.values().length; i++) {
 			registerRender(PYLON_CRYSTAL, i, "pcrystal_" + EnumHandler.PylonCrystalType.values()[i].getName());
@@ -84,10 +88,10 @@ public class ModMetaBlocks {
 			registerRender(DYED_IRON, i, "dyed_iron_" + EnumHandler.DyedIronType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.CompressedMetalType.values().length; i++) {
-			registerRender(COMP_METAL_T1, i, "compressed_metal_" + EnumHandler.CompressedMetalType.values()[i].getName());
+			registerRender(COMP_METAL_T1, i, "comp_metal_" + EnumHandler.CompressedMetalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.CompressedMineralType.values().length; i++) {
-			registerRender(COMP_MINERAL, i, "compressed_mineral_" + EnumHandler.CompressedMineralType.values()[i].getName());
+			registerRender(COMP_MINERAL, i, "comp_mineral_" + EnumHandler.CompressedMineralType.values()[i].getName());
 		}
 	}
 	
@@ -111,7 +115,7 @@ public class ModMetaBlocks {
 		block.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
 		GameRegistry.register(block);
 		GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
-		LogHelper.logger.info("Registered Block: " + block.getUnlocalizedName().substring(5));
+//		LogHelper.logger.info("Registered Block: " + block.getUnlocalizedName().substring(5));
 	}
 	
 	/**
@@ -120,7 +124,7 @@ public class ModMetaBlocks {
 	 */
 	public static void registerRender(Block block) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, block.getUnlocalizedName().substring(5)), "inventory"));
-		LogHelper.logger.info("Registered render for " + block.getUnlocalizedName().substring(5));
+//		LogHelper.logger.info("Registered render for " + block.getUnlocalizedName().substring(5));
 	}
 	
 	/**
@@ -131,6 +135,6 @@ public class ModMetaBlocks {
 	 */
 	public static void registerRender(Block block, int meta, String fileName) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(Reference.MODID, fileName), "inventory"));
-		LogHelper.logger.info("Register render for " + block.getUnlocalizedName().substring(5));
+//		LogHelper.logger.info("Register render for " + block.getUnlocalizedName().substring(5));
 	}
 }

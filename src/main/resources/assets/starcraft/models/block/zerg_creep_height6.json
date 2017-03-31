@@ -1,5 +1,6 @@
 {
     "textures": {
+        "particle": "starcraft:blocks/zerg_creep",
         "texture": "starcraft:blocks/zerg_creep"
     },
     "elements": [

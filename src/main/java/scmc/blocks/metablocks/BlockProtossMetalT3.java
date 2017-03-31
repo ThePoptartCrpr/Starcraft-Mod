@@ -12,7 +12,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -34,11 +33,11 @@ public class BlockProtossMetalT3 extends ModBlocks implements IMetaBlockName {
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockProtossMetalT3(String unlocalizedName, String registryName) {
+	public BlockProtossMetalT3() {
 		super(Material.IRON);
 		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_METALT3.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_METALT3.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(25.0F);
 		setHarvestLevel("pickaxe", 3);

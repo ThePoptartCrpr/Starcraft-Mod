@@ -5,7 +5,7 @@ import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
 import scmc.blocks.ModBlocks;
 import scmc.items.ModItems;
-import scmc.weapons.ModWeapons;
+import scmc.items.weapons.ModWeapons;
 
 public class Achievements {
 

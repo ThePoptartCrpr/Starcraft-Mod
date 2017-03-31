@@ -34,11 +34,11 @@ public class BlockZergStructureFlesh extends ModBlocks implements IMetaBlockName
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockZergStructureFlesh(String unlocalizedName, String registryName) {
+	public BlockZergStructureFlesh() {
 		super(Material.CLAY);
 		this.setSoundType(SoundType.GROUND);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_FLESH.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_ZERG_FLESH.getRegistryRL());
 		setResistance(10.0F);
 		setHardness(5.0F);
 		setHarvestLevel("axe", 2);

@@ -5,7 +5,6 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import scmc.items.metaitems.ItemEnumHandler.BulletType;
 import scmc.lib.Reference;
 
@@ -15,9 +14,9 @@ public class ItemBullet extends Item {
 	 * Default constructor just sets the unlocalized name and the registry name
 	 * @param unlocalizedName
 	 */
-	public ItemBullet(String unlocalizedName) {
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.RL_BASE + unlocalizedName));
+	public ItemBullet() {
+		this.setUnlocalizedName(Reference.ModItems.BULLET_RIFLE_C14_GAUSS.getUnlocalizedName());
+		this.setRegistryName(Reference.ModItems.BULLET_RIFLE_C14_GAUSS.getRegistryRL());
 		this.setHasSubtypes(true); //This just says the item has metadata
 	}
 	

@@ -10,6 +10,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.CreativeTab;
 import scmc.blocks.metablocks.ModBlockLayered;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
@@ -25,6 +26,7 @@ public class BlockZergCreep extends ModBlockLayered {
 		setResistance(10.0F);
 		setHarvestLevel("shovel", 2);
 		setTickRandomly(true);
+		setCreativeTab(CreativeTab.tabStarcraftDecorativeBlocks);
 	}
 
 	@Override

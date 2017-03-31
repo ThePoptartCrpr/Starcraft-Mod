@@ -7,8 +7,8 @@ import net.minecraftforge.fluids.UniversalBucket;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.fluids.ModFluids;
 import scmc.items.ModItems;
-import scmc.tools.ModTools;
-import scmc.weapons.ModWeapons;
+import scmc.items.tools.ModTools;
+import scmc.items.weapons.ModWeapons;
 
 public class CreativeTab {
 

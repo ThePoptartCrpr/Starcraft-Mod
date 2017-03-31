@@ -6,11 +6,11 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import scmc.armour.ArmourGhostBoots;
-import scmc.armour.ArmourGhostChestplate;
-import scmc.armour.ArmourGhostHelmet;
-import scmc.armour.ArmourGhostLeggings;
 import scmc.entity.EntityDarkTemplar;
+import scmc.items.armour.ArmourGhostBoots;
+import scmc.items.armour.ArmourGhostChestplate;
+import scmc.items.armour.ArmourGhostHelmet;
+import scmc.items.armour.ArmourGhostLeggings;
 import scmc.lib.StarcraftConfig;
 
 @EventBusSubscriber

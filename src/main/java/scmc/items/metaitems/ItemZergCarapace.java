@@ -5,7 +5,6 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import scmc.items.metaitems.ItemEnumHandler.CarapaceType;
 import scmc.lib.Reference;
 
@@ -15,9 +14,9 @@ public class ItemZergCarapace extends Item {
 	 * Default constructor just sets the unlocalized name and the registry name
 	 * @param unlocalizedName
 	 */
-	public ItemZergCarapace(String unlocalizedName) {
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, unlocalizedName));
+	public ItemZergCarapace() {
+		this.setUnlocalizedName(Reference.ModItems.ITEM_ZERG_CARAPACE.getUnlocalizedName());
+		this.setRegistryName(Reference.ModItems.ITEM_ZERG_CARAPACE.getRegistryRL());
 		this.setHasSubtypes(true); //This just says the item has metadata
 	}
 	

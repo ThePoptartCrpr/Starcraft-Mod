@@ -13,8 +13,8 @@ import scmc.lib.Reference;
 public class BlockCharDirt extends ModBlocks {
 	public BlockCharDirt() {
 		super(Material.GROUND);
-		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIRT_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_DIRT_C.getRegistryRL());
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getRegistryRL());
 		setSoundType(SoundType.SAND);
 		setHardness(0.5F);
 		setResistance(2.5F);

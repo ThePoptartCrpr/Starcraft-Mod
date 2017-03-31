@@ -11,6 +11,8 @@ public class ModFluids {
 	public static Fluid blood = new Fluid("fluid_blood", new ResourceLocation(Reference.RL_BASE + "blocks/blood_fluid_still"), new ResourceLocation(Reference.RL_BASE + "blocks/blood_fluid_flowing")).setBlock(ModBlocks.FLUID_BLOOD);
 	
 	public static void register() {
+		acid.setUnlocalizedName(Reference.ModBlocks.FLUID_ACID.getUnlocalizedName());
+		blood.setUnlocalizedName(Reference.ModBlocks.FLUID_BLOOD.getUnlocalizedName());
 		FluidRegistry.registerFluid(acid);
 		FluidRegistry.registerFluid(blood);
 	}

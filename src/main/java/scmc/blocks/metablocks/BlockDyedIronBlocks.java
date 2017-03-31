@@ -34,11 +34,11 @@ public class BlockDyedIronBlocks extends ModBlocks implements IMetaBlockName {
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockDyedIronBlocks(String unlocalizedName, String registryName) {
+	public BlockDyedIronBlocks() {
 		super(Material.IRON);
 		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_DYED_IRON.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_DYED_IRON.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 2);
