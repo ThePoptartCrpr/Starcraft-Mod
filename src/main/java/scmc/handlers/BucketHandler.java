@@ -55,7 +55,7 @@ package scmc.handlers;
 //
 //	public static void initABucket() {
 //		acidBucket = new ItemAcidBucket(ModBlocks.FLUID_ACID);
-//		acidBucket.setRegistryName(new ResourceLocation(Reference.MODID + ":acid_bucket"));
+//		acidBucket.setRegistryName(new ResourceLocation(Reference.RL_BASE + "acid_bucket"));
 //		acidBucket.setUnlocalizedName("acidBucket").setContainerItem(Items.BUCKET);
 //		FluidContainerRegistry.registerFluidContainer(ModFluids.acid, new ItemStack(acidBucket)); //TODO: use ItemFluidContainer for this class
 //		
@@ -66,7 +66,7 @@ package scmc.handlers;
 //
 //	public static void initBBucket() {
 //		bloodBucket = new ItemBloodBucket(ModBlocks.FLUID_BLOOD);
-//		bloodBucket.setRegistryName(new ResourceLocation(Reference.MODID + ":blood_bucket"));
+//		bloodBucket.setRegistryName(new ResourceLocation(Reference.RL_BASE + "blood_bucket"));
 //		bloodBucket.setUnlocalizedName("bloodBucket").setContainerItem(Items.BUCKET);
 //		FluidContainerRegistry.registerFluidContainer(ModFluids.blood, new ItemStack(bloodBucket)); //TODO: see above
 //		

@@ -22,8 +22,8 @@ import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
+import scmc.items.weapons.ModWeapons;
 import scmc.lib.StarcraftConfig;
-import scmc.weapons.ModWeapons;
 
 public class EntityZealot extends EntityProtossMob {
 	public EntityZealot(World world) {

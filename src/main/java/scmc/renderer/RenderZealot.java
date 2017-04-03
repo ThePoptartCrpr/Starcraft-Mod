@@ -13,7 +13,7 @@ import scmc.model.ModelZealot;
 public class RenderZealot<T> extends RenderLiving<EntityZealot> {
 
 	private static final ResourceLocation ZEALOT_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/zealot.png");
+			Reference.RL_BASE + "textures/entity/zealot.png");
 			
 	protected ModelZealot modelEntity;
 

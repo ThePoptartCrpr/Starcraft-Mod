@@ -11,7 +11,7 @@ import scmc.model.ModelProbe;
 public class RenderProbe<T> extends RenderLiving<EntityProbe> {
 
 	private static final ResourceLocation PROBE_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/probe.png");
+			Reference.RL_BASE + "textures/entity/probe.png");
 
 	protected ModelProbe modelEntity;
 

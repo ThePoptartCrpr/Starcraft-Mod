@@ -10,7 +10,8 @@ import scmc.model.ModelWarpGateWormholeOverworld;
 @SuppressWarnings("rawtypes")
 public class RenderWarpGateWormholeOverworld<T> extends TileEntitySpecialRenderer {
 
-	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/warpGateWormholeOverworld.png"); //Quite
+	private static final ResourceLocation texture = new ResourceLocation(
+			Reference.RL_BASE + "textures/model/warpGateWormholeOverworld.png"); //Quite
 
 	private ModelWarpGateWormholeOverworld model;
 

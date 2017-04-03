@@ -6,7 +6,7 @@ import net.minecraft.world.gen.layer.IntCache;
 import scmc.worldgen.biome.BiomesSC;
 
 public class GenLayerCharBiomes extends GenLayer {
-	public Biome[] dimBiomes = {BiomesSC.biomeCreepInfestationChar, BiomesSC.biomeAshPlains, BiomesSC.biomeMoltenInferno};
+	public Biome[] dimBiomes = {BiomesSC.biomeCharCreepInfestation, BiomesSC.biomeAshPlains, BiomesSC.biomeMoltenInferno};
 
 	public GenLayerCharBiomes(long par1) {
 		super(par1);
@@ -19,7 +19,7 @@ public class GenLayerCharBiomes extends GenLayer {
 			for (int dx = 0; dx < width; dx++) {
 				this.initChunkSeed(dx + x, dz + z);
 //				dest[(dx + dz * width)] = this.dimBiomes[nextInt(this.dimBiomes.length)].getIdForBiome(this.dimBiomes[dz]);
-				dest[(dx + dz * width)] = Biome.getIdForBiome(dimBiomes[dz]);
+				dest[(dx + dz * width)] = Biome.getIdForBiome(/*dimBiomes[dz]*/dimBiomes[nextInt(this.dimBiomes.length)]);
 			}
 		}
 		return dest;

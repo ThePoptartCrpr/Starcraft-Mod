@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import scmc.achievement.Achievements;
 import scmc.items.ModItems;
-import scmc.weapons.ModWeapons;
+import scmc.items.weapons.ModWeapons;
 
 @EventBusSubscriber
 public class OnPickupItemEvent {

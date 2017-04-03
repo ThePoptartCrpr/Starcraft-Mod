@@ -11,7 +11,7 @@ import scmc.model.ModelSpiderMine;
 public class RenderSpiderMine<T> extends RenderLiving<EntitySpiderMine> {
 
 	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/spidermine.png");
+			Reference.RL_BASE + "textures/model/spidermine.png");
 
 	protected ModelSpiderMine modelEntity;
 

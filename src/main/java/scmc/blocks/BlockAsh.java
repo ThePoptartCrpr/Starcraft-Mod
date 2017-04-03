@@ -1,23 +1,29 @@
 package scmc.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSnow;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.CreativeTab;
+import scmc.blocks.metablocks.ModBlockLayered;
 import scmc.lib.Reference;
 
-//FIXME: find the source of the ash-makes-snow bug. it's probably due to a missing override
 /**
  * Ash block. Thin layer of ash that generates commonly
  * on Char.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
  * @author bvanseghi
  */
-public class BlockAsh extends BlockSnow {
+public class BlockAsh extends ModBlockLayered {
+	
 	public BlockAsh() {
-		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_C.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_ASH_C.getRegistryRL());
+		super(Material.CARPET);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_CHAR.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ASH_CHAR.getRegistryRL());
+		setSoundType(SoundType.SAND);
+		setCreativeTab(CreativeTab.tabStarcraftDecorativeBlocks);
 	}
     
 	//No @Override because the super method is private

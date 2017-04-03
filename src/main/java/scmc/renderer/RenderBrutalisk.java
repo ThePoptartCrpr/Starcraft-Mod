@@ -13,7 +13,7 @@ import scmc.model.ModelBrutalisk;
 public class RenderBrutalisk<T> extends RenderLiving<EntityBrutalisk> {
 
 	private static final ResourceLocation BRUTALISK_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/brutalisk.png");
+			Reference.RL_BASE + "textures/entity/brutalisk.png");
 			
 	protected ModelBrutalisk modelEntity;
 

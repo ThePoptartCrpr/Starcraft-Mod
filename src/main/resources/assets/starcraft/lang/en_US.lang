@@ -1,5 +1,6 @@
-fluid.acid=Acid
-fluid.blood=Blood
+###############
+# Item Groups #
+###############
 
 itemGroup.StarcraftMaterials=Starcraft Materials
 itemGroup.StarcraftBuildingBlocks=Starcraft Building Blocks
@@ -8,12 +9,27 @@ itemGroup.StarcraftTools=Starcraft Tools
 itemGroup.StarcraftCombat=Starcraft Combat
 itemGroup.StarcraftMisc=Starcraft Miscellaneous
 
+##########
+# Blocks #
+##########
+
 tile.energyBlock.name=Block Of Energy
 tile.voidEnergyBlock.name=Block Of Void Energy
-tile.protossMetal.Dark.name=Dark Protoss Metal
-tile.protossMetal.Aiur.name=Protoss Metal
-tile.protossMetal.Blue.name=Blue Protoss Metal
-tile.protossMetal.Green.name=Green Protoss Metal
+
+tile.protossMetalT1.dark.name=Dark Protoss Metal T1
+tile.protossMetalT1.aiur.name=Protoss Metal T1
+tile.protossMetalT1.blue.name=Blue Protoss Metal T1
+tile.protossMetalT1.green.name=Green Protoss Metal T1
+
+tile.protossMetalT2.dark.name=Dark Protoss Metal T2
+tile.protossMetalT2.aiur.name=Protoss Metal T2
+tile.protossMetalT2.blue.name=Blue Protoss Metal T2
+tile.protossMetalT2.green.name=Green Protoss Metal T2
+
+tile.protossMetalT3.dark.name=Dark Protoss Metal T3
+tile.protossMetalT3.aiur.name=Protoss Metal T3
+tile.protossMetalT3.blue.name=Blue Protoss Metal T3
+tile.protossMetalT3.green.name=Green Protoss Metal T3
 
 tile.protossEnergyStabilizer.name=Protoss Energy Stabilizer
 tile.protossEnergyChannel.name=Protoss Energy Channel
@@ -22,47 +38,64 @@ tile.protossEnergyChannelDark.name=Dark Protoss Energy Channel
 
 tile.oreAlienC.name=Alien Ore (Char)
 tile.oreAlienS.name=Alien Ore (Shakuras)
-tile.crystal.Pure.name=Pylon Crystal
-tile.crystal.Dark.name=Dark Pylon Crystal
-tile.crystal.Void.name=Void Pylon Crystal
+tile.pylonCrystal.pure.name=Pylon Crystal
+tile.pylonCrystal.dark.name=Dark Pylon Crystal
+tile.pylonCrystal.void.name=Void Pylon Crystal
 
-tile.oreMineralC.name=Mineral Ore (Char)
-tile.oreRichMineralC.name=Rich Mineral Ore (Char)
-tile.oreMineralS.name=Mineral Ore (Shakuras)
-tile.oreRichMineralS.name=Rich Mineral Ore (Shakuras)
+tile.corePylonVoid.name=Pylon Core (Void)
+tile.corePylonDark.name=Pylon Core (Dark)
+tile.corePylonKhalai.name=Pylon Core (Khalai)
 
-tile.oreTitaniumOW.name=Titanium Ore
-tile.oreTitaniumC.name=Titanium Ore (Char)
-tile.oreTitaniumS.name=Titanium Ore (Shakuras)
-tile.compMetal.Titanium.name=Block of Titanium
+tile.coreNexusVoid.name=Nexus Core (Void)
+tile.coreNexusDark.name=Nexus Core (Dark)
+tile.coreNexusKhalai.name=Nexus Core (Khalai)
 
-tile.oreCopperOW.name=Copper Ore
-tile.oreCopperC.name=Copper Ore (Char)
-tile.oreCopperS.name=Copper Ore (Shakuras)
-tile.compMetal.Copper.name=Block of Copper
+tile.coreWarpGateVoid.name=Warpgate Core (Void)
+tile.coreWarpGateDark.name=Warpgate Core (Dark)
+tile.coreWarpGateKhalai.name=Warpgate Core (Khalai)
 
-tile.compMetal.Steel.name=Block of Steel
+tile.charOreMineral.name=Mineral Ore (Char)
+tile.charOreMineralRich.name=Rich Mineral Ore (Char)
+tile.shakurasOreMineral.name=Mineral Ore (Shakuras)
+tile.shakurasOreMineralRich.name=Rich Mineral Ore (Shakuras)
 
-tile.dyedIron.Blue.name=Block of Iron (Blue)
-tile.dyedIron.Black.name=Block of Iron (Black)
-tile.dyedIron.Brown.name=Block of Iron (Brown)
-tile.dyedIron.Cyan.name=Block of Iron (Cyan)
-tile.dyedIron.Gray.name=Block of Iron (Gray)
-tile.dyedIron.Green.name=Block of Iron (Green)
-tile.dyedIron.LightBlue.name=Block of Iron (Light Blue)
-tile.dyedIron.Lime.name=Block of Iron (Lime)
-tile.dyedIron.Magenta.name=Block of Iron (Magenta)
-tile.dyedIron.Orange.name=Block of Iron (Orange)
-tile.dyedIron.Pink.name=Block of Iron (Pink)
-tile.dyedIron.Purple.name=Block of Iron (Purple)
-tile.dyedIron.Red.name=Block of Iron (Red)
-tile.dyedIron.Silver.name=Block of Iron (Silver)
-tile.dyedIron.Yellow.name=Block of Iron (Yellow)
+tile.overworldOreTitanium.name=Titanium Ore
+tile.charOreTitanium.name=Titanium Ore (Char)
+tile.shakurasOreTitanium.name=Titanium Ore (Shakuras)
+
+tile.overworldOreUranium.name=Uranium Ore
+tile.charOreUranium.name=Uranium Ore (Char)
+tile.shakurasOreUranium.name=Uranium Ore (Shakuras)
+
+tile.overworldOreCopper.name=Copper Ore
+tile.charOreCopper.name=Copper Ore (Char)
+tile.shakurasOreCopper.name=Copper Ore (Shakuras)
+
+tile.compMetalT1.titanium.name=Block of Titanium
+tile.compMetalT1.uranium.name=Block of Uranium
+tile.compMetalT1.copper.name=Block of Copper
+tile.compMetalT1.steel.name=Block of Steel
+
+tile.dyedIron.blue.name=Block of Iron (Blue)
+tile.dyedIron.black.name=Block of Iron (Black)
+tile.dyedIron.brown.name=Block of Iron (Brown)
+tile.dyedIron.cyan.name=Block of Iron (Cyan)
+tile.dyedIron.gray.name=Block of Iron (Gray)
+tile.dyedIron.green.name=Block of Iron (Green)
+tile.dyedIron.lightblue.name=Block of Iron (Light Blue)
+tile.dyedIron.lime.name=Block of Iron (Lime)
+tile.dyedIron.magenta.name=Block of Iron (Magenta)
+tile.dyedIron.orange.name=Block of Iron (Orange)
+tile.dyedIron.pink.name=Block of Iron (Pink)
+tile.dyedIron.purple.name=Block of Iron (Purple)
+tile.dyedIron.red.name=Block of Iron (Red)
+tile.dyedIron.silver.name=Block of Iron (Silver)
+tile.dyedIron.yellow.name=Block of Iron (Yellow)
 
 tile.mineralField.name=Mineral Field
 tile.richMineralField.name=Rich Mineral Field
-tile.compMineral.Rich.name=Block of Rich Mineral
-tile.compMineral.Blue.name=Block of Mineral
+tile.compMineral.rich.name=Block of Rich Mineral
+tile.compMineral.blue.name=Block of Mineral
 
 tile.vespeneGeyser.name=Vespene Geyser
 tile.vespeneGeyserChar.name=Vespene Geyser (Char)
@@ -76,38 +109,38 @@ tile.vespeneGeyserBaseShakuras.name=Vespene Geyser Base (Shakuras)
 
 tile.zergCreep.name=Zerg Creep
 
-tile.zergStrucFlesh.Purple.name=Zerg Flesh (Purple)
-tile.zergStrucFlesh.Brown.name=Zerg Flesh (Brown)
-tile.zergStrucFlesh.Pink.name=Zerg Flesh (Pink)
-tile.zergStrucFlesh.Blue.name=Zerg Flesh (Blue)
-tile.zergStrucFlesh.Cyan.name=Zerg Flesh (Cyan)
-tile.zergStrucFlesh.DarkGray.name=Zerg Flesh (Dark Gray)
-tile.zergStrucFlesh.Green.name=Zerg Flesh (Green)
-tile.zergStrucFlesh.LightBlue.name=Zerg Flesh (Light Blue)
-tile.zergStrucFlesh.Lime.name=Zerg Flesh (Lime)
-tile.zergStrucFlesh.Magenta.name=Zerg Flesh (Magenta)
-tile.zergStrucFlesh.Orange.name=Zerg Flesh (Orange)
-tile.zergStrucFlesh.Red.name=Zerg Flesh (Red)
-tile.zergStrucFlesh.Silver.name=Zerg Flesh (Silver)
-tile.zergStrucFlesh.White.name=Zerg Flesh (White)
-tile.zergStrucFlesh.Yellow.name=Zerg Flesh (Yellow)
+tile.zergFlesh.purple.name=Zerg Flesh (Purple)
+tile.zergFlesh.brown.name=Zerg Flesh (Brown)
+tile.zergFlesh.pink.name=Zerg Flesh (Pink)
+tile.zergFlesh.blue.name=Zerg Flesh (Blue)
+tile.zergFlesh.cyan.name=Zerg Flesh (Cyan)
+tile.zergFlesh.gray.name=Zerg Flesh (Dark Gray)
+tile.zergFlesh.green.name=Zerg Flesh (Green)
+tile.zergFlesh.lightblue.name=Zerg Flesh (Light Blue)
+tile.zergFlesh.lime.name=Zerg Flesh (Lime)
+tile.zergFlesh.magenta.name=Zerg Flesh (Magenta)
+tile.zergFlesh.orange.name=Zerg Flesh (Orange)
+tile.zergFlesh.red.name=Zerg Flesh (Red)
+tile.zergFlesh.silver.name=Zerg Flesh (Silver)
+tile.zergFlesh.white.name=Zerg Flesh (White)
+tile.zergFlesh.yellow.name=Zerg Flesh (Yellow)
 
-tile.zergStrucCarapace.T1.name=Structure T1 Carapace 
-tile.zergStrucCarapace.T2.name=Structure T2 Carapace 
-tile.zergStrucCarapace.T3.name=Structure T3 Carapace 
+tile.zergCarapace.t1.name=Structure Carapace T1 
+tile.zergCarapace.t2.name=Structure Carapace T2 
+tile.zergCarapace.t3.name=Structure Carapace T3 
 tile.keratinChunk.name=Keratin Chunk
 
 tile.shakurasSand.name=Sand (Shakuras)
 tile.shakurasStone.name=Stone (Shakuras)
 tile.shakurasCobblestone.name=Cobblestone (Shakuras)
 
-tile.oreCoalS.name=Coal Ore (Shakuras)
-tile.oreIronS.name=Iron Ore (Shakuras)
-tile.oreGoldS.name=Gold Ore (Shakuras)
-tile.oreDiamondS.name=Diamond Ore (Shakuras)
-tile.oreRedstoneS.name=Redstone Ore (Shakuras)
-tile.oreRedstoneLitS.name=Redstone Ore (Shakuras)
-tile.oreLapisS.name=Lapis Lazuli Ore (Shakuras)
+tile.shakurasOreCoal.name=Coal Ore (Shakuras)
+tile.shakurasOreIron.name=Iron Ore (Shakuras)
+tile.shakurasOreGold.name=Gold Ore (Shakuras)
+tile.shakurasOreDiamond.name=Diamond Ore (Shakuras)
+tile.shakurasOreRedstone.name=Redstone Ore (Shakuras)
+tile.shakurasOreRedstoneLit.name=Redstone Ore (Shakuras)
+tile.shakurasOreLapis.name=Lapis Lazuli Ore (Shakuras)
 
 tile.fluidAcid.name=Fluid Acid
 tile.fluidBlood.name=Fluid Blood
@@ -118,133 +151,167 @@ tile.charStone.name=Stone (Char)
 tile.charCobblestone.name=Cobblestone (Char)
 
 tile.charMagma.name=Magma (Char)
-tile.oreCoalC.name=Coal Ore (Char)
-tile.oreIronC.name=Iron Ore (Char)
-tile.oreGoldC.name=Gold Ore (Char)
-tile.oreDiamondC.name=Diamond Ore (Char)
-tile.oreRedstoneC.name=Redstone Ore (Char)
-tile.oreRedstoneLitC.name=Redstone Ore (Char)
-tile.oreLapisC.name=Lapis Lazuli Ore (Char)
+tile.charOreCoal.name=Coal Ore (Char)
+tile.charOreIron.name=Iron Ore (Char)
+tile.charOreGold.name=Gold Ore (Char)
+tile.charOreDiamond.name=Diamond Ore (Char)
+tile.charOreRedstone.name=Redstone Ore (Char)
+tile.charOreRedstoneLit.name=Redstone Ore (Char)
+tile.charOreLapis.name=Lapis Lazuli Ore (Char)
 
-tile.dimPortalChar.name=Char Portal
-tile.dimPortalOverworld.name=Overworld Portal
-tile.dimPortalShakuras.name=Shakuras Portal
+tile.charDimPortal.name=Char Portal
+tile.overworldDimPortal.name=Overworld Portal
+tile.shakurasDimPortal.name=Shakuras Portal
 
-tile.warpProjectorC.name=Warp Projector (Char)
-tile.warpProjectorO.name=Warp Projector (Overworld)
-tile.warpProjectorS.name=Warp Projector (Shakuras)
+tile.charWarpGateProjector.name=Warp Projector (Char)
+tile.overworldWarpGateProjector.name=Warp Projector (Overworld)
+tile.shakurasWarpGateProjector.name=Warp Projector (Shakuras)
 
-item.Starcraft_psiBlade.name=Psi Blade
-item.Starcraft_darkPsiBlade.name=Psi Blade (Dark)
-item.Starcraft_warpBlade.name=Warp Blade
-item.Starcraft_darkWarpBlade.name=Warp Blade (Dark)
-item.Starcraft_masterPsiBlade.name=Master Psi Blade
+##########
+# Fluids #
+##########
 
+fluid.fluidAcid=Acid
+fluid.fluidBlood=Blood
 
-item.Starcraft_mineralShard.name=Mineral Shard
-item.Starcraft_richMineralShard.name=Rich Mineral Shard
-item.vespene.Raw.name=Raw Vespene
-item.vespene.Protoss.name=Protoss Vespene
-item.vespene.Terran.name=Terran Vespene
-item.vespene.Zerg.name=Zerg Vespene
+#########
+# Items #
+#########
 
-item.ingot.Alien.name=Alien Ingot
-item.ingot.AlienDark.name=Dark Alien Ingot
-item.Starcraft_psiBladeFocuserUncharged.name=Psi Blade Focuser (Uncharged)
-item.Starcraft_darkPsiBladeFocuserUncharged.name=Psi Blade Focuser (Dark, Uncharged)
+item.psiBlade.name=Psi Blade
+item.darkPsiBlade.name=Psi Blade (Dark)
+item.warpBlade.name=Warp Blade
+item.darkWarpBlade.name=Warp Blade (Dark)
+item.masterPsiBlade.name=Master Psi Blade
 
-item.energy.Pure.name=Energy
-item.energy.Corrupt.name=Corrupted Energy
-item.energy.Void.name=Void Energy
-item.Starcraft_protossArtifact.name=Protoss Artifact
-item.Starcraft_uraj.name=Uraj
+item.mineralShard.blue.name=Mineral Shard
+item.mineralShard.rich.name=Rich Mineral Shard
+item.vespene.raw.name=Raw Vespene
+item.vespene.protoss.name=Protoss Vespene
+item.vespene.terran.name=Terran Vespene
+item.vespene.zerg.name=Zerg Vespene
 
+item.protossPsiBladeFocuserUncharged.aiur.name=Psi Blade Focuser (Uncharged)
+item.protossPsiBladeFocuserUncharged.dark.name=Psi Blade Focuser (Dark, Uncharged)
 
+item.energy.pure.name=Energy
+item.energy.corrupted.name=Corrupted Energy
+item.energy.void.name=Void Energy
+item.protossArtifact.name=Protoss Artifact
+item.uraj.name=Uraj
 
-item.ingot.Titanium.name=Titanium Ingot
-item.ingot.Copper.name=Copper Ingot
-item.ingot.Steel.name=Steel Ingot
+item.keystone.name=Keystone
 
-item.Starcraft_titaniumSword.name=Titanium Sword
-item.Starcraft_titaniumPickaxe.name=Titanium Pickaxe
-item.Starcraft_titaniumAxe.name=Titanium Axe
-item.Starcraft_titaniumShovel.name=Titanium Shovel
-item.Starcraft_titaniumHoe.name=Titanium Hoe
+item.crystal.khaydarin.name=Khaydarin Crystal
+item.crystal.bloodshard.name=BloodShard Crystal
+item.crystal.uraj.name=Uraj Crystal
 
-item.Starcraft_titaniumHelmet.name=Titanium Helmet
-item.Starcraft_titaniumChestplate.name=Titanium Chestplate
-item.Starcraft_titaniumLeggings.name=Titanium Leggings
-item.Starcraft_titaniumBoots.name=Titanium Boots
+item.ingot1.alien.name=Alien Ingot T1
+item.ingot1.aliendark.name=Dark Alien Ingot T1
+item.ingot1.titanium.name=Titanium Ingot T1
+item.ingot1.copper.name=Copper Ingot T1
+item.ingot1.steel.name=Steel Ingot T1
 
-item.Starcraft_copperSword.name=Copper Sword
-item.Starcraft_copperPickaxe.name=Copper Pickaxe
-item.Starcraft_copperAxe.name=Copper Axe
-item.Starcraft_copperShovel.name=Copper Shovel
-item.Starcraft_copperHoe.name=Copper Hoe
+item.ingot2.alien.name=Alien Ingot T2
+item.ingot2.aliendark.name=Dark Alien Ingot T2
+item.ingot2.titanium.name=Titanium Ingot T2
+item.ingot2.copper.name=Copper Ingot T2
+item.ingot2.steel.name=Steel Ingot T2
 
-item.Starcraft_copperHelmet.name=Copper Helmet
-item.Starcraft_copperChestplate.name=Copper Chestplate
-item.Starcraft_copperLeggings.name=Copper Leggings
-item.Starcraft_copperBoots.name=Copper Boots
+item.ingot3.alien.name=Alien Ingot T3
+item.ingot3.aliendark.name=Dark Alien Ingot T3
+item.ingot3.titanium.name=Titanium Ingot T3
+item.ingot3.copper.name=Copper Ingot T3
+item.ingot3.steel.name=Steel Ingot T3
 
-item.Starcraft_steelSword.name=Steel Sword
-item.Starcraft_steelPickaxe.name=Steel Pickaxe
-item.Starcraft_steelAxe.name=Steel Axe
-item.Starcraft_steelShovel.name=Steel Shovel
-item.Starcraft_steelHoe.name=Steel Hoe
+item.titaniumSword.name=Titanium Sword
+item.titaniumPickaxe.name=Titanium Pickaxe
+item.titaniumAxe.name=Titanium Axe
+item.titaniumShovel.name=Titanium Shovel
+item.titaniumHoe.name=Titanium Hoe
 
-item.Starcraft_steelHelmet.name=Steel Helmet
-item.Starcraft_steelChestplate.name=Steel Chestplate
-item.Starcraft_steelLeggings.name=Steel Leggings
-item.Starcraft_steelBoots.name=Steel Boots
+item.titaniumHelmet.name=Titanium Helmet
+item.titaniumChestplate.name=Titanium Chestplate
+item.titaniumLeggings.name=Titanium Leggings
+item.titaniumBoots.name=Titanium Boots
 
-item.Starcraft_c14GaussRifle.name=C14 Gauss Rifle
-item.Starcraft_c14GaussRifleBullet.name=C14 Gauss Rifle Bullet
-item.Starcraft_c14GaussRifleBarrel.name=C14 Gauss Rifle Barrel
-item.Starcraft_c14GaussRifleBody.name=C14 Gauss Rifle Body
-item.Starcraft_c14GaussRifleGrip.name=C14 Gauss Rifle Grip
+item.copperSword.name=Copper Sword
+item.copperPickaxe.name=Copper Pickaxe
+item.copperAxe.name=Copper Axe
+item.copperShovel.name=Copper Shovel
+item.copperHoe.name=Copper Hoe
 
+item.copperHelmet.name=Copper Helmet
+item.copperChestplate.name=Copper Chestplate
+item.copperLeggings.name=Copper Leggings
+item.copperBoots.name=Copper Boots
 
-item.zergCarapace.T1.name=Zerg Carapace T1
-item.zergCarapace.T2.name=Zerg Carapace T2
-item.zergCarapace.T3.name=Zerg Carapace T3
+item.steelSword.name=Steel Sword
+item.steelPickaxe.name=Steel Pickaxe
+item.steelAxe.name=Steel Axe
+item.steelShovel.name=Steel Shovel
+item.steelHoe.name=Steel Hoe
 
-item.Starcraft_creepResin.name=Creep Resin
-item.Starcraft_organicTissue.name=Organic Tissue
+item.steelHelmet.name=Steel Helmet
+item.steelChestplate.name=Steel Chestplate
+item.steelLeggings.name=Steel Leggings
+item.steelBoots.name=Steel Boots
 
-item.c14Parts.Barrel.name=C14 Rifle Barrel
-item.c14Parts.Body.name=C14 Rifle Body
-item.c14Parts.Grip.name=C14 Rifle Grip
+item.rifleC14.name=C14 Gauss Rifle
+item.bulletC14.c14.name=C14 Gauss Rifle Bullet
+item.partC14.barrel.name=C14 Rifle Barrel
+item.partC14.body.name=C14 Rifle Body
+item.partC14.grip.name=C14 Rifle Grip
 
-item.essence.Protoss.name=Protoss Essence
-item.essence.Terran.name=Terran Essence
-item.essence.Zerg.name=Zerg Essence
+item.ghostHelmet.name=Ghost Helmet
+item.ghostChestplate.name=Ghost Chestplate
+item.ghostLeggings.name=Ghost Leggings
+item.ghostBoots.name=Ghost Boots
 
-item.acidBucket.name=Acid Bucket
-item.bloodBucket.name=Blood Bucket
+item.zergICarapace.t1.name=Zerg Carapace T1
+item.zergICarapace.t2.name=Zerg Carapace T2
+item.zergICarapace.t3.name=Zerg Carapace T3
+
+item.zergCreepResin.name=Creep Resin
+item.organicTissue.name=Organic Tissue
+
+item.essence.protoss.name=Protoss Essence
+item.essence.terran.name=Terran Essence
+item.essence.zerg.name=Zerg Essence
 
 item.Starcraft_protossModule.name=Protoss Module
-item.coord.Char.name=Char Coordinates
-item.coord.Shakuras.name=Shakuras Coordinates
+item.coordinate.char.name=Char Coordinates
+item.coordinate.shakuras.name=Shakuras Coordinates
 
-item.dust.Carbon.name=Carbon Grain
-item.dust.Iron.name=Iron Grain
-item.dust.Steel.name=Steel Dust
+item.dust.carbon.name=Carbon Grain
+item.dust.iron.name=Iron Grain
+item.dust.steel.name=Steel Dust
 
-entity.Larva.name=Larva
-entity.LarvaCocoon.name=Larva Cocoon
-entity.Broodling.name=Broodling
-entity.Zergling.name=Zergling
-entity.Overlord.name=Overlord
-entity.Probe.name=Probe
-entity.DarkProbe.name=Dark Probe
+############
+# Entities #
+############
 
-entity.Civilian.name=Civilian
-entity.DarkTemplar.name=Dark Templar
-entity.Zealot.name=Zealot
+entity.starcraft.larva.name=Larva
+entity.starcraft.larvaCocoon.name=Larva Cocoon
+entity.starcraft.broodling.name=Broodling
+entity.starcraft.zergling.name=Zergling
+entity.starcraft.overlord.name=Overlord
+entity.starcraft.brutalisk.name=Brutalisk
+entity.starcraft.hydralisk.name=Hydralisk
 
+entity.starcraft.probe.name=Probe
+entity.starcraft.darkProbe.name=Dark Probe
+entity.starcraft.darkTemplar.name=Dark Templar
+entity.starcraft.zealot.name=Zealot
+entity.starcraft.protossReaver.name=Reaver
+entity.starcraft.scarab.name=Scarab
 
+entity.starcraft.civilian.name=Civilian
+entity.starcraft.spiderMine.name=Spider Mine
 
+################
+# Achievements #
+################
 
 achievement.mineMinerals=Ooo, Shiny!
 achievement.mineMinerals.desc=Get mineral shards!
@@ -257,8 +324,6 @@ achievement.mineVespene.desc=Obtain vespene!
 				
 achievement.getC14GaussRifle=Hell, it's About Time!
 achievement.getC14GaussRifle.desc=Obtain a C14 gauss rifle!
-
-------------------------------------------------------------
 
 achievement.getPsiBladeFocuser=Embrace Purity
 achievement.getPsiBladeFocuser.desc=Obtain a psi blade focuser!

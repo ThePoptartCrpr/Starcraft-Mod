@@ -168,5 +168,4 @@ public class StructureVespeneGeyserTemplate extends WorldGenerator {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

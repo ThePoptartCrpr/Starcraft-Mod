@@ -25,7 +25,7 @@ public class EntityScourge extends EntityZergMob {
 //	public boolean isAIEnabled() {
 //        return true;
 //    }
-	
+
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {}
 }

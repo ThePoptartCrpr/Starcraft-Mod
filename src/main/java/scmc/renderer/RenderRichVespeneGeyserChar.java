@@ -10,7 +10,8 @@ import scmc.model.ModelRichVespeneGeyserChar;
 @SuppressWarnings("rawtypes")
 public class RenderRichVespeneGeyserChar<T> extends TileEntitySpecialRenderer {
 
-	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/richVespeneGeyserChar.png"); //And again
+	private static final ResourceLocation texture = new ResourceLocation(
+			Reference.RL_BASE + "textures/model/richVespeneGeyserChar.png"); //And again
 
 	private ModelRichVespeneGeyserChar model;
 
@@ -33,4 +34,3 @@ public class RenderRichVespeneGeyserChar<T> extends TileEntitySpecialRenderer {
     }
 
 }
-

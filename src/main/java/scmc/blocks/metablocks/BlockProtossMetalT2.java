@@ -2,7 +2,6 @@ package scmc.blocks.metablocks;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -13,10 +12,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.ProtossMetalType;
 import scmc.lib.Reference;
 
@@ -24,7 +23,7 @@ import scmc.lib.Reference;
  * This block has three variants. Refer to {@link ProtossMetalType}
  * 
  */
-public class BlockProtossMetalT2 extends Block implements IMetaBlockName {
+public class BlockProtossMetalT2 extends ModBlocks implements IMetaBlockName {
 
 	/** The type property */
 	public static final PropertyEnum<ProtossMetalType> TYPE = PropertyEnum.create("type", ProtossMetalType.class);
@@ -34,11 +33,11 @@ public class BlockProtossMetalT2 extends Block implements IMetaBlockName {
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockProtossMetalT2(String unlocalizedName, String registryName) {
+	public BlockProtossMetalT2() {
 		super(Material.IRON);
 		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_METALT2.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_METALT2.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(25.0F);
 		setHarvestLevel("pickaxe", 3);

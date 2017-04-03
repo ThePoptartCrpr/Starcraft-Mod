@@ -11,7 +11,7 @@ import scmc.model.ModelCivilian;
 public class RenderCivilian<T> extends RenderLiving<EntityCivilian> {
 
 	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/civilian.png");
+			Reference.RL_BASE + "textures/entity/civilian.png");
 
 	protected ModelCivilian modelEntity;
 

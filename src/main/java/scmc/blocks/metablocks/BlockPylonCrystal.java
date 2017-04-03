@@ -2,7 +2,6 @@ package scmc.blocks.metablocks;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -13,10 +12,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.PylonCrystalType;
 import scmc.lib.Reference;
 
@@ -24,7 +23,7 @@ import scmc.lib.Reference;
  * This block has three variants. Refer to {@link PylonCrystalType}
  * 
  */
-public class BlockPylonCrystal extends Block implements IMetaBlockName {
+public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 
 	/** The type property */
 	public static final PropertyEnum<PylonCrystalType> TYPE = PropertyEnum.create("type", PylonCrystalType.class);
@@ -34,11 +33,11 @@ public class BlockPylonCrystal extends Block implements IMetaBlockName {
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockPylonCrystal(String unlocalizedName, String registryName) {
+	public BlockPylonCrystal() {
 		super(Material.ROCK);
 		this.setSoundType(SoundType.STONE);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_PYLON_CRYSTAL.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_PYLON_CRYSTAL.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(20.0F);
 		setLightLevel(4.0F);
@@ -105,5 +104,4 @@ public class BlockPylonCrystal extends Block implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return PylonCrystalType.values()[stack.getItemDamage()].getName();
 	}
-
 }

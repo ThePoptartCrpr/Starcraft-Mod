@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=copper": { "model":"starcraft:compressed_metal_copper" },
-        "type=steel": { "model":"starcraft:compressed_metal_steel" },
-         "type=titanium": { "model":"starcraft:compressed_metal_titanium" }
-    }
-}

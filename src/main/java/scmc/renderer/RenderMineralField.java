@@ -9,7 +9,8 @@ import scmc.model.ModelMineralField;
 
 @SuppressWarnings("rawtypes")
 public class RenderMineralField<T> extends TileEntitySpecialRenderer {
-	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/mineralField.png"); //TODO: ensure that this is set to the proper value
+	private static final ResourceLocation texture = new ResourceLocation(
+			Reference.RL_BASE + "textures/model/mineralField.png"); //TODO: ensure that this is set to the proper value
 
 	private ModelMineralField model;
 
@@ -32,5 +33,3 @@ public class RenderMineralField<T> extends TileEntitySpecialRenderer {
     }
 
 }
-
-

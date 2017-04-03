@@ -2,7 +2,6 @@ package scmc.blocks.metablocks;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -16,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.ZergStructureCarapaceType;
 import scmc.lib.Reference;
 
@@ -23,7 +23,7 @@ import scmc.lib.Reference;
  * This block has three variants. Refer to {@link ZergStructureCarapaceType}
  * 
  */
-public class BlockZergStructureCarapace extends Block implements IMetaBlockName {
+public class BlockZergStructureCarapace extends ModBlocks implements IMetaBlockName {
 
 	/**
 	 * The type property
@@ -35,10 +35,10 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockZergStructureCarapace(String unlocalizedName, String registryName) {
+	public BlockZergStructureCarapace() {
 		super(Material.ROCK);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_CARAPACE.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CARAPACE.getRegistryRL());
 		this.setHardness(20); //Sets how hard the block is to break
 		this.setResistance(20); //Sets the blocks blast resistance to explosions
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ZergStructureCarapaceType.T1)); //Default state
@@ -103,5 +103,4 @@ public class BlockZergStructureCarapace extends Block implements IMetaBlockName 
 	public String getSpecialName(ItemStack stack) {
 		return ZergStructureCarapaceType.values()[stack.getItemDamage()].getName();
 	}
-
 }

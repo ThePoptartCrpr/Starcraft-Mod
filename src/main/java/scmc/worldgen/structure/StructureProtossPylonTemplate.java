@@ -812,5 +812,4 @@ public class StructureProtossPylonTemplate extends WorldGenerator {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

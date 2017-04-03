@@ -11,6 +11,19 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.monster.EntityPolarBear;
+import net.minecraft.entity.passive.EntityBat;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityMooshroom;
+import net.minecraft.entity.passive.EntityOcelot;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntityRabbit;
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -24,89 +37,104 @@ import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.lib.StarcraftConfig;
 
+/**
+ * @author bvanseghi
+ */
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityBrutalisk extends EntityZergMob {
 	public EntityBrutalisk(World world) {
 		super(world);
-        setSize(10, 10);
+        this.setSize(7.0F, 7.0F);
 	}
 	
-	@Override
-	public boolean canBeCollidedWith() {
-		return false;
-	}
-	
-	@Override
-	public boolean canBePushed() {
-		return false;
-	}
-	
-	@Override
-	protected void initEntityAI() {
-        tasks.addTask(0, new EntityAISwimming(this));
-        tasks.addTask(2, new EntityAIAttackMelee(this, 1, false));
-        tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
-        tasks.addTask(7, new EntityAIWander(this, 1));
-        tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
-        tasks.addTask(8, new EntityAILookIdle(this));
-        applyEntityAI();
+	protected void initEntityAI()
+    {
+        this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
+        this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(8, new EntityAILookIdle(this));
+        this.applyEntityAI();
     }
 
-    protected void applyEntityAI() {
-    	tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1, false));
-        targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
-        targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-        targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-        targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
-        targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
+    protected void applyEntityAI()
+    {
+    	this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+    	this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityProtossMob.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityProtossPassive.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
+        
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityVillager.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+        
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityWolf.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityCow.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySheep.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPolarBear.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityMooshroom.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPig.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityOcelot.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityHorse.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityBat.class, true));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityRabbit.class, true));
         
     }
 	
-    @Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		
-		//To be modified by bvanseghi
-		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.brutaliskHP);
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.2700000417232513D);
-		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
-		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.brutaliskDmg);
-		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999);
+		//TODO apparently this needs modified
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.brutaliskHP);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2700000417232513D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.brutaliskDmg);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(999999.0D);
 	}
 	
-    @Override
 	public int getTalkInterval() {
         return 160;
     }
 	
-    //FIXME: make this
-//	public SoundEvent getLivingSound() {
-//		return StarcraftSoundEvents.ENTITY_BRUTALISK_LIVE1;
-//	}
+	public SoundEvent getLivingSound() {
+		return StarcraftSoundEvents.ENTITY_BRUTALISK_LIVE1;
+	}
 	
-    @Override
 	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_BRUTALISK_HURT;
 	}
 	
-    @Override
 	public SoundEvent getDeathSound() {
-    	return StarcraftSoundEvents.ENTITY_BRUTALISK_DEATH;
+		return StarcraftSoundEvents.ENTITY_BRUTALISK_DEATH;
 	}
 	
-    @Override
 	protected void playStepSound(BlockPos pos, Block blockIn) {
-    	playSound(StarcraftSoundEvents.ENTITY_BRUTALISK_STEP, 0.15F, 1);
+        this.playSound(StarcraftSoundEvents.ENTITY_BRUTALISK_STEP, 0.15F, 1.0F);
     }
+	
 	
 	/**
 	 * Drop up to 2 items when killed
-	 * @param damagedByPlayer true if the most recent damage was dealt by a player
-	 * @param lootingLevel level of Looting on kill weapon
+	 * @param damagedByPlayer true if the most recent
+	 * damage was dealt by a player
+	 * @param lootingLevel level of Looting on kill
+	 * weapon
 	 */
-    @Override
 	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
 		//TODO: make this
+	}
+	
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+	}
+	
+	public void onUpdate() {
+		super.onUpdate();
 	}
 	
 	@Override

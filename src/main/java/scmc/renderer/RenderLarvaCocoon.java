@@ -13,7 +13,7 @@ import scmc.model.ModelLarvaCocoon;
 public class RenderLarvaCocoon<T> extends RenderLiving<EntityLarvaCocoon> {
 
 	private static final ResourceLocation LARVA_COCOON_TEXTURES = new ResourceLocation(
-			Reference.MODID + ":" + "textures/model/larvacocoon.png");
+			Reference.RL_BASE + "textures/entity/larvacocoon.png");
 
 	protected ModelLarvaCocoon modelEntity;
 

@@ -2,7 +2,6 @@ package scmc.blocks.metablocks;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -17,6 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.DyedIronType;
 import scmc.lib.Reference;
 
@@ -24,7 +24,7 @@ import scmc.lib.Reference;
  * This block has three variants. Refer to {@link DyedIronType}
  * 
  */
-public class BlockDyedIronBlocks extends Block implements IMetaBlockName {
+public class BlockDyedIronBlocks extends ModBlocks implements IMetaBlockName {
 
 	/** The type property */
 	public static final PropertyEnum<DyedIronType> TYPE = PropertyEnum.create("type", DyedIronType.class);
@@ -34,11 +34,11 @@ public class BlockDyedIronBlocks extends Block implements IMetaBlockName {
 	 * @param unlocalizedName The block's unlocalized name
 	 * @param registryName The block's registry name - defaultly the unlocalized name
 	 */
-	public BlockDyedIronBlocks(String unlocalizedName, String registryName) {
+	public BlockDyedIronBlocks() {
 		super(Material.IRON);
 		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, registryName));
+		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_DYED_IRON.getUnlocalizedName());
+		this.setRegistryName(Reference.ModBlocks.BLOCK_DYED_IRON.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 2);
@@ -104,5 +104,4 @@ public class BlockDyedIronBlocks extends Block implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return DyedIronType.values()[stack.getItemDamage()].getName();
 	}
-
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import scmc.items.metaitems.ItemEnumHandler.IngotType;
 import scmc.lib.Reference;
 
@@ -15,9 +14,9 @@ public class ItemIngotT1 extends Item {
 	 * Default constructor just sets the unlocalized name and the registry name
 	 * @param unlocalizedName
 	 */
-	public ItemIngotT1(String unlocalizedName) {
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.RL_BASE + unlocalizedName));
+	public ItemIngotT1() {
+		this.setUnlocalizedName(Reference.ModItems.ITEM_INGOT1.getUnlocalizedName());
+		this.setRegistryName(Reference.ModItems.ITEM_INGOT1.getRegistryRL());
 		this.setHasSubtypes(true); //This just says the item has metadata
 	}
 	

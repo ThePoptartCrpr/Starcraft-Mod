@@ -10,7 +10,8 @@ import scmc.model.ModelWarpGateWormholeShakuras;
 @SuppressWarnings("rawtypes")
 public class RenderWarpGateWormholeShakuras<T> extends TileEntitySpecialRenderer {
 
-	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/model/warpGateWormholeShakuras.png"); //Done
+	private static final ResourceLocation texture = new ResourceLocation(
+			Reference.RL_BASE + "textures/model/warpGateWormholeShakuras.png"); //Done
 
 	private ModelWarpGateWormholeShakuras model;
 

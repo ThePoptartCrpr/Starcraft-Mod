@@ -30,7 +30,6 @@ import net.minecraftforge.client.model.IPerspectiveAwareModel;
  * A neat class that removes the need for JSON in item rendering.
  * @author Ri5ux, creator of the AVP mod
  */
-@SuppressWarnings("unused")
 public abstract class ItemRenderer implements IPerspectiveAwareModel, IBakedModel {
 	protected static final Minecraft mc = Minecraft.getMinecraft();
 	private ItemRenderList overrides;
