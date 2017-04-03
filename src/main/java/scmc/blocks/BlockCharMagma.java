@@ -8,7 +8,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Library;
 import scmc.lib.Reference;
 
@@ -25,7 +25,7 @@ public class BlockCharMagma extends ModBlocks {
 		setHardness(1.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_MAGMA_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_MAGMA_CHAR.getRegistryRL());
 	}

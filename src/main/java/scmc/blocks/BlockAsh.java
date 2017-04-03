@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.metablocks.ModBlockLayered;
 import scmc.lib.Reference;
 
@@ -23,7 +23,7 @@ public class BlockAsh extends ModBlockLayered {
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_ASH_CHAR.getRegistryRL());
 		setSoundType(SoundType.SAND);
-		setCreativeTab(CreativeTab.tabStarcraftDecorativeBlocks);
+		setCreativeTab(StarcraftCreativeTabs.DECORATION);
 	}
     
 	//No @Override because the super method is private

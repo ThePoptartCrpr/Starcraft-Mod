@@ -10,52 +10,57 @@ import scmc.items.ModItems;
 import scmc.items.tools.ModTools;
 import scmc.items.weapons.ModWeapons;
 
-public class CreativeTab {
+public class StarcraftCreativeTabs {
 
 	//TODO: fix (do we still have to fix this, or is it already?)
-	public static CreativeTabs tabStarcraftBuildingBlocks = new CreativeTabs("StarcraftBuildingBlocks") {
+	public static final CreativeTabs BUILDING = new CreativeTabs("StarcraftBuildingBlocks") {
+		
 		@Override
 		public Item getTabIconItem() {
 			return Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1);
 		}
 	};
 	
-	public static CreativeTabs tabStarcraftDecorativeBlocks = new CreativeTabs("StarcraftDecorativeBlocks") {
+	public static final CreativeTabs DECORATION = new CreativeTabs("StarcraftDecorativeBlocks") {
+		
 		@Override
 		public Item getTabIconItem() {
 			return Item.getItemFromBlock(ModMetaBlocks.DYED_IRON);
 		}
 	};
 
-	public static CreativeTabs tabStarcraftMaterials = new CreativeTabs("StarcraftMaterials") {
+	public static final CreativeTabs MATERIALS = new CreativeTabs("StarcraftMaterials") {
+		
 		@Override
 		public Item getTabIconItem() {
 			return ModItems.energy;
 		}
 	};
 
-	public static CreativeTabs tabStarcraftTools = new CreativeTabs("StarcraftTools") {
+	public static final CreativeTabs TOOLS = new CreativeTabs("StarcraftTools") {
+		
 		@Override
 		public Item getTabIconItem() {
 			return ModTools.TITANIUM_PICKAXE;
 		}
 	};
 
-	public static CreativeTabs tabStarcraftCombat = new CreativeTabs("StarcraftCombat") {
+	public static final CreativeTabs COMBAT = new CreativeTabs("StarcraftCombat") {
+		
 		@Override
 		public Item getTabIconItem() {
 			return ModWeapons.MASTER_PSI_BLADE;
 		}
 	};
 
-	public static CreativeTabs tabStarcraftMisc;
+	public static CreativeTabs MISCELLANEOUS; //Not final due to the specified set time
 	
 	/**
 	 * Used to set the miscellaneous menu <em>after</em>
 	 * we do all the bucket stuff
 	 */
 	public static void setMisc() {
-		tabStarcraftMisc = new CreativeTabs("StarcraftMisc") {
+		MISCELLANEOUS = new CreativeTabs("StarcraftMisc") {
 			
 			@Override
 			public Item getTabIconItem() {

@@ -21,7 +21,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 import scmc.renderer.RenderVespeneGeyser;
@@ -38,7 +38,7 @@ public class BlockVespeneGeyser extends BlockContainer implements ITileEntityPro
 		setHardness(5.0F);
 		setResistance(3.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 	
 	@SideOnly(Side.CLIENT)

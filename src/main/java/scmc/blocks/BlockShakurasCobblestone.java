@@ -2,7 +2,7 @@ package scmc.blocks;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class BlockShakurasCobblestone extends ModBlocks {
@@ -14,7 +14,7 @@ public class BlockShakurasCobblestone extends ModBlocks {
 		setSoundType(SoundType.STONE);
 		setHardness(2.0F);
 		setResistance(5.0F);
-		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		this.setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 
 	public int damageDropped(int par1) {

@@ -6,7 +6,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 
 /**
  * Handles the tool registration and render
@@ -69,7 +69,7 @@ public class ModTools {
 		registerItem(STEEL_PICKAXE);
 		registerItem(STEEL_AXE);
 		registerItem(STEEL_SHOVEL);
-		registerItem(STEEL_HOE);	
+		registerItem(STEEL_HOE);
 	}
 	
 	public static void registerRenders() {
@@ -90,7 +90,7 @@ public class ModTools {
 	}
 	
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.tabStarcraftTools);
+		item.setCreativeTab(StarcraftCreativeTabs.TOOLS);
 		GameRegistry.register(item);
 //		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

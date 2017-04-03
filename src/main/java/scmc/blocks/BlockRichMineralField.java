@@ -15,7 +15,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 import scmc.tileentity.TileEntityBlockRichMineralField;
@@ -36,7 +36,7 @@ public class BlockRichMineralField extends BlockContainer {
 		setResistance(15.0F);
 		setHarvestLevel("pickaxe", 1);
 //		setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.85F, 1.0F); FIXME: this
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class BlockRichMineralField extends BlockContainer {
 	/**
 	 * Creates a new tile entity instance that is specific to this block
 	 * @param world the world
-	 * @param meta a metadata value. In this case, it could be used to apply the tile entity to a 
+	 * @param meta a metadata value. In this case, it could be used to apply the tile entity to a
 	 * specific sub block, were this block a meta based block
 	 */
 	@Override

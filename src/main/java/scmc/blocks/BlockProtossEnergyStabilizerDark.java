@@ -2,7 +2,7 @@ package scmc.blocks;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 /**
@@ -20,6 +20,6 @@ public class BlockProtossEnergyStabilizerDark extends ModBlocks {
 		setLightLevel(1.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 3);
-		setCreativeTab(CreativeTab.tabStarcraftDecorativeBlocks);
+		setCreativeTab(StarcraftCreativeTabs.DECORATION);
 	}
 }

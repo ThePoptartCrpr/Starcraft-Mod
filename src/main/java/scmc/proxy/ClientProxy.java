@@ -10,10 +10,9 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.StarcraftSoundEvents;
 import scmc.achievement.Achievements;
-import scmc.blocks.BlockVespeneGeyser;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.entity.EntityBroodling;
@@ -63,7 +62,6 @@ import scmc.renderer.RenderProbe;
 import scmc.renderer.RenderProtossReaver;
 import scmc.renderer.RenderScarab;
 import scmc.renderer.RenderSpiderMine;
-import scmc.renderer.RenderVespeneGeyser;
 import scmc.renderer.RenderZealot;
 import scmc.renderer.RenderZergling;
 import scmc.tileentity.ModTileEntities;
@@ -133,8 +131,6 @@ public class ClientProxy extends ServerProxy {
 				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f)); // use
 																													// deprecated
 																													// method
-		
-		
 	}
 
 	@Override
@@ -144,9 +140,9 @@ public class ClientProxy extends ServerProxy {
 		ModBlocks.init();
 		ModItems.init();
 		ModItems.register(); //Does stuff, including bucket-y stuff
-		CreativeTab.setMisc(); //Add the misc tab after doing bucket-y stuff
-		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem().setCreativeTab(CreativeTab.tabStarcraftMisc); //Put the acid bucket into the misc tab
-		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(CreativeTab.tabStarcraftMisc); //Put the blood bucket into the misc tab
+		StarcraftCreativeTabs.setMisc(); //Add the misc tab after doing bucket-y stuff
+		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem().setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS); //Put the acid bucket into the misc tab
+		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS); //Put the blood bucket into the misc tab
 		ModItems.registerRenders();
 		ModMaterials.preInit();
 		ModTileEntities.preInit();
@@ -174,74 +170,74 @@ public class ClientProxy extends ServerProxy {
 
 	@Override
 	public void registerModelBakeryStuff() {
-		ModelBakery.registerItemVariants(ModItems.mineralShard, 
+		ModelBakery.registerItemVariants(ModItems.mineralShard,
 				new ResourceLocation(Reference.MODID, "shard_blue"),
 				new ResourceLocation(Reference.MODID, "shard_rich"));
 		
-		ModelBakery.registerItemVariants(ModItems.vespene, 
+		ModelBakery.registerItemVariants(ModItems.vespene,
 				new ResourceLocation(Reference.MODID, "vespene_raw"),
 				new ResourceLocation(Reference.MODID, "vespene_protoss"),
 				new ResourceLocation(Reference.MODID, "vespene_terran"),
 				new ResourceLocation(Reference.MODID, "vespene_zerg"));
 
-		ModelBakery.registerItemVariants(ModItems.energy, 
+		ModelBakery.registerItemVariants(ModItems.energy,
 				new ResourceLocation(Reference.MODID, "energy_pure"),
 				new ResourceLocation(Reference.MODID, "energy_corrupted"),
 				new ResourceLocation(Reference.MODID, "energy_void"));
 		
-		ModelBakery.registerItemVariants(ModItems.dust, 
+		ModelBakery.registerItemVariants(ModItems.dust,
 				new ResourceLocation(Reference.MODID, "dust_iron"),
 				new ResourceLocation(Reference.MODID, "dust_steel"),
 				new ResourceLocation(Reference.MODID, "dust_carbon"));
 		
-		ModelBakery.registerItemVariants(ModItems.essence, 
+		ModelBakery.registerItemVariants(ModItems.essence,
 				new ResourceLocation(Reference.MODID, "essence_protoss"),
 				new ResourceLocation(Reference.MODID, "essence_terran"),
 				new ResourceLocation(Reference.MODID, "essence_zerg"));
 		
-		ModelBakery.registerItemVariants(ModItems.ingot1, 
+		ModelBakery.registerItemVariants(ModItems.ingot1,
 				new ResourceLocation(Reference.MODID, "ingot1_copper"),
 				new ResourceLocation(Reference.MODID, "ingot1_alien"),
 				new ResourceLocation(Reference.MODID, "ingot1_aliendark"),
 				new ResourceLocation(Reference.MODID, "ingot1_titanium"),
 				new ResourceLocation(Reference.MODID, "ingot1_steel"));
 		
-		ModelBakery.registerItemVariants(ModItems.ingot2, 
+		ModelBakery.registerItemVariants(ModItems.ingot2,
 				new ResourceLocation(Reference.MODID, "ingot2_copper"),
 				new ResourceLocation(Reference.MODID, "ingot2_alien"),
 				new ResourceLocation(Reference.MODID, "ingot2_aliendark"),
 				new ResourceLocation(Reference.MODID, "ingot2_titanium"),
 				new ResourceLocation(Reference.MODID, "ingot2_steel"));
 		
-		ModelBakery.registerItemVariants(ModItems.ingot3, 
+		ModelBakery.registerItemVariants(ModItems.ingot3,
 				new ResourceLocation(Reference.MODID, "ingot3_copper"),
 				new ResourceLocation(Reference.MODID, "ingot3_alien"),
 				new ResourceLocation(Reference.MODID, "ingot3_aliendark"),
 				new ResourceLocation(Reference.MODID, "ingot3_titanium"),
 				new ResourceLocation(Reference.MODID, "ingot3_steel"));
 		
-		ModelBakery.registerItemVariants(ModItems.coord, 
+		ModelBakery.registerItemVariants(ModItems.coord,
 				new ResourceLocation(Reference.MODID, "coordinate_char"),
 				new ResourceLocation(Reference.MODID, "coordinate_shakuras"));
 		
-		ModelBakery.registerItemVariants(ModItems.psiBladeFocuserUncharged, 
+		ModelBakery.registerItemVariants(ModItems.psiBladeFocuserUncharged,
 				new ResourceLocation(Reference.MODID, "protoss_psiblade_focuser_uncharged_aiur"),
 				new ResourceLocation(Reference.MODID, "protoss_psiblade_focuser_uncharged_dark"));
 		
-		ModelBakery.registerItemVariants(ModItems.crystal, 
+		ModelBakery.registerItemVariants(ModItems.crystal,
 				new ResourceLocation(Reference.MODID, "crystal_khaydarin"),
 				new ResourceLocation(Reference.MODID, "crystal_bloodshard"),
 				new ResourceLocation(Reference.MODID, "crystal_uraj"));
 		
-		ModelBakery.registerItemVariants(ModItems.c14Parts, 
+		ModelBakery.registerItemVariants(ModItems.c14Parts,
 				new ResourceLocation(Reference.MODID, "part_c14_gauss_body"),
 				new ResourceLocation(Reference.MODID, "part_c14_gauss_barrel"),
 				new ResourceLocation(Reference.MODID, "part_c14_gauss_grip"));
 		
-		ModelBakery.registerItemVariants(ModItems.bullet, 
+		ModelBakery.registerItemVariants(ModItems.bullet,
 				new ResourceLocation(Reference.MODID, "bullet_rifle_c14_gauss"));
 		
-		ModelBakery.registerItemVariants(ModItems.zergCarapace, 
+		ModelBakery.registerItemVariants(ModItems.zergCarapace,
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t1"),
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t2"),
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t3"));

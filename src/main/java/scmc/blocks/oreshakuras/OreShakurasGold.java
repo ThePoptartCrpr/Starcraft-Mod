@@ -6,7 +6,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.lib.Reference;
 
@@ -18,7 +18,7 @@ public class OreShakurasGold extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 		setUnlocalizedName(Reference.ModBlocks.ORE_GOLD_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_GOLD_S.getRegistryRL());
 	}

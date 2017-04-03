@@ -2,7 +2,7 @@ package scmc.blocks;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 /**
@@ -19,6 +19,6 @@ public class BlockCharDirt extends ModBlocks {
 		setHardness(0.5F);
 		setResistance(2.5F);
 		setHarvestLevel("shovel", 0);
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 }

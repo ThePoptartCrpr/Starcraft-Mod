@@ -5,7 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.lib.Library;
 import scmc.lib.Reference;
@@ -19,7 +19,7 @@ public class BlockCoreNexusDark extends ModBlocks {
 		//setHardness(2.0F);
 		//setResistance(5.0F);
 		//setHarvestLevel("pickaxe", 0);
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 	
 	@Override

@@ -16,7 +16,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.lib.ModTeleporter;
 import scmc.lib.Reference;
@@ -32,7 +32,7 @@ public class DimPortalChar extends ModBlocks {
 		setResistance(0.0F);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL());
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 	
 	@Override
