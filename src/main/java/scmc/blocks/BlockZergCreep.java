@@ -35,8 +35,8 @@ public class BlockZergCreep extends ModBlockLayered {
 	}
 
 	@Override
-	public int quantityDropped(Random rand) {
-		return 2 + rand.nextInt(2);
+	public int quantityDropped(IBlockState state, int fortune, Random rand) {
+		return ((Integer)state.getValue(LAYERS)) + 1 + rand.nextInt(2);
 	}
 
 	@Override

@@ -11,13 +11,12 @@ public class GenLayerChar extends GenLayer {
 	}
 
 	public static GenLayer[] initializeAllBiomeGenerators(long seed, WorldType type, String str) {
-		GenLayer biomes = new GenLayerCharBiomes(1L);
-		biomes = new GenLayerZoom(1000L, biomes);
-		biomes = new GenLayerZoom(1001L, biomes);
-		biomes = new GenLayerZoom(1002L, biomes);
-		biomes = new GenLayerZoom(1003L, biomes);
-		biomes = new GenLayerZoom(1004L, biomes);
-		biomes = new GenLayerZoom(1005L, biomes);
+		GenLayer biomes = new GenLayerCharBiomes(100L);
+		int biomeSize = 6;
+		for (int i = 0; i < biomeSize; i++) {
+			biomes = new GenLayerZoom((long)(1000+i), biomes);
+		}
+		
 		GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, biomes);
 		biomes.initWorldGenSeed(seed);
 		genlayervoronoizoom.initWorldGenSeed(seed);

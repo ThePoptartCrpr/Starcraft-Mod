@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import scmc.CreativeTab;
 import scmc.StarcraftSoundEvents;
 import scmc.achievement.Achievements;
+import scmc.blocks.BlockVespeneGeyser;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.entity.EntityBroodling;
@@ -62,6 +63,7 @@ import scmc.renderer.RenderProbe;
 import scmc.renderer.RenderProtossReaver;
 import scmc.renderer.RenderScarab;
 import scmc.renderer.RenderSpiderMine;
+import scmc.renderer.RenderVespeneGeyser;
 import scmc.renderer.RenderZealot;
 import scmc.renderer.RenderZergling;
 import scmc.tileentity.ModTileEntities;
@@ -131,6 +133,8 @@ public class ClientProxy extends ServerProxy {
 				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f)); // use
 																													// deprecated
 																													// method
+		
+		
 	}
 
 	@Override

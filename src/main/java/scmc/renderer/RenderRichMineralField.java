@@ -11,7 +11,7 @@ import scmc.model.ModelRichMineralField;
 public class RenderRichMineralField<T> extends TileEntitySpecialRenderer {
 
 	private static final ResourceLocation texture = new ResourceLocation(
-			Reference.RL_BASE + "textures/model/richMineralField.png"); //And again
+			Reference.RL_BASE + "textures/models/richMineralField.png"); //And again
 
 	private ModelRichMineralField model;
 

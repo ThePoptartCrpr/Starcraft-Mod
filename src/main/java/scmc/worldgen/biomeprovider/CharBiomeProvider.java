@@ -33,16 +33,17 @@ public class CharBiomeProvider extends BiomeProvider {
     /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
     private GenLayer biomeIndexLayer;
     /** The biome list. */
-	private final BiomeCache biomeCache;
-    private final List<Biome> biomesToSpawnIn;
+//	private final BiomeCache biomeCache;
+//    private final List<Biome> biomesToSpawnIn;
 
-    protected CharBiomeProvider() {
-        biomeCache = new BiomeCache(this);
-        biomesToSpawnIn = Lists.newArrayList(allowedBiomes);
-    }
+    /*protected CharBiomeProvider() {
+    	super();
+//        biomeCache = new BiomeCache(this);
+//        biomesToSpawnIn = Lists.newArrayList(allowedBiomes);
+    }*/
 
     private CharBiomeProvider(long seed, WorldType worldTypeIn, String options) {
-        this();
+        super();
         GenLayer[] agenlayer = GenLayerChar.initializeAllBiomeGenerators(seed, worldTypeIn, options);
         agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
         
@@ -93,20 +94,6 @@ public class CharBiomeProvider extends BiomeProvider {
     }
 
     /**
-     * Returns a list of rainfall values for the specified blocks. Args: listToReuse, x, z, width, length.
-     *//*
-    public float[] getRainfall(float[] p_76936_1_, int p_76936_2_, int p_76936_3_, int p_76936_4_, int p_76936_5_)
-    {
-        if (p_76936_1_ == null || p_76936_1_.length < p_76936_4_ * p_76936_5_)
-        {
-            p_76936_1_ = new float[p_76936_4_ * p_76936_5_];
-        }
-
-        Arrays.fill(p_76936_1_, 0, p_76936_4_ * p_76936_5_, this.rainfall);
-        return p_76936_1_;
-    }*/
-
-    /**
      * Returns biomes to use for the blocks and loads the other data like temperature and humidity onto the
      * WorldChunkManager Args: oldBiomeList, x, z, width, depth
      */
@@ -135,9 +122,9 @@ public class CharBiomeProvider extends BiomeProvider {
     /**
      * checks given Chunk's Biomes against List of allowed ones
      */
-    @Override
+    /*@Override
     public boolean areBiomesViable(int x, int z, int radius, List<Biome> allowed)
     {
         return allowed.contains(this.biomeGenerator);
-    }
+    }*/
 }

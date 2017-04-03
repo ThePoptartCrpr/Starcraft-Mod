@@ -11,7 +11,7 @@ import scmc.model.ModelRichVespeneGeyserShakuras;
 public class RenderRichVespeneGeyserShakuras<T> extends TileEntitySpecialRenderer {
 
 	private static final ResourceLocation texture = new ResourceLocation(
-			Reference.RL_BASE + "textures/model/richVespeneGeyserShakuras.png"); //Are we done?
+			Reference.RL_BASE + "textures/models/richVespeneGeyserShakuras.png"); //Are we done?
 
 	private ModelRichVespeneGeyserShakuras model;
 

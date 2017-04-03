@@ -20,6 +20,9 @@ import scmc.blocks.coreblocks.BlockCorePylonVoid;
 import scmc.blocks.coreblocks.BlockCoreWarpGateDark;
 import scmc.blocks.coreblocks.BlockCoreWarpGateKhalai;
 import scmc.blocks.coreblocks.BlockCoreWarpGateVoid;
+import scmc.blocks.debug.DimPortalChar;
+import scmc.blocks.debug.DimPortalOverworld;
+import scmc.blocks.debug.DimPortalShakuras;
 import scmc.blocks.metablocks.BlockCompressedMetalsT1;
 import scmc.blocks.metablocks.BlockPylonCrystal;
 import scmc.blocks.metablocks.ModMetaBlocks;
@@ -48,9 +51,6 @@ import scmc.blocks.oreshakuras.OreShakurasRedstone;
 import scmc.blocks.oreshakuras.OreShakurasRichMineral;
 import scmc.blocks.oreshakuras.OreShakurasTitanium;
 import scmc.blocks.oreshakuras.OreShakurasUranium;
-import scmc.debug.DimPortalChar;
-import scmc.debug.DimPortalOverworld;
-import scmc.debug.DimPortalShakuras;
 import scmc.items.metaitems.ModItemLayered;
 import scmc.lib.Reference;
 
@@ -253,6 +253,8 @@ public class ModBlocks extends Block {
 		VESPENE_GEYSER_BASE_CHAR = new BlockVespeneGeyserBaseChar();
 		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
 		
+		VESPENE_GEYSER = new BlockVespeneGeyser();
+		
 		//Core Blocks
 		CORE_PYLON_VOID = new BlockCorePylonVoid();
 		CORE_PYLON_DARK = new BlockCorePylonDark();
@@ -412,6 +414,10 @@ public class ModBlocks extends Block {
 		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
 		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
 		
+		GameRegistry.register(VESPENE_GEYSER);
+		GameRegistry.register(new ItemBlock(VESPENE_GEYSER).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER.getRegistryRL()));
+		
+		
 		GameRegistry.register(CORE_PYLON_VOID);
 		GameRegistry.register(new ItemBlock(CORE_PYLON_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL()));
 		
@@ -537,6 +543,8 @@ public class ModBlocks extends Block {
 		//Fluid Registration
 		registerFluid(FLUID_ACID);
 		registerFluid(FLUID_BLOOD);
+		
+		((BlockVespeneGeyser) VESPENE_GEYSER).initModel();
 		
 		ModMetaBlocks.registerRenders();
 		//BlockRenderRegister.registerBlockRenderer();

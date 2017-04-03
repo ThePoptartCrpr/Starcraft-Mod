@@ -1,4 +1,4 @@
-package scmc.debug;
+package scmc.blocks.debug;
 
 import java.util.List;
 import java.util.Random;
