@@ -9,7 +9,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 /**
@@ -24,7 +24,7 @@ public class BlockCharStone extends Block {
 		setHardness(1.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_STONE_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_STONE_C.getRegistryRL());
 	}

@@ -5,7 +5,7 @@ import java.util.Random;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
@@ -18,7 +18,7 @@ public class OreCharMineral extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		this.setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		this.setCreativeTab(StarcraftCreativeTabs.BUILDING);
 		setUnlocalizedName(Reference.ModBlocks.ORE_MINERAL_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_MINERAL_C.getRegistryRL());
 	}

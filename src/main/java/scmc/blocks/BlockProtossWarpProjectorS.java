@@ -9,7 +9,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 /**
@@ -27,7 +27,7 @@ public class BlockProtossWarpProjectorS extends ModBlocks {
 		setLightLevel(1.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 3);
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 	
 	/**

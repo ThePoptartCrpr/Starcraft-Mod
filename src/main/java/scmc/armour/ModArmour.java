@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.LogHelper;
 import scmc.lib.Reference;
 
@@ -125,7 +125,7 @@ public class ModArmour {
 	 * @param item The item
 	 */
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.tabStarcraftMaterials); //Sets the creative tab
+		item.setCreativeTab(StarcraftCreativeTabs.MATERIALS); //Sets the creative tab
 		GameRegistry.register(item);
 		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

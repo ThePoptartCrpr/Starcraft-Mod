@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.LogHelper;
 import scmc.lib.Reference;
 
@@ -94,7 +94,7 @@ public class ModTools {
 	}
 	
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.tabStarcraftTools);
+		item.setCreativeTab(StarcraftCreativeTabs.TOOLS);
 		GameRegistry.register(item);
 		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

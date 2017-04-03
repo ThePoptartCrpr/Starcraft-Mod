@@ -10,7 +10,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.StarcraftSoundEvents;
 import scmc.achievement.Achievements;
 import scmc.armour.ModArmour;
@@ -140,9 +140,9 @@ public class ClientProxy extends ServerProxy {
 		ModBlocks.init();
 		ModItems.init();
 		ModItems.register(); //Does stuff, including bucket-y stuff
-		CreativeTab.setMisc(); //Add the misc tab after doing bucket-y stuff
-		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem().setCreativeTab(CreativeTab.tabStarcraftMisc); //Put the acid bucket into the misc tab
-		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(CreativeTab.tabStarcraftMisc); //Put the blood bucket into the misc tab
+		StarcraftCreativeTabs.setMisc(); //Add the misc tab after doing bucket-y stuff
+		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem().setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS); //Put the acid bucket into the misc tab
+		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS); //Put the blood bucket into the misc tab
 		ModItems.registerRenders();
 		ModMaterials.preInit();
 		ModTileEntities.preInit();

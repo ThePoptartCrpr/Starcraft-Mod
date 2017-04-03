@@ -3,7 +3,7 @@ package scmc.weapons;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class WeaponDarkDualWarpBlade extends ItemSword {
@@ -11,7 +11,7 @@ public class WeaponDarkDualWarpBlade extends ItemSword {
 
 	public WeaponDarkDualWarpBlade(ToolMaterial material) {
 		super(material);
-		setCreativeTab(CreativeTab.tabStarcraftCombat);
+		setCreativeTab(StarcraftCreativeTabs.COMBAT);
 		setUnlocalizedName(Reference.UN_BASE + name);
 	}
 	

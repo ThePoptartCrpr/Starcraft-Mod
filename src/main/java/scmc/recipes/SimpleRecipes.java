@@ -1,4 +1,4 @@
-package scmc;
+package scmc.recipes;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -11,12 +11,12 @@ import scmc.items.ModItems;
 import scmc.tools.ModTools;
 import scmc.weapons.ModWeapons;
 
-public class ModRecipes {
+public class SimpleRecipes {
 
 	public static void init() {
 		
 		//Steel Dust from Carbon and Iron Grains
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 2), new ItemStack(ModItems.dust, 1, 2)});
+//		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 1, 0), new Object[] {new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 1), new ItemStack(ModItems.dust, 1, 2), new ItemStack(ModItems.dust, 1, 2)});
 		
 		//Iron Grain x2 from Iron Ores
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dust, 2, 1), new Object[] {Blocks.IRON_ORE});

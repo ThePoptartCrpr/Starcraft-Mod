@@ -15,7 +15,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 import scmc.tileentity.TileEntityBlockRichMineralField;
@@ -36,7 +36,7 @@ public class BlockRichMineralField extends BlockContainer {
 		setResistance(15.0F);
 		setHarvestLevel("pickaxe", 1);
 //		setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.85F, 1.0F); FIXME: this
-		setCreativeTab(CreativeTab.tabStarcraftBuildingBlocks);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 
 	/**

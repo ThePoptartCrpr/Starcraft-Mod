@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.CreativeTab;
+import scmc.StarcraftCreativeTabs;
 import scmc.fluids.ModFluids;
 import scmc.items.metaitems.ItemBullet;
 import scmc.items.metaitems.ItemC14GaussRifleParts;
@@ -159,7 +159,7 @@ public class ModItems extends Item {
 	 * @param item The item
 	 */
 	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.tabStarcraftMaterials); //Sets the creative tab
+		item.setCreativeTab(StarcraftCreativeTabs.MATERIALS); //Sets the creative tab
 		GameRegistry.register(item);
 		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}
