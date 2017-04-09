@@ -13,8 +13,9 @@ import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.terraingen.InitNoiseGensEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import scmc.blocks.ModBlocks;
 
-public class NormalTerrainGenerator {
+public class CharTerrainGenerator {
     private World world;
     private Random random;
 
@@ -37,7 +38,7 @@ public class NormalTerrainGenerator {
 
     private Biome[] biomesForGeneration;
 
-    public NormalTerrainGenerator() {
+    public CharTerrainGenerator() {
         this.heightMap = new double[825];
 
         this.biomeWeights = new float[25];
@@ -205,10 +206,10 @@ public class NormalTerrainGenerator {
                             double d15 = d10 - d16;
 
                             for (int z = 0; z < 4; ++z) {
-                                if (height < 2) {
-                                    primer.setBlockState(x4 * 4 + x, height32 * 8 + h, z4 * 4 + z, Blocks.BEDROCK.getDefaultState());
-                                } else if ((d15 += d16) > 0.0D) {
-                                    primer.setBlockState(x4 * 4 + x, height32 * 8 + h, z4 * 4 + z, Blocks.STONE.getDefaultState());
+                                if ((d15 += d16) > 0.0D) {
+                                    primer.setBlockState(x4 * 4 + x, height32 * 8 + h, z4 * 4 + z, ModBlocks.STONE_CHAR.getDefaultState());
+                                } else if (height < 63) {
+                                    primer.setBlockState(x4 * 4 + x, height32 * 8 + h, z4 * 4 + z, Blocks.LAVA.getDefaultState());
                                 }
                             }
 
@@ -226,13 +227,13 @@ public class NormalTerrainGenerator {
         }
     }
 
-    public void replaceBiomeBlocks(int x, int z, ChunkPrimer primer, IChunkGenerator generator, Biome[] biomes) {
+    public void replaceBiomeBlocks(int x, int z, ChunkPrimer primer, IChunkGenerator generator) {
         if (!ForgeEventFactory.onReplaceBiomeBlocks(generator, x, z, primer, this.world)) return;
         this.depthBuffer = this.surfaceNoise.getRegion(this.depthBuffer, (x * 16), (z * 16), 16, 16, 0.0625D, 0.0625D, 1.0D);
 
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
-                Biome biome = biomes[j + i * 16];
+                Biome biome = biomesForGeneration[j + i * 16];
                 biome.genTerrainBlocks(this.world, this.random, primer, x * 16 + i, z * 16 + j, this.depthBuffer[j + i * 16]);
             }
         }

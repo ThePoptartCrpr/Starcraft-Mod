@@ -53,7 +53,7 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 				
 				if (origState.getMaterial() == Material.AIR) { //If we're still in the air...
                     j = -1;
-                } else if (origState.getBlock() == Blocks.STONE) {
+                } else if (origState.getBlock() == ModBlocks.STONE_CHAR) {
 					if (j == -1) {
 						if (randHeight <= 0) {
 							topBlock = AIR;
@@ -81,8 +81,6 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 					} else if (j > 0) {
 						--j;
 						chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, fillerBlock);
-					} else {
-						chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, ModBlocks.STONE_CHAR.getDefaultState());
 					}
 				} 
 			}

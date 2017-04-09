@@ -10,6 +10,7 @@ import com.google.common.collect.Lists;
 
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
+import net.minecraft.init.Biomes;
 import net.minecraft.util.ReportedException;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldType;
@@ -28,22 +29,22 @@ public class CharBiomeProvider extends BiomeProvider {
 	
 	private Biome biomeGenerator;
 	
-    public static List<Biome> allowedBiomes = Lists.newArrayList(BiomesSC.biomeAshPlains, BiomesSC.biomeCharCreepInfestation, BiomesSC.biomeMoltenInferno);
+//    public static List<Biome> allowedBiomes = Lists.newArrayList(BiomesSC.biomeAshPlains, BiomesSC.biomeCharCreepInfestation, BiomesSC.biomeMoltenInferno);
     private GenLayer genBiomes;
     /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
     private GenLayer biomeIndexLayer;
     /** The biome list. */
-//	private final BiomeCache biomeCache;
+	private final BiomeCache biomeCache;
 //    private final List<Biome> biomesToSpawnIn;
 
-    /*protected CharBiomeProvider() {
+    protected CharBiomeProvider() {
     	super();
-//        biomeCache = new BiomeCache(this);
+        biomeCache = new BiomeCache(this);
 //        biomesToSpawnIn = Lists.newArrayList(allowedBiomes);
-    }*/
+    }
 
     private CharBiomeProvider(long seed, WorldType worldTypeIn, String options) {
-        super();
+        this();
         GenLayer[] agenlayer = GenLayerChar.initializeAllBiomeGenerators(seed, worldTypeIn, options);
         agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
         
@@ -94,29 +95,36 @@ public class CharBiomeProvider extends BiomeProvider {
     }
 
     /**
-     * Returns biomes to use for the blocks and loads the other data like temperature and humidity onto the
-     * WorldChunkManager Args: oldBiomeList, x, z, width, depth
-     */
-    @Override
-    public Biome[] loadBlockGeneratorData(Biome[] listToReuse, int x, int z, int width, int depth)
-    {
-        if (listToReuse == null || listToReuse.length < width * depth)
-        {
-            listToReuse = new Biome[width * depth];
-        }
-
-        Arrays.fill(listToReuse, 0, width * depth, this.biomeGenerator);
-        return listToReuse;
-    }
-
-    /**
      * Return a list of biomes for the specified blocks. Args: listToReuse, x, y, width, length, cacheFlag (if false,
      * don't check biomeCache to avoid infinite loop in BiomeCacheBlock)
      */
     @Override
-    public Biome[] getBiomeGenAt(Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
+    public Biome[] getBiomeGenAt(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
     {
-        return this.loadBlockGeneratorData(listToReuse, x, z, width, length);
+    	IntCache.resetIntCache();
+
+        if (listToReuse == null || listToReuse.length < width * length)
+        {
+            listToReuse = new Biome[width * length];
+        }
+
+        if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (z & 15) == 0)
+        {
+            Biome[] abiome = this.biomeCache.getCachedBiomes(x, z);
+            System.arraycopy(abiome, 0, listToReuse, 0, width * length);
+            return listToReuse;
+        }
+        else
+        {
+            int[] aint = this.biomeIndexLayer.getInts(x, z, width, length);
+
+            for (int i = 0; i < width * length; ++i)
+            {
+                listToReuse[i] = Biome.getBiome(aint[i], BiomesSC.biomeAshPlains);
+            }
+
+            return listToReuse;
+        }
     }
     
     /**

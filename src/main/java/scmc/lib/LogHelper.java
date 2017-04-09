@@ -18,4 +18,15 @@ public class LogHelper {
 
     public static void init() {
     }
+    
+    public static String toGrid(Object[] array, int width, int height) {
+    	String out = "\n";
+    	for (int w = 0; w < width; w++) {
+    		for (int h = 0; h < height; h++) {
+    			out += array[h + w*height].toString() + " ";
+    		}
+    		out += '\n';
+    	}
+    	return out;
+    }
 }

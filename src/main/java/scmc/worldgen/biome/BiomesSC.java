@@ -14,6 +14,7 @@ public class BiomesSC extends Biome {
 	public static Biome biomeAshPlains;
 	public static Biome biomeMoltenInferno;
 	public static Biome biomeShakurasDesert;
+	public static Biome biomeCharScars;
 
 	public static void init() {
 		registerBiomes();
@@ -21,6 +22,7 @@ public class BiomesSC extends Biome {
 		GameRegistry.register(biomeMoltenInferno);
 		GameRegistry.register(biomeCharCreepInfestation);
 		GameRegistry.register(biomeShakurasDesert);
+		GameRegistry.register(biomeCharScars);
 	}
 
 	public static void registerBiomes() {
@@ -30,25 +32,7 @@ public class BiomesSC extends Biome {
 		biomeAshPlains = new BiomeGenAshPlains((new Biome.BiomeProperties("Ash Plains")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.5F).setRainfall(0.3F));
 		biomeMoltenInferno = new BiomeGenMoltenInferno((new Biome.BiomeProperties("Molten Inferno")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(2.0F).setRainfall(0.3F));
 		biomeShakurasDesert = new BiomeGenDesertShakuras((new Biome.BiomeProperties("Shakuras Desert")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.5F).setRainfall(0.3F));
-
-		// FIXME Testing Code
-		/*for (BiomeType type : BiomeType.values()) {
-			for (BiomeEntry biomeEntry : BiomeManager.getBiomes(type)) {
-				BiomeManager.removeBiome(type, biomeEntry);
-				BiomeManager.removeSpawnBiome(biomeEntry.biome);
-			}
-		}
-		
-		BiomeDictionary.registerBiomeType(biomeCreepInfestationChar, Type.FOREST);
-		BiomeDictionary.registerBiomeType(biomeAshPlains, Type.FOREST);
-		BiomeDictionary.registerBiomeType(biomeMoltenInferno, Type.FOREST);
-		BiomeDictionary.registerBiomeType(biomeShakurasDesert, Type.COLD, Type.SNOWY);
-		
-		BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(biomeMoltenInferno, 100));
-		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(biomeMoltenInferno, 100));
-		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(biomeMoltenInferno, 100));
-		BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(biomeMoltenInferno, 100));
-		*/
+		biomeCharScars = new BiomeGenCharScar((new Biome.BiomeProperties("Char Scars")).setBaseHeight(-0.5F).setHeightVariation(0.0F));
 		
 		// add spawn biomes here
 
@@ -56,6 +40,12 @@ public class BiomesSC extends Biome {
 		BiomeManager.addSpawnBiome(BiomesSC.biomeAshPlains);
 		BiomeManager.addSpawnBiome(BiomesSC.biomeShakurasDesert);
 		BiomeManager.removeSpawnBiome(BiomesSC.biomeMoltenInferno);
+		BiomeManager.removeSpawnBiome(BiomesSC.biomeCharScars);
 
+	}
+	
+	@Override
+	public String toString() {
+		return String.valueOf(getIdForBiome(this));
 	}
 }
