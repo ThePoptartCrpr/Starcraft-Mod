@@ -54,8 +54,9 @@ public class ChunkProviderAiur implements IChunkGenerator {
 
         // Setup biomes again for actual biome decoration
         this.biomesForGeneration = this.worldObj.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 16, z * 16, 16, 16);
+        terraingen.setBiomesForGeneration(biomesForGeneration);
         // This will replace stone with the biome specific stones
-        terraingen.replaceBiomeBlocks(x, z, chunkprimer, this, biomesForGeneration);
+        terraingen.replaceBiomeBlocks(x, z, chunkprimer, this);
 
         // Generate caves
         this.caveGenerator.generate(this.worldObj, x, z, chunkprimer);

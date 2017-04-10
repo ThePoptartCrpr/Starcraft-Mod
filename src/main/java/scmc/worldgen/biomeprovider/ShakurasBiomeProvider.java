@@ -35,11 +35,12 @@ public class ShakurasBiomeProvider extends BiomeProvider {
     private GenLayer biomeIndexLayer;
     /** The biome list. */
     private final BiomeCache biomeCache;
-    private final List<Biome> biomesToSpawnIn;
+//    private final List<Biome> biomesToSpawnIn;
 
     protected ShakurasBiomeProvider() {
+    	super();
         biomeCache = new BiomeCache(this);
-        biomesToSpawnIn = Lists.newArrayList(allowedBiomes);
+//        biomesToSpawnIn = Lists.newArrayList(allowedBiomes);
     }
 
     private ShakurasBiomeProvider(long seed, WorldType worldTypeIn, String options) {
@@ -94,29 +95,36 @@ public class ShakurasBiomeProvider extends BiomeProvider {
     }
 
     /**
-     * Returns biomes to use for the blocks and loads the other data like temperature and humidity onto the
-     * WorldChunkManager Args: oldBiomeList, x, z, width, depth
-     */
-    @Override
-    public Biome[] loadBlockGeneratorData(Biome[] oldBiomeList, int x, int z, int width, int depth)
-    {
-        if (oldBiomeList == null || oldBiomeList.length < width * depth)
-        {
-            oldBiomeList = new Biome[width * depth];
-        }
-
-        Arrays.fill(oldBiomeList, 0, width * depth, this.biomeGenerator);
-        return oldBiomeList;
-    }
-
-    /**
      * Return a list of biomes for the specified blocks. Args: listToReuse, x, y, width, length, cacheFlag (if false,
      * don't check biomeCache to avoid infinite loop in BiomeCacheBlock)
      */
     @Override
-    public Biome[] getBiomeGenAt(Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
+    public Biome[] getBiomeGenAt(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
     {
-        return this.loadBlockGeneratorData(listToReuse, x, z, width, length);
+    	IntCache.resetIntCache();
+
+        if (listToReuse == null || listToReuse.length < width * length)
+        {
+            listToReuse = new Biome[width * length];
+        }
+
+        if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (z & 15) == 0)
+        {
+            Biome[] abiome = this.biomeCache.getCachedBiomes(x, z);
+            System.arraycopy(abiome, 0, listToReuse, 0, width * length);
+            return listToReuse;
+        }
+        else
+        {
+            int[] aint = this.biomeIndexLayer.getInts(x, z, width, length);
+
+            for (int i = 0; i < width * length; ++i)
+            {
+                listToReuse[i] = Biome.getBiome(aint[i], BiomesSC.biomeAshPlains);
+            }
+
+            return listToReuse;
+        }
     }
     
     /**

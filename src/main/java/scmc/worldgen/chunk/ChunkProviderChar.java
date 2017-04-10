@@ -7,8 +7,6 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import org.apache.logging.log4j.Level;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
@@ -21,11 +19,10 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenCaves;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import scmc.entity.EntityZealot;
-import scmc.lib.LogHelper;
 import scmc.worldgen.CharTerrainGenerator;
+import scmc.worldgen.features.CharGenCaves;
 
 public class ChunkProviderChar implements IChunkGenerator {
 	
@@ -35,7 +32,7 @@ public class ChunkProviderChar implements IChunkGenerator {
     
     private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityZealot.class, 100, 2, 2));
 
-    private MapGenBase caveGenerator = new MapGenCaves(); //Need to fix this, it won't work right.
+    private MapGenBase caveGenerator = new CharGenCaves();
     private CharTerrainGenerator terraingen = new CharTerrainGenerator();
 
     public ChunkProviderChar(World worldObj) {
@@ -53,25 +50,21 @@ public class ChunkProviderChar implements IChunkGenerator {
         // Setup biomes for terraingen
         biomesForGeneration = worldObj.getBiomeProvider().getBiomesForGeneration(biomesForGeneration, x * 4 - 2, z * 4 - 2, 10, 10);
         terraingen.setBiomesForGeneration(biomesForGeneration);
-//        LogHelper.logger.log(Level.WARN, LogHelper.toGrid(biomesForGeneration, 10, 10));
         terraingen.generate(x, z, chunkprimer);
         
         // Setup biomes again for actual biome decoration
         biomesForGeneration = worldObj.getBiomeProvider().loadBlockGeneratorData(biomesForGeneration, x * 16, z * 16, 16, 16);
         terraingen.setBiomesForGeneration(biomesForGeneration);
-//        LogHelper.logger.log(Level.WARN, LogHelper.toGrid(biomesForGeneration, 16, 16));
         
         // This will replace stone with the biome specific stuff
         terraingen.replaceBiomeBlocks(x, z, chunkprimer, this);
-
-        // WHY IS IT NOT WORKING?!?!?!
         
         // Generate caves
         caveGenerator.generate(worldObj, x, z, chunkprimer);
 
         Chunk chunk = new Chunk(worldObj, chunkprimer, x, z);
-        byte[] biomeArray = chunk.getBiomeArray();
         
+        byte[] biomeArray = chunk.getBiomeArray();
         for (int i = 0; i < biomeArray.length; ++i) {
             biomeArray[i] = (byte)Biome.getIdForBiome(biomesForGeneration[i]);
         }

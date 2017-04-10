@@ -49,7 +49,7 @@ public class BlockZergCreep extends ModBlockLayered {
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if(!worldIn.isRemote) {
 			if(worldIn.getLightFromNeighbors(pos.up()) < 4 && worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2) {
-				worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());
+				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
 			} else if(worldIn.getLightFromNeighbors(pos.up()) >= 9) {
 				for(int i = 0; i < 4; i++) {
 					BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);

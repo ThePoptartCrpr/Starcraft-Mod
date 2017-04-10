@@ -226,13 +226,13 @@ public class NormalTerrainGenerator {
         }
     }
 
-    public void replaceBiomeBlocks(int x, int z, ChunkPrimer primer, IChunkGenerator generator, Biome[] biomes) {
+    public void replaceBiomeBlocks(int x, int z, ChunkPrimer primer, IChunkGenerator generator) {
         if (!ForgeEventFactory.onReplaceBiomeBlocks(generator, x, z, primer, this.world)) return;
         this.depthBuffer = this.surfaceNoise.getRegion(this.depthBuffer, (x * 16), (z * 16), 16, 16, 0.0625D, 0.0625D, 1.0D);
 
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
-                Biome biome = biomes[j + i * 16];
+                Biome biome = biomesForGeneration[j + i * 16];
                 biome.genTerrainBlocks(this.world, this.random, primer, x * 16 + i, z * 16 + j, this.depthBuffer[j + i * 16]);
             }
         }

@@ -14,6 +14,8 @@ import scmc.blocks.ModBlocks;
 import scmc.lib.StarcraftConfig;
 import scmc.worldgen.features.CharWorldGenMinable;
 import scmc.worldgen.features.ShakurasWorldGenMinable;
+import scmc.worldgen.structure.StructureZergSpawningPool;
+import scmc.worldgen.structure.StructureZergSpire;
 
 public class SCWorldGen implements IWorldGenerator {
 	private WorldGenerator COPPER_OVERWORLD;
@@ -43,6 +45,9 @@ public class SCWorldGen implements IWorldGenerator {
 	private WorldGenerator RICHMINERAL_SHAKURAS;
 	private WorldGenerator TITANIUM_SHAKURAS;
 	private WorldGenerator URANIUM_SHAKURAS;
+	
+	private WorldGenerator SPAWNING_POOL;
+	private WorldGenerator ZERG_SPIRE;
 	
 	public SCWorldGen() {
 		COPPER_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_COPPER_OW.getDefaultState(), 8);
@@ -76,6 +81,9 @@ public class SCWorldGen implements IWorldGenerator {
 		RICHMINERAL_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_RICHMINERAL_SHAKURAS.getDefaultState(), 8);
 		TITANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
 		URANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_URANIUM_SHAKURAS.getDefaultState(), 8);
+		
+		SPAWNING_POOL = new StructureZergSpawningPool();
+		ZERG_SPIRE = new StructureZergSpire();
 	}
 	
 	@Override
@@ -91,7 +99,7 @@ public class SCWorldGen implements IWorldGenerator {
 		case 1: //End
 			
 		default: //check for OUR dimensions
-			if(world.provider.getDimension() == StarcraftConfig.dimChar) {
+			if (world.provider.getDimension() == StarcraftConfig.dimChar) {
 				runGenerator(COAL_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(COPPER_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(DIAMOND_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
@@ -104,7 +112,9 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
 				
-			}else if(world.provider.getDimension() == StarcraftConfig.dimShakuras){
+				runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 1, 60, 70);
+				runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 1, 60, 70);
+			} else if (world.provider.getDimension() == StarcraftConfig.dimShakuras) {
 				runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(COPPER_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(DIAMOND_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
@@ -116,7 +126,6 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(RICHMINERAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				
 			}
 			
 			break;
