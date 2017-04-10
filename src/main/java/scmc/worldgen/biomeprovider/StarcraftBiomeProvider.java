@@ -13,33 +13,37 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraft.world.storage.WorldInfo;
 import scmc.worldgen.DimensionRegistry;
-import scmc.worldgen.biome.BiomesSC;
-import scmc.worldgen.layer.GenLayerShakuras;
 
-public class ShakurasBiomeProvider extends BiomeProvider {
-	
-    private GenLayer genBiomes;
+public class StarcraftBiomeProvider extends BiomeProvider {
+
+	private GenLayer genBiomes;
     /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
     private GenLayer biomeIndexLayer;
     /** The biome list. */
-    private final BiomeCache biomeCache;
+	private final BiomeCache biomeCache;
+	private Biome defaultBiome;
 
-    protected ShakurasBiomeProvider() {
+    protected StarcraftBiomeProvider() {
     	super();
         biomeCache = new BiomeCache(this);
     }
 
-    private ShakurasBiomeProvider(long seed, WorldType worldTypeIn, String options) {
+    private StarcraftBiomeProvider(long seed, WorldType worldTypeIn, String options, Class<? extends GenLayer> genLayer) {
         this();
-        GenLayer[] agenlayer = GenLayerShakuras.initializeAllBiomeGenerators(seed, worldTypeIn, options);
-        agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
-        
-        genBiomes = agenlayer[0];
-        biomeIndexLayer = agenlayer[1];
+        try {
+			GenLayer[] agenlayer = (GenLayer[]) genLayer.getMethod("initializeAllBiomeGenerators", new Class<?>[] {long.class, WorldType.class, String.class}).invoke(null, new Object[] {seed, worldTypeIn, options});;
+	        agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
+	        
+	        genBiomes = agenlayer[0];
+	        biomeIndexLayer = agenlayer[1];
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
-    public ShakurasBiomeProvider(WorldInfo info) {
-        this(info.getSeed(), DimensionRegistry.SHAKURAS_WT, info.getGeneratorOptions());
+    public StarcraftBiomeProvider(WorldInfo info, Biome defaultBiome, Class<? extends GenLayer> genLayer) {
+        this(info.getSeed(), DimensionRegistry.CHAR_WT, info.getGeneratorOptions(), genLayer);
+        this.defaultBiome = defaultBiome; 
     }
 
     /**
@@ -60,10 +64,8 @@ public class ShakurasBiomeProvider extends BiomeProvider {
         {
             for (int i = 0; i < width * height; ++i)
             {
-                biomes[i] = Biome.getBiome(aint[i], BiomesSC.biomeShakurasDesert);
+                biomes[i] = Biome.getBiome(aint[i], defaultBiome);
             }
-            
-            //System.out.println("Biomes enabled are: "+biomes.toString());
             
             return biomes;
         }
@@ -106,10 +108,11 @@ public class ShakurasBiomeProvider extends BiomeProvider {
 
             for (int i = 0; i < width * length; ++i)
             {
-                listToReuse[i] = Biome.getBiome(aint[i], BiomesSC.biomeShakurasDesert);
+                listToReuse[i] = Biome.getBiome(aint[i], defaultBiome);
             }
 
             return listToReuse;
         }
     }
+	
 }

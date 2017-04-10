@@ -69,66 +69,66 @@ import scmc.worldgen.DimensionRegistry;
 import scmc.worldgen.SCWorldGen;
 import scmc.worldgen.biome.BiomesSC;
 
-@SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
+@SuppressWarnings({"deprecation"})
 public class ClientProxy extends ServerProxy {
 
 	// TODO: get all of this into registry
 	public void registerEntityRenders() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class,
-				new RenderZealot(Minecraft.getMinecraft().getRenderManager(), new ModelZealot(), 0.4f)); // use
+				new RenderZealot<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZealot(), 0.4f)); // use
 																											// deprecated
 																											// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class,
-				new RenderProbe(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f)); // use
+				new RenderProbe<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f)); // use
 																										// deprecated
 																										// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityProtossReaver.class,
-				new RenderProtossReaver(Minecraft.getMinecraft().getRenderManager(), new ModelProtossReaver(), 0.4f)); // use
+				new RenderProtossReaver<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelProtossReaver(), 0.4f)); // use
 																											// deprecated
 																											// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityScarab.class,
-				new RenderScarab(Minecraft.getMinecraft().getRenderManager(), new ModelScarab(), 0.4f)); // use
+				new RenderScarab<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelScarab(), 0.4f)); // use
 																										// deprecated
 																										// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkTemplar.class,
-				new RenderDarkTemplar(Minecraft.getMinecraft().getRenderManager(), new ModelDarkTemplar(), 0.4f)); // use
+				new RenderDarkTemplar<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelDarkTemplar(), 0.4f)); // use
 																													// deprecated
 																													// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
-				new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f)); // use
+				new RenderDarkProbe<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f)); // use
 																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class,
-				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f)); // use
+				new RenderBrutalisk<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f)); // use
 																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityHydralisk.class,
-				new RenderHydralisk(Minecraft.getMinecraft().getRenderManager(), new ModelHydralisk(), 0.4f)); // use
+				new RenderHydralisk<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelHydralisk(), 0.4f)); // use
 																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class,
-				new RenderZergling(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f)); // use
+				new RenderZergling<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f)); // use
 																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class,
-				new RenderLarva(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f)); // use
+				new RenderLarva<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f)); // use
 																										// deprecated
 																										// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarvaCocoon.class,
-				new RenderLarvaCocoon(Minecraft.getMinecraft().getRenderManager(), new ModelLarvaCocoon(), 0.4f)); // use
+				new RenderLarvaCocoon<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelLarvaCocoon(), 0.4f)); // use
 																													// deprecated
 																													// method
 		RenderingRegistry.registerEntityRenderingHandler(EntityBroodling.class,
-				new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f)); // use
+				new RenderBroodling<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f)); // use
 																												// deprecated
 																												// method
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class,
-				new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f)); // use
+				new RenderCivilian<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f)); // use
 																												// deprecated
 																												// method
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpiderMine.class,
-				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f)); // use
+				new RenderSpiderMine<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f)); // use
 																													// deprecated
 																													// method
 	}

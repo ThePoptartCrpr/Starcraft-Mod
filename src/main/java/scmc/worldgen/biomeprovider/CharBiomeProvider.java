@@ -1,18 +1,10 @@
 package scmc.worldgen.biomeprovider;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
 import javax.annotation.Nullable;
-
-import com.google.common.collect.Lists;
 
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
-import net.minecraft.init.Biomes;
 import net.minecraft.util.ReportedException;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeCache;
@@ -24,23 +16,17 @@ import scmc.worldgen.DimensionRegistry;
 import scmc.worldgen.biome.BiomesSC;
 import scmc.worldgen.layer.GenLayerChar;
 
-@SuppressWarnings("unused")
 public class CharBiomeProvider extends BiomeProvider {
 	
-	private Biome biomeGenerator;
-	
-//    public static List<Biome> allowedBiomes = Lists.newArrayList(BiomesSC.biomeAshPlains, BiomesSC.biomeCharCreepInfestation, BiomesSC.biomeMoltenInferno);
     private GenLayer genBiomes;
     /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
     private GenLayer biomeIndexLayer;
     /** The biome list. */
 	private final BiomeCache biomeCache;
-//    private final List<Biome> biomesToSpawnIn;
 
     protected CharBiomeProvider() {
     	super();
         biomeCache = new BiomeCache(this);
-//        biomesToSpawnIn = Lists.newArrayList(allowedBiomes);
     }
 
     private CharBiomeProvider(long seed, WorldType worldTypeIn, String options) {
@@ -76,8 +62,6 @@ public class CharBiomeProvider extends BiomeProvider {
             {
                 biomes[i] = Biome.getBiome(aint[i], BiomesSC.biomeAshPlains);
             }
-            
-            //System.out.println("Biomes enabled are: "+biomes.toString());
             
             return biomes;
         }
@@ -126,13 +110,4 @@ public class CharBiomeProvider extends BiomeProvider {
             return listToReuse;
         }
     }
-    
-    /**
-     * checks given Chunk's Biomes against List of allowed ones
-     */
-    /*@Override
-    public boolean areBiomesViable(int x, int z, int radius, List<Biome> allowed)
-    {
-        return allowed.contains(this.biomeGenerator);
-    }*/
 }

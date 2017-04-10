@@ -14,6 +14,9 @@ import scmc.blocks.ModBlocks;
 import scmc.lib.StarcraftConfig;
 import scmc.worldgen.features.CharWorldGenMinable;
 import scmc.worldgen.features.ShakurasWorldGenMinable;
+import scmc.worldgen.structure.StructureProtossPylonTemplate;
+import scmc.worldgen.structure.StructureProtossWarpGateTemplate;
+import scmc.worldgen.structure.StructureTerranBunker;
 import scmc.worldgen.structure.StructureZergSpawningPool;
 import scmc.worldgen.structure.StructureZergSpire;
 
@@ -48,6 +51,9 @@ public class SCWorldGen implements IWorldGenerator {
 	
 	private WorldGenerator SPAWNING_POOL;
 	private WorldGenerator ZERG_SPIRE;
+	private WorldGenerator TERRAN_BUNKER;
+	private WorldGenerator PROTOSS_PYLON;
+	private WorldGenerator PROTOSS_WARPGATE;
 	
 	public SCWorldGen() {
 		COPPER_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_COPPER_OW.getDefaultState(), 8);
@@ -84,6 +90,9 @@ public class SCWorldGen implements IWorldGenerator {
 		
 		SPAWNING_POOL = new StructureZergSpawningPool();
 		ZERG_SPIRE = new StructureZergSpire();
+		TERRAN_BUNKER = new StructureTerranBunker();
+		PROTOSS_PYLON = new StructureProtossPylonTemplate();
+		PROTOSS_WARPGATE = new StructureProtossWarpGateTemplate();
 	}
 	
 	@Override
@@ -94,6 +103,11 @@ public class SCWorldGen implements IWorldGenerator {
 			runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
 			runGenerator(TITANIUM_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
 			runGenerator(URANIUM_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
+			
+			runGenerator(TERRAN_BUNKER, world, random, chunkX, chunkZ, 1, 60, 70);
+			
+			runGenerator(PROTOSS_PYLON, world, random, chunkX, chunkZ, 1, 60, 70);
+			runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
 		case -1: //Nether
 			
 		case 1: //End
@@ -114,6 +128,8 @@ public class SCWorldGen implements IWorldGenerator {
 				
 				runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 1, 60, 70);
 				runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 1, 60, 70);
+				
+				runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
 			} else if (world.provider.getDimension() == StarcraftConfig.dimShakuras) {
 				runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(COPPER_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
@@ -126,6 +142,9 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(RICHMINERAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
 				runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				
+				runGenerator(PROTOSS_PYLON, world, random, chunkX, chunkZ, 1, 60, 70);
+				runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
 			}
 			
 			break;

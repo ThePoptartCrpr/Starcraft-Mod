@@ -24,7 +24,6 @@ import scmc.blocks.debug.DimPortalChar;
 import scmc.blocks.debug.DimPortalOverworld;
 import scmc.blocks.debug.DimPortalShakuras;
 import scmc.blocks.metablocks.BlockCompressedMetalsT1;
-import scmc.blocks.metablocks.BlockPylonCrystal;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.blocks.ore.OreOWCopper;
 import scmc.blocks.ore.OreOWTitanium;
@@ -101,7 +100,6 @@ public class ModBlocks extends Block {
 
 	public static Block ENERGY_BLOCK;
 	public static Block VOID_ENERGY_BLOCK;
-	public static BlockPylonCrystal CRYSTAL;
 	public static Block WARPGATE_WORMHOLE_CHAR;
 	public static Block WARPGATE_WORMHOLE_OVERWORLD;
 	public static Block WARPGATE_WORMHOLE_SHAKURAS;
@@ -200,7 +198,7 @@ public class ModBlocks extends Block {
 		ORE_COPPER_OW = new OreOWCopper();
 		ORE_TITANIUM_OW = new OreOWTitanium();
 		ORE_URANIUM_OW = new OreOWUranium();
-
+		
 		DIM_PORTAL_OVERWORLD = new DimPortalOverworld();
 		
 		ORE_COAL_CHAR = new OreCharCoal();
@@ -239,15 +237,19 @@ public class ModBlocks extends Block {
 		SAND_SHAKURAS = new BlockShakurasSand();
 		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
 		
-		
+		//Protoss Blocks
 		PROTOSS_WARPPROJECTOR_CHAR = new BlockProtossWarpProjectorC();
 		PROTOSS_WARPPROJECTOR_OVERWORLD = new BlockProtossWarpProjectorO();
 		PROTOSS_WARPPROJECTOR_SHAKURAS = new BlockProtossWarpProjectorS();
 		
+		PROTOSS_ENERGY_CHANNEL = new BlockProtossEnergyChannel();
+		PROTOSS_ENERGY_STABILIZER = new BlockProtossEnergyStabilizer();
+		PROTOSS_DARK_ENERGY_CHANNEL = new BlockProtossEnergyChannelDark();
+		PROTOSS_DARK_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerDark();
 		
+		//Zerg Blocks
 		ZERG_CREEP = new BlockZergCreep();
 		KERATIN_CHUNK = new BlockKeratinChunk();
-		
 		
 		VESPENE_GEYSER_BASE = new BlockVespeneGeyserBase();
 		VESPENE_GEYSER_BASE_CHAR = new BlockVespeneGeyserBaseChar();
@@ -397,6 +399,18 @@ public class ModBlocks extends Block {
 		GameRegistry.register(PROTOSS_WARPPROJECTOR_SHAKURAS);
 		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_S.getRegistryRL()));
 		
+		GameRegistry.register(PROTOSS_ENERGY_CHANNEL);
+		GameRegistry.register(new ItemBlock(PROTOSS_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_ENERGY_CHANNEL.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_ENERGY_STABILIZER);
+		GameRegistry.register(new ItemBlock(PROTOSS_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_ENERGY_STABILIZER.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_DARK_ENERGY_CHANNEL);
+		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_CHANNEL.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_DARK_ENERGY_STABILIZER);
+		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getRegistryRL()));
+		
 		
 		GameRegistry.register(ZERG_CREEP);
 		GameRegistry.register(new ModItemLayered(ZERG_CREEP).setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL()));
@@ -512,6 +526,11 @@ public class ModBlocks extends Block {
 		registerModel(PROTOSS_WARPPROJECTOR_CHAR);
 		registerModel(PROTOSS_WARPPROJECTOR_OVERWORLD);
 		registerModel(PROTOSS_WARPPROJECTOR_SHAKURAS);
+		
+		registerModel(PROTOSS_ENERGY_CHANNEL);
+		registerModel(PROTOSS_ENERGY_STABILIZER);
+		registerModel(PROTOSS_DARK_ENERGY_CHANNEL);
+		registerModel(PROTOSS_DARK_ENERGY_STABILIZER);
 		
 		//Protoss Cores
 		registerModel(CORE_PYLON_VOID);

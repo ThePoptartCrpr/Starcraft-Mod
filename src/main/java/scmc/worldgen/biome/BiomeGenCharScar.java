@@ -35,7 +35,6 @@ public class BiomeGenCharScar extends BiomesSC {
         genBiomeTerrainChar(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
     }
 
-	@SuppressWarnings("deprecation")
 	public final void genBiomeTerrainChar(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 
 		int seaLevel = worldIn.getSeaLevel();

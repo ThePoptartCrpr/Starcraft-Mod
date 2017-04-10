@@ -102,5 +102,4 @@ public class BlockProtossMetalT1 extends ModBlocks implements IMetaBlockName {
 	public String getSpecialName(ItemStack stack) {
 		return ProtossMetalType.values()[stack.getItemDamage()].getName();
 	}
-
 }

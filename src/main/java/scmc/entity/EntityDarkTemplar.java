@@ -29,7 +29,6 @@ import scmc.items.ModItems;
 import scmc.items.weapons.ModWeapons;
 import scmc.lib.StarcraftConfig;
 
-@SuppressWarnings({"rawtypes", "unchecked"})
 public class EntityDarkTemplar extends EntityProtossMob {
 	World world;
 	public EntityDarkTemplar(World world) {
@@ -62,15 +61,15 @@ public class EntityDarkTemplar extends EntityProtossMob {
     {
     	this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] {EntityPigZombie.class}));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZergMob.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranMob.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityZergMob>(this, EntityZergMob.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
         
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZergPassive.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityTerranPassive.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityZergPassive>(this, EntityZergPassive.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
         
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityVillager>(this, EntityVillager.class, false));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityIronGolem>(this, EntityIronGolem.class, true));
     }
     
 	@Override
