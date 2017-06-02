@@ -61,8 +61,7 @@ public class SCWorldGen implements IWorldGenerator {
 		URANIUM_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_URANIUM_OW.getDefaultState(), 8);
 		
 		TITANIUM_CHAR = new CharWorldGenMinable(ModBlocks.ORE_TITANIUM_CHAR.getDefaultState(), 8);
-		//ALIEN_CHAR = new CharWorldGenMinable(ModBlocks.ORE_ALIEN_CHAR.getDefaultState(), 8);
-		COAL_CHAR = new CharWorldGenMinable(ModBlocks.ORE_COAL_CHAR.getDefaultState(), 8);
+		COAL_CHAR = new CharWorldGenMinable(ModBlocks.ORE_COAL_CHAR.getDefaultState(), 16);
 		COPPER_CHAR = new CharWorldGenMinable(ModBlocks.ORE_COPPER_CHAR.getDefaultState(), 8);
 		DIAMOND_CHAR = new CharWorldGenMinable(ModBlocks.ORE_DIAMOND_CHAR.getDefaultState(), 8);
 		GOLD_CHAR = new CharWorldGenMinable(ModBlocks.ORE_GOLD_CHAR.getDefaultState(), 8);
@@ -75,8 +74,7 @@ public class SCWorldGen implements IWorldGenerator {
 		
 	
 		TITANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
-		//ALIEN_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_ALIEN_SHAKURAS.getDefaultState(), 8);
-		COAL_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_COAL_SHAKURAS.getDefaultState(), 8);
+		COAL_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_COAL_SHAKURAS.getDefaultState(), 16);
 		COPPER_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_COPPER_SHAKURAS.getDefaultState(), 8);
 		DIAMOND_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_DIAMOND_SHAKURAS.getDefaultState(), 8);
 		GOLD_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_GOLD_SHAKURAS.getDefaultState(), 8);
@@ -101,8 +99,8 @@ public class SCWorldGen implements IWorldGenerator {
 		switch (world.provider.getDimension()) {
 		case 0: //Overworld
 			runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
-			runGenerator(TITANIUM_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
-			runGenerator(URANIUM_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
+			runGenerator(TITANIUM_OVERWORLD, world, random, chunkX, chunkZ, 9, 4, 28);
+			runGenerator(URANIUM_OVERWORLD, world, random, chunkX, chunkZ, 4, 0, 20);
 			
 			runGenerator(TERRAN_BUNKER, world, random, chunkX, chunkZ, 1, 60, 70);
 			
