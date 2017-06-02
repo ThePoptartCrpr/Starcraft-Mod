@@ -19,26 +19,26 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenCaves;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import scmc.entity.EntityZealot;
-import scmc.worldgen.NormalTerrainGenerator;
+import scmc.worldgen.CharTerrainGenerator;
+import scmc.worldgen.features.CharGenCaves;
 
 public class ChunkProviderChar implements IChunkGenerator {
 	
 	private final World worldObj;
     private Random random;
     private Biome[] biomesForGeneration;
-
+    
     private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityZealot.class, 100, 2, 2));
 
-    private MapGenBase caveGenerator = new MapGenCaves();
-    private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();
+    private MapGenBase caveGenerator = new CharGenCaves();
+    private CharTerrainGenerator terraingen = new CharTerrainGenerator();
 
     public ChunkProviderChar(World worldObj) {
         this.worldObj = worldObj;
         long seed = worldObj.getSeed();
-        this.random = new Random((seed + 516) * 314);
+        random = new Random((seed + 516) * 314);
         terraingen.setup(worldObj, random);
         caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
     }
@@ -48,24 +48,25 @@ public class ChunkProviderChar implements IChunkGenerator {
         ChunkPrimer chunkprimer = new ChunkPrimer();
 
         // Setup biomes for terraingen
-        this.biomesForGeneration = this.worldObj.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 4 - 2, z * 4 - 2, 10, 10);
+        biomesForGeneration = worldObj.getBiomeProvider().getBiomesForGeneration(biomesForGeneration, x * 4 - 2, z * 4 - 2, 10, 10);
         terraingen.setBiomesForGeneration(biomesForGeneration);
         terraingen.generate(x, z, chunkprimer);
-
-        // Setup biomes again for actual biome decoration
-        this.biomesForGeneration = this.worldObj.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 16, z * 16, 16, 16);
         
-        // This will replace stone with the biome specific stones
-        terraingen.replaceBiomeBlocks(x, z, chunkprimer, this, biomesForGeneration);
-
+        // Setup biomes again for actual biome decoration
+        biomesForGeneration = worldObj.getBiomeProvider().loadBlockGeneratorData(biomesForGeneration, x * 16, z * 16, 16, 16);
+        terraingen.setBiomesForGeneration(biomesForGeneration);
+        
+        // This will replace stone with the biome specific stuff
+        terraingen.replaceBiomeBlocks(x, z, chunkprimer, this);
+        
         // Generate caves
-        this.caveGenerator.generate(this.worldObj, x, z, chunkprimer);
+        caveGenerator.generate(worldObj, x, z, chunkprimer);
 
-        Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
-
+        Chunk chunk = new Chunk(worldObj, chunkprimer, x, z);
+        
         byte[] biomeArray = chunk.getBiomeArray();
         for (int i = 0; i < biomeArray.length; ++i) {
-            biomeArray[i] = (byte)Biome.getIdForBiome(this.biomesForGeneration[i]);
+            biomeArray[i] = (byte)Biome.getIdForBiome(biomesForGeneration[i]);
         }
 
         chunk.generateSkylightMap();
@@ -77,13 +78,13 @@ public class ChunkProviderChar implements IChunkGenerator {
         int i = x * 16;
         int j = z * 16;
         BlockPos blockpos = new BlockPos(i, 0, j);
-        Biome biome = this.worldObj.getBiomeGenForCoords(blockpos.add(16, 0, 16));
+        Biome biome = worldObj.getBiomeGenForCoords(blockpos.add(16, 0, 16));
 
         // Add biome decorations (like flowers, grass, trees, ...)
-        biome.decorate(this.worldObj, this.random, blockpos);
+        biome.decorate(worldObj, random, blockpos);
 
         // Make sure animals appropriate to the biome spawn here when the chunk is generated
-        WorldEntitySpawner.performWorldGenSpawning(this.worldObj, biome, i + 8, j + 8, 16, 16, this.random);
+        WorldEntitySpawner.performWorldGenSpawning(worldObj, biome, i + 8, j + 8, 16, 16, random);
     }
 
     @Override

@@ -102,13 +102,7 @@ public class BlockMineralField extends BlockContainer {
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return THIS_AABB;
     }
-
-	/**
-	 * Creates a new tile entity instance that is specific to this block
-	 * @param world the world
-	 * @param meta a metadata value. In this case, it could be used to apply the tile entity to a
-	 * specific sub block, were this block a meta based block
-	 */
+	
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
 		return new TileEntityBlockMineralField();

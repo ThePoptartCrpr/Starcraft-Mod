@@ -31,15 +31,14 @@ public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
 		}
 	}
 
+	protected void preRenderCallback(EntityDarkTemplar entitylivingbaseIn, float partialTickTime)
+    {
+		GL11.glScalef(0.70F, 0.70F, 0.70F);
+    	GL11.glRotatef(28F, 0F, 1F, 0F);
+    }
+	
 	@Override
 	protected ResourceLocation getEntityTexture(EntityDarkTemplar entity) {
 		return DARK_TEMPLAR_TEXTURES;
-	}
-	
-	//TODO: Fix this
-	protected void preRenderCallback(T entitylivingbaseIn, float partialTickTime) {
-		GL11.glScalef(0.70F, 0.70F, 0.70F);
-		GL11.glRotatef(28F, 0F, 1F, 0F);
-		GL11.glColor4f(1.0f, 1.0f, 1.0f, 0.7f);
 	}
 }

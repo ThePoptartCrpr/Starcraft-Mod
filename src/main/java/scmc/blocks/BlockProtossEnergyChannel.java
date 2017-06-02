@@ -2,7 +2,6 @@ package scmc.blocks;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -16,7 +15,7 @@ import scmc.lib.Reference;
  * Copyright 2017 the Starcraft Minecraft (SCMC) mod team
  * @author He of a Former Time
  */
-public class BlockProtossEnergyChannel extends Block {
+public class BlockProtossEnergyChannel extends ModBlocks {
 	public BlockProtossEnergyChannel() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_ENERGY_CHANNEL.getUnlocalizedName());

@@ -121,6 +121,35 @@ public class ItemEnumHandler {
 		}
 	}
 	
+	public static enum CreditType implements IStringSerializable {
+		BRONZE("bronze", 0),
+		SILVER("silver", 1),
+		GOLD("gold", 2),
+		PLATINUM("platinum", 3);
+		
+		private int ID;
+		private String name;
+		
+		private CreditType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
+	
 	
 	public static enum EssenceType implements IStringSerializable {
 		PROTOSS("protoss", 0),
@@ -331,6 +360,77 @@ public class ItemEnumHandler {
 		private String name;
 		
 		private CarapaceType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
+	
+	public static enum MutaliskWingType implements IStringSerializable {
+		PURPLE("purple", 0),
+		BROWN("brown", 1),
+		PINK("pink", 2),
+		BLUE("blue", 3),
+		CYAN("cyan", 4),
+		GRAY("gray", 5),
+		GREEN("green", 6),
+		LIGHT_BLUE("lightblue", 7),
+		LIME("lime", 8),
+		MAGENTA("magenta", 9),
+		ORANGE("orange", 10),
+		RED("red", 11),
+		SILVER("silver", 12),
+		WHITE("white", 13),
+		YELLOW("yellow", 14);
+		
+		private int ID;
+		private String name;
+		
+		private MutaliskWingType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
+	
+	public static enum SpawnerType implements IStringSerializable {
+		PYLON("pylon", 0),
+		NEXUS("nexus",1),
+		ASSIMILATOR("assimilator", 2),
+		WARPGATE("warpgate", 3),
+		CYBERNETICSCORE("cyberneticscore", 4),
+		FORGE("forge", 5);
+		
+		private int ID;
+		private String name;
+		
+		private SpawnerType(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}

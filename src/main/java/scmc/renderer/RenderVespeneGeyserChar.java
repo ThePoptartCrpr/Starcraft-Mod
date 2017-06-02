@@ -11,7 +11,7 @@ import scmc.model.ModelVespeneGeyserChar;
 public class RenderVespeneGeyserChar<T> extends TileEntitySpecialRenderer {
 
 	private static final ResourceLocation texture = new ResourceLocation(
-			Reference.RL_BASE + "textures/model/vespeneGeyserChar.png"); //Still not done
+			Reference.RL_BASE + "textures/models/vespeneGeyserChar.png"); //Still not done
 
 	private ModelVespeneGeyserChar model;
 

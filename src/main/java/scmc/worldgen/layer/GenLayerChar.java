@@ -2,6 +2,7 @@ package scmc.worldgen.layer;
 
 import net.minecraft.world.WorldType;
 import net.minecraft.world.gen.layer.GenLayer;
+import net.minecraft.world.gen.layer.GenLayerRiverInit;
 import net.minecraft.world.gen.layer.GenLayerVoronoiZoom;
 import net.minecraft.world.gen.layer.GenLayerZoom;
 
@@ -10,18 +11,26 @@ public class GenLayerChar extends GenLayer {
 		super(par1);
 	}
 
-	public static GenLayer[] initializeAllBiomeGenerators(long seed, WorldType type, String str) {
+	public static GenLayer[] initializeAllBiomeGenerators(long seed, WorldType type, String settingsStr) {
+		int biomeSize = 6;
+
 		GenLayer biomes = new GenLayerCharBiomes(1L);
-		biomes = new GenLayerZoom(1000L, biomes);
-		biomes = new GenLayerZoom(1001L, biomes);
-		biomes = new GenLayerZoom(1002L, biomes);
-		biomes = new GenLayerZoom(1003L, biomes);
-		biomes = new GenLayerZoom(1004L, biomes);
-		biomes = new GenLayerZoom(1005L, biomes);
-		GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, biomes);
-		biomes.initWorldGenSeed(seed);
+		
+		GenLayer scars = GenLayerZoom.magnify(1000L, biomes, 0);
+		scars = new GenLayerRiverInit(10L, scars);
+		scars = GenLayerZoom.magnify(1000L, scars, 2);
+		scars = GenLayerZoom.magnify(1000L, scars, biomeSize-2);
+		scars = new GenLayerCharScars(1L, scars);
+		
+		for (int i = 0; i < biomeSize; i++) {
+			biomes = new GenLayerZoom((long)(1000+i), biomes);
+		}
+		
+		GenLayer charmix = new GenLayerCharMix(100L, biomes, scars);
+		GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, charmix);
+		charmix.initWorldGenSeed(seed);
 		genlayervoronoizoom.initWorldGenSeed(seed);
-		return new GenLayer[] { biomes, genlayervoronoizoom };
+		return new GenLayer[] { charmix, genlayervoronoizoom };
 	}
 
 	@Override

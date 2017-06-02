@@ -1,6 +1,5 @@
 package scmc.blocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import scmc.StarcraftCreativeTabs;
@@ -11,7 +10,7 @@ import scmc.lib.Reference;
  * Copyright 2017 the Starcraft Minecraft (SCMC) mod team
  * @author He of a Former Time
  */
-public class BlockCharCobblestone extends Block {
+public class BlockCharCobblestone extends ModBlocks {
 	public BlockCharCobblestone() {
 		super(Material.ROCK);
 		setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_CHAR.getRegistryName());

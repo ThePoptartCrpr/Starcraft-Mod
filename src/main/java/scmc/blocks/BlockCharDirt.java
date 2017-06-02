@@ -1,6 +1,5 @@
 package scmc.blocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import scmc.StarcraftCreativeTabs;
@@ -11,7 +10,7 @@ import scmc.lib.Reference;
  * Copyright 2017 the Starcraft Minecraft (SCMC) mod team
  * @author He of a Former Time
  */
-public class BlockCharDirt extends Block {
+public class BlockCharDirt extends ModBlocks {
 	public BlockCharDirt() {
 		super(Material.GROUND);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getUnlocalizedName());

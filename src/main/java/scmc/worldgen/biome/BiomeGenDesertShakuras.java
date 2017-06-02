@@ -2,13 +2,11 @@ package scmc.worldgen.biome;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
-import scmc.blocks.BlockShakurasSand;
 import scmc.blocks.ModBlocks;
 
 //FIXME: Copy over one of the Char biomes

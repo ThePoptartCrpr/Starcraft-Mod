@@ -20,8 +20,10 @@ import scmc.blocks.coreblocks.BlockCorePylonVoid;
 import scmc.blocks.coreblocks.BlockCoreWarpGateDark;
 import scmc.blocks.coreblocks.BlockCoreWarpGateKhalai;
 import scmc.blocks.coreblocks.BlockCoreWarpGateVoid;
+import scmc.blocks.debug.DimPortalChar;
+import scmc.blocks.debug.DimPortalOverworld;
+import scmc.blocks.debug.DimPortalShakuras;
 import scmc.blocks.metablocks.BlockCompressedMetalsT1;
-import scmc.blocks.metablocks.BlockPylonCrystal;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.blocks.ore.OreOWCopper;
 import scmc.blocks.ore.OreOWTitanium;
@@ -48,9 +50,6 @@ import scmc.blocks.oreshakuras.OreShakurasRedstone;
 import scmc.blocks.oreshakuras.OreShakurasRichMineral;
 import scmc.blocks.oreshakuras.OreShakurasTitanium;
 import scmc.blocks.oreshakuras.OreShakurasUranium;
-import scmc.debug.DimPortalChar;
-import scmc.debug.DimPortalOverworld;
-import scmc.debug.DimPortalShakuras;
 import scmc.items.metaitems.ModItemLayered;
 import scmc.lib.Reference;
 
@@ -101,7 +100,6 @@ public class ModBlocks extends Block {
 
 	public static Block ENERGY_BLOCK;
 	public static Block VOID_ENERGY_BLOCK;
-	public static BlockPylonCrystal CRYSTAL;
 	public static Block WARPGATE_WORMHOLE_CHAR;
 	public static Block WARPGATE_WORMHOLE_OVERWORLD;
 	public static Block WARPGATE_WORMHOLE_SHAKURAS;
@@ -161,6 +159,7 @@ public class ModBlocks extends Block {
 	public static Block COBBLESTONE_CHAR;
 	public static Block ASH_CHAR;
 	public static Block MAGMA_CHAR;
+	public static Block GRAVEL_CHAR;
 
 	public static Block dirtTarsonis;
 	public static Block stoneTarsonis;
@@ -200,7 +199,7 @@ public class ModBlocks extends Block {
 		ORE_COPPER_OW = new OreOWCopper();
 		ORE_TITANIUM_OW = new OreOWTitanium();
 		ORE_URANIUM_OW = new OreOWUranium();
-
+		
 		DIM_PORTAL_OVERWORLD = new DimPortalOverworld();
 		
 		ORE_COAL_CHAR = new OreCharCoal();
@@ -220,6 +219,7 @@ public class ModBlocks extends Block {
 		MAGMA_CHAR = new BlockCharMagma();
 		ASH_CHAR = new BlockAsh();
 		DIRT_CHAR = new BlockCharDirt();
+		GRAVEL_CHAR = new BlockCharGravel();
 		DIM_PORTAL_CHAR = new DimPortalChar();
 		
 		ORE_COAL_SHAKURAS = new OreShakurasCoal();
@@ -239,19 +239,25 @@ public class ModBlocks extends Block {
 		SAND_SHAKURAS = new BlockShakurasSand();
 		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
 		
-		
+		//Protoss Blocks
 		PROTOSS_WARPPROJECTOR_CHAR = new BlockProtossWarpProjectorC();
 		PROTOSS_WARPPROJECTOR_OVERWORLD = new BlockProtossWarpProjectorO();
 		PROTOSS_WARPPROJECTOR_SHAKURAS = new BlockProtossWarpProjectorS();
 		
+		PROTOSS_ENERGY_CHANNEL = new BlockProtossEnergyChannel();
+		PROTOSS_ENERGY_STABILIZER = new BlockProtossEnergyStabilizer();
+		PROTOSS_DARK_ENERGY_CHANNEL = new BlockProtossEnergyChannelDark();
+		PROTOSS_DARK_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerDark();
 		
+		//Zerg Blocks
 		ZERG_CREEP = new BlockZergCreep();
 		KERATIN_CHUNK = new BlockKeratinChunk();
-		
 		
 		VESPENE_GEYSER_BASE = new BlockVespeneGeyserBase();
 		VESPENE_GEYSER_BASE_CHAR = new BlockVespeneGeyserBaseChar();
 		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
+		
+		VESPENE_GEYSER = new BlockVespeneGeyser();
 		
 		//Core Blocks
 		CORE_PYLON_VOID = new BlockCorePylonVoid();
@@ -336,6 +342,9 @@ public class ModBlocks extends Block {
 		GameRegistry.register(DIRT_CHAR);
 		GameRegistry.register(new ItemBlock(DIRT_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getRegistryRL()));
 		
+		GameRegistry.register(GRAVEL_CHAR);
+		GameRegistry.register(new ItemBlock(GRAVEL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getRegistryRL()));
+		
 		GameRegistry.register(DIM_PORTAL_CHAR);
 		GameRegistry.register(new ItemBlock(DIM_PORTAL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL()));
 		
@@ -395,6 +404,18 @@ public class ModBlocks extends Block {
 		GameRegistry.register(PROTOSS_WARPPROJECTOR_SHAKURAS);
 		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_S.getRegistryRL()));
 		
+		GameRegistry.register(PROTOSS_ENERGY_CHANNEL);
+		GameRegistry.register(new ItemBlock(PROTOSS_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_ENERGY_CHANNEL.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_ENERGY_STABILIZER);
+		GameRegistry.register(new ItemBlock(PROTOSS_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_ENERGY_STABILIZER.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_DARK_ENERGY_CHANNEL);
+		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_CHANNEL.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_DARK_ENERGY_STABILIZER);
+		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getRegistryRL()));
+		
 		
 		GameRegistry.register(ZERG_CREEP);
 		GameRegistry.register(new ModItemLayered(ZERG_CREEP).setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL()));
@@ -411,6 +432,10 @@ public class ModBlocks extends Block {
 		
 		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
 		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
+		
+		GameRegistry.register(VESPENE_GEYSER);
+		GameRegistry.register(new ItemBlock(VESPENE_GEYSER).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER.getRegistryRL()));
+		
 		
 		GameRegistry.register(CORE_PYLON_VOID);
 		GameRegistry.register(new ItemBlock(CORE_PYLON_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL()));
@@ -478,6 +503,7 @@ public class ModBlocks extends Block {
 		registerModel(ASH_CHAR);
 		registerModel(MAGMA_CHAR);
 		registerModel(DIRT_CHAR);
+		registerModel(GRAVEL_CHAR);
 		
 		//Shakuras Ores
 		registerModel(ORE_COAL_SHAKURAS);
@@ -506,6 +532,11 @@ public class ModBlocks extends Block {
 		registerModel(PROTOSS_WARPPROJECTOR_CHAR);
 		registerModel(PROTOSS_WARPPROJECTOR_OVERWORLD);
 		registerModel(PROTOSS_WARPPROJECTOR_SHAKURAS);
+		
+		registerModel(PROTOSS_ENERGY_CHANNEL);
+		registerModel(PROTOSS_ENERGY_STABILIZER);
+		registerModel(PROTOSS_DARK_ENERGY_CHANNEL);
+		registerModel(PROTOSS_DARK_ENERGY_STABILIZER);
 		
 		//Protoss Cores
 		registerModel(CORE_PYLON_VOID);
@@ -537,6 +568,8 @@ public class ModBlocks extends Block {
 		//Fluid Registration
 		registerFluid(FLUID_ACID);
 		registerFluid(FLUID_BLOOD);
+		
+		((BlockVespeneGeyser) VESPENE_GEYSER).initModel();
 		
 		ModMetaBlocks.registerRenders();
 		//BlockRenderRegister.registerBlockRenderer();

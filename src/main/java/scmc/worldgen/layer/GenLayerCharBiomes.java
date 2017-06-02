@@ -13,13 +13,13 @@ public class GenLayerCharBiomes extends GenLayer {
 	}
 
 	@Override
-	public int[] getInts(int x, int z, int width, int depth) {
-		int[] dest = IntCache.getIntCache(width * depth);
-		for (int dz = 0; dz < depth; dz++) {
+	public int[] getInts(int x, int z, int width, int length) {
+		int[] dest = IntCache.getIntCache(width * length); //Simply allocates us some memory.
+		for (int dz = 0; dz < length; dz++) {
 			for (int dx = 0; dx < width; dx++) {
 				this.initChunkSeed(dx + x, dz + z);
 //				dest[(dx + dz * width)] = this.dimBiomes[nextInt(this.dimBiomes.length)].getIdForBiome(this.dimBiomes[dz]);
-				dest[(dx + dz * width)] = Biome.getIdForBiome(/*dimBiomes[dz]*/dimBiomes[nextInt(this.dimBiomes.length)]);
+				dest[(dx + dz * width)] = Biome.getIdForBiome(dimBiomes[nextInt(this.dimBiomes.length)]);
 			}
 		}
 		return dest;

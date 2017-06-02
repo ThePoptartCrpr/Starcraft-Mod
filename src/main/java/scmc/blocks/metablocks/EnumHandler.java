@@ -229,4 +229,71 @@ public class EnumHandler {
 			return getName();
 		}
 	}
+	
+	public static enum NeosteelMetalType implements IStringSerializable {
+		BASE("base", 0),
+		FRAME("frame", 1);
+		
+		private int ID;
+		private String name;
+		
+		private NeosteelMetalType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
+	
+	public static enum ParisteelMetalType implements IStringSerializable {
+		PURPLE("purple", 0),
+		BROWN("brown", 1),
+		PINK("pink", 2),
+		BLUE("blue", 3),
+		CYAN("cyan", 4),
+		GRAY("gray", 5),
+		GREEN("green", 6),
+		LIGHT_BLUE("lightblue", 7),
+		LIME("lime", 8),
+		MAGENTA("magenta", 9),
+		ORANGE("orange", 10),
+		RED("red", 11),
+		SILVER("silver", 12),
+		WHITE("white", 13),
+		YELLOW("yellow", 14);
+		
+		private int ID;
+		private String name;
+		
+		private ParisteelMetalType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
 }

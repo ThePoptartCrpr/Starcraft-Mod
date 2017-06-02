@@ -54,7 +54,7 @@ public class BiomeGenAshPlains extends BiomesSC {
 
                 if (origState.getMaterial() == Material.AIR) { //If we're still in the air...
                     j = -1;
-                } else if (origState.getBlock() == Blocks.STONE) { //If we've hit the ground...
+                } else if (origState.getBlock() == ModBlocks.STONE_CHAR) { //If we've hit the ground...
                     if (j == -1) { //If we were just in the air...
                         if (randHeight <= 0) {
                             topBlock = AIR;
@@ -84,8 +84,6 @@ public class BiomeGenAshPlains extends BiomesSC {
                     } else if (j > 0) {
                         --j;
                         chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, fillerBlock);
-                    } else if (j == 0) {
-                    	chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, ModBlocks.STONE_CHAR.getDefaultState());
                     }
                 }
             }
