@@ -65,7 +65,7 @@ public class Library {
 	 * @param pos the anchor {@link BlockPos}
 	 * @param sideLength the length of the cube's
 	 * sides
-	 * @return ArrayList of all the BlockPos
+	 * @return {@link ArrayList} of all the BlockPos
 	 * instances that contain {@code blockState}
 	 */
 	public static ArrayList<BlockPos> checkCube(World world, IBlockState blockState, BlockPos pos, int sideLength) {
@@ -76,7 +76,7 @@ public class Library {
 				for(int z = -sideLength/2; z < sideLength/2 + 1; z++) {
 					BlockPos currPos = pos.add(x, y, z);
 					
-					if(world.getBlockState(currPos) == blockState) {
+					if(world.getBlockState(currPos).equals(blockState)) {
 						posList.add(currPos);
 					}
 				}

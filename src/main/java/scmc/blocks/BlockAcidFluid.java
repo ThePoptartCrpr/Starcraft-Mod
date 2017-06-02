@@ -18,8 +18,7 @@ import scmc.lib.Reference;
  */
 public class BlockAcidFluid extends BlockFluidClassic {
 	
-	@SuppressWarnings("unused")
-	public BlockAcidFluid(/*Fluid fluid, Material material*/) {
+	public BlockAcidFluid() {
 		super(ModFluids.acid, Material.WATER);
 		setCreativeTab(null);
 		setUnlocalizedName(Reference.ModBlocks.FLUID_ACID.getUnlocalizedName());
