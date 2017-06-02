@@ -38,7 +38,7 @@ import scmc.entity.passive.EntityTerranPassive;
 import scmc.lib.StarcraftConfig;
 
 /**
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class EntityBrutalisk extends EntityZergMob {
 	public EntityBrutalisk(World world) {

@@ -23,7 +23,7 @@ import scmc.tileentity.TileEntityBlockRichMineralField;
 /**
  * Rich Mineral Field block.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class BlockRichMineralField extends BlockContainer {
 

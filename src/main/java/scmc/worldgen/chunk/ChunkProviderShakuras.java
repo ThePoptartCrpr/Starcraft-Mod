@@ -104,7 +104,16 @@ public class ChunkProviderShakuras implements IChunkGenerator
 
     @Override
     public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
-            return mobs;
+    	// If you want normal creatures appropriate for this biome then
+    			// uncomment the
+    			// following two lines:
+    			// Biome biome = this.worldObj.getBiome(pos);
+    			// return biome.getSpawnableList(creatureType);
+
+    			if (creatureType == EnumCreatureType.MONSTER) {
+    				return mobs;
+    			}
+    			return ImmutableList.of();
     }
 
     @Nullable

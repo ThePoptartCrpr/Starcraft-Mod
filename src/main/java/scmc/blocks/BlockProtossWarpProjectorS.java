@@ -15,7 +15,7 @@ import scmc.lib.Reference;
 /**
  * Protoss Shakuras Warp Projector block.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class BlockProtossWarpProjectorS extends ModBlocks {
 	public BlockProtossWarpProjectorS() {

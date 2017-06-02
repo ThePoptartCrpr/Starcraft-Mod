@@ -43,7 +43,7 @@ import scmc.lib.StarcraftConfig;
 
 /**
  * Work in progress
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	public EntityHydralisk(World world) {

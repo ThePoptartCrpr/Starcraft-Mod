@@ -24,7 +24,7 @@ public class WorldProviderShakuras extends WorldProvider {
     }
 
     /**
-     * A Message to display to the user when they transfer out of this dismension.
+     * A Message to display to the user when they transfer out of this dimension.
      *
      * @return The message to be displayed
      */

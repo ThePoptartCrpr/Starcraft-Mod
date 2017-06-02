@@ -8,7 +8,7 @@ import scmc.lib.Reference;
 /**
  * Protoss Energy Stabilizer block.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class BlockProtossEnergyStabilizer extends ModBlocks {
 	public BlockProtossEnergyStabilizer() {

@@ -14,7 +14,7 @@ import scmc.lib.Reference;
  * Ash block. Thin layer of ash that generates commonly
  * on Char.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class BlockAsh extends ModBlockLayered {
 	

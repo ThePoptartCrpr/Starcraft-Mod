@@ -11,7 +11,7 @@ import scmc.lib.Reference;
 /**
  * Blood fluid.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class BlockBloodFluid extends BlockFluidClassic {
 	public BlockBloodFluid(/*Fluid fluid, Material material*/) {

@@ -7,7 +7,7 @@ import scmc.lib.Reference;
 /**
  * Keratin Chunk block.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class BlockKeratinChunk extends ModBlocks {
 	public BlockKeratinChunk() {

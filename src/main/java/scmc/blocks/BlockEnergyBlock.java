@@ -7,7 +7,7 @@ import scmc.lib.Reference;
 /**
  * Energy block.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * @author He of a Former Time
  */
 public class BlockEnergyBlock extends ModBlocks {
 	public BlockEnergyBlock() {
