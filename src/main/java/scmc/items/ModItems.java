@@ -11,6 +11,7 @@ import scmc.fluids.ModFluids;
 import scmc.items.armour.ModArmour;
 import scmc.items.metaitems.ItemBullet;
 import scmc.items.metaitems.ItemC14GaussRifleParts;
+import scmc.items.metaitems.ItemCredit;
 import scmc.items.metaitems.ItemCrystal;
 import scmc.items.metaitems.ItemDust;
 import scmc.items.metaitems.ItemEnergy;
@@ -20,8 +21,10 @@ import scmc.items.metaitems.ItemIngotT1;
 import scmc.items.metaitems.ItemIngotT2;
 import scmc.items.metaitems.ItemIngotT3;
 import scmc.items.metaitems.ItemMineralShard;
+import scmc.items.metaitems.ItemMutaliskWing;
 import scmc.items.metaitems.ItemProtossCoordinates;
 import scmc.items.metaitems.ItemPsiBladeFocuserUncharged;
+import scmc.items.metaitems.ItemSpawner;
 import scmc.items.metaitems.ItemVespene;
 import scmc.items.metaitems.ItemZergCarapace;
 import scmc.items.tools.ModTools;
@@ -43,6 +46,8 @@ public class ModItems extends Item {
 	public static Item protossArtifact;
 	public static Item crystal;
 	
+	public static Item SPAWNER;
+	
 	public static Item essence;
 	public static Item c14Parts;
 
@@ -54,10 +59,14 @@ public class ModItems extends Item {
 
 	public static Item C14GaussRifle;
 	public static Item bullet;
+	public static Item CREDIT;
 	
 	public static Item zergCarapace;
 	public static Item creepResin;
 	public static Item organicTissue;
+	public static Item HYDRALISK_NEEDLE;
+	public static Item MUTALISK_WING;
+	public static Item MUTALISK_TOOTH;
 
 //	public static Item acidBucket;
 //	public static Item bloodBucket;
@@ -80,10 +89,16 @@ public class ModItems extends Item {
 		crystal = new ItemCrystal();
 		c14Parts = new ItemC14GaussRifleParts();
 		bullet = new ItemBullet();
+		CREDIT = new ItemCredit();
 		psiBladeFocuserUncharged = new ItemPsiBladeFocuserUncharged();
 		zergCarapace = new ItemZergCarapace();
 		coord = new ItemProtossCoordinates();
 		creepResin = new ItemCreepResin();
+		HYDRALISK_NEEDLE = new ItemHydraliskNeedle();
+		MUTALISK_WING = new ItemMutaliskWing();
+		MUTALISK_TOOTH = new ItemMutaliskTooth();
+		
+		SPAWNER = new ItemSpawner();
 				
 		ModArmour.init();
 		ModWeapons.init();
@@ -113,10 +128,16 @@ public class ModItems extends Item {
 		registerItem(crystal);
 		registerItem(c14Parts);
 		registerItem(bullet);
+		registerItem(CREDIT);
 		registerItem(psiBladeFocuserUncharged);
 		registerItem(zergCarapace);
 		registerItem(creepResin);
 		registerItem(coord);
+		registerItem(HYDRALISK_NEEDLE);
+		registerItem(MUTALISK_WING);
+		registerItem(MUTALISK_TOOTH);
+		
+		registerItem(SPAWNER);
 						
 		ModArmour.register();
 		ModWeapons.register();
@@ -126,6 +147,8 @@ public class ModItems extends Item {
 	public static void registerRenders() {
 		registerRender(keystone);
 		registerRender(creepResin);
+		registerRender(HYDRALISK_NEEDLE);
+		registerRender(MUTALISK_TOOTH);
 		
 		for(int i = 0; i < ItemEnumHandler.MineralType.values().length; i++) {
 			registerRender(mineralShard, i, "shard_" + ItemEnumHandler.MineralType.values()[i].getName());
@@ -154,6 +177,9 @@ public class ModItems extends Item {
 		for(int i = 0; i < ItemEnumHandler.CrystalType.values().length; i++) {
 			registerRender(crystal, i, "crystal_" + ItemEnumHandler.CrystalType.values()[i].getName());
 		}
+		for(int i = 0; i < ItemEnumHandler.CreditType.values().length; i++) {
+			registerRender(CREDIT, i, "credit_" + ItemEnumHandler.CreditType.values()[i].getName());
+		}
 		for(int i = 0; i < ItemEnumHandler.BulletType.values().length; i++) {
 			registerRender(bullet, i, "bullet_" + ItemEnumHandler.BulletType.values()[i].getName());
 		}
@@ -168,6 +194,12 @@ public class ModItems extends Item {
 		}
 		for(int i = 0; i < ItemEnumHandler.CoordinateType.values().length; i++) {
 			registerRender(coord, i, "coordinate_" + ItemEnumHandler.CoordinateType.values()[i].getName());
+		}
+		for(int i = 0; i < ItemEnumHandler.MutaliskWingType.values().length; i++) {
+			registerRender(MUTALISK_WING, i, "mutalisk_wing_" + ItemEnumHandler.MutaliskWingType.values()[i].getName());
+		}
+		for(int i = 0; i < ItemEnumHandler.SpawnerType.values().length; i++) {
+			registerRender(SPAWNER, i, "spawner_" + ItemEnumHandler.SpawnerType.values()[i].getName());
 		}
 				
 		ModArmour.registerRenders();

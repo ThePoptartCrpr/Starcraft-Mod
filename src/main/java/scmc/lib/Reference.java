@@ -25,7 +25,11 @@ public class Reference {
 		ITEM_INGOT2("ingot2"),
 		ITEM_INGOT3("ingot3"),
 		ITEM_DUST("dust"),
+		ITEM_CREDIT("credit"),
 		ITEM_COORDINATE("coordinate"),
+		ITEM_HYDRALISK_NEEDLE("hydraliskNeedle", "hydralisk_needle"),
+		ITEM_MUTALISK_WING("mutaliskWing", "mutalisk_wing"),
+		ITEM_MUTALISK_TOOTH("mutaliskTooth", "mutalisk_tooth"),
 		ITEM_ZERG_CARAPACE("zergICarapace", "zerg_icarapace"),
 		ITEM_ZERG_CREEP_RESIN("zergCreepResin", "zerg_creep_resin"),
 		ITEM_ZERG_ORGANIC_TISSUE("zergOrganicTissue", "zerg_organic_tissue"),
@@ -33,6 +37,8 @@ public class Reference {
 		ITEM_BUCKET_BLOOD("bucketBlood", "bucket_blood"),
 		ITEM_PROTOSS_MODULE("protossModule", "protoss_module"),
 		ITEM_KEYSTONE("keystone", "keystone"),
+		
+		ITEM_SPAWNER("spawner"),
 		
 		TOOL_COPPER_PICKAXE("copperPickaxe", "copper_pickaxe"),
 		TOOL_COPPER_AXE("copperAxe", "copper_axe"),
@@ -50,6 +56,9 @@ public class Reference {
 		WEAPON_COPPER_SWORD("copperSword", "copper_sword"),
 		WEAPON_TITANIUM_SWORD("titaniumSword", "titanium_sword"),
 		WEAPON_STEEL_SWORD("steelSword", "steel_sword"),
+		WEAPON_BALISONG("balisong"),
+		WEAPON_MILITARY_KNIFE("militaryKnife", "military_knife"),
+		WEAPON_MONOMOLECULAR_BLADE("monomolecularBlade", "monomolecular_blade"),
 		WEAPON_PSIBLADE("psiBlade", "psi_blade"),
 		WEAPON_DARK_PSIBLADE("darkPsiBlade","dark_psi_blade"),
 		WEAPON_WARP_BLADE("warpBlade", "warp_blade"),
@@ -73,7 +82,62 @@ public class Reference {
 		ARMOR_GHOST_HELMET("ghostHelmet", "ghost_helmet"),
 		ARMOR_GHOST_CHESTPLATE("ghostChestplate", "ghost_chestplate"),
 		ARMOR_GHOST_LEGGINGS("ghostLeggings", "ghost_leggings"),
-		ARMOR_GHOST_BOOTS("ghostBoots", "ghost_boots");
+		ARMOR_GHOST_BOOTS("ghostBoots", "ghost_boots"),
+		
+		ARMOR_ADEPT_HELMET_T1("adeptHelmetT1", "adept_helmet_t1"),
+		ARMOR_ADEPT_CHESTPLATE_T1("adeptChestplateT1", "adept_chestplate_t1"),
+		ARMOR_ADEPT_LEGGINGS_T1("adeptLeggingsT1", "adept_leggings_t1"),
+		ARMOR_ADEPT_BOOTS_T1("adeptBootsT1", "adept_boots_t1"),
+		ARMOR_ADEPT_HELMET_T2("adeptHelmetT2", "adept_helmet_t2"),
+		ARMOR_ADEPT_CHESTPLATE_T2("adeptChestplateT2", "adept_chestplate_t2"),
+		ARMOR_ADEPT_LEGGINGS_T2("adeptLeggingsT2", "adept_leggings_t2"),
+		ARMOR_ADEPT_BOOTS_T2("adeptBootsT2", "adept_boots_t2"),
+		ARMOR_ADEPT_HELMET_T3("adeptHelmetT3", "adept_helmet_t3"),
+		ARMOR_ADEPT_CHESTPLATE_T3("adeptChestplateT3", "adept_chestplate_t3"),
+		ARMOR_ADEPT_LEGGINGS_T3("adeptLeggingsT3", "adept_leggings_t3"),
+		ARMOR_ADEPT_BOOTS_T3("adeptBootsT3", "adept_boots_t3"),
+		
+		ARMOR_ZEALOT_HELMET_T1("zealotHelmetT1", "zealot_helmet_t1"),
+		ARMOR_ZEALOT_CHESTPLATE_T1("zealotChestplateT1", "zealot_chestplate_t1"),
+		ARMOR_ZEALOT_LEGGINGS_T1("zealotLeggingsT1", "zealot_leggings_t1"),
+		ARMOR_ZEALOT_BOOTS_T1("zealotBootsT1", "zealot_boots_t1"),
+		ARMOR_ZEALOT_HELMET_T2("zealotHelmetT2", "zealot_helmet_t2"),
+		ARMOR_ZEALOT_CHESTPLATE_T2("zealotChestplateT2", "zealot_chestplate_t2"),
+		ARMOR_ZEALOT_LEGGINGS_T2("zealotLeggingsT2", "zealot_leggings_t2"),
+		ARMOR_ZEALOT_BOOTS_T2("zealotBootsT2", "zealot_boots_t2"),
+		ARMOR_ZEALOT_HELMET_T3("zealotHelmetT3", "zealot_helmet_t3"),
+		ARMOR_ZEALOT_CHESTPLATE_T3("zealotChestplateT3", "zealot_chestplate_t3"),
+		ARMOR_ZEALOT_LEGGINGS_T3("zealotLeggingsT3", "zealot_leggings_t3"),
+		ARMOR_ZEALOT_BOOTS_T3("zealotBootsT3", "zealot_boots_t3"),
+		
+		ARMOR_PURIFIER_ADEPT_HELMET_T1("purifierAdeptHelmetT1", "purifier_adept_helmet_t1"),
+		ARMOR_PURIFIER_ADEPT_CHESTPLATE_T1("purifierAdeptChestplateT1", "purifier_adept_chestplate_t1"),
+		ARMOR_PURIFIER_ADEPT_LEGGINGS_T1("purifierAdeptLeggingsT1", "purifier_adept_leggings_t1"),
+		ARMOR_PURIFIER_ADEPT_BOOTS_T1("purifierAdeptBootsT1", "purifier_adept_boots_t1"),
+		ARMOR_PURIFIER_ADEPT_HELMET_T2("purifierAdeptHelmetT2", "purifier_adept_helmet_t2"),
+		ARMOR_PURIFIER_ADEPT_CHESTPLATE_T2("purifierAdeptChestplateT2", "purifier_adept_chestplate_t2"),
+		ARMOR_PURIFIER_ADEPT_LEGGINGS_T2("purifierAdeptLeggingsT2", "purifier_adept_leggings_t2"),
+		ARMOR_PURIFIER_ADEPT_BOOTS_T2("purifierAdeptBootsT2", "purifier_adept_boots_t2"),
+		ARMOR_PURIFIER_ADEPT_HELMET_T3("purifierAdeptHelmetT3", "purifier_adept_helmet_t3"),
+		ARMOR_PURIFIER_ADEPT_CHESTPLATE_T3("purifierAdeptChestplateT3", "purifier_adept_chestplate_t3"),
+		ARMOR_PURIFIER_ADEPT_LEGGINGS_T3("purifierAdeptLeggingsT3", "purifier_adept_leggings_t3"),
+		ARMOR_PURIFIER_ADEPT_BOOTS_T3("purifierAdeptBootsT3", "purifier_adept_boots_t3"),
+		
+		ARMOR_DARK_ZEALOT_HELMET_T1("darkZealotHelmetT1", "dark_zealot_helmet_t1"),
+		ARMOR_DARK_ZEALOT_CHESTPLATE_T1("darkZealotChestplateT1", "dark_zealot_chestplate_t1"),
+		ARMOR_DARK_ZEALOT_LEGGINGS_T1("darkZealotLeggingsT1", "dark_zealot_leggings_t1"),
+		ARMOR_DARK_ZEALOT_BOOTS_T1("darkZealotBootsT1", "dark_zealot_boots_t1"),
+		ARMOR_DARK_ZEALOT_HELMET_T2("darkZealotHelmetT2", "dark_zealot_helmet_t2"),
+		ARMOR_DARK_ZEALOT_CHESTPLATE_T2("darkZealotChestplateT2", "dark_zealot_chestplate_t2"),
+		ARMOR_DARK_ZEALOT_LEGGINGS_T2("darkZealotLeggingsT2", "dark_zealot_leggings_t2"),
+		ARMOR_DARK_ZEALOT_BOOTS_T2("darkZealotBootsT2", "dark_zealot_boots_t2"),
+		ARMOR_DARK_ZEALOT_HELMET_T3("darkZealotHelmetT3", "dark_zealot_helmet_t3"),
+		ARMOR_DARK_ZEALOT_CHESTPLATE_T3("darkZealotChestplateT3", "dark_zealot_chestplate_t3"),
+		ARMOR_DARK_ZEALOT_LEGGINGS_T3("darkZealotLeggingsT3", "dark_zealot_leggings_t3"),
+		ARMOR_DARK_ZEALOT_BOOTS_T3("darkZealotBootsT3", "dark_zealot_boots_t3"),
+		
+		ARMOR_KHAYDARIN_AMULET("khaydarinAmulet", "khaydarin_amulet"),
+		ARMOR_DARK_KHAYDARIN_AMULET("darkKhaydarinAmulet", "dark_khaydarin_amulet");
 		
 		private String unlocalizedName;
 		private String registryName;
@@ -141,7 +205,6 @@ public class Reference {
 		BLOCK_KERATIN_CHUNK("zergKeratinChunk", "zerg_keratin_chunk"),
 		
 		//Protoss Objects
-		BLOCK_COMP_METALT1("compMetalT1", "comp_metal_t1"),
 		BLOCK_PROTOSS_METALT1("protossMetalT1", "protoss_metal_t1"),
 		BLOCK_PROTOSS_METALT2("protossMetalT2", "protoss_metal_t2"),
 		BLOCK_PROTOSS_METALT3("protossMetalT3", "protoss_metal_t3"),
@@ -162,6 +225,9 @@ public class Reference {
 		
 		//Terran Objects
 		BLOCK_DYED_IRON("dyedIron", "dyed_iron"),
+		BLOCK_COMP_METALT1("compMetalT1", "comp_metal_t1"),
+		BLOCK_PARISTEEL("paristeel", "paristeel"),
+		BLOCK_NEOSTEEL("neosteel", "neosteel"),
 		
 		//Neutral Objects
 		BLOCK_COMP_MINERAL("compMineral", "comp_mineral"),
@@ -176,6 +242,7 @@ public class Reference {
 		
 		//Char Objects
 		BLOCK_DIRT_CHAR("charDirt", "char_dirt"),
+		BLOCK_GRAVEL_CHAR("charGravel", "char_gravel"),
 		BLOCK_STONE_CHAR("charStone", "char_stone"),
 		BLOCK_COBBLESTONE_CHAR("charCobblestone", "char_cobblestone"),
 		BLOCK_ASH_CHAR("charAsh", "char_ash"),

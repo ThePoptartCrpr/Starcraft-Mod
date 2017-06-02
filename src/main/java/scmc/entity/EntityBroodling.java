@@ -10,19 +10,6 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityIronGolem;
-import net.minecraft.entity.monster.EntityPolarBear;
-import net.minecraft.entity.passive.EntityBat;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityHorse;
-import net.minecraft.entity.passive.EntityMooshroom;
-import net.minecraft.entity.passive.EntityOcelot;
-import net.minecraft.entity.passive.EntityPig;
-import net.minecraft.entity.passive.EntityRabbit;
-import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import scmc.entity.monster.EntityProtossMob;
@@ -39,42 +26,29 @@ public class EntityBroodling extends EntityZergMob {
 		this.setSize(0.3F, 0.3F);
 	}
 	
-	protected void initEntityAI()
-    {
-        this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
-        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
-        this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
-        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(8, new EntityAILookIdle(this));
-        this.applyEntityAI();
+	@Override
+	protected void initEntityAI() {
+		super.initEntityAI();
+		
+        tasks.addTask(0, new EntityAISwimming(this));
+        tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+        tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
+        tasks.addTask(7, new EntityAIWander(this, 1.0D));
+        tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        tasks.addTask(8, new EntityAILookIdle(this));
+        
+        applyEntityAI();
     }
-	
-    protected void applyEntityAI()
-    {
-    	this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-    	this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-        
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
-        
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityVillager>(this, EntityVillager.class, false));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityIronGolem>(this, EntityIronGolem.class, true));
-        
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityWolf>(this, EntityWolf.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityCow>(this, EntityCow.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityChicken>(this, EntityChicken.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntitySheep>(this, EntitySheep.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityPolarBear>(this, EntityPolarBear.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityMooshroom>(this, EntityMooshroom.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityPig>(this, EntityPig.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityOcelot>(this, EntityOcelot.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityHorse>(this, EntityHorse.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityBat>(this, EntityBat.class, true));
-        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityRabbit>(this, EntityRabbit.class, true));
+
+    protected void applyEntityAI() {
+    	tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+    	
+        targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+        targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
+        targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
+        targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+        targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
+        targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
     }
 
 	protected void applyEntityAttributes() {

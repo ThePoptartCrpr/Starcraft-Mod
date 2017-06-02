@@ -22,9 +22,10 @@ public class ModMetaBlocks {
 	public static BlockPylonCrystal PYLON_CRYSTAL;
 	public static BlockZergStructureCarapace ZERG_CARAPACE;
 	public static BlockCompressedMetalsT1 COMP_METAL_T1;
+	public static BlockNeosteelMetal NEOSTEEL_METAL;
+	public static BlockParisteelMetal PARISTEEL_METAL;
 	public static BlockDyedIronBlocks DYED_IRON;
 	public static BlockZergStructureFlesh ZERG_FLESH;
-	
 	public static Block COMP_MINERAL;
 	
 	public static void init() {
@@ -44,6 +45,8 @@ public class ModMetaBlocks {
 		ZERG_FLESH = new BlockZergStructureFlesh();
 		DYED_IRON = new BlockDyedIronBlocks();
 		COMP_METAL_T1 = new BlockCompressedMetalsT1();
+		NEOSTEEL_METAL = new BlockNeosteelMetal();
+		PARISTEEL_METAL = new BlockParisteelMetal();
 		COMP_MINERAL = new BlockCompressedMinerals();
 	}
 	
@@ -59,6 +62,8 @@ public class ModMetaBlocks {
 		registerBlock(ZERG_FLESH, new ItemBlockMeta(ZERG_FLESH));
 		registerBlock(DYED_IRON, new ItemBlockMeta(DYED_IRON));
 		registerBlock(COMP_METAL_T1, new ItemBlockMeta(COMP_METAL_T1));
+		registerBlock(NEOSTEEL_METAL, new ItemBlockMeta(NEOSTEEL_METAL));
+		registerBlock(PARISTEEL_METAL, new ItemBlockMeta(PARISTEEL_METAL));
 		registerBlock(COMP_MINERAL, new ItemBlockMeta(COMP_MINERAL));
 	}
 	
@@ -89,6 +94,12 @@ public class ModMetaBlocks {
 		}
 		for(int i = 0; i < EnumHandler.CompressedMetalType.values().length; i++) {
 			registerRender(COMP_METAL_T1, i, "comp_metal_" + EnumHandler.CompressedMetalType.values()[i].getName());
+		}
+		for(int i = 0; i < EnumHandler.NeosteelMetalType.values().length; i++) {
+			registerRender(NEOSTEEL_METAL, i, "comp_metal_" + EnumHandler.NeosteelMetalType.values()[i].getName());
+		}
+		for(int i = 0; i < EnumHandler.ParisteelMetalType.values().length; i++) {
+			registerRender(PARISTEEL_METAL, i, "paristeel_" + EnumHandler.ParisteelMetalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.CompressedMineralType.values().length; i++) {
 			registerRender(COMP_MINERAL, i, "comp_mineral_" + EnumHandler.CompressedMineralType.values()[i].getName());

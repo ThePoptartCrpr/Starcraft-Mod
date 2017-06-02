@@ -159,6 +159,7 @@ public class ModBlocks extends Block {
 	public static Block COBBLESTONE_CHAR;
 	public static Block ASH_CHAR;
 	public static Block MAGMA_CHAR;
+	public static Block GRAVEL_CHAR;
 
 	public static Block dirtTarsonis;
 	public static Block stoneTarsonis;
@@ -218,6 +219,7 @@ public class ModBlocks extends Block {
 		MAGMA_CHAR = new BlockCharMagma();
 		ASH_CHAR = new BlockAsh();
 		DIRT_CHAR = new BlockCharDirt();
+		GRAVEL_CHAR = new BlockCharGravel();
 		DIM_PORTAL_CHAR = new DimPortalChar();
 		
 		ORE_COAL_SHAKURAS = new OreShakurasCoal();
@@ -339,6 +341,9 @@ public class ModBlocks extends Block {
 				
 		GameRegistry.register(DIRT_CHAR);
 		GameRegistry.register(new ItemBlock(DIRT_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getRegistryRL()));
+		
+		GameRegistry.register(GRAVEL_CHAR);
+		GameRegistry.register(new ItemBlock(GRAVEL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getRegistryRL()));
 		
 		GameRegistry.register(DIM_PORTAL_CHAR);
 		GameRegistry.register(new ItemBlock(DIM_PORTAL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL()));
@@ -498,6 +503,7 @@ public class ModBlocks extends Block {
 		registerModel(ASH_CHAR);
 		registerModel(MAGMA_CHAR);
 		registerModel(DIRT_CHAR);
+		registerModel(GRAVEL_CHAR);
 		
 		//Shakuras Ores
 		registerModel(ORE_COAL_SHAKURAS);

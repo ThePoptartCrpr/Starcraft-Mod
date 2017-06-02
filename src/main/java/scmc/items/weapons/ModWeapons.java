@@ -31,6 +31,11 @@ public class ModWeapons {
 //	public static Item DARK_DUAL_WARP_BLADE;
 
 	public static Item MASTER_PSI_BLADE;
+	
+	//TODO: adjust the damage of these weapons
+	public static Item BALISONG;
+	public static Item MILITARY_KNIFE;
+	public static Item MONOMOLECULAR_BLADE;
 
 	public static Item TITANIUM_SWORD;
 	public static Item COPPER_SWORD;
@@ -45,9 +50,15 @@ public class ModWeapons {
 		
 		MASTER_PSI_BLADE = new WeaponMasterPsiBlade(MASTERPSIBLADE);
 		
+		//TODO: change these
+		BALISONG = new WeaponBalisong(STEEL);
+		MILITARY_KNIFE = new WeaponMilitaryKnife(STEEL);
+		MONOMOLECULAR_BLADE = new WeaponMonomolecularBlade(STEEL);
+		
 		COPPER_SWORD = new WeaponCopperSword(COPPER);
 		TITANIUM_SWORD = new WeaponTitaniumSword(TITANIUM);
 		STEEL_SWORD = new WeaponSteelSword(STEEL);
+		
 	}
 
 	public static void register() {
@@ -58,6 +69,10 @@ public class ModWeapons {
 		registerItem(DARK_WARP_BLADE);
 		
 		registerItem(MASTER_PSI_BLADE);
+		
+		registerItem(BALISONG);
+		registerItem(MILITARY_KNIFE);
+		registerItem(MONOMOLECULAR_BLADE);
 		
 		registerItem(COPPER_SWORD);
 		registerItem(TITANIUM_SWORD);
@@ -72,6 +87,10 @@ public class ModWeapons {
 		registerRender(DARK_WARP_BLADE);
 
 		registerRender(MASTER_PSI_BLADE);
+		
+		registerRender(BALISONG);
+		registerRender(MILITARY_KNIFE);
+		registerRender(MONOMOLECULAR_BLADE);
 		
 		registerRender(COPPER_SWORD);
 		registerRender(TITANIUM_SWORD);

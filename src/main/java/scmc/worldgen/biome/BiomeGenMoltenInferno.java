@@ -11,6 +11,7 @@ import scmc.blocks.ModBlocks;
 
 public class BiomeGenMoltenInferno extends BiomesSC {
 
+	//TODO: Fix this biome, too much obsidian spawns, not enough lava
 	public BiomeGenMoltenInferno(BiomeProperties id) {
 		super(id);
 

@@ -12,6 +12,7 @@ import net.minecraft.world.WorldServer;
 
 public class ModTeleporter extends Teleporter {
 
+	//TODO: Fix this, players do not spawn on the surface, but underground in boxes of bedrock
     public ModTeleporter(WorldServer world, double x, double y, double z) {
         super(world);
         this.worldServer = world;

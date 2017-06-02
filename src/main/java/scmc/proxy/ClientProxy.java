@@ -8,7 +8,6 @@ import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import scmc.StarcraftCreativeTabs;
 import scmc.StarcraftSoundEvents;
@@ -29,6 +28,9 @@ import scmc.entity.EntityScarab;
 import scmc.entity.EntitySpiderMine;
 import scmc.entity.EntityZealot;
 import scmc.entity.EntityZergling;
+import scmc.entity.EntityZerglingRaptor;
+import scmc.entity.EntityZerglingSC2;
+import scmc.entity.EntityZerglingSwarmling;
 import scmc.entity.ModEntities;
 import scmc.fluids.ModFluids;
 import scmc.handlers.FuelHandler;
@@ -50,6 +52,9 @@ import scmc.model.ModelScarab;
 import scmc.model.ModelSpiderMine;
 import scmc.model.ModelZealot;
 import scmc.model.ModelZergling;
+import scmc.model.ModelZerglingRaptor;
+import scmc.model.ModelZerglingSC2;
+import scmc.model.ModelZerglingSwarmling;
 import scmc.renderer.RenderBroodling;
 import scmc.renderer.RenderBrutalisk;
 import scmc.renderer.RenderCivilian;
@@ -64,6 +69,9 @@ import scmc.renderer.RenderScarab;
 import scmc.renderer.RenderSpiderMine;
 import scmc.renderer.RenderZealot;
 import scmc.renderer.RenderZergling;
+import scmc.renderer.RenderZerglingRaptor;
+import scmc.renderer.RenderZerglingSC2;
+import scmc.renderer.RenderZerglingSwarmling;
 import scmc.tileentity.ModTileEntities;
 import scmc.worldgen.DimensionRegistry;
 import scmc.worldgen.SCWorldGen;
@@ -110,6 +118,22 @@ public class ClientProxy extends ServerProxy {
 				new RenderZergling<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f)); // use
 																												// deprecated
 																												// method
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingSC2.class,
+				new RenderZerglingSC2<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZerglingSC2(), 0.4f)); // use
+																												// deprecated
+																												// method
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingRaptor.class,
+				new RenderZerglingRaptor<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZerglingRaptor(), 0.4f)); // use
+																												// deprecated
+																												// method
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingSwarmling.class,
+				new RenderZerglingSwarmling<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZerglingSwarmling(), 0.4f)); // use
+																												// deprecated
+																												// method
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class,
 				new RenderLarva<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f)); // use
 																										// deprecated
@@ -162,12 +186,7 @@ public class ClientProxy extends ServerProxy {
 		registerEntityRenders();
 		Achievements.init();
 	}
-
-	@Override
-	public void postInit(FMLPostInitializationEvent event) {
-		//GameRegistry.registerWorldGenerator(new SCWorldGen(), 0);
-	}
-
+	
 	@Override
 	public void registerModelBakeryStuff() {
 		ModelBakery.registerItemVariants(ModItems.mineralShard,
@@ -242,6 +261,23 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t2"),
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t3"));
 		
+		ModelBakery.registerItemVariants(ModItems.MUTALISK_WING,
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_purple"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_brown"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_pink"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_blue"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_cyan"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_gray"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_green"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_lightblue"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_lime"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_magenta"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_orange"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_red"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_silver"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_white"),
+				new ResourceLocation(Reference.MODID, "mutalisk_wing_yellow"));
+		
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1),
 				new ResourceLocation(Reference.MODID, "protoss_metal_t1_aiur"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_t1_dark"),
@@ -302,15 +338,43 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "dyed_iron_red"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_silver"),
 				new ResourceLocation(Reference.MODID, "dyed_iron_yellow"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.ZERG_FLESH),
+				new ResourceLocation(Reference.MODID, "paristeel_purple"),
+				new ResourceLocation(Reference.MODID, "paristeel_brown"),
+				new ResourceLocation(Reference.MODID, "paristeel_pink"),
+				new ResourceLocation(Reference.MODID, "paristeel_blue"),
+				new ResourceLocation(Reference.MODID, "paristeel_cyan"),
+				new ResourceLocation(Reference.MODID, "paristeel_gray"),
+				new ResourceLocation(Reference.MODID, "paristeel_green"),
+				new ResourceLocation(Reference.MODID, "paristeel_lightblue"),
+				new ResourceLocation(Reference.MODID, "paristeel_lime"),
+				new ResourceLocation(Reference.MODID, "paristeel_magenta"),
+				new ResourceLocation(Reference.MODID, "paristeel_orange"),
+				new ResourceLocation(Reference.MODID, "paristeel_red"),
+				new ResourceLocation(Reference.MODID, "paristeel_silver"),
+				new ResourceLocation(Reference.MODID, "paristeel_white"),
+				new ResourceLocation(Reference.MODID, "paristeel_yellow"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_METAL_T1),
 				new ResourceLocation(Reference.MODID, "comp_metal_copper"),
 				new ResourceLocation(Reference.MODID, "comp_metal_steel"),
 				new ResourceLocation(Reference.MODID, "comp_metal_titanium"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.NEOSTEEL_METAL),
+				new ResourceLocation(Reference.MODID, "neosteel_base"),
+				new ResourceLocation(Reference.MODID, "neosteel_frame"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_MINERAL),
 				new ResourceLocation(Reference.MODID, "comp_mineral_blue"),
 				new ResourceLocation(Reference.MODID, "comp_mineral_rich"));
+		
+		ModelBakery.registerItemVariants((ModItems.SPAWNER),
+				new ResourceLocation(Reference.MODID, "spawner_pylon"),
+				new ResourceLocation(Reference.MODID, "spawner_nexus"),
+				new ResourceLocation(Reference.MODID, "spawner_assimilator"),
+				new ResourceLocation(Reference.MODID, "spawner_cyberneticscore"),
+				new ResourceLocation(Reference.MODID, "spawner_forge"));
 
 	}
 }
