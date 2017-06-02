@@ -5,8 +5,8 @@ import net.minecraft.world.World;
 
 public class EntityProtossMob extends EntityMob {
 
-	public EntityProtossMob(World p_i1738_1_) {
-		super(p_i1738_1_);
+	public EntityProtossMob(World world) {
+		super(world);
 	}
 
 }

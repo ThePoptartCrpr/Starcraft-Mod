@@ -20,6 +20,7 @@ import scmc.blocks.coreblocks.BlockCorePylonVoid;
 import scmc.blocks.coreblocks.BlockCoreWarpGateDark;
 import scmc.blocks.coreblocks.BlockCoreWarpGateKhalai;
 import scmc.blocks.coreblocks.BlockCoreWarpGateVoid;
+import scmc.blocks.debug.DimPortalAiur;
 import scmc.blocks.debug.DimPortalChar;
 import scmc.blocks.debug.DimPortalOverworld;
 import scmc.blocks.debug.DimPortalShakuras;
@@ -173,6 +174,7 @@ public class ModBlocks extends Block {
 	public static Block DIM_PORTAL_CHAR;
 	public static Block DIM_PORTAL_OVERWORLD;
 	public static Block DIM_PORTAL_SHAKURAS;
+	public static Block DIM_PORTAL_AIUR;
 	
 	//Core Blocks
 	public static Block CORE_PYLON_VOID;
@@ -238,6 +240,10 @@ public class ModBlocks extends Block {
 		COBBLESTONE_SHAKURAS = new BlockShakurasCobblestone();
 		SAND_SHAKURAS = new BlockShakurasSand();
 		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
+		
+		
+		
+		DIM_PORTAL_AIUR = new DimPortalAiur();
 		
 		//Protoss Blocks
 		PROTOSS_WARPPROJECTOR_CHAR = new BlockProtossWarpProjectorC();
@@ -395,6 +401,11 @@ public class ModBlocks extends Block {
 		GameRegistry.register(new ItemBlock(DIM_PORTAL_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL()));
 		
 		
+
+		GameRegistry.register(DIM_PORTAL_AIUR);
+		GameRegistry.register(new ItemBlock(DIM_PORTAL_AIUR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_AI.getRegistryRL()));
+		
+		
 		GameRegistry.register(PROTOSS_WARPPROJECTOR_CHAR);
 		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_C.getRegistryRL()));
 		
@@ -527,6 +538,7 @@ public class ModBlocks extends Block {
 		registerModel(DIM_PORTAL_OVERWORLD);
 		registerModel(DIM_PORTAL_CHAR);
 		registerModel(DIM_PORTAL_SHAKURAS);
+		registerModel(DIM_PORTAL_AIUR);
 		
 		//Protoss Blocks
 		registerModel(PROTOSS_WARPPROJECTOR_CHAR);

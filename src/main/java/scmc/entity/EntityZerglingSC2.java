@@ -59,7 +59,6 @@ public class EntityZerglingSC2 extends EntityZergMob {
     }
 
     protected void applyEntityAI() {
-    	tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
     	
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));

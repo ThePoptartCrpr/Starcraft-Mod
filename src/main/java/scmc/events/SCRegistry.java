@@ -18,6 +18,7 @@ public class SCRegistry {
 	// ModItems.psiBladeFocuserUncharged, ModItems.richMineralShard,
 	// ModItems.uraj, ModItems.vespene, ModItems.zergCarapace}; //TODO: add the other items
 
+	//TODO:find out what the heck this is, too
 	@SubscribeEvent
 	public static void register(Register<Item> registry) {
 //		registry.getRegistry().registerAll(items); //Register items

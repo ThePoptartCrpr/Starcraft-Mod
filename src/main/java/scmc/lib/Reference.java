@@ -265,6 +265,7 @@ public class Reference {
 		BLOCK_DIM_PORTAL_C("charDimPortal", "char_dim_portal"),
 		BLOCK_DIM_PORTAL_OW("overworldDimPortal", "overworld_dim_portal"),
 		BLOCK_DIM_PORTAL_S("shakurasDimPortal", "shakuras_dim_portal"),
+		BLOCK_DIM_PORTAL_AI("aiurDimPortal", "aiur_dim_portal"),
 		
 		//Core Blocks
 		BLOCK_CORE_PYLON_VOID("corePylonVoid", "core_pylon_void"),

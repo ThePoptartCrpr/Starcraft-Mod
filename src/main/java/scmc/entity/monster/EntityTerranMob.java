@@ -5,8 +5,8 @@ import net.minecraft.world.World;
 
 public class EntityTerranMob extends EntityMob {
 
-	public EntityTerranMob(World p_i1738_1_) {
-		super(p_i1738_1_);
+	public EntityTerranMob(World world) {
+		super(world);
 	}
 
 }
