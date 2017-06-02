@@ -6,13 +6,14 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import scmc.StarcraftCreativeTabs;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 
 /**
  * Protoss Energy Channel block.<br>
- * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * Copyright 2017 the Starcraft Minecraft (SCMC) mod team
+ * @author He of a Former Time
  */
 public class BlockProtossEnergyChannel extends ModBlocks {
 	public BlockProtossEnergyChannel() {
@@ -24,6 +25,7 @@ public class BlockProtossEnergyChannel extends ModBlocks {
 		setLightLevel(1.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 3);
+		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 	
 	/**

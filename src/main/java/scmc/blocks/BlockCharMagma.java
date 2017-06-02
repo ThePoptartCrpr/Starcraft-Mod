@@ -15,7 +15,7 @@ import scmc.lib.Reference;
 /**
  * Magma block. Makes lava source when broken or
  * when lava is found near it on a random tick<br>
- * Copyright 2016 the Starcraft Minecraft mod team
+ * Copyright 2016 the Starcraft Minecraft (SCMC) mod team
  * @author wundrweapon
  */
 public class BlockCharMagma extends ModBlocks {

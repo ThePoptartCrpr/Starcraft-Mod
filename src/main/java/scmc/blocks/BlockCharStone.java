@@ -13,8 +13,8 @@ import scmc.lib.Reference;
 
 /**
  * Char Stone block.<br>
- * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * Copyright 2017 the Starcraft Minecraft (SCMC) mod team
+ * @author He of a Former Time
  */
 public class BlockCharStone extends ModBlocks {
 	public BlockCharStone() {

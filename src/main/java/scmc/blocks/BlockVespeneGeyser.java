@@ -41,6 +41,7 @@ public class BlockVespeneGeyser extends BlockContainer implements ITileEntityPro
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@SideOnly(Side.CLIENT)
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));

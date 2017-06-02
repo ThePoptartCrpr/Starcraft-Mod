@@ -7,14 +7,14 @@ import scmc.lib.Reference;
 
 /**
  * Char Cobblestone block.<br>
- * Copyright 2017 the Starcraft Minecraft mod team
- * @author bvanseghi
+ * Copyright 2017 the Starcraft Minecraft (SCMC) mod team
+ * @author He of a Former Time
  */
 public class BlockCharCobblestone extends ModBlocks {
 	public BlockCharCobblestone() {
 		super(Material.ROCK);
+		setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_CHAR.getRegistryName());
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_COBBLESTONE_CHAR.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_CHAR.getRegistryRL());
 		setSoundType(SoundType.STONE);
 		setHardness(2.0F);
 		setResistance(5.0F);
