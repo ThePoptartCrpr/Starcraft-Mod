@@ -402,7 +402,7 @@ public class EntityLarva extends EntityZergPassive {
             			|| block == ModMetaBlocks.ZERG_CARAPACE || block == ModMetaBlocks.ZERG_FLESH) {
 
             	} else {
-            		//kill();
+            		kill();
             	}
 
                 if (block != null && onGround)

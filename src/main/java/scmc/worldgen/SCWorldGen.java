@@ -114,34 +114,35 @@ public class SCWorldGen implements IWorldGenerator {
 			
 		default: //check for OUR dimensions
 			if (world.provider.getDimension() == StarcraftConfig.dimChar) {
-				runGenerator(COAL_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				runGenerator(COAL_CHAR, world, random, chunkX, chunkZ, 20, 0, 128);
 				runGenerator(COPPER_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(DIAMOND_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(GOLD_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(IRON_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(LAPIS_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(MINERAL_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(REDSTONE_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(RICHMINERAL_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				runGenerator(DIAMOND_CHAR, world, random, chunkX, chunkZ, 1, 0, 16);
+				runGenerator(GOLD_CHAR, world, random, chunkX, chunkZ, 2, 0, 32);
+				runGenerator(IRON_CHAR, world, random, chunkX, chunkZ, 20, 0, 64);
+				runGenerator(LAPIS_CHAR, world, random, chunkX, chunkZ, 1, 0, 16);
+				runGenerator(MINERAL_CHAR, world, random, chunkX, chunkZ, 13, 28, 50);
+				runGenerator(REDSTONE_CHAR, world, random, chunkX, chunkZ, 8, 0, 16);
+				runGenerator(RICHMINERAL_CHAR, world, random, chunkX, chunkZ, 9, 4, 28);
+				runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 9, 4, 28);
+				runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 4, 0, 20);
 				
 				runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 1, 60, 70);
 				runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 1, 60, 70);
 				
 				runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
+				
 			} else if (world.provider.getDimension() == StarcraftConfig.dimShakuras) {
-				runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 20, 0, 128);
 				runGenerator(COPPER_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(DIAMOND_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(GOLD_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(IRON_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(LAPIS_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(MINERAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(REDSTONE_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(RICHMINERAL_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
-				runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				runGenerator(DIAMOND_SHAKURAS, world, random, chunkX, chunkZ, 1, 0, 16);
+				runGenerator(GOLD_SHAKURAS, world, random, chunkX, chunkZ, 2, 0, 32);
+				runGenerator(IRON_SHAKURAS, world, random, chunkX, chunkZ, 20, 0, 64);
+				runGenerator(LAPIS_SHAKURAS, world, random, chunkX, chunkZ, 1, 0, 16);
+				runGenerator(MINERAL_SHAKURAS, world, random, chunkX, chunkZ, 13, 28, 50);
+				runGenerator(REDSTONE_SHAKURAS, world, random, chunkX, chunkZ, 8, 0, 16);
+				runGenerator(RICHMINERAL_SHAKURAS, world, random, chunkX, chunkZ, 9, 4, 28);
+				runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 9, 4, 28);
+				runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 4, 0, 20);
 				
 				runGenerator(PROTOSS_PYLON, world, random, chunkX, chunkZ, 1, 60, 70);
 				runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
