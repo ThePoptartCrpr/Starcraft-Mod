@@ -134,11 +134,11 @@ public class ClientProxy extends ServerProxy {
 		StarcraftCreativeTabs.setMisc(); // Add the misc tab after doing
 											// bucket-y stuff
 		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem()
-				.setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS); 
-		
+				.setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS);
+
 		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem()
 				.setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS);
-		
+
 		ModItems.registerRenders();
 		ModMaterials.preInit();
 		ModTileEntities.preInit();

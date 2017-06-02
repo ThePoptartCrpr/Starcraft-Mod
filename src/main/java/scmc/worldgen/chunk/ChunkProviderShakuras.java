@@ -23,6 +23,9 @@ import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import scmc.entity.EntityDarkProbe;
+import scmc.entity.EntityDarkTemplar;
+import scmc.entity.EntityProbe;
 import scmc.entity.EntityZealot;
 import scmc.worldgen.NormalTerrainGenerator;
 
@@ -33,22 +36,16 @@ public class ChunkProviderShakuras implements IChunkGenerator
     private final World worldObj;
     private Biome[] biomesForGeneration;
     
-    private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityZealot.class, 100, 2, 2));
+    private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(
+    		new Biome.SpawnListEntry(EntityZealot.class, 65, 2, 4),
+    		new Biome.SpawnListEntry(EntityDarkTemplar.class, 15, 1, 2),
+    		new Biome.SpawnListEntry(EntityProbe.class, 15, 1, 3),
+    		new Biome.SpawnListEntry(EntityDarkProbe.class, 5, 1, 3));
     
-//    private ChunkProviderSettings settings;
-//    private final boolean mapFeaturesEnabled;
-
     private MapGenBase caveGenerator = new MapGenCaves();
-//    private MapGenStronghold strongholdGenerator = new MapGenStronghold();
-//    private MapGenVillage villageGenerator = new MapGenVillage();
-//    private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
-//    private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
-//    private MapGenBase ravineGenerator = new MapGenRavine();
-//    private StructureOceanMonument oceanMonumentGenerator = new StructureOceanMonument();
     private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();
 
-    public ChunkProviderShakuras(World worldObj/*, boolean mapFeaturesEnabled*/) {
-//    	this.mapFeaturesEnabled = mapFeaturesEnabled;
+    public ChunkProviderShakuras(World worldObj) {
         this.worldObj = worldObj;
         long seed = worldObj.getSeed();
         this.random = new Random((seed + 516) * 314);
@@ -107,16 +104,7 @@ public class ChunkProviderShakuras implements IChunkGenerator
 
     @Override
     public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
-        // If you want normal creatures appropriate for this biome then uncomment the
-        // following two lines:
-//        Biome biome = this.worldObj.getBiome(pos);
-//        return biome.getSpawnableList(creatureType);
-
-        if (creatureType == EnumCreatureType.MONSTER){
             return mobs;
-        }
-        return ImmutableList.of();
-
     }
 
     @Nullable

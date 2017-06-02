@@ -62,4 +62,10 @@ public class WorldProviderShakuras extends WorldProvider {
 	public DimensionType getDimensionType() {
 		return DimensionRegistry.SHAKURAS_DT;
 	}
+	
+	@Override
+	public void setWorldTime(long time)
+    {
+        worldObj.getWorldInfo().setWorldTime(20000);
+    }
 }
