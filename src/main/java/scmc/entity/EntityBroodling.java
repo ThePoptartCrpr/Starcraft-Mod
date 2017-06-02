@@ -1,5 +1,7 @@
 package scmc.entity;
 
+import java.util.Random;
+
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -11,7 +13,9 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
+import scmc.StarcraftSoundEvents;
 import scmc.entity.monster.EntityProtossMob;
 import scmc.entity.monster.EntityTerranMob;
 import scmc.entity.monster.EntityZergMob;
@@ -23,7 +27,7 @@ public class EntityBroodling extends EntityZergMob {
 
 	public EntityBroodling(World world) {
 		super(world);
-		this.setSize(0.3F, 0.3F);
+		this.setSize(1.0F, 0.5F);
 	}
 	
 	@Override
@@ -62,6 +66,27 @@ public class EntityBroodling extends EntityZergMob {
 	
 	protected void dropFewItems(boolean par1, int par2) {
 
+	}
+	
+	@Override
+	public int getTalkInterval() {
+        return 160;
+    }
+	
+	//TODO: Figure out why getAmbientSound isnt working for the Broodling
+    @Override
+	public SoundEvent getAmbientSound() {
+		return StarcraftSoundEvents.ENTITY_BROODLING_LIVE1;
+	}
+	
+    @Override
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_BROODLING_HURT;
+	}
+	
+    @Override
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_BROODLING_DEATH;
 	}
 }
 

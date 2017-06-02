@@ -358,5 +358,29 @@
         "name": "starcraft:/mob/preaver/reaver-death","stream":false
     }
     ]
+},
+"mob.broodling.live1": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/broodling/brooding-live1","stream":false
+    }
+    ]
+},
+"mob.broodling.hurt": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/broodling/broodling-hurt","stream":false
+    }
+    ]
+},
+"mob.broodling.death": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/mob/broodling/broodling-death","stream":false
+    }
+    ]
 }
 }

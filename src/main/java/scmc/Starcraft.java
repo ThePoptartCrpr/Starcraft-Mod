@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import scmc.lib.Reference;
 import scmc.proxy.ServerProxy;
 
-@Mod(modid = Reference.MODID, acceptedMinecraftVersions = "[1.10.2]", useMetadata = true, dependencies = "required-after:llibrary@[1.7.5,)")
+@Mod(modid = Reference.MODID, acceptedMinecraftVersions = "[1.10.2]", useMetadata = true)
 public class Starcraft {
 	static {
 		FluidRegistry.enableUniversalBucket();

@@ -14,8 +14,8 @@ public class BlockCharGravel extends ModBlocks {
 	//TODO: Fix all of this!
 	public BlockCharGravel() {
 		super(Material.GROUND);
-		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getUnlocalizedName());
-		setRegistryName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getRegistryRL());
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getRegistryRL());
 		setSoundType(SoundType.SAND);
 		setHardness(0.5F);
 		setResistance(2.5F);
