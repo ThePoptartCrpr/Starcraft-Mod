@@ -1,7 +1,5 @@
 package scmc.entity;
 
-import java.util.Random;
-
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;

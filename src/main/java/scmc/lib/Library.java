@@ -1,7 +1,6 @@
 package scmc.lib;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -11,15 +10,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
-import scmc.entity.EntityLarva;
-import scmc.entity.EntityLarvaCocoon;
-import scmc.entity.EntityZergling;
 
 /**
  * A set of utilities that simplify code in other areas<br>
  * <em><b>Copyright (c) 2017 The Starcraft Minecraft (SCMC) Mod Team</b></em>
  * @author wundrweapon
- * @author bvanseghi
+ * @author He who is nameless
  */
 public class Library {
 	
@@ -194,44 +190,6 @@ public class Library {
 	 */
 	public static void regenerateShields() {
 		//TODO: this
-	}
-	
-	/**
-	 * Larva -> cocoon. Simple
-	 * @param world the world
-	 * @param larva the larva in question
-	 * @param rand {@link Random} instance which will eventually
-	 * determine what gets pooped out later
-	 */
-	@Deprecated
-	public static void larvaMorph(World world, EntityLarva larva, Random rand) {
-//		if(!world.isRemote) {
-//			EntityLarvaCocoon cocoon = new EntityLarvaCocoon(world);
-//			cocoon.setLocationAndAngles(larva.posX, larva.posY, larva.posZ, 0, 0);
-//			world.spawnEntityInWorld(cocoon);
-//			larva.setDead();
-//		}
-		
-		replaceEntity(false, larva, new EntityLarvaCocoon(larva.worldObj));
-	}
-	
-	/**
-	 * Cocoon -> Zergling. Simple
-	 * @param world the world
-	 * @param cocoon the larva in question
-	 * @param rand RNG which will eventually
-	 * determine what gets pooped out later
-	 */
-	@Deprecated
-	public static void cocoonMorph(World world, EntityLarvaCocoon cocoon, Random rand) {
-//		if(!world.isRemote) {
-//			EntityZergling zergling = new EntityZergling(world);
-//			zergling.setLocationAndAngles(cocoon.posX, cocoon.posY, cocoon.posZ, 0, 0);
-//			world.spawnEntityInWorld(zergling);
-//			cocoon.setDead();
-//		}
-		
-		replaceEntity(false, cocoon, new EntityZergling(cocoon.worldObj));
 	}
 	
 	/**
