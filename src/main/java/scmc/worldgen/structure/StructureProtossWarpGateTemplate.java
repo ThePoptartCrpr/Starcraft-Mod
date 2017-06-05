@@ -23,6 +23,7 @@ public class StructureProtossWarpGateTemplate extends WorldGenerator {
 	public Block chanBlock;
 	public Block stabBlock;
 
+	//TODO: Fix the portal on this
 	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
 		
 		Block checkBlock = world.getBlockState(pos).getBlock();

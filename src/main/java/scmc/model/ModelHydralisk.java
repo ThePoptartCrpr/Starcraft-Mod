@@ -779,5 +779,18 @@ public class ModelHydralisk extends ModelBase {
     {
     	super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
     	//super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
+    	this.tail02.rotateAngleY = MathHelper.sin(par1 * 1.0F) * 0.337F * par2;
+    	this.tail03.rotateAngleY = MathHelper.sin(par1 * 1.0F) * 0.337F * par2;
+    	this.tail04.rotateAngleY = MathHelper.cos(par1 * 1.0F) * 0.337F * par2;
+    	this.tail05.rotateAngleY = MathHelper.cos(par1 * 1.0F) * 0.337F * par2;
+    	this.tail06.rotateAngleY = MathHelper.cos(par1 * 1.0F) * 0.227F * par2;
+    	this.tail07.rotateAngleY = MathHelper.sin(par1 * 1.0F) * 0.117F * par2;
+    	this.tail08.rotateAngleY = MathHelper.sin(par1 * 1.0F) * 0.057F * par2;
+    	this.tail09.rotateAngleY = MathHelper.cos(par1 * 1.0F) * 0.027F * par2;
+    	this.lShoulder.rotateAngleX = MathHelper.sin(par1 * 0.5F) * 0.667F * par2;
+    	this.rShoulder.rotateAngleX = MathHelper.cos(par1 * 0.5F) * 0.667F * par2;
+    	this.lMandible1.rotateAngleX = MathHelper.cos(par1 * 0.1F) * 0.667F * par2;
+    	this.rMandible1.rotateAngleX = MathHelper.cos(par1 * 0.1F) * 0.667F * par2;
+    	this.lowerJaw1.rotateAngleX = (MathHelper.sin(par1 * 0.01F) + 0.7F) * 0.667F * par2;
     }
 }
