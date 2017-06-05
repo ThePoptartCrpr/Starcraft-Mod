@@ -718,5 +718,15 @@ public class ModelZerglingRaptor extends ModelBase {
     	this.lThigh.rotateAngleX = MathHelper.sin(par1 * 1.1F) * 0.667F * par2;
     	this.rArm1.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2;
     	this.rThigh.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2;
+    	this.lowerJaw.rotateAngleX = (MathHelper.sin(par1 * 0.01F) + 0.3F) * 0.667F * par2;
+    	this.lHookArm1.rotateAngleX = (MathHelper.cos(par1 * 0.5F) + 0.3F) * 0.337F * par2;
+    	this.rHookArm1.rotateAngleX = (MathHelper.sin(par1 * 0.5F) + 0.3F) * 0.337F * par2;
+    	this.lWing1.rotateAngleY = (MathHelper.sin(par1 * 0.5F) / 4.1F) * 2.0F * par2;
+    	this.rWing1.rotateAngleY = (MathHelper.sin(par1 * -0.5F) / 4.1F) * 2.0F * par2;
+    	this.lbWing1.rotateAngleY = (MathHelper.sin(par1 * 0.5F) / 4.1F) * 2.0F * par2;
+    	this.rbWing1.rotateAngleY = (MathHelper.sin(par1 * -0.5F) / 4.1F) * 2.0F * par2;
+    	this.tail2.rotateAngleY = (MathHelper.sin(par1 * -0.5F) / 10.1F) * 2.0F * par2;
+    	this.tail3.rotateAngleY = (MathHelper.sin(par1 * -0.5F) / 10.1F) * 2.0F * par2;
+    	this.tail4.rotateAngleY = (MathHelper.sin(par1 * -0.5F) / 10.1F) * 2.0F * par2;
     }
 }

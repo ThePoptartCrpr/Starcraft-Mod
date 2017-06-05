@@ -12,10 +12,15 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
 import scmc.entity.monster.EntityProtossMob;
@@ -32,6 +37,7 @@ public class EntityZerglingRaptor extends EntityZergMob {
 	public EntityZerglingRaptor(World world) {
 		super(world);
         setSize(1, 1.75F);
+        this.stepHeight = 5.0F;
 	}
 	
 	@Override
@@ -67,7 +73,13 @@ public class EntityZerglingRaptor extends EntityZergMob {
         targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
         targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
     }
-	
+    
+    @Override
+    protected float getJumpUpwardsMotion()
+    {
+        return 5.0F;
+    }
+    
     @Override
 	public int getTalkInterval() {
         return 160;

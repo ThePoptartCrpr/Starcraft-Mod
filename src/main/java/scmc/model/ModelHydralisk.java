@@ -791,6 +791,6 @@ public class ModelHydralisk extends ModelBase {
     	this.rShoulder.rotateAngleX = MathHelper.cos(par1 * 0.5F) * 0.667F * par2;
     	this.lMandible1.rotateAngleX = MathHelper.cos(par1 * 0.1F) * 0.667F * par2;
     	this.rMandible1.rotateAngleX = MathHelper.cos(par1 * 0.1F) * 0.667F * par2;
-    	this.lowerJaw1.rotateAngleX = (MathHelper.sin(par1 * 0.01F) + 0.7F) * 0.667F * par2;
+    	this.lowerJaw1.rotateAngleX = (MathHelper.sin(par1 * 0.01F) + 0.3F) * 0.667F * par2;
     }
 }
