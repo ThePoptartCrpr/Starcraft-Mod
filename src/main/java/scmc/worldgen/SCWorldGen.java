@@ -36,6 +36,7 @@ public class SCWorldGen implements IWorldGenerator {
 	private WorldGenerator RICHMINERAL_CHAR;
 	private WorldGenerator TITANIUM_CHAR;
 	private WorldGenerator URANIUM_CHAR;
+	private WorldGenerator MAGMA_CHAR;
 	
 	private WorldGenerator COAL_SHAKURAS;
 	private WorldGenerator COPPER_SHAKURAS;
@@ -71,6 +72,7 @@ public class SCWorldGen implements IWorldGenerator {
 		REDSTONE_CHAR = new CharWorldGenMinable(ModBlocks.ORE_REDSTONE_CHAR.getDefaultState(), 8);
 		RICHMINERAL_CHAR = new CharWorldGenMinable(ModBlocks.ORE_RICHMINERAL_CHAR.getDefaultState(), 8);
 		URANIUM_CHAR = new CharWorldGenMinable(ModBlocks.ORE_URANIUM_CHAR.getDefaultState(), 8);
+		MAGMA_CHAR = new CharWorldGenMinable(ModBlocks.MAGMA_CHAR.getDefaultState(), 16);
 		
 	
 		TITANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
@@ -96,6 +98,7 @@ public class SCWorldGen implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
+		Random rnd = new Random();
 		switch (world.provider.getDimension()) {
 		case 0: //Overworld
 			runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
@@ -123,11 +126,14 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(RICHMINERAL_CHAR, world, random, chunkX, chunkZ, 9, 4, 28);
 				runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 9, 4, 28);
 				runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 4, 0, 20);
+				runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 100, 0, 128);
 				
 				runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 1, 60, 70);
 				runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 1, 60, 70);
 				
-				runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
+				if(rnd.nextInt(100) < 10) {
+					runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
+				}
 				
 			} else if (world.provider.getDimension() == StarcraftConfig.dimShakuras) {
 				runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 20, 0, 128);
@@ -142,8 +148,12 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 9, 4, 28);
 				runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 4, 0, 20);
 				
-				runGenerator(PROTOSS_PYLON, world, random, chunkX, chunkZ, 1, 60, 70);
-				runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
+				if(rnd.nextInt(100) < 30) {
+					runGenerator(PROTOSS_PYLON, world, random, chunkX, chunkZ, 1, 60, 70);
+				}
+				if(rnd.nextInt(100) < 10) {
+					runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
+				}
 			}
 			
 			break;

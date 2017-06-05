@@ -43,7 +43,7 @@ import scmc.lib.StarcraftConfig;
 public class EntityBrutalisk extends EntityZergMob {
 	public EntityBrutalisk(World world) {
 		super(world);
-        this.setSize(7.0F, 7.0F);
+		this.setSize(7.0F, 9.0F);
 	}
 	
 	protected void initEntityAI()
@@ -139,5 +139,10 @@ public class EntityBrutalisk extends EntityZergMob {
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float damageDealt) {
 		return super.attackEntityFrom(source, damageDealt);
+	}
+
+	@Override
+	public boolean canBePushed() {
+		return false;
 	}
 }

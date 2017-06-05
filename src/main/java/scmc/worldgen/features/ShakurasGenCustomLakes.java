@@ -21,6 +21,7 @@ public class ShakurasGenCustomLakes extends WorldGenerator
         block = blockIn;
     }
 
+    //TODO: Fix this class
     @Override
 	public boolean generate(World worldIn, Random rand, BlockPos position)
     {

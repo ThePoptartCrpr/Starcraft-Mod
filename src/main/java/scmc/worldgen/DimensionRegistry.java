@@ -17,6 +17,7 @@ public class DimensionRegistry {
 	public static final int SHAKURAS_DIMENSION_ID = StarcraftConfig.dimShakuras;
 	public static final DimensionType SHAKURAS_DT = DimensionType.register("Shakuras", "_starcraft", SHAKURAS_DIMENSION_ID, WorldProviderShakuras.class, true);		
 	
+	//TODO: Add Aiur here!
 	public static final WorldType CHAR_WT = new WorldType("CHAR");
 	public static final WorldType SHAKURAS_WT = new WorldType("SHAKURAS");
 	

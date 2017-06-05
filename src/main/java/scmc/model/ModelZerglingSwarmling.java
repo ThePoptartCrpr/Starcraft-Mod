@@ -3,6 +3,7 @@ package scmc.model;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 /**
  * zerglingSC2Swarmling - cybercat5555
@@ -680,6 +681,8 @@ public class ModelZerglingSwarmling extends ModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+    	super.render(entity, f, f1, f2, f3, f4, f5);
+    	this.setRotationAngles(f, f1, f2, f3, f4, f4, entity);
         this.chest.render(f5);
     }
 
@@ -690,5 +693,16 @@ public class ModelZerglingSwarmling extends ModelBase {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
+    }
+    
+    @Override
+    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity)
+    {
+    	super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
+    	//super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
+    	this.lArm1.rotateAngleX = MathHelper.sin(par1 * 1.1F) * 0.667F * par2;
+    	this.lThigh.rotateAngleX = MathHelper.sin(par1 * 1.1F) * 0.667F * par2;
+    	this.rArm1.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2;
+    	this.rThigh.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2;
     }
 }

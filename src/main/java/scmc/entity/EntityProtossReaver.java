@@ -28,18 +28,18 @@ import scmc.lib.StarcraftConfig;
 public class EntityProtossReaver extends EntityProtossMob implements IRangedAttackMob {
 	public EntityProtossReaver(World world) {
 		super(world);
-		setSize(6, 3);
+		setSize(8.0F, 4.3F);
 	}
 	
 	//FIXME: this
-	//	public boolean isAIEnabled() {
-	//		return true;
-	//	}
+		public boolean isAIEnabled() {
+			return true;
+		}
 	
 	@Override
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 100, 30));
+		tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 85, 30));
 		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
 		tasks.addTask(7, new EntityAIWander(this, 1));
 		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
@@ -105,5 +105,10 @@ public class EntityProtossReaver extends EntityProtossMob implements IRangedAtta
 			scarab.setLocationAndAngles(posX, posY, posZ, 0, 0);
 			worldObj.spawnEntityInWorld(scarab);
 		}
+	}
+	
+	@Override
+	public boolean canBePushed() {
+		return false;
 	}
 }

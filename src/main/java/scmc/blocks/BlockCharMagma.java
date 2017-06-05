@@ -23,6 +23,7 @@ public class BlockCharMagma extends ModBlocks {
 		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
 		setHardness(1.5F);
+		setLightLevel(10.0F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);

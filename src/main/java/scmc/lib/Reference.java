@@ -197,7 +197,6 @@ public class Reference {
 		ORE_TITANIUM_S("shakurasOreTitanium", "shakuras_ore_titanium"),
 		ORE_URANIUM_S("shakurasOreUranium", "shakuras_ore_uranium"),
 		
-		//TODO: all the unlocalized names need to be made to lowerCamelCase
 		//Zerg Objects
 		BLOCK_ZERG_CARAPACE("zergCarapace", "zerg_carapace"),
 		BLOCK_ZERG_FLESH("zergFlesh", "zerg_flesh"),
@@ -208,10 +207,10 @@ public class Reference {
 		BLOCK_PROTOSS_METALT1("protossMetalT1", "protoss_metal_t1"),
 		BLOCK_PROTOSS_METALT2("protossMetalT2", "protoss_metal_t2"),
 		BLOCK_PROTOSS_METALT3("protossMetalT3", "protoss_metal_t3"),
-		BLOCK_PROTOSS_ENERGY_CHANNEL("ProtossEnergyChannel", "protoss_energy_channel"),
-		BLOCK_PROTOSS_ENERGY_STABILIZER("ProtossEnergyStabilizer", "protoss_energy_stabilizer"),
+		BLOCK_PROTOSS_ENERGY_CHANNEL("protossEnergyChannel", "protoss_energy_channel"),
+		BLOCK_PROTOSS_ENERGY_STABILIZER("protossEnergyStabilizer", "protoss_energy_stabilizer"),
 		BLOCK_PROTOSS_DARK_ENERGY_CHANNEL("protossDarkEnergyChannel", "protoss_dark_energy_channel"),
-		BLOCK_PROTOSS_DARK_ENERGY_STABILIZER("ProtossDarkEnergyStabilizer", "protoss_dark_energy_stabilizer"),
+		BLOCK_PROTOSS_DARK_ENERGY_STABILIZER("protossDarkEnergyStabilizer", "protoss_dark_energy_stabilizer"),
 		BLOCK_ENERGY("energy", "energy"),
 		BLOCK_VOID_ENERGY("voidEnergy", "void_energy"),
 		BLOCK_CRYSTAL("crystal", "crystal"),

@@ -47,6 +47,7 @@ public class EntityScarab extends EntityMob {
 	private static final DataParameter<Boolean> POWERED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
 	private static final DataParameter<Boolean> IGNITED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
 	
+	//TODO: Fix ALL of this code!
 	/**
 	 * Time when this scarab was last in an active state (Messed up code here,
 	 * probably causes scarab animation to go weird)
@@ -215,6 +216,10 @@ public class EntityScarab extends EntityMob {
 				timeSinceIgnited = fuseTime;
 				explode();
 			}
+		}
+		
+		if(this.ticksExisted > 500) {
+			this.explode();
 		}
 		
 		super.onUpdate();

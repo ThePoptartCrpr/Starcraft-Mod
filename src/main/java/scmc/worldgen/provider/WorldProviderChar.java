@@ -48,6 +48,8 @@ public class WorldProviderChar extends WorldProvider {
         return StarcraftConfig.dimChar;
     }
     
+    
+    
     @Override
     protected void createBiomeProvider() {
     	this.biomeProvider = new CharBiomeProvider(worldObj.getWorldInfo());

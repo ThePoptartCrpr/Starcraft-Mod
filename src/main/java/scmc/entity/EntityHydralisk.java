@@ -48,7 +48,7 @@ import scmc.lib.StarcraftConfig;
 public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	public EntityHydralisk(World world) {
 		super(world);
-        this.setSize(1.0F, 1.75F);
+        this.setSize(3.5F, 3.3F);
 	}
 	   
 	protected void applyEntityAttributes() {
@@ -134,7 +134,6 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
 	 */
 	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
 		//TODO: make this
-		dropItem(Items.STICK, Integer.MAX_VALUE);
 	}
 	
 	public void onUpdate() {
