@@ -54,7 +54,19 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 		
 		if(!worldObj.isRemote) {
 			if((ticksExisted > 740)) {
-				Library.replaceEntity(false, this, new EntityZergling(worldObj), new EntityZergling(worldObj));
+				int i;
+				i = rand.nextInt(100);
+				if(i <= 10) {
+					Library.replaceEntity(false, this, new EntityZergling(worldObj), new EntityZergling(worldObj));
+				}else if(i > 10 && i <= 20) {
+					Library.replaceEntity(false, this, new EntityZerglingSwarmling(worldObj), new EntityZerglingSwarmling(worldObj));
+				}else if(i > 20 && i <= 30) {
+					Library.replaceEntity(false, this, new EntityZerglingRaptor(worldObj), new EntityZerglingRaptor(worldObj));
+				}else if(i > 30 && i <= 40) {
+					Library.replaceEntity(false, this, new EntityZerglingSC2(worldObj), new EntityZerglingSC2(worldObj));
+				}else {
+					Library.replaceEntity(false, this, new EntityHydralisk(worldObj));
+				}
 			}
 		}
 	}
