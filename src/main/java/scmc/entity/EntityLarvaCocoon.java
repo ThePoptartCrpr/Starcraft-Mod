@@ -12,7 +12,7 @@ import scmc.lib.StarcraftConfig;
 public class EntityLarvaCocoon extends EntityZergPassive {
 	public EntityLarvaCocoon(World world) {
 		super(world);
-		this.setSize(0.7F, 0.8F);
+		this.setSize(1.0F, 1.1F);
 	}
 
 	@Override
