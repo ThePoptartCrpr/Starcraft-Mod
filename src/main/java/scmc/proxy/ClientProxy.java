@@ -24,10 +24,12 @@ import scmc.entity.EntityLarva;
 import scmc.entity.EntityLarvaCocoon;
 import scmc.entity.EntityProbe;
 import scmc.entity.EntityProtossReaver;
+import scmc.entity.EntityQueen;
 import scmc.entity.EntityScarab;
 import scmc.entity.EntitySpiderMine;
 import scmc.entity.EntityZealot;
 import scmc.entity.EntityZergling;
+import scmc.entity.EntityZerglingBoost;
 import scmc.entity.EntityZerglingRaptor;
 import scmc.entity.EntityZerglingSC2;
 import scmc.entity.EntityZerglingSwarmling;
@@ -48,10 +50,12 @@ import scmc.model.ModelLarva;
 import scmc.model.ModelLarvaCocoon;
 import scmc.model.ModelProbe;
 import scmc.model.ModelProtossReaver;
+import scmc.model.ModelQueen;
 import scmc.model.ModelScarab;
 import scmc.model.ModelSpiderMine;
 import scmc.model.ModelZealot;
 import scmc.model.ModelZergling;
+import scmc.model.ModelZerglingBoost;
 import scmc.model.ModelZerglingRaptor;
 import scmc.model.ModelZerglingSC2;
 import scmc.model.ModelZerglingSwarmling;
@@ -65,10 +69,12 @@ import scmc.renderer.RenderLarva;
 import scmc.renderer.RenderLarvaCocoon;
 import scmc.renderer.RenderProbe;
 import scmc.renderer.RenderProtossReaver;
+import scmc.renderer.RenderQueen;
 import scmc.renderer.RenderScarab;
 import scmc.renderer.RenderSpiderMine;
 import scmc.renderer.RenderZealot;
 import scmc.renderer.RenderZergling;
+import scmc.renderer.RenderZerglingBoost;
 import scmc.renderer.RenderZerglingRaptor;
 import scmc.renderer.RenderZerglingSC2;
 import scmc.renderer.RenderZerglingSwarmling;
@@ -100,17 +106,19 @@ public class ClientProxy extends ServerProxy {
 				new RenderHydralisk<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelHydralisk(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class,
 				new RenderZergling<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f));
-
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingSC2.class, new RenderZerglingSC2<Object>(
 				Minecraft.getMinecraft().getRenderManager(), new ModelZerglingSC2(), 0.4f));
-
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingRaptor.class, new RenderZerglingRaptor<Object>(
 				Minecraft.getMinecraft().getRenderManager(), new ModelZerglingRaptor(), 0.4f));
-
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingSwarmling.class,
 				new RenderZerglingSwarmling<Object>(Minecraft.getMinecraft().getRenderManager(),
 						new ModelZerglingSwarmling(), 0.4f));
-
+		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingBoost.class,
+				new RenderZerglingBoost<Object>(Minecraft.getMinecraft().getRenderManager(),
+						new ModelZerglingBoost(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityQueen.class,
+				new RenderQueen<Object>(Minecraft.getMinecraft().getRenderManager(),
+						new ModelQueen(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class,
 				new RenderLarva<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarvaCocoon.class, new RenderLarvaCocoon<Object>(

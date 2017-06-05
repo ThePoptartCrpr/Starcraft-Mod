@@ -26,10 +26,11 @@ import scmc.lib.StarcraftConfig;
 /**
  * @author Hypeirochus
  */
-public class EntityZerglingSC2 extends EntityZergMob {
-	public EntityZerglingSC2(World world) {
+//TODO: Fix this entire class
+public class EntityQueen extends EntityZergMob {
+	public EntityQueen(World world) {
 		super(world);
-        setSize(1, 1.75F);
+        setSize(2.0F, 2.0F);
 	}
 	
 	@Override
@@ -74,28 +75,17 @@ public class EntityZerglingSC2 extends EntityZergMob {
 	
     @Override
 	public SoundEvent getAmbientSound() {
-		Random rand = new Random();
-		
-		switch(rand.nextInt(3)) {
-			case 0: return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE1;
-			default: {
-				switch(rand.nextInt(3)) {
-					case 0: return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE2;
-					case 1: return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE3;
-					default: return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE4;
-				}
-			}
-		}
+		return null;
 	}
 	
     @Override
 	public SoundEvent getHurtSound() {
-		return StarcraftSoundEvents.ENTITY_ZERGLING_HURT;
+		return null;
 	}
 	
     @Override
 	public SoundEvent getDeathSound() {
-		return StarcraftSoundEvents.ENTITY_ZERGLING_DEATH;
+		return null;
 	}
 	
     @Override

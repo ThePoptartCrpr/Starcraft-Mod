@@ -24,6 +24,8 @@ public class ModEntities {
 		registerEntity(EntityZerglingSC2.class, "zerglingSC2", 64, 1, true);
 		registerEntity(EntityZerglingRaptor.class, "zerglingRaptor", 64, 1, true);
 		registerEntity(EntityZerglingSwarmling.class, "zerglingSwarmling", 64, 1, true);
+		registerEntity(EntityZerglingBoost.class, "zerglingBoost", 64, 1, true);
+		registerEntity(EntityQueen.class, "queen", 64, 1, true);
 		registerEntity(EntityLarva.class, "larva", 64, 1, true);
 		registerEntity(EntityLarvaCocoon.class, "larvaCocoon", 64, 1, true);
 		registerEntity(EntityBroodling.class, "broodling", 64, 1, true);
@@ -37,7 +39,6 @@ public class ModEntities {
 		EntityRegistry.addSpawn(EntityZealot.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityProbe.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityProtossReaver.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityScarab.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityDarkTemplar.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityDarkProbe.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		
@@ -47,6 +48,8 @@ public class ModEntities {
 		EntityRegistry.addSpawn(EntityZerglingSC2.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityZerglingRaptor.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityZerglingSwarmling.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityZerglingBoost.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityQueen.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityLarva.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityLarvaCocoon.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityBroodling.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
@@ -70,6 +73,8 @@ public class ModEntities {
 		EntityRegistry.registerEgg(EntityZerglingSC2.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityZerglingRaptor.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityZerglingSwarmling.class, 11403519, 7684608);
+		EntityRegistry.registerEgg(EntityZerglingBoost.class, 11403519, 7684608);
+		EntityRegistry.registerEgg(EntityQueen.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityLarva.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityLarvaCocoon.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityBroodling.class, 11403519, 7684608);

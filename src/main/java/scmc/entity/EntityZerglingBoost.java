@@ -26,8 +26,8 @@ import scmc.lib.StarcraftConfig;
 /**
  * @author Hypeirochus
  */
-public class EntityZerglingSC2 extends EntityZergMob {
-	public EntityZerglingSC2(World world) {
+public class EntityZerglingBoost extends EntityZergMob {
+	public EntityZerglingBoost(World world) {
 		super(world);
         setSize(1, 1.75F);
 	}
@@ -37,7 +37,7 @@ public class EntityZerglingSC2 extends EntityZergMob {
 		super.applyEntityAttributes();
 		
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D); //Wat
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.45000000417232513D); //Wat
 		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
 		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);

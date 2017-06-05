@@ -59,43 +59,35 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 				if(i <= 10) {
 					Library.replaceEntity(false, this, new EntityZergling(worldObj), new EntityZergling(worldObj));
 				}else if(i > 10 && i <= 20) {
-					Library.replaceEntity(false, this, new EntityZerglingSwarmling(worldObj), new EntityZerglingSwarmling(worldObj));
+					Library.replaceEntity(false, this, new EntityZerglingSwarmling(worldObj), new EntityZerglingSwarmling(worldObj), new EntityZerglingSwarmling(worldObj));
 				}else if(i > 20 && i <= 30) {
 					Library.replaceEntity(false, this, new EntityZerglingRaptor(worldObj), new EntityZerglingRaptor(worldObj));
 				}else if(i > 30 && i <= 40) {
 					Library.replaceEntity(false, this, new EntityZerglingSC2(worldObj), new EntityZerglingSC2(worldObj));
+				}else if(i > 40 && i <= 50) {
+					Library.replaceEntity(false, this, new EntityZerglingBoost(worldObj), new EntityZerglingBoost(worldObj));
 				}else {
 					Library.replaceEntity(false, this, new EntityHydralisk(worldObj));
 				}
 			}
 		}
 	}
-
-	/**
-	 * Why doesn't this do anything?
-	 */
+	
 	@Override
 	public void moveEntity(double x, double y, double z) {
-       
     }
 	
 	@Override
 	public boolean isPushedByWater() {
 		return false;
 	}
-
-	/**
-	 * <em>Reset</em> rotation?
-	 */
+	
 	@Override
 	protected void setRotation(float par1, float par2) {
 		rotationYaw = 0;
 		rotationPitch = 0;
 	}
-
-	/**
-	 * ...?
-	 */
+	
 	@Override
 	public EntityAgeable createChild(EntityAgeable entity) {
 		return null;

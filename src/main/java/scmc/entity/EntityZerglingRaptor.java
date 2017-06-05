@@ -26,8 +26,7 @@ import scmc.entity.passive.EntityTerranPassive;
 import scmc.lib.StarcraftConfig;
 
 /**
- * May or may not have been totally stolen from {@link EntityZealot}
- * @author wundrweapon
+ * @author Hypeirochus
  */
 public class EntityZerglingRaptor extends EntityZergMob {
 	public EntityZerglingRaptor(World world) {
