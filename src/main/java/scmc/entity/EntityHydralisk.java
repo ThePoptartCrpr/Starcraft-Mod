@@ -72,31 +72,13 @@ public class EntityHydralisk extends EntityZergMob implements IRangedAttackMob{
         this.applyEntityAI();
     }
 
-    protected void applyEntityAI()
-    {
-        this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-        
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
-        
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityVillager>(this, EntityVillager.class, false));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityIronGolem>(this, EntityIronGolem.class, true));
-        
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityWolf>(this, EntityWolf.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityCow>(this, EntityCow.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityChicken>(this, EntityChicken.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntitySheep>(this, EntitySheep.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityPolarBear>(this, EntityPolarBear.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityMooshroom>(this, EntityMooshroom.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityPig>(this, EntityPig.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityOcelot>(this, EntityOcelot.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityHorse>(this, EntityHorse.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityBat>(this, EntityBat.class, true));
-        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityRabbit>(this, EntityRabbit.class, true));
+	protected void applyEntityAI() {
+        targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+        targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
+        targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
+        targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+        targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
+        targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
     }
 	
 	public int getTalkInterval()

@@ -128,9 +128,12 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 4, 0, 20);
 				runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 100, 0, 128);
 				
-				runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 1, 60, 70);
-				runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 1, 60, 70);
-				
+				if(rnd.nextInt(100) < 20) {
+					runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 1, 60, 70);
+				}
+				if(rnd.nextInt(100) < 15) {
+					runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 1, 60, 70);
+				}
 				if(rnd.nextInt(100) < 10) {
 					runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
 				}
