@@ -126,7 +126,7 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(RICHMINERAL_CHAR, world, random, chunkX, chunkZ, 9, 4, 28);
 				runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 9, 4, 28);
 				runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 4, 0, 20);
-				runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 100, 0, 128);
+				runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 50, 0, 128);
 				
 				if(rnd.nextInt(100) < 20) {
 					runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 1, 60, 70);

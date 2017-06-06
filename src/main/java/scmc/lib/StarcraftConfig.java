@@ -11,26 +11,27 @@ public class StarcraftConfig {
 	
 	public static boolean dTempVis = false;
 	
-	public static double broodlingHP = 15;
-	public static double brutaliskHP = 750;
-	public static double hydraliskHP = 50;
-	public static double civHP = 20;
-	public static double dProbeHP = 20;
-	public static double dTempHP = 60;
-	public static double droneHP = 20;
-	public static double larvaHP = 12.5;
-	public static double larvaCocoonHP = 100;
-	public static double overlordHP = 100;
-	public static double probeHP = 20;
-	public static double zealotHP = 100;
-	public static double reaverHP = 200;
-	public static double zerglingHP = 25;
+	public static double broodlingHP = 20.0D;
+	public static double brutaliskHP = 1000.0D;
+	public static double hydraliskHP = 60.0D;
+	public static double civHP = 27.0D;
+	public static double dProbeHP = 27.0D;
+	public static double dTempHP = 80.0D;
+	public static double droneHP = 27.0D;
+	public static double larvaHP = 17.0D;
+	public static double larvaCocoonHP = 133.0D;
+	public static double overlordHP = 133.0D;
+	public static double probeHP = 27.0D;
+	public static double zealotHP = 100.0D;
+	public static double reaverHP = 133.0D;
+	public static double zerglingHP = 23.0D;
 	
-	public static double broodlingDmg = 2;
-	public static double brutaliskDmg = 25;
-	public static double dTempDmg = 24.5;
-	public static double zealotDmg = 8;
-	public static double zerglingDmg = 5;
+	public static double broodlingDmg = 2.0D;
+	public static double brutaliskDmg = 50.0D;
+	public static double dTempDmg = 24.5D;
+	public static double zealotDmg = 8.0D;
+	public static double zerglingDmg = 5.0D;
+	public static double hydraliskDmg = 12.0D;
 	
 	public static boolean creepCanSpread;
 	public static boolean creepSpreadScalesWithDif;
