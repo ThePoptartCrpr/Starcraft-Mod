@@ -35,15 +35,13 @@ public class EntityHydraliskSpike extends EntityThrowable {
 	protected void onImpact(RayTraceResult result) {
 		if (!worldObj.isRemote) {
 			if (result.entityHit != null) {
-				if (!result.entityHit.isImmuneToFire() && result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, shootingEntity), 12)) {
+				if (!result.entityHit.isImmuneToFire() && result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, shootingEntity), 6)) {
 					//...?
 				}
 			} else {
 				//...?
 			}
-			
 			setDead();
 		}
 	}
-
 }

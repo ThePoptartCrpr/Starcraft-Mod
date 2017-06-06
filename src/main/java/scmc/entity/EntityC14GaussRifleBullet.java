@@ -41,7 +41,6 @@ public class EntityC14GaussRifleBullet extends EntityThrowable {
 			} else {
 				//...?
 			}
-			
 			setDead();
 		}
 	}

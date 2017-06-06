@@ -631,5 +631,7 @@ public class ModelLarva extends ModelBase {
     	this.rSpike2a.rotateAngleY = MathHelper.cos(par1 * 1.3F) * 1 * par2;
     	this.rSpike3a.rotateAngleY = MathHelper.cos(par1 * 1.2F) * 1 * par2;
     	this.rSpike4a.rotateAngleY = MathHelper.cos(par1 * 1.1F) * 1 * par2;
+    	this.lMandible.rotateAngleY = (MathHelper.sin(par1 * 0.5F) / 4.1F) * 2.0F * par2;
+    	this.rMandible.rotateAngleY = (MathHelper.sin(par1 * -0.5F) / 4.1F) * 2.0F * par2;
     }
 }
