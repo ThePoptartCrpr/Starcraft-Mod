@@ -22,6 +22,7 @@ import scmc.entity.EntityDarkTemplar;
 import scmc.entity.EntityHydralisk;
 import scmc.entity.EntityLarva;
 import scmc.entity.EntityLarvaCocoon;
+import scmc.entity.EntityOverlord;
 import scmc.entity.EntityProbe;
 import scmc.entity.EntityProtossReaver;
 import scmc.entity.EntityQueen;
@@ -48,6 +49,7 @@ import scmc.model.ModelDarkTemplar;
 import scmc.model.ModelHydralisk;
 import scmc.model.ModelLarva;
 import scmc.model.ModelLarvaCocoon;
+import scmc.model.ModelOverlord;
 import scmc.model.ModelProbe;
 import scmc.model.ModelProtossReaver;
 import scmc.model.ModelQueen;
@@ -67,6 +69,7 @@ import scmc.renderer.RenderDarkTemplar;
 import scmc.renderer.RenderHydralisk;
 import scmc.renderer.RenderLarva;
 import scmc.renderer.RenderLarvaCocoon;
+import scmc.renderer.RenderOverlord;
 import scmc.renderer.RenderProbe;
 import scmc.renderer.RenderProtossReaver;
 import scmc.renderer.RenderQueen;
@@ -119,6 +122,9 @@ public class ClientProxy extends ServerProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityQueen.class,
 				new RenderQueen<Object>(Minecraft.getMinecraft().getRenderManager(),
 						new ModelQueen(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityOverlord.class,
+				new RenderOverlord<Object>(Minecraft.getMinecraft().getRenderManager(),
+						new ModelOverlord(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class,
 				new RenderLarva<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarvaCocoon.class, new RenderLarvaCocoon<Object>(

@@ -12,6 +12,7 @@ import scmc.lib.StarcraftConfig;
 
 public class EntityProbe extends EntityProtossPassive {
 
+	//TODO: Recreate movement
 	Random random = new Random();
 
 	public EntityProbe(World world) {

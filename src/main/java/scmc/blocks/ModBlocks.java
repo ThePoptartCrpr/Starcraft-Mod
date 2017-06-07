@@ -263,8 +263,6 @@ public class ModBlocks extends Block {
 		VESPENE_GEYSER_BASE_CHAR = new BlockVespeneGeyserBaseChar();
 		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
 		
-		VESPENE_GEYSER = new BlockVespeneGeyser();
-		
 		//Core Blocks
 		CORE_PYLON_VOID = new BlockCorePylonVoid();
 		CORE_PYLON_DARK = new BlockCorePylonDark();
@@ -580,8 +578,6 @@ public class ModBlocks extends Block {
 		//Fluid Registration
 		registerFluid(FLUID_ACID);
 		registerFluid(FLUID_BLOOD);
-		
-		((BlockVespeneGeyser) VESPENE_GEYSER).initModel();
 		
 		ModMetaBlocks.registerRenders();
 		//BlockRenderRegister.registerBlockRenderer();

@@ -28,6 +28,7 @@ public class EntityDarkProbe extends EntityProtossPassive {
 	private int nextStepDistance;
 	private int fire;
 
+	//TODO: Redo movement for this entity
 	public EntityDarkProbe(World world) {
 		super(world);
 		setSize(0.5F, 1.3F);

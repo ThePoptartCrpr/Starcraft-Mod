@@ -12,9 +12,6 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ReportedException;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -40,11 +37,6 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 		getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
 	}
-	
-	@Override
-	protected boolean canDespawn() {
-        return false;
-    }
 	
 	@Override
 	public int getTalkInterval() {

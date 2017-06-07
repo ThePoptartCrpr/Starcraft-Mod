@@ -23,6 +23,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ReportedException;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -68,11 +69,6 @@ public class EntityLarva extends EntityZergPassive {
 
     protected void applyEntityAI() {
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-    }
-	
-    @Override
-	protected boolean canDespawn() {
-        return false;
     }
 
     @Override
@@ -476,6 +472,14 @@ public class EntityLarva extends EntityZergPassive {
             worldObj.theProfiler.endSection();
         }
     }
+	
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float damageDealt) {
+		if(rand.nextInt(100) < 21) {
+			Library.replaceEntity(false, this, new EntityLarvaCocoon(worldObj));
+		}
+		return super.attackEntityFrom(source, damageDealt);
+	}
 	
 	
 

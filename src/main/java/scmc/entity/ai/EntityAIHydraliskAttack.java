@@ -2,10 +2,7 @@ package scmc.entity.ai;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySmallFireball;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import scmc.entity.EntityHydralisk;
 
 public class EntityAIHydraliskAttack extends EntityAIBase {
