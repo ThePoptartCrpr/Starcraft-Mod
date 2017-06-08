@@ -28,7 +28,7 @@ import scmc.lib.StarcraftConfig;
 public class EntityZerglingBoost extends EntityZergMob {
 	public EntityZerglingBoost(World world) {
 		super(world);
-        setSize(1, 1.75F);
+        setSize(1.75F, 1.55F);
 	}
 	
 	@Override

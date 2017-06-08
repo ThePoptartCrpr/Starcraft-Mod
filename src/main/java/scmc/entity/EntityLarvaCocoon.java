@@ -13,6 +13,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.ReportedException;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -67,16 +68,22 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 				int i;
 				i = rand.nextInt(100);
 				if(i <= 10) {
+					this.worldObj.playSound(this.posX, this.posY, this.posZ, StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH, SoundCategory.NEUTRAL, 1.0F, 1.0F, true);
 					Library.replaceEntity(false, this, new EntityZergling(worldObj), new EntityZergling(worldObj));
 				}else if(i > 10 && i <= 20) {
+					this.worldObj.playSound(this.posX, this.posY, this.posZ, StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH, SoundCategory.NEUTRAL, 1.0F, 1.0F, true);
 					Library.replaceEntity(false, this, new EntityZerglingSwarmling(worldObj), new EntityZerglingSwarmling(worldObj), new EntityZerglingSwarmling(worldObj));
 				}else if(i > 20 && i <= 30) {
+					this.worldObj.playSound(this.posX, this.posY, this.posZ, StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH, SoundCategory.NEUTRAL, 1.0F, 1.0F, true);
 					Library.replaceEntity(false, this, new EntityZerglingRaptor(worldObj), new EntityZerglingRaptor(worldObj));
 				}else if(i > 30 && i <= 40) {
+					this.worldObj.playSound(this.posX, this.posY, this.posZ, StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH, SoundCategory.NEUTRAL, 1.0F, 1.0F, true);
 					Library.replaceEntity(false, this, new EntityZerglingSC2(worldObj), new EntityZerglingSC2(worldObj));
 				}else if(i > 40 && i <= 50) {
+					this.worldObj.playSound(this.posX, this.posY, this.posZ, StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH, SoundCategory.NEUTRAL, 1.0F, 1.0F, true);
 					Library.replaceEntity(false, this, new EntityZerglingBoost(worldObj), new EntityZerglingBoost(worldObj));
 				}else {
+					this.worldObj.playSound(this.posX, this.posY, this.posZ, StarcraftSoundEvents.ENTITY_ZERGCOCOON_DEATH, SoundCategory.NEUTRAL, 1.0F, 1.0F, true);
 					Library.replaceEntity(false, this, new EntityHydralisk(worldObj));
 				}
 			}

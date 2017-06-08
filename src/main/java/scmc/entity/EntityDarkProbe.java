@@ -11,6 +11,14 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ReportedException;
@@ -20,6 +28,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
+import scmc.entity.monster.EntityTerranMob;
+import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityProtossPassive;
 import scmc.lib.StarcraftConfig;
 
@@ -33,19 +43,31 @@ public class EntityDarkProbe extends EntityProtossPassive {
 		super(world);
 		setSize(0.5F, 1.3F);
 	}
-	
-	//FIXME: make this
-//	public boolean isAIEnabled() {
-//		return true;
-//	}
 
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.dProbeHP);
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.43000000417232513);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000298023224D);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
+	
+	@Override
+	protected void initEntityAI() {
+        tasks.addTask(0, new EntityAISwimming(this));
+        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityZergMob.class, 16.0F, 1.0D, 1.0D));
+        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
+        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 1.0D, 1.0D));
+        tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
+        tasks.addTask(7, new EntityAIWander(this, 1));
+        tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
+        tasks.addTask(8, new EntityAILookIdle(this));
+        applyEntityAI();
+    }
+
+    protected void applyEntityAI() {
+        targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+    }
 	
 	@Override
 	public int getTalkInterval() {

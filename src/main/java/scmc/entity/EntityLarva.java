@@ -13,6 +13,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
@@ -33,6 +34,8 @@ import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
+import scmc.entity.monster.EntityProtossMob;
+import scmc.entity.monster.EntityTerranMob;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
 import scmc.lib.Library;
@@ -45,7 +48,7 @@ public class EntityLarva extends EntityZergPassive {
 
 	public EntityLarva(World world) {
 		super(world);
-		setSize(.8F, .4F);
+		setSize(1.2F, .4F);
 	}
 
 	@Override
@@ -60,6 +63,9 @@ public class EntityLarva extends EntityZergPassive {
 	@Override
 	protected void initEntityAI() {
         tasks.addTask(0, new EntityAISwimming(this));
+        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityProtossMob.class, 16.0F, 1.0D, 1.0D));
+        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
+        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 1.0D, 1.0D));
         tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
         tasks.addTask(7, new EntityAIWander(this, 1));
         tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
@@ -83,8 +89,6 @@ public class EntityLarva extends EntityZergPassive {
 		if(!worldObj.isRemote){
 			if((ticksExisted + rand.nextInt(1000) > 4000)) {
 				Library.replaceEntity(false, this, new EntityLarvaCocoon(worldObj));
-			}else{
-				//...?
 			}
 		}
 	}

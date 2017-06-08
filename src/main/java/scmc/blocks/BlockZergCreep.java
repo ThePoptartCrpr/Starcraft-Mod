@@ -2,21 +2,23 @@ package scmc.blocks;
 
 import java.util.Random;
 
-import net.minecraft.block.BlockDirt;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import scmc.StarcraftCreativeTabs;
-import scmc.blocks.metablocks.ModBlockLayered;
+import scmc.entity.monster.EntityZergMob;
+import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 
 public class BlockZergCreep extends ModBlocks {
-		 
+
+	// TODO: Review the sound creep makes (sand?...)
 	public BlockZergCreep() {
 		super(Material.GROUND);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getUnlocalizedName());
@@ -39,33 +41,35 @@ public class BlockZergCreep extends ModBlocks {
 		return true;
 	}
 
-	//FIXME: Creep spread
+	// FIXME: Creep spread speed and block params
 	@Override
-	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
-        if (!worldIn.isRemote)
-        {
-            
-	        if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
-	        {
-	            for (int i = 0; i < 1000; ++i)
-	            {
-	                BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
-	
-	                if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos))
-	                {
-	                    return;
-	                }
-	
-	                IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
-	                IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
-	
-	                if (iblockstate1.getBlock() == Blocks.GRASS)
-	                {
-	                    worldIn.setBlockState(blockpos.up(), ModBlocks.ZERG_CREEP.getDefaultState());
-	                }
-	            }
-	        }
-	    }
-    }
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+		if (!worldIn.isRemote) {
+
+			if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
+				for (int i = 0; i < 1000; ++i) {
+					BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
+
+					if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos)) {
+						return;
+					}
+
+					IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
+					IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+
+					if (iblockstate1.getBlock() == Blocks.GRASS) {
+						worldIn.setBlockState(blockpos, ModBlocks.ZERG_CREEP.getDefaultState());
+					}
+				}
+			}
+		}
+	}
+
+	@Override
+	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
+		if (entityIn instanceof EntityZergMob || entityIn instanceof EntityZergPassive) {
+			entityIn.motionX *= 1.2D;
+			entityIn.motionZ *= 1.2D;
+		}
+	}
 }

@@ -28,7 +28,7 @@ import scmc.lib.StarcraftConfig;
 public class EntityZerglingRaptor extends EntityZergMob {
 	public EntityZerglingRaptor(World world) {
 		super(world);
-        setSize(1, 1.75F);
+		setSize(1.75F, 1.75F);
         this.stepHeight = 5.0F;
 	}
 	
