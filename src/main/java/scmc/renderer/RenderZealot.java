@@ -36,7 +36,6 @@ public class RenderZealot<T> extends RenderLiving<EntityZealot> {
 	protected void preRenderCallback(EntityZealot entitylivingbaseIn, float partialTickTime)
     {
 		GL11.glScalef(0.70F, 0.70F, 0.70F);
-    	GL11.glRotatef(28F, 0F, 1F, 0F);
     }
 	
 	@Override

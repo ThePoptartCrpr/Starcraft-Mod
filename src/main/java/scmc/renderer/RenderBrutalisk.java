@@ -36,7 +36,6 @@ public class RenderBrutalisk<T> extends RenderLiving<EntityBrutalisk> {
 	protected void preRenderCallback(EntityBrutalisk entitylivingbaseIn, float partialTickTime)
     {
 		GL11.glScalef(3.0F, 3.0F, 3.0F);
-    	GL11.glRotatef(28F, 0F, 1F, 0F);
     }
 	
 	@Override

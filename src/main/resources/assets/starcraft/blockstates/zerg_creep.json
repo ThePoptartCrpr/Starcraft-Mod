@@ -1,14 +1,5 @@
 {
-    "forge_marker": 1,
     "variants": {
-    	"normal": { "model": "starcraft:zerg_creep_height2" },
-        "layers=1": { "model": "starcraft:zerg_creep_height2" },
-        "layers=2": { "model": "starcraft:zerg_creep_height4" },
-        "layers=3": { "model": "starcraft:zerg_creep_height6" },
-        "layers=4": { "model": "starcraft:zerg_creep_height8" },
-        "layers=5": { "model": "starcraft:zerg_creep_height10" },
-        "layers=6": { "model": "starcraft:zerg_creep_height12" },
-        "layers=7": { "model": "starcraft:zerg_creep_height14" },
-        "layers=8": { "model": "starcraft:zerg_creep" }
+        "normal": { "model": "starcraft:zerg_creep" }
     }
 }

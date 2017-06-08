@@ -109,16 +109,6 @@ public class ModBlocks extends Block {
 	public static Block PROTOSS_WARPPROJECTOR_OVERWORLD;
 	public static Block PROTOSS_WARPPROJECTOR_SHAKURAS;
 
-	public static Block MINERAL_FIELD;
-	public static Block RICH_MINERAL_FIELD;
-
-	public static Block VESPENE_GEYSER;
-	public static Block RICH_VESPENE_GEYSER;
-	public static Block VESPENE_GEYSER_CHAR;
-	public static Block RICH_VESPENE_GEYSER_CHAR;
-	public static Block VESPENE_GEYSER_SHAKURAS;
-	public static Block RICH_VESPENE_GEYSER_SHAKURAS;
-
 	public static Block VESPENE_GEYSER_BASE;
 	public static Block VESPENE_GEYSER_BASE_CHAR;
 	public static Block VESPENE_GEYSER_BASE_SHAKURAS;
@@ -427,7 +417,7 @@ public class ModBlocks extends Block {
 		
 		
 		GameRegistry.register(ZERG_CREEP);
-		GameRegistry.register(new ModItemLayered(ZERG_CREEP).setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL()));
+		GameRegistry.register(new ItemBlock(ZERG_CREEP).setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL()));
 		
 		GameRegistry.register(KERATIN_CHUNK);
 		GameRegistry.register(new ItemBlock(KERATIN_CHUNK).setRegistryName(Reference.ModBlocks.BLOCK_KERATIN_CHUNK.getRegistryRL()));
@@ -441,9 +431,6 @@ public class ModBlocks extends Block {
 		
 		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
 		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
-		
-		GameRegistry.register(VESPENE_GEYSER);
-		GameRegistry.register(new ItemBlock(VESPENE_GEYSER).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER.getRegistryRL()));
 		
 		
 		GameRegistry.register(CORE_PYLON_VOID);
@@ -573,7 +560,6 @@ public class ModBlocks extends Block {
 		
 		//Layer Registration
 		registerLayered(ASH_CHAR);
-		registerLayered(ZERG_CREEP);
 		
 		//Fluid Registration
 		registerFluid(FLUID_ACID);

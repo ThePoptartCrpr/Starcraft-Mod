@@ -41,6 +41,5 @@ public class RenderZerglingRaptor<T> extends RenderLiving<EntityZerglingRaptor> 
 	protected void preRenderCallback(EntityZerglingRaptor entitylivingbaseIn, float partialTickTime)
     {
 		GL11.glScalef(1.25F, 1.25F, 1.25F);
-    	GL11.glRotatef(28F, 0F, 1F, 0F);
     }
 }

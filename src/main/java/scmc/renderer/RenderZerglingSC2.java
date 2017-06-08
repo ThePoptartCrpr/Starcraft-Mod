@@ -41,6 +41,5 @@ public class RenderZerglingSC2<T> extends RenderLiving<EntityZerglingSC2> {
 	protected void preRenderCallback(EntityZerglingSC2 entitylivingbaseIn, float partialTickTime)
     {
 		GL11.glScalef(1.25F, 1.25F, 1.25F);
-    	GL11.glRotatef(28F, 0F, 1F, 0F);
     }
 }

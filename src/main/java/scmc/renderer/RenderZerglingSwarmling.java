@@ -41,6 +41,5 @@ public class RenderZerglingSwarmling<T> extends RenderLiving<EntityZerglingSwarm
 	protected void preRenderCallback(EntityZerglingSwarmling entitylivingbaseIn, float partialTickTime)
     {
 		GL11.glScalef(1.25F, 1.25F, 1.25F);
-    	GL11.glRotatef(28F, 0F, 1F, 0F);
     }
 }

@@ -15,7 +15,7 @@ import scmc.blocks.metablocks.ModBlockLayered;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 
-public class BlockZergCreep extends ModBlockLayered {
+public class BlockZergCreep extends ModBlocks {
 		 
 	public BlockZergCreep() {
 		super(Material.GROUND);
@@ -35,37 +35,37 @@ public class BlockZergCreep extends ModBlockLayered {
 	}
 
 	@Override
-	public int quantityDropped(IBlockState state, int fortune, Random rand) {
-		return ((Integer)state.getValue(LAYERS)) + 1 + rand.nextInt(2);
-	}
-
-	@Override
 	protected boolean canSilkHarvest() {
 		return true;
 	}
 
-	// TODO: Redo the Zerg Creep effect
+	//FIXME: Creep spread
 	@Override
-	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-		if(!worldIn.isRemote) {
-			if(worldIn.getLightFromNeighbors(pos.up()) < 4 && worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2) {
-				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
-			} else if(worldIn.getLightFromNeighbors(pos.up()) >= 9) {
-				for(int i = 0; i < 4; i++) {
-					BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
-
-					if(blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos)) {
-						return;
-					}
-
-					IBlockState currState= worldIn.getBlockState(blockpos);
-					IBlockState upState = worldIn.getBlockState(blockpos.up());
-
-					if (currState.getBlock() == Blocks.DIRT && currState.getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.DIRT && worldIn.getLightFromNeighbors(blockpos.up()) >= 4 && upState.getLightOpacity(worldIn, pos.up()) <= 2) {
-						worldIn.setBlockState(blockpos, ModBlocks.ZERG_CREEP.getDefaultState());
-					}
-				}
-			}
-		}
-	}
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+    {
+        if (!worldIn.isRemote)
+        {
+            
+	        if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
+	        {
+	            for (int i = 0; i < 1000; ++i)
+	            {
+	                BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
+	
+	                if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos))
+	                {
+	                    return;
+	                }
+	
+	                IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
+	                IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+	
+	                if (iblockstate1.getBlock() == Blocks.GRASS)
+	                {
+	                    worldIn.setBlockState(blockpos.up(), ModBlocks.ZERG_CREEP.getDefaultState());
+	                }
+	            }
+	        }
+	    }
+    }
 }
