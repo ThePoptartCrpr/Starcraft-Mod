@@ -35,13 +35,13 @@ public class BlockDyedIronBlocks extends ModBlocks implements IMetaBlockName {
 	 */
 	public BlockDyedIronBlocks() {
 		super(Material.IRON);
-		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_DYED_IRON.getUnlocalizedName());
-		this.setRegistryName(Reference.ModBlocks.BLOCK_DYED_IRON.getRegistryRL());
+		setSoundType(SoundType.METAL);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_DYED_IRON.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_DYED_IRON.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 2);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, DyedIronType.PURPLE)); // Default state
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, DyedIronType.PURPLE)); // Default state
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class BlockDyedIronBlocks extends ModBlocks implements IMetaBlockName {
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, DyedIronType.values()[meta]);
+		return getDefaultState().withProperty(TYPE, DyedIronType.values()[meta]);
 	}
 
 	/**

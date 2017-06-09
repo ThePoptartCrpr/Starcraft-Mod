@@ -16,13 +16,13 @@ public class BiomeGenAshPlains extends BiomesSC {
 
 		setRegistryName("ash_plains");
 
-		this.topBlock = ModBlocks.DIRT_CHAR.getDefaultState();
-		this.fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
+		topBlock = ModBlocks.DIRT_CHAR.getDefaultState();
+		fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 
-		this.spawnableMonsterList.clear();
-		this.spawnableCreatureList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCaveCreatureList.clear();
+		spawnableMonsterList.clear();
+		spawnableCreatureList.clear();
+		spawnableWaterCreatureList.clear();
+		spawnableCaveCreatureList.clear();
 	}
 
 	@SuppressWarnings("deprecation")
@@ -42,14 +42,9 @@ public class BiomeGenAshPlains extends BiomesSC {
 			} else {
 				IBlockState origState = chunkPrimerIn.getBlockState(xLoc, yLoc, zLoc);
 
-				if(origState.getMaterial() == Material.AIR) { // If we're still
-																	// in the air...
+				if(origState.getMaterial() == Material.AIR) { // If we're still in the air...
 					j = -1;
-				} else if(origState.getBlock() == ModBlocks.STONE_CHAR) { // If
-																				// we've
-																			// hit
-																			// the
-																			// ground...
+				} else if(origState.getBlock() == ModBlocks.STONE_CHAR) { // If we've hit the ground...
 					if(j == -1) { // If we were just in the air...
 						if(randHeight <= 0) {
 							topBlock = AIR;

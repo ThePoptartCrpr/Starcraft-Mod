@@ -45,7 +45,7 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 		setSize(3.5F, 3.3F);
 		experienceValue = 5;
 		rangedAttackAI = new EntityAIAttackRanged(this, 0.4D, 10, 24);
-		tasks.addTask(1, this.rangedAttackAI);
+		tasks.addTask(1, rangedAttackAI);
 		tasks.addTask(2, new EntityAISwimming(this));
 		tasks.addTask(3, new EntityAIWander(this, 1.0D));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -98,7 +98,7 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_) {
 		if(getAttackTarget() != null) {
-			EntityHydraliskSpike entityBullet = new EntityHydraliskSpike(this.worldObj, this, target, 10F, 12F);
+			EntityHydraliskSpike entityBullet = new EntityHydraliskSpike(worldObj, this, target, 10F, 12F);
 			worldObj.spawnEntityInWorld(entityBullet);
 			playSound(StarcraftSoundEvents.ENTITY_BROODLING_DEATH, 0.7F, 1F);
 			worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, posX, posY + getEyeHeight(), posZ, 1, 1, 1);

@@ -53,7 +53,7 @@ public class ChunkProviderChar implements IChunkGenerator {
 		// If you want normal creatures appropriate for this biome then
 		// uncomment the
 		// following two lines:
-		// Biome biome = this.worldObj.getBiome(pos);
+		// Biome biome = worldObj.getBiome(pos);
 		// return biome.getSpawnableList(creatureType);
 
 		if(creatureType == EnumCreatureType.MONSTER) {

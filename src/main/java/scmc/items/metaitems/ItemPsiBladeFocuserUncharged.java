@@ -15,9 +15,9 @@ public class ItemPsiBladeFocuserUncharged extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemPsiBladeFocuserUncharged() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_PSIBLADEFOCUSER_UNCHARGED.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_PSIBLADEFOCUSER_UNCHARGED.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_PSIBLADEFOCUSER_UNCHARGED.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_PSIBLADEFOCUSER_UNCHARGED.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemPsiBladeFocuserUncharged extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < FocuserType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + FocuserType.values()[i].getName();
+				return getUnlocalizedName() + "." + FocuserType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + FocuserType.AIUR.getName();
+		return getUnlocalizedName() + "." + FocuserType.AIUR.getName();
 	}
 }

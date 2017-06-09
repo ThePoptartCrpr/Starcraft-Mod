@@ -15,9 +15,9 @@ public class ItemSpawner extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemSpawner() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_SPAWNER.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_SPAWNER.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_SPAWNER.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_SPAWNER.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemSpawner extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < SpawnerType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + SpawnerType.values()[i].getName();
+				return getUnlocalizedName() + "." + SpawnerType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + SpawnerType.PYLON.getName();
+		return getUnlocalizedName() + "." + SpawnerType.PYLON.getName();
 	}
 }

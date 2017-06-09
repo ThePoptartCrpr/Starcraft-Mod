@@ -26,8 +26,8 @@ public class RenderProtossReaver<T> extends RenderLiving<EntityProtossReaver> {
 	public void doRender(EntityProtossReaver entity, double x, double y, double z, float entityYaw, float partialTicks) {
 		super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-		if(!this.renderOutlines) {
-			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		if(!renderOutlines) {
+			renderLeash(entity, x, y, z, entityYaw, partialTicks);
 		}
 	}
 

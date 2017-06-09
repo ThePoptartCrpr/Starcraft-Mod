@@ -11,21 +11,21 @@ public class EntityZergMob extends EntityMob {
 	// TODO: fix and adjust these
 	/*
 	 * @Override public boolean getCanSpawnHere() { int i =
-	 * MathHelper.floor_double(this.posX); int j =
-	 * MathHelper.floor_double(this.posY); int k =
-	 * MathHelper.floor_double(this.posZ); BlockPos pos = new BlockPos(this);
-	 * return this.worldObj.getLight(pos.add(i, j, k)) > 0 &&
-	 * this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL; }
+	 * MathHelper.floor_double(posX); int j =
+	 * MathHelper.floor_double(posY); int k =
+	 * MathHelper.floor_double(posZ); BlockPos pos = new BlockPos(;
+	 * return worldObj.getLight(pos.add(i, j, k)) > 0 &&
+	 * worldObj.getDifficulty() != EnumDifficulty.PEACEFUL; }
 	 * @Override protected boolean isValidLightLevel() { BlockPos blockpos = new
-	 * BlockPos(this.posX, this.getEntityBoundingBox().minY, this.posZ); if
-	 * (this.worldObj.getLightFor(EnumSkyBlock.SKY, blockpos) >
-	 * this.rand.nextInt(32)) { return false; } else { int i =
-	 * this.worldObj.getLightFromNeighbors(blockpos); if
-	 * (this.worldObj.isThundering()) { int j =
-	 * this.worldObj.getSkylightSubtracted();
-	 * this.worldObj.setSkylightSubtracted(10); i =
-	 * this.worldObj.getLightFromNeighbors(blockpos);
-	 * this.worldObj.setSkylightSubtracted(j); } return i <=
-	 * this.rand.nextInt(16); } }
+	 * BlockPos(posX, getEntityBoundingBox().minY, posZ); if
+	 * (worldObj.getLightFor(EnumSkyBlock.SKY, blockpos) >
+	 * rand.nextInt(32)) { return false; } else { int i =
+	 * worldObj.getLightFromNeighbors(blockpos); if
+	 * (worldObj.isThundering()) { int j =
+	 * worldObj.getSkylightSubtracted();
+	 * worldObj.setSkylightSubtracted(10); i =
+	 * worldObj.getLightFromNeighbors(blockpos);
+	 * worldObj.setSkylightSubtracted(j); } return i <=
+	 * rand.nextInt(16); } }
 	 */
 }

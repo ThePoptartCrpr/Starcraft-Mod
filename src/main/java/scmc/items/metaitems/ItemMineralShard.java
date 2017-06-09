@@ -15,9 +15,9 @@ public class ItemMineralShard extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemMineralShard() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_MINERAL_SHARD.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_MINERAL_SHARD.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_MINERAL_SHARD.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_MINERAL_SHARD.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemMineralShard extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < MineralType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + MineralType.values()[i].getName();
+				return getUnlocalizedName() + "." + MineralType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + MineralType.BLUE.getName();
+		return getUnlocalizedName() + "." + MineralType.BLUE.getName();
 	}
 }

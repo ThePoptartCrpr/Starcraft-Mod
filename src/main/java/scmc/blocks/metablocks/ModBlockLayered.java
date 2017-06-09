@@ -48,7 +48,7 @@ public abstract class ModBlockLayered extends ModBlocks {
 	}
 
 	private boolean checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state) {
-		if(!this.canPlaceBlockAt(worldIn, pos)) {
+		if(!canPlaceBlockAt(worldIn, pos)) {
 			worldIn.setBlockToAir(pos);
 			return false;
 		} else {
@@ -87,7 +87,7 @@ public abstract class ModBlockLayered extends ModBlocks {
 
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(LAYERS, Integer.valueOf((meta & 7) + 1));
+		return getDefaultState().withProperty(LAYERS, Integer.valueOf((meta & 7) + 1));
 	}
 
 	@Override
@@ -123,7 +123,7 @@ public abstract class ModBlockLayered extends ModBlocks {
 
 	@Override
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn) {
-		this.checkAndDropBlock(worldIn, pos, state);
+		checkAndDropBlock(worldIn, pos, state);
 	}
 
 	@Override

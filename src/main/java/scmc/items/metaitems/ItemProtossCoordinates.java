@@ -15,9 +15,9 @@ public class ItemProtossCoordinates extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemProtossCoordinates() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_COORDINATE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_COORDINATE.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_COORDINATE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_COORDINATE.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemProtossCoordinates extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < CoordinateType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + CoordinateType.values()[i].getName();
+				return getUnlocalizedName() + "." + CoordinateType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + CoordinateType.CHAR.getName();
+		return getUnlocalizedName() + "." + CoordinateType.CHAR.getName();
 	}
 }

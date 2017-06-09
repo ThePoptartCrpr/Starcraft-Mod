@@ -7,7 +7,7 @@ public class WeaponCopperSword extends ItemSword {
 
 	public WeaponCopperSword(ToolMaterial material) {
 		super(material);
-		this.setUnlocalizedName(Reference.ModItems.WEAPON_COPPER_SWORD.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.WEAPON_COPPER_SWORD.getRegistryRL());
+		setUnlocalizedName(Reference.ModItems.WEAPON_COPPER_SWORD.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.WEAPON_COPPER_SWORD.getRegistryRL());
 	}
 }

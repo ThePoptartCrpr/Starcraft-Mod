@@ -26,8 +26,8 @@ public class RenderZergling<T> extends RenderLiving<EntityZergling> {
 	public void doRender(EntityZergling entity, double x, double y, double z, float entityYaw, float partialTicks) {
 		super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-		if(!this.renderOutlines) {
-			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		if(!renderOutlines) {
+			renderLeash(entity, x, y, z, entityYaw, partialTicks);
 		}
 	}
 

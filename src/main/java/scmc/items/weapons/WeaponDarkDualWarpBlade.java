@@ -12,8 +12,8 @@ public class WeaponDarkDualWarpBlade extends ItemSword {
 
 	public WeaponDarkDualWarpBlade(ToolMaterial material) {
 		super(material);
-		this.setCreativeTab(StarcraftCreativeTabs.COMBAT);
-		this.setUnlocalizedName(Reference.UN_BASE + name);
+		setCreativeTab(StarcraftCreativeTabs.COMBAT);
+		setUnlocalizedName(Reference.UN_BASE + name);
 	}
 
 	@Override

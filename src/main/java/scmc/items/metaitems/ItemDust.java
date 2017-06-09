@@ -15,9 +15,9 @@ public class ItemDust extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemDust() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_DUST.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_DUST.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_DUST.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_DUST.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemDust extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < DustType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + DustType.values()[i].getName();
+				return getUnlocalizedName() + "." + DustType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + DustType.IRON.getName();
+		return getUnlocalizedName() + "." + DustType.IRON.getName();
 	}
 }

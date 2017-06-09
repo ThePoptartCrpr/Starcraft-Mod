@@ -16,9 +16,9 @@ public class ItemMutaliskWing extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemMutaliskWing() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_MUTALISK_WING.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_MUTALISK_WING.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_MUTALISK_WING.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_MUTALISK_WING.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -38,11 +38,11 @@ public class ItemMutaliskWing extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < MutaliskWingType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + MutaliskWingType.values()[i].getName();
+				return getUnlocalizedName() + "." + MutaliskWingType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + MutaliskWingType.PURPLE.getName();
+		return getUnlocalizedName() + "." + MutaliskWingType.PURPLE.getName();
 	}
 }

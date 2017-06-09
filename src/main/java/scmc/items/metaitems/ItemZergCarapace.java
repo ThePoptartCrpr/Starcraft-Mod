@@ -15,9 +15,9 @@ public class ItemZergCarapace extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemZergCarapace() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_ZERG_CARAPACE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_ZERG_CARAPACE.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_ZERG_CARAPACE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_ZERG_CARAPACE.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemZergCarapace extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < CarapaceType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + CarapaceType.values()[i].getName();
+				return getUnlocalizedName() + "." + CarapaceType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + CarapaceType.T1.getName();
+		return getUnlocalizedName() + "." + CarapaceType.T1.getName();
 	}
 }

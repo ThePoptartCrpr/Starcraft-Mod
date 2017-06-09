@@ -19,7 +19,7 @@ public abstract class SCWorldGenerator {
 	}
 
 	public SCWorldGenerator(boolean notify) {
-		this.doBlockNotify = notify;
+		doBlockNotify = notify;
 	}
 
 	public boolean generate(int metaDim, int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
@@ -35,7 +35,7 @@ public abstract class SCWorldGenerator {
 	}
 
 	protected void setBlockAndNotifyAdequately(World worldIn, BlockPos pos, IBlockState state) {
-		if(this.doBlockNotify) {
+		if(doBlockNotify) {
 			worldIn.setBlockState(pos, state, 3);
 		} else {
 			worldIn.setBlockState(pos, state, 2);

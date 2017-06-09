@@ -35,13 +35,13 @@ public class BlockParisteelMetal extends ModBlocks implements IMetaBlockName {
 	 */
 	public BlockParisteelMetal() {
 		super(Material.IRON);
-		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_PARISTEEL.getUnlocalizedName());
-		this.setRegistryName(Reference.ModBlocks.BLOCK_PARISTEEL.getRegistryRL());
+		setSoundType(SoundType.METAL);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_PARISTEEL.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_PARISTEEL.getRegistryRL());
 		// TODO: Adjust these
-		this.setHardness(20); // Sets how hard the block is to break
-		this.setResistance(20); // Sets the blocks blast resistance to explosions
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ParisteelMetalType.PURPLE)); // Default state
+		setHardness(20); // Sets how hard the block is to break
+		setResistance(20); // Sets the blocks blast resistance to explosions
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, ParisteelMetalType.PURPLE)); // Default state
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class BlockParisteelMetal extends ModBlocks implements IMetaBlockName {
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, ParisteelMetalType.values()[meta]);
+		return getDefaultState().withProperty(TYPE, ParisteelMetalType.values()[meta]);
 	}
 
 	/**

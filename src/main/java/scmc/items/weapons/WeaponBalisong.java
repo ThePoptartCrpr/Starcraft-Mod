@@ -7,7 +7,7 @@ public class WeaponBalisong extends ItemSword {
 
 	public WeaponBalisong(ToolMaterial material) {
 		super(material);
-		this.setUnlocalizedName(Reference.ModItems.WEAPON_BALISONG.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.WEAPON_BALISONG.getRegistryRL());
+		setUnlocalizedName(Reference.ModItems.WEAPON_BALISONG.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.WEAPON_BALISONG.getRegistryRL());
 	}
 }

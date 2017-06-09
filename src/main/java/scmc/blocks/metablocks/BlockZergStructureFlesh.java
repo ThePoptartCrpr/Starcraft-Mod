@@ -35,13 +35,13 @@ public class BlockZergStructureFlesh extends ModBlocks implements IMetaBlockName
 	 */
 	public BlockZergStructureFlesh() {
 		super(Material.CLAY);
-		this.setSoundType(SoundType.GROUND);
-		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_FLESH.getUnlocalizedName());
-		this.setRegistryName(Reference.ModBlocks.BLOCK_ZERG_FLESH.getRegistryRL());
+		setSoundType(SoundType.GROUND);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_FLESH.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ZERG_FLESH.getRegistryRL());
 		setResistance(10.0F);
 		setHardness(5.0F);
 		setHarvestLevel("axe", 2);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ZergFleshType.PURPLE)); // Default state
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, ZergFleshType.PURPLE)); // Default state
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class BlockZergStructureFlesh extends ModBlocks implements IMetaBlockName
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, ZergFleshType.values()[meta]);
+		return getDefaultState().withProperty(TYPE, ZergFleshType.values()[meta]);
 	}
 
 	/**

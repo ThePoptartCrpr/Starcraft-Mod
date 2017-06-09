@@ -61,11 +61,11 @@ public class StarcraftBiomeProvider extends BiomeProvider {
 		}
 
 		if(cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (z & 15) == 0) {
-			Biome[] abiome = this.biomeCache.getCachedBiomes(x, z);
+			Biome[] abiome = biomeCache.getCachedBiomes(x, z);
 			System.arraycopy(abiome, 0, listToReuse, 0, width * length);
 			return listToReuse;
 		} else {
-			int[] aint = this.biomeIndexLayer.getInts(x, z, width, length);
+			int[] aint = biomeIndexLayer.getInts(x, z, width, length);
 
 			for(int i = 0; i < width * length; ++i) {
 				listToReuse[i] = Biome.getBiome(aint[i], defaultBiome);
@@ -86,7 +86,7 @@ public class StarcraftBiomeProvider extends BiomeProvider {
 			biomes = new Biome[width * height];
 		}
 
-		int[] aint = this.genBiomes.getInts(x, z, width, height);
+		int[] aint = genBiomes.getInts(x, z, width, height);
 
 		try {
 			for(int i = 0; i < width * height; ++i) {

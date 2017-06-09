@@ -17,13 +17,13 @@ public class BiomeGenCharScar extends BiomesSC {
 
 		setRegistryName("char_scar");
 
-		this.topBlock = ModBlocks.DIRT_CHAR.getDefaultState();
-		this.fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
+		topBlock = ModBlocks.DIRT_CHAR.getDefaultState();
+		fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 
-		this.spawnableMonsterList.clear();
-		this.spawnableCreatureList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCaveCreatureList.clear();
+		spawnableMonsterList.clear();
+		spawnableCreatureList.clear();
+		spawnableWaterCreatureList.clear();
+		spawnableCaveCreatureList.clear();
 	}
 
 	public final void genBiomeTerrainChar(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {

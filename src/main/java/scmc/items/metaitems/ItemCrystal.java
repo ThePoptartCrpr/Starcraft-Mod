@@ -15,9 +15,9 @@ public class ItemCrystal extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemCrystal() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_CRYSTAL.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_CRYSTAL.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_CRYSTAL.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_CRYSTAL.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemCrystal extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < CrystalType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + CrystalType.values()[i].getName();
+				return getUnlocalizedName() + "." + CrystalType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + CrystalType.KHAYDARIN.getName();
+		return getUnlocalizedName() + "." + CrystalType.KHAYDARIN.getName();
 	}
 }

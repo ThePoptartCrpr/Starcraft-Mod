@@ -35,13 +35,13 @@ public class BlockProtossMetalT2 extends ModBlocks implements IMetaBlockName {
 	 */
 	public BlockProtossMetalT2() {
 		super(Material.IRON);
-		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_METALT2.getUnlocalizedName());
-		this.setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_METALT2.getRegistryRL());
+		setSoundType(SoundType.METAL);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_METALT2.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_METALT2.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(25.0F);
 		setHarvestLevel("pickaxe", 3);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ProtossMetalType.AIUR)); // Default state
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, ProtossMetalType.AIUR)); // Default state
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class BlockProtossMetalT2 extends ModBlocks implements IMetaBlockName {
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, ProtossMetalType.values()[meta]);
+		return getDefaultState().withProperty(TYPE, ProtossMetalType.values()[meta]);
 	}
 
 	/**

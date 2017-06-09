@@ -19,9 +19,7 @@ public class ModTeleporter extends Teleporter {
 		WorldServer worldServer = server.worldServerForDimension(dimension);
 		player.addExperienceLevel(0);
 
-		if(worldServer == null || worldServer.getMinecraftServer() == null) { // Dimension
-																					// doesn't
-																				// exist
+		if(worldServer == null || worldServer.getMinecraftServer() == null) { // Dimension doesn't exist
 			throw new IllegalArgumentException("Dimension: " + dimension + " doesn't exist!");
 		}
 
@@ -52,9 +50,9 @@ public class ModTeleporter extends Teleporter {
 
 	@Override
 	public void placeInPortal(@Nonnull Entity entity, float rotationYaw) {
-		this.worldServer.getBlockState(new BlockPos((int) this.x, (int) this.y, (int) this.z));
+		worldServer.getBlockState(new BlockPos((int) x, (int) y, (int) z));
 
-		entity.setPosition(this.x, this.y, this.z);
+		entity.setPosition(x, y, z);
 		entity.motionX = 0.0f;
 		entity.motionY = 0.0f;
 		entity.motionZ = 0.0f;

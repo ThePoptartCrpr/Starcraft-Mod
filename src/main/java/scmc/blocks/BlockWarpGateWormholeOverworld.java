@@ -20,8 +20,8 @@ public class BlockWarpGateWormholeOverworld extends BlockContainer {
 		setSoundType(SoundType.STONE);
 		setHardness(5.0F);
 		setResistance(0.0F);
-		this.setLightLevel(1.0F);
-		this.setCreativeTab(null);
+		setLightLevel(1.0F);
+		setCreativeTab(null);
 	}
 
 	@Override

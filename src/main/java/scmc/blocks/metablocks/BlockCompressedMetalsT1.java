@@ -35,12 +35,12 @@ public class BlockCompressedMetalsT1 extends ModBlocks implements IMetaBlockName
 	 */
 	public BlockCompressedMetalsT1() {
 		super(Material.IRON);
-		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_METALT1.getUnlocalizedName());
-		this.setRegistryName(Reference.ModBlocks.BLOCK_COMP_METALT1.getRegistryRL());
-		this.setHardness(20); // Sets how hard the block is to break
-		this.setResistance(20); // Sets the blocks blast resistance to explosions
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMetalType.COPPER)); // Default state
+		setSoundType(SoundType.METAL);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_METALT1.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_COMP_METALT1.getRegistryRL());
+		setHardness(20); // Sets how hard the block is to break
+		setResistance(20); // Sets the blocks blast resistance to explosions
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, CompressedMetalType.COPPER)); // Default state
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class BlockCompressedMetalsT1 extends ModBlocks implements IMetaBlockName
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, CompressedMetalType.values()[meta]);
+		return getDefaultState().withProperty(TYPE, CompressedMetalType.values()[meta]);
 	}
 
 	/**

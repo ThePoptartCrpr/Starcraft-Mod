@@ -7,7 +7,7 @@ public class ToolSteelShovel extends ItemSpade {
 
 	public ToolSteelShovel(ToolMaterial material) {
 		super(material);
-		this.setUnlocalizedName(Reference.ModItems.TOOL_STEEL_SHOVEL.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.TOOL_STEEL_SHOVEL.getRegistryRL());
+		setUnlocalizedName(Reference.ModItems.TOOL_STEEL_SHOVEL.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.TOOL_STEEL_SHOVEL.getRegistryRL());
 	}
 }

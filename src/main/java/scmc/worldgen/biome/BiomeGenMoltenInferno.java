@@ -17,13 +17,13 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 
 		setRegistryName("molten_inferno");
 
-		this.topBlock = Blocks.OBSIDIAN.getDefaultState();
-		this.fillerBlock = Blocks.OBSIDIAN.getDefaultState();
+		topBlock = Blocks.OBSIDIAN.getDefaultState();
+		fillerBlock = Blocks.OBSIDIAN.getDefaultState();
 
-		this.spawnableMonsterList.clear();
-		this.spawnableCreatureList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCaveCreatureList.clear();
+		spawnableMonsterList.clear();
+		spawnableCreatureList.clear();
+		spawnableWaterCreatureList.clear();
+		spawnableCaveCreatureList.clear();
 	}
 
 	public final void genBiomeTerrainChar(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {

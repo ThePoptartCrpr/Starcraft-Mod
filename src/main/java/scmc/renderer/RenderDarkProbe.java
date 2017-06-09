@@ -24,8 +24,8 @@ public class RenderDarkProbe<T> extends RenderLiving<EntityDarkProbe> {
 	public void doRender(EntityDarkProbe entity, double x, double y, double z, float entityYaw, float partialTicks) {
 		super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-		if(!this.renderOutlines) {
-			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		if(!renderOutlines) {
+			renderLeash(entity, x, y, z, entityYaw, partialTicks);
 		}
 	}
 

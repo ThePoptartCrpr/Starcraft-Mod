@@ -13,7 +13,7 @@ public class WorldProviderChar extends WorldProvider {
 
 	@Override
 	protected void createBiomeProvider() {
-		this.biomeProvider = new CharBiomeProvider(worldObj.getWorldInfo());
+		biomeProvider = new CharBiomeProvider(worldObj.getWorldInfo());
 	}
 
 	@Override

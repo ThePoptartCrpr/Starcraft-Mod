@@ -50,7 +50,7 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 			GL11.glDisable(GL11.GL_CULL_FACE);
 			GlStateManager.scale(glScale, glScale, glScale);
 			RenderUtil.bindTexture(getResourceLocation());
-			this.getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
+			getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
 
 			if(itemstack != null && itemstack.getItem() instanceof ItemC14GaussRifle) {
 				GL11.glDisable(GL11.GL_LIGHTING);
@@ -75,7 +75,7 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 		GlStateManager.scale(20F, 20F, 20F);
 		GL11.glDisable(GL11.GL_CULL_FACE);
 		RenderUtil.bindTexture(getResourceLocation());
-		this.getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
+		getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
 		GlStateManager.color(1F, 1F, 1F, 1F);
 	}
 
@@ -85,7 +85,7 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 		GlStateManager.scale(1F, -1F, 1F);
 		GL11.glDisable(GL11.GL_CULL_FACE);
 		RenderUtil.bindTexture(getResourceLocation());
-		this.getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
+		getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
 	}
 
 	@Override
@@ -101,7 +101,7 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 			float glScale = 1.0F;
 			GlStateManager.scale(glScale, glScale, glScale);
 			RenderUtil.bindTexture(getResourceLocation());
-			this.getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
+			getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
 		}
 	}
 }

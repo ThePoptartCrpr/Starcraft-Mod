@@ -45,8 +45,8 @@ public class ItemRenderC14GaussRifle extends ItemRenderer {
 		}
 		GlStateManager.popMatrix();
 
-		Minecraft.getMinecraft().renderEngine.bindTexture(this.getResourceLocation());
-		this.getModel().render(null, 0, 0, 0, 0, 0, 1.0F);
+		Minecraft.getMinecraft().renderEngine.bindTexture(getResourceLocation());
+		getModel().render(null, 0, 0, 0, 0, 0, 1.0F);
 		GlStateManager.popMatrix();
 	}
 
@@ -59,8 +59,8 @@ public class ItemRenderC14GaussRifle extends ItemRenderer {
 		GlStateManager.rotate(180, 1, 0, 0);
 		GlStateManager.translate(2.5, -8, 0);
 		GlStateManager.disableLighting();
-		Minecraft.getMinecraft().renderEngine.bindTexture(this.getResourceLocation());
-		this.getModel().render(null, 0, 0, 0, 0, 0, 1.0F);
+		Minecraft.getMinecraft().renderEngine.bindTexture(getResourceLocation());
+		getModel().render(null, 0, 0, 0, 0, 0, 1.0F);
 		GlStateManager.enableLighting();
 		GlStateManager.popMatrix();
 	}
@@ -75,8 +75,8 @@ public class ItemRenderC14GaussRifle extends ItemRenderer {
 		GL11.glRotated(-90F, 1, 0, 0);
 		GL11.glTranslated(2.8, -6, 0);
 		GlStateManager.color(1F, 1F, 1F);
-		Minecraft.getMinecraft().renderEngine.bindTexture(this.getResourceLocation());
-		this.getModel().render(null, 0, 0, 0, 0, 0, 1.0F);
+		Minecraft.getMinecraft().renderEngine.bindTexture(getResourceLocation());
+		getModel().render(null, 0, 0, 0, 0, 0, 1.0F);
 		GlStateManager.popMatrix();
 	}
 
@@ -95,8 +95,8 @@ public class ItemRenderC14GaussRifle extends ItemRenderer {
 		GL11.glRotated(-90F, 1, 0, 0);
 		GL11.glTranslated(2.8, -8, -3.5);
 		GlStateManager.color(1F, 1F, 1F);
-		Minecraft.getMinecraft().renderEngine.bindTexture(this.getResourceLocation());
-		this.getModel().render(null, 0, 0, 0, 0, 0, 1.0F);
+		Minecraft.getMinecraft().renderEngine.bindTexture(getResourceLocation());
+		getModel().render(null, 0, 0, 0, 0, 0, 1.0F);
 		GlStateManager.popMatrix();
 	}
 }

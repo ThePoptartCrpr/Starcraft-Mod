@@ -7,7 +7,7 @@ public class ToolSteelPickaxe extends ItemPickaxe {
 
 	public ToolSteelPickaxe(ToolMaterial material) {
 		super(material);
-		this.setUnlocalizedName(Reference.ModItems.TOOL_STEEL_PICKAXE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.TOOL_STEEL_PICKAXE.getRegistryRL());
+		setUnlocalizedName(Reference.ModItems.TOOL_STEEL_PICKAXE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.TOOL_STEEL_PICKAXE.getRegistryRL());
 	}
 }

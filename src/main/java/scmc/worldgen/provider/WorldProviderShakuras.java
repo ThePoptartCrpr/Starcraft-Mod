@@ -12,7 +12,7 @@ public class WorldProviderShakuras extends WorldProvider {
 
 	@Override
 	protected void createBiomeProvider() {
-		this.biomeProvider = new ShakurasBiomeProvider(worldObj.getWorldInfo());
+		biomeProvider = new ShakurasBiomeProvider(worldObj.getWorldInfo());
 	}
 
 	@Override

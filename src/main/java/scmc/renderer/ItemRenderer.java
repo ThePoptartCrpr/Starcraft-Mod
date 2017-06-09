@@ -78,7 +78,7 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel, IBakedMode
 
 	@Override
 	public ItemOverrideList getOverrides() {
-		return this.overrides;
+		return overrides;
 	}
 
 	@Override
@@ -97,31 +97,31 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel, IBakedMode
 
 	@Override
 	public Pair<? extends IBakedModel, Matrix4f> handlePerspective(TransformType type) {
-		this.renderPre(this.stack, this.entity, type);
+		renderPre(stack, entity, type);
 
 		switch(type) {
 			case FIRST_PERSON_LEFT_HAND: {
-				this.renderFirstPersonLeft(this.stack, this.entity, type);
+				renderFirstPersonLeft(stack, entity, type);
 			}
 				break;
 			case FIRST_PERSON_RIGHT_HAND: {
-				this.renderFirstPersonRight(this.stack, this.entity, type);
+				renderFirstPersonRight(stack, entity, type);
 			}
 				break;
 			case GUI: {
-				this.renderInInventory(this.stack, this.entity, type);
+				renderInInventory(stack, entity, type);
 			}
 				break;
 			case THIRD_PERSON_LEFT_HAND: {
-				this.renderThirdPersonLeft(this.stack, this.entity, type);
+				renderThirdPersonLeft(stack, entity, type);
 			}
 				break;
 			case THIRD_PERSON_RIGHT_HAND: {
-				this.renderThirdPersonRight(this.stack, this.entity, type);
+				renderThirdPersonRight(stack, entity, type);
 			}
 				break;
 			case GROUND: {
-				this.renderInWorld(this.stack, this.entity, type);
+				renderInWorld(stack, entity, type);
 			}
 				break;
 
@@ -129,7 +129,7 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel, IBakedMode
 				break;
 		}
 
-		this.renderPost(this.stack, this.entity, type);
+		renderPost(stack, entity, type);
 
 		return selfPair;
 	}

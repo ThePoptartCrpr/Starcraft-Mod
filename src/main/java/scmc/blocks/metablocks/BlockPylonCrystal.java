@@ -35,14 +35,14 @@ public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 	 */
 	public BlockPylonCrystal() {
 		super(Material.ROCK);
-		this.setSoundType(SoundType.STONE);
-		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_PYLON_CRYSTAL.getUnlocalizedName());
-		this.setRegistryName(Reference.ModBlocks.BLOCK_PYLON_CRYSTAL.getRegistryRL());
+		setSoundType(SoundType.STONE);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_PYLON_CRYSTAL.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_PYLON_CRYSTAL.getRegistryRL());
 		setHardness(5.0F);
 		setResistance(20.0F);
 		setLightLevel(4.0F);
 		setHarvestLevel("pickaxe", 2);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, PylonCrystalType.PURE)); // Default state
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, PylonCrystalType.PURE)); // Default state
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, PylonCrystalType.values()[meta]);
+		return getDefaultState().withProperty(TYPE, PylonCrystalType.values()[meta]);
 	}
 
 	/**

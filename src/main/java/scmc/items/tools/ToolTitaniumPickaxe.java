@@ -7,7 +7,7 @@ public class ToolTitaniumPickaxe extends ItemPickaxe {
 
 	public ToolTitaniumPickaxe(ToolMaterial material) {
 		super(material);
-		this.setUnlocalizedName(Reference.ModItems.TOOL_TITANIUM_PICKAXE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.TOOL_TITANIUM_PICKAXE.getRegistryRL());
+		setUnlocalizedName(Reference.ModItems.TOOL_TITANIUM_PICKAXE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.TOOL_TITANIUM_PICKAXE.getRegistryRL());
 	}
 }

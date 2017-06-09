@@ -36,12 +36,12 @@ public class BlockZergStructureCarapace extends ModBlocks implements IMetaBlockN
 	 */
 	public BlockZergStructureCarapace() {
 		super(Material.ROCK);
-		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_CARAPACE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CARAPACE.getRegistryRL());
-		this.setHardness(20); // Sets how hard the block is to break
-		this.setResistance(20); // Sets the blocks blast resistance to
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_ZERG_CARAPACE.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CARAPACE.getRegistryRL());
+		setHardness(20); // Sets how hard the block is to break
+		setResistance(20); // Sets the blocks blast resistance to
 								// explosions
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, ZergStructureCarapaceType.T1)); // Default state
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, ZergStructureCarapaceType.T1)); // Default state
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class BlockZergStructureCarapace extends ModBlocks implements IMetaBlockN
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, ZergStructureCarapaceType.values()[meta]);
+		return getDefaultState().withProperty(TYPE, ZergStructureCarapaceType.values()[meta]);
 	}
 
 	/**

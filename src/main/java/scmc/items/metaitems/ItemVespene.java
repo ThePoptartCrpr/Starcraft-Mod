@@ -15,9 +15,9 @@ public class ItemVespene extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemVespene() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_VESPENE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_VESPENE.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_VESPENE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_VESPENE.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemVespene extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < VespeneType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + VespeneType.values()[i].getName();
+				return getUnlocalizedName() + "." + VespeneType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + VespeneType.RAW.getName();
+		return getUnlocalizedName() + "." + VespeneType.RAW.getName();
 	}
 }

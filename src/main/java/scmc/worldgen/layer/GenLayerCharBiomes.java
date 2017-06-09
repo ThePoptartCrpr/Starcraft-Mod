@@ -19,10 +19,10 @@ public class GenLayerCharBiomes extends GenLayer {
 															// us some memory.
 		for(int dz = 0; dz < length; dz++) {
 			for(int dx = 0; dx < width; dx++) {
-				this.initChunkSeed(dx + x, dz + z);
+				initChunkSeed(dx + x, dz + z);
 				// dest[(dx + dz * width)] =
-				// this.dimBiomes[nextInt(this.dimBiomes.length)].getIdForBiome(this.dimBiomes[dz]);
-				dest[(dx + dz * width)] = Biome.getIdForBiome(dimBiomes[nextInt(this.dimBiomes.length)]);
+				// dimBiomes[nextInt(dimBiomes.length)].getIdForBiome(dimBiomes[dz]);
+				dest[(dx + dz * width)] = Biome.getIdForBiome(dimBiomes[nextInt(dimBiomes.length)]);
 			}
 		}
 		return dest;

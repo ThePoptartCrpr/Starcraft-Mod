@@ -15,7 +15,7 @@ public class BiomeGenCreepInfestation extends Biome {
 		spawnableMonsterList.clear();
 		spawnableCreatureList.clear();
 		spawnableWaterCreatureList.clear();
-		this.spawnableCaveCreatureList.clear();
+		spawnableCaveCreatureList.clear();
 	}
 
 	@Override

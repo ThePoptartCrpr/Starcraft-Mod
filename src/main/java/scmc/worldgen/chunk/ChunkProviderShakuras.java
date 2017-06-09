@@ -46,7 +46,7 @@ public class ChunkProviderShakuras implements IChunkGenerator {
 	public ChunkProviderShakuras(World worldObj) {
 		this.worldObj = worldObj;
 		long seed = worldObj.getSeed();
-		this.random = new Random((seed + 516) * 314);
+		random = new Random((seed + 516) * 314);
 		terraingen.setup(worldObj, random);
 		caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
 	}
@@ -61,7 +61,7 @@ public class ChunkProviderShakuras implements IChunkGenerator {
 		// If you want normal creatures appropriate for this biome then
 		// uncomment the
 		// following two lines:
-		// Biome biome = this.worldObj.getBiome(pos);
+		// Biome biome = worldObj.getBiome(pos);
 		// return biome.getSpawnableList(creatureType);
 
 		if(creatureType == EnumCreatureType.MONSTER) {

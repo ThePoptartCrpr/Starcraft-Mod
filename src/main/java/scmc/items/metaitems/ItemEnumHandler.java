@@ -20,7 +20,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -50,7 +50,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -79,7 +79,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -108,7 +108,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -137,7 +137,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -166,7 +166,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -197,7 +197,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -224,7 +224,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -252,7 +252,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -281,7 +281,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -310,7 +310,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -337,7 +337,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -366,7 +366,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -406,7 +406,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {
@@ -437,7 +437,7 @@ public class ItemEnumHandler {
 		
 		@Override
 		public String getName() {
-			return this.name;
+			return name;
 		}
 		
 		public int getID() {

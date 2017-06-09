@@ -15,9 +15,9 @@ public class ItemBullet extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemBullet() {
-		this.setUnlocalizedName(Reference.ModItems.BULLET_RIFLE_C14_GAUSS.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.BULLET_RIFLE_C14_GAUSS.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.BULLET_RIFLE_C14_GAUSS.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.BULLET_RIFLE_C14_GAUSS.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemBullet extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < BulletType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + BulletType.values()[i].getName();
+				return getUnlocalizedName() + "." + BulletType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + BulletType.C14.getName();
+		return getUnlocalizedName() + "." + BulletType.C14.getName();
 	}
 }

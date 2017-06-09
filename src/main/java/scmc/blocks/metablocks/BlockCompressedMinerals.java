@@ -35,12 +35,12 @@ public class BlockCompressedMinerals extends ModBlocks implements IMetaBlockName
 	 */
 	public BlockCompressedMinerals() {
 		super(Material.ROCK);
-		this.setSoundType(SoundType.STONE);
-		this.setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getUnlocalizedName());
-		this.setRegistryName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getRegistryRL());
-		this.setHardness(20); // Sets how hard the block is to break
-		this.setResistance(20); // Sets the blocks blast resistance to explosions
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, CompressedMineralType.BLUE)); // Default state
+		setSoundType(SoundType.STONE);
+		setUnlocalizedName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getUnlocalizedName());
+		setRegistryName(Reference.ModBlocks.BLOCK_COMP_MINERAL.getRegistryRL());
+		setHardness(20); // Sets how hard the block is to break
+		setResistance(20); // Sets the blocks blast resistance to explosions
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, CompressedMineralType.BLUE)); // Default state
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class BlockCompressedMinerals extends ModBlocks implements IMetaBlockName
 	 */
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, CompressedMineralType.values()[meta]);
+		return getDefaultState().withProperty(TYPE, CompressedMineralType.values()[meta]);
 	}
 
 	/**

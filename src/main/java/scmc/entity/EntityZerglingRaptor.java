@@ -30,7 +30,7 @@ public class EntityZerglingRaptor extends EntityZergMob {
 	public EntityZerglingRaptor(World world) {
 		super(world);
 		setSize(1.75F, 1.75F);
-		this.stepHeight = 5.0F;
+		stepHeight = 5.0F;
 	}
 
 	protected void applyEntityAI() {

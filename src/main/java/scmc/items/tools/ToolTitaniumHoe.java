@@ -7,7 +7,7 @@ public class ToolTitaniumHoe extends ItemHoe {
 
 	public ToolTitaniumHoe(ToolMaterial material) {
 		super(material);
-		this.setUnlocalizedName(Reference.ModItems.TOOL_TITANIUM_HOE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.TOOL_TITANIUM_HOE.getRegistryRL());
+		setUnlocalizedName(Reference.ModItems.TOOL_TITANIUM_HOE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.TOOL_TITANIUM_HOE.getRegistryRL());
 	}
 }

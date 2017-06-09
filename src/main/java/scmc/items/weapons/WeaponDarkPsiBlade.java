@@ -7,7 +7,7 @@ public class WeaponDarkPsiBlade extends ItemSword {
 
 	public WeaponDarkPsiBlade(ToolMaterial material) {
 		super(material);
-		this.setUnlocalizedName(Reference.ModItems.WEAPON_DARK_PSIBLADE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.WEAPON_DARK_PSIBLADE.getRegistryRL());
+		setUnlocalizedName(Reference.ModItems.WEAPON_DARK_PSIBLADE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.WEAPON_DARK_PSIBLADE.getRegistryRL());
 	}
 }

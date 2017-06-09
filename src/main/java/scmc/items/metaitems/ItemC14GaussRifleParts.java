@@ -15,9 +15,9 @@ public class ItemC14GaussRifleParts extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemC14GaussRifleParts() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_PART_C14_GAUSS.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_PART_C14_GAUSS.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_PART_C14_GAUSS.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_PART_C14_GAUSS.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemC14GaussRifleParts extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < C14PartType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + C14PartType.values()[i].getName();
+				return getUnlocalizedName() + "." + C14PartType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + C14PartType.BARREL.getName();
+		return getUnlocalizedName() + "." + C14PartType.BARREL.getName();
 	}
 }

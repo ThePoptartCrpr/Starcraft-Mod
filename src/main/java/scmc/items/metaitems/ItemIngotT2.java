@@ -15,9 +15,9 @@ public class ItemIngotT2 extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemIngotT2() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_INGOT2.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_INGOT2.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_INGOT2.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_INGOT2.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemIngotT2 extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < IngotType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + IngotType.values()[i].getName();
+				return getUnlocalizedName() + "." + IngotType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + IngotType.COPPER.getName();
+		return getUnlocalizedName() + "." + IngotType.COPPER.getName();
 	}
 }

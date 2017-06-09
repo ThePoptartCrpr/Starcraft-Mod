@@ -15,9 +15,9 @@ public class ItemEnergy extends Item {
 	 * @param unlocalizedName
 	 */
 	public ItemEnergy() {
-		this.setUnlocalizedName(Reference.ModItems.ITEM_ENERGY.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.ITEM_ENERGY.getRegistryRL());
-		this.setHasSubtypes(true); // This just says the item has metadata
+		setUnlocalizedName(Reference.ModItems.ITEM_ENERGY.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_ENERGY.getRegistryRL());
+		setHasSubtypes(true); // This just says the item has metadata
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class ItemEnergy extends Item {
 	public String getUnlocalizedName(ItemStack stack) {
 		for(int i = 0; i < EnergyType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
-				return this.getUnlocalizedName() + "." + EnergyType.values()[i].getName();
+				return getUnlocalizedName() + "." + EnergyType.values()[i].getName();
 			} else {
 				continue;
 			}
 		}
-		return this.getUnlocalizedName() + "." + EnergyType.PURE.getName();
+		return getUnlocalizedName() + "." + EnergyType.PURE.getName();
 	}
 }

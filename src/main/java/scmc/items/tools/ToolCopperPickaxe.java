@@ -7,7 +7,7 @@ public class ToolCopperPickaxe extends ItemPickaxe {
 
 	public ToolCopperPickaxe(ToolMaterial material) {
 		super(material);
-		this.setUnlocalizedName(Reference.ModItems.TOOL_COPPER_PICKAXE.getUnlocalizedName());
-		this.setRegistryName(Reference.ModItems.TOOL_COPPER_PICKAXE.getRegistryRL());
+		setUnlocalizedName(Reference.ModItems.TOOL_COPPER_PICKAXE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.TOOL_COPPER_PICKAXE.getRegistryRL());
 	}
 }
