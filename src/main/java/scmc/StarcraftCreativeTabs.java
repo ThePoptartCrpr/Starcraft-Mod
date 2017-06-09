@@ -10,60 +10,81 @@ import scmc.items.ModItems;
 import scmc.items.tools.ModTools;
 import scmc.items.weapons.ModWeapons;
 
-public class StarcraftCreativeTabs {
+public class StarcraftCreativeTabs
+{
 
-	//TODO: fix (do we still have to fix this, or is it already?)
-	public static final CreativeTabs BUILDING = new CreativeTabs("StarcraftBuildingBlocks") {
-		
-		@Override
-		public Item getTabIconItem() {
-			return Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1);
-		}
-	};
-	
-	public static final CreativeTabs DECORATION = new CreativeTabs("StarcraftDecorativeBlocks") {
-		
-		@Override
-		public Item getTabIconItem() {
-			return Item.getItemFromBlock(ModMetaBlocks.DYED_IRON);
-		}
-	};
+	// TODO: fix (do we still have to fix this, or is it already?)
+	public static final CreativeTabs	BUILDING	= new CreativeTabs("StarcraftBuildingBlocks")
+													{
 
-	public static final CreativeTabs MATERIALS = new CreativeTabs("StarcraftMaterials") {
-		
-		@Override
-		public Item getTabIconItem() {
-			return ModItems.energy;
-		}
-	};
+														@Override
+														public Item getTabIconItem()
+														{
+															return Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1);
+														}
+													};
 
-	public static final CreativeTabs TOOLS = new CreativeTabs("StarcraftTools") {
-		
-		@Override
-		public Item getTabIconItem() {
-			return ModTools.TITANIUM_PICKAXE;
-		}
-	};
+	public static final CreativeTabs	DECORATION	= new CreativeTabs("StarcraftDecorativeBlocks")
+													{
 
-	public static final CreativeTabs COMBAT = new CreativeTabs("StarcraftCombat") {
-		
-		@Override
-		public Item getTabIconItem() {
-			return ModWeapons.MASTER_PSI_BLADE;
-		}
-	};
+														@Override
+														public Item getTabIconItem()
+														{
+															return Item.getItemFromBlock(ModMetaBlocks.DYED_IRON);
+														}
+													};
 
-	public static CreativeTabs MISCELLANEOUS; //Not final due to the specified set time
-	
+	public static final CreativeTabs	MATERIALS	= new CreativeTabs("StarcraftMaterials")
+													{
+
+														@Override
+														public Item getTabIconItem()
+														{
+															return ModItems.energy;
+														}
+													};
+
+	public static final CreativeTabs	TOOLS		= new CreativeTabs("StarcraftTools")
+													{
+
+														@Override
+														public Item getTabIconItem()
+														{
+															return ModTools.TITANIUM_PICKAXE;
+														}
+													};
+
+	public static final CreativeTabs	COMBAT		= new CreativeTabs("StarcraftCombat")
+													{
+
+														@Override
+														public Item getTabIconItem()
+														{
+															return ModWeapons.MASTER_PSI_BLADE;
+														}
+													};
+
+	public static CreativeTabs			MISCELLANEOUS;																		// Not
+																															// final
+																															// due
+																															// to
+																															// the
+																															// specified
+																															// set
+																															// time
+
 	/**
-	 * Used to set the miscellaneous menu <em>after</em>
-	 * we do all the bucket stuff
+	 * Used to set the miscellaneous menu <em>after</em> we do all the bucket
+	 * stuff
 	 */
-	public static void setMisc() {
-		MISCELLANEOUS = new CreativeTabs("StarcraftMisc") {
-			
+	public static void setMisc()
+	{
+		MISCELLANEOUS = new CreativeTabs("StarcraftMisc")
+		{
+
 			@Override
-			public Item getTabIconItem() {
+			public Item getTabIconItem()
+			{
 				return UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem();
 			}
 		};

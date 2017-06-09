@@ -14,6 +14,7 @@ import scmc.blocks.ModBlocks;
 import scmc.lib.StarcraftConfig;
 import scmc.worldgen.features.CharWorldGenMinable;
 import scmc.worldgen.features.ShakurasWorldGenMinable;
+import scmc.worldgen.structure.SCWorldGenerator;
 import scmc.worldgen.structure.StructureProtossPylonTemplate;
 import scmc.worldgen.structure.StructureProtossWarpGateTemplate;
 import scmc.worldgen.structure.StructureTerranBunker;
@@ -50,11 +51,11 @@ public class SCWorldGen implements IWorldGenerator {
 	private WorldGenerator TITANIUM_SHAKURAS;
 	private WorldGenerator URANIUM_SHAKURAS;
 	
-	private WorldGenerator SPAWNING_POOL;
-	private WorldGenerator ZERG_SPIRE;
-	private WorldGenerator TERRAN_BUNKER;
-	private WorldGenerator PROTOSS_PYLON;
-	private WorldGenerator PROTOSS_WARPGATE;
+	private SCWorldGenerator SPAWNING_POOL;
+	private SCWorldGenerator ZERG_SPIRE;
+	private SCWorldGenerator TERRAN_BUNKER;
+	private SCWorldGenerator PROTOSS_PYLON;
+	private SCWorldGenerator PROTOSS_WARPGATE;
 	
 	public SCWorldGen() {
 		COPPER_OVERWORLD = new WorldGenMinable(ModBlocks.ORE_COPPER_OW.getDefaultState(), 8);
@@ -101,61 +102,61 @@ public class SCWorldGen implements IWorldGenerator {
 		Random rnd = new Random();
 		switch (world.provider.getDimension()) {
 		case 0: //Overworld
-			runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 25, 4, 64);
-			runGenerator(TITANIUM_OVERWORLD, world, random, chunkX, chunkZ, 9, 4, 28);
-			runGenerator(URANIUM_OVERWORLD, world, random, chunkX, chunkZ, 4, 0, 20);
+			runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 20, 4, 64);
+			runGenerator(TITANIUM_OVERWORLD, world, random, chunkX, chunkZ, 8, 4, 28);
+			runGenerator(URANIUM_OVERWORLD, world, random, chunkX, chunkZ, 1, 0, 20);
 			
-			runGenerator(TERRAN_BUNKER, world, random, chunkX, chunkZ, 1, 60, 70);
+			runGenerator(TERRAN_BUNKER, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 			
-			runGenerator(PROTOSS_PYLON, world, random, chunkX, chunkZ, 1, 60, 70);
-			runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
+			runGenerator(PROTOSS_PYLON, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
+			runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 		case -1: //Nether
 			
 		case 1: //End
 			
-		default: //check for OUR dimensions
+		default: //check for our dimensions
 			if (world.provider.getDimension() == StarcraftConfig.dimChar) {
 				runGenerator(COAL_CHAR, world, random, chunkX, chunkZ, 20, 0, 128);
-				runGenerator(COPPER_CHAR, world, random, chunkX, chunkZ, 25, 4, 64);
+				runGenerator(COPPER_CHAR, world, random, chunkX, chunkZ, 15, 4, 64);
 				runGenerator(DIAMOND_CHAR, world, random, chunkX, chunkZ, 1, 0, 16);
 				runGenerator(GOLD_CHAR, world, random, chunkX, chunkZ, 2, 0, 32);
 				runGenerator(IRON_CHAR, world, random, chunkX, chunkZ, 20, 0, 64);
 				runGenerator(LAPIS_CHAR, world, random, chunkX, chunkZ, 1, 0, 16);
-				runGenerator(MINERAL_CHAR, world, random, chunkX, chunkZ, 13, 28, 50);
+				runGenerator(MINERAL_CHAR, world, random, chunkX, chunkZ, 12, 28, 50);
 				runGenerator(REDSTONE_CHAR, world, random, chunkX, chunkZ, 8, 0, 16);
-				runGenerator(RICHMINERAL_CHAR, world, random, chunkX, chunkZ, 9, 4, 28);
-				runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 9, 4, 28);
-				runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 4, 0, 20);
-				runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 50, 0, 128);
+				runGenerator(RICHMINERAL_CHAR, world, random, chunkX, chunkZ, 6, 4, 28);
+				runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 8, 4, 28);
+				runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 1, 0, 20);
+				runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 25, 0, 128);
 				
 				if(rnd.nextInt(100) < 20) {
-					runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 1, 60, 70);
+					runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 0, 1, 0, 1, 60, 70);
 				}
 				if(rnd.nextInt(100) < 15) {
-					runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 1, 60, 70);
+					runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 0, 1, 0, 1, 60, 70);
 				}
 				if(rnd.nextInt(100) < 10) {
-					runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
+					runGenerator(PROTOSS_WARPGATE, 1, 2, world, random, chunkX, chunkZ, 0, -1, 0, 1, 60, 70);
 				}
 				
 			} else if (world.provider.getDimension() == StarcraftConfig.dimShakuras) {
 				runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 20, 0, 128);
-				runGenerator(COPPER_SHAKURAS, world, random, chunkX, chunkZ, 25, 4, 64);
+				runGenerator(COPPER_SHAKURAS, world, random, chunkX, chunkZ, 15, 4, 64);
 				runGenerator(DIAMOND_SHAKURAS, world, random, chunkX, chunkZ, 1, 0, 16);
 				runGenerator(GOLD_SHAKURAS, world, random, chunkX, chunkZ, 2, 0, 32);
 				runGenerator(IRON_SHAKURAS, world, random, chunkX, chunkZ, 20, 0, 64);
 				runGenerator(LAPIS_SHAKURAS, world, random, chunkX, chunkZ, 1, 0, 16);
-				runGenerator(MINERAL_SHAKURAS, world, random, chunkX, chunkZ, 13, 28, 50);
+				runGenerator(MINERAL_SHAKURAS, world, random, chunkX, chunkZ, 12, 28, 50);
 				runGenerator(REDSTONE_SHAKURAS, world, random, chunkX, chunkZ, 8, 0, 16);
-				runGenerator(RICHMINERAL_SHAKURAS, world, random, chunkX, chunkZ, 9, 4, 28);
-				runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 9, 4, 28);
-				runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 4, 0, 20);
+				runGenerator(RICHMINERAL_SHAKURAS, world, random, chunkX, chunkZ, 6, 4, 28);
+				runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 8, 4, 28);
+				runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 1, 0, 20);
 				
 				if(rnd.nextInt(100) < 30) {
-					runGenerator(PROTOSS_PYLON, world, random, chunkX, chunkZ, 1, 60, 70);
+					runGenerator(PROTOSS_PYLON, 1, 2, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 				}
 				if(rnd.nextInt(100) < 10) {
-					runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 1, 60, 70);
+					runGenerator(PROTOSS_WARPGATE, 1, 2, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 				}
 			}
 			
@@ -164,6 +165,7 @@ public class SCWorldGen implements IWorldGenerator {
 		
 	}
 	
+	//for ores and such
 	private static void runGenerator(WorldGenerator generator, World world, Random rand, int chunk_X, int chunk_Z, int chancesToSpawn, int minHeight, int maxHeight) {
 		if(minHeight < 0 || maxHeight > 256 || minHeight > maxHeight) {
 			throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
@@ -176,6 +178,38 @@ public class SCWorldGen implements IWorldGenerator {
 			int z = chunk_Z * 16 + rand.nextInt(16);
 			
 			generator.generate(world, rand, new BlockPos(x, y, z));
+		}
+	}
+	
+	//for generic structures
+	private static void runGenerator(SCWorldGenerator generator, World world, Random rand, int chunk_X, int chunk_Z, int offsetX, int offsetY, int offsetZ, int chancesToSpawn, int minHeight, int maxHeight) {
+		if(minHeight < 0 || maxHeight > 256 || minHeight > maxHeight) {
+			throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
+		}
+
+		int heightDiff = maxHeight - minHeight + 1;
+		for(int i = 0; i < chancesToSpawn; i ++) {
+			int x = chunk_X * 16 + rand.nextInt(16);
+			int y = minHeight + rand.nextInt(heightDiff);
+			int z = chunk_Z * 16 + rand.nextInt(16);
+			
+			generator.generate(world, rand, offsetX, offsetY, offsetZ, new BlockPos(x, y, z));
+		}
+	}
+	
+	//for structures that use team colors and stuff
+	private static void runGenerator(SCWorldGenerator generator, int metaColor, int metaSecColor, World world, Random rand, int chunk_X, int chunk_Z, int offsetX, int offsetY, int offsetZ, int chancesToSpawn, int minHeight, int maxHeight) {
+		if(minHeight < 0 || maxHeight > 256 || minHeight > maxHeight) {
+			throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
+		}
+
+		int heightDiff = maxHeight - minHeight + 1;
+		for(int i = 0; i < chancesToSpawn; i ++) {
+			int x = chunk_X * 16 + rand.nextInt(16);
+			int y = minHeight + rand.nextInt(heightDiff);
+			int z = chunk_Z * 16 + rand.nextInt(16);
+			
+			generator.generate(metaColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, new BlockPos(x, y, z));
 		}
 	}
 	

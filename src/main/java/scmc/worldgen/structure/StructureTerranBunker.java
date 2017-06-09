@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.items.ModItems;
 
-public class StructureTerranBunker extends WorldGenerator {
+public class StructureTerranBunker extends SCWorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT };
 	}
@@ -41,15 +41,13 @@ public class StructureTerranBunker extends WorldGenerator {
 		return false;
 	}
 	
-	public boolean generate(World world, Random rand, BlockPos pos) {
-		int i = rand.nextInt(1);
-
-		if (i == 0) {
+	@Override
+	public boolean generate(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+		if (rand.nextInt(1) == 0) {
 			generate_r0(world, rand, pos);
 		}
 
 		return true;
-
 	}
 
 	public boolean generate_r0(World world, Random rand, BlockPos pos) {

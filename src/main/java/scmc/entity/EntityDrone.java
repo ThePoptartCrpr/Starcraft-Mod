@@ -16,37 +16,43 @@ import scmc.entity.monster.EntityProtossMob;
 import scmc.entity.monster.EntityTerranMob;
 import scmc.lib.StarcraftConfig;
 
-public class EntityDrone extends EntityAnimal {
-	public EntityDrone(World world) {
+public class EntityDrone extends EntityAnimal
+{
+	public EntityDrone(World world)
+	{
 		super(world);
 	}
-	
+
 	@Override
-	protected void applyEntityAttributes() {
+	protected void applyEntityAttributes()
+	{
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.droneHP);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
 
 	@Override
-	public EntityAgeable createChild(EntityAgeable entity) {
+	public EntityAgeable createChild(EntityAgeable entity)
+	{
 		return null;
 	}
-	
-	@Override
-	protected void initEntityAI() {
-        tasks.addTask(0, new EntityAISwimming(this));
-        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityProtossMob.class, 16.0F, 1.0D, 1.0D));
-        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
-        tasks.addTask(4, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 1.0D, 1.0D));
-        tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
-        tasks.addTask(7, new EntityAIWander(this, 1));
-        tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
-        tasks.addTask(8, new EntityAILookIdle(this));
-        applyEntityAI();
-    }
 
-    protected void applyEntityAI() {
-        targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-    }
+	@Override
+	protected void initEntityAI()
+	{
+		tasks.addTask(0, new EntityAISwimming(this));
+		tasks.addTask(4, new EntityAIAvoidEntity(this, EntityProtossMob.class, 16.0F, 1.0D, 1.0D));
+		tasks.addTask(4, new EntityAIAvoidEntity(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
+		tasks.addTask(4, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 1.0D, 1.0D));
+		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
+		tasks.addTask(7, new EntityAIWander(this, 1));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
+		tasks.addTask(8, new EntityAILookIdle(this));
+		applyEntityAI();
+	}
+
+	protected void applyEntityAI()
+	{
+		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+	}
 }

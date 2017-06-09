@@ -23,7 +23,6 @@ public class BlockCharMagma extends ModBlocks {
 		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
 		setHardness(1.5F);
-		setLightLevel(10.0F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
@@ -36,10 +35,12 @@ public class BlockCharMagma extends ModBlocks {
 		world.setBlockState(pos, Blocks.FLOWING_LAVA.getDefaultState());
 	}
 
+	//TODO: Redo this game laggin ass code
+	/*
 	@Override
 	public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
 		if(!Library.checkCube(world, Blocks.FLOWING_LAVA.getDefaultState(), pos, 3).isEmpty()) {
 			breakBlock(world, pos, state);
 		}
-	}
+	}*/
 }

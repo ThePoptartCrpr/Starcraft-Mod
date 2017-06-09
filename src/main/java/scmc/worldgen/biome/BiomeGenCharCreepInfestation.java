@@ -9,8 +9,14 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import scmc.blocks.ModBlocks;
+import scmc.entity.EntityBrutalisk;
+import scmc.entity.EntityHydralisk;
 import scmc.entity.EntityLarva;
 import scmc.entity.EntityLarvaCocoon;
+import scmc.entity.EntityZergling;
+import scmc.entity.EntityZerglingRaptor;
+import scmc.entity.EntityZerglingSC2;
+import scmc.entity.EntityZerglingSwarmling;
 
 public class BiomeGenCharCreepInfestation extends BiomesSC {
 
@@ -28,8 +34,6 @@ public class BiomeGenCharCreepInfestation extends BiomesSC {
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityLarva.class, 8, 2, 3));
-		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityLarvaCocoon.class, 8, 2, 3));
 	}
 
 	@Override

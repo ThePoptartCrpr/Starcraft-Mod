@@ -35,13 +35,8 @@ public class ChunkProviderChar implements IChunkGenerator {
 	private Random random;
 	private Biome[] biomesForGeneration;
 
-	private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(
-			new Biome.SpawnListEntry(EntityZergling.class, 20, 1, 7), 
-			new Biome.SpawnListEntry(EntityZerglingSC2.class, 20, 1, 7), 
-			new Biome.SpawnListEntry(EntityZerglingRaptor.class, 20, 1, 7), 
-			new Biome.SpawnListEntry(EntityZerglingSwarmling.class, 20, 1, 7), 
-			new Biome.SpawnListEntry(EntityBrutalisk.class, 5, 1, 1), 
-			new Biome.SpawnListEntry(EntityHydralisk.class, 15, 1, 3));
+	//TODO: This
+	private List<Biome.SpawnListEntry> mobs = Lists.newArrayList();
 
 	private MapGenBase caveGenerator = new CharGenCaves();
 	private CharTerrainGenerator terraingen = new CharTerrainGenerator();

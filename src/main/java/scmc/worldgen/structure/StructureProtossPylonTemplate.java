@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 
-public class StructureProtossPylonTemplate extends WorldGenerator {
+public class StructureProtossPylonTemplate extends SCWorldGenerator {
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
 	}
@@ -48,18 +48,7 @@ public class StructureProtossPylonTemplate extends WorldGenerator {
 	}
 	
 	@Override
-	public boolean generate(World world, Random rand, BlockPos pos) {
-		this.metaPrimColor = 1;
-		this.metaSecColor = 2;
-		
-		if (rand.nextInt(5) == 0) {
-			generate_r0(world, rand, pos);
-		}
-
-		return true;
-	}
-
-	public boolean generate(int metaPrimColor, int metaSecColor, World world, Random rand, BlockPos pos) {
+	public boolean generate(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		this.metaPrimColor = metaPrimColor;
 		this.metaSecColor = metaSecColor;
 
