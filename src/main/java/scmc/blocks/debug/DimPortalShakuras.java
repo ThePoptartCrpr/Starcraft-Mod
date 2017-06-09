@@ -23,8 +23,9 @@ import scmc.lib.Reference;
 import scmc.lib.StarcraftConfig;
 
 public class DimPortalShakuras extends ModBlocks {
+
 	private int dim = StarcraftConfig.dimShakuras;
-	
+
 	public DimPortalShakuras() {
 		super(Material.ROCK);
 		setLightLevel(1.0F);
@@ -34,12 +35,13 @@ public class DimPortalShakuras extends ModBlocks {
 		setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL());
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
-	
-	@Override
-    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn) {}
 
 	@Override
-	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
+	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes,
+			@Nullable Entity entityIn) {}
+
+	@Override
+	public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
 		return false;
 	}
 
@@ -49,7 +51,12 @@ public class DimPortalShakuras extends ModBlocks {
 	}
 
 	@Override
-	public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+	public MapColor getMapColor(IBlockState state) {
+		return MapColor.OBSIDIAN;
+	}
+
+	@Override
+	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
 		return false;
 	}
 
@@ -68,13 +75,8 @@ public class DimPortalShakuras extends ModBlocks {
 							new ModTeleporter(player.mcServer.worldServerForDimension(dim), player.posX, player.posY, player.posZ));
 				}
 			} catch(@SuppressWarnings("unused") ClassCastException e) {
-				return; //Not a player
+				return; // Not a player
 			}
 		}
-	}
-
-	@Override
-	public MapColor getMapColor(IBlockState state) {
-		return MapColor.OBSIDIAN;
 	}
 }

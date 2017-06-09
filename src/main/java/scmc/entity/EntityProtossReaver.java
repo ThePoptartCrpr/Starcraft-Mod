@@ -25,34 +25,14 @@ import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.lib.StarcraftConfig;
 
-public class EntityProtossReaver extends EntityProtossMob implements IRangedAttackMob
-{
-	public EntityProtossReaver(World world)
-	{
+public class EntityProtossReaver extends EntityProtossMob implements IRangedAttackMob {
+
+	public EntityProtossReaver(World world) {
 		super(world);
 		setSize(8.0F, 4.3F);
 	}
 
-	// FIXME: this
-	public boolean isAIEnabled()
-	{
-		return true;
-	}
-
-	@Override
-	protected void initEntityAI()
-	{
-		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 85, 30));
-		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
-		tasks.addTask(7, new EntityAIWander(this, 1));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
-		tasks.addTask(8, new EntityAILookIdle(this));
-		applyEntityAI();
-	}
-
-	protected void applyEntityAI()
-	{
+	protected void applyEntityAI() {
 		tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1, false));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityZergMob>(this, EntityZergMob.class, true));
@@ -63,8 +43,7 @@ public class EntityProtossReaver extends EntityProtossMob implements IRangedAtta
 	}
 
 	@Override
-	protected void applyEntityAttributes()
-	{
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.reaverHP);
 		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.24000000417232513);
@@ -74,46 +53,8 @@ public class EntityProtossReaver extends EntityProtossMob implements IRangedAtta
 	}
 
 	@Override
-	public int getTalkInterval()
-	{
-		return 160;
-	}
-
-	//TODO: redo this to be a switch statement
-	@Override
-	public SoundEvent getAmbientSound()
-	{
-		Random rand = new Random();
-		if (rand.nextInt(5) == 0)
-			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE1;
-		if (rand.nextInt(5) == 1)
-			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE2;
-		if (rand.nextInt(5) == 2)
-			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE3;
-		if (rand.nextInt(5) == 3)
-			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE4;
-
-		return StarcraftSoundEvents.ENTITY_PREAVER_LIVE5;
-
-	}
-
-	@Override
-	public SoundEvent getHurtSound()
-	{
-		return StarcraftSoundEvents.ENTITY_PREAVER_HURT;
-	}
-
-	@Override
-	public SoundEvent getDeathSound()
-	{
-		return StarcraftSoundEvents.ENTITY_PREAVER_DEATH;
-	}
-
-	@Override
-	public void attackEntityWithRangedAttack(EntityLivingBase entity, float distance)
-	{
-		if (!worldObj.isRemote)
-		{
+	public void attackEntityWithRangedAttack(EntityLivingBase entity, float distance) {
+		if(!worldObj.isRemote) {
 			EntityScarab scarab = new EntityScarab(worldObj);
 			scarab.setLocationAndAngles(posX, posY, posZ, 0, 0);
 			worldObj.spawnEntityInWorld(scarab);
@@ -121,8 +62,55 @@ public class EntityProtossReaver extends EntityProtossMob implements IRangedAtta
 	}
 
 	@Override
-	public boolean canBePushed()
-	{
+	public boolean canBePushed() {
 		return false;
+	}
+
+	// TODO: redo this to be a switch statement
+	@Override
+	public SoundEvent getAmbientSound() {
+		Random rand = new Random();
+		if(rand.nextInt(5) == 0)
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE1;
+		if(rand.nextInt(5) == 1)
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE2;
+		if(rand.nextInt(5) == 2)
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE3;
+		if(rand.nextInt(5) == 3)
+			return StarcraftSoundEvents.ENTITY_PREAVER_LIVE4;
+
+		return StarcraftSoundEvents.ENTITY_PREAVER_LIVE5;
+
+	}
+
+	@Override
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_PREAVER_DEATH;
+	}
+
+	@Override
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_PREAVER_HURT;
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 160;
+	}
+
+	@Override
+	protected void initEntityAI() {
+		tasks.addTask(0, new EntityAISwimming(this));
+		tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 85, 30));
+		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
+		tasks.addTask(7, new EntityAIWander(this, 1));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
+		tasks.addTask(8, new EntityAILookIdle(this));
+		applyEntityAI();
+	}
+
+	// FIXME: this
+	public boolean isAIEnabled() {
+		return true;
 	}
 }

@@ -10,8 +10,7 @@ import scmc.model.ModelBroodling;
 
 public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
 
-	private static final ResourceLocation BROODLING_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/broodling.png");
+	private static final ResourceLocation BROODLING_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/broodling.png");
 
 	protected ModelBroodling modelEntity;
 
@@ -20,17 +19,15 @@ public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
 
 		modelEntity = ((ModelBroodling) mainModel);
 	}
-	
-	@Override
-	public void doRender(EntityBroodling entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityBroodling entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityBroodling entity) {

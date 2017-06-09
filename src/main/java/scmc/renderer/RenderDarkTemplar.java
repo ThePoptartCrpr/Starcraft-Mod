@@ -12,8 +12,7 @@ import scmc.model.ModelDarkTemplar;
 
 public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
 
-	private static final ResourceLocation DARK_TEMPLAR_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/darktemplar.png");
+	private static final ResourceLocation DARK_TEMPLAR_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/darktemplar.png");
 
 	protected ModelDarkTemplar modelEntity;
 
@@ -23,21 +22,22 @@ public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
 		modelEntity = ((ModelDarkTemplar) mainModel);
 	}
 
+	@Override
 	public void doRender(EntityDarkTemplar entity, double x, double y, double z, float entityYaw, float partialTicks) {
 		super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-		if (!this.renderOutlines) {
+		if(!this.renderOutlines) {
 			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
 		}
 	}
 
-	protected void preRenderCallback(EntityDarkTemplar entitylivingbaseIn, float partialTickTime)
-    {
-		GL11.glScalef(0.70F, 0.70F, 0.70F);
-    }
-	
 	@Override
 	protected ResourceLocation getEntityTexture(EntityDarkTemplar entity) {
 		return DARK_TEMPLAR_TEXTURES;
+	}
+
+	@Override
+	protected void preRenderCallback(EntityDarkTemplar entitylivingbaseIn, float partialTickTime) {
+		GL11.glScalef(0.70F, 0.70F, 0.70F);
 	}
 }

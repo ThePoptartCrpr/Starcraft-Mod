@@ -1,4 +1,5 @@
-//Schematic to java Structure by jajo_11 | inspired by "MITHION'S .SCHEMATIC TO JAVA CONVERTINGTOOL"
+// Schematic to java Structure by jajo_11 | inspired by "MITHION'S .SCHEMATIC TO
+// JAVA CONVERTINGTOOL"
 
 package scmc.worldgen.structure;
 
@@ -9,44 +10,19 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 
 public class StructureProtossPylonTemplate extends SCWorldGenerator {
-	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
-	}
-	
+
+	public Block chanBlock;
+
+	public Block dimBlock;
 	public int metaDim;
 	public int metaPrimColor;
 	public int metaSecColor;
-	public Block dimBlock;
-	public Block chanBlock;
 	public Block stabBlock;
 
-	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-
-		Block block = world.getBlockState(pos).getBlock();
-		Material m = block.getBlockState().getBaseState().getMaterial();
-		Block blockAbove = world.getBlockState(pos.up()).getBlock();
-		Block blockBelow = world.getBlockState(pos.down()).getBlock();
-
-		for (Block i : GetValidSpawnBlocks()) {
-			if (blockAbove != Blocks.AIR) {
-				return false;
-			}
-			if (block == i) {
-				return true;
-			} else if (block == Blocks.SNOW_LAYER && blockBelow == i) {
-				return true;
-			} else if (m == Material.PLANTS && blockBelow == i) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	@Override
 	public boolean generate(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		this.metaPrimColor = metaPrimColor;
@@ -58,8 +34,8 @@ public class StructureProtossPylonTemplate extends SCWorldGenerator {
 	}
 
 	public boolean generate_r0(World world, Random rand, BlockPos pos) {
-		if (!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(7, 0, 0))
-				|| !LocationIsValidSpawn(world, pos.add(7, 0, 8)) || !LocationIsValidSpawn(world, pos.add(0, 0, 8))) {
+		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(7, 0, 0)) || !LocationIsValidSpawn(world, pos.add(7, 0, 8))
+				|| !LocationIsValidSpawn(world, pos.add(0, 0, 8))) {
 			return false;
 		}
 
@@ -785,5 +761,31 @@ public class StructureProtossPylonTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(7, 10, 8), Blocks.AIR.getDefaultState());
 		return true;
 
+	}
+
+	protected Block[] GetValidSpawnBlocks() {
+		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
+	}
+
+	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
+
+		Block block = world.getBlockState(pos).getBlock();
+		Material m = block.getBlockState().getBaseState().getMaterial();
+		Block blockAbove = world.getBlockState(pos.up()).getBlock();
+		Block blockBelow = world.getBlockState(pos.down()).getBlock();
+
+		for(Block i : GetValidSpawnBlocks()) {
+			if(blockAbove != Blocks.AIR) {
+				return false;
+			}
+			if(block == i) {
+				return true;
+			} else if(block == Blocks.SNOW_LAYER && blockBelow == i) {
+				return true;
+			} else if(m == Material.PLANTS && blockBelow == i) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

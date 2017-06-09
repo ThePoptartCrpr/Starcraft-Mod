@@ -10,8 +10,7 @@ import scmc.model.ModelDarkProbe;
 
 public class RenderDarkProbe<T> extends RenderLiving<EntityDarkProbe> {
 
-	private static final ResourceLocation DARK_PROBE_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/darkprobe.png");
+	private static final ResourceLocation DARK_PROBE_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/darkprobe.png");
 
 	protected ModelDarkProbe modelEntity;
 
@@ -20,16 +19,15 @@ public class RenderDarkProbe<T> extends RenderLiving<EntityDarkProbe> {
 
 		modelEntity = ((ModelDarkProbe) mainModel);
 	}
-	
-	public void doRender(EntityDarkProbe entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityDarkProbe entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityDarkProbe entity) {

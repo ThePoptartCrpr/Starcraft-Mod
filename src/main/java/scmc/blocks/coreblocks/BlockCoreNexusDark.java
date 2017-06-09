@@ -11,17 +11,18 @@ import scmc.lib.Library;
 import scmc.lib.Reference;
 
 public class BlockCoreNexusDark extends ModBlocks {
+
 	public BlockCoreNexusDark() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_CORE_NEXUS_DARK.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_CORE_NEXUS_DARK.getRegistryRL());
 		setSoundType(SoundType.STONE);
-		//setHardness(2.0F);
-		//setResistance(5.0F);
-		//setHarvestLevel("pickaxe", 0);
+		// setHardness(2.0F);
+		// setResistance(5.0F);
+		// setHarvestLevel("pickaxe", 0);
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
-	
+
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		super.onBlockAdded(worldIn, pos, state);

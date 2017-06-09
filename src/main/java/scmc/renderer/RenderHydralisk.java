@@ -12,8 +12,7 @@ import scmc.model.ModelHydralisk;
 
 public class RenderHydralisk<T> extends RenderLiving<EntityHydralisk> {
 
-	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/hydralisk.png");
+	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/hydralisk.png");
 
 	protected ModelHydralisk modelEntity;
 
@@ -22,24 +21,23 @@ public class RenderHydralisk<T> extends RenderLiving<EntityHydralisk> {
 
 		modelEntity = ((ModelHydralisk) mainModel);
 	}
-	
-	public void doRender(EntityHydralisk entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityHydralisk entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityHydralisk entity) {
 		return ZERGLING_TEXTURES;
 	}
-	
-	protected void preRenderCallback(EntityHydralisk entitylivingbaseIn, float partialTickTime)
-    {
+
+	@Override
+	protected void preRenderCallback(EntityHydralisk entitylivingbaseIn, float partialTickTime) {
 		GL11.glScalef(1.3F, 1.3F, 1.3F);
-    }
+	}
 }

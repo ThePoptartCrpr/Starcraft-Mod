@@ -16,103 +16,94 @@ import scmc.worldgen.DimensionRegistry;
 
 public class StarcraftBiomeProvider extends BiomeProvider {
 
-	private GenLayer genBiomes;
-    /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
-    private GenLayer biomeIndexLayer;
-    /** The biome list. */
+	/** The biome list. */
 	private final BiomeCache biomeCache;
+	/** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
+	private GenLayer biomeIndexLayer;
 	private Biome defaultBiome;
+	private GenLayer genBiomes;
 
-    protected StarcraftBiomeProvider() {
-    	super();
-        biomeCache = new BiomeCache(this);
-    }
+	protected StarcraftBiomeProvider() {
+		super();
+		biomeCache = new BiomeCache(this);
+	}
 
-    private StarcraftBiomeProvider(long seed, WorldType worldTypeIn, String options, Class<? extends GenLayer> genLayer) {
-        this();
-        try {
-			GenLayer[] agenlayer = (GenLayer[]) genLayer.getMethod("initializeAllBiomeGenerators", new Class<?>[] {long.class, WorldType.class, String.class}).invoke(null, new Object[] {seed, worldTypeIn, options});;
-	        agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
-	        
-	        genBiomes = agenlayer[0];
-	        biomeIndexLayer = agenlayer[1];
-		} catch (Exception e) {
+	private StarcraftBiomeProvider(long seed, WorldType worldTypeIn, String options, Class<? extends GenLayer> genLayer) {
+		this();
+		try {
+			GenLayer[] agenlayer = (GenLayer[]) genLayer.getMethod("initializeAllBiomeGenerators", new Class<?>[] { long.class, WorldType.class, String.class }).invoke(null,
+					new Object[] { seed, worldTypeIn, options });;
+			agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
+
+			genBiomes = agenlayer[0];
+			biomeIndexLayer = agenlayer[1];
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
-    }
+	}
 
-    public StarcraftBiomeProvider(WorldInfo info, Biome defaultBiome, Class<? extends GenLayer> genLayer) {
-        this(info.getSeed(), DimensionRegistry.CHAR_WT, info.getGeneratorOptions(), genLayer);
-        this.defaultBiome = defaultBiome; 
-    }
+	public StarcraftBiomeProvider(WorldInfo info, Biome defaultBiome, Class<? extends GenLayer> genLayer) {
+		this(info.getSeed(), DimensionRegistry.CHAR_WT, info.getGeneratorOptions(), genLayer);
+		this.defaultBiome = defaultBiome;
+	}
 
-    /**
-     * Returns an array of biomes for the location input.
-     */
-    @Override
-    public Biome[] getBiomesForGeneration(Biome[] biomes, int x, int z, int width, int height) {
-        IntCache.resetIntCache();
+	/**
+	 * Return a list of biomes for the specified blocks. Args: listToReuse, x,
+	 * y, width, length, cacheFlag (if false, don't check biomeCache to avoid
+	 * infinite loop in BiomeCacheBlock)
+	 */
+	@Override
+	public Biome[] getBiomeGenAt(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag) {
+		IntCache.resetIntCache();
 
-        if (biomes == null || biomes.length < width * height)
-        {
-            biomes = new Biome[width * height];
-        }
+		if(listToReuse == null || listToReuse.length < width * length) {
+			listToReuse = new Biome[width * length];
+		}
 
-        int[] aint = this.genBiomes.getInts(x, z, width, height);
+		if(cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (z & 15) == 0) {
+			Biome[] abiome = this.biomeCache.getCachedBiomes(x, z);
+			System.arraycopy(abiome, 0, listToReuse, 0, width * length);
+			return listToReuse;
+		} else {
+			int[] aint = this.biomeIndexLayer.getInts(x, z, width, length);
 
-        try
-        {
-            for (int i = 0; i < width * height; ++i)
-            {
-                biomes[i] = Biome.getBiome(aint[i], defaultBiome);
-            }
-            
-            return biomes;
-        }
-        catch (Throwable throwable)
-        {
-            CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
-            CrashReportCategory crashreportcategory = crashreport.makeCategory("RawBiomeBlock");
-            crashreportcategory.addCrashSection("biomes[] size", Integer.valueOf(biomes.length));
-            crashreportcategory.addCrashSection("x", Integer.valueOf(x));
-            crashreportcategory.addCrashSection("z", Integer.valueOf(z));
-            crashreportcategory.addCrashSection("w", Integer.valueOf(width));
-            crashreportcategory.addCrashSection("h", Integer.valueOf(height));
-            throw new ReportedException(crashreport);
-        }
-    }
+			for(int i = 0; i < width * length; ++i) {
+				listToReuse[i] = Biome.getBiome(aint[i], defaultBiome);
+			}
 
-    /**
-     * Return a list of biomes for the specified blocks. Args: listToReuse, x, y, width, length, cacheFlag (if false,
-     * don't check biomeCache to avoid infinite loop in BiomeCacheBlock)
-     */
-    @Override
-    public Biome[] getBiomeGenAt(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
-    {
-    	IntCache.resetIntCache();
+			return listToReuse;
+		}
+	}
 
-        if (listToReuse == null || listToReuse.length < width * length)
-        {
-            listToReuse = new Biome[width * length];
-        }
+	/**
+	 * Returns an array of biomes for the location input.
+	 */
+	@Override
+	public Biome[] getBiomesForGeneration(Biome[] biomes, int x, int z, int width, int height) {
+		IntCache.resetIntCache();
 
-        if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (z & 15) == 0)
-        {
-            Biome[] abiome = this.biomeCache.getCachedBiomes(x, z);
-            System.arraycopy(abiome, 0, listToReuse, 0, width * length);
-            return listToReuse;
-        }
-        else
-        {
-            int[] aint = this.biomeIndexLayer.getInts(x, z, width, length);
+		if(biomes == null || biomes.length < width * height) {
+			biomes = new Biome[width * height];
+		}
 
-            for (int i = 0; i < width * length; ++i)
-            {
-                listToReuse[i] = Biome.getBiome(aint[i], defaultBiome);
-            }
+		int[] aint = this.genBiomes.getInts(x, z, width, height);
 
-            return listToReuse;
-        }
-    }
-	
+		try {
+			for(int i = 0; i < width * height; ++i) {
+				biomes[i] = Biome.getBiome(aint[i], defaultBiome);
+			}
+
+			return biomes;
+		} catch(Throwable throwable) {
+			CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
+			CrashReportCategory crashreportcategory = crashreport.makeCategory("RawBiomeBlock");
+			crashreportcategory.addCrashSection("biomes[] size", Integer.valueOf(biomes.length));
+			crashreportcategory.addCrashSection("x", Integer.valueOf(x));
+			crashreportcategory.addCrashSection("z", Integer.valueOf(z));
+			crashreportcategory.addCrashSection("w", Integer.valueOf(width));
+			crashreportcategory.addCrashSection("h", Integer.valueOf(height));
+			throw new ReportedException(crashreport);
+		}
+	}
+
 }

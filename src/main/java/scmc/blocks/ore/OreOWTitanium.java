@@ -11,6 +11,7 @@ import scmc.blocks.ModBlocks;
 import scmc.lib.Reference;
 
 public class OreOWTitanium extends ModBlocks {
+
 	public OreOWTitanium() {
 		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
@@ -21,15 +22,14 @@ public class OreOWTitanium extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.ORE_TITANIUM_OW.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryRL());
 	}
-	
+
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
-	
+
 	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int par3)
-	{
+	public Item getItemDropped(IBlockState state, Random rand, int par3) {
 		return Item.getItemFromBlock(this);
 	}
 }

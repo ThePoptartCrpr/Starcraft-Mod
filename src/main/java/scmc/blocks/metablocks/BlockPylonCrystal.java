@@ -21,17 +21,17 @@ import scmc.lib.Reference;
 
 /**
  * This block has three variants. Refer to {@link PylonCrystalType}
- * 
  */
 public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 
 	/** The type property */
 	public static final PropertyEnum<PylonCrystalType> TYPE = PropertyEnum.create("type", PylonCrystalType.class);
-	
+
 	/**
 	 * Default constructor
 	 * @param unlocalizedName The block's unlocalized name
-	 * @param registryName The block's registry name - defaultly the unlocalized name
+	 * @param registryName The block's registry name - defaultly the unlocalized
+	 * name
 	 */
 	public BlockPylonCrystal() {
 		super(Material.ROCK);
@@ -42,19 +42,17 @@ public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 		setResistance(20.0F);
 		setLightLevel(4.0F);
 		setHarvestLevel("pickaxe", 2);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, PylonCrystalType.PURE)); //Default state
+		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, PylonCrystalType.PURE)); // Default state
 	}
-	
+
 	/**
-	 * All the different item variants for the block
+	 * Adds the properties to the block
 	 */
 	@Override
-	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
-		for(int i = 0; i < PylonCrystalType.values().length; i++) {
-			list.add(new ItemStack(itemIn, 1, i));
-		}
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] { TYPE });
 	}
-	
+
 	/**
 	 * Makes sure the block drops the correct version of itself
 	 */
@@ -62,33 +60,32 @@ public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
-	
-	/**
-	 * Makes sure when you pick block it will work correctly
-	 */
-	@Override
-	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos,
-			EntityPlayer player) {
-		return new ItemStack(Item.getItemFromBlock(this), 1, getMetaFromState(state));
-	}
-	
-	/**
-	 * Adds the properties to the block
-	 */
-	@Override
-	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] {TYPE});
-	}
-	
+
 	/**
 	 * Gets the right meta data from the {@link IBlockState}
 	 */
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		PylonCrystalType type = (PylonCrystalType) state.getValue(TYPE);
+		PylonCrystalType type = state.getValue(TYPE);
 		return type.getID();
 	}
-	
+
+	/**
+	 * Makes sure when you pick block it will work correctly
+	 */
+	@Override
+	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+		return new ItemStack(Item.getItemFromBlock(this), 1, getMetaFromState(state));
+	}
+
+	/**
+	 * Inherited from the {@link IMetaBlockName}
+	 */
+	@Override
+	public String getSpecialName(ItemStack stack) {
+		return PylonCrystalType.values()[stack.getItemDamage()].getName();
+	}
+
 	/**
 	 * Gets the correct {@link IBlockState} from the meta data
 	 */
@@ -98,10 +95,12 @@ public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 	}
 
 	/**
-	 * Inherited from the {@link IMetaBlockName}
+	 * All the different item variants for the block
 	 */
 	@Override
-	public String getSpecialName(ItemStack stack) {
-		return PylonCrystalType.values()[stack.getItemDamage()].getName();
+	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
+		for(int i = 0; i < PylonCrystalType.values().length; i++) {
+			list.add(new ItemStack(itemIn, 1, i));
+		}
 	}
 }

@@ -7,18 +7,18 @@ import scmc.achievement.Achievements;
 
 @EventBusSubscriber
 public class OnPlayerEnterDimEvent {
-	
+
 	@SubscribeEvent
 	public static void onEnterChar(PlayerEvent.PlayerChangedDimensionEvent e) {
-		if (e.toDim == 2) {
+		if(e.toDim == 2) {
 			e.player.addStat(Achievements.achievementEnterChar, 1);
 			// add sound here
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void onEnterShakuras(PlayerEvent.PlayerChangedDimensionEvent e) {
-		if (e.toDim == 3) {
+		if(e.toDim == 3) {
 			e.player.addStat(Achievements.achievementEnterShakuras, 1);
 			// add sound here
 		}

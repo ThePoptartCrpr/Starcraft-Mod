@@ -23,17 +23,17 @@ public class OreCharRichMineral extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.ORE_RICHMINERAL_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_RICHMINERAL_C.getRegistryRL());
 	}
-	
+
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
-	
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int par3) {
 		return ModItems.richMineralShard;
 	}
-	
+
 	@Override
 	public int quantityDropped(Random rand) {
 		return 4 + rand.nextInt(4);

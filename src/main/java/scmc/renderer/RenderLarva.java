@@ -10,8 +10,7 @@ import scmc.model.ModelLarva;
 
 public class RenderLarva<T> extends RenderLiving<EntityLarva> {
 
-	private static final ResourceLocation LARVA_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/larva.png");
+	private static final ResourceLocation LARVA_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/larva.png");
 
 	protected ModelLarva modelEntity;
 
@@ -20,16 +19,15 @@ public class RenderLarva<T> extends RenderLiving<EntityLarva> {
 
 		modelEntity = ((ModelLarva) mainModel);
 	}
-	
-	public void doRender(EntityLarva entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityLarva entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityLarva entity) {

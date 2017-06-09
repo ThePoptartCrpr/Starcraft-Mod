@@ -10,6 +10,7 @@ import scmc.lib.Reference;
  * @author He of a Former Time
  */
 public class BlockKeratinChunk extends ModBlocks {
+
 	public BlockKeratinChunk() {
 		super(Material.GROUND);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_KERATIN_CHUNK.getUnlocalizedName());

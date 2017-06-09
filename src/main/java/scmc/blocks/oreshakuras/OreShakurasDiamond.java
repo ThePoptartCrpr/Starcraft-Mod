@@ -23,12 +23,12 @@ public class OreShakurasDiamond extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.ORE_DIAMOND_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_DIAMOND_S.getRegistryRL());
 	}
-	
+
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
-	
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int par3) {
 		return Items.DIAMOND;

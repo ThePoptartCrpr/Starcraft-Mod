@@ -6,7 +6,8 @@ import net.minecraft.world.gen.layer.IntCache;
 import scmc.worldgen.biome.BiomesSC;
 
 public class GenLayerShakurasBiomes extends GenLayer {
-	public Biome[] dimBiomes = {BiomesSC.biomeShakurasDesert};
+
+	public Biome[] dimBiomes = { BiomesSC.biomeShakurasDesert };
 
 	public GenLayerShakurasBiomes(long par1) {
 		super(par1);
@@ -18,11 +19,13 @@ public class GenLayerShakurasBiomes extends GenLayer {
 		for(int dz = 0; dz < depth; dz++) {
 			for(int dx = 0; dx < width; dx++) {
 				this.initChunkSeed(dx + x, dz + z);
-//				dest[(dx + dz * width)] = this.dimBiomes[nextInt(this.dimBiomes.length)].getIdForBiome(this.dimBiomes[dz]);
-				dest[(dx + dz * width)] = Biome.getIdForBiome(/*dimBiomes[dz]*/dimBiomes[nextInt(this.dimBiomes.length)]);
+				// dest[(dx + dz * width)] =
+				// this.dimBiomes[nextInt(this.dimBiomes.length)].getIdForBiome(this.dimBiomes[dz]);
+				dest[(dx + dz * width)] = Biome
+						.getIdForBiome(/* dimBiomes[dz] */dimBiomes[nextInt(this.dimBiomes.length)]);
 			}
 		}
-		
+
 		return dest;
 	}
 }

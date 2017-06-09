@@ -5,9 +5,11 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelWarpGateWormholeChar extends ModelBase {
-	// fields
-	public static ModelRenderer WormholeBase;
+
 	public static ModelRenderer revolvingEnergy1;
+	public static ModelRenderer revolvingEnergy10;
+	public static ModelRenderer revolvingEnergy11;
+	public static ModelRenderer revolvingEnergy12;
 	public static ModelRenderer revolvingEnergy2;
 	public static ModelRenderer revolvingEnergy3;
 	public static ModelRenderer revolvingEnergy4;
@@ -16,9 +18,6 @@ public class ModelWarpGateWormholeChar extends ModelBase {
 	public static ModelRenderer revolvingEnergy7;
 	public static ModelRenderer revolvingEnergy8;
 	public static ModelRenderer revolvingEnergy9;
-	public static ModelRenderer revolvingEnergy10;
-	public static ModelRenderer revolvingEnergy11;
-	public static ModelRenderer revolvingEnergy12;
 	public static ModelRenderer revolvingSEnergy1;
 	public static ModelRenderer revolvingSEnergy2;
 	public static ModelRenderer revolvingSEnergy3;
@@ -26,6 +25,14 @@ public class ModelWarpGateWormholeChar extends ModelBase {
 	public static ModelRenderer revolvingSEnergy5;
 	public static ModelRenderer revolvingSEnergy6;
 	public static ModelRenderer revolvingSEnergy7;
+	// fields
+	public static ModelRenderer WormholeBase;
+
+	private static void setRotation(ModelRenderer model, float x, float y, float z) {
+		model.rotateAngleX = x;
+		model.rotateAngleY = y;
+		model.rotateAngleZ = z;
+	}
 
 	public ModelWarpGateWormholeChar() {
 		textureWidth = 512;
@@ -200,11 +207,5 @@ public class ModelWarpGateWormholeChar extends ModelBase {
 		revolvingSEnergy5.render(f);
 		revolvingSEnergy6.render(f);
 		revolvingSEnergy7.render(f);
-	}
-
-	private static void setRotation(ModelRenderer model, float x, float y, float z) {
-		model.rotateAngleX = x;
-		model.rotateAngleY = y;
-		model.rotateAngleZ = z;
 	}
 }

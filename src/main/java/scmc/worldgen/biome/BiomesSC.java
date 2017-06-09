@@ -6,15 +6,12 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BiomesSC extends Biome {
 
-	public BiomesSC(BiomeProperties par1) {
-		super(par1);
-	}
+	public static Biome biomeAshPlains;
 
 	public static Biome biomeCharCreepInfestation;
-	public static Biome biomeAshPlains;
+	public static Biome biomeCharScars;
 	public static Biome biomeMoltenInferno;
 	public static Biome biomeShakurasDesert;
-	public static Biome biomeCharScars;
 
 	public static void init() {
 		registerBiomes();
@@ -27,13 +24,17 @@ public class BiomesSC extends Biome {
 
 	public static void registerBiomes() {
 
-		//TODO: Edit these later, as these values are all the same
-		biomeCharCreepInfestation = new BiomeGenCharCreepInfestation((new Biome.BiomeProperties("Infestation Biome")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.0F).setRainfall(0.3F));
-		biomeAshPlains = new BiomeGenAshPlains((new Biome.BiomeProperties("Ash Plains")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.5F).setRainfall(0.3F));
-		biomeMoltenInferno = new BiomeGenMoltenInferno((new Biome.BiomeProperties("Molten Inferno")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(2.0F).setRainfall(0.3F));
-		biomeShakurasDesert = new BiomeGenDesertShakuras((new Biome.BiomeProperties("Shakuras Desert")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.5F).setRainfall(0.3F));
+		// TODO: Edit these later, as these values are all the same
+		biomeCharCreepInfestation = new BiomeGenCharCreepInfestation(
+				(new Biome.BiomeProperties("Infestation Biome")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.0F).setRainfall(0.3F));
+		biomeAshPlains = new BiomeGenAshPlains(
+				(new Biome.BiomeProperties("Ash Plains")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.5F).setRainfall(0.3F));
+		biomeMoltenInferno = new BiomeGenMoltenInferno(
+				(new Biome.BiomeProperties("Molten Inferno")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(2.0F).setRainfall(0.3F));
+		biomeShakurasDesert = new BiomeGenDesertShakuras(
+				(new Biome.BiomeProperties("Shakuras Desert")).setBaseHeight(0.0F).setHeightVariation(0.025F).setTemperature(1.5F).setRainfall(0.3F));
 		biomeCharScars = new BiomeGenCharScar((new Biome.BiomeProperties("Char Scars")).setBaseHeight(-0.5F).setHeightVariation(0.0F));
-		
+
 		// add spawn biomes here
 
 		BiomeManager.addSpawnBiome(BiomesSC.biomeCharCreepInfestation);
@@ -43,7 +44,11 @@ public class BiomesSC extends Biome {
 		BiomeManager.removeSpawnBiome(BiomesSC.biomeCharScars);
 
 	}
-	
+
+	public BiomesSC(BiomeProperties par1) {
+		super(par1);
+	}
+
 	@Override
 	public String toString() {
 		return String.valueOf(getIdForBiome(this));

@@ -9,7 +9,7 @@ import scmc.items.metaitems.ItemEnumHandler.C14PartType;
 import scmc.lib.Reference;
 
 public class ItemC14GaussRifleParts extends Item {
-	
+
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
 	 * @param unlocalizedName
@@ -17,9 +17,9 @@ public class ItemC14GaussRifleParts extends Item {
 	public ItemC14GaussRifleParts() {
 		this.setUnlocalizedName(Reference.ModItems.ITEM_PART_C14_GAUSS.getUnlocalizedName());
 		this.setRegistryName(Reference.ModItems.ITEM_PART_C14_GAUSS.getRegistryRL());
-		this.setHasSubtypes(true); //This just says the item has metadata
+		this.setHasSubtypes(true); // This just says the item has metadata
 	}
-	
+
 	/**
 	 * Adds all the different versions of the item
 	 */
@@ -29,7 +29,7 @@ public class ItemC14GaussRifleParts extends Item {
 			items.add(new ItemStack(item, 1, i));
 		}
 	}
-	
+
 	/**
 	 * Gets the correct unlocalized name using the {@link c14PartTypeType} enum
 	 */
@@ -38,8 +38,7 @@ public class ItemC14GaussRifleParts extends Item {
 		for(int i = 0; i < C14PartType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
 				return this.getUnlocalizedName() + "." + C14PartType.values()[i].getName();
-			}
-			else {
+			} else {
 				continue;
 			}
 		}

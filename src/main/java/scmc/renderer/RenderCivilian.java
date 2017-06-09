@@ -10,8 +10,7 @@ import scmc.model.ModelCivilian;
 
 public class RenderCivilian<T> extends RenderLiving<EntityCivilian> {
 
-	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/civilian.png");
+	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/civilian.png");
 
 	protected ModelCivilian modelEntity;
 
@@ -20,16 +19,15 @@ public class RenderCivilian<T> extends RenderLiving<EntityCivilian> {
 
 		modelEntity = ((ModelCivilian) mainModel);
 	}
-	
-	public void doRender(EntityCivilian entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityCivilian entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityCivilian entity) {

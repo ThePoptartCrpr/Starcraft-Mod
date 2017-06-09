@@ -10,6 +10,7 @@ import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class BlockShakurasStone extends ModBlocks {
+
 	public BlockShakurasStone() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_STONE_S.getUnlocalizedName());
@@ -21,11 +22,11 @@ public class BlockShakurasStone extends ModBlocks {
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 
-//	@Override
-//	public int damageDropped(IBlockState state) {
-//		return getMetaFromState(state);
-//	}
-	
+	// @Override
+	// public int damageDropped(IBlockState state) {
+	// return getMetaFromState(state);
+	// }
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return Item.getItemFromBlock(ModBlocks.COBBLESTONE_SHAKURAS);

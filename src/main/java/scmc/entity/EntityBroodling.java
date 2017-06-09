@@ -21,32 +21,14 @@ import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.lib.StarcraftConfig;
 
-public class EntityBroodling extends EntityZergMob
-{
+public class EntityBroodling extends EntityZergMob {
 
-	public EntityBroodling(World world)
-	{
+	public EntityBroodling(World world) {
 		super(world);
 		setSize(1.0F, 0.5F);
 	}
 
-	@Override
-	protected void initEntityAI()
-	{
-		super.initEntityAI();
-
-		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
-		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
-		tasks.addTask(7, new EntityAIWander(this, 1.0D));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		tasks.addTask(8, new EntityAILookIdle(this));
-
-		applyEntityAI();
-	}
-
-	protected void applyEntityAI()
-	{
+	protected void applyEntityAI() {
 		tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
@@ -57,8 +39,7 @@ public class EntityBroodling extends EntityZergMob
 	}
 
 	@Override
-	protected void applyEntityAttributes()
-	{
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.broodlingHP);
 		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.43000000417232513D);
@@ -68,33 +49,42 @@ public class EntityBroodling extends EntityZergMob
 	}
 
 	@Override
-	protected void dropFewItems(boolean par1, int par2)
-	{
+	protected void dropFewItems(boolean par1, int par2) {
 
-	}
-
-	@Override
-	public int getTalkInterval()
-	{
-		return 160;
 	}
 
 	// TODO: Figure out why getAmbientSound isnt working for the Broodling
 	@Override
-	public SoundEvent getAmbientSound()
-	{
+	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_BROODLING_LIVE1;
 	}
 
 	@Override
-	public SoundEvent getHurtSound()
-	{
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_BROODLING_DEATH;
+	}
+
+	@Override
+	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_BROODLING_HURT;
 	}
 
 	@Override
-	public SoundEvent getDeathSound()
-	{
-		return StarcraftSoundEvents.ENTITY_BROODLING_DEATH;
+	public int getTalkInterval() {
+		return 160;
+	}
+
+	@Override
+	protected void initEntityAI() {
+		super.initEntityAI();
+
+		tasks.addTask(0, new EntityAISwimming(this));
+		tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
+		tasks.addTask(7, new EntityAIWander(this, 1.0D));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		tasks.addTask(8, new EntityAILookIdle(this));
+
+		applyEntityAI();
 	}
 }

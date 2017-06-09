@@ -10,14 +10,13 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import scmc.fluids.ModFluids;
 import scmc.lib.Reference;
 
-
 /**
  * Acid fluid. Hurts entities that come into contact<br>
  * Copyright (c) 2017 The Starcraft Minecraft (SCMC) Mod Team
  * @author He of a Former Time
  */
 public class BlockAcidFluid extends BlockFluidClassic {
-	
+
 	public BlockAcidFluid() {
 		super(ModFluids.acid, Material.WATER);
 		setCreativeTab(null);
@@ -34,6 +33,6 @@ public class BlockAcidFluid extends BlockFluidClassic {
 	 */
 	@Override
 	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
-		entity.attackEntityFrom(DamageSource.cactus, 1.0F);
+		entity.attackEntityFrom(DamageSource.cactus, 1.0F); //FIXME: I am not suppose to deal damage from a cactus!!
 	}
 }

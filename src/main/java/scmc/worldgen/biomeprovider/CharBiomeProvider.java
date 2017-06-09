@@ -17,97 +17,87 @@ import scmc.worldgen.biome.BiomesSC;
 import scmc.worldgen.layer.GenLayerChar;
 
 public class CharBiomeProvider extends BiomeProvider {
-	
-    private GenLayer genBiomes;
-    /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
-    private GenLayer biomeIndexLayer;
-    /** The biome list. */
+
+	/** The biome list. */
 	private final BiomeCache biomeCache;
+	/** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
+	private GenLayer biomeIndexLayer;
+	private GenLayer genBiomes;
 
-    protected CharBiomeProvider() {
-    	super();
-        biomeCache = new BiomeCache(this);
-    }
+	protected CharBiomeProvider() {
+		super();
+		biomeCache = new BiomeCache(this);
+	}
 
-    private CharBiomeProvider(long seed, WorldType worldTypeIn, String options) {
-        this();
-        GenLayer[] agenlayer = GenLayerChar.initializeAllBiomeGenerators(seed, worldTypeIn, options);
-        agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
-        
-        genBiomes = agenlayer[0];
-        biomeIndexLayer = agenlayer[1];
-    }
+	private CharBiomeProvider(long seed, WorldType worldTypeIn, String options) {
+		this();
+		GenLayer[] agenlayer = GenLayerChar.initializeAllBiomeGenerators(seed, worldTypeIn, options);
+		agenlayer = getModdedBiomeGenerators(worldTypeIn, seed, agenlayer);
 
-    public CharBiomeProvider(WorldInfo info) {
-        this(info.getSeed(), DimensionRegistry.CHAR_WT, info.getGeneratorOptions());
-    }
+		genBiomes = agenlayer[0];
+		biomeIndexLayer = agenlayer[1];
+	}
 
-    /**
-     * Returns an array of biomes for the location input.
-     */
-    @Override
-    public Biome[] getBiomesForGeneration(Biome[] biomes, int x, int z, int width, int height) {
-        IntCache.resetIntCache();
+	public CharBiomeProvider(WorldInfo info) {
+		this(info.getSeed(), DimensionRegistry.CHAR_WT, info.getGeneratorOptions());
+	}
 
-        if (biomes == null || biomes.length < width * height)
-        {
-            biomes = new Biome[width * height];
-        }
+	/**
+	 * Return a list of biomes for the specified blocks. Args: listToReuse, x,
+	 * y, width, length, cacheFlag (if false, don't check biomeCache to avoid
+	 * infinite loop in BiomeCacheBlock)
+	 */
+	@Override
+	public Biome[] getBiomeGenAt(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag) {
+		IntCache.resetIntCache();
 
-        int[] aint = this.genBiomes.getInts(x, z, width, height);
+		if(listToReuse == null || listToReuse.length < width * length) {
+			listToReuse = new Biome[width * length];
+		}
 
-        try
-        {
-            for (int i = 0; i < width * height; ++i)
-            {
-                biomes[i] = Biome.getBiome(aint[i], BiomesSC.biomeAshPlains);
-            }
-            
-            return biomes;
-        }
-        catch (Throwable throwable)
-        {
-            CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
-            CrashReportCategory crashreportcategory = crashreport.makeCategory("RawBiomeBlock");
-            crashreportcategory.addCrashSection("biomes[] size", Integer.valueOf(biomes.length));
-            crashreportcategory.addCrashSection("x", Integer.valueOf(x));
-            crashreportcategory.addCrashSection("z", Integer.valueOf(z));
-            crashreportcategory.addCrashSection("w", Integer.valueOf(width));
-            crashreportcategory.addCrashSection("h", Integer.valueOf(height));
-            throw new ReportedException(crashreport);
-        }
-    }
+		if(cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (z & 15) == 0) {
+			Biome[] abiome = this.biomeCache.getCachedBiomes(x, z);
+			System.arraycopy(abiome, 0, listToReuse, 0, width * length);
+			return listToReuse;
+		} else {
+			int[] aint = this.biomeIndexLayer.getInts(x, z, width, length);
 
-    /**
-     * Return a list of biomes for the specified blocks. Args: listToReuse, x, y, width, length, cacheFlag (if false,
-     * don't check biomeCache to avoid infinite loop in BiomeCacheBlock)
-     */
-    @Override
-    public Biome[] getBiomeGenAt(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
-    {
-    	IntCache.resetIntCache();
+			for(int i = 0; i < width * length; ++i) {
+				listToReuse[i] = Biome.getBiome(aint[i], BiomesSC.biomeAshPlains);
+			}
 
-        if (listToReuse == null || listToReuse.length < width * length)
-        {
-            listToReuse = new Biome[width * length];
-        }
+			return listToReuse;
+		}
+	}
 
-        if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (z & 15) == 0)
-        {
-            Biome[] abiome = this.biomeCache.getCachedBiomes(x, z);
-            System.arraycopy(abiome, 0, listToReuse, 0, width * length);
-            return listToReuse;
-        }
-        else
-        {
-            int[] aint = this.biomeIndexLayer.getInts(x, z, width, length);
+	/**
+	 * Returns an array of biomes for the location input.
+	 */
+	@Override
+	public Biome[] getBiomesForGeneration(Biome[] biomes, int x, int z, int width, int height) {
+		IntCache.resetIntCache();
 
-            for (int i = 0; i < width * length; ++i)
-            {
-                listToReuse[i] = Biome.getBiome(aint[i], BiomesSC.biomeAshPlains);
-            }
+		if(biomes == null || biomes.length < width * height) {
+			biomes = new Biome[width * height];
+		}
 
-            return listToReuse;
-        }
-    }
+		int[] aint = this.genBiomes.getInts(x, z, width, height);
+
+		try {
+			for(int i = 0; i < width * height; ++i) {
+				biomes[i] = Biome.getBiome(aint[i], BiomesSC.biomeAshPlains);
+			}
+
+			return biomes;
+		} catch(Throwable throwable) {
+			CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
+			CrashReportCategory crashreportcategory = crashreport.makeCategory("RawBiomeBlock");
+			crashreportcategory.addCrashSection("biomes[] size", Integer.valueOf(biomes.length));
+			crashreportcategory.addCrashSection("x", Integer.valueOf(x));
+			crashreportcategory.addCrashSection("z", Integer.valueOf(z));
+			crashreportcategory.addCrashSection("w", Integer.valueOf(width));
+			crashreportcategory.addCrashSection("h", Integer.valueOf(height));
+			throw new ReportedException(crashreport);
+		}
+	}
 }

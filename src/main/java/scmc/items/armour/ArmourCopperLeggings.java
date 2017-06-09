@@ -5,6 +5,7 @@ import net.minecraft.item.ItemArmor;
 import scmc.lib.Reference;
 
 public class ArmourCopperLeggings extends ItemArmor {
+
 	public ArmourCopperLeggings(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_COPPER_LEGGINGS.getUnlocalizedName());

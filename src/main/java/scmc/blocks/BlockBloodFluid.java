@@ -14,7 +14,8 @@ import scmc.lib.Reference;
  * @author He of a Former Time
  */
 public class BlockBloodFluid extends BlockFluidClassic {
-	public BlockBloodFluid(/*Fluid fluid, Material material*/) {
+
+	public BlockBloodFluid(/* Fluid fluid, Material material */) {
 		super(ModFluids.blood, Material.WATER);
 		setCreativeTab(null);
 		setUnlocalizedName(Reference.ModBlocks.FLUID_BLOOD.getUnlocalizedName());
@@ -31,7 +32,7 @@ public class BlockBloodFluid extends BlockFluidClassic {
 		if(world.getBlockState(pos).getMaterial().isLiquid()) {
 			return false;
 		}
-		
+
 		return super.canDisplace(world, pos);
 	}
 
@@ -45,7 +46,7 @@ public class BlockBloodFluid extends BlockFluidClassic {
 		if(world.getBlockState(pos).getMaterial().isLiquid()) {
 			return false;
 		}
-		
+
 		return super.displaceIfPossible(world, pos);
 	}
 }

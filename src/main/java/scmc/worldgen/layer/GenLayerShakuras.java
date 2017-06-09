@@ -6,9 +6,6 @@ import net.minecraft.world.gen.layer.GenLayerVoronoiZoom;
 import net.minecraft.world.gen.layer.GenLayerZoom;
 
 public class GenLayerShakuras extends GenLayer {
-	public GenLayerShakuras(long par1) {
-		super(par1);
-	}
 
 	public static GenLayer[] initializeAllBiomeGenerators(long seed, WorldType type, String str) {
 		GenLayer biomes = new GenLayerShakurasBiomes(1L);
@@ -22,6 +19,10 @@ public class GenLayerShakuras extends GenLayer {
 		biomes.initWorldGenSeed(seed);
 		genlayervoronoizoom.initWorldGenSeed(seed);
 		return new GenLayer[] { biomes, genlayervoronoizoom };
+	}
+
+	public GenLayerShakuras(long par1) {
+		super(par1);
 	}
 
 	@Override

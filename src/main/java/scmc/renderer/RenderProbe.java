@@ -10,8 +10,7 @@ import scmc.model.ModelProbe;
 
 public class RenderProbe<T> extends RenderLiving<EntityProbe> {
 
-	private static final ResourceLocation PROBE_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/probe.png");
+	private static final ResourceLocation PROBE_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/probe.png");
 
 	protected ModelProbe modelEntity;
 
@@ -20,16 +19,15 @@ public class RenderProbe<T> extends RenderLiving<EntityProbe> {
 
 		modelEntity = ((ModelProbe) mainModel);
 	}
-	
-	public void doRender(EntityProbe entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityProbe entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityProbe entity) {

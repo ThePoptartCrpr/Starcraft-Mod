@@ -15,11 +15,11 @@ public class WeaponDarkDualWarpBlade extends ItemSword {
 		this.setCreativeTab(StarcraftCreativeTabs.COMBAT);
 		this.setUnlocalizedName(Reference.UN_BASE + name);
 	}
-	
+
+	@Override
 	@SideOnly(Side.CLIENT)
-    public boolean isFull3D()
-    {
-        return true;
-    }
-	
+	public boolean isFull3D() {
+		return true;
+	}
+
 }

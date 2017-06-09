@@ -13,26 +13,23 @@ import scmc.lib.Reference;
 
 public class ModMetaBlocks {
 
-	/**
-	 * State our blocks
-	 */
+	public static BlockCompressedMetalsT1 COMP_METAL_T1;
+	public static Block COMP_MINERAL;
+	public static BlockDyedIronBlocks DYED_IRON;
+	public static BlockNeosteelMetal NEOSTEEL_METAL;
+	public static BlockParisteelMetal PARISTEEL_METAL;
 	public static BlockProtossMetalT1 PROTOSS_METAL_T1;
 	public static BlockProtossMetalT2 PROTOSS_METAL_T2;
 	public static BlockProtossMetalT3 PROTOSS_METAL_T3;
 	public static BlockPylonCrystal PYLON_CRYSTAL;
 	public static BlockZergStructureCarapace ZERG_CARAPACE;
-	public static BlockCompressedMetalsT1 COMP_METAL_T1;
-	public static BlockNeosteelMetal NEOSTEEL_METAL;
-	public static BlockParisteelMetal PARISTEEL_METAL;
-	public static BlockDyedIronBlocks DYED_IRON;
 	public static BlockZergStructureFlesh ZERG_FLESH;
-	public static Block COMP_MINERAL;
-	
+
 	public static void init() {
 		instantiate();
 		register();
 	}
-	
+
 	/**
 	 * Initialize the blocks
 	 */
@@ -49,12 +46,12 @@ public class ModMetaBlocks {
 		PARISTEEL_METAL = new BlockParisteelMetal();
 		COMP_MINERAL = new BlockCompressedMinerals();
 	}
-	
+
 	/**
 	 * Register the blocks
 	 */
 	private static void register() {
-		registerBlock(PROTOSS_METAL_T1, new ItemBlockMeta(PROTOSS_METAL_T1)); //Says that the block uses the ItemBlockMeta as the item block
+		registerBlock(PROTOSS_METAL_T1, new ItemBlockMeta(PROTOSS_METAL_T1)); // Says that the block uses the ItemBlockMeta as the item block
 		registerBlock(PROTOSS_METAL_T2, new ItemBlockMeta(PROTOSS_METAL_T2));
 		registerBlock(PROTOSS_METAL_T3, new ItemBlockMeta(PROTOSS_METAL_T3));
 		registerBlock(PYLON_CRYSTAL, new ItemBlockMeta(PYLON_CRYSTAL));
@@ -66,7 +63,52 @@ public class ModMetaBlocks {
 		registerBlock(PARISTEEL_METAL, new ItemBlockMeta(PARISTEEL_METAL));
 		registerBlock(COMP_MINERAL, new ItemBlockMeta(COMP_MINERAL));
 	}
-	
+
+	/**
+	 * Registers the block
+	 * @param block The block to register
+	 */
+	public static void registerBlock(Block block) {
+		block.setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		GameRegistry.register(block);
+		GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		LogHelper.logger.info("Registered Block: " + block.getUnlocalizedName().substring(5));
+	}
+
+	/**
+	 * Registers the block with a custom {@link ItemBlock}
+	 * @param block The block
+	 * @param itemBlock The {@link ItemBlock}
+	 */
+	public static void registerBlock(Block block, ItemBlock itemBlock) {
+		block.setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		GameRegistry.register(block);
+		GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
+		// LogHelper.logger.info("Registered Block: " + block.getUnlocalizedName().substring(5));
+	}
+
+	/**
+	 * Registers the blocks renders
+	 * @param block The block
+	 */
+	public static void registerRender(Block block) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				new ModelResourceLocation(new ResourceLocation(Reference.MODID, block.getUnlocalizedName().substring(5)), "inventory"));
+		// LogHelper.logger.info("Registered render for " + block.getUnlocalizedName().substring(5));
+	}
+
+	/**
+	 * Registers the blocks renders even if it has meta data
+	 * @param block The block
+	 * @param meta The blocks meta data
+	 * @param fileName The file name
+	 */
+	public static void registerRender(Block block, int meta, String fileName) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta,
+				new ModelResourceLocation(new ResourceLocation(Reference.MODID, fileName), "inventory"));
+		// LogHelper.logger.info("Register render for " + block.getUnlocalizedName().substring(5));
+	}
+
 	/**
 	 * Register the renders for the block
 	 */
@@ -104,48 +146,5 @@ public class ModMetaBlocks {
 		for(int i = 0; i < EnumHandler.CompressedMineralType.values().length; i++) {
 			registerRender(COMP_MINERAL, i, "comp_mineral_" + EnumHandler.CompressedMineralType.values()[i].getName());
 		}
-	}
-	
-	/**
-	 * Registers the block
-	 * @param block The block to register
-	 */
-	public static void registerBlock(Block block) {
-		block.setCreativeTab(StarcraftCreativeTabs.BUILDING);
-		GameRegistry.register(block);
-		GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-		LogHelper.logger.info("Registered Block: " + block.getUnlocalizedName().substring(5));
-	}
-	
-	/**
-	 * Registers the block with a custom {@link ItemBlock}
-	 * @param block The block
-	 * @param itemBlock The {@link ItemBlock}
-	 */
-	public static void registerBlock(Block block, ItemBlock itemBlock) {
-		block.setCreativeTab(StarcraftCreativeTabs.BUILDING);
-		GameRegistry.register(block);
-		GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
-//		LogHelper.logger.info("Registered Block: " + block.getUnlocalizedName().substring(5));
-	}
-	
-	/**
-	 * Registers the blocks renders
-	 * @param block The block
-	 */
-	public static void registerRender(Block block) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, block.getUnlocalizedName().substring(5)), "inventory"));
-//		LogHelper.logger.info("Registered render for " + block.getUnlocalizedName().substring(5));
-	}
-	
-	/**
-	 * Registers the blocks renders even if it has meta data
-	 * @param block The block
-	 * @param meta The blocks meta data
-	 * @param fileName The file name
-	 */
-	public static void registerRender(Block block, int meta, String fileName) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(Reference.MODID, fileName), "inventory"));
-//		LogHelper.logger.info("Register render for " + block.getUnlocalizedName().substring(5));
 	}
 }

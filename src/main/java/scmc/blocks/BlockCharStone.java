@@ -17,6 +17,7 @@ import scmc.lib.Reference;
  * @author He of a Former Time
  */
 public class BlockCharStone extends ModBlocks {
+
 	public BlockCharStone() {
 		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
@@ -27,12 +28,13 @@ public class BlockCharStone extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_STONE_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_STONE_CHAR.getRegistryRL());
 	}
-	
+
 	/**
 	 * Gets the item dropped
 	 * @param state the state of the block
 	 * @param rand an object of the Random class
-	 * @param fortune the magnitude of the fortune enchantment effect on this block
+	 * @param fortune the magnitude of the fortune enchantment effect on this
+	 * block
 	 */
 	@Override
 	@Nullable

@@ -11,6 +11,7 @@ import scmc.lib.Reference;
  * @author He of a Former Time
  */
 public class BlockProtossEnergyStabilizerDark extends ModBlocks {
+
 	public BlockProtossEnergyStabilizerDark() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getUnlocalizedName());

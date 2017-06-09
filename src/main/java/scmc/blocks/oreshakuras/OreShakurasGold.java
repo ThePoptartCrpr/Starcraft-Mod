@@ -22,14 +22,14 @@ public class OreShakurasGold extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.ORE_GOLD_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_GOLD_S.getRegistryRL());
 	}
-	
+
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
-	
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int par3) {
-	    return Item.getItemFromBlock(this);
+		return Item.getItemFromBlock(this);
 	}
 }

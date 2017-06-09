@@ -11,13 +11,12 @@ import scmc.blocks.metablocks.ModBlockLayered;
 import scmc.lib.Reference;
 
 /**
- * Ash block. Thin layer of ash that generates commonly
- * on Char.<br>
+ * Ash block. Thin layer of ash that generates commonly on Char.<br>
  * Copyright 2017 the Starcraft Minecraft mod team
  * @author He of a Former Time
  */
 public class BlockAsh extends ModBlockLayered {
-	
+
 	public BlockAsh() {
 		super(Material.CARPET);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_CHAR.getUnlocalizedName());
@@ -25,8 +24,8 @@ public class BlockAsh extends ModBlockLayered {
 		setSoundType(SoundType.SAND);
 		setCreativeTab(StarcraftCreativeTabs.DECORATION);
 	}
-    
-	//No @Override because the super method is private
+
+	// No @Override because the super method is private
 	/**
 	 * checks what to drop based on the number of layers of ash
 	 * @param world the world
@@ -35,14 +34,14 @@ public class BlockAsh extends ModBlockLayered {
 	 * @return
 	 */
 	private boolean checkAndDropBlock(World world, BlockPos pos, IBlockState state) {
-        if(!canPlaceBlockAt(world, pos)) {
-            world.setBlockToAir(pos);
-            return false;
-        } else {
-            return true;
-        }
-    }
-	
+		if(!canPlaceBlockAt(world, pos)) {
+			world.setBlockToAir(pos);
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	/**
 	 * detects a state change of a nearby block
 	 * @param state the block state

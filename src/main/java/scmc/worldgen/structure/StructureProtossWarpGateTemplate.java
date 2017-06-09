@@ -7,70 +7,43 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 
 public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
-	protected Block[] getValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, Blocks.DIRT, Blocks.STONE, ModBlocks.ASH_CHAR, ModBlocks.STONE_CHAR, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
-	}
-	
+
+	public Block chanBlock;
+
+	public Block dimBlock;
 	public int metaDim;
 	public int metaPrimColor;
 	public int metaSecColor;
-	public Block dimBlock;
-	public Block chanBlock;
 	public Block stabBlock;
 
-	//TODO: Fix the portal on this
-	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-		
-		Block checkBlock = world.getBlockState(pos).getBlock();
-		Material m = checkBlock.getBlockState().getBaseState().getMaterial();
-		Block blockAbove = world.getBlockState(pos.up()).getBlock();
-		Block blockBelow = world.getBlockState(pos.down()).getBlock();
-
-		for (Block i : getValidSpawnBlocks()) {
-			if (blockAbove != Blocks.AIR) {
-				return false;
-			}
-			if (checkBlock == i) {
-				return true;
-			} else if (checkBlock == Blocks.SNOW_LAYER && blockBelow == i) {
-				return true;
-			} else if (m == Material.PLANTS && blockBelow == i) {
-				world.getBlockState(pos).getMaterial();
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	@Override
 	public boolean generate(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		this.metaDim = rand.nextInt(2);
 		this.metaPrimColor = metaPrimColor;
 		this.metaSecColor = metaSecColor;
-		
-		if (metaDim == 0) {
-//			dimBlock = ModBlocks.WARPGATE_WORMHOLE_OVERWORLD;
+
+		if(metaDim == 0) {
+			// dimBlock = ModBlocks.WARPGATE_WORMHOLE_OVERWORLD;
 			dimBlock = ModBlocks.DIM_PORTAL_OVERWORLD;
-		} else if (metaDim == 1) {
-//			dimBlock = ModBlocks.WARPGATE_WORMHOLE_CHAR;
+		} else if(metaDim == 1) {
+			// dimBlock = ModBlocks.WARPGATE_WORMHOLE_CHAR;
 			dimBlock = ModBlocks.DIM_PORTAL_CHAR;
-		} else if (metaDim == 2) {
-//			dimBlock = ModBlocks.WARPGATE_WORMHOLE_SHAKURAS;
+		} else if(metaDim == 2) {
+			// dimBlock = ModBlocks.WARPGATE_WORMHOLE_SHAKURAS;
 			dimBlock = ModBlocks.DIM_PORTAL_SHAKURAS;
 		} else {
-//			dimBlock = ModBlocks.WARPGATE_WORMHOLE_OVERWORLD;
+			// dimBlock = ModBlocks.WARPGATE_WORMHOLE_OVERWORLD;
 			dimBlock = ModBlocks.DIM_PORTAL_OVERWORLD;
 		}
-		
+
 		stabBlock = ModBlocks.PROTOSS_DARK_ENERGY_STABILIZER;
 		chanBlock = ModBlocks.PROTOSS_DARK_ENERGY_CHANNEL;
 
-		if (rand.nextInt(1) == 0) {
+		if(rand.nextInt(1) == 0) {
 			generate_r0(world, rand, offsetX, offsetY, offsetZ, pos);
 		}
 
@@ -79,8 +52,8 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 	}
 
 	public boolean generate_r0(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
-		if (!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(14, 0, 0))
-				|| !LocationIsValidSpawn(world, pos.add(14, 0, 14)) || !LocationIsValidSpawn(world, pos.add(0, 0, 14))) {
+		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(14, 0, 0)) || !LocationIsValidSpawn(world, pos.add(14, 0, 14))
+				|| !LocationIsValidSpawn(world, pos.add(0, 0, 14))) {
 			return false;
 		}
 
@@ -2244,5 +2217,33 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(14, 12 + offsetY, 14), Blocks.AIR.getDefaultState());
 		return true;
 
+	}
+
+	protected Block[] getValidSpawnBlocks() {
+		return new Block[] { Blocks.GRASS, Blocks.DIRT, Blocks.STONE, ModBlocks.ASH_CHAR, ModBlocks.STONE_CHAR, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
+	}
+
+	// TODO: Fix the portal on this
+	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
+
+		Block checkBlock = world.getBlockState(pos).getBlock();
+		Material m = checkBlock.getBlockState().getBaseState().getMaterial();
+		Block blockAbove = world.getBlockState(pos.up()).getBlock();
+		Block blockBelow = world.getBlockState(pos.down()).getBlock();
+
+		for(Block i : getValidSpawnBlocks()) {
+			if(blockAbove != Blocks.AIR) {
+				return false;
+			}
+			if(checkBlock == i) {
+				return true;
+			} else if(checkBlock == Blocks.SNOW_LAYER && blockBelow == i) {
+				return true;
+			} else if(m == Material.PLANTS && blockBelow == i) {
+				world.getBlockState(pos).getMaterial();
+				return true;
+			}
+		}
+		return false;
 	}
 }

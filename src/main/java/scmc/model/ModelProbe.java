@@ -5,22 +5,30 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelProbe extends ModelBase {
-	// fields
-	ModelRenderer rightSide;
-	ModelRenderer lowerBaseP1;
+
+	private static void setRotation(ModelRenderer model, float x, float y, float z) {
+		model.rotateAngleX = x;
+		model.rotateAngleY = y;
+		model.rotateAngleZ = z;
+	}
+
 	ModelRenderer base;
 	ModelRenderer eye;
 	ModelRenderer leftSide;
-	ModelRenderer upperBase;
-	ModelRenderer upperRightSpike;
-	ModelRenderer lowerRightSpike;
-	ModelRenderer UpperLeftSpike;
-	ModelRenderer lowerLeftSpike;
-	ModelRenderer upperSpike1;
-	ModelRenderer UpperSpike4;
 	ModelRenderer lowerBase;
+	ModelRenderer lowerBaseP1;
+	ModelRenderer lowerLeftSpike;
+	ModelRenderer lowerRightSpike;
+	// fields
+	ModelRenderer rightSide;
+	ModelRenderer upperBase;
+	ModelRenderer UpperLeftSpike;
+	ModelRenderer upperRightSpike;
+	ModelRenderer upperSpike1;
 	ModelRenderer UpperSpike2;
 	ModelRenderer UpperSpike3;
+
+	ModelRenderer UpperSpike4;
 
 	public ModelProbe() {
 		textureWidth = 128;
@@ -137,11 +145,5 @@ public class ModelProbe extends ModelBase {
 		lowerBase.render(f5);
 		UpperSpike2.render(f5);
 		UpperSpike3.render(f5);
-	}
-
-	private static void setRotation(ModelRenderer model, float x, float y, float z) {
-		model.rotateAngleX = x;
-		model.rotateAngleY = y;
-		model.rotateAngleZ = z;
 	}
 }

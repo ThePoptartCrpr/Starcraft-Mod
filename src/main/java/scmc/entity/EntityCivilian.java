@@ -9,13 +9,11 @@ import net.minecraft.world.World;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.lib.StarcraftConfig;
 
-public class EntityCivilian extends EntityTerranPassive
-{
+public class EntityCivilian extends EntityTerranPassive {
 
 	Random random = new Random();
 
-	public EntityCivilian(World world)
-	{
+	public EntityCivilian(World world) {
 		super(world);
 		setSize(1.0F, 2.0F);
 		/*
@@ -23,14 +21,8 @@ public class EntityCivilian extends EntityTerranPassive
 		 */
 	}
 
-	public boolean isAIEnabled()
-	{
-		return true;
-	}
-
 	@Override
-	protected void applyEntityAttributes()
-	{
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.civHP);
 		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.43000000417232513D);
@@ -38,27 +30,27 @@ public class EntityCivilian extends EntityTerranPassive
 	}
 
 	@Override
-	protected SoundEvent getHurtSound()
-	{
-		return null;
-	}
-
-	@Override
-	protected SoundEvent getDeathSound()
-	{
-		return null;
-	}
-
-	@Override
-	protected boolean canDespawn()
-	{
+	protected boolean canDespawn() {
 		return false;
 	}
 
 	@Override
-	public EntityAgeable createChild(EntityAgeable p_90011_1_)
-	{
+	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
 		return null;
+	}
+
+	@Override
+	protected SoundEvent getDeathSound() {
+		return null;
+	}
+
+	@Override
+	protected SoundEvent getHurtSound() {
+		return null;
+	}
+
+	public boolean isAIEnabled() {
+		return true;
 	}
 
 }

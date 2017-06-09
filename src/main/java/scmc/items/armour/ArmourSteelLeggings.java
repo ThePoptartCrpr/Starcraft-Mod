@@ -5,9 +5,10 @@ import net.minecraft.item.ItemArmor;
 import scmc.lib.Reference;
 
 public class ArmourSteelLeggings extends ItemArmor {
+
 	public ArmourSteelLeggings(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_STEEL_LEGGINGS.getUnlocalizedName());
- 		setRegistryName(Reference.ModItems.ARMOR_STEEL_LEGGINGS.getRegistryRL());
+		setRegistryName(Reference.ModItems.ARMOR_STEEL_LEGGINGS.getRegistryRL());
 	}
 }

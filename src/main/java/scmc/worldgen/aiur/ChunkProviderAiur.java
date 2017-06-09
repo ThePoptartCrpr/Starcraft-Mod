@@ -26,93 +26,95 @@ import scmc.worldgen.NormalTerrainGenerator;
 
 public class ChunkProviderAiur implements IChunkGenerator {
 
-    private final World worldObj;
-    private Random random;
-    private Biome[] biomesForGeneration;
+	private Biome[] biomesForGeneration;
+	private MapGenBase caveGenerator = new MapGenCaves();
+	private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityZealot.class, 100, 2, 2));
 
-    private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityZealot.class, 100, 2, 2));
+	private Random random;
 
-    private MapGenBase caveGenerator = new MapGenCaves();
-    private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();
+	private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();
+	private final World worldObj;
 
-    public ChunkProviderAiur(World worldObj) {
-        this.worldObj = worldObj;
-        long seed = worldObj.getSeed();
-        this.random = new Random((seed + 516) * 314);
-        terraingen.setup(worldObj, random);
-        caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-    }
+	public ChunkProviderAiur(World worldObj) {
+		this.worldObj = worldObj;
+		long seed = worldObj.getSeed();
+		this.random = new Random((seed + 516) * 314);
+		terraingen.setup(worldObj, random);
+		caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
+	}
 
-    @Override
-    public Chunk provideChunk(int x, int z) {
-        ChunkPrimer chunkprimer = new ChunkPrimer();
+	@Override
+	public boolean generateStructures(Chunk chunkIn, int x, int z) {
+		return false;
+	}
 
-        // Setup biomes for terraingen
-        this.biomesForGeneration = this.worldObj.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 4 - 2, z * 4 - 2, 10, 10);
-        terraingen.setBiomesForGeneration(biomesForGeneration);
-        terraingen.generate(x, z, chunkprimer);
+	@Override
+	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
+		// If you want normal creatures appropriate for this biome then
+		// uncomment the
+		// following two lines:
+		// Biome biome = this.worldObj.getBiome(pos);
+		// return biome.getSpawnableList(creatureType);
 
-        // Setup biomes again for actual biome decoration
-        this.biomesForGeneration = this.worldObj.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 16, z * 16, 16, 16);
-        terraingen.setBiomesForGeneration(biomesForGeneration);
-        // This will replace stone with the biome specific stones
-        terraingen.replaceBiomeBlocks(x, z, chunkprimer, this);
+		if(creatureType == EnumCreatureType.MONSTER) {
+			return mobs;
+		}
+		return ImmutableList.of();
 
-        // Generate caves
-        this.caveGenerator.generate(this.worldObj, x, z, chunkprimer);
+	}
 
-        Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
+	@Nullable
+	@Override
+	public BlockPos getStrongholdGen(World worldIn, String structureName, BlockPos position) {
+		return null;
+	}
 
-        byte[] biomeArray = chunk.getBiomeArray();
-        for (int i = 0; i < biomeArray.length; ++i) {
-            biomeArray[i] = (byte)Biome.getIdForBiome(this.biomesForGeneration[i]);
-        }
+	@Override
+	public void populate(int x, int z) {
+		int i = x * 16;
+		int j = z * 16;
+		BlockPos blockpos = new BlockPos(i, 0, j);
+		Biome biome = this.worldObj.getBiomeGenForCoords(blockpos.add(16, 0, 16));
 
-        chunk.generateSkylightMap();
-        return chunk;
-    }
+		// Add biome decorations (like flowers, grass, trees, ...)
+		biome.decorate(this.worldObj, this.random, blockpos);
 
-    @Override
-    public void populate(int x, int z) {
-        int i = x * 16;
-        int j = z * 16;
-        BlockPos blockpos = new BlockPos(i, 0, j);
-        Biome biome = this.worldObj.getBiomeGenForCoords(blockpos.add(16, 0, 16));
+		// Make sure animals appropriate to the biome spawn here when the chunk
+		// is generated
+		WorldEntitySpawner.performWorldGenSpawning(this.worldObj, biome, i + 8, j + 8, 16, 16, this.random);
+	}
 
-        // Add biome decorations (like flowers, grass, trees, ...)
-        biome.decorate(this.worldObj, this.random, blockpos);
+	@Override
+	public Chunk provideChunk(int x, int z) {
+		ChunkPrimer chunkprimer = new ChunkPrimer();
 
-        // Make sure animals appropriate to the biome spawn here when the chunk is generated
-        WorldEntitySpawner.performWorldGenSpawning(this.worldObj, biome, i + 8, j + 8, 16, 16, this.random);
-    }
+		// Setup biomes for terraingen
+		this.biomesForGeneration = this.worldObj.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 4 - 2, z * 4 - 2, 10, 10);
+		terraingen.setBiomesForGeneration(biomesForGeneration);
+		terraingen.generate(x, z, chunkprimer);
 
-    @Override
-    public boolean generateStructures(Chunk chunkIn, int x, int z) {
-        return false;
-    }
+		// Setup biomes again for actual biome decoration
+		this.biomesForGeneration = this.worldObj.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 16, z * 16, 16, 16);
+		terraingen.setBiomesForGeneration(biomesForGeneration);
+		// This will replace stone with the biome specific stones
+		terraingen.replaceBiomeBlocks(x, z, chunkprimer, this);
 
-    @Override
-    public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
-        // If you want normal creatures appropriate for this biome then uncomment the
-        // following two lines:
-//        Biome biome = this.worldObj.getBiome(pos);
-//        return biome.getSpawnableList(creatureType);
+		// Generate caves
+		this.caveGenerator.generate(this.worldObj, x, z, chunkprimer);
 
-        if (creatureType == EnumCreatureType.MONSTER){
-            return mobs;
-        }
-        return ImmutableList.of();
+		Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
 
-    }
+		byte[] biomeArray = chunk.getBiomeArray();
+		for(int i = 0; i < biomeArray.length; ++i) {
+			biomeArray[i] = (byte) Biome.getIdForBiome(this.biomesForGeneration[i]);
+		}
 
-    @Nullable
-    @Override
-    public BlockPos getStrongholdGen(World worldIn, String structureName, BlockPos position) {
-        return null;
-    }
+		chunk.generateSkylightMap();
+		return chunk;
+	}
 
-    @Override
-    public void recreateStructures(Chunk chunkIn, int x, int z) {
+	@Override
+	public void recreateStructures(Chunk chunkIn, int x, int z) {
 
-    }
+	}
 }

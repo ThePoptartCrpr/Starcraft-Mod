@@ -1,4 +1,5 @@
-//Schematic to java Structure by jajo_11 | inspired by "MITHION'S .SCHEMATIC TO JAVA CONVERTINGTOOL"
+// Schematic to java Structure by jajo_11 | inspired by "MITHION'S .SCHEMATIC TO
+// JAVA CONVERTINGTOOL"
 
 package scmc.worldgen.structure;
 
@@ -9,39 +10,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 
 public class StructureZergSpawningPool extends SCWorldGenerator {
 
-	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { ModBlocks.ZERG_CREEP };
-	}
-
-	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-		
-		Block checkBlock = world.getBlockState(pos).getBlock();
-		Material m = checkBlock.getDefaultState().getMaterial();
-		Block blockAbove = world.getBlockState(pos.up()).getBlock();
-		Block blockBelow = world.getBlockState(pos.down()).getBlock();
-
-		for (Block i : GetValidSpawnBlocks()) {
-			if (blockAbove != Blocks.AIR) {
-				return false;
-			}
-			if (checkBlock == i) {
-				return true;
-			} else if (m == Material.PLANTS && blockBelow == i) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	@Override
 	public boolean generate(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
-		if (rand.nextInt(1) == 0) {
+		if(rand.nextInt(1) == 0) {
 			generate_r0(world, rand, offsetX, offsetY, offsetZ, pos);
 		}
 
@@ -49,14 +25,14 @@ public class StructureZergSpawningPool extends SCWorldGenerator {
 	}
 
 	public void generate_r0(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
-		if (!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(18, 0, 0))
-				|| !LocationIsValidSpawn(world, pos.add(18, 0, 20)) || !LocationIsValidSpawn(world, pos.add(0, 0, 20))) {
+		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(18, 0, 0)) || !LocationIsValidSpawn(world, pos.add(18, 0, 20))
+				|| !LocationIsValidSpawn(world, pos.add(0, 0, 20))) {
 			return;
 		}
-		
-//		LogHelper.logger.log(Level.WARN, "Generating pool.");
-		
-		//First level
+
+		// LogHelper.logger.log(Level.WARN, "Generating pool.");
+
+		// First level
 		world.setBlockState(pos.add(8, 0 + offsetY, 1), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(9, 0 + offsetY, 2), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(1, 0 + offsetY, 3), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
@@ -234,8 +210,8 @@ public class StructureZergSpawningPool extends SCWorldGenerator {
 		world.setBlockState(pos.add(13, 0 + offsetY, 18), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(4, 0 + offsetY, 19), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(14, 0 + offsetY, 19), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
-		
-		//Second Level
+
+		// Second Level
 		world.setBlockState(pos.add(8, 1 + offsetY, 4), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(6, 1 + offsetY, 5), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(7, 1 + offsetY, 5), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
@@ -349,8 +325,8 @@ public class StructureZergSpawningPool extends SCWorldGenerator {
 		world.setBlockState(pos.add(11, 1 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(12, 1 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(13, 1 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
-		
-		//Third Level
+
+		// Third Level
 		world.setBlockState(pos.add(7, 2 + offsetY, 5), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(8, 2 + offsetY, 5), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(9, 2 + offsetY, 5), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
@@ -459,8 +435,8 @@ public class StructureZergSpawningPool extends SCWorldGenerator {
 		world.setBlockState(pos.add(11, 2 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(12, 2 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
 		world.setBlockState(pos.add(13, 2 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getDefaultState(), 2);
-		
-		//Fourth Level
+
+		// Fourth Level
 		world.setBlockState(pos.add(5, 3 + offsetY, 6), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(6, 3 + offsetY, 6), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(7, 3 + offsetY, 6), ModMetaBlocks.ZERG_FLESH.getStateFromMeta(1), 2);
@@ -508,19 +484,43 @@ public class StructureZergSpawningPool extends SCWorldGenerator {
 		world.setBlockState(pos.add(6, 3 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getStateFromMeta(1), 2);
 		world.setBlockState(pos.add(12, 3 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getStateFromMeta(1), 2);
 		world.setBlockState(pos.add(13, 3 + offsetY, 15), ModMetaBlocks.ZERG_FLESH.getStateFromMeta(1), 2);
-		
-		//Fifth Level
+
+		// Fifth Level
 		world.setBlockState(pos.add(5, 4 + offsetY, 6), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(13, 4 + offsetY, 7), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(14, 4 + offsetY, 10), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(3, 4 + offsetY, 12), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(5, 4 + offsetY, 14), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(13, 4 + offsetY, 14), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
-		
-		//Sixth Level
+
+		// Sixth Level
 		world.setBlockState(pos.add(6, 5 + offsetY, 7), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(13, 5 + offsetY, 10), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(6, 5 + offsetY, 13), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(12, 5 + offsetY, 13), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
+	}
+
+	protected Block[] GetValidSpawnBlocks() {
+		return new Block[] { ModBlocks.ZERG_CREEP };
+	}
+
+	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
+
+		Block checkBlock = world.getBlockState(pos).getBlock();
+		Material m = checkBlock.getDefaultState().getMaterial();
+		Block blockAbove = world.getBlockState(pos.up()).getBlock();
+		Block blockBelow = world.getBlockState(pos.down()).getBlock();
+
+		for(Block i : GetValidSpawnBlocks()) {
+			if(blockAbove != Blocks.AIR) {
+				return false;
+			}
+			if(checkBlock == i) {
+				return true;
+			} else if(m == Material.PLANTS && blockBelow == i) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

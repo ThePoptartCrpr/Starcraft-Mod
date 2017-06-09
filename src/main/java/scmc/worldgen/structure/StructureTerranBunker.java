@@ -9,41 +9,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.items.ModItems;
 
 public class StructureTerranBunker extends SCWorldGenerator {
-	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT };
-	}
 
-	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-		
-		Block checkBlock = world.getBlockState(pos).getBlock();
-		Material m = checkBlock.getBlockState().getBaseState().getMaterial();
-		Block blockAbove = world.getBlockState(pos.up()).getBlock();
-		Block blockBelow = world.getBlockState(pos.down()).getBlock();
-
-		for (Block i : GetValidSpawnBlocks()) {
-			if (blockAbove != Blocks.AIR) {
-				return false;
-			}
-			if (checkBlock == i) {
-				return true;
-			} else if (checkBlock == Blocks.SNOW_LAYER && blockBelow == i) {
-				return true;
-			} else if (m == Material.PLANTS && blockBelow == i) {
-				world.getBlockState(pos).getMaterial();
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	@Override
 	public boolean generate(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
-		if (rand.nextInt(1) == 0) {
+		if(rand.nextInt(1) == 0) {
 			generate_r0(world, rand, pos);
 		}
 
@@ -51,8 +24,8 @@ public class StructureTerranBunker extends SCWorldGenerator {
 	}
 
 	public boolean generate_r0(World world, Random rand, BlockPos pos) {
-		if (!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(13, 0, 0))
-				|| !LocationIsValidSpawn(world, pos.add(13, 0, 13)) || !LocationIsValidSpawn(world, pos.add(0, 0, 13))) {
+		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(13, 0, 0)) || !LocationIsValidSpawn(world, pos.add(13, 0, 13))
+				|| !LocationIsValidSpawn(world, pos.add(0, 0, 13))) {
 			return false;
 		}
 
@@ -305,7 +278,7 @@ public class StructureTerranBunker extends SCWorldGenerator {
 		world.setBlockState(pos.add(8, 1, 3), Blocks.AIR.getDefaultState());
 
 		TileEntityChest chest = new TileEntityChest();
-		
+
 		world.setBlockState(pos.add(9, 1, 3), Blocks.CHEST.getDefaultState(), 3);
 		world.setTileEntity(pos.add(9, 1, 3), chest);
 		Random randchest = new Random();
@@ -313,12 +286,10 @@ public class StructureTerranBunker extends SCWorldGenerator {
 			int num = randchest.nextInt(30);
 			if(num == 0) {
 				chest.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 0));
-				
-			}
-			else if(num >= 13 && num <= 19){
+
+			} else if(num >= 13 && num <= 19) {
 				chest.setInventorySlotContents(slot, new ItemStack(ModItems.ingot1, 1, 0));
-			}
-			else if(num == 1){
+			} else if(num == 1) {
 				chest.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 1));
 			}
 
@@ -416,8 +387,7 @@ public class StructureTerranBunker extends SCWorldGenerator {
 		world.setBlockState(pos.add(1, 1, 10), Blocks.AIR.getDefaultState());
 		world.setBlockState(pos.add(2, 1, 10), ModMetaBlocks.COMP_METAL_T1.getStateFromMeta(2));
 		world.setBlockState(pos.add(3, 1, 10), ModMetaBlocks.COMP_METAL_T1.getStateFromMeta(1));
-		
-		
+
 		TileEntityChest chest2 = new TileEntityChest();
 		world.setBlockState(pos.add(4, 1, 10), Blocks.CHEST.getDefaultState(), 3);
 		world.setTileEntity(pos.add(4, 1, 10), chest2);
@@ -426,16 +396,13 @@ public class StructureTerranBunker extends SCWorldGenerator {
 			int num = randchest2.nextInt(30);
 			if(num < 1) {
 				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 0));
-			}
-			else if(num >= 13 && num <= 19){
+			} else if(num >= 13 && num <= 19) {
 				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.ingot1, 1, 0));
-			}
-			else if(num > 29){
+			} else if(num > 29) {
 				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 1));
 			}
 		}
-		
-		
+
 		world.setBlockState(pos.add(5, 1, 10), Blocks.AIR.getDefaultState());
 		world.setBlockState(pos.add(6, 1, 10), ModMetaBlocks.COMP_METAL_T1.getStateFromMeta(1));
 		world.setBlockState(pos.add(7, 1, 10), ModMetaBlocks.COMP_METAL_T1.getStateFromMeta(1));
@@ -1469,5 +1436,32 @@ public class StructureTerranBunker extends SCWorldGenerator {
 		world.setBlockState(pos.add(13, 6, 13), Blocks.AIR.getDefaultState());
 		return true;
 
+	}
+
+	protected Block[] GetValidSpawnBlocks() {
+		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT };
+	}
+
+	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
+
+		Block checkBlock = world.getBlockState(pos).getBlock();
+		Material m = checkBlock.getBlockState().getBaseState().getMaterial();
+		Block blockAbove = world.getBlockState(pos.up()).getBlock();
+		Block blockBelow = world.getBlockState(pos.down()).getBlock();
+
+		for(Block i : GetValidSpawnBlocks()) {
+			if(blockAbove != Blocks.AIR) {
+				return false;
+			}
+			if(checkBlock == i) {
+				return true;
+			} else if(checkBlock == Blocks.SNOW_LAYER && blockBelow == i) {
+				return true;
+			} else if(m == Material.PLANTS && blockBelow == i) {
+				world.getBlockState(pos).getMaterial();
+				return true;
+			}
+		}
+		return false;
 	}
 }

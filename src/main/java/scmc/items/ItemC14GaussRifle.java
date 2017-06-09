@@ -12,6 +12,7 @@ import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ItemC14GaussRifle extends Item {
+
 	public ItemC14GaussRifle() {
 		setCreativeTab(StarcraftCreativeTabs.COMBAT);
 		setFull3D();
@@ -20,14 +21,12 @@ public class ItemC14GaussRifle extends Item {
 	}
 
 	@Override
-	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
-	{
+	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
+		return new ActionResult(EnumActionResult.PASS, itemStackIn);
+	}
+
+	@Override
+	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
 	}
-	
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
-    {
-        return new ActionResult(EnumActionResult.PASS, itemStackIn);
-    }
 }

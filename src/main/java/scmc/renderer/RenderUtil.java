@@ -6,8 +6,9 @@ import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderUtil {
-	private static final Minecraft MC = Minecraft.getMinecraft();
+
 	public static final float DEFAULT_BOX_TRANSLATION = 0.625F;
+	private static final Minecraft MC = Minecraft.getMinecraft();
 
 	public static void bindTexture(ResourceLocation resourceLocation) {
 		MC.renderEngine.bindTexture(resourceLocation);

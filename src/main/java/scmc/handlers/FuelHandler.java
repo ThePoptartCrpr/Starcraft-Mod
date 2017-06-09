@@ -7,17 +7,17 @@ import scmc.items.ModItems;
 
 public class FuelHandler implements IFuelHandler {
 
+	public static void preInit() {
+		GameRegistry.registerFuelHandler(new FuelHandler());
+	}
+
 	@Override
 	public int getBurnTime(ItemStack fuel) {
 
-		if (fuel.getItem() == ModItems.vespene)
+		if(fuel.getItem() == ModItems.vespene)
 			return 3200;
 
 		return 0;
-	}
-
-	public static void preInit() {
-		GameRegistry.registerFuelHandler(new FuelHandler());
 	}
 
 }

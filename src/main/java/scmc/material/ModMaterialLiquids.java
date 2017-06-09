@@ -4,18 +4,11 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 
 public class ModMaterialLiquids extends Material {
+
 	public ModMaterialLiquids(MapColor mapColor) {
 		super(mapColor);
 		setReplaceable();
 		setNoPushMobility();
-	}
-
-	/**
-	 * Returns if blocks of these materials are liquids.
-	 */
-	@Override
-	public boolean isLiquid() {
-		return true;
 	}
 
 	/**
@@ -26,6 +19,14 @@ public class ModMaterialLiquids extends Material {
 		return true;
 	}
 
+	/**
+	 * Returns if blocks of these materials are liquids.
+	 */
+	@Override
+	public boolean isLiquid() {
+		return true;
+	}
+
 	@Override
 	public boolean isSolid() {
 		return false;
@@ -33,7 +34,7 @@ public class ModMaterialLiquids extends Material {
 
 	@Override
 	public Material setNoPushMobility() {
-		//No flag because it did exactly 0 things
+		// No flag because it did exactly 0 things
 		return this;
 	}
 }

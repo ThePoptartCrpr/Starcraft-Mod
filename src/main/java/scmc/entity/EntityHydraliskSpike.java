@@ -3,26 +3,21 @@ package scmc.entity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityHydraliskSpike extends Entity
-{
+public class EntityHydraliskSpike extends Entity {
 
-	private boolean	inGround;
-	public Entity	shootingEntity;
-	public double	damage;
+	public double damage;
+	private boolean inGround;
+	public Entity shootingEntity;
 
-	public EntityHydraliskSpike(World par1World)
-	{
+	public EntityHydraliskSpike(World par1World) {
 		super(par1World);
 		setSize(0.05F, 0.05F);
 	}
 
-	public EntityHydraliskSpike(World world, Object source, Entity targetEntity, float velocity, double damage)
-	{
+	public EntityHydraliskSpike(World world, Object source, Entity targetEntity, float velocity, double damage) {
 		super(world);
 		this.damage = damage;
 		inGround = false;
@@ -38,8 +33,7 @@ public class EntityHydraliskSpike extends Entity
 		double srcX = 0;
 		double srcZ = 0;
 
-		if (source instanceof EntityLivingBase)
-		{
+		if(source instanceof EntityLivingBase) {
 			EntityLivingBase living = (EntityLivingBase) source;
 			shootingEntity = living;
 
@@ -53,8 +47,7 @@ public class EntityHydraliskSpike extends Entity
 		double z = targetEntity.posZ - srcZ;
 		double v = MathHelper.sqrt_double(x * x + z * z);
 
-		if (v >= 1.0E-7D)
-		{
+		if(v >= 1.0E-7D) {
 			float yaw = (float) (Math.atan2(z, x) * 180.0D / Math.PI) - 90.0F;
 			float pitch = (float) (-(Math.atan2(y, v) * 180.0D / Math.PI));
 			double xOffset = x / v;
@@ -65,19 +58,12 @@ public class EntityHydraliskSpike extends Entity
 	}
 
 	@Override
-	protected void entityInit()
-	{
-		// TODO Auto-generated method stub
-	}
+	protected void entityInit() {}
 
 	@Override
-	protected void readEntityFromNBT(NBTTagCompound compound)
-	{
-		// TODO Auto-generated method stub
-	}
+	protected void readEntityFromNBT(NBTTagCompound compound) {}
 
-	public void setThrowableHeading(double posX, double posY, double posZ, float velocity, double damage)
-	{
+	public void setThrowableHeading(double posX, double posY, double posZ, float velocity, double damage) {
 		float v = MathHelper.sqrt_double(posX * posX + posY * posY + posZ * posZ);
 		posX /= v;
 		posY /= v;
@@ -97,8 +83,5 @@ public class EntityHydraliskSpike extends Entity
 	}
 
 	@Override
-	protected void writeEntityToNBT(NBTTagCompound compound)
-	{
-		// TODO Auto-generated method stub
-	}
+	protected void writeEntityToNBT(NBTTagCompound compound) {}
 }

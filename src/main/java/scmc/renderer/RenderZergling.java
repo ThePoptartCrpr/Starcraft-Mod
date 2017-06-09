@@ -12,8 +12,7 @@ import scmc.model.ModelZergling;
 
 public class RenderZergling<T> extends RenderLiving<EntityZergling> {
 
-	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/zergling.png");
+	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/zergling.png");
 
 	protected ModelZergling modelEntity;
 
@@ -22,24 +21,23 @@ public class RenderZergling<T> extends RenderLiving<EntityZergling> {
 
 		modelEntity = ((ModelZergling) mainModel);
 	}
-	
-	public void doRender(EntityZergling entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityZergling entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityZergling entity) {
 		return ZERGLING_TEXTURES;
 	}
-	
-	protected void preRenderCallback(EntityZergling entitylivingbaseIn, float partialTickTime)
-    {
+
+	@Override
+	protected void preRenderCallback(EntityZergling entitylivingbaseIn, float partialTickTime) {
 		GL11.glScalef(1.25F, 1.25F, 1.25F);
-    }
+	}
 }

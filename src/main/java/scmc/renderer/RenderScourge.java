@@ -10,8 +10,7 @@ import scmc.model.ModelScourge;
 
 public class RenderScourge<T> extends RenderLiving<EntityScourge> {
 
-	private static final ResourceLocation SCOURGE_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/scourge.png");
+	private static final ResourceLocation SCOURGE_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/scourge.png");
 
 	protected ModelScourge modelEntity;
 
@@ -20,16 +19,15 @@ public class RenderScourge<T> extends RenderLiving<EntityScourge> {
 
 		modelEntity = ((ModelScourge) mainModel);
 	}
-	
-	public void doRender(EntityScourge entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityScourge entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityScourge entity) {

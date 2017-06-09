@@ -12,35 +12,33 @@ import scmc.model.ModelZealot;
 
 public class RenderZealot<T> extends RenderLiving<EntityZealot> {
 
-	private static final ResourceLocation ZEALOT_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/zealot.png");
-			
+	private static final ResourceLocation ZEALOT_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/zealot.png");
+
 	protected ModelZealot modelEntity;
 
 	public RenderZealot(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-		
+
 		modelEntity = ((ModelZealot) mainModel);
 	}
-	
-	public void doRender(EntityZealot entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
-	
-	protected void preRenderCallback(EntityZealot entitylivingbaseIn, float partialTickTime)
-    {
-		GL11.glScalef(0.70F, 0.70F, 0.70F);
-    }
-	
+	@Override
+	public void doRender(EntityZealot entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
+
 	@Override
 	protected ResourceLocation getEntityTexture(EntityZealot entity) {
 		return ZEALOT_TEXTURES;
+	}
+
+	@Override
+	protected void preRenderCallback(EntityZealot entitylivingbaseIn, float partialTickTime) {
+		GL11.glScalef(0.70F, 0.70F, 0.70F);
 	}
 
 }

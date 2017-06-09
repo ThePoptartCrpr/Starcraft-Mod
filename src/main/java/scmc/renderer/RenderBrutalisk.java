@@ -12,35 +12,33 @@ import scmc.model.ModelBrutalisk;
 
 public class RenderBrutalisk<T> extends RenderLiving<EntityBrutalisk> {
 
-	private static final ResourceLocation BRUTALISK_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/brutalisk.png");
-			
+	private static final ResourceLocation BRUTALISK_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/brutalisk.png");
+
 	protected ModelBrutalisk modelEntity;
 
 	public RenderBrutalisk(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-		
+
 		modelEntity = ((ModelBrutalisk) mainModel);
 	}
-	
-	public void doRender(EntityBrutalisk entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
-	
-	protected void preRenderCallback(EntityBrutalisk entitylivingbaseIn, float partialTickTime)
-    {
-		GL11.glScalef(3.0F, 3.0F, 3.0F);
-    }
-	
+	@Override
+	public void doRender(EntityBrutalisk entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
+
 	@Override
 	protected ResourceLocation getEntityTexture(EntityBrutalisk entity) {
 		return BRUTALISK_TEXTURES;
+	}
+
+	@Override
+	protected void preRenderCallback(EntityBrutalisk entitylivingbaseIn, float partialTickTime) {
+		GL11.glScalef(3.0F, 3.0F, 3.0F);
 	}
 
 }

@@ -5,6 +5,7 @@ import net.minecraft.item.ItemArmor;
 import scmc.lib.Reference;
 
 public class ArmorAdeptChestplateT1 extends ItemArmor {
+
 	public ArmorAdeptChestplateT1(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_ADEPT_CHESTPLATE_T1.getUnlocalizedName());

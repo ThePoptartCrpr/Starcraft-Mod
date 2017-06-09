@@ -16,6 +16,7 @@ import scmc.lib.Reference;
  * @author He of a Former Time
  */
 public class BlockProtossEnergyChannelDark extends ModBlocks {
+
 	public BlockProtossEnergyChannelDark() {
 		super(Material.ROCK);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_CHANNEL.getUnlocalizedName());
@@ -27,7 +28,16 @@ public class BlockProtossEnergyChannelDark extends ModBlocks {
 		setHarvestLevel("pickaxe", 3);
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
-	
+
+	/**
+	 * Gets the state of the block being dropped
+	 * @param state the state of the block
+	 */
+	@Override
+	public int damageDropped(IBlockState state) {
+		return 1;
+	}
+
 	/**
 	 * Returns the item dropped by this block
 	 * @param state the state of the block
@@ -37,14 +47,5 @@ public class BlockProtossEnergyChannelDark extends ModBlocks {
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return ModItems.energy;
-    }
-	
-	/**
-	 * Gets the state of the block being dropped
-	 * @param state the state of the block
-	 */
-	@Override
-	public int damageDropped(IBlockState state) {
-		return 1;
-    }
+	}
 }

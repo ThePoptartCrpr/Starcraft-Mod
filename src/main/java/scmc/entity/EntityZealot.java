@@ -25,40 +25,14 @@ import scmc.items.ModItems;
 import scmc.items.weapons.ModWeapons;
 import scmc.lib.StarcraftConfig;
 
-public class EntityZealot extends EntityProtossMob
-{
-	public EntityZealot(World world)
-	{
+public class EntityZealot extends EntityProtossMob {
+
+	public EntityZealot(World world) {
 		super(world);
 		setSize(1.5F, 2.5F);
 	}
 
-	@Override
-	protected void applyEntityAttributes()
-	{
-		super.applyEntityAttributes();
-		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zealotHP);
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.39000000417232513);
-		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
-		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zealotDmg);
-		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
-		getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
-	}
-
-	@Override
-	protected void initEntityAI()
-	{
-		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(2, new EntityAIAttackMelee(this, 1, false));
-		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
-		tasks.addTask(7, new EntityAIWander(this, 1));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
-		tasks.addTask(8, new EntityAILookIdle(this));
-		applyEntityAI();
-	}
-
-	protected void applyEntityAI()
-	{
+	protected void applyEntityAI() {
 		tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1, false));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityZergMob>(this, EntityZergMob.class, true));
@@ -68,58 +42,71 @@ public class EntityZealot extends EntityProtossMob
 		targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
 	}
 
-	//TODO: redo this to be a switch statement
 	@Override
-	public SoundEvent getAmbientSound()
-	{
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zealotHP);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.39000000417232513);
+		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
+		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zealotDmg);
+		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
+		getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
+	}
+
+	/**
+	 * Drop 0-2 items of this living's type.
+	 * @param recentlyHit - Whether this entity has recently been hit by a
+	 * player.
+	 * @param looting - Level of Looting used to kill this mob.
+	 */
+	@Override
+	protected void dropFewItems(boolean recentlyHit, int looting) {
+		int j = rand.nextInt(50);
+
+		if(j == 49) {
+			dropItem(ModWeapons.PSI_BLADE, 1);
+		} else if(j < 5) {
+			dropItem(ModItems.energy, 1);
+		}
+	}
+
+	// TODO: redo this to be a switch statement
+	@Override
+	public SoundEvent getAmbientSound() {
 		Random rand = new Random();
-		if (rand.nextInt(4) == 0)
+		if(rand.nextInt(4) == 0)
 			return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE1;
-		if (rand.nextInt(4) == 1)
+		if(rand.nextInt(4) == 1)
 			return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE2;
-		if (rand.nextInt(4) == 2)
+		if(rand.nextInt(4) == 2)
 			return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE3;
 
 		return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE4;
 	}
 
 	@Override
-	public SoundEvent getHurtSound()
-	{
-		return StarcraftSoundEvents.ENTITY_ZEALOT_HURT;
-	}
-
-	@Override
-	public SoundEvent getDeathSound()
-	{
+	public SoundEvent getDeathSound() {
 		return StarcraftSoundEvents.ENTITY_ZEALOT_DEATH;
 	}
 
 	@Override
-	public int getTalkInterval()
-	{
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_ZEALOT_HURT;
+	}
+
+	@Override
+	public int getTalkInterval() {
 		return 160;
 	}
 
-	/**
-	 * Drop 0-2 items of this living's type.
-	 * 
-	 * @param recentlyHit
-	 *            - Whether this entity has recently been hit by a player.
-	 * @param looting
-	 *            - Level of Looting used to kill this mob.
-	 */
 	@Override
-	protected void dropFewItems(boolean recentlyHit, int looting)
-	{
-		int j = rand.nextInt(50);
-
-		if (j == 49)
-		{
-			dropItem(ModWeapons.PSI_BLADE, 1);
-		} else if (j < 5)
-		{
-			dropItem(ModItems.energy, 1);
-		}
+	protected void initEntityAI() {
+		tasks.addTask(0, new EntityAISwimming(this));
+		tasks.addTask(2, new EntityAIAttackMelee(this, 1, false));
+		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
+		tasks.addTask(7, new EntityAIWander(this, 1));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
+		tasks.addTask(8, new EntityAILookIdle(this));
+		applyEntityAI();
 	}
 }

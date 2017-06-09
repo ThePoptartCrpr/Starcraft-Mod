@@ -5,64 +5,60 @@ import net.minecraft.entity.ai.EntityAIBase;
 import scmc.entity.EntityScarab;
 
 public class EntityAIScarabExplode extends EntityAIBase {
-	
-	/** The scarab that is swelling */
-	private EntityScarab swellingScarab;
-	
-	/** The scarab's attack target. This is used for the changing of the creeper's state */
+
+	/**
+	 * The scarab's attack target. This is used for the changing of the
+	 * creeper's state
+	 */
 	private EntityLivingBase scarabAttackTarget;
 
+	/** The scarab that is swelling */
+	private EntityScarab swellingScarab;
+
 	public EntityAIScarabExplode(EntityScarab entitycreeperIn) {
-        swellingScarab = entitycreeperIn;
-        setMutexBits(1);
-    }
+		swellingScarab = entitycreeperIn;
+		setMutexBits(1);
+	}
 
-    /**
-     * Returns whether the EntityAIBase should begin execution.
-     */
-    @Override
-    public boolean shouldExecute() {
-        EntityLivingBase entitylivingbase = swellingScarab.getAttackTarget();
-        return entitylivingbase != null && swellingScarab.getDistanceSqToEntity(entitylivingbase) < 9;
-    }
+	/**
+	 * Resets the task
+	 */
+	@Override
+	public void resetTask() {
+		scarabAttackTarget = null;
+	}
 
-    /**
-     * Execute a one shot task or start executing a continuous task
-     */
-    @Override
-    public void startExecuting() {
-        swellingScarab.getNavigator().clearPathEntity();
-        scarabAttackTarget = swellingScarab.getAttackTarget();
-    }
+	/**
+	 * Returns whether the EntityAIBase should begin execution.
+	 */
+	@Override
+	public boolean shouldExecute() {
+		EntityLivingBase entitylivingbase = swellingScarab.getAttackTarget();
+		return entitylivingbase != null && swellingScarab.getDistanceSqToEntity(entitylivingbase) < 9;
+	}
 
-    /**
-     * Resets the task
-     */
-    @Override
-    public void resetTask() {
-        scarabAttackTarget = null;
-    }
+	/**
+	 * Execute a one shot task or start executing a continuous task
+	 */
+	@Override
+	public void startExecuting() {
+		swellingScarab.getNavigator().clearPathEntity();
+		scarabAttackTarget = swellingScarab.getAttackTarget();
+	}
 
-    /**
-     * Updates the task
-     */
-    @Override
-    public void updateTask() {
-        if (scarabAttackTarget == null)
-        {
-            swellingScarab.setScarabState(-1);
-        }
-        else if (swellingScarab.getDistanceSqToEntity(scarabAttackTarget) > 49)
-        {
-            swellingScarab.setScarabState(-1);
-        }
-        else if (!swellingScarab.getEntitySenses().canSee(scarabAttackTarget))
-        {
-            swellingScarab.setScarabState(-1);
-        }
-        else
-        {
-            swellingScarab.setScarabState(1);
-        }
-    }
+	/**
+	 * Updates the task
+	 */
+	@Override
+	public void updateTask() {
+		if(scarabAttackTarget == null) {
+			swellingScarab.setScarabState(-1);
+		} else if(swellingScarab.getDistanceSqToEntity(scarabAttackTarget) > 49) {
+			swellingScarab.setScarabState(-1);
+		} else if(!swellingScarab.getEntitySenses().canSee(scarabAttackTarget)) {
+			swellingScarab.setScarabState(-1);
+		} else {
+			swellingScarab.setScarabState(1);
+		}
+	}
 }

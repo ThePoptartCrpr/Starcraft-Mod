@@ -5,69 +5,73 @@ import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import scmc.lib.Reference;
 
-public class StarcraftSoundEvents
-{
-	public static SoundEvent	ENTITY_ZERGLING_LIVE1;
-	public static SoundEvent	ENTITY_ZERGLING_LIVE2;
-	public static SoundEvent	ENTITY_ZERGLING_LIVE3;
-	public static SoundEvent	ENTITY_ZERGLING_LIVE4;
-	public static SoundEvent	ENTITY_ZERGLING_HURT;
-	public static SoundEvent	ENTITY_ZERGLING_DEATH;
+public class StarcraftSoundEvents {
 
-	public static SoundEvent	ENTITY_HYDRALISK_LIVE1;
-	public static SoundEvent	ENTITY_HYDRALISK_LIVE2;
-	public static SoundEvent	ENTITY_HYDRALISK_LIVE3;
-	public static SoundEvent	ENTITY_HYDRALISK_LIVE4;
-	public static SoundEvent	ENTITY_HYDRALISK_HURT;
-	public static SoundEvent	ENTITY_HYDRALISK_DEATH;
+	public static SoundEvent ENTITY_BROODLING_DEATH;
+	public static SoundEvent ENTITY_BROODLING_HURT;
+	public static SoundEvent ENTITY_BROODLING_LIVE1;
 
-	public static SoundEvent	ENTITY_LARVA_LIVE1;
-	public static SoundEvent	ENTITY_LARVA_HURT;
-	public static SoundEvent	ENTITY_LARVA_DEATH;
+	public static SoundEvent ENTITY_BRUTALISK_DEATH;
+	public static SoundEvent ENTITY_BRUTALISK_HURT;
+	public static SoundEvent ENTITY_BRUTALISK_LIVE1;
+	public static SoundEvent ENTITY_BRUTALISK_STEP;
 
-	public static SoundEvent	ENTITY_OVERLORD_LIVE1;
-	public static SoundEvent	ENTITY_OVERLORD_HURT;
-	public static SoundEvent	ENTITY_OVERLORD_DEATH;
+	public static SoundEvent ENTITY_DARKTEMPLAR_DEATH;
+	public static SoundEvent ENTITY_DARKTEMPLAR_HURT;
+	public static SoundEvent ENTITY_DARKTEMPLAR_LIVE1;
+	public static SoundEvent ENTITY_DARKTEMPLAR_LIVE2;
 
-	public static SoundEvent	ENTITY_ZERGCOCOON_LIVE1;
-	public static SoundEvent	ENTITY_ZERGCOCOON_HURT;
-	public static SoundEvent	ENTITY_ZERGCOCOON_DEATH;
+	public static SoundEvent ENTITY_HYDRALISK_DEATH;
+	public static SoundEvent ENTITY_HYDRALISK_HURT;
+	public static SoundEvent ENTITY_HYDRALISK_LIVE1;
+	public static SoundEvent ENTITY_HYDRALISK_LIVE2;
+	public static SoundEvent ENTITY_HYDRALISK_LIVE3;
+	public static SoundEvent ENTITY_HYDRALISK_LIVE4;
 
-	public static SoundEvent	ENTITY_ZEALOT_LIVE1;
-	public static SoundEvent	ENTITY_ZEALOT_LIVE2;
-	public static SoundEvent	ENTITY_ZEALOT_LIVE3;
-	public static SoundEvent	ENTITY_ZEALOT_LIVE4;
-	public static SoundEvent	ENTITY_ZEALOT_HURT;
-	public static SoundEvent	ENTITY_ZEALOT_DEATH;
+	public static SoundEvent ENTITY_LARVA_DEATH;
+	public static SoundEvent ENTITY_LARVA_HURT;
+	public static SoundEvent ENTITY_LARVA_LIVE1;
 
-	public static SoundEvent	ENTITY_DARKTEMPLAR_LIVE1;
-	public static SoundEvent	ENTITY_DARKTEMPLAR_LIVE2;
-	public static SoundEvent	ENTITY_DARKTEMPLAR_HURT;
-	public static SoundEvent	ENTITY_DARKTEMPLAR_DEATH;
+	public static SoundEvent ENTITY_OVERLORD_DEATH;
+	public static SoundEvent ENTITY_OVERLORD_HURT;
+	public static SoundEvent ENTITY_OVERLORD_LIVE1;
 
-	public static SoundEvent	ENTITY_PREAVER_LIVE1;
-	public static SoundEvent	ENTITY_PREAVER_LIVE2;
-	public static SoundEvent	ENTITY_PREAVER_LIVE3;
-	public static SoundEvent	ENTITY_PREAVER_LIVE4;
-	public static SoundEvent	ENTITY_PREAVER_LIVE5;
-	public static SoundEvent	ENTITY_PREAVER_HURT;
-	public static SoundEvent	ENTITY_PREAVER_DEATH;
+	public static SoundEvent ENTITY_PREAVER_DEATH;
+	public static SoundEvent ENTITY_PREAVER_HURT;
+	public static SoundEvent ENTITY_PREAVER_LIVE1;
+	public static SoundEvent ENTITY_PREAVER_LIVE2;
+	public static SoundEvent ENTITY_PREAVER_LIVE3;
+	public static SoundEvent ENTITY_PREAVER_LIVE4;
+	public static SoundEvent ENTITY_PREAVER_LIVE5;
 
-	public static SoundEvent	ENTITY_PROBE_LIVE1;
-	public static SoundEvent	ENTITY_PROBE_HURT;
-	public static SoundEvent	ENTITY_PROBE_DEATH;
+	public static SoundEvent ENTITY_PROBE_DEATH;
+	public static SoundEvent ENTITY_PROBE_HURT;
+	public static SoundEvent ENTITY_PROBE_LIVE1;
 
-	public static SoundEvent	ENTITY_BRUTALISK_LIVE1;
-	public static SoundEvent	ENTITY_BRUTALISK_HURT;
-	public static SoundEvent	ENTITY_BRUTALISK_DEATH;
-	public static SoundEvent	ENTITY_BRUTALISK_STEP;
+	public static SoundEvent ENTITY_ZEALOT_DEATH;
+	public static SoundEvent ENTITY_ZEALOT_HURT;
+	public static SoundEvent ENTITY_ZEALOT_LIVE1;
+	public static SoundEvent ENTITY_ZEALOT_LIVE2;
+	public static SoundEvent ENTITY_ZEALOT_LIVE3;
+	public static SoundEvent ENTITY_ZEALOT_LIVE4;
 
-	public static SoundEvent	ENTITY_BROODLING_LIVE1;
-	public static SoundEvent	ENTITY_BROODLING_HURT;
-	public static SoundEvent	ENTITY_BROODLING_DEATH;
+	public static SoundEvent ENTITY_ZERGCOCOON_DEATH;
+	public static SoundEvent ENTITY_ZERGCOCOON_HURT;
+	public static SoundEvent ENTITY_ZERGCOCOON_LIVE1;
 
-	public static void registerSounds()
-	{
+	public static SoundEvent ENTITY_ZERGLING_DEATH;
+	public static SoundEvent ENTITY_ZERGLING_HURT;
+	public static SoundEvent ENTITY_ZERGLING_LIVE1;
+	public static SoundEvent ENTITY_ZERGLING_LIVE2;
+	public static SoundEvent ENTITY_ZERGLING_LIVE3;
+	public static SoundEvent ENTITY_ZERGLING_LIVE4;
+
+	private static SoundEvent registerSound(String soundName) {
+		final ResourceLocation soundID = new ResourceLocation(Reference.MODID, soundName);
+		return GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
+	}
+
+	public static void registerSounds() {
 		ENTITY_ZERGLING_LIVE1 = registerSound("mob.zergling.live1");
 		ENTITY_ZERGLING_LIVE2 = registerSound("mob.zergling.live2");
 		ENTITY_ZERGLING_LIVE3 = registerSound("mob.zergling.live3");
@@ -126,11 +130,5 @@ public class StarcraftSoundEvents
 		ENTITY_BROODLING_LIVE1 = registerSound("mob.broodling.live1");
 		ENTITY_BROODLING_HURT = registerSound("mob.broodling.hurt");
 		ENTITY_BROODLING_DEATH = registerSound("mob.broodling.death");
-	}
-
-	private static SoundEvent registerSound(String soundName)
-	{
-		final ResourceLocation soundID = new ResourceLocation(Reference.MODID, soundName);
-		return GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
 	}
 }

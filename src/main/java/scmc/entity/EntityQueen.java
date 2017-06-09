@@ -23,17 +23,25 @@ import scmc.lib.StarcraftConfig;
  * @author Hypeirochus
  */
 // TODO: Fix this entire class
-public class EntityQueen extends EntityZergMob
-{
-	public EntityQueen(World world)
-	{
+public class EntityQueen extends EntityZergMob {
+
+	public EntityQueen(World world) {
 		super(world);
 		setSize(2.0F, 2.0F);
 	}
 
+	protected void applyEntityAI() {
+
+		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
+		targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
+		targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+		targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
+		targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
+	}
+
 	@Override
-	protected void applyEntityAttributes()
-	{
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
@@ -45,8 +53,32 @@ public class EntityQueen extends EntityZergMob
 	}
 
 	@Override
-	protected void initEntityAI()
-	{
+	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
+		// TODO: make this
+	}
+
+	@Override
+	public SoundEvent getAmbientSound() {
+		return null;
+	}
+
+	@Override
+	public SoundEvent getDeathSound() {
+		return null;
+	}
+
+	@Override
+	public SoundEvent getHurtSound() {
+		return null;
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 160;
+	}
+
+	@Override
+	protected void initEntityAI() {
 		super.initEntityAI();
 
 		tasks.addTask(0, new EntityAISwimming(this));
@@ -57,46 +89,5 @@ public class EntityQueen extends EntityZergMob
 		tasks.addTask(8, new EntityAILookIdle(this));
 
 		applyEntityAI();
-	}
-
-	protected void applyEntityAI()
-	{
-
-		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
-		targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-		targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-		targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
-		targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
-	}
-
-	@Override
-	public int getTalkInterval()
-	{
-		return 160;
-	}
-
-	@Override
-	public SoundEvent getAmbientSound()
-	{
-		return null;
-	}
-
-	@Override
-	public SoundEvent getHurtSound()
-	{
-		return null;
-	}
-
-	@Override
-	public SoundEvent getDeathSound()
-	{
-		return null;
-	}
-
-	@Override
-	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel)
-	{
-		// TODO: make this
 	}
 }

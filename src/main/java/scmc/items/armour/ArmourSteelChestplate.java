@@ -5,9 +5,10 @@ import net.minecraft.item.ItemArmor;
 import scmc.lib.Reference;
 
 public class ArmourSteelChestplate extends ItemArmor {
+
 	public ArmourSteelChestplate(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_STEEL_CHESTPLATE.getUnlocalizedName());
- 		setRegistryName(Reference.ModItems.ARMOR_STEEL_CHESTPLATE.getRegistryRL());
+		setRegistryName(Reference.ModItems.ARMOR_STEEL_CHESTPLATE.getRegistryRL());
 	}
 }

@@ -14,17 +14,17 @@ public class BlockTeleporter extends BlockPortal {
 	}
 
 	@Override
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn) {}
+
+	@Override
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
-        if(!entityIn.isRiding() && !entityIn.isBeingRidden() && entityIn.isNonBoss()) {
-            entityIn.setPortal(pos);
-        }
-    }
+		if(!entityIn.isRiding() && !entityIn.isBeingRidden() && entityIn.isNonBoss()) {
+			entityIn.setPortal(pos);
+		}
+	}
 
 	@Override
 	public boolean trySpawnPortal(World worldIn, BlockPos pos) {
-        return false;
-    }
-
-	@Override
-	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn) {}
+		return false;
+	}
 }

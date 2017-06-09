@@ -15,5 +15,4 @@ public class EntityTerranPassive extends EntityTameable {
 		return null;
 	}
 
-
 }

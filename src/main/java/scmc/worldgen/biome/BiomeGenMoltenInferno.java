@@ -11,7 +11,7 @@ import scmc.blocks.ModBlocks;
 
 public class BiomeGenMoltenInferno extends BiomesSC {
 
-	//TODO: Fix this biome, too much obsidian spawns, not enough lava
+	// TODO: Fix this biome, too much obsidian spawns, not enough lava
 	public BiomeGenMoltenInferno(BiomeProperties id) {
 		super(id);
 
@@ -26,18 +26,8 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 		this.spawnableCaveCreatureList.clear();
 	}
 
-	@Override
-	public int getSkyColorByTemp(float par1) {
-		return 0;
-	}
-
-	@Override
-	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
-		genBiomeTerrainChar(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
-	}
-
 	public final void genBiomeTerrainChar(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
-		
+
 		int seaLevel = worldIn.getSeaLevel();
 		IBlockState topBlock = this.topBlock;
 		IBlockState fillerBlock = this.fillerBlock;
@@ -46,45 +36,59 @@ public class BiomeGenMoltenInferno extends BiomesSC {
 		int zLoc = x & 15;
 		int xLoc = z & 15;
 
-		for (int yLoc = 255; yLoc >= 0; --yLoc) {
-			if (yLoc <= rand.nextInt(5)) {
+		for(int yLoc = 255; yLoc >= 0; --yLoc) {
+			if(yLoc <= rand.nextInt(5)) {
 				chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, BEDROCK);
 			} else {
 				IBlockState origState = chunkPrimerIn.getBlockState(xLoc, yLoc, zLoc);
-				
-				if (origState.getMaterial() == Material.AIR) { //If we're still in the air...
-                    j = -1;
-                } else if (origState.getBlock() == ModBlocks.STONE_CHAR) {
-					if (j == -1) {
-						if (randHeight <= 0) {
+
+				if(origState.getMaterial() == Material.AIR) { // If we're still
+																	// in the air...
+					j = -1;
+				} else if(origState.getBlock() == ModBlocks.STONE_CHAR) {
+					if(j == -1) {
+						if(randHeight <= 0) {
 							topBlock = AIR;
 							fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();
-						} else if (yLoc >= seaLevel - 4 && yLoc <= seaLevel + 1) {
+						} else if(yLoc >= seaLevel - 4 && yLoc <= seaLevel + 1) {
 							topBlock = this.topBlock;
 							fillerBlock = this.fillerBlock;
 						}
-						
-						if (yLoc < seaLevel && (topBlock == null || topBlock.getMaterial() == Material.AIR)) {
+
+						if(yLoc < seaLevel && (topBlock == null || topBlock.getMaterial() == Material.AIR)) {
 							topBlock = Blocks.LAVA.getDefaultState();
 						}
-						
+
 						j = randHeight;
-						
-						if (yLoc >= seaLevel - 1) {
+
+						if(yLoc >= seaLevel - 1) {
 							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, topBlock);
-						} else if (yLoc < seaLevel - 7 - randHeight) {
+						} else if(yLoc < seaLevel - 7 - randHeight) {
 							topBlock = AIR;
 							fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();
-							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, ModBlocks.STONE_CHAR.getDefaultState()); //use to be gravel
+							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, ModBlocks.STONE_CHAR.getDefaultState()); // use
+																													// to
+																													// be
+																													// gravel
 						} else {
 							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, fillerBlock);
 						}
-					} else if (j > 0) {
+					} else if(j > 0) {
 						--j;
 						chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, fillerBlock);
 					}
-				} 
+				}
 			}
 		}
+	}
+
+	@Override
+	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
+		genBiomeTerrainChar(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
+	}
+
+	@Override
+	public int getSkyColorByTemp(float par1) {
+		return 0;
 	}
 }

@@ -35,47 +35,37 @@ import scmc.lib.Reference;
  * Copyright 2017 the Starcraft Minecraft mod team
  */
 public class ModItems extends Item {
-	public static Item mineralShard;
-	public static Item richMineralShard;
 
-	public static Item vespene;
-
-	public static Item psiBladeFocuserUncharged;
-	public static Item darkPsiBladeFocuserUncharged;
-	public static Item energy;
-	public static Item protossArtifact;
-	public static Item crystal;
-	
-	public static Item SPAWNER;
-	
-	public static Item essence;
+	// public static Item acidBucket;
+	// public static Item bloodBucket;
+	public static Item bullet;
+	public static Item C14GaussRifle;
 	public static Item c14Parts;
-
+	public static Item coord;
+	public static Item CREDIT;
+	public static Item creepResin;
+	public static Item crystal;
+	public static Item darkPsiBladeFocuserUncharged;
+	public static Item dust;
+	public static Item energy;
+	public static Item essence;
+	public static Item HYDRALISK_NEEDLE;
 	public static Item ingot1;
 	public static Item ingot2;
 	public static Item ingot3;
-	public static Item dust;
-	public static Item coord;
-
-	public static Item C14GaussRifle;
-	public static Item bullet;
-	public static Item CREDIT;
-	
-	public static Item zergCarapace;
-	public static Item creepResin;
-	public static Item organicTissue;
-	public static Item HYDRALISK_NEEDLE;
-	public static Item MUTALISK_WING;
-	public static Item MUTALISK_TOOTH;
-
-//	public static Item acidBucket;
-//	public static Item bloodBucket;
-	
-	public static Item protossModule;
-	
 	public static Item keystone;
-		
-	
+	public static Item mineralShard;
+	public static Item MUTALISK_TOOTH;
+	public static Item MUTALISK_WING;
+	public static Item organicTissue;
+	public static Item protossArtifact;
+	public static Item protossModule;
+	public static Item psiBladeFocuserUncharged;
+	public static Item richMineralShard;
+	public static Item SPAWNER;
+	public static Item vespene;
+	public static Item zergCarapace;
+
 	public static void init() {
 		keystone = new ItemKeystone();
 		mineralShard = new ItemMineralShard();
@@ -97,25 +87,25 @@ public class ModItems extends Item {
 		HYDRALISK_NEEDLE = new ItemHydraliskNeedle();
 		MUTALISK_WING = new ItemMutaliskWing();
 		MUTALISK_TOOTH = new ItemMutaliskTooth();
-		
+
 		SPAWNER = new ItemSpawner();
-				
+
 		ModArmour.init();
 		ModWeapons.init();
 		ModTools.init();
 	}
-	
+
 	/**
 	 * Registers all mod items. Calls registration of sub-packages.
 	 */
 	public static void register() {
-		
-		//Register acid fluid and add it to the universal bucket
+
+		// Register acid fluid and add it to the universal bucket
 		FluidRegistry.addBucketForFluid(ModFluids.acid);
-		
-		//Register blood fluid and add it to the universal bucket
+
+		// Register blood fluid and add it to the universal bucket
 		FluidRegistry.addBucketForFluid(ModFluids.blood);
-		
+
 		registerItem(keystone);
 		registerItem(mineralShard);
 		registerItem(vespene);
@@ -136,20 +126,53 @@ public class ModItems extends Item {
 		registerItem(HYDRALISK_NEEDLE);
 		registerItem(MUTALISK_WING);
 		registerItem(MUTALISK_TOOTH);
-		
+
 		registerItem(SPAWNER);
-						
+
 		ModArmour.register();
 		ModWeapons.register();
 		ModTools.register();
 	}
-	
+
+	/**
+	 * Register an item
+	 * @param item The item
+	 */
+	public static void registerItem(Item item) {
+		item.setCreativeTab(StarcraftCreativeTabs.MATERIALS); // Sets the
+																// creative tab
+		GameRegistry.register(item);
+		// LogHelper.logger.info("Registered item: " +
+		// item.getUnlocalizedName().substring(5));
+	}
+
+	/**
+	 * Registers the item render MUST BE CALLED IN THE PRE INIT METHOD IN YOUR
+	 * MAIN CLASS
+	 * @param item The item
+	 */
+	public static void registerRender(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory")); // This shit's like 30% cheating
+		// LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
+	}
+
+	/**
+	 * Registers the item render for an item which has meta data
+	 * @param item The item
+	 * @param meta The meta data
+	 * @param fileName The file name
+	 */
+	public static void registerRender(Item item, int meta, String fileName) {
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MODID, fileName), "inventory"));
+		// LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
+	}
+
 	public static void registerRenders() {
 		registerRender(keystone);
 		registerRender(creepResin);
 		registerRender(HYDRALISK_NEEDLE);
 		registerRender(MUTALISK_TOOTH);
-		
+
 		for(int i = 0; i < ItemEnumHandler.MineralType.values().length; i++) {
 			registerRender(mineralShard, i, "shard_" + ItemEnumHandler.MineralType.values()[i].getName());
 		}
@@ -201,39 +224,9 @@ public class ModItems extends Item {
 		for(int i = 0; i < ItemEnumHandler.SpawnerType.values().length; i++) {
 			registerRender(SPAWNER, i, "spawner_" + ItemEnumHandler.SpawnerType.values()[i].getName());
 		}
-				
+
 		ModArmour.registerRenders();
 		ModWeapons.registerRenders();
 		ModTools.registerRenders();
-	}
-	
-	/**
-	 * Register an item
-	 * @param item The item
-	 */
-	public static void registerItem(Item item) {
-		item.setCreativeTab(StarcraftCreativeTabs.MATERIALS); //Sets the creative tab
-		GameRegistry.register(item);
-//		LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
-	}
-	
-	/**
-	 * Registers the item render MUST BE CALLED IN THE PRE INIT METHOD IN YOUR MAIN CLASS
-	 * @param item The item
-	 */
-	public static void registerRender(Item item) {
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory")); //This shit's like 30% cheating
-//		LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
-	}
-	
-	/**
-	 * Registers the item render for an item which has meta data
-	 * @param item The item
-	 * @param meta The meta data
-	 * @param fileName The file name
-	 */
-	public static void registerRender(Item item, int meta, String fileName) {
-		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MODID, fileName), "inventory"));
-//		LogHelper.logger.info("Register render for " + item.getUnlocalizedName().substring(5));
 	}
 }

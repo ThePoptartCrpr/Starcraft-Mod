@@ -10,8 +10,7 @@ import scmc.model.ModelOverlord;
 
 public class RenderOverlord<T> extends RenderLiving<EntityOverlord> {
 
-	private static final ResourceLocation OVERLORD_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/overlord.png");
+	private static final ResourceLocation OVERLORD_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/overlord.png");
 
 	protected ModelOverlord modelEntity;
 
@@ -20,16 +19,15 @@ public class RenderOverlord<T> extends RenderLiving<EntityOverlord> {
 
 		modelEntity = ((ModelOverlord) mainModel);
 	}
-	
-	public void doRender(EntityOverlord entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityOverlord entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityOverlord entity) {

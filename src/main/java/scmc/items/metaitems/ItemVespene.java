@@ -9,7 +9,7 @@ import scmc.items.metaitems.ItemEnumHandler.VespeneType;
 import scmc.lib.Reference;
 
 public class ItemVespene extends Item {
-	
+
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
 	 * @param unlocalizedName
@@ -17,9 +17,9 @@ public class ItemVespene extends Item {
 	public ItemVespene() {
 		this.setUnlocalizedName(Reference.ModItems.ITEM_VESPENE.getUnlocalizedName());
 		this.setRegistryName(Reference.ModItems.ITEM_VESPENE.getRegistryRL());
-		this.setHasSubtypes(true); //This just says the item has metadata
+		this.setHasSubtypes(true); // This just says the item has metadata
 	}
-	
+
 	/**
 	 * Adds all the different versions of the item
 	 */
@@ -29,7 +29,7 @@ public class ItemVespene extends Item {
 			items.add(new ItemStack(item, 1, i));
 		}
 	}
-	
+
 	/**
 	 * Gets the correct unlocalized name using the {@link VespeneType} enum
 	 */
@@ -38,8 +38,7 @@ public class ItemVespene extends Item {
 		for(int i = 0; i < VespeneType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
 				return this.getUnlocalizedName() + "." + VespeneType.values()[i].getName();
-			}
-			else {
+			} else {
 				continue;
 			}
 		}

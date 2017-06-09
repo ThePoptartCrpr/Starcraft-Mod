@@ -20,6 +20,5 @@ public class BlockShakurasSand extends BlockFalling {
 
 	public int damageDropped(int par1) {
 		return par1;
-
 	}
 }

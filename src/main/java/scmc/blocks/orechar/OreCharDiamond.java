@@ -12,6 +12,7 @@ import scmc.blocks.ModBlocks;
 import scmc.lib.Reference;
 
 public class OreCharDiamond extends ModBlocks {
+
 	public OreCharDiamond() {
 		super(Material.ROCK);
 		setSoundType(SoundType.STONE);
@@ -22,12 +23,12 @@ public class OreCharDiamond extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.ORE_DIAMOND_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_DIAMOND_C.getRegistryRL());
 	}
-	
+
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
-	
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int par3) {
 		return Items.DIAMOND;

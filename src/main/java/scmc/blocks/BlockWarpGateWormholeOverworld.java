@@ -12,7 +12,7 @@ import scmc.lib.Reference;
 import scmc.tileentity.TileEntityBlockWarpGateWormholeOverworld;
 
 public class BlockWarpGateWormholeOverworld extends BlockContainer {
-	
+
 	public BlockWarpGateWormholeOverworld(Material material) {
 		super(material);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_WARP_GATE_WORMHOLE_OW.getUnlocalizedName());
@@ -23,6 +23,12 @@ public class BlockWarpGateWormholeOverworld extends BlockContainer {
 		this.setLightLevel(1.0F);
 		this.setCreativeTab(null);
 	}
+
+	@Override
+	public TileEntity createNewTileEntity(World par1, int par2) {
+		return new TileEntityBlockWarpGateWormholeOverworld();
+	}
+
 	public int getRenderType() {
 		return -1;
 	}
@@ -31,17 +37,12 @@ public class BlockWarpGateWormholeOverworld extends BlockContainer {
 		return false;
 	}
 
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
-
-	@Override
-	public TileEntity createNewTileEntity(World par1, int par2) {
-		return new TileEntityBlockWarpGateWormholeOverworld();
-	}
-
 	@Override
 	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
 		Library.blockCube(world, ModBlocks.DIM_PORTAL_OVERWORLD.getDefaultState(), pos, 3);
+	}
+
+	public boolean renderAsNormalBlock() {
+		return false;
 	}
 }

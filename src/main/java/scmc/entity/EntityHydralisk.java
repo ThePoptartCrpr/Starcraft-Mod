@@ -34,16 +34,13 @@ import scmc.lib.StarcraftConfig;
 
 /**
  * Work in progress
- * 
  * @author He of a Former Time
  */
-public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttackMob, Predicate<EntityLivingBase>
-{
+public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttackMob, Predicate<EntityLivingBase> {
 
 	private EntityAIBase rangedAttackAI;
 
-	public EntityHydralisk(World world)
-	{
+	public EntityHydralisk(World world) {
 		super(world);
 		setSize(3.5F, 3.3F);
 		experienceValue = 5;
@@ -58,8 +55,31 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 	}
 
 	@Override
-	protected void applyEntityAttributes()
-	{
+	public boolean apply(EntityLivingBase entity) {
+		if(entity instanceof EntityProtossMob)
+			return true;
+		if(entity instanceof EntityProtossPassive)
+			return true;
+		if(entity instanceof EntityTerranMob)
+			return true;
+		if(entity instanceof EntityTerranPassive)
+			return true;
+		if(entity instanceof EntityMob)
+			return true;
+		if(entity instanceof EntityPlayer)
+			return true;
+		if(entity instanceof EntityGolem)
+			return true;
+		if(entity instanceof EntityZergMob)
+			return false;
+		if(entity instanceof EntityZergPassive)
+			return false;
+
+		return false;
+	}
+
+	@Override
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.hydraliskHP);
 		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D);
@@ -69,79 +89,15 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 	}
 
 	@Override
-	public int getTalkInterval()
-	{
-		return 160;
-	}
-
-	@Override
-	public SoundEvent getAmbientSound()
-	{
-		Random rand = new Random();
-
-		if (rand.nextInt(3) == 0)
-			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE1;
-
-		if (rand.nextInt(2) == 1)
-			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE2;
-
-		if (rand.nextInt(2) == 2)
-			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE3;
-
-		return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE4;
-	}
-
-	@Override
-	public SoundEvent getHurtSound()
-	{
-		return StarcraftSoundEvents.ENTITY_HYDRALISK_HURT;
-	}
-
-	@Override
-	public SoundEvent getDeathSound()
-	{
-		return StarcraftSoundEvents.ENTITY_HYDRALISK_DEATH;
-	}
-
-	/**
-	 * Drop up to 2 items when killed
-	 * 
-	 * @param damagedByPlayer
-	 *            true if the most recent damage was dealt by a player
-	 * @param lootingLevel
-	 *            level of Looting on kill weapon
-	 */
-	@Override
-	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel)
-	{
-		// TODO: make this
-	}
-
-	@Override
-	public void onUpdate()
-	{
-		super.onUpdate();
-	}
-
-	@Override
-	public void onLivingUpdate()
-	{
-		super.onLivingUpdate();
-	}
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float damageDealt)
-	{
+	public boolean attackEntityFrom(DamageSource source, float damageDealt) {
 		return super.attackEntityFrom(source, damageDealt);
 	}
 
 	// TODO: Work this out! It probably isn't firing properly because of how
 	// HydraliskSpike is set up.
 	@Override
-	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_)
-	{
-		if (getAttackTarget() != null)
-		{
+	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_) {
+		if(getAttackTarget() != null) {
 			EntityHydraliskSpike entityBullet = new EntityHydraliskSpike(this.worldObj, this, target, 10F, 12F);
 			worldObj.spawnEntityInWorld(entityBullet);
 			playSound(StarcraftSoundEvents.ENTITY_BROODLING_DEATH, 0.7F, 1F);
@@ -149,34 +105,60 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 		}
 	}
 
+	/**
+	 * Drop up to 2 items when killed
+	 * @param damagedByPlayer true if the most recent damage was dealt by a
+	 * player
+	 * @param lootingLevel level of Looting on kill weapon
+	 */
 	@Override
-	public boolean apply(EntityLivingBase entity)
-	{
-		if (entity instanceof EntityProtossMob)
-			return true;
-		if (entity instanceof EntityProtossPassive)
-			return true;
-		if (entity instanceof EntityTerranMob)
-			return true;
-		if (entity instanceof EntityTerranPassive)
-			return true;
-		if (entity instanceof EntityMob)
-			return true;
-		if (entity instanceof EntityPlayer)
-			return true;
-		if (entity instanceof EntityGolem)
-			return true;
-		if (entity instanceof EntityZergMob)
-			return false;
-		if (entity instanceof EntityZergPassive)
-			return false;
-
-		return false;
+	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
+		// TODO: make this
 	}
 
 	@Override
-	protected void updateAITasks()
-	{
+	public SoundEvent getAmbientSound() {
+		Random rand = new Random();
+
+		if(rand.nextInt(3) == 0)
+			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE1;
+
+		if(rand.nextInt(2) == 1)
+			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE2;
+
+		if(rand.nextInt(2) == 2)
+			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE3;
+
+		return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE4;
+	}
+
+	@Override
+	public SoundEvent getDeathSound() {
+		return StarcraftSoundEvents.ENTITY_HYDRALISK_DEATH;
+	}
+
+	@Override
+	public SoundEvent getHurtSound() {
+		return StarcraftSoundEvents.ENTITY_HYDRALISK_HURT;
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 160;
+	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+	}
+
+	@Override
+	protected void updateAITasks() {
 		super.updateAITasks();
 	}
 

@@ -11,6 +11,7 @@ import scmc.lib.Reference;
  * @author He of a Former Time
  */
 public class BlockCharDirt extends ModBlocks {
+
 	public BlockCharDirt() {
 		super(Material.GROUND);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getUnlocalizedName());

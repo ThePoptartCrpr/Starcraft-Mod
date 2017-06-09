@@ -9,7 +9,7 @@ import scmc.items.metaitems.ItemEnumHandler.CreditType;
 import scmc.lib.Reference;
 
 public class ItemCredit extends Item {
-	
+
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
 	 * @param unlocalizedName
@@ -17,9 +17,9 @@ public class ItemCredit extends Item {
 	public ItemCredit() {
 		this.setUnlocalizedName(Reference.ModItems.ITEM_CREDIT.getUnlocalizedName());
 		this.setRegistryName(Reference.ModItems.ITEM_CREDIT.getRegistryRL());
-		this.setHasSubtypes(true); //This just says the item has metadata
+		this.setHasSubtypes(true); // This just says the item has metadata
 	}
-	
+
 	/**
 	 * Adds all the different versions of the item
 	 */
@@ -29,7 +29,7 @@ public class ItemCredit extends Item {
 			items.add(new ItemStack(item, 1, i));
 		}
 	}
-	
+
 	/**
 	 * Gets the correct unlocalized name using the {@link CreditType} enum
 	 */
@@ -38,8 +38,7 @@ public class ItemCredit extends Item {
 		for(int i = 0; i < CreditType.values().length; i++) {
 			if(stack.getItemDamage() == i) {
 				return this.getUnlocalizedName() + "." + CreditType.values()[i].getName();
-			}
-			else {
+			} else {
 				continue;
 			}
 		}

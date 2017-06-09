@@ -23,7 +23,7 @@ public class OreCharLapis extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.ORE_LAPIS_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_LAPIS_C.getRegistryRL());
 	}
-	
+
 	@Override
 	public int damageDropped(IBlockState state) {
 		return 4;
@@ -33,7 +33,7 @@ public class OreCharLapis extends ModBlocks {
 	public Item getItemDropped(IBlockState state, Random rand, int par3) {
 		return Items.DYE;
 	}
-	
+
 	@Override
 	public int quantityDropped(Random rand) {
 		return 4 + rand.nextInt(4);

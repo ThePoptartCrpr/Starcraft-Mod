@@ -12,50 +12,52 @@ import net.minecraft.world.WorldServer;
 
 public class ModTeleporter extends Teleporter {
 
-	//TODO: Fix this, players do not spawn on the surface, but underground in boxes of bedrock
-    public ModTeleporter(WorldServer world, double x, double y, double z) {
-        super(world);
-        this.worldServer = world;
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
+	public static void teleportToDimension(EntityPlayer player, int dimension, double x, double y, double z) {
+		int oldDimension = player.worldObj.provider.getDimension();
+		EntityPlayerMP entityPlayerMP = (EntityPlayerMP) player;
+		MinecraftServer server = ((EntityPlayerMP) player).worldObj.getMinecraftServer();
+		WorldServer worldServer = server.worldServerForDimension(dimension);
+		player.addExperienceLevel(0);
 
-    private final WorldServer worldServer;
-    private double x;
-    private double y;
-    private double z;
+		if(worldServer == null || worldServer.getMinecraftServer() == null) { // Dimension
+																					// doesn't
+																				// exist
+			throw new IllegalArgumentException("Dimension: " + dimension + " doesn't exist!");
+		}
 
-    @Override
-    public void placeInPortal(@Nonnull Entity entity, float rotationYaw) {
-        this.worldServer.getBlockState(new BlockPos((int) this.x, (int) this.y, (int) this.z));
+		worldServer.getMinecraftServer().getPlayerList().transferPlayerToDimension(entityPlayerMP, dimension, new ModTeleporter(worldServer, x, y, z));
+		player.setPositionAndUpdate(x, y, z);
+		if(oldDimension == 1) {
+			// For some reason teleporting out of the end does weird things.
+			player.setPositionAndUpdate(x, y, z);
+			worldServer.spawnEntityInWorld(player);
+			worldServer.updateEntityWithOptionalForce(player, false);
+		}
+	}
 
-        entity.setPosition(this.x, this.y, this.z);
-        entity.motionX = 0.0f;
-        entity.motionY = 0.0f;
-        entity.motionZ = 0.0f;
-    }
+	private final WorldServer worldServer;
+	private double x;
+	private double y;
+	private double z;
 
+	// TODO: Fix this, players do not spawn on the surface, but underground in
+	// boxes of bedrock
+	public ModTeleporter(WorldServer world, double x, double y, double z) {
+		super(world);
+		this.worldServer = world;
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
 
-    public static void teleportToDimension(EntityPlayer player, int dimension, double x, double y, double z) {
-        int oldDimension = player.worldObj.provider.getDimension();
-        EntityPlayerMP entityPlayerMP = (EntityPlayerMP) player;
-        MinecraftServer server = ((EntityPlayerMP) player).worldObj.getMinecraftServer();
-        WorldServer worldServer = server.worldServerForDimension(dimension);
-        player.addExperienceLevel(0);
+	@Override
+	public void placeInPortal(@Nonnull Entity entity, float rotationYaw) {
+		this.worldServer.getBlockState(new BlockPos((int) this.x, (int) this.y, (int) this.z));
 
-        if (worldServer == null || worldServer.getMinecraftServer() == null){ //Dimension doesn't exist
-            throw new IllegalArgumentException("Dimension: "+dimension+" doesn't exist!");
-        }
-
-        worldServer.getMinecraftServer().getPlayerList().transferPlayerToDimension(entityPlayerMP, dimension, new ModTeleporter(worldServer, x, y, z));
-        player.setPositionAndUpdate(x, y, z);
-        if (oldDimension == 1) {
-            // For some reason teleporting out of the end does weird things.
-            player.setPositionAndUpdate(x, y, z);
-            worldServer.spawnEntityInWorld(player);
-            worldServer.updateEntityWithOptionalForce(player, false);
-        }
-    }
+		entity.setPosition(this.x, this.y, this.z);
+		entity.motionX = 0.0f;
+		entity.motionY = 0.0f;
+		entity.motionZ = 0.0f;
+	}
 
 }

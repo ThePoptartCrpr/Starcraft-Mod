@@ -11,6 +11,7 @@ import scmc.lib.Reference;
  * @author He of a Former Time
  */
 public class BlockCharCobblestone extends ModBlocks {
+
 	public BlockCharCobblestone() {
 		super(Material.ROCK);
 		setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_CHAR.getRegistryName());

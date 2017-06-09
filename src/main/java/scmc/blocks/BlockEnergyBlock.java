@@ -10,6 +10,7 @@ import scmc.lib.Reference;
  * @author He of a Former Time
  */
 public class BlockEnergyBlock extends ModBlocks {
+
 	public BlockEnergyBlock() {
 		super(Material.REDSTONE_LIGHT);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_ENERGY.getUnlocalizedName());

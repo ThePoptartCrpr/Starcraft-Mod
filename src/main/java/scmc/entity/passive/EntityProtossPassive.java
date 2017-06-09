@@ -5,6 +5,7 @@ import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.world.World;
 
 public class EntityProtossPassive extends EntityTameable {
+
 	public EntityProtossPassive(World world) {
 		super(world);
 	}

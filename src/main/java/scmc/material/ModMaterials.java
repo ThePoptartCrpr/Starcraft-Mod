@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLiquid;
 
 public class ModMaterials {
+
 	public static Material acid;
 	public static Material blood;
 

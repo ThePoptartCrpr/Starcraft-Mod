@@ -12,8 +12,7 @@ import scmc.model.ModelQueen;
 
 public class RenderQueen<T> extends RenderLiving<EntityQueen> {
 
-	private static final ResourceLocation QUEEN_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/entity/queen.png");
+	private static final ResourceLocation QUEEN_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/queen.png");
 
 	protected ModelQueen modelEntity;
 
@@ -22,24 +21,23 @@ public class RenderQueen<T> extends RenderLiving<EntityQueen> {
 
 		modelEntity = ((ModelQueen) mainModel);
 	}
-	
-	public void doRender(EntityQueen entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntityQueen entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityQueen entity) {
 		return QUEEN_TEXTURES;
 	}
-	
-	protected void preRenderCallback(EntityQueen entitylivingbaseIn, float partialTickTime)
-    {
+
+	@Override
+	protected void preRenderCallback(EntityQueen entitylivingbaseIn, float partialTickTime) {
 		GL11.glScalef(1.25F, 1.25F, 1.25F);
-    }
+	}
 }

@@ -22,14 +22,14 @@ public class OreCharUranium extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.ORE_URANIUM_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_URANIUM_C.getRegistryRL());
 	}
-	
+
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
-	
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int par3) {
-	    return Item.getItemFromBlock(this);
+		return Item.getItemFromBlock(this);
 	}
 }

@@ -22,6 +22,7 @@ import scmc.lib.ModTeleporter;
 import scmc.lib.Reference;
 
 public class DimPortalAiur extends ModBlocks {
+
 	private int dim = 4;
 
 	public DimPortalAiur() {
@@ -33,12 +34,13 @@ public class DimPortalAiur extends ModBlocks {
 		setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_AI.getRegistryRL());
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
-	
-	@Override
-    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn) {}
 
 	@Override
-	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
+	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes,
+			@Nullable Entity entityIn) {}
+
+	@Override
+	public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
 		return false;
 	}
 
@@ -48,7 +50,12 @@ public class DimPortalAiur extends ModBlocks {
 	}
 
 	@Override
-	public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+	public MapColor getMapColor(IBlockState state) {
+		return MapColor.OBSIDIAN;
+	}
+
+	@Override
+	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
 		return false;
 	}
 
@@ -67,13 +74,8 @@ public class DimPortalAiur extends ModBlocks {
 							new ModTeleporter(player.mcServer.worldServerForDimension(dim), player.posX, player.posY, player.posZ));
 				}
 			} catch(@SuppressWarnings("unused") ClassCastException e) {
-				return; //Not a player
+				return; // Not a player
 			}
 		}
-	}
-
-	@Override
-	public MapColor getMapColor(IBlockState state) {
-		return MapColor.OBSIDIAN;
 	}
 }

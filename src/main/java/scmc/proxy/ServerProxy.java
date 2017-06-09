@@ -6,16 +6,16 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @SuppressWarnings("unused")
 public class ServerProxy {
-	public void preInit(FMLPreInitializationEvent event) {}
-	
+
 	public void init(FMLInitializationEvent event) {}
-	
+
 	public void postInit(FMLPostInitializationEvent event) {}
-	
-	public void registerModelBakeryVariants() {}
-	
-	public void registerTileEntities() {
-	}
+
+	public void preInit(FMLPreInitializationEvent event) {}
 
 	public void registerModelBakeryStuff() {}
+
+	public void registerModelBakeryVariants() {}
+
+	public void registerTileEntities() {}
 }

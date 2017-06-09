@@ -11,7 +11,8 @@ import scmc.lib.Reference;
  * @author Hypeirochus
  */
 public class BlockCharGravel extends ModBlocks {
-	//TODO: Fix all of this!
+
+	// TODO: Fix all of this!
 	public BlockCharGravel() {
 		super(Material.GROUND);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getUnlocalizedName());

@@ -10,8 +10,7 @@ import scmc.model.ModelSpiderMine;
 
 public class RenderSpiderMine<T> extends RenderLiving<EntitySpiderMine> {
 
-	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(
-			Reference.RL_BASE + "textures/models/spidermine.png");
+	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/models/spidermine.png");
 
 	protected ModelSpiderMine modelEntity;
 
@@ -20,16 +19,15 @@ public class RenderSpiderMine<T> extends RenderLiving<EntitySpiderMine> {
 
 		modelEntity = ((ModelSpiderMine) mainModel);
 	}
-	
-	public void doRender(EntitySpiderMine entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
-        if (!this.renderOutlines)
-        {
-            this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
-        }
-    }
+	@Override
+	public void doRender(EntitySpiderMine entity, double x, double y, double z, float entityYaw, float partialTicks) {
+		super.doRender(entity, x, y, z, entityYaw, partialTicks);
+
+		if(!this.renderOutlines) {
+			this.renderLeash(entity, x, y, z, entityYaw, partialTicks);
+		}
+	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntitySpiderMine entity) {

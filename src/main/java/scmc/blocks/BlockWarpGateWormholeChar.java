@@ -12,7 +12,7 @@ import scmc.lib.Reference;
 import scmc.tileentity.TileEntityBlockWarpGateWormholeChar;
 
 public class BlockWarpGateWormholeChar extends BlockContainer {
-	
+
 	public BlockWarpGateWormholeChar(Material material) {
 		super(material);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_WARP_GATE_WORMHOLE_C.getUnlocalizedName());
@@ -24,6 +24,11 @@ public class BlockWarpGateWormholeChar extends BlockContainer {
 		this.setCreativeTab(null);
 	}
 
+	@Override
+	public TileEntity createNewTileEntity(World par1, int par2) {
+		return new TileEntityBlockWarpGateWormholeChar();
+	}
+
 	public int getRenderType() {
 		return -1;
 	}
@@ -32,17 +37,12 @@ public class BlockWarpGateWormholeChar extends BlockContainer {
 		return false;
 	}
 
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
-
-	@Override
-	public TileEntity createNewTileEntity(World par1, int par2) {
-		return new TileEntityBlockWarpGateWormholeChar();
-	}
-
 	@Override
 	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
 		Library.blockCube(world, ModBlocks.DIM_PORTAL_CHAR.getDefaultState(), pos, 3);
+	}
+
+	public boolean renderAsNormalBlock() {
+		return false;
 	}
 }

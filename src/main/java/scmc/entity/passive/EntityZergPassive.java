@@ -5,6 +5,7 @@ import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.world.World;
 
 public class EntityZergPassive extends EntityTameable {
+
 	public EntityZergPassive(World world) {
 		super(world);
 	}

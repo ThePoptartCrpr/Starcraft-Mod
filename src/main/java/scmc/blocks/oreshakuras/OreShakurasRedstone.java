@@ -23,17 +23,17 @@ public class OreShakurasRedstone extends ModBlocks {
 		setUnlocalizedName(Reference.ModBlocks.ORE_REDSTONE_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_REDSTONE_S.getRegistryRL());
 	}
-	
+
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
-	
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int par3) {
 		return Items.REDSTONE;
 	}
-	 
+
 	@Override
 	public int quantityDropped(Random rand) {
 		return 4 + rand.nextInt(1);
