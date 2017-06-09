@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.items.ModItems;
-import scmc.items.armour.ModArmour;
+import scmc.items.armor.ModArmor;
 import scmc.items.tools.ModTools;
 import scmc.items.weapons.ModWeapons;
 
@@ -181,10 +181,10 @@ public class SimpleRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModTools.COPPER_HOE), new Object[] { " CC", " S ", " S ", 'C', new ItemStack(ModItems.ingot1, 0, 0), 'S', Items.STICK });
 		GameRegistry.addRecipe(new ItemStack(ModWeapons.COPPER_SWORD), new Object[] { " C ", " C ", " S ", 'C', new ItemStack(ModItems.ingot1, 0, 0), 'S', Items.STICK });
 
-		GameRegistry.addRecipe(new ItemStack(ModArmour.copperHelmet), new Object[] { "CCC", "C C", "   ", 'C', new ItemStack(ModItems.ingot1, 0, 0) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.copperChestplate), new Object[] { "C C", "CCC", "CCC", 'C', new ItemStack(ModItems.ingot1, 0, 0) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.copperLeggings), new Object[] { "CCC", "C C", "C C", 'C', new ItemStack(ModItems.ingot1, 0, 0) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.copperBoots), new Object[] { "   ", "C C", "C C", 'C', new ItemStack(ModItems.ingot1, 0, 0) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.copperHelmet), new Object[] { "CCC", "C C", "   ", 'C', new ItemStack(ModItems.ingot1, 0, 0) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.copperChestplate), new Object[] { "C C", "CCC", "CCC", 'C', new ItemStack(ModItems.ingot1, 0, 0) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.copperLeggings), new Object[] { "CCC", "C C", "C C", 'C', new ItemStack(ModItems.ingot1, 0, 0) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.copperBoots), new Object[] { "   ", "C C", "C C", 'C', new ItemStack(ModItems.ingot1, 0, 0) });
 
 		GameRegistry.addRecipe(new ItemStack(ModTools.STEEL_SHOVEL), new Object[] { " S ", " I ", " I ", 'S', new ItemStack(ModItems.ingot1, 0, 4), 'I', Items.STICK });
 		GameRegistry.addRecipe(new ItemStack(ModTools.STEEL_AXE), new Object[] { " SS", " IS", " I ", 'S', new ItemStack(ModItems.ingot1, 0, 4), 'I', Items.STICK });
@@ -192,10 +192,10 @@ public class SimpleRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModTools.STEEL_HOE), new Object[] { " SS", " I ", " I ", 'S', new ItemStack(ModItems.ingot1, 0, 4), 'I', Items.STICK });
 		GameRegistry.addRecipe(new ItemStack(ModWeapons.STEEL_SWORD), new Object[] { " S ", " S ", " I ", 'S', new ItemStack(ModItems.ingot1, 0, 4), 'I', Items.STICK });
 
-		GameRegistry.addRecipe(new ItemStack(ModArmour.steelHelmet), new Object[] { "SSS", "S S", "   ", 'S', new ItemStack(ModItems.ingot1, 0, 4) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.steelChestplate), new Object[] { "S S", "SSS", "SSS", 'S', new ItemStack(ModItems.ingot1, 0, 4) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.steelLeggings), new Object[] { "SSS", "S S", "S S", 'S', new ItemStack(ModItems.ingot1, 0, 4) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.steelBoots), new Object[] { "   ", "S S", "S S", 'S', new ItemStack(ModItems.ingot1, 0, 4) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.steelHelmet), new Object[] { "SSS", "S S", "   ", 'S', new ItemStack(ModItems.ingot1, 0, 4) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.steelChestplate), new Object[] { "S S", "SSS", "SSS", 'S', new ItemStack(ModItems.ingot1, 0, 4) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.steelLeggings), new Object[] { "SSS", "S S", "S S", 'S', new ItemStack(ModItems.ingot1, 0, 4) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.steelBoots), new Object[] { "   ", "S S", "S S", 'S', new ItemStack(ModItems.ingot1, 0, 4) });
 
 		GameRegistry.addRecipe(new ItemStack(ModTools.TITANIUM_SHOVEL), new Object[] { " T ", " S ", " S ", 'T', new ItemStack(ModItems.ingot1, 0, 3), 'S', Items.STICK });
 		GameRegistry.addRecipe(new ItemStack(ModTools.TITANIUM_AXE), new Object[] { " TT", " ST", " S ", 'T', new ItemStack(ModItems.ingot1, 0, 3), 'S', Items.STICK });
@@ -203,10 +203,10 @@ public class SimpleRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModTools.TITANIUM_HOE), new Object[] { " TT", " S ", " S ", 'T', new ItemStack(ModItems.ingot1, 0, 3), 'S', Items.STICK });
 		GameRegistry.addRecipe(new ItemStack(ModWeapons.TITANIUM_SWORD), new Object[] { " T ", " T ", " S ", 'T', new ItemStack(ModItems.ingot1, 0, 3), 'S', Items.STICK });
 
-		GameRegistry.addRecipe(new ItemStack(ModArmour.titaniumHelmet), new Object[] { "TTT", "T T", "   ", 'T', new ItemStack(ModItems.ingot1, 0, 3) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.titaniumChestplate), new Object[] { "T T", "TTT", "TTT", 'T', new ItemStack(ModItems.ingot1, 0, 3) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.titaniumLeggings), new Object[] { "TTT", "T T", "T T", 'T', new ItemStack(ModItems.ingot1, 0, 3) });
-		GameRegistry.addRecipe(new ItemStack(ModArmour.titaniumBoots), new Object[] { "   ", "T T", "T T", 'T', new ItemStack(ModItems.ingot1, 0, 3) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.titaniumHelmet), new Object[] { "TTT", "T T", "   ", 'T', new ItemStack(ModItems.ingot1, 0, 3) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.titaniumChestplate), new Object[] { "T T", "TTT", "TTT", 'T', new ItemStack(ModItems.ingot1, 0, 3) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.titaniumLeggings), new Object[] { "TTT", "T T", "T T", 'T', new ItemStack(ModItems.ingot1, 0, 3) });
+		GameRegistry.addRecipe(new ItemStack(ModArmor.titaniumBoots), new Object[] { "   ", "T T", "T T", 'T', new ItemStack(ModItems.ingot1, 0, 3) });
 
 		GameRegistry.addRecipe(new ItemStack(ModItems.bullet, 6), new Object[] { " S ", " P ", " S ", 'S', new ItemStack(ModItems.ingot1, 0, 4), 'P', Items.GUNPOWDER });
 

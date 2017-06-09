@@ -8,7 +8,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import scmc.StarcraftCreativeTabs;
 import scmc.fluids.ModFluids;
-import scmc.items.armour.ModArmour;
+import scmc.items.armor.ModArmor;
 import scmc.items.metaitems.ItemBullet;
 import scmc.items.metaitems.ItemC14GaussRifleParts;
 import scmc.items.metaitems.ItemCredit;
@@ -90,7 +90,7 @@ public class ModItems extends Item {
 
 		SPAWNER = new ItemSpawner();
 
-		ModArmour.init();
+		ModArmor.init();
 		ModWeapons.init();
 		ModTools.init();
 	}
@@ -129,7 +129,7 @@ public class ModItems extends Item {
 
 		registerItem(SPAWNER);
 
-		ModArmour.register();
+		ModArmor.register();
 		ModWeapons.register();
 		ModTools.register();
 	}
@@ -225,7 +225,7 @@ public class ModItems extends Item {
 			registerRender(SPAWNER, i, "spawner_" + ItemEnumHandler.SpawnerType.values()[i].getName());
 		}
 
-		ModArmour.registerRenders();
+		ModArmor.registerRenders();
 		ModWeapons.registerRenders();
 		ModTools.registerRenders();
 	}

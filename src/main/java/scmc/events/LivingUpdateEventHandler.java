@@ -7,10 +7,10 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import scmc.entity.EntityDarkTemplar;
-import scmc.items.armour.ArmourGhostBoots;
-import scmc.items.armour.ArmourGhostChestplate;
-import scmc.items.armour.ArmourGhostHelmet;
-import scmc.items.armour.ArmourGhostLeggings;
+import scmc.items.armor.ArmorGhostBoots;
+import scmc.items.armor.ArmorGhostChestplate;
+import scmc.items.armor.ArmorGhostHelmet;
+import scmc.items.armor.ArmorGhostLeggings;
 import scmc.lib.StarcraftConfig;
 
 @EventBusSubscriber
@@ -24,10 +24,10 @@ public class LivingUpdateEventHandler {
 			player = (EntityPlayer) event.getEntity();
 
 			try {
-				if(player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() instanceof ArmourGhostHelmet
-						&& player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() instanceof ArmourGhostChestplate
-						&& player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() instanceof ArmourGhostLeggings
-						&& player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() instanceof ArmourGhostBoots) {
+				if(player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() instanceof ArmorGhostHelmet
+						&& player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() instanceof ArmorGhostChestplate
+						&& player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() instanceof ArmorGhostLeggings
+						&& player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() instanceof ArmorGhostBoots) {
 					player.setInvisible(true);
 				} else {
 					player.setInvisible(false);
