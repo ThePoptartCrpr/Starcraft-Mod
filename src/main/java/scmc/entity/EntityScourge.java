@@ -22,11 +22,6 @@ public class EntityScourge extends EntityZergMob {
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
 
-	// FIXME: this
-	// public boolean isAIEnabled() {
-	// return true;
-	// }
-
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {}
 }

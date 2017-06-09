@@ -13,11 +13,6 @@ public class EntitySpiderMine extends EntityTerranPassive {
 		setSize(1, 2);
 	}
 
-	// FIXME: this
-	// public boolean isAIEnabled() {
-	// return true;
-	// }
-
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -25,11 +20,6 @@ public class EntitySpiderMine extends EntityTerranPassive {
 		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.43000000417232513);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
-
-	// FIXME: this
-	// protected String getLivingSound() {
-	// return null;
-	// }
 
 	@Override
 	protected boolean canDespawn() {

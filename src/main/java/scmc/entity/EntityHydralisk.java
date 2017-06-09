@@ -50,7 +50,7 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 		tasks.addTask(3, new EntityAIWander(this, 1.0D));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		tasks.addTask(5, new EntityAILookIdle(this));
-		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
 	}
 
@@ -93,8 +93,7 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 		return super.attackEntityFrom(source, damageDealt);
 	}
 
-	// TODO: Work this out! It probably isn't firing properly because of how
-	// HydraliskSpike is set up.
+	// TODO: Work this out! It probably isn't firing properly because of how HydraliskSpike is set up. Also, fix the sound and particles!
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_) {
 		if(getAttackTarget() != null) {
@@ -120,16 +119,20 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 	public SoundEvent getAmbientSound() {
 		Random rand = new Random();
 
-		if(rand.nextInt(3) == 0)
-			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE1;
-
-		if(rand.nextInt(2) == 1)
-			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE2;
-
-		if(rand.nextInt(2) == 2)
-			return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE3;
-
-		return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE4;
+		switch(rand.nextInt(3)) {
+			case 0:
+				return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE1;
+			default: {
+				switch(rand.nextInt(3)) {
+					case 0:
+						return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE2;
+					case 1:
+						return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE3;
+					default:
+						return StarcraftSoundEvents.ENTITY_HYDRALISK_LIVE4;
+				}
+			}
+		}
 	}
 
 	@Override
@@ -145,16 +148,6 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 	@Override
 	public int getTalkInterval() {
 		return 160;
-	}
-
-	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-	}
-
-	@Override
-	public void onUpdate() {
-		super.onUpdate();
 	}
 
 	@Override

@@ -2,8 +2,11 @@ package scmc.entity;
 
 import javax.annotation.Nullable;
 
+import com.google.common.base.Predicate;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -15,8 +18,9 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -37,20 +41,20 @@ import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import scmc.entity.ai.EntityAIScarabExplode;
+import scmc.entity.monster.EntityProtossMob;
 import scmc.entity.monster.EntityTerranMob;
 import scmc.entity.monster.EntityZergMob;
+import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
 
-public class EntityScarab extends EntityMob {
+public class EntityScarab extends EntityProtossMob implements IMob, Predicate<EntityLivingBase>{
 
 	private static final DataParameter<Boolean> IGNITED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
 	private static final DataParameter<Boolean> POWERED = EntityDataManager.<Boolean>createKey(EntityCreeper.class, DataSerializers.BOOLEAN);
 	private static final DataParameter<Integer> STATE = EntityDataManager.<Integer>createKey(EntityCreeper.class, DataSerializers.VARINT);
 
-	/** Explosion radius for this scarab. */
 	private byte explosionRadius = 6;
-
 	private short fuseTime = 10;
 	// TODO: Fix ALL of this code!
 	/**
@@ -68,16 +72,34 @@ public class EntityScarab extends EntityMob {
 	public EntityScarab(World worldIn) {
 		super(worldIn);
 		setSize(.1F, .1F);
-	}
-
-	protected void applyEntityAI() {
-		tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1, false));
+		tasks.addTask(1, new EntityAISwimming(this));
+		tasks.addTask(2, new EntityAIScarabExplode(this));
+		tasks.addTask(3, new EntityAIAttackMelee(this, 1, false));
+		tasks.addTask(4, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityZergMob>(this, EntityZergMob.class, true));
-		targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-		targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-		targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityZergPassive>(this, EntityZergPassive.class, true));
-		targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
+		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
+	}
+	
+	@Override
+	public boolean apply(EntityLivingBase entity) {
+		if(entity instanceof EntityZergMob)
+			return true;
+		if(entity instanceof EntityZergPassive)
+			return true;
+		if(entity instanceof EntityTerranMob)
+			return true;
+		if(entity instanceof EntityTerranPassive)
+			return true;
+		if(entity instanceof EntityPlayer)
+			return true;
+		if(entity instanceof EntityGolem)
+			return true;
+		if(entity instanceof EntityProtossMob)
+			return false;
+		if(entity instanceof EntityProtossPassive)
+			return false;
+
+		return false;
 	}
 
 	@Override
@@ -184,17 +206,6 @@ public class EntityScarab extends EntityMob {
 
 	public void ignite() {
 		dataManager.set(IGNITED, Boolean.valueOf(true));
-	}
-
-	@Override
-	protected void initEntityAI() {
-		tasks.addTask(1, new EntityAISwimming(this));
-		tasks.addTask(2, new EntityAIScarabExplode(this));
-		tasks.addTask(4, new EntityAIAttackMelee(this, 1, false));
-		tasks.addTask(5, new EntityAIWander(this, .8));
-		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
-		tasks.addTask(6, new EntityAILookIdle(this));
-		applyEntityAI();
 	}
 
 	/**
