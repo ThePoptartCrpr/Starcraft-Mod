@@ -4,7 +4,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.world.World;
 import scmc.entity.monster.EntityZergMob;
 
-// TODO: remake entity AI
+// TODO: remake entity completely
 public class EntityScourge extends EntityZergMob {
 
 	public EntityScourge(World world) {

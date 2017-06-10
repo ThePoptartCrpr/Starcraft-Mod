@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.google.common.base.Predicate;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -19,6 +20,7 @@ import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
@@ -28,6 +30,8 @@ import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
+import scmc.items.ModItems;
+import scmc.items.weapons.ModWeapons;
 import scmc.lib.StarcraftConfig;
 
 /**
@@ -49,6 +53,28 @@ public class EntityZergling extends EntityZergMob  implements IMob, Predicate<En
 	}
 	
 	@Override
+	public boolean apply(EntityLivingBase entity) {
+		if(entity instanceof EntityProtossMob)
+			return true;
+		if(entity instanceof EntityProtossPassive)
+			return true;
+		if(entity instanceof EntityTerranMob)
+			return true;
+		if(entity instanceof EntityTerranPassive)
+			return true;
+		if(entity instanceof EntityPlayer)
+			return true;
+		if(entity instanceof EntityGolem)
+			return true;
+		if(entity instanceof EntityZergMob)
+			return false;
+		if(entity instanceof EntityZergPassive)
+			return false;
+		
+		return false;
+	}
+
+	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 
@@ -58,11 +84,20 @@ public class EntityZergling extends EntityZergMob  implements IMob, Predicate<En
 		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
-
+	
 	@Override
-	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
-		// TODO: make this
+	protected void dropFewItems(boolean recentlyHit, int looting) {
+		int j = rand.nextInt(50);
+
+		if(j == 49) {
+			//TODO: Make this
+			//dropItem(ModWeapons.ZERGLING_CLAW, 1);
+		} else if(j < 5) {
+			entityDropItem(new ItemStack(ModItems.zergCarapace, 1, 0), 1 + rand.nextInt(2));
+		}
 	}
+	
+	
 
 	@Override
 	public SoundEvent getAmbientSound() {
@@ -97,27 +132,5 @@ public class EntityZergling extends EntityZergMob  implements IMob, Predicate<En
 	@Override
 	public int getTalkInterval() {
 		return 160;
-	}
-
-	@Override
-	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityProtossMob)
-			return true;
-		if(entity instanceof EntityProtossPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityZergMob)
-			return false;
-		if(entity instanceof EntityZergPassive)
-			return false;
-
-		return false;
 	}
 }

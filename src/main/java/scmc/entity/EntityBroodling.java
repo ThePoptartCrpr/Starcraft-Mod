@@ -1,15 +1,19 @@
 package scmc.entity;
 
+import com.google.common.base.Predicate;
+
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
-import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityGolem;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -19,23 +23,46 @@ import scmc.entity.monster.EntityTerranMob;
 import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
+import scmc.entity.passive.EntityZergPassive;
 import scmc.lib.StarcraftConfig;
 
-public class EntityBroodling extends EntityZergMob {
+public class EntityBroodling extends EntityZergMob implements IMob, Predicate<EntityLivingBase>{
 
 	public EntityBroodling(World world) {
 		super(world);
 		setSize(1.0F, 0.5F);
+		experienceValue = 20;
+		tasks.addTask(0, new EntityAISwimming(this));
+		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
+		tasks.addTask(2, new EntityAIWander(this, 1.0D));
+		tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		tasks.addTask(4, new EntityAILookIdle(this));
+		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
+		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
 	}
+	
+	@Override
+	public boolean apply(EntityLivingBase entity) {
+		if(entity instanceof EntityProtossMob)
+			return true;
+		if(entity instanceof EntityProtossPassive)
+			return true;
+		if(entity instanceof EntityTerranMob)
+			return true;
+		if(entity instanceof EntityTerranPassive)
+			return true;
+		if(entity instanceof EntityMob)
+			return true;
+		if(entity instanceof EntityPlayer)
+			return true;
+		if(entity instanceof EntityGolem)
+			return true;
+		if(entity instanceof EntityZergMob)
+			return false;
+		if(entity instanceof EntityZergPassive)
+			return false;
 
-	protected void applyEntityAI() {
-		tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityProtossMob>(this, EntityProtossMob.class, true));
-		targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityTerranMob>(this, EntityTerranMob.class, true));
-		targetTasks.addTask(4, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
-		targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityProtossPassive>(this, EntityProtossPassive.class, true));
-		targetTasks.addTask(6, new EntityAINearestAttackableTarget<EntityTerranPassive>(this, EntityTerranPassive.class, true));
+		return false;
 	}
 
 	@Override
@@ -50,10 +77,9 @@ public class EntityBroodling extends EntityZergMob {
 
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
-
+		//TODO: Does this need a drop??
 	}
 
-	// TODO: Figure out why getAmbientSound isnt working for the Broodling
 	@Override
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_BROODLING_LIVE1;
@@ -69,22 +95,9 @@ public class EntityBroodling extends EntityZergMob {
 		return StarcraftSoundEvents.ENTITY_BROODLING_HURT;
 	}
 
+	//TODO: Review this
 	@Override
 	public int getTalkInterval() {
-		return 160;
-	}
-
-	@Override
-	protected void initEntityAI() {
-		super.initEntityAI();
-
-		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
-		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
-		tasks.addTask(7, new EntityAIWander(this, 1.0D));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		tasks.addTask(8, new EntityAILookIdle(this));
-
-		applyEntityAI();
+		return 100;
 	}
 }

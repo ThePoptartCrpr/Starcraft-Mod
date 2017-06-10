@@ -17,6 +17,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
@@ -35,6 +36,7 @@ public class EntityZealot extends EntityProtossMob implements IMob, Predicate<En
 	public EntityZealot(World world) {
 		super(world);
 		setSize(1.5F, 2.5F);
+		experienceValue = 100;
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
 		tasks.addTask(2, new EntityAIMoveTowardsRestriction(this, 1.0D));
@@ -43,6 +45,28 @@ public class EntityZealot extends EntityProtossMob implements IMob, Predicate<En
 		tasks.addTask(5, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
+	}
+
+	@Override
+	public boolean apply(EntityLivingBase entity) {
+		if(entity instanceof EntityZergMob)
+			return true;
+		if(entity instanceof EntityZergPassive)
+			return true;
+		if(entity instanceof EntityTerranMob)
+			return true;
+		if(entity instanceof EntityTerranPassive)
+			return true;
+		if(entity instanceof EntityPlayer)
+			return true;
+		if(entity instanceof EntityGolem)
+			return true;
+		if(entity instanceof EntityProtossMob)
+			return false;
+		if(entity instanceof EntityProtossPassive)
+			return false;
+
+		return false;
 	}
 
 	@Override
@@ -69,7 +93,7 @@ public class EntityZealot extends EntityProtossMob implements IMob, Predicate<En
 		if(j == 49) {
 			dropItem(ModWeapons.PSI_BLADE, 1);
 		} else if(j < 5) {
-			dropItem(ModItems.energy, 1);
+			entityDropItem(new ItemStack(ModItems.energy, 1, 0), 1 + rand.nextInt(2));
 		}
 	}
 
@@ -102,31 +126,9 @@ public class EntityZealot extends EntityProtossMob implements IMob, Predicate<En
 	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_ZEALOT_HURT;
 	}
-
+	
 	@Override
 	public int getTalkInterval() {
 		return 160;
-	}
-	
-	@Override
-	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityZergMob)
-			return true;
-		if(entity instanceof EntityZergPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityProtossMob)
-			return false;
-		if(entity instanceof EntityProtossPassive)
-			return false;
-
-		return false;
 	}
 }

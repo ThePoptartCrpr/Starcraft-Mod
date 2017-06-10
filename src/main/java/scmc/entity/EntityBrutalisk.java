@@ -16,6 +16,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -27,6 +28,7 @@ import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
+import scmc.items.ModItems;
 import scmc.lib.StarcraftConfig;
 
 /**
@@ -37,6 +39,7 @@ public class EntityBrutalisk extends EntityZergMob implements IMob, Predicate<En
 	public EntityBrutalisk(World world) {
 		super(world);
 		setSize(7.0F, 9.0F);
+		experienceValue = 1000;
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
 		tasks.addTask(2, new EntityAIMoveTowardsRestriction(this, 1.0D));
@@ -45,6 +48,28 @@ public class EntityBrutalisk extends EntityZergMob implements IMob, Predicate<En
 		tasks.addTask(5, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
+	}
+
+	@Override
+	public boolean apply(EntityLivingBase entity) {
+		if(entity instanceof EntityProtossMob)
+			return true;
+		if(entity instanceof EntityProtossPassive)
+			return true;
+		if(entity instanceof EntityTerranMob)
+			return true;
+		if(entity instanceof EntityTerranPassive)
+			return true;
+		if(entity instanceof EntityPlayer)
+			return true;
+		if(entity instanceof EntityGolem)
+			return true;
+		if(entity instanceof EntityZergMob)
+			return false;
+		if(entity instanceof EntityZergPassive)
+			return false;
+
+		return false;
 	}
 
 	@Override
@@ -76,8 +101,20 @@ public class EntityBrutalisk extends EntityZergMob implements IMob, Predicate<En
 	 * @param lootingLevel level of Looting on kill weapon
 	 */
 	@Override
-	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
-		// TODO: make this
+	protected void dropFewItems(boolean recentlyHit, int looting) {
+		int j = rand.nextInt(50);
+
+		if(j == 49) {
+			//TODO: Make this
+			//dropItem(ModWeapons.ZERGLING_CLAW, 1);
+		} else if(j < 5) {
+			entityDropItem(new ItemStack(ModItems.zergCarapace, 1, 2), 1 + rand.nextInt(2));
+		}
+	}
+
+	@Override
+	public SoundEvent getAmbientSound() {
+		return StarcraftSoundEvents.ENTITY_BRUTALISK_LIVE1;
 	}
 
 	@Override
@@ -88,11 +125,6 @@ public class EntityBrutalisk extends EntityZergMob implements IMob, Predicate<En
 	@Override
 	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_BRUTALISK_HURT;
-	}
-
-	// fix dis
-	public SoundEvent getLivingSound() {
-		return StarcraftSoundEvents.ENTITY_BRUTALISK_LIVE1;
 	}
 
 	@Override
@@ -109,31 +141,9 @@ public class EntityBrutalisk extends EntityZergMob implements IMob, Predicate<En
 	public void onUpdate() {
 		super.onUpdate();
 	}
-
-	@Override
-	protected void playStepSound(BlockPos pos, Block blockIn) {
-		playSound(StarcraftSoundEvents.ENTITY_BRUTALISK_STEP, 10.0F, 1.0F);
-	}
 	
 	@Override
-	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityProtossMob)
-			return true;
-		if(entity instanceof EntityProtossPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityZergMob)
-			return false;
-		if(entity instanceof EntityZergPassive)
-			return false;
-
-		return false;
+	protected void playStepSound(BlockPos pos, Block blockIn) {
+		playSound(StarcraftSoundEvents.ENTITY_BRUTALISK_STEP, 1.0F, 1.0F);
 	}
 }

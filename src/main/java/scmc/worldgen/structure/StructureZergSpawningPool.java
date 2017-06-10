@@ -24,10 +24,10 @@ public class StructureZergSpawningPool extends SCWorldGenerator {
 		return true;
 	}
 
-	public void generate_r0(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean generate_r0(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(18, 0, 0)) || !LocationIsValidSpawn(world, pos.add(18, 0, 20))
 				|| !LocationIsValidSpawn(world, pos.add(0, 0, 20))) {
-			return;
+			return false;
 		}
 
 		// LogHelper.logger.log(Level.WARN, "Generating pool.");
@@ -498,6 +498,7 @@ public class StructureZergSpawningPool extends SCWorldGenerator {
 		world.setBlockState(pos.add(13, 5 + offsetY, 10), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(6, 5 + offsetY, 13), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
 		world.setBlockState(pos.add(12, 5 + offsetY, 13), ModBlocks.KERATIN_CHUNK.getDefaultState(), 2);
+		return true;
 	}
 
 	protected Block[] GetValidSpawnBlocks() {

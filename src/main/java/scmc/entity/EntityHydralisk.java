@@ -43,7 +43,7 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 	public EntityHydralisk(World world) {
 		super(world);
 		setSize(3.5F, 3.3F);
-		experienceValue = 5;
+		experienceValue = 60;
 		rangedAttackAI = new EntityAIAttackRanged(this, 0.4D, 10, 24);
 		tasks.addTask(1, rangedAttackAI);
 		tasks.addTask(2, new EntityAISwimming(this));

@@ -35,16 +35,14 @@ import scmc.items.ModItems;
 import scmc.items.weapons.ModWeapons;
 import scmc.lib.StarcraftConfig;
 
-public class EntityDarkTemplar extends EntityProtossMob implements IMob, Predicate<EntityLivingBase>{
+public class EntityDarkTemplar extends EntityProtossMob implements IMob, Predicate<EntityLivingBase> {
 
 	World world;
 
 	public EntityDarkTemplar(World world) {
 		super(world);
 		setSize(1.5F, 2.5F);
-	}
-
-	protected void applyEntityAI() {
+		experienceValue = 80;
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
 		tasks.addTask(2, new EntityAIWander(this, 1.0D));
@@ -52,6 +50,28 @@ public class EntityDarkTemplar extends EntityProtossMob implements IMob, Predica
 		tasks.addTask(4, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
+	}
+
+	@Override
+	public boolean apply(EntityLivingBase entity) {
+		if(entity instanceof EntityZergMob)
+			return true;
+		if(entity instanceof EntityZergPassive)
+			return true;
+		if(entity instanceof EntityTerranMob)
+			return true;
+		if(entity instanceof EntityTerranPassive)
+			return true;
+		if(entity instanceof EntityPlayer)
+			return true;
+		if(entity instanceof EntityGolem)
+			return true;
+		if(entity instanceof EntityProtossMob)
+			return false;
+		if(entity instanceof EntityProtossPassive)
+			return false;
+
+		return false;
 	}
 
 	@Override
@@ -84,7 +104,7 @@ public class EntityDarkTemplar extends EntityProtossMob implements IMob, Predica
 		if(j == 50) {
 			dropItem(ModWeapons.DARK_WARP_BLADE, 1);
 		} else if(j < 5) {
-			entityDropItem(new ItemStack(ModItems.energy, 1, 1), 1);
+			entityDropItem(new ItemStack(ModItems.energy, 1, 1), 1 + rand.nextInt(2));
 		}
 	}
 
@@ -118,27 +138,5 @@ public class EntityDarkTemplar extends EntityProtossMob implements IMob, Predica
 					posZ + (rand.nextDouble() - 0.5D) * width, 0.0D, 0.0D, 0.0D, null);
 		}
 		super.onUpdate();
-	}
-	
-	@Override
-	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityZergMob)
-			return true;
-		if(entity instanceof EntityZergPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityProtossMob)
-			return false;
-		if(entity instanceof EntityProtossPassive)
-			return false;
-
-		return false;
 	}
 }

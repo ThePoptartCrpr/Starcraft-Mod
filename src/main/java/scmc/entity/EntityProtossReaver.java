@@ -34,6 +34,7 @@ public class EntityProtossReaver extends EntityProtossMob implements IMob, IRang
 	public EntityProtossReaver(World world) {
 		super(world);
 		setSize(8.0F, 4.3F);
+		experienceValue = 133;
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAttackRanged(this, 0.25F, 85, 30));
 		tasks.addTask(2, new EntityAIMoveTowardsRestriction(this, 1));
@@ -42,6 +43,28 @@ public class EntityProtossReaver extends EntityProtossMob implements IMob, IRang
 		tasks.addTask(5, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
+	}
+
+	@Override
+	public boolean apply(EntityLivingBase entity) {
+		if(entity instanceof EntityZergMob)
+			return true;
+		if(entity instanceof EntityZergPassive)
+			return true;
+		if(entity instanceof EntityTerranMob)
+			return true;
+		if(entity instanceof EntityTerranPassive)
+			return true;
+		if(entity instanceof EntityPlayer)
+			return true;
+		if(entity instanceof EntityGolem)
+			return true;
+		if(entity instanceof EntityProtossMob)
+			return false;
+		if(entity instanceof EntityProtossPassive)
+			return false;
+
+		return false;
 	}
 
 	@Override
@@ -96,31 +119,9 @@ public class EntityProtossReaver extends EntityProtossMob implements IMob, IRang
 	public SoundEvent getHurtSound() {
 		return StarcraftSoundEvents.ENTITY_PREAVER_HURT;
 	}
-
+	
 	@Override
 	public int getTalkInterval() {
 		return 160;
-	}
-	
-	@Override
-	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityZergMob)
-			return true;
-		if(entity instanceof EntityZergPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityProtossMob)
-			return false;
-		if(entity instanceof EntityProtossPassive)
-			return false;
-
-		return false;
 	}
 }

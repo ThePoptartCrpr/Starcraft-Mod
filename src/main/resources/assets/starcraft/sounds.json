@@ -363,7 +363,7 @@
     "category": "master",
     "sounds": [
     {
-        "name": "starcraft:/mob/broodling/brooding-live1","stream":false
+        "name": "starcraft:/mob/broodling/broodling-live1","stream":false
     }
     ]
 },
