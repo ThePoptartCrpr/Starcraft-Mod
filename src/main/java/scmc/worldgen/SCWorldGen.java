@@ -18,6 +18,7 @@ import scmc.worldgen.structure.SCWorldGenerator;
 import scmc.worldgen.structure.StructureProtossPylonTemplate;
 import scmc.worldgen.structure.StructureProtossWarpGateTemplate;
 import scmc.worldgen.structure.StructureTerranBunker;
+import scmc.worldgen.structure.StructureZergHydraliskDenTemplate;
 import scmc.worldgen.structure.StructureZergSpawningPool;
 import scmc.worldgen.structure.StructureZergSpire;
 
@@ -114,6 +115,7 @@ public class SCWorldGen implements IWorldGenerator {
 
 	private WorldGenerator URANIUM_SHAKURAS;
 
+	private SCWorldGenerator ZERG_HYDRALISK_DEN;
 	private SCWorldGenerator ZERG_SPIRE;
 
 	public SCWorldGen() {
@@ -148,6 +150,7 @@ public class SCWorldGen implements IWorldGenerator {
 		URANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_URANIUM_SHAKURAS.getDefaultState(), 8);
 
 		SPAWNING_POOL = new StructureZergSpawningPool();
+		ZERG_HYDRALISK_DEN = new StructureZergHydraliskDenTemplate();
 		ZERG_SPIRE = new StructureZergSpire();
 		TERRAN_BUNKER = new StructureTerranBunker();
 		PROTOSS_PYLON = new StructureProtossPylonTemplate();
@@ -193,6 +196,9 @@ public class SCWorldGen implements IWorldGenerator {
 					}
 					if(rnd.nextInt(100) < 15) {
 						runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 0, 1, 0, 1, 60, 70);
+					}
+					if(rnd.nextInt(100) < 15) {
+						runGenerator(ZERG_HYDRALISK_DEN, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 					}
 					if(rnd.nextInt(100) < 10) {
 						runGenerator(PROTOSS_WARPGATE, 1, 2, world, random, chunkX, chunkZ, 0, -1, 0, 1, 60, 70);

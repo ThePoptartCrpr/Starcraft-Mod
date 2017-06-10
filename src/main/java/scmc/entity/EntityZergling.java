@@ -4,9 +4,7 @@ import java.util.Random;
 
 import com.google.common.base.Predicate;
 
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -17,7 +15,6 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityGolem;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -31,7 +28,6 @@ import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
-import scmc.items.weapons.ModWeapons;
 import scmc.lib.StarcraftConfig;
 
 /**
