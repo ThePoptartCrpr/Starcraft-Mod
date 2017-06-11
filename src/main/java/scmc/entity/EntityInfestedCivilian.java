@@ -14,11 +14,14 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
 import scmc.entity.monster.EntityProtossMob;
@@ -31,18 +34,15 @@ import scmc.items.ModItems;
 import scmc.lib.StarcraftConfig;
 
 /**
- * @author Hypeirochus
+ * @author wundrweapon
  */
-public class EntityZerglingRaptor extends EntityZergMob implements IMob, Predicate<EntityLivingBase> {
+public class EntityInfestedCivilian extends EntityZergMob implements IMob, Predicate<EntityLivingBase> {
 
-	public EntityZerglingRaptor(World world) {
+	public EntityInfestedCivilian(World world) {
 		super(world);
-		setSize(1.75F, 1.75F);
-		experienceValue = 23;
-		stepHeight = 5.0F;
+		setSize(1, 1.75F);
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
-		tasks.addTask(2, new EntityAIMoveTowardsRestriction(this, 1.0D));
 		tasks.addTask(3, new EntityAIWander(this, 1.0D));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		tasks.addTask(5, new EntityAILookIdle(this));
@@ -76,10 +76,10 @@ public class EntityZerglingRaptor extends EntityZergMob implements IMob, Predica
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 
-		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.infestedCivilianHP);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25000000417232513D);
 		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
-		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
+		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.infestedCivilianDmg);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
 
@@ -95,6 +95,7 @@ public class EntityZerglingRaptor extends EntityZergMob implements IMob, Predica
 		}
 	}
 
+	//TODO: redo these sounds
 	@Override
 	public SoundEvent getAmbientSound() {
 		Random rand = new Random();
@@ -126,12 +127,25 @@ public class EntityZerglingRaptor extends EntityZergMob implements IMob, Predica
 	}
 
 	@Override
-	protected float getJumpUpwardsMotion() {
-		return 5.0F;
-	}
-
-	@Override
 	public int getTalkInterval() {
 		return 160;
+	}
+
+	public void onLivingUpdate() {
+		if(this.worldObj.isDaytime() && !this.worldObj.isRemote) {
+			float f = this.getBrightness(1.0F);
+			BlockPos blockpos = this.getRidingEntity() instanceof EntityBoat ? (new BlockPos(this.posX, (double) Math.round(this.posY), this.posZ)).up()
+					: new BlockPos(this.posX, (double) Math.round(this.posY), this.posZ);
+
+			if(f > 0.5F && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.worldObj.canSeeSky(blockpos)) {
+				boolean flag = true;
+
+				if(flag) {
+					this.setFire(8);
+				}
+			}
+		}
+
+		super.onLivingUpdate();
 	}
 }

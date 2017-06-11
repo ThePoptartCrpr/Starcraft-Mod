@@ -31,11 +31,9 @@ public class EntityDarkProbe extends EntityProtossPassive {
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAvoidEntity(this, EntityZergMob.class, 16.0F, 1.0D, 1.0D));
 		tasks.addTask(2, new EntityAIAvoidEntity(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
-		tasks.addTask(3, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 1.0D, 1.0D));
-		tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, 1));
-		tasks.addTask(5, new EntityAIWander(this, 1));
-		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
-		tasks.addTask(7, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityAIWander(this, 1));
+		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
+		tasks.addTask(5, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 	}
 	

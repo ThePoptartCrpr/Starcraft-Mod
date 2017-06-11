@@ -7,11 +7,8 @@ import net.minecraftforge.common.config.Configuration;
 public class StarcraftConfig {
 
 	public static double broodlingDmg = 2.0D;
-
 	public static double broodlingHP = 20.0D;
-
 	public static double brutaliskDmg = 50.0D;
-
 	public static double brutaliskHP = 1000.0D;
 	public static double civHP = 27.0D;
 	public static boolean creepCanSpread;
@@ -26,21 +23,21 @@ public class StarcraftConfig {
 	public static boolean dTempVis = false;
 	public static double hydraliskDmg = 12.0D;
 	public static double hydraliskHP = 60.0D;
-
+	public static double infestedCivilianHP = 10.0D;
+	public static double infestedCivilianDmg = 10.0D;
 	public static double larvaCocoonHP = 133.0D;
 	public static double larvaHP = 17.0D;
 	private static final float MAX_VALUE = 1000;
 	public static double overlordHP = 133.0D;
 	public static double probeHP = 27.0D;
 	public static double reaverHP = 133.0D;
-
 	public static boolean useSubCfg;
 	public static boolean vanillaSpawn;
 	public static double zealotDmg = 8.0D;
-
 	public static double zealotHP = 100.0D;
 	public static double zerglingDmg = 5.0D;
 	public static double zerglingHP = 23.0D;
+
 
 	public static void preInit() {
 		Configuration config = new Configuration(new File("config/Starcraft.cfg"));

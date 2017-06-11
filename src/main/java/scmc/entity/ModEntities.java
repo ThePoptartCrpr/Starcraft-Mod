@@ -30,6 +30,7 @@ public class ModEntities {
 		EntityRegistry.registerEgg(EntityLarva.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityLarvaCocoon.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityBroodling.class, 11403519, 7684608);
+		EntityRegistry.registerEgg(EntityInfestedCivilian.class, 11403519, 7684608);
 
 		EntityRegistry.registerEgg(EntityCivilian.class, 7566195, 16639);
 		EntityRegistry.registerEgg(EntitySpiderMine.class, 7566195, 16639);
@@ -55,6 +56,7 @@ public class ModEntities {
 		registerEntity(EntityLarva.class, "larva", 64, 1, true);
 		registerEntity(EntityLarvaCocoon.class, "larvaCocoon", 64, 1, true);
 		registerEntity(EntityBroodling.class, "broodling", 64, 1, true);
+		registerEntity(EntityInfestedCivilian.class, "infestedCivilian", 64, 1, true);
 
 		registerEntity(EntityCivilian.class, "civilian", 64, 1, true);
 		registerEntity(EntitySpiderMine.class, "spiderMine", 64, 1, true);
@@ -84,6 +86,7 @@ public class ModEntities {
 		EntityRegistry.addSpawn(EntityLarva.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityLarvaCocoon.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityBroodling.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityInfestedCivilian.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 
 		EntityRegistry.addSpawn(EntityCivilian.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntitySpiderMine.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
