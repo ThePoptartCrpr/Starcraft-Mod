@@ -35,7 +35,7 @@ public class EntityZealot extends EntityProtossMob implements IMob, Predicate<En
 
 	public EntityZealot(World world) {
 		super(world);
-		setSize(1.5F, 2.5F);
+		setSize(1.2F, 2.5F);
 		experienceValue = 100;
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));

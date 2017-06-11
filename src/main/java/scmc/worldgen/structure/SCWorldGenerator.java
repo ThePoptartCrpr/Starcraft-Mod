@@ -34,6 +34,10 @@ public abstract class SCWorldGenerator {
 	public boolean generate(World worldIn, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos position) {
 		return true;
 	}
+	
+	public boolean generate(IBlockState state, IBlockState state2, World worldIn, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos position) {
+		return true;
+	}
 
 	protected void setBlockAndNotifyAdequately(World worldIn, BlockPos pos, IBlockState state) {
 		if(doBlockNotify) {

@@ -63,6 +63,16 @@ public class WorldProviderShakuras extends WorldProvider {
 
 	@Override
 	public void setWorldTime(long time) {
-		worldObj.getWorldInfo().setWorldTime(20000);
+		worldObj.getWorldInfo().setWorldTime(15000);
 	}
+	
+	public boolean isDaytime()
+    {
+        return false;
+    }
+	
+	public float getSunBrightnessFactor(float par1)
+    {
+        return 0.0F;
+    }
 }

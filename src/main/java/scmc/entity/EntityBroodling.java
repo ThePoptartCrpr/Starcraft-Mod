@@ -51,8 +51,6 @@ public class EntityBroodling extends EntityZergMob implements IMob, Predicate<En
 			return true;
 		if(entity instanceof EntityTerranPassive)
 			return true;
-		if(entity instanceof EntityMob)
-			return true;
 		if(entity instanceof EntityPlayer)
 			return true;
 		if(entity instanceof EntityGolem)

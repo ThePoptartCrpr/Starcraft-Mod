@@ -599,10 +599,12 @@ public class ModelZerglingSC2 extends ModelBase {
 		super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
 		// super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks,
 		// netHeadYaw, headPitch, scaleFactor, entityIn);
+		neck.rotateAngleX = par5 * 0.017453292F;
+	    neck.rotateAngleY = par4 * 0.017453292F;
 		lArm1.rotateAngleX = MathHelper.sin(par1 * 1.1F) * 0.667F * par2;
-		lThigh.rotateAngleX = MathHelper.sin(par1 * 1.1F) * 0.667F * par2;
+		lThigh.rotateAngleX = MathHelper.sin(par1 * 1.1F) * 0.667F * par2 - 0.5F;
 		rArm1.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2;
-		rThigh.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2;
+		rThigh.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2 - 0.5F;
 		lowerJaw.rotateAngleX = (MathHelper.sin(par1 * 0.01F) + 0.3F) * 0.667F * par2;
 		lHookArm1.rotateAngleX = (MathHelper.cos(par1 * 0.5F) + 0.3F) * 0.337F * par2;
 		rHookArm1.rotateAngleX = (MathHelper.sin(par1 * 0.5F) + 0.3F) * 0.337F * par2;

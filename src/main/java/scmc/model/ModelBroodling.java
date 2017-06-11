@@ -525,7 +525,7 @@ public class ModelBroodling extends ModelBase {
 		super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
 		// super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks,
 		// netHeadYaw, headPitch, scaleFactor, entityIn);
-		lArm1.rotateAngleX = MathHelper.sin(par1 * 1F) * 1 * par2;
-		rArm1.rotateAngleX = MathHelper.cos(par1 * 1F) * 1 * par2;
+		lArm1.rotateAngleX = MathHelper.sin(par1 * 1F) * 1 * par2 - 0.5F;
+		rArm1.rotateAngleX = MathHelper.cos(par1 * 1F) * 1 * par2 - 0.5F;
 	}
 }
