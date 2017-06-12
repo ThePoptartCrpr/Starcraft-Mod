@@ -779,6 +779,8 @@ public class ModelHydralisk extends ModelBase {
 		super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
 		// super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks,
 		// netHeadYaw, headPitch, scaleFactor, entityIn);
+		head.rotateAngleX = par5 * 0.017453292F + 7.0F;
+	    head.rotateAngleY = par4 * 0.017453292F;
 		tail02.rotateAngleY = MathHelper.sin(par1 * 1.0F) * 0.337F * par2;
 		tail03.rotateAngleY = MathHelper.sin(par1 * 1.0F) * 0.337F * par2;
 		tail04.rotateAngleY = MathHelper.cos(par1 * 1.0F) * 0.337F * par2;
@@ -791,6 +793,6 @@ public class ModelHydralisk extends ModelBase {
 		rShoulder.rotateAngleX = MathHelper.cos(par1 * 0.5F) * 0.667F * par2;
 		lMandible1.rotateAngleX = MathHelper.cos(par1 * 0.1F) * 0.667F * par2;
 		rMandible1.rotateAngleX = MathHelper.cos(par1 * 0.1F) * 0.667F * par2;
-		lowerJaw1.rotateAngleX = (MathHelper.sin(par1 * 0.01F) + 0.3F) * 0.667F * par2;
+		lowerJaw1.rotateAngleX = MathHelper.sin(par1 * 0.01F) * 0.667F * par2 + 0.4F;
 	}
 }
