@@ -138,7 +138,7 @@ public class ModMetaBlocks {
 			registerRender(COMP_METAL_T1, i, "comp_metal_" + EnumHandler.CompressedMetalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.NeosteelMetalType.values().length; i++) {
-			registerRender(NEOSTEEL_METAL, i, "comp_metal_" + EnumHandler.NeosteelMetalType.values()[i].getName());
+			registerRender(NEOSTEEL_METAL, i, "neosteel_" + EnumHandler.NeosteelMetalType.values()[i].getName());
 		}
 		for(int i = 0; i < EnumHandler.ParisteelMetalType.values().length; i++) {
 			registerRender(PARISTEEL_METAL, i, "paristeel_" + EnumHandler.ParisteelMetalType.values()[i].getName());

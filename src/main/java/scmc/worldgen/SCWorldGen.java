@@ -192,8 +192,8 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 20, 4, 64);
 				runGenerator(TITANIUM_OVERWORLD, world, random, chunkX, chunkZ, 8, 4, 28);
 				runGenerator(URANIUM_OVERWORLD, world, random, chunkX, chunkZ, 1, 0, 20);
-				if(rnd.nextInt(100) < 15) {
-					runGenerator(TERRAN_BUNKER, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
+				if(rnd.nextInt(100) < 100) {
+					runGenerator(TERRAN_BUNKER, world, random, chunkX, chunkZ, 0, 0, 0, 10, 60, 70);
 				}
 				if(rnd.nextInt(100) < 15) {
 					runGenerator(PROTOSS_WARPGATE, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);

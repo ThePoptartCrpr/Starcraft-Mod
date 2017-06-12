@@ -1,6 +1,8 @@
 package scmc.items.weapons;
 
 import net.minecraft.item.ItemSword;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import scmc.lib.Reference;
 
 public class WeaponBalisong extends ItemSword {

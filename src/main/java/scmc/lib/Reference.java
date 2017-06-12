@@ -151,6 +151,7 @@ public class Reference {
 		ARMOR_COPPER_HELMET("copperHelmet", "copper_helmet"),
 		ARMOR_COPPER_LEGGINGS("copperLeggings", "copper_leggings"),
 		ARMOR_DARK_KHAYDARIN_AMULET("darkKhaydarinAmulet", "dark_khaydarin_amulet"),
+		
 		ARMOR_DARK_ZEALOT_BOOTS_T1("darkZealotBootsT1", "dark_zealot_boots_t1"),
 		ARMOR_DARK_ZEALOT_BOOTS_T2("darkZealotBootsT2", "dark_zealot_boots_t2"),
 		ARMOR_DARK_ZEALOT_BOOTS_T3("darkZealotBootsT3", "dark_zealot_boots_t3"),
@@ -161,10 +162,9 @@ public class Reference {
 		ARMOR_DARK_ZEALOT_HELMET_T2("darkZealotHelmetT2", "dark_zealot_helmet_t2"),
 		ARMOR_DARK_ZEALOT_HELMET_T3("darkZealotHelmetT3", "dark_zealot_helmet_t3"),
 		ARMOR_DARK_ZEALOT_LEGGINGS_T1("darkZealotLeggingsT1", "dark_zealot_leggings_t1"),
-
 		ARMOR_DARK_ZEALOT_LEGGINGS_T2("darkZealotLeggingsT2", "dark_zealot_leggings_t2"),
-
 		ARMOR_DARK_ZEALOT_LEGGINGS_T3("darkZealotLeggingsT3", "dark_zealot_leggings_t3"),
+		
 		ARMOR_GHOST_BOOTS("ghostBoots", "ghost_boots"),
 		ARMOR_GHOST_CHESTPLATE("ghostChestplate", "ghost_chestplate"),
 		ARMOR_GHOST_HELMET("ghostHelmet", "ghost_helmet"),
