@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import scmc.entity.EntityZerglingRaptor;
+import scmc.entity.layers.LayerZerglingRaptor;
 import scmc.lib.Reference;
 import scmc.model.ModelZerglingRaptor;
 
@@ -18,8 +19,8 @@ public class RenderZerglingRaptor<T> extends RenderLiving<EntityZerglingRaptor> 
 
 	public RenderZerglingRaptor(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelZerglingRaptor) mainModel);
+		addLayer(new LayerZerglingRaptor(this));
 	}
 
 	@Override

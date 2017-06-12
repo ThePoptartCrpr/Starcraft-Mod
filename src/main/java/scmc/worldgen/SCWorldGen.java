@@ -33,6 +33,22 @@ public class SCWorldGen implements IWorldGenerator {
 		GameRegistry.registerWorldGenerator(eventWorldGen, 0);
 	}
 
+	private static void runGenerator(SCWorldGenerator generator, IBlockState state, IBlockState state2, World world, Random rand, int chunk_X, int chunk_Z, int offsetX, int offsetY,
+			int offsetZ, int chancesToSpawn, int minHeight, int maxHeight) {
+		if(minHeight < 0 || maxHeight > 256 || minHeight > maxHeight) {
+			throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
+		}
+
+		int heightDiff = maxHeight - minHeight + 1;
+		for(int i = 0; i < chancesToSpawn; i++) {
+			int x = chunk_X * 16 + rand.nextInt(16);
+			int y = minHeight + rand.nextInt(heightDiff);
+			int z = chunk_Z * 16 + rand.nextInt(16);
+
+			generator.generate(state, state2, world, rand, offsetX, offsetY, offsetZ, new BlockPos(x, y, z));
+		}
+	}
+	
 	// for structures that use team colors and stuff
 	private static void runGenerator(SCWorldGenerator generator, int metaColor, int metaSecColor, World world, Random rand, int chunk_X, int chunk_Z, int offsetX, int offsetY,
 			int offsetZ, int chancesToSpawn, int minHeight, int maxHeight) {
@@ -47,22 +63,6 @@ public class SCWorldGen implements IWorldGenerator {
 			int z = chunk_Z * 16 + rand.nextInt(16);
 
 			generator.generate(metaColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, new BlockPos(x, y, z));
-		}
-	}
-	
-	private static void runGenerator(SCWorldGenerator generator, IBlockState state, IBlockState state2, World world, Random rand, int chunk_X, int chunk_Z, int offsetX, int offsetY,
-			int offsetZ, int chancesToSpawn, int minHeight, int maxHeight) {
-		if(minHeight < 0 || maxHeight > 256 || minHeight > maxHeight) {
-			throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
-		}
-
-		int heightDiff = maxHeight - minHeight + 1;
-		for(int i = 0; i < chancesToSpawn; i++) {
-			int x = chunk_X * 16 + rand.nextInt(16);
-			int y = minHeight + rand.nextInt(heightDiff);
-			int z = chunk_Z * 16 + rand.nextInt(16);
-
-			generator.generate(state, state2, world, rand, offsetX, offsetY, offsetZ, new BlockPos(x, y, z));
 		}
 	}
 

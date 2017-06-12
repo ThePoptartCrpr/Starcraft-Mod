@@ -671,8 +671,8 @@ public class ModelZerglingBoost extends ModelBase {
 		rArm1.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2;
 		rThigh.rotateAngleX = MathHelper.cos(par1 * 1.1F) * 0.667F * par2 - 0.5F;
 		lowerJaw.rotateAngleX = (MathHelper.sin(par1 * 0.01F) + 0.3F) * 0.667F * par2;
-		lHookArm1.rotateAngleX = (MathHelper.cos(par1 * 0.5F) + 0.3F) * 0.337F * par2;
-		rHookArm1.rotateAngleX = (MathHelper.sin(par1 * 0.5F) + 0.3F) * 0.337F * par2;
+		lHookArm1.rotateAngleX = (MathHelper.cos(par1 * 0.5F) + 0.3F) * 0.337F * par2 + 5.7F;
+		rHookArm1.rotateAngleX = (MathHelper.sin(par1 * 0.5F) + 0.3F) * 0.337F * par2 + 5.7F;
 		lWingCarapace1.rotateAngleY = (MathHelper.sin(par1 * 0.5F) / 4.1F) * 2.0F * par2;
 		rWingCarapace1.rotateAngleY = (MathHelper.sin(par1 * -0.5F) / 4.1F) * 2.0F * par2;
 		tail2.rotateAngleY = (MathHelper.sin(par1 * -0.5F) / 10.1F) * 2.0F * par2;

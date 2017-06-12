@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import scmc.entity.EntityZerglingBoost;
+import scmc.entity.layers.LayerZerglingBoost;
 import scmc.lib.Reference;
 import scmc.model.ModelZerglingBoost;
 
@@ -18,8 +19,8 @@ public class RenderZerglingBoost<T> extends RenderLiving<EntityZerglingBoost> {
 
 	public RenderZerglingBoost(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelZerglingBoost) mainModel);
+		addLayer(new LayerZerglingBoost(this));
 	}
 
 	@Override

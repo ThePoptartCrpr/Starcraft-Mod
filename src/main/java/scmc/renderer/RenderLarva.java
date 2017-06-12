@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import scmc.entity.EntityLarva;
+import scmc.entity.layers.LayerLarva;
 import scmc.lib.Reference;
 import scmc.model.ModelLarva;
 
@@ -16,8 +17,8 @@ public class RenderLarva<T> extends RenderLiving<EntityLarva> {
 
 	public RenderLarva(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelLarva) mainModel);
+		addLayer(new LayerLarva(this));
 	}
 
 	@Override

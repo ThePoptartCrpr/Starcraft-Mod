@@ -49,6 +49,11 @@ public class WorldProviderShakuras extends WorldProvider {
 		return StarcraftConfig.dimShakuras;
 	}
 
+	public float getSunBrightnessFactor(float par1)
+    {
+        return 0.0F;
+    }
+
 	/**
 	 * A message to display to the user when they transfer to this dimension.
 	 * @return The message to be displayed
@@ -60,19 +65,14 @@ public class WorldProviderShakuras extends WorldProvider {
 		}
 		return null;
 	}
-
-	@Override
-	public void setWorldTime(long time) {
-		worldObj.getWorldInfo().setWorldTime(15000);
-	}
 	
 	public boolean isDaytime()
     {
         return false;
     }
 	
-	public float getSunBrightnessFactor(float par1)
-    {
-        return 0.0F;
-    }
+	@Override
+	public void setWorldTime(long time) {
+		worldObj.getWorldInfo().setWorldTime(15000);
+	}
 }

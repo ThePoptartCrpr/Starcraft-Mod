@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import scmc.entity.EntityHydralisk;
+import scmc.entity.layers.LayerHydralisk;
 import scmc.lib.Reference;
 import scmc.model.ModelHydralisk;
 
@@ -18,8 +19,8 @@ public class RenderHydralisk<T> extends RenderLiving<EntityHydralisk> {
 
 	public RenderHydralisk(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelHydralisk) mainModel);
+		addLayer(new LayerHydralisk(this));
 	}
 
 	@Override

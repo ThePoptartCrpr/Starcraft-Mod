@@ -12,29 +12,6 @@ import scmc.blocks.ModBlocks;
 
 public class StructureVespeneGeyserTemplate extends SCWorldGenerator {
 	
-	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, ModBlocks.STONE_CHAR, Blocks.DIRT, ModBlocks.DIRT_CHAR, ModBlocks.STONE_CHAR, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
-	}
-
-	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-
-		Block block = world.getBlockState(pos).getBlock();
-		Material m = block.getBlockState().getBaseState().getMaterial();
-		Block blockAbove = world.getBlockState(pos.up()).getBlock();
-		Block blockBelow = world.getBlockState(pos.down()).getBlock();
-
-		for(Block i : GetValidSpawnBlocks()) {
-			if(block == i) {
-				return true;
-			} else if(block == Blocks.SNOW_LAYER && blockBelow == i) {
-				return true;
-			} else if(m == Material.PLANTS && blockBelow == i) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	@Override
 	public boolean generate(IBlockState state, IBlockState state2, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		if(rand.nextInt(9) == 0) {
@@ -1654,6 +1631,29 @@ public class StructureVespeneGeyserTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+5, y+27, z+13), state, 2);
 		spawn1(state, state2, world, rand, offsetX, offsetY, offsetZ, pos);
 		return true;
+	}
+	
+	protected Block[] GetValidSpawnBlocks() {
+		return new Block[] { Blocks.GRASS, ModBlocks.STONE_CHAR, Blocks.DIRT, ModBlocks.DIRT_CHAR, ModBlocks.STONE_CHAR, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
+	}
+
+	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
+
+		Block block = world.getBlockState(pos).getBlock();
+		Material m = block.getBlockState().getBaseState().getMaterial();
+		Block blockAbove = world.getBlockState(pos.up()).getBlock();
+		Block blockBelow = world.getBlockState(pos.down()).getBlock();
+
+		for(Block i : GetValidSpawnBlocks()) {
+			if(block == i) {
+				return true;
+			} else if(block == Blocks.SNOW_LAYER && blockBelow == i) {
+				return true;
+			} else if(m == Material.PLANTS && blockBelow == i) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean spawn1(IBlockState state, IBlockState state2, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {

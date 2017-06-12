@@ -20,32 +20,6 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 	public int metaSecColor;
 	public Block stabBlock;
 
-	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
-	}
-
-	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-
-		Block block = world.getBlockState(pos).getBlock();
-		Material m = block.getBlockState().getBaseState().getMaterial();
-		Block blockAbove = world.getBlockState(pos.up()).getBlock();
-		Block blockBelow = world.getBlockState(pos.down()).getBlock();
-
-		for(Block i : GetValidSpawnBlocks()) {
-			if(blockAbove != Blocks.AIR) {
-				return false;
-			}
-			if(block == i) {
-				return true;
-			} else if(block == Blocks.SNOW_LAYER && blockBelow == i) {
-				return true;
-			} else if(m == Material.PLANTS && blockBelow == i) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	@Override
 	public boolean generate(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		if(rand.nextInt(1) == 0) {
@@ -1066,6 +1040,32 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+13, y+2, z+15), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		spawn1(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
 		return true;
+	}
+	
+	protected Block[] GetValidSpawnBlocks() {
+		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
+	}
+
+	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
+
+		Block block = world.getBlockState(pos).getBlock();
+		Material m = block.getBlockState().getBaseState().getMaterial();
+		Block blockAbove = world.getBlockState(pos.up()).getBlock();
+		Block blockBelow = world.getBlockState(pos.down()).getBlock();
+
+		for(Block i : GetValidSpawnBlocks()) {
+			if(blockAbove != Blocks.AIR) {
+				return false;
+			}
+			if(block == i) {
+				return true;
+			} else if(block == Blocks.SNOW_LAYER && blockBelow == i) {
+				return true;
+			} else if(m == Material.PLANTS && blockBelow == i) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean spawn1(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {

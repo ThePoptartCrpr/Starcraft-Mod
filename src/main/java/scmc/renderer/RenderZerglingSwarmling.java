@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import scmc.entity.EntityZerglingSwarmling;
+import scmc.entity.layers.LayerZerglingSwarmling;
 import scmc.lib.Reference;
 import scmc.model.ModelZerglingSwarmling;
 
@@ -18,8 +19,8 @@ public class RenderZerglingSwarmling<T> extends RenderLiving<EntityZerglingSwarm
 
 	public RenderZerglingSwarmling(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelZerglingSwarmling) mainModel);
+		addLayer(new LayerZerglingSwarmling(this));
 	}
 
 	@Override

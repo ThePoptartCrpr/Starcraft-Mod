@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import scmc.entity.EntityZealot;
+import scmc.entity.layers.LayerZealot;
 import scmc.lib.Reference;
 import scmc.model.ModelZealot;
 
@@ -18,8 +19,8 @@ public class RenderZealot<T> extends RenderLiving<EntityZealot> {
 
 	public RenderZealot(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelZealot) mainModel);
+		addLayer(new LayerZealot(this));
 	}
 
 	@Override

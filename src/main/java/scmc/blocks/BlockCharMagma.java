@@ -47,11 +47,15 @@ public class BlockCharMagma extends ModBlocks {
 	}
 
 	@Override
-	public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
-		if(!Library.checkCube(world, Blocks.FLOWING_LAVA.getDefaultState(), pos, 3).isEmpty()) {
-			breakBlock(world, pos, state);
-		}
+	public MapColor getMapColor(IBlockState state) {
+		return MapColor.NETHERRACK;
 	}
+
+	@SideOnly(Side.CLIENT)
+    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
+    {
+        return 15728880/2000;
+    }
 
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
@@ -60,15 +64,11 @@ public class BlockCharMagma extends ModBlocks {
 		}
 		super.onEntityWalk(worldIn, pos, entityIn);
 	}
-
-	@Override
-	public MapColor getMapColor(IBlockState state) {
-		return MapColor.NETHERRACK;
-	}
 	
-	@SideOnly(Side.CLIENT)
-    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
-        return 15728880/2000;
-    }
+	@Override
+	public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
+		if(!Library.checkCube(world, Blocks.FLOWING_LAVA.getDefaultState(), pos, 3).isEmpty()) {
+			breakBlock(world, pos, state);
+		}
+	}
 }

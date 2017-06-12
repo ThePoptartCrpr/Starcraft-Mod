@@ -64,8 +64,6 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 			return true;
 		if(entity instanceof EntityTerranPassive)
 			return true;
-		if(entity instanceof EntityMob)
-			return true;
 		if(entity instanceof EntityPlayer)
 			return true;
 		if(entity instanceof EntityGolem)

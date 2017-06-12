@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import scmc.entity.EntityDarkTemplar;
+import scmc.entity.layers.LayerDarkTemplar;
 import scmc.lib.Reference;
 import scmc.model.ModelDarkTemplar;
 
@@ -18,8 +19,8 @@ public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
 
 	public RenderDarkTemplar(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelDarkTemplar) mainModel);
+		addLayer(new LayerDarkTemplar(this));
 	}
 
 	@Override
