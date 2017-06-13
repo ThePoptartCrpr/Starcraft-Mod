@@ -25,6 +25,7 @@ public class BlockProtossEnergyChannelDark extends ModBlocks {
 		setHardness(5.0F);
 		setLightLevel(1.0F);
 		setResistance(30.0F);
+		setTickRandomly(true);
 		setHarvestLevel("pickaxe", 3);
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
@@ -35,7 +36,7 @@ public class BlockProtossEnergyChannelDark extends ModBlocks {
 	 */
 	@Override
 	public int damageDropped(IBlockState state) {
-		return 1;
+		return 2;
 	}
 
 	/**

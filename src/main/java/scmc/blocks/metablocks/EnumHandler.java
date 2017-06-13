@@ -175,7 +175,8 @@ public class EnumHandler {
 		AIUR("aiur", 0),
 		DARK("dark", 1),
 		GREEN("green", 2),
-		BLUE("blue", 3);
+		BLUE("blue", 3),
+		RED("red", 4);
 		
 		private int ID;
 		private String name;

@@ -39,19 +39,25 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 			// dimBlock = ModBlocks.WARPGATE_WORMHOLE_OVERWORLD;
 			dimBlock = ModBlocks.DIM_PORTAL_OVERWORLD;
 		}
-
-		stabBlock = ModBlocks.PROTOSS_DARK_ENERGY_STABILIZER;
-		chanBlock = ModBlocks.PROTOSS_DARK_ENERGY_CHANNEL;
-
+		if(metaSecColor == 0) {
+			stabBlock = ModBlocks.PROTOSS_ENERGY_STABILIZER;
+			chanBlock = ModBlocks.PROTOSS_ENERGY_CHANNEL;
+		}else if(metaSecColor == 4){
+			stabBlock = ModBlocks.PROTOSS_DARK_ENERGY_STABILIZER;
+			chanBlock = ModBlocks.PROTOSS_DARK_ENERGY_CHANNEL;
+		}else if(metaSecColor == 2){
+			stabBlock = ModBlocks.PROTOSS_VOID_ENERGY_STABILIZER;
+			chanBlock = ModBlocks.PROTOSS_VOID_ENERGY_CHANNEL;
+		}
 		if(rand.nextInt(1) == 0) {
-			generate_r0(world, rand, offsetX, offsetY, offsetZ, pos);
+			generate_r0(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
 		}
 
 		return true;
 
 	}
 
-	public boolean generate_r0(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean generate_r0(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(14, 0, 0)) || !LocationIsValidSpawn(world, pos.add(14, 0, 14))
 				|| !LocationIsValidSpawn(world, pos.add(0, 0, 14))) {
 			return false;

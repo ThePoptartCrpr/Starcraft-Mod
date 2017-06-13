@@ -26,6 +26,6 @@ public class BlockCoreNexusDark extends ModBlocks {
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		super.onBlockAdded(worldIn, pos, state);
-		Library.createShields(worldIn, pos, 50);
+		Library.createShields(worldIn, pos, 10, 3);
 	}
 }

@@ -79,61 +79,33 @@ public class Library {
 	 * @param domeHeight difference in height between {@code pos} and the peak
 	 * of the dome
 	 */
-	public static void createShields(World world, BlockPos pos, int domeHeight) {
+	public static void createShields(World world, BlockPos pos, int domeHeight, int domeTopLength) {
+		int counter = domeHeight;
+		int increment = 0;
+		int ringLength = domeTopLength - 1;
+		int offset = (ringLength - 3) * (-1);
 
-		// creates peak block of which we will build layers down from
-		world.setBlockState(pos.up(domeHeight), Blocks.GLASS.getDefaultState());
-
-		// some useful integers to help us keep track of stuff
-		// int level = 0;
-		int domeLevelLength = 2;
-		// int factorX = 1;
-		// int factorZ = 1;
-		int cornerOffset = 1;
-
-		// start by counting layers of our dome! As we finish off layers, we go
-		// down a level and generate the next level
-		for(int h = domeHeight; h > 0; h--) {
-
-			// we start at -(cornerOffset) because that is our corner we want to
-			// start generating from. Our Maximum is our entire side length, or
-			// domeLevelLength. After every single level, we increase those
-			// numbers
-			for(int x = -cornerOffset; x < domeLevelLength; x++) {
-				world.setBlockState(pos.add(x - cornerOffset, h, 0), Blocks.GLASS.getDefaultState());
-				System.out.println(
-						"(" + pos.add(x - cornerOffset, h, 0).getX() + ", " + pos.add(x - cornerOffset, h, 0).getY() + ", " + pos.add(x - cornerOffset, h, 0).getZ() + ")");
-				// LogHelper.logger.log(Level.INFO, pos.getX() + ":" +
-				// pos.getY() + ":" + pos.getZ());
+		while(counter != 0) {
+			for(int x = 0; x < domeTopLength; x++) {
+				for(int z = 0; z < domeTopLength; z++) {
+					world.setBlockState(pos.add(x - (domeTopLength / 2), domeHeight, z - (domeTopLength / 2)), Blocks.GLASS.getDefaultState());
+				}
 			}
-
-			// we generate the next side length of our dome!
-			for(int z = -cornerOffset; z < domeLevelLength; z++) {
-				world.setBlockState(pos.add(0, h, z + (-cornerOffset)), Blocks.GLASS.getDefaultState());
-				// LogHelper.logger.log(Level.INFO, pos.getX() + ":" +
-				// pos.getY() + ":" + pos.getZ());
+			for(int x = (domeTopLength * -1) - 1; x < (ringLength / 2) + 1; x++) {
+				world.setBlockState(pos.add(x + 2 + increment, domeHeight + counter - 11, 0 + counter - 12), Blocks.GLASS.getDefaultState());
 			}
+			//for(int z = -2; z < ringLength; z++) {
 
-			// Now we REVERSE our dome generation using the first for loop, but
-			// just going backwards now :p
-			for(int x = cornerOffset; x < domeLevelLength; x++) {
-				world.setBlockState(pos.add(x + cornerOffset, pos.getY() + h, 0), Blocks.GLASS.getDefaultState());
-				// LogHelper.logger.log(Level.INFO, pos.getX() + ":" +
-				// pos.getY() + ":" + pos.getZ());
-			}
+			//}
+			//for(int x = 2; x > offset; x++) {
 
-			// Same for the Z axis!
-			for(int z = cornerOffset; z < domeLevelLength; z++) {
-				world.setBlockState(pos.add(0, h, z + cornerOffset), Blocks.GLASS.getDefaultState());
-				// LogHelper.logger.log(Level.INFO, pos.getX() + ":" +
-				// pos.getY() + ":" + pos.getZ());
-			}
+			//}
+			//for(int z = 2; z > offset; z++) {
 
-			// Here we offset our corner by incrementing it, so we get a nice
-			// new layer thats larger than the previous. We also increase our
-			// Dome Length to be larger
-			cornerOffset++;
-			domeLevelLength += 2;
+			//}
+			ringLength += 2;
+			increment--;
+			counter--;
 		}
 	}
 

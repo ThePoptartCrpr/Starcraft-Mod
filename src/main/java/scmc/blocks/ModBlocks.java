@@ -117,6 +117,8 @@ public class ModBlocks extends Block {
 	public static Block PROTOSS_DARK_ENERGY_STABILIZER;
 	public static Block PROTOSS_ENERGY_CHANNEL;
 	public static Block PROTOSS_ENERGY_STABILIZER;
+	public static Block PROTOSS_VOID_ENERGY_CHANNEL;
+	public static Block PROTOSS_VOID_ENERGY_STABILIZER;
 	public static Block PROTOSS_WARPPROJECTOR_CHAR;
 	public static Block PROTOSS_WARPPROJECTOR_OVERWORLD;
 	public static Block PROTOSS_WARPPROJECTOR_SHAKURAS;
@@ -194,6 +196,9 @@ public class ModBlocks extends Block {
 		PROTOSS_ENERGY_STABILIZER = new BlockProtossEnergyStabilizer();
 		PROTOSS_DARK_ENERGY_CHANNEL = new BlockProtossEnergyChannelDark();
 		PROTOSS_DARK_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerDark();
+		PROTOSS_VOID_ENERGY_CHANNEL = new BlockProtossEnergyChannelVoid();
+		PROTOSS_VOID_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerVoid();
+		
 
 		// Zerg Blocks
 		ZERG_CREEP = new BlockZergCreep();
@@ -358,6 +363,12 @@ public class ModBlocks extends Block {
 
 		GameRegistry.register(PROTOSS_DARK_ENERGY_STABILIZER);
 		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getRegistryRL()));
+		
+		GameRegistry.register(PROTOSS_VOID_ENERGY_CHANNEL);
+		GameRegistry.register(new ItemBlock(PROTOSS_VOID_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_VOID_ENERGY_CHANNEL.getRegistryRL()));
+
+		GameRegistry.register(PROTOSS_VOID_ENERGY_STABILIZER);
+		GameRegistry.register(new ItemBlock(PROTOSS_VOID_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_VOID_ENERGY_STABILIZER.getRegistryRL()));
 
 		GameRegistry.register(ZERG_CREEP);
 		GameRegistry.register(new ItemBlock(ZERG_CREEP).setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL()));
@@ -516,6 +527,8 @@ public class ModBlocks extends Block {
 		registerModel(PROTOSS_ENERGY_STABILIZER);
 		registerModel(PROTOSS_DARK_ENERGY_CHANNEL);
 		registerModel(PROTOSS_DARK_ENERGY_STABILIZER);
+		registerModel(PROTOSS_VOID_ENERGY_CHANNEL);
+		registerModel(PROTOSS_VOID_ENERGY_STABILIZER);
 
 		// Protoss Cores
 		registerModel(CORE_PYLON_VOID);

@@ -24,9 +24,14 @@ import scmc.items.metaitems.ItemMineralShard;
 import scmc.items.metaitems.ItemMutaliskWing;
 import scmc.items.metaitems.ItemProtossCoordinates;
 import scmc.items.metaitems.ItemPsiBladeFocuserUncharged;
-import scmc.items.metaitems.ItemSpawner;
 import scmc.items.metaitems.ItemVespene;
 import scmc.items.metaitems.ItemZergCarapace;
+import scmc.items.structurespawns.ProtossDarkPylonSpawner;
+import scmc.items.structurespawns.ProtossDarkWarpGateSpawner;
+import scmc.items.structurespawns.ProtossPylonSpawner;
+import scmc.items.structurespawns.ProtossVoidPylonSpawner;
+import scmc.items.structurespawns.ProtossVoidWarpGateSpawner;
+import scmc.items.structurespawns.ProtossWarpGateSpawner;
 import scmc.items.tools.ModTools;
 import scmc.items.weapons.ModWeapons;
 import scmc.lib.Reference;
@@ -62,9 +67,15 @@ public class ModItems extends Item {
 	public static Item protossModule;
 	public static Item psiBladeFocuserUncharged;
 	public static Item richMineralShard;
-	public static Item SPAWNER;
 	public static Item vespene;
 	public static Item zergCarapace;
+	
+	public static Item SPAWNER_PROTOSS_DARK_PYLON;
+	public static Item SPAWNER_PROTOSS_VOID_PYLON;
+	public static Item SPAWNER_PROTOSS_PYLON;
+	public static Item SPAWNER_PROTOSS_DARK_WARPGATE;
+	public static Item SPAWNER_PROTOSS_VOID_WARPGATE;
+	public static Item SPAWNER_PROTOSS_WARPGATE;
 
 	public static void init() {
 		keystone = new ItemKeystone();
@@ -87,8 +98,13 @@ public class ModItems extends Item {
 		HYDRALISK_NEEDLE = new ItemHydraliskNeedle();
 		MUTALISK_WING = new ItemMutaliskWing();
 		MUTALISK_TOOTH = new ItemMutaliskTooth();
-
-		SPAWNER = new ItemSpawner();
+		
+		SPAWNER_PROTOSS_DARK_PYLON = new ProtossDarkPylonSpawner();
+		SPAWNER_PROTOSS_VOID_PYLON = new ProtossVoidPylonSpawner();
+		SPAWNER_PROTOSS_PYLON = new ProtossPylonSpawner();
+		SPAWNER_PROTOSS_DARK_WARPGATE = new ProtossDarkWarpGateSpawner();
+		SPAWNER_PROTOSS_VOID_WARPGATE = new ProtossVoidWarpGateSpawner();
+		SPAWNER_PROTOSS_WARPGATE = new ProtossWarpGateSpawner();
 
 		ModArmor.init();
 		ModWeapons.init();
@@ -126,8 +142,13 @@ public class ModItems extends Item {
 		registerItem(HYDRALISK_NEEDLE);
 		registerItem(MUTALISK_WING);
 		registerItem(MUTALISK_TOOTH);
-
-		registerItem(SPAWNER);
+		
+		registerItem(SPAWNER_PROTOSS_DARK_PYLON);
+		registerItem(SPAWNER_PROTOSS_VOID_PYLON);
+		registerItem(SPAWNER_PROTOSS_PYLON);
+		registerItem(SPAWNER_PROTOSS_DARK_WARPGATE);
+		registerItem(SPAWNER_PROTOSS_VOID_WARPGATE);
+		registerItem(SPAWNER_PROTOSS_WARPGATE);
 
 		ModArmor.register();
 		ModWeapons.register();
@@ -172,6 +193,13 @@ public class ModItems extends Item {
 		registerRender(creepResin);
 		registerRender(HYDRALISK_NEEDLE);
 		registerRender(MUTALISK_TOOTH);
+		
+		registerRender(SPAWNER_PROTOSS_DARK_PYLON);
+		registerRender(SPAWNER_PROTOSS_VOID_PYLON);
+		registerRender(SPAWNER_PROTOSS_PYLON);
+		registerRender(SPAWNER_PROTOSS_DARK_WARPGATE);
+		registerRender(SPAWNER_PROTOSS_VOID_WARPGATE);
+		registerRender(SPAWNER_PROTOSS_WARPGATE);
 
 		for(int i = 0; i < ItemEnumHandler.MineralType.values().length; i++) {
 			registerRender(mineralShard, i, "shard_" + ItemEnumHandler.MineralType.values()[i].getName());
@@ -221,10 +249,7 @@ public class ModItems extends Item {
 		for(int i = 0; i < ItemEnumHandler.MutaliskWingType.values().length; i++) {
 			registerRender(MUTALISK_WING, i, "mutalisk_wing_" + ItemEnumHandler.MutaliskWingType.values()[i].getName());
 		}
-		for(int i = 0; i < ItemEnumHandler.SpawnerType.values().length; i++) {
-			registerRender(SPAWNER, i, "spawner_" + ItemEnumHandler.SpawnerType.values()[i].getName());
-		}
-
+		
 		ModArmor.registerRenders();
 		ModWeapons.registerRenders();
 		ModTools.registerRenders();

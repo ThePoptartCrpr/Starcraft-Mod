@@ -223,7 +223,8 @@ public class ClientProxy extends ServerProxy {
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1), new ResourceLocation(Reference.MODID, "protoss_metal_t1_aiur"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_t1_dark"), new ResourceLocation(Reference.MODID, "protoss_metal_t1_green"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_t1_blue"));
+				new ResourceLocation(Reference.MODID, "protoss_metal_t1_blue"),
+				new ResourceLocation(Reference.MODID, "protoss_metal_t1_red"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T2), new ResourceLocation(Reference.MODID, "protoss_metal_t2_aiur"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_t2_dark"), new ResourceLocation(Reference.MODID, "protoss_metal_t2_green"),
@@ -274,10 +275,5 @@ public class ClientProxy extends ServerProxy {
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_MINERAL), new ResourceLocation(Reference.MODID, "comp_mineral_blue"),
 				new ResourceLocation(Reference.MODID, "comp_mineral_rich"));
-
-		ModelBakery.registerItemVariants((ModItems.SPAWNER), new ResourceLocation(Reference.MODID, "spawner_pylon"), new ResourceLocation(Reference.MODID, "spawner_nexus"),
-				new ResourceLocation(Reference.MODID, "spawner_assimilator"), new ResourceLocation(Reference.MODID, "spawner_cyberneticscore"),
-				new ResourceLocation(Reference.MODID, "spawner_forge"));
-
 	}
 }

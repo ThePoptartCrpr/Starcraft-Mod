@@ -390,37 +390,6 @@ public class ItemEnumHandler {
 		}
 	}
 	
-	public static enum SpawnerType implements IStringSerializable {
-		PYLON("pylon", 0),
-		NEXUS("nexus",1),
-		ASSIMILATOR("assimilator", 2),
-		WARPGATE("warpgate", 3),
-		CYBERNETICSCORE("cyberneticscore", 4),
-		FORGE("forge", 5);
-		
-		private int ID;
-		private String name;
-		
-		private SpawnerType(String name, int ID) {
-			this.ID = ID;
-			this.name = name;
-		}
-		
-		public int getID() {
-			return ID;
-		}
-		
-		@Override
-		public String getName() {
-			return name;
-		}
-		
-		@Override
-		public String toString() {
-			return getName();
-		}
-	}
-	
 	public static enum VespeneType implements IStringSerializable {
 		RAW("raw", 0),
 		PROTOSS("protoss", 1),

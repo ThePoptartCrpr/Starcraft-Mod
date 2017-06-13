@@ -41,6 +41,7 @@ public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 		setHardness(5.0F);
 		setResistance(20.0F);
 		setLightLevel(4.0F);
+		setTickRandomly(true);
 		setHarvestLevel("pickaxe", 2);
 		setDefaultState(blockState.getBaseState().withProperty(TYPE, PylonCrystalType.PURE)); // Default state
 	}

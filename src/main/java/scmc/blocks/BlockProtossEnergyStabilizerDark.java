@@ -20,6 +20,7 @@ public class BlockProtossEnergyStabilizerDark extends ModBlocks {
 		setHardness(5.0F);
 		setLightLevel(1.0F);
 		setResistance(30.0F);
+		setTickRandomly(true);
 		setHarvestLevel("pickaxe", 3);
 		setCreativeTab(StarcraftCreativeTabs.DECORATION);
 	}

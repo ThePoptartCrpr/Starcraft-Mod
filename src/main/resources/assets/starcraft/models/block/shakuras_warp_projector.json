@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_bottom_top",
     "textures": {
-        "top": "starcraft:blocks/overworld_warp_projector_top",
+        "top": "starcraft:blocks/warp_projector_top",
         "bottom": "starcraft:blocks/protoss_metalt1_aiur",
         "side": "starcraft:blocks/protoss_metalt1_aiur"
     }
