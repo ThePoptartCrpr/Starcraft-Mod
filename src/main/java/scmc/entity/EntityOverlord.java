@@ -28,6 +28,11 @@ public class EntityOverlord extends EntityFlying {
 	}
 
 	@Override
+	public boolean getCanSpawnHere() {
+		return true;
+	}
+	
+	@Override
 	public SoundEvent getDeathSound() {
 		return StarcraftSoundEvents.ENTITY_OVERLORD_DEATH;
 	}

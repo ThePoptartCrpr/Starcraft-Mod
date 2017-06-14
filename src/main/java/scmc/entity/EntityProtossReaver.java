@@ -19,6 +19,7 @@ import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
 import scmc.entity.monster.EntityProtossMob;
@@ -66,7 +67,7 @@ public class EntityProtossReaver extends EntityProtossMob implements IMob, IRang
 
 		return false;
 	}
-
+	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -108,6 +109,11 @@ public class EntityProtossReaver extends EntityProtossMob implements IMob, IRang
 				return StarcraftSoundEvents.ENTITY_PREAVER_LIVE5;
 				}
 			
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
 
 	@Override

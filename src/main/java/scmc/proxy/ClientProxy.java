@@ -28,6 +28,7 @@ import scmc.entity.EntityProbe;
 import scmc.entity.EntityProtossReaver;
 import scmc.entity.EntityQueen;
 import scmc.entity.EntityScarab;
+import scmc.entity.EntitySentry;
 import scmc.entity.EntitySpiderMine;
 import scmc.entity.EntityZealot;
 import scmc.entity.EntityZergling;
@@ -56,6 +57,7 @@ import scmc.model.ModelProbe;
 import scmc.model.ModelProtossReaver;
 import scmc.model.ModelQueen;
 import scmc.model.ModelScarab;
+import scmc.model.ModelSentry;
 import scmc.model.ModelSpiderMine;
 import scmc.model.ModelZealot;
 import scmc.model.ModelZergling;
@@ -77,6 +79,7 @@ import scmc.renderer.RenderProbe;
 import scmc.renderer.RenderProtossReaver;
 import scmc.renderer.RenderQueen;
 import scmc.renderer.RenderScarab;
+import scmc.renderer.RenderSentry;
 import scmc.renderer.RenderSpiderMine;
 import scmc.renderer.RenderZealot;
 import scmc.renderer.RenderZergling;
@@ -136,6 +139,8 @@ public class ClientProxy extends ServerProxy {
 				new RenderDarkTemplar<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelDarkTemplar(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
 				new RenderDarkProbe<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntitySentry.class,
+				new RenderSentry<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelSentry(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class,
 				new RenderBrutalisk<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityHydralisk.class,

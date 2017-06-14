@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
 import scmc.entity.monster.EntityProtossMob;
@@ -68,7 +69,7 @@ public class EntityDarkTemplar extends EntityProtossMob implements IMob, Predica
 
 		return false;
 	}
-
+	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -109,6 +110,11 @@ public class EntityDarkTemplar extends EntityProtossMob implements IMob, Predica
 			return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_LIVE1;
 
 		return StarcraftSoundEvents.ENTITY_DARKTEMPLAR_LIVE2;
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
 
 	@Override

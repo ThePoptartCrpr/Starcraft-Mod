@@ -18,6 +18,7 @@ import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
 import scmc.entity.monster.EntityProtossMob;
@@ -68,7 +69,7 @@ public class EntityZergling extends EntityZergMob  implements IMob, Predicate<En
 		
 		return false;
 	}
-
+	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -79,7 +80,7 @@ public class EntityZergling extends EntityZergMob  implements IMob, Predicate<En
 		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
-	
+
 	@Override
 	protected void dropFewItems(boolean recentlyHit, int looting) {
 		int j = rand.nextInt(50);
@@ -92,8 +93,6 @@ public class EntityZergling extends EntityZergMob  implements IMob, Predicate<En
 		}
 	}
 	
-	
-
 	@Override
 	public SoundEvent getAmbientSound() {
 		Random rand = new Random();
@@ -112,6 +111,13 @@ public class EntityZergling extends EntityZergMob  implements IMob, Predicate<En
 				}
 			}
 		}
+	}
+	
+	
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
 
 	@Override

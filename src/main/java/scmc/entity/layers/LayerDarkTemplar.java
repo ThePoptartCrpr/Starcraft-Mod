@@ -23,6 +23,7 @@ public class LayerDarkTemplar<T extends EntityDarkTemplar> implements LayerRende
 
     public void doRenderLayer(EntityDarkTemplar entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
     {
+    	if(!entitylivingbaseIn.isInvisible()) {
         this.darktemplarRenderer.bindTexture(DARKTEMPLAR_LAYER);
         GlStateManager.enableBlend();
         GlStateManager.enableAlpha();
@@ -50,6 +51,7 @@ public class LayerDarkTemplar<T extends EntityDarkTemplar> implements LayerRende
         this.darktemplarRenderer.setLightmap(entitylivingbaseIn, partialTicks);
         GlStateManager.disableBlend();
         GlStateManager.enableAlpha();
+    	}
     }
 
     @Override

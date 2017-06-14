@@ -48,10 +48,15 @@ public class EntityProbe extends EntityProtossPassive {
 	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
 		return null;
 	}
-
+	
 	@Override
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_PROBE_LIVE1;
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return true;
 	}
 
 	@Override

@@ -73,7 +73,7 @@ public class EntityLarva extends EntityZergPassive {
 		}
 		return super.attackEntityFrom(source, damageDealt);
 	}
-
+	
 	@Override
 	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
 		return null;
@@ -90,6 +90,11 @@ public class EntityLarva extends EntityZergPassive {
 	@Override
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_LARVA_LIVE1;
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return true;
 	}
 
 	@Override

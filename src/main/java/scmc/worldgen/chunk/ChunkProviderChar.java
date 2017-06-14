@@ -7,9 +7,6 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,8 +25,6 @@ public class ChunkProviderChar implements IChunkGenerator {
 	private Biome[] biomesForGeneration;
 	private MapGenBase caveGenerator = new CharGenCaves();
 	// TODO: This
-	private List<Biome.SpawnListEntry> mobs = Lists.newArrayList();
-
 	private Random random;
 
 	private CharTerrainGenerator terraingen = new CharTerrainGenerator();
@@ -50,17 +45,8 @@ public class ChunkProviderChar implements IChunkGenerator {
 
 	@Override
 	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
-		// If you want normal creatures appropriate for this biome then
-		// uncomment the
-		// following two lines:
-		// Biome biome = worldObj.getBiome(pos);
-		// return biome.getSpawnableList(creatureType);
-
-		if(creatureType == EnumCreatureType.MONSTER) {
-			return mobs;
-		}
-		return ImmutableList.of();
-
+		 Biome biome = worldObj.getBiomeGenForCoords(pos);
+		return biome.getSpawnableList(creatureType);
 	}
 
 	@Nullable

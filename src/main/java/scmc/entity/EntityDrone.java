@@ -32,10 +32,15 @@ public class EntityDrone extends EntityAnimal {
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.droneHP);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
-
+	
 	@Override
 	public EntityAgeable createChild(EntityAgeable entity) {
 		return null;
+	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return true;
 	}
 
 	@Override

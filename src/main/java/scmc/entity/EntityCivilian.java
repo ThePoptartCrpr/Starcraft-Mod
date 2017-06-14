@@ -38,6 +38,11 @@ public class EntityCivilian extends EntityTerranPassive {
 	public EntityAgeable createChild(EntityAgeable p_90011_1_) {
 		return null;
 	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return true;
+	}
 
 	@Override
 	protected SoundEvent getDeathSound() {

@@ -1,6 +1,7 @@
 package scmc.entity;
 
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import scmc.entity.monster.EntityZergMob;
 
@@ -24,4 +25,9 @@ public class EntityScourge extends EntityZergMob {
 
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
+	}
 }

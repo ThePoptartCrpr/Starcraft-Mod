@@ -20,6 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
 import scmc.entity.monster.EntityProtossMob;
@@ -71,7 +72,7 @@ public class EntityBrutalisk extends EntityZergMob implements IMob, Predicate<En
 
 		return false;
 	}
-
+	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -115,6 +116,11 @@ public class EntityBrutalisk extends EntityZergMob implements IMob, Predicate<En
 	@Override
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_BRUTALISK_LIVE1;
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
 
 	@Override

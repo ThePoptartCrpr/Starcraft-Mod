@@ -5,6 +5,7 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import scmc.Starcraft;
+import scmc.worldgen.biome.BiomesSC;
 
 public class ModEntities {
 
@@ -15,6 +16,7 @@ public class ModEntities {
 		EntityRegistry.registerEgg(EntityProbe.class, 13022529, 2412228);
 		EntityRegistry.registerEgg(EntityProtossReaver.class, 13022529, 2412228);
 		EntityRegistry.registerEgg(EntityScarab.class, 13022529, 2412228);
+		EntityRegistry.registerEgg(EntitySentry.class, 13022529, 2412228);
 		EntityRegistry.registerEgg(EntityDarkTemplar.class, 1447446, 45824);
 		EntityRegistry.registerEgg(EntityDarkProbe.class, 1447446, 12648448);
 
@@ -39,6 +41,7 @@ public class ModEntities {
 	public static void registerEntities() {
 		registerEntity(EntityZealot.class, "zealot", 64, 1, true);
 		registerEntity(EntityProtossReaver.class, "protossReaver", 64, 1, true);
+		registerEntity(EntitySentry.class, "sentry", 64, 1, true);
 		registerEntity(EntityScarab.class, "scarab", 64, 1, true);
 		registerEntity(EntityProbe.class, "probe", 64, 1, true);
 		registerEntity(EntityDarkTemplar.class, "darkTemplar", 64, 1, true);
@@ -67,29 +70,27 @@ public class ModEntities {
 	}
 
 	public static void setEntityToSpawn() {
-		// TODO: correct these
-		EntityRegistry.addSpawn(EntityZealot.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityProbe.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityProtossReaver.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityDarkTemplar.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityDarkProbe.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityZealot.class, 1, 1, 3, EnumCreatureType.MONSTER, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityProbe.class, 1, 1, 3, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityProtossReaver.class, 1, 1, 1, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityDarkTemplar.class, 1, 1, 2, EnumCreatureType.MONSTER, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityDarkProbe.class, 1, 1, 3, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasDesert);
 
-		EntityRegistry.addSpawn(EntityBrutalisk.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityHydralisk.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityZergling.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityZerglingSC2.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityZerglingRaptor.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityZerglingSwarmling.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityZerglingBoost.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityQueen.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityOverlord.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityLarva.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityLarvaCocoon.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityBroodling.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntityInfestedCivilian.class, 20, 1, 5, EnumCreatureType.MONSTER, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityBrutalisk.class, 1, 1, 1, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityHydralisk.class, 9, 1, 3, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		//EntityRegistry.addSpawn(EntityZergling.class, 1, 1, 5, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityZerglingSC2.class, 25, 1, 5, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityZerglingRaptor.class, 10, 1, 5, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityZerglingSwarmling.class, 10, 1, 5, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityZerglingBoost.class, 10, 1, 5, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityQueen.class, 5, 1, 1, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityOverlord.class, 5, 1, 2, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityLarva.class, 5, 1, 3, EnumCreatureType.CREATURE, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityLarvaCocoon.class, 5, 1, 5, EnumCreatureType.CREATURE, BiomesSC.biomeCharCreepInfestation);
+		EntityRegistry.addSpawn(EntityInfestedCivilian.class, 15, 1, 3, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
 
-		EntityRegistry.addSpawn(EntityCivilian.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
-		EntityRegistry.addSpawn(EntitySpiderMine.class, 20, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityCivilian.class, 1, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntitySpiderMine.class, 1, 1, 5, EnumCreatureType.CREATURE, Biomes.BEACH, Biomes.FOREST, Biomes.FOREST_HILLS);
 
 	}
 }

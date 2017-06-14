@@ -32,6 +32,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
@@ -98,7 +99,7 @@ public class EntityScarab extends EntityProtossMob implements IMob, Predicate<En
 
 		return false;
 	}
-
+	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -147,6 +148,11 @@ public class EntityScarab extends EntityProtossMob implements IMob, Predicate<En
 		if(timeSinceIgnited > fuseTime - 5) {
 			timeSinceIgnited = fuseTime - 5;
 		}
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
 
 	@Override

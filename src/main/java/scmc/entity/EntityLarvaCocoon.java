@@ -49,6 +49,11 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_ZERGCOCOON_LIVE1;
 	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return true;
+	}
 
 	@Override
 	public SoundEvent getDeathSound() {

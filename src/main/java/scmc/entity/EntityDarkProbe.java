@@ -53,6 +53,11 @@ public class EntityDarkProbe extends EntityProtossPassive {
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_PROBE_LIVE1;
 	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return true;
+	}
 
 	@Override
 	public SoundEvent getDeathSound() {

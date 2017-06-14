@@ -16,6 +16,7 @@ import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import scmc.entity.monster.EntityProtossMob;
 import scmc.entity.monster.EntityTerranMob;
@@ -78,7 +79,7 @@ public class EntityQueen extends EntityZergMob implements IMob, Predicate<Entity
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 		getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
 	}
-
+	
 	@Override
 	protected void dropFewItems(boolean damagedByPlayer, int lootingLevel) {
 		// TODO: make this
@@ -87,6 +88,11 @@ public class EntityQueen extends EntityZergMob implements IMob, Predicate<Entity
 	@Override
 	public SoundEvent getAmbientSound() {
 		return null;
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
 
 	@Override

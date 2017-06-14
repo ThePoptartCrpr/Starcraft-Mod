@@ -4,17 +4,14 @@ import java.util.Random;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import scmc.StarcraftSoundEvents;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
-import scmc.worldgen.structure.SCWorldGenerator;
 import scmc.worldgen.structure.StructureProtossPylonTemplate;
 
 public class ItemProtossPylonSpawner extends ModItems {

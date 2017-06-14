@@ -14,6 +14,7 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityGolem;
+import net.minecraft.entity.monster.EntityGuardian;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -28,17 +29,15 @@ import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
+import scmc.items.weapons.ModWeapons;
 import scmc.lib.StarcraftConfig;
 
-/**
- * @author Hypeirochus
- */
-public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<EntityLivingBase> {
+public class EntitySentry extends EntityGuardian implements IMob, Predicate<EntityLivingBase> {
 
-	public EntityZerglingSC2(World world) {
+	public EntitySentry(World world) {
 		super(world);
-		setSize(1.75F, 1.55F);
-		experienceValue = 23;
+		setSize(1.2F, 2.5F);
+		experienceValue = 100;
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
 		tasks.addTask(2, new EntityAIWander(this, 1.0D));
@@ -47,12 +46,12 @@ public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
 	}
-	
+
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityProtossMob)
+		if(entity instanceof EntityZergMob)
 			return true;
-		if(entity instanceof EntityProtossPassive)
+		if(entity instanceof EntityZergPassive)
 			return true;
 		if(entity instanceof EntityTerranMob)
 			return true;
@@ -62,9 +61,9 @@ public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<
 			return true;
 		if(entity instanceof EntityGolem)
 			return true;
-		if(entity instanceof EntityZergMob)
+		if(entity instanceof EntityProtossMob)
 			return false;
-		if(entity instanceof EntityZergPassive)
+		if(entity instanceof EntityProtossPassive)
 			return false;
 
 		return false;
@@ -73,23 +72,28 @@ public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-
-		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zealotHP);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.39000000417232513);
 		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
-		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
+		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zealotDmg);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
+		getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
 	}
-
+	
+	/**
+	 * Drop 0-2 items of this living's type.
+	 * @param recentlyHit - Whether this entity has recently been hit by a
+	 * player.
+	 * @param looting - Level of Looting used to kill this mob.
+	 */
 	@Override
 	protected void dropFewItems(boolean recentlyHit, int looting) {
 		int j = rand.nextInt(50);
 
 		if(j == 49) {
-			//TODO: Make this
-			//dropItem(ModWeapons.ZERGLING_CLAW, 1);
+			dropItem(ModWeapons.PSI_BLADE, 1);
 		} else if(j < 5) {
-			entityDropItem(new ItemStack(ModItems.zergCarapace, 1, 0), 1 + rand.nextInt(2));
+			entityDropItem(new ItemStack(ModItems.energy, 1, 0), 1 + rand.nextInt(2));
 		}
 	}
 
@@ -99,15 +103,15 @@ public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<
 
 		switch(rand.nextInt(3)) {
 			case 0:
-				return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE1;
+				return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE1;
 			default: {
 				switch(rand.nextInt(3)) {
 					case 0:
-						return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE2;
+						return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE2;
 					case 1:
-						return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE3;
+						return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE3;
 					default:
-						return StarcraftSoundEvents.ENTITY_ZERGLING_LIVE4;
+						return StarcraftSoundEvents.ENTITY_ZEALOT_LIVE4;
 				}
 			}
 		}
@@ -120,12 +124,12 @@ public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return StarcraftSoundEvents.ENTITY_ZERGLING_DEATH;
+		return StarcraftSoundEvents.ENTITY_ZEALOT_DEATH;
 	}
 
 	@Override
 	public SoundEvent getHurtSound() {
-		return StarcraftSoundEvents.ENTITY_ZERGLING_HURT;
+		return StarcraftSoundEvents.ENTITY_ZEALOT_HURT;
 	}
 	
 	@Override

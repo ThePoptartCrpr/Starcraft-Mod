@@ -61,7 +61,7 @@ public class EntityBroodling extends EntityZergMob implements IMob, Predicate<En
 
 		return false;
 	}
-
+	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -80,6 +80,11 @@ public class EntityBroodling extends EntityZergMob implements IMob, Predicate<En
 	@Override
 	public SoundEvent getAmbientSound() {
 		return StarcraftSoundEvents.ENTITY_BROODLING_LIVE1;
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return true;
 	}
 
 	@Override

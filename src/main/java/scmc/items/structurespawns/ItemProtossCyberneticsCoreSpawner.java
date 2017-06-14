@@ -13,7 +13,6 @@ import scmc.StarcraftSoundEvents;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 import scmc.worldgen.structure.StructureProtossCyberneticsCoreTemplate;
-import scmc.worldgen.structure.StructureProtossPylonTemplate;
 
 public class ItemProtossCyberneticsCoreSpawner extends ModItems {
 
