@@ -106,8 +106,10 @@ public class SCWorldGen implements IWorldGenerator {
 	private WorldGenerator COPPER_SHAKURAS;
 	private WorldGenerator DIAMOND_CHAR;
 	private WorldGenerator DIAMOND_SHAKURAS;
+	private WorldGenerator DIRT_CHAR;
 	private WorldGenerator GOLD_CHAR;
 	private WorldGenerator GOLD_SHAKURAS;
+	private WorldGenerator GRAVEL_CHAR;
 	private WorldGenerator IRON_CHAR;
 	private WorldGenerator IRON_SHAKURAS;
 
@@ -158,6 +160,8 @@ public class SCWorldGen implements IWorldGenerator {
 		RICHMINERAL_CHAR = new CharWorldGenMinable(ModBlocks.ORE_RICHMINERAL_CHAR.getDefaultState(), 8);
 		URANIUM_CHAR = new CharWorldGenMinable(ModBlocks.ORE_URANIUM_CHAR.getDefaultState(), 8);
 		MAGMA_CHAR = new CharWorldGenMinable(ModBlocks.MAGMA_CHAR.getDefaultState(), 16);
+		DIRT_CHAR = new CharWorldGenMinable(ModBlocks.DIRT_CHAR.getDefaultState(), 33);
+		GRAVEL_CHAR = new CharWorldGenMinable(ModBlocks.GRAVEL_CHAR.getDefaultState(), 33);
 
 		TITANIUM_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_TITANIUM_SHAKURAS.getDefaultState(), 8);
 		COAL_SHAKURAS = new ShakurasWorldGenMinable(ModBlocks.ORE_COAL_SHAKURAS.getDefaultState(), 16);
@@ -192,7 +196,7 @@ public class SCWorldGen implements IWorldGenerator {
 				runGenerator(COPPER_OVERWORLD, world, random, chunkX, chunkZ, 20, 4, 64);
 				runGenerator(TITANIUM_OVERWORLD, world, random, chunkX, chunkZ, 8, 4, 28);
 				runGenerator(URANIUM_OVERWORLD, world, random, chunkX, chunkZ, 1, 0, 20);
-				if(rnd.nextInt(100) < 100) {
+				if(rnd.nextInt(100) < 15) {
 					runGenerator(TERRAN_BUNKER, world, random, chunkX, chunkZ, 0, 0, 0, 10, 60, 70);
 				}
 				if(rnd.nextInt(100) < 15) {
@@ -215,6 +219,8 @@ public class SCWorldGen implements IWorldGenerator {
 					runGenerator(RICHMINERAL_CHAR, world, random, chunkX, chunkZ, 6, 4, 28);
 					runGenerator(TITANIUM_CHAR, world, random, chunkX, chunkZ, 8, 4, 28);
 					runGenerator(URANIUM_CHAR, world, random, chunkX, chunkZ, 1, 0, 20);
+					runGenerator(DIRT_CHAR, world, random, chunkX, chunkZ, 20, 0, 128);
+					runGenerator(GRAVEL_CHAR, world, random, chunkX, chunkZ, 10, 0, 128);
 					
 
 					if(rnd.nextInt(100) < 20) {

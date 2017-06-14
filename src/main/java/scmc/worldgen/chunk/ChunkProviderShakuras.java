@@ -34,10 +34,6 @@ public class ChunkProviderShakuras implements IChunkGenerator {
 	protected static final IBlockState STONE = Blocks.STONE.getDefaultState();
 	private Biome[] biomesForGeneration;
 	private MapGenBase caveGenerator = new MapGenCaves();
-	private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityZealot.class, 65, 2, 4),
-			new Biome.SpawnListEntry(EntityDarkTemplar.class, 15, 1, 2), new Biome.SpawnListEntry(EntityProbe.class, 15, 1, 3),
-			new Biome.SpawnListEntry(EntityDarkProbe.class, 5, 1, 3));
-
 	private final Random random;
 
 	private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();
@@ -58,16 +54,8 @@ public class ChunkProviderShakuras implements IChunkGenerator {
 
 	@Override
 	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
-		// If you want normal creatures appropriate for this biome then
-		// uncomment the
-		// following two lines:
-		// Biome biome = worldObj.getBiome(pos);
-		// return biome.getSpawnableList(creatureType);
-
-		if(creatureType == EnumCreatureType.MONSTER) {
-			return mobs;
-		}
-		return ImmutableList.of();
+		Biome biome = worldObj.getBiomeGenForCoords(pos);
+		return biome.getSpawnableList(creatureType);
 	}
 
 	@Nullable

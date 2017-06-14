@@ -932,7 +932,7 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+9, y+2, z+11), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(x+10, y+2, z+11), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+11, y+2, z+11), Blocks.AIR.getDefaultState(), 2);
-		//world.setBlockState(pos.add(x+12, y+2, z+11, Block.getBlockById(152));
+		world.setBlockState(pos.add(x+12, y+2, z+11), ModBlocks.CORE_WARPGATE_DARK.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+13, y+2, z+11), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+14, y+2, z+11), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+15, y+2, z+11), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));

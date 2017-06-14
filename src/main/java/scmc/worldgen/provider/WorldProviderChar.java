@@ -1,6 +1,7 @@
 package scmc.worldgen.provider;
 
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkGenerator;
@@ -61,4 +62,10 @@ public class WorldProviderChar extends WorldProvider {
 		}
 		return null;
 	}
+	
+	@Override
+	public float getSunBrightnessFactor(float par1)
+    {
+        return 0.5F;
+    }
 }

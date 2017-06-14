@@ -3,6 +3,7 @@ package scmc.blocks.coreblocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import scmc.StarcraftCreativeTabs;
@@ -26,6 +27,6 @@ public class BlockCoreNexusDark extends ModBlocks {
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		super.onBlockAdded(worldIn, pos, state);
-		Library.createShields(worldIn, pos, 10, 3);
+		Library.truncatedPyramid(worldIn, pos, 10, 10, Blocks.GLASS.getDefaultState());
 	}
 }
