@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import scmc.blocks.ModBlocks;
@@ -73,43 +73,6 @@ public class Library {
 	}
 
 	/**
-	 * Creates the glorious shields
-	 * @param world the world
-	 * @param pos the bottom-middle of the shield
-	 * @param domeHeight difference in height between {@code pos} and the peak
-	 * of the dome
-	 */
-	public static void createShields(World world, BlockPos pos, int domeHeight, int domeTopLength) {
-		int counter = domeHeight;
-		int increment = 0;
-		int ringLength = domeTopLength - 1;
-//		int offset = -(ringLength - 3);
-
-		while(counter != 0) {
-			for(int x = 0; x < domeTopLength; x++) {
-				for(int z = 0; z < domeTopLength; z++) {
-					world.setBlockState(pos.add(x - (domeTopLength / 2), domeHeight, z - (domeTopLength / 2)), Blocks.GLASS.getDefaultState());
-				}
-			}
-			for(int x = (domeTopLength * -1) - 1; x < (ringLength / 2) + 1; x++) {
-				world.setBlockState(pos.add(x + 2 + increment, domeHeight + counter - 11, 0 + counter - 12), Blocks.GLASS.getDefaultState());
-			}
-			//for(int z = -2; z < ringLength; z++) {
-
-			//}
-			//for(int x = 2; x > offset; x++) {
-
-			//}
-			//for(int z = 2; z > offset; z++) {
-
-			//}
-			ringLength += 2;
-			increment--;
-			counter--;
-		}
-	}
-
-	/**
 	 * "Unlimited POWER!!!" -Palpatine, I think<br>
 	 * This method can be adapted to manipulate integers to set speeds of the
 	 * machines based on the distance the power is traveling<br>
@@ -125,7 +88,7 @@ public class Library {
 		}
 	}
 
-	/**
+    /**
 	 * Searches for Pylons... I think<br>
 	 * TODO: ensure that this works
 	 * @param world for world
@@ -214,4 +177,34 @@ public class Library {
 			replaceEntity(true, current, next);
 		}
 	}
+
+	public static void square(World world, BlockPos center, int radius, IBlockState state) {
+        BlockPos pos = center.add(-radius, 0, -radius);
+        EnumFacing facing = EnumFacing.EAST;
+        for (int i = 0; i < 4; i++) {
+            for (int k = radius * 2 - 1; k >= 0; k--) {
+                world.setBlockState(pos, state);
+                pos = pos.offset(facing);
+            }
+            facing = facing.rotateY();
+        }
+    }
+
+	/**
+	 * Creates the glorious shields
+	 * @param world the world
+	 * @param pos the bottom-middle of the shield
+	 * @param domeHeight difference in height between {@code pos} and the peak
+	 * of the dome
+	 */
+	public static void truncatedPyramid(World world, BlockPos pos, int domeHeight, int domeTopLength,
+            IBlockState state) {
+        int radius = domeTopLength / 2 - 1;
+        for (int i = domeHeight - 1; i >= 0; i--) {
+            square(world, new BlockPos(pos.getX(), pos.getY() + i, pos.getZ()), domeHeight - i + radius, state);
+        }
+        for (int i = -radius; i <= radius; i++)
+            for (int k = -radius; k <= radius; k++)
+                world.setBlockState(pos.add(i, domeHeight - 1, k), state);
+    }
 }

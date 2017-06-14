@@ -7,9 +7,6 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
@@ -23,10 +20,6 @@ import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import scmc.entity.EntityDarkProbe;
-import scmc.entity.EntityDarkTemplar;
-import scmc.entity.EntityProbe;
-import scmc.entity.EntityZealot;
 import scmc.worldgen.NormalTerrainGenerator;
 
 public class ChunkProviderShakuras implements IChunkGenerator {
