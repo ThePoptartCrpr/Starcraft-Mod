@@ -10,15 +10,12 @@ import scmc.entity.EntityProtossReaver;
 import scmc.lib.Reference;
 import scmc.model.ModelProtossReaver;
 
-public class RenderProtossReaver<T> extends RenderLiving<EntityProtossReaver> {
-
+public class RenderProtossReaver extends RenderLiving<EntityProtossReaver> {
 	private static final ResourceLocation PREAVER_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/preaver.png");
-
 	protected ModelProtossReaver modelEntity;
-
+	
 	public RenderProtossReaver(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelProtossReaver) mainModel);
 	}
 
@@ -40,5 +37,4 @@ public class RenderProtossReaver<T> extends RenderLiving<EntityProtossReaver> {
 	protected void preRenderCallback(EntityProtossReaver entitylivingbaseIn, float partialTickTime) {
 		GL11.glScalef(5.0F, 5.0F, 5.0F);
 	}
-
 }

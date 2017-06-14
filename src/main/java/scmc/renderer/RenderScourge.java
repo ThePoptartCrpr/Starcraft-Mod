@@ -8,15 +8,12 @@ import scmc.entity.EntityScourge;
 import scmc.lib.Reference;
 import scmc.model.ModelScourge;
 
-public class RenderScourge<T> extends RenderLiving<EntityScourge> {
-
+public class RenderScourge extends RenderLiving<EntityScourge> {
 	private static final ResourceLocation SCOURGE_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/scourge.png");
-
 	protected ModelScourge modelEntity;
 
 	public RenderScourge(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelScourge) mainModel);
 	}
 
@@ -33,5 +30,4 @@ public class RenderScourge<T> extends RenderLiving<EntityScourge> {
 	protected ResourceLocation getEntityTexture(EntityScourge entity) {
 		return SCOURGE_TEXTURES;
 	}
-
 }

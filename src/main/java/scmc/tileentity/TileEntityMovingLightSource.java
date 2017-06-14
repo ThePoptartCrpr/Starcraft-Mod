@@ -10,18 +10,15 @@ import scmc.blocks.BlockMovingLightSource;
 import scmc.blocks.ModBlocks;
 
 public class TileEntityMovingLightSource extends TileEntity implements ITickable {
+//	private EntityPlayer player;
 
-	public EntityPlayer thePlayer;
-
-	public TileEntityMovingLightSource() {
-		// after constructing the tile entity instance, remember to call
-		// the setPlayer() method.
-
+	public TileEntityMovingLightSource(/*EntityPlayer player*/) {
+//		setPlayer(player);
 	}
 
-	public void setPlayer(EntityPlayer parPlayer) {
-		thePlayer = parPlayer;
-	}
+//	public void setPlayer(EntityPlayer player) {
+//		this.player = player;
+//	}
 
 	/**
 	 * This controls whether the tile entity gets replaced whenever the block
@@ -29,13 +26,13 @@ public class TileEntityMovingLightSource extends TileEntity implements ITickable
 	 * replaced.
 	 */
 	@Override
-	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
-		return (oldState.getBlock() != newSate.getBlock());
+	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newState) {
+		return (oldState.getBlock() != newState.getBlock());
 	}
 
 	@Override
 	public void update() {
-		// check if player has moved away from the tile entity
+		//Check if player has moved away from the tile entity
 		EntityPlayer thePlayer = worldObj.getClosestPlayer(getPos().getX() + 0.5D, getPos().getY() + 0.5D, getPos().getZ() + 0.5D, 2.0D, false);
 		if(thePlayer == null) {
 			if(worldObj.getBlockState(getPos()).getBlock() == ModBlocks.BLOCK_MOVING_LIGHT_SOURCE) {

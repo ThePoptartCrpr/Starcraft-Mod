@@ -23,18 +23,22 @@ public abstract class SCWorldGenerator {
 		doBlockNotify = notify;
 	}
 
+	@SuppressWarnings("unused")
 	public boolean generate(IBlockState state, IBlockState state2, World worldIn, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos position) {
 		return true;
 	}
 
+	@SuppressWarnings("unused")
 	public boolean generate(int metaDim, int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		return true;
 	}
 
+	@SuppressWarnings("unused")
 	public boolean generate(int metaColor, int metaSecColor, World worldIn, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos position) {
 		return true;
 	}
 	
+	@SuppressWarnings("unused")
 	public boolean generate(World worldIn, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos position) {
 		return true;
 	}

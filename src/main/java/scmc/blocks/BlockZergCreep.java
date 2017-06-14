@@ -53,7 +53,6 @@ public class BlockZergCreep extends ModBlocks {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if(!worldIn.isRemote) {
-
 			if(worldIn.getLightFromNeighbors(pos.up()) >= 9) {
 				for(int i = 0; i < 1000; ++i) {
 					BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
@@ -62,10 +61,9 @@ public class BlockZergCreep extends ModBlocks {
 						return;
 					}
 
-					IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
-					IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					IBlockState iblockstate = worldIn.getBlockState(blockpos);
 
-					if(iblockstate1.getBlock() == Blocks.GRASS) {
+					if(iblockstate.getBlock() == Blocks.GRASS) {
 						worldIn.setBlockState(blockpos, ModBlocks.ZERG_CREEP.getDefaultState());
 					}
 				}

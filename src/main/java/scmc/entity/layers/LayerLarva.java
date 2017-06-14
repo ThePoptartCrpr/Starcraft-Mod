@@ -11,29 +11,24 @@ import scmc.lib.Reference;
 import scmc.renderer.RenderLarva;
 
 @SideOnly(Side.CLIENT)
-public class LayerLarva<T extends EntityLarva> implements LayerRenderer<T>
-{
+public class LayerLarva<T extends EntityLarva> implements LayerRenderer<T> {
     private static final ResourceLocation LARVA_LAYER = new ResourceLocation(Reference.RL_BASE + "textures/entity/larva_layer.png");
     private final RenderLarva<T> larvaRenderer;
 
-    public LayerLarva(RenderLarva<T> larvaRendererIn)
-    {
-        this.larvaRenderer = larvaRendererIn;
+    public LayerLarva(RenderLarva<T> larvaRendererIn) {
+        larvaRenderer = larvaRendererIn;
     }
 
-    public void doRenderLayer(EntityLarva entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
-    {
-        this.larvaRenderer.bindTexture(LARVA_LAYER);
+    @Override
+    public void doRenderLayer(EntityLarva entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        larvaRenderer.bindTexture(LARVA_LAYER);
         GlStateManager.enableBlend();
         GlStateManager.enableAlpha();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
 
-        if (entitylivingbaseIn.isInvisible())
-        {
+        if(entitylivingbaseIn.isInvisible()) {
             GlStateManager.depthMask(false);
-        }
-        else
-        {
+        } else {
             GlStateManager.depthMask(true);
         }
 
@@ -42,19 +37,18 @@ public class LayerLarva<T extends EntityLarva> implements LayerRenderer<T>
         int k = i / 65536;
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        this.larvaRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+        larvaRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
         i = entitylivingbaseIn.getBrightnessForRender(partialTicks);
         j = i % 65536;
         k = i / 65536;
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
-        this.larvaRenderer.setLightmap(entitylivingbaseIn, partialTicks);
+        larvaRenderer.setLightmap(entitylivingbaseIn, partialTicks);
         GlStateManager.disableBlend();
         GlStateManager.enableAlpha();
     }
 
     @Override
-    public boolean shouldCombineTextures()
-    {
+    public boolean shouldCombineTextures() {
         return false;
     }
 }

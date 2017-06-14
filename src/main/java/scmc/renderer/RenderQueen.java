@@ -10,15 +10,12 @@ import scmc.entity.EntityQueen;
 import scmc.lib.Reference;
 import scmc.model.ModelQueen;
 
-public class RenderQueen<T> extends RenderLiving<EntityQueen> {
-
+public class RenderQueen extends RenderLiving<EntityQueen> {
 	private static final ResourceLocation QUEEN_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/queen.png");
-
 	protected ModelQueen modelEntity;
 
 	public RenderQueen(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelQueen) mainModel);
 	}
 

@@ -10,15 +10,12 @@ import scmc.entity.EntitySentry;
 import scmc.lib.Reference;
 import scmc.model.ModelSentry;
 
-public class RenderSentry<T> extends RenderLiving<EntitySentry> {
-
+public class RenderSentry extends RenderLiving<EntitySentry> {
 	private static final ResourceLocation SENTRY_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/sentry.png");
-
 	protected ModelSentry modelEntity;
 
 	public RenderSentry(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelSentry) mainModel);
 	}
 

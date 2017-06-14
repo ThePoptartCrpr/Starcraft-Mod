@@ -110,12 +110,11 @@ public class ClientProxy extends ServerProxy {
 		ModBlocks.init();
 		ModItems.init();
 		ModItems.register(); // Does stuff, including bucket-y stuff
-		StarcraftCreativeTabs.setMisc(); // Add the misc tab after doing
-											// bucket-y stuff
+		StarcraftCreativeTabs.setMisc(); // Add the misc tab after doing bucket-y stuff
+		
 		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem().setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS);
-
 		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS);
-
+		
 		ModItems.registerRenders();
 		ModMaterials.preInit();
 		ModTileEntities.preInit();
@@ -131,22 +130,22 @@ public class ClientProxy extends ServerProxy {
 	// TODO: get all of this into registry
 	public void registerEntityRenders() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityZealot.class, new RenderZealot<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZealot(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class, new RenderProbe<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityProbe.class, new RenderProbe(Minecraft.getMinecraft().getRenderManager(), new ModelProbe(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityProtossReaver.class,
-				new RenderProtossReaver<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelProtossReaver(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityScarab.class, new RenderScarab<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelScarab(), 0.4f));
+				new RenderProtossReaver(Minecraft.getMinecraft().getRenderManager(), new ModelProtossReaver(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityScarab.class, new RenderScarab(Minecraft.getMinecraft().getRenderManager(), new ModelScarab(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkTemplar.class,
 				new RenderDarkTemplar<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelDarkTemplar(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
-				new RenderDarkProbe<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f));
+				new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySentry.class,
-				new RenderSentry<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelSentry(), 0.4f));
+				new RenderSentry(Minecraft.getMinecraft().getRenderManager(), new ModelSentry(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class,
-				new RenderBrutalisk<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f));
+				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityHydralisk.class,
 				new RenderHydralisk<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelHydralisk(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class,
-				new RenderZergling<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f));
+				new RenderZergling(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingSC2.class,
 				new RenderZerglingSC2<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZerglingSC2(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingRaptor.class,
@@ -155,21 +154,21 @@ public class ClientProxy extends ServerProxy {
 				new RenderZerglingSwarmling<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZerglingSwarmling(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingBoost.class,
 				new RenderZerglingBoost<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZerglingBoost(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityQueen.class, new RenderQueen<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelQueen(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityQueen.class, new RenderQueen(Minecraft.getMinecraft().getRenderManager(), new ModelQueen(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityOverlord.class,
-				new RenderOverlord<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelOverlord(), 0.4f));
+				new RenderOverlord(Minecraft.getMinecraft().getRenderManager(), new ModelOverlord(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class, new RenderLarva<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarvaCocoon.class,
-				new RenderLarvaCocoon<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelLarvaCocoon(), 0.4f));
+				new RenderLarvaCocoon(Minecraft.getMinecraft().getRenderManager(), new ModelLarvaCocoon(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBroodling.class,
-				new RenderBroodling<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f));
+				new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityInfestedCivilian.class,
-				new RenderInfestedCivilian<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelInfestedCivilian(), 0.4f));
+				new RenderInfestedCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelInfestedCivilian(), 0.4f));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class,
-				new RenderCivilian<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f));
+				new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpiderMine.class,
-				new RenderSpiderMine<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f));
+				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f));
 	}
 
 	@Override

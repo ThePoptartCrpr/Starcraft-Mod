@@ -10,15 +10,12 @@ import scmc.entity.EntityLarvaCocoon;
 import scmc.lib.Reference;
 import scmc.model.ModelLarvaCocoon;
 
-public class RenderLarvaCocoon<T> extends RenderLiving<EntityLarvaCocoon> {
-
+public class RenderLarvaCocoon extends RenderLiving<EntityLarvaCocoon> {
 	private static final ResourceLocation LARVA_COCOON_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/larvacocoon.png");
-
 	protected ModelLarvaCocoon modelEntity;
 
 	public RenderLarvaCocoon(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelLarvaCocoon) mainModel);
 	}
 

@@ -14,7 +14,6 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.item.EntityBoat;
-import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -27,13 +26,9 @@ import scmc.entity.monster.EntityTerranMob;
 import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
-import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
 import scmc.lib.StarcraftConfig;
 
-/**
- * @author wundrweapon
- */
 public class EntityInfestedCivilian extends EntityZergMob implements IMob, Predicate<EntityLivingBase> {
 
 	public EntityInfestedCivilian(World world) {
@@ -48,26 +43,15 @@ public class EntityInfestedCivilian extends EntityZergMob implements IMob, Predi
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
 	}
 
+	//Don't ask me what the hell this is :/
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityProtossMob)
+		if(entity instanceof EntityProtossMob || entity instanceof EntityProtossPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
+				|| entity instanceof EntityPlayer) {
 			return true;
-		if(entity instanceof EntityProtossPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityZergMob)
+		} else {
 			return false;
-		if(entity instanceof EntityZergPassive)
-			return false;
-
-		return false;
+		}
 	}
 
 	@Override
@@ -129,6 +113,7 @@ public class EntityInfestedCivilian extends EntityZergMob implements IMob, Predi
 		return 160;
 	}
 
+	@Override
 	public void onLivingUpdate() {
 		if(this.worldObj.isDaytime() && !this.worldObj.isRemote) {
 			float f = this.getBrightness(1.0F);

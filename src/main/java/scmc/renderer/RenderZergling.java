@@ -10,15 +10,12 @@ import scmc.entity.EntityZergling;
 import scmc.lib.Reference;
 import scmc.model.ModelZergling;
 
-public class RenderZergling<T> extends RenderLiving<EntityZergling> {
-
+public class RenderZergling extends RenderLiving<EntityZergling> {
 	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/zergling.png");
-
 	protected ModelZergling modelEntity;
 
 	public RenderZergling(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelZergling) mainModel);
 	}
 

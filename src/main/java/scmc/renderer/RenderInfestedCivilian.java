@@ -10,15 +10,11 @@ import scmc.entity.EntityInfestedCivilian;
 import scmc.lib.Reference;
 import scmc.model.ModelInfestedCivilian;
 
-public class RenderInfestedCivilian<T> extends RenderLiving<EntityInfestedCivilian> {
-
+public class RenderInfestedCivilian extends RenderLiving<EntityInfestedCivilian> {
 	private static final ResourceLocation INFESTEDCIVILIAN_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/infestedcivilian.png");
-
 	protected ModelInfestedCivilian modelEntity;
-
 	public RenderInfestedCivilian(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelInfestedCivilian) mainModel);
 	}
 

@@ -8,15 +8,12 @@ import scmc.entity.EntityOverlord;
 import scmc.lib.Reference;
 import scmc.model.ModelOverlord;
 
-public class RenderOverlord<T> extends RenderLiving<EntityOverlord> {
-
+public class RenderOverlord extends RenderLiving<EntityOverlord> {
 	private static final ResourceLocation OVERLORD_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/overlord.png");
-
 	protected ModelOverlord modelEntity;
-
+	
 	public RenderOverlord(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelOverlord) mainModel);
 	}
 
@@ -33,5 +30,4 @@ public class RenderOverlord<T> extends RenderLiving<EntityOverlord> {
 	protected ResourceLocation getEntityTexture(EntityOverlord entity) {
 		return OVERLORD_TEXTURES;
 	}
-
 }

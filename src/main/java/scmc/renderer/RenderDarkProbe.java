@@ -8,15 +8,12 @@ import scmc.entity.EntityDarkProbe;
 import scmc.lib.Reference;
 import scmc.model.ModelDarkProbe;
 
-public class RenderDarkProbe<T> extends RenderLiving<EntityDarkProbe> {
-
+public class RenderDarkProbe extends RenderLiving<EntityDarkProbe> {
 	private static final ResourceLocation DARK_PROBE_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/darkprobe.png");
-
 	protected ModelDarkProbe modelEntity;
 
 	public RenderDarkProbe(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelDarkProbe) mainModel);
 	}
 
@@ -33,5 +30,4 @@ public class RenderDarkProbe<T> extends RenderLiving<EntityDarkProbe> {
 	protected ResourceLocation getEntityTexture(EntityDarkProbe entity) {
 		return DARK_PROBE_TEXTURES;
 	}
-
 }

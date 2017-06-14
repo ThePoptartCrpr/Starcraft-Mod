@@ -10,29 +10,23 @@ import net.minecraft.world.World;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 
+//This is ugly... do yourself a favor and don't look
 public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
-
-	public Block chanBlock;
-
-	public Block dimBlock;
-	public int metaDim;
-	public int metaPrimColor;
-	public int metaSecColor;
-	public Block stabBlock;
-
+	
 	@Override
 	public boolean generate(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		if(rand.nextInt(1) == 0) {
-			generate_r0(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+			generate_r0(metaPrimColor, metaSecColor, world, offsetX, offsetY, offsetZ, pos);
 		}
+		
 		return true;
 	}
 
-	public boolean generate_r0(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
-		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(25, 0, 0)) || !LocationIsValidSpawn(world, pos.add(25, 0, 22))
-				|| !LocationIsValidSpawn(world, pos.add(0, 0, 22))) {
+	public boolean generate_r0(int metaPrimColor, int metaSecColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(25, 0, 0)) || !LocationIsValidSpawn(world, pos.add(25, 0, 22)) || !LocationIsValidSpawn(world, pos.add(0, 0, 22))) {
 			return false;
 		}
+		
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -1038,16 +1032,15 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+11, y+2, z+15), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(x+12, y+2, z+15), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(x+13, y+2, z+15), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
-		spawn1(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn1(metaPrimColor, metaSecColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 	
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
+		return new Block[] {Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS};
 	}
 
 	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-
 		Block block = world.getBlockState(pos).getBlock();
 		Material m = block.getBlockState().getBaseState().getMaterial();
 		Block blockAbove = world.getBlockState(pos.up()).getBlock();
@@ -1065,10 +1058,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 				return true;
 			}
 		}
+		
 		return false;
 	}
 
-	public boolean spawn1(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn1(int metaPrimColor, int metaSecColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -2752,11 +2746,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+25, y+5, z+7), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+0, y+5, z+8), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+1, y+5, z+8), Blocks.AIR.getDefaultState(), 2);
-		spawn2(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn2(metaPrimColor, metaSecColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn2(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn2(int metaPrimColor, int metaSecColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -4360,11 +4354,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+13, y+8, z+0), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+14, y+8, z+0), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+15, y+8, z+0), Blocks.AIR.getDefaultState(), 2);
-		spawn3(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn3(metaPrimColor, metaSecColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn3(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn3(int metaPrimColor, int metaSecColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -5968,11 +5962,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+1, y+10, z+16), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+2, y+10, z+16), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+3, y+10, z+16), Blocks.AIR.getDefaultState(), 2);
-		spawn4(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn4(metaPrimColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn4(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn4(int metaPrimColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -7576,11 +7570,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+15, y+13, z+8), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+16, y+13, z+8), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+17, y+13, z+8), Blocks.AIR.getDefaultState(), 2);
-		spawn5(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn5(metaPrimColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn5(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn5(int metaPrimColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -9184,11 +9178,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+3, y+16, z+1), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+4, y+16, z+1), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+5, y+16, z+1), Blocks.AIR.getDefaultState(), 2);
-		spawn6(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn6(metaPrimColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn6(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn6(int metaPrimColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -10792,11 +10786,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+17, y+18, z+16), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+18, y+18, z+16), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+19, y+18, z+16), Blocks.AIR.getDefaultState(), 2);
-		spawn7(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn7(metaPrimColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn7(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn7(int metaPrimColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;

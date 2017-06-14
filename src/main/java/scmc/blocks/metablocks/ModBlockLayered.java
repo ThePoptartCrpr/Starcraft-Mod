@@ -25,13 +25,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import scmc.blocks.ModBlocks;
 
 public abstract class ModBlockLayered extends ModBlocks {
-
 	public static final PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
-	protected static final AxisAlignedBB[] LAYERS_AABB = new AxisAlignedBB[] { new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0D, 1.0D),
+	protected static final AxisAlignedBB[] LAYERS_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.625D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.75D, 1.0D),
-			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D) };
+			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D)};
 
 	public ModBlockLayered(Material material) {
 		super(material);
@@ -41,13 +40,11 @@ public abstract class ModBlockLayered extends ModBlocks {
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
 		IBlockState iblockstate = worldIn.getBlockState(pos.down());
 		Block block = iblockstate.getBlock();
-		return block != Blocks.ICE && block != Blocks.PACKED_ICE
-				? (iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()) ? true
-						: (block == this && iblockstate.getValue(LAYERS).intValue() >= 7 ? true : iblockstate.isOpaqueCube() && iblockstate.getMaterial().blocksMovement()))
-				: false;
+		return block != Blocks.ICE && block != Blocks.PACKED_ICE ? (iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()) ? true : (block == this && iblockstate.getValue(LAYERS).intValue() >= 7 ? true : iblockstate.isOpaqueCube() && iblockstate.getMaterial().blocksMovement())) : false; //FUCK RIGHT OFF, VALIEC
 	}
 
-	private boolean checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state) {
+	//Is this used anywhere other than this class' one instance?
+	private boolean checkAndDropBlock(World worldIn, BlockPos pos, @SuppressWarnings("unused") IBlockState state) {
 		if(!canPlaceBlockAt(worldIn, pos)) {
 			worldIn.setBlockToAir(pos);
 			return false;
@@ -131,6 +128,8 @@ public abstract class ModBlockLayered extends ModBlocks {
 		return (state.getValue(LAYERS)) + 1;
 	}
 
+	//TODO: find a way to not rely on deprecated functions
+	@SuppressWarnings("deprecation")
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
@@ -138,8 +137,7 @@ public abstract class ModBlockLayered extends ModBlocks {
 			return true;
 		} else {
 			IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
-			return iblockstate.getBlock() == this && iblockstate.getValue(LAYERS).intValue() >= blockState.getValue(LAYERS).intValue() ? true
-					: super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+			return iblockstate.getBlock() == this && iblockstate.getValue(LAYERS).intValue() >= blockState.getValue(LAYERS).intValue() ? true : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 		}
 	}
 }

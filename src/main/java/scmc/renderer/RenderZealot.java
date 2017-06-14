@@ -11,12 +11,13 @@ import scmc.entity.layers.LayerZealot;
 import scmc.lib.Reference;
 import scmc.model.ModelZealot;
 
+//Moar special cases
+@SuppressWarnings("unused")
 public class RenderZealot<T> extends RenderLiving<EntityZealot> {
-
 	private static final ResourceLocation ZEALOT_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/zealot.png");
-
 	protected ModelZealot modelEntity;
 
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	public RenderZealot(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 		modelEntity = ((ModelZealot) mainModel);
@@ -41,5 +42,4 @@ public class RenderZealot<T> extends RenderLiving<EntityZealot> {
 	protected void preRenderCallback(EntityZealot entitylivingbaseIn, float partialTickTime) {
 		GL11.glScalef(0.70F, 0.70F, 0.70F);
 	}
-
 }

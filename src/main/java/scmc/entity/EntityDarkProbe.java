@@ -1,7 +1,5 @@
 package scmc.entity;
 
-import java.util.Random;
-
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
@@ -19,17 +17,14 @@ import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityProtossPassive;
 import scmc.lib.StarcraftConfig;
 
+//TODO: Recreate movement
 public class EntityDarkProbe extends EntityProtossPassive {
-
-	// TODO: Recreate movement
-	Random random = new Random();
-
 	public EntityDarkProbe(World world) {
 		super(world);
 		setSize(0.5F, 1.3F);
 		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(1, new EntityAIAvoidEntity(this, EntityZergMob.class, 16.0F, 1.0D, 1.0D));
-		tasks.addTask(2, new EntityAIAvoidEntity(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
+		tasks.addTask(1, new EntityAIAvoidEntity<EntityZergMob>(this, EntityZergMob.class, 16.0F, 1.0D, 1.0D));
+		tasks.addTask(2, new EntityAIAvoidEntity<EntityTerranMob>(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
 		tasks.addTask(3, new EntityAIWander(this, 1));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8));
 		tasks.addTask(5, new EntityAILookIdle(this));

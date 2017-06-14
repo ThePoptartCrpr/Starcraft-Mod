@@ -51,10 +51,10 @@ public class BlockCharMagma extends ModBlocks {
 		return MapColor.NETHERRACK;
 	}
 
+	@Override
 	@SideOnly(Side.CLIENT)
-    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
-        return 15728880/2000;
+    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return 7864;
     }
 
 	@Override
@@ -62,6 +62,7 @@ public class BlockCharMagma extends ModBlocks {
 		if(!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase && !EnchantmentHelper.func_189869_j((EntityLivingBase) entityIn)) {
 			entityIn.attackEntityFrom(DamageSource.field_190095_e, 1.0F);
 		}
+		
 		super.onEntityWalk(worldIn, pos, entityIn);
 	}
 	

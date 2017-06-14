@@ -11,12 +11,12 @@ import scmc.entity.layers.LayerZerglingSC2;
 import scmc.lib.Reference;
 import scmc.model.ModelZerglingSC2;
 
+@SuppressWarnings("unused")
 public class RenderZerglingSC2<T> extends RenderLiving<EntityZerglingSC2> {
-
 	private static final ResourceLocation ZERGLINGSC2_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/zerglingsc2.png");
-
 	protected ModelZerglingSC2 modelEntity;
 
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	public RenderZerglingSC2(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 		modelEntity = ((ModelZerglingSC2) mainModel);

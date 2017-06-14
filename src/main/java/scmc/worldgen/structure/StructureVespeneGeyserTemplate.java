@@ -15,15 +15,14 @@ public class StructureVespeneGeyserTemplate extends SCWorldGenerator {
 	@Override
 	public boolean generate(IBlockState state, IBlockState state2, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		if(rand.nextInt(9) == 0) {
-			generate_r0(state, state2, world, rand, offsetX, offsetY, offsetZ, pos);
+			generate_r0(state, state2, world, offsetX, offsetY, offsetZ, pos);
 		}
 
 		return true;
 	}
 
-	public boolean generate_r0(IBlockState state, IBlockState state2, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
-		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(16, 0, 0)) || !LocationIsValidSpawn(world, pos.add(16, 0, 16))
-				|| !LocationIsValidSpawn(world, pos.add(0, 0, 16))) {
+	public boolean generate_r0(IBlockState state, IBlockState state2, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(16, 0, 0)) || !LocationIsValidSpawn(world, pos.add(16, 0, 16)) || !LocationIsValidSpawn(world, pos.add(0, 0, 16))) {
 			return false;
 		}
 		int x = offsetX;
@@ -1629,7 +1628,7 @@ public class StructureVespeneGeyserTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+7, y+27, z+12), state, 2);
 		world.setBlockState(pos.add(x+4, y+27, z+13), state, 2);
 		world.setBlockState(pos.add(x+5, y+27, z+13), state, 2);
-		spawn1(state, state2, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn1(state, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 	
@@ -1641,7 +1640,6 @@ public class StructureVespeneGeyserTemplate extends SCWorldGenerator {
 
 		Block block = world.getBlockState(pos).getBlock();
 		Material m = block.getBlockState().getBaseState().getMaterial();
-		Block blockAbove = world.getBlockState(pos.up()).getBlock();
 		Block blockBelow = world.getBlockState(pos.down()).getBlock();
 
 		for(Block i : GetValidSpawnBlocks()) {
@@ -1656,7 +1654,7 @@ public class StructureVespeneGeyserTemplate extends SCWorldGenerator {
 		return false;
 	}
 
-	public boolean spawn1(IBlockState state, IBlockState state2, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn1(IBlockState state, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -3260,11 +3258,11 @@ public class StructureVespeneGeyserTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+4, y+44, z+12), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+5, y+44, z+12), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+6, y+44, z+12), Blocks.AIR.getDefaultState(), 2);
-		spawn2(state, state2, world, rand, offsetX, offsetY, offsetZ, pos);
+		spawn2(state, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn2(IBlockState state, IBlockState state2, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn2(IBlockState state, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;

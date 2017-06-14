@@ -6,10 +6,18 @@ import net.minecraft.world.gen.layer.IntCache;
 import scmc.worldgen.biome.BiomesSC;
 
 public class GenLayerCharScars extends GenLayer {
-
-	public GenLayerCharScars(long p_i2128_1_, GenLayer p_i2128_3_) {
-		super(p_i2128_1_);
-		super.parent = p_i2128_3_;
+	public GenLayerCharScars(long seed, GenLayer parentLayer) {
+		super(seed);
+		super.parent = parentLayer;
+	}
+	
+	/**
+	 * What the hell is this
+	 * @param p_151630_1_ wot
+	 * @return wat
+	 */
+	private static int riverFilter(int p_151630_1_) {
+		return p_151630_1_ >= 2 ? 2 + (p_151630_1_ & 1) : p_151630_1_;
 	}
 
 	/**
@@ -43,9 +51,5 @@ public class GenLayerCharScars extends GenLayer {
 		}
 
 		return aint1;
-	}
-
-	private int riverFilter(int p_151630_1_) {
-		return p_151630_1_ >= 2 ? 2 + (p_151630_1_ & 1) : p_151630_1_;
 	}
 }

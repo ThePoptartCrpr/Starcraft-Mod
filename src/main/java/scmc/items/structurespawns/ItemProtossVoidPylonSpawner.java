@@ -1,7 +1,5 @@
 package scmc.items.structurespawns;
 
-import java.util.Random;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
@@ -25,8 +23,7 @@ public class ItemProtossVoidPylonSpawner extends ModItems {
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY,
 			float hitZ) {
 		StructureProtossPylonTemplate PROTOSS_PYLON = new StructureProtossPylonTemplate();
-		Random rand = new Random();
-		PROTOSS_PYLON.generate_r0(1, 2, worldIn, rand, 0, 3, 0, pos);
+		PROTOSS_PYLON.generate_r0(1, 2, worldIn, 3, pos);
 		worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), StarcraftSoundEvents.STRUC_PYLON_BIRTH, null, 0.7F, 1F, false);
 		return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
 	}

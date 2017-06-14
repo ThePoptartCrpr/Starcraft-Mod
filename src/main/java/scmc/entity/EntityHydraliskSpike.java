@@ -7,11 +7,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class EntityHydraliskSpike extends Entity {
-
-	public double damage;
-	private boolean inGround;
-	public Entity shootingEntity;
-
 	public EntityHydraliskSpike(World par1World) {
 		super(par1World);
 		setSize(0.05F, 0.05F);
@@ -19,8 +14,6 @@ public class EntityHydraliskSpike extends Entity {
 
 	public EntityHydraliskSpike(World world, Object source, Entity targetEntity, float velocity, double damage) {
 		super(world);
-		this.damage = damage;
-		inGround = false;
 		setSize(0.5F, 0.5F);
 		posX -= MathHelper.cos(rotationYaw / 180.0F * (float) Math.PI) * 0.16F;
 		posY -= 0.10000000149011612D;
@@ -35,7 +28,6 @@ public class EntityHydraliskSpike extends Entity {
 
 		if(source instanceof EntityLivingBase) {
 			EntityLivingBase living = (EntityLivingBase) source;
-			shootingEntity = living;
 
 			setLocationAndAngles(living.posX, living.posY + living.getEyeHeight(), living.posZ, living.rotationYaw, living.rotationPitch);
 			srcX = living.posX;
@@ -82,6 +74,7 @@ public class EntityHydraliskSpike extends Entity {
 		prevRotationPitch = rotationPitch = (float) (Math.atan2(posY, v2) * 180.0D / Math.PI);
 	}
 
+	//We don't use this, I suppose :P
 	@Override
 	protected void writeEntityToNBT(NBTTagCompound compound) {}
 }
