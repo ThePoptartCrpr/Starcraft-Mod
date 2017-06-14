@@ -1,5 +1,6 @@
 package scmc.blocks;
 
+import net.minecraft.block.BlockGravel;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import scmc.StarcraftCreativeTabs;
@@ -10,17 +11,12 @@ import scmc.lib.Reference;
  * Copyright 2017 the Starcraft Minecraft mod team
  * @author Hypeirochus
  */
-public class BlockCharGravel extends ModBlocks {
+public class BlockCharGravel extends BlockGravel {
 
-	// TODO: Fix all of this!
 	public BlockCharGravel() {
-		super(Material.GROUND);
+		super();
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getRegistryRL());
-		setSoundType(SoundType.SAND);
-		setHardness(0.5F);
-		setResistance(2.5F);
-		setHarvestLevel("shovel", 0);
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
 	}
 }

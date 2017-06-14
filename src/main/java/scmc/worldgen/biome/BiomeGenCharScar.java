@@ -11,7 +11,6 @@ import scmc.blocks.ModBlocks;
 
 public class BiomeGenCharScar extends BiomesSC {
 
-	// TODO: Figure out who the hell made this and what it is
 	public BiomeGenCharScar(BiomeProperties id) {
 		super(id);
 

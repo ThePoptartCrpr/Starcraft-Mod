@@ -115,6 +115,5 @@ public class ChunkProviderAiur implements IChunkGenerator {
 
 	@Override
 	public void recreateStructures(Chunk chunkIn, int x, int z) {
-		//TODO: what dis?
 	}
 }

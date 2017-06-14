@@ -69,6 +69,9 @@ public class StarcraftSoundEvents {
 	public static SoundEvent STRUC_CYBERNETICSCORE_BIRTH;
 	public static SoundEvent STRUC_GATEWAY_BIRTH;
 	public static SoundEvent STRUC_PYLON_BIRTH;
+	
+	public static SoundEvent FX_PSIBLADE_ATTACK;
+	public static SoundEvent FX_WARPBLADE_ATTACK;
 
 	private static SoundEvent registerSound(String soundName) {
 		final ResourceLocation soundID = new ResourceLocation(Reference.MODID, soundName);
@@ -138,6 +141,9 @@ public class StarcraftSoundEvents {
 		STRUC_GATEWAY_BIRTH = registerSound("struc.gateway.birth");		
 		STRUC_CYBERNETICSCORE_BIRTH = registerSound("struc.cyberneticscore.birth");
 		STRUC_PYLON_BIRTH = registerSound("struc.pylon.birth");
+		
+		FX_PSIBLADE_ATTACK = registerSound("fx.psiblade.attack");
+		FX_WARPBLADE_ATTACK = registerSound("fx.warpblade.attack");
 
 	}
 }

@@ -39,9 +39,9 @@ public class BlockNeosteelMetal extends ModBlocks implements IMetaBlockName {
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_NEOSTEEL.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_NEOSTEEL.getRegistryRL());
 		// TODO: Adjust these
-		setHardness(20); // Sets how hard the block is to break
-		setResistance(20); // Sets the blocks blast resistance to explosions
-		setDefaultState(blockState.getBaseState().withProperty(TYPE, NeosteelMetalType.BASE)); // Default state
+		setHardness(20);
+		setResistance(20);
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, NeosteelMetalType.BASE));
 	}
 
 	/**

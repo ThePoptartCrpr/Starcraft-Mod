@@ -17,7 +17,6 @@ import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityProtossPassive;
 import scmc.lib.StarcraftConfig;
 
-//TODO: Recreate movement
 public class EntityDarkProbe extends EntityProtossPassive {
 	public EntityDarkProbe(World world) {
 		super(world);

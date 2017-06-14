@@ -7,7 +7,7 @@ import scmc.worldgen.biome.BiomesSC;
 
 public class GenLayerShakurasBiomes extends GenLayer {
 
-	public Biome[] dimBiomes = { BiomesSC.biomeShakurasDesert };
+	public Biome[] dimBiomes = { BiomesSC.biomeShakurasDesert, BiomesSC.biomeShakurasCity };
 
 	public GenLayerShakurasBiomes(long par1) {
 		super(par1);

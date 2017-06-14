@@ -74,7 +74,6 @@ public class EntityBroodling extends EntityZergMob implements IMob, Predicate<En
 
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
-		//TODO: Does this need a drop??
 	}
 
 	@Override
@@ -97,9 +96,8 @@ public class EntityBroodling extends EntityZergMob implements IMob, Predicate<En
 		return StarcraftSoundEvents.ENTITY_BROODLING_HURT;
 	}
 
-	//TODO: Review this
 	@Override
 	public int getTalkInterval() {
-		return 100;
+		return 160;
 	}
 }

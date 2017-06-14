@@ -12,7 +12,6 @@ import scmc.items.weapons.ModWeapons;
 
 public class StarcraftCreativeTabs {
 
-	// TODO: fix (do we still have to fix this, or is it already?)
 	public static final CreativeTabs BUILDING = new CreativeTabs("StarcraftBuildingBlocks") {
 
 		@Override

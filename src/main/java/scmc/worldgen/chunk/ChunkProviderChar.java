@@ -24,7 +24,6 @@ public class ChunkProviderChar implements IChunkGenerator {
 
 	private Biome[] biomesForGeneration;
 	private MapGenBase caveGenerator = new CharGenCaves();
-	// TODO: This
 	private Random random;
 
 	private CharTerrainGenerator terraingen = new CharTerrainGenerator();

@@ -119,10 +119,6 @@ public class ModArmor {
 	public static Item zealotLeggingsT2;
 	public static Item zealotLeggingsT3;
 
-	// TODO: what does this do?
-	public static final Item[] ARMORS = { titaniumHelmet, titaniumChestplate, titaniumLeggings, titaniumBoots, copperHelmet, copperChestplate, copperLeggings, copperBoots,
-			steelHelmet, steelChestplate, steelLeggings, steelBoots, ghostHelmet, ghostChestplate, ghostLeggings, ghostBoots };
-
 	public static void init() {
 		titaniumHelmet = new ArmorTitaniumHelmet(TITANIUM_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
 		titaniumChestplate = new ArmorTitaniumChestplate(TITANIUM_ARMOR_MATERIAL, 0, EntityEquipmentSlot.CHEST);

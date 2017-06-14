@@ -10,9 +10,9 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import scmc.blocks.ModBlocks;
 
 // FIXME: Copy over one of the Char biomes
-public class BiomeGenDesertShakuras extends BiomesSC {
+public class BiomeGenShakurasDesert extends BiomesSC {
 
-	public BiomeGenDesertShakuras(BiomeProperties id) {
+	public BiomeGenShakurasDesert(BiomeProperties id) {
 		super(id);
 
 		setRegistryName("desert_shakuras");

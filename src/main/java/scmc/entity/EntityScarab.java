@@ -166,11 +166,6 @@ public class EntityScarab extends EntityProtossMob implements IMob, Predicate<En
 		return LootTableList.ENTITIES_CREEPER;
 	}
 
-	// FIXME: this
-	// public static void func_189762_b(DataFixer p_189762_0_) {
-	// EntityLiving.func_189752_a(p_189762_0_, "scarab");
-	// }
-
 	/**
 	 * The maximum height from where the entity is allowed to jump (used in
 	 * pathfinder)
@@ -349,13 +344,4 @@ public class EntityScarab extends EntityProtossMob implements IMob, Predicate<En
 		compound.setByte("ExplosionRadius", explosionRadius);
 		compound.setBoolean("ignited", hasIgnited());
 	}
-
-	// FIXME: this
-	// /**
-	// * Returns true if the newer Entity AI code should be run
-	// */
-	// public boolean isAIEnabled() {
-	// return droppedSkulls < 1 &&
-	// worldObj.getGameRules().getBoolean("doMobLoot");
-	// }
 }

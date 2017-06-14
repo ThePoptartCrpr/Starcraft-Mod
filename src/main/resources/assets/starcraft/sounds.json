@@ -406,5 +406,21 @@
         "name": "starcraft:/struc/cybercore/cyberneticscore-birth","stream":false
     }
     ]
+},
+"fx.psiblade.attack": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/fx/psiblade/psiblade-attack","stream":false
+    }
+    ]
+},
+"fx.warpblade.attack": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/fx/warpblade/warpblade-attack","stream":false
+    }
+    ]
 }
 }

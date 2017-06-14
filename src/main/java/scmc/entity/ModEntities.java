@@ -70,11 +70,11 @@ public class ModEntities {
 	}
 
 	public static void setEntityToSpawn() {
-		EntityRegistry.addSpawn(EntityZealot.class, 50, 1, 3, EnumCreatureType.MONSTER, BiomesSC.biomeShakurasDesert);
-		EntityRegistry.addSpawn(EntityProbe.class, 7, 1, 3, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasDesert);
-		EntityRegistry.addSpawn(EntityProtossReaver.class, 1, 1, 1, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasDesert);
-		EntityRegistry.addSpawn(EntityDarkTemplar.class, 35, 1, 2, EnumCreatureType.MONSTER, BiomesSC.biomeShakurasDesert);
-		EntityRegistry.addSpawn(EntityDarkProbe.class, 7, 1, 3, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasDesert);
+		EntityRegistry.addSpawn(EntityZealot.class, 50, 1, 3, EnumCreatureType.MONSTER, BiomesSC.biomeShakurasCity);
+		EntityRegistry.addSpawn(EntityProbe.class, 7, 1, 3, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasCity);
+		EntityRegistry.addSpawn(EntityProtossReaver.class, 1, 1, 1, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasCity);
+		EntityRegistry.addSpawn(EntityDarkTemplar.class, 35, 1, 2, EnumCreatureType.MONSTER, BiomesSC.biomeShakurasCity);
+		EntityRegistry.addSpawn(EntityDarkProbe.class, 7, 1, 3, EnumCreatureType.CREATURE, BiomesSC.biomeShakurasCity);
 
 		EntityRegistry.addSpawn(EntityBrutalisk.class, 1, 1, 1, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
 		EntityRegistry.addSpawn(EntityHydralisk.class, 9, 1, 3, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
