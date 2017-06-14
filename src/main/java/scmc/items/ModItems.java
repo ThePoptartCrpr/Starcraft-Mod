@@ -26,12 +26,15 @@ import scmc.items.metaitems.ItemProtossCoordinates;
 import scmc.items.metaitems.ItemPsiBladeFocuserUncharged;
 import scmc.items.metaitems.ItemVespene;
 import scmc.items.metaitems.ItemZergCarapace;
-import scmc.items.structurespawns.ProtossDarkPylonSpawner;
-import scmc.items.structurespawns.ProtossDarkWarpGateSpawner;
-import scmc.items.structurespawns.ProtossPylonSpawner;
-import scmc.items.structurespawns.ProtossVoidPylonSpawner;
-import scmc.items.structurespawns.ProtossVoidWarpGateSpawner;
-import scmc.items.structurespawns.ProtossWarpGateSpawner;
+import scmc.items.structurespawns.ItemProtossCyberneticsCoreSpawner;
+import scmc.items.structurespawns.ItemProtossDarkCyberneticsCoreSpawner;
+import scmc.items.structurespawns.ItemProtossDarkPylonSpawner;
+import scmc.items.structurespawns.ItemProtossDarkWarpGateSpawner;
+import scmc.items.structurespawns.ItemProtossPylonSpawner;
+import scmc.items.structurespawns.ItemProtossVoidCyberneticsCoreSpawner;
+import scmc.items.structurespawns.ItemProtossVoidPylonSpawner;
+import scmc.items.structurespawns.ItemProtossVoidWarpGateSpawner;
+import scmc.items.structurespawns.ItemProtossWarpGateSpawner;
 import scmc.items.tools.ModTools;
 import scmc.items.weapons.ModWeapons;
 import scmc.lib.Reference;
@@ -70,6 +73,9 @@ public class ModItems extends Item {
 	public static Item vespene;
 	public static Item zergCarapace;
 	
+	public static Item SPAWNER_PROTOSS_DARK_CYBERNETICSCORE;
+	public static Item SPAWNER_PROTOSS_VOID_CYBERNETICSCORE;
+	public static Item SPAWNER_PROTOSS_CYBERNETICSCORE;
 	public static Item SPAWNER_PROTOSS_DARK_PYLON;
 	public static Item SPAWNER_PROTOSS_VOID_PYLON;
 	public static Item SPAWNER_PROTOSS_PYLON;
@@ -99,12 +105,15 @@ public class ModItems extends Item {
 		MUTALISK_WING = new ItemMutaliskWing();
 		MUTALISK_TOOTH = new ItemMutaliskTooth();
 		
-		SPAWNER_PROTOSS_DARK_PYLON = new ProtossDarkPylonSpawner();
-		SPAWNER_PROTOSS_VOID_PYLON = new ProtossVoidPylonSpawner();
-		SPAWNER_PROTOSS_PYLON = new ProtossPylonSpawner();
-		SPAWNER_PROTOSS_DARK_WARPGATE = new ProtossDarkWarpGateSpawner();
-		SPAWNER_PROTOSS_VOID_WARPGATE = new ProtossVoidWarpGateSpawner();
-		SPAWNER_PROTOSS_WARPGATE = new ProtossWarpGateSpawner();
+		SPAWNER_PROTOSS_DARK_CYBERNETICSCORE = new ItemProtossDarkCyberneticsCoreSpawner();
+		SPAWNER_PROTOSS_VOID_CYBERNETICSCORE = new ItemProtossVoidCyberneticsCoreSpawner();
+		SPAWNER_PROTOSS_CYBERNETICSCORE = new ItemProtossCyberneticsCoreSpawner();
+		SPAWNER_PROTOSS_DARK_PYLON = new ItemProtossDarkPylonSpawner();
+		SPAWNER_PROTOSS_VOID_PYLON = new ItemProtossVoidPylonSpawner();
+		SPAWNER_PROTOSS_PYLON = new ItemProtossPylonSpawner();
+		SPAWNER_PROTOSS_DARK_WARPGATE = new ItemProtossDarkWarpGateSpawner();
+		SPAWNER_PROTOSS_VOID_WARPGATE = new ItemProtossVoidWarpGateSpawner();
+		SPAWNER_PROTOSS_WARPGATE = new ItemProtossWarpGateSpawner();
 
 		ModArmor.init();
 		ModWeapons.init();
@@ -143,6 +152,9 @@ public class ModItems extends Item {
 		registerItem(MUTALISK_WING);
 		registerItem(MUTALISK_TOOTH);
 		
+		registerItem(SPAWNER_PROTOSS_DARK_CYBERNETICSCORE);
+		registerItem(SPAWNER_PROTOSS_VOID_CYBERNETICSCORE);
+		registerItem(SPAWNER_PROTOSS_CYBERNETICSCORE);
 		registerItem(SPAWNER_PROTOSS_DARK_PYLON);
 		registerItem(SPAWNER_PROTOSS_VOID_PYLON);
 		registerItem(SPAWNER_PROTOSS_PYLON);
@@ -194,6 +206,9 @@ public class ModItems extends Item {
 		registerRender(HYDRALISK_NEEDLE);
 		registerRender(MUTALISK_TOOTH);
 		
+		registerRender(SPAWNER_PROTOSS_DARK_CYBERNETICSCORE);
+		registerRender(SPAWNER_PROTOSS_VOID_CYBERNETICSCORE);
+		registerRender(SPAWNER_PROTOSS_CYBERNETICSCORE);
 		registerRender(SPAWNER_PROTOSS_DARK_PYLON);
 		registerRender(SPAWNER_PROTOSS_VOID_PYLON);
 		registerRender(SPAWNER_PROTOSS_PYLON);

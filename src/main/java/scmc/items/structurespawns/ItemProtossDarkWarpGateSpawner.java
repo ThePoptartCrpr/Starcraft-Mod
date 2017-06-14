@@ -9,15 +9,16 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.StarcraftSoundEvents;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 import scmc.worldgen.structure.StructureProtossWarpGateTemplate;
 
-public class ProtossVoidWarpGateSpawner extends ModItems {
+public class ItemProtossDarkWarpGateSpawner extends ModItems {
 
-	public ProtossVoidWarpGateSpawner() {
-		setUnlocalizedName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_VOID_WARPGATE.getUnlocalizedName());
-		setRegistryName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_VOID_WARPGATE.getRegistryRL());
+	public ItemProtossDarkWarpGateSpawner() {
+		setUnlocalizedName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_DARK_WARPGATE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_DARK_WARPGATE.getRegistryRL());
 	}
 	
 	@Override
@@ -25,7 +26,8 @@ public class ProtossVoidWarpGateSpawner extends ModItems {
 			float hitZ) {
 		StructureProtossWarpGateTemplate PROTOSS_WARPGATE = new StructureProtossWarpGateTemplate();
 		Random rand = new Random();
-		PROTOSS_WARPGATE.generate(1, 2, worldIn, rand, 0, 0, 0, pos);
+		PROTOSS_WARPGATE.generate(1, 4, worldIn, rand, 0, 0, 0, pos);
+		worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), StarcraftSoundEvents.STRUC_GATEWAY_BIRTH, null, 0.7F, 1F, false);
 		return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
 	}
 }

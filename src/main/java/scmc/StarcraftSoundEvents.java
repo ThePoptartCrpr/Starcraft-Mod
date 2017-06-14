@@ -65,6 +65,10 @@ public class StarcraftSoundEvents {
 	public static SoundEvent ENTITY_ZERGLING_LIVE2;
 	public static SoundEvent ENTITY_ZERGLING_LIVE3;
 	public static SoundEvent ENTITY_ZERGLING_LIVE4;
+	
+	public static SoundEvent STRUC_CYBERNETICSCORE_BIRTH;
+	public static SoundEvent STRUC_GATEWAY_BIRTH;
+	public static SoundEvent STRUC_PYLON_BIRTH;
 
 	private static SoundEvent registerSound(String soundName) {
 		final ResourceLocation soundID = new ResourceLocation(Reference.MODID, soundName);
@@ -130,5 +134,10 @@ public class StarcraftSoundEvents {
 		ENTITY_BROODLING_LIVE1 = registerSound("mob.broodling.live1");
 		ENTITY_BROODLING_HURT = registerSound("mob.broodling.hurt");
 		ENTITY_BROODLING_DEATH = registerSound("mob.broodling.death");
+		
+		STRUC_GATEWAY_BIRTH = registerSound("struc.gateway.birth");		
+		STRUC_CYBERNETICSCORE_BIRTH = registerSound("struc.cyberneticscore.birth");
+		STRUC_PYLON_BIRTH = registerSound("struc.pylon.birth");
+
 	}
 }

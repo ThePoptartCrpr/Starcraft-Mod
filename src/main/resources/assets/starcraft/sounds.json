@@ -382,5 +382,29 @@
         "name": "starcraft:/mob/broodling/broodling-death","stream":false
     }
     ]
+},
+"struc.pylon.birth": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/struc/pylon/pylon-birth","stream":false
+    }
+    ]
+},
+"struc.gateway.birth": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/struc/gateway/gateway-birth","stream":false
+    }
+    ]
+},
+"struc.cyberneticscore.birth": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/struc/cybercore/cyberneticscore-birth","stream":false
+    }
+    ]
 }
 }

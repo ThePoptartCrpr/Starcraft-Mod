@@ -62,7 +62,7 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 				|| !LocationIsValidSpawn(world, pos.add(0, 0, 14))) {
 			return false;
 		}
-
+		
 		world.setBlockState(pos.add(0, 1 + offsetY, 0), Blocks.AIR.getDefaultState());
 		world.setBlockState(pos.add(1, 1 + offsetY, 0), Blocks.AIR.getDefaultState());
 		world.setBlockState(pos.add(2, 1 + offsetY, 0), Blocks.AIR.getDefaultState());

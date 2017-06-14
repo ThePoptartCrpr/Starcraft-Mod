@@ -4,31 +4,30 @@ import java.util.Random;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
+import scmc.StarcraftSoundEvents;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
-import scmc.worldgen.structure.SCWorldGenerator;
-import scmc.worldgen.structure.StructureProtossPylonTemplate;
+import scmc.worldgen.structure.StructureProtossWarpGateTemplate;
 
-public class ProtossPylonSpawner extends ModItems {
+public class ItemProtossVoidWarpGateSpawner extends ModItems {
 
-	public ProtossPylonSpawner() {
-		setUnlocalizedName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_PYLON.getUnlocalizedName());
-		setRegistryName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_PYLON.getRegistryRL());
+	public ItemProtossVoidWarpGateSpawner() {
+		setUnlocalizedName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_VOID_WARPGATE.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_VOID_WARPGATE.getRegistryRL());
 	}
 	
 	@Override
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY,
 			float hitZ) {
-		StructureProtossPylonTemplate PROTOSS_PYLON = new StructureProtossPylonTemplate();
+		StructureProtossWarpGateTemplate PROTOSS_WARPGATE = new StructureProtossWarpGateTemplate();
 		Random rand = new Random();
-		PROTOSS_PYLON.generate_r0(0, 0, worldIn, rand, 0, 3, 0, pos);
+		PROTOSS_WARPGATE.generate(1, 2, worldIn, rand, 0, 0, 0, pos);
+		worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), StarcraftSoundEvents.STRUC_GATEWAY_BIRTH, null, 0.7F, 1F, false);
 		return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
 	}
 }
