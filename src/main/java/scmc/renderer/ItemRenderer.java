@@ -157,8 +157,10 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel, IBakedMode
 
 	public abstract void renderInWorld(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType);
 
+	@SuppressWarnings("unused")
 	public void renderPost(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {}
 
+	@SuppressWarnings("unused")
 	public void renderPre(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {}
 
 	public abstract void renderThirdPersonLeft(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType);

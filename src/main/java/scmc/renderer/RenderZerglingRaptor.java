@@ -11,12 +11,12 @@ import scmc.entity.layers.LayerZerglingRaptor;
 import scmc.lib.Reference;
 import scmc.model.ModelZerglingRaptor;
 
+@SuppressWarnings("unused")
 public class RenderZerglingRaptor<T> extends RenderLiving<EntityZerglingRaptor> {
-
 	private static final ResourceLocation ZERGLINGRAPTOR_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/zerglingraptor.png");
-
 	protected ModelZerglingRaptor modelEntity;
 
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	public RenderZerglingRaptor(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 		modelEntity = ((ModelZerglingRaptor) mainModel);

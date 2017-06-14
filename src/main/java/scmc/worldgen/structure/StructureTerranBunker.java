@@ -17,15 +17,14 @@ public class StructureTerranBunker extends SCWorldGenerator {
 	@Override
 	public boolean generate(World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		if(rand.nextInt(1) == 0) {
-			generate_r0(world, rand, pos);
+			generate_r0(world, pos);
 		}
 
 		return true;
 	}
 
-	public boolean generate_r0(World world, Random rand, BlockPos pos) {
-		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(13, 0, 0)) || !LocationIsValidSpawn(world, pos.add(13, 0, 13))
-				|| !LocationIsValidSpawn(world, pos.add(0, 0, 13))) {
+	public boolean generate_r0(World world, BlockPos pos) {
+		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(13, 0, 0)) || !LocationIsValidSpawn(world, pos.add(13, 0, 13)) || !LocationIsValidSpawn(world, pos.add(0, 0, 13))) {
 			return false;
 		}
 

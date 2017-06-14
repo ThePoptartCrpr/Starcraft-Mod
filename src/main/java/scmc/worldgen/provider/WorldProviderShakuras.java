@@ -49,9 +49,9 @@ public class WorldProviderShakuras extends WorldProvider {
 		return StarcraftConfig.dimShakuras;
 	}
 
-	public float getSunBrightnessFactor(float par1)
-    {
-        return 0.0F;
+	@Override
+	public float getSunBrightnessFactor(float par1) {
+        return 0;
     }
 
 	/**
@@ -66,8 +66,8 @@ public class WorldProviderShakuras extends WorldProvider {
 		return null;
 	}
 	
-	public boolean isDaytime()
-    {
+	@Override
+	public boolean isDaytime() {
         return false;
     }
 	

@@ -42,12 +42,11 @@ import scmc.lib.Library;
 import scmc.lib.StarcraftConfig;
 
 public class EntityLarva extends EntityZergPassive {
-
 	private int fire;
 	private int nextStepDistance;
 	private Random random = new Random();
 
-	// redo entity movement
+	//Redo entity movement
 	public EntityLarva(World world) {
 		super(world);
 		setSize(1.2F, .4F);
@@ -115,9 +114,9 @@ public class EntityLarva extends EntityZergPassive {
 	@Override
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(4, new EntityAIAvoidEntity(this, EntityProtossMob.class, 16.0F, 1.0D, 1.0D));
-		tasks.addTask(4, new EntityAIAvoidEntity(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
-		tasks.addTask(4, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 1.0D, 1.0D));
+		tasks.addTask(4, new EntityAIAvoidEntity<EntityProtossMob>(this, EntityProtossMob.class, 16.0F, 1.0D, 1.0D));
+		tasks.addTask(4, new EntityAIAvoidEntity<EntityTerranMob>(this, EntityTerranMob.class, 16.0F, 1.0D, 1.0D));
+		tasks.addTask(4, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 16.0F, 1.0D, 1.0D));
 		tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1));
 		tasks.addTask(7, new EntityAIWander(this, 1));
 		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8));

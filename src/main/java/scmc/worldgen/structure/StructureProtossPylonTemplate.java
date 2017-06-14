@@ -15,28 +15,17 @@ import scmc.blocks.metablocks.ModMetaBlocks;
 
 public class StructureProtossPylonTemplate extends SCWorldGenerator {
 
-	public Block chanBlock;
-
-	public Block dimBlock;
-	public int metaDim;
-	public int metaPrimColor;
-	public int metaSecColor;
-	public Block stabBlock;
-
 	@Override
 	public boolean generate(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
-		this.metaPrimColor = metaPrimColor;
-		this.metaSecColor = metaSecColor;
-		
 		if(rand.nextInt(1) == 0) {
-			generate_r0(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+			generate_r0(metaPrimColor, metaSecColor, world, offsetY, pos);
 		}
+		
 		return true;
 	}
 
-	public boolean generate_r0(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
-		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(7, 0, 0)) || !LocationIsValidSpawn(world, pos.add(7, 0, 8))
-				|| !LocationIsValidSpawn(world, pos.add(0, 0, 8))) {
+	public boolean generate_r0(int metaPrimColor, int metaSecColor, World world, int offsetY, BlockPos pos) {
+		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(7, 0, 0)) || !LocationIsValidSpawn(world, pos.add(7, 0, 8)) || !LocationIsValidSpawn(world, pos.add(0, 0, 8))) {
 			return false;
 		}
 
@@ -765,11 +754,10 @@ public class StructureProtossPylonTemplate extends SCWorldGenerator {
 	}
 
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
+		return new Block[] {Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS};
 	}
 
 	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-
 		Block block = world.getBlockState(pos).getBlock();
 		Material m = block.getBlockState().getBaseState().getMaterial();
 		Block blockAbove = world.getBlockState(pos.up()).getBlock();
@@ -787,6 +775,7 @@ public class StructureProtossPylonTemplate extends SCWorldGenerator {
 				return true;
 			}
 		}
+		
 		return false;
 	}
 }

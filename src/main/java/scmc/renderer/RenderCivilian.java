@@ -8,15 +8,12 @@ import scmc.entity.EntityCivilian;
 import scmc.lib.Reference;
 import scmc.model.ModelCivilian;
 
-public class RenderCivilian<T> extends RenderLiving<EntityCivilian> {
-
+public class RenderCivilian extends RenderLiving<EntityCivilian> {
 	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/civilian.png");
-
 	protected ModelCivilian modelEntity;
 
 	public RenderCivilian(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelCivilian) mainModel);
 	}
 
@@ -33,5 +30,4 @@ public class RenderCivilian<T> extends RenderLiving<EntityCivilian> {
 	protected ResourceLocation getEntityTexture(EntityCivilian entity) {
 		return CIVILIAN_TEXTURES;
 	}
-
 }

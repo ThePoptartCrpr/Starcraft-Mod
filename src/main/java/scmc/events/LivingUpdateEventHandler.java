@@ -16,12 +16,10 @@ import scmc.lib.StarcraftConfig;
 @EventBusSubscriber
 public class LivingUpdateEventHandler {
 
-	private static EntityPlayer player;
-
 	@SubscribeEvent
 	public static void onLivingUpdate(LivingUpdateEvent event) {
 		if(event.getEntity() instanceof EntityPlayer) {
-			player = (EntityPlayer) event.getEntity();
+			EntityPlayer player = (EntityPlayer) event.getEntity();
 
 			try {
 				if(player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() instanceof ArmorGhostHelmet
@@ -32,7 +30,7 @@ public class LivingUpdateEventHandler {
 				} else {
 					player.setInvisible(false);
 				}
-			} catch(NullPointerException e) {
+			} catch(@SuppressWarnings("unused") NullPointerException e) {
 				player.setInvisible(false);
 			}
 		} else if(event.getEntity() instanceof EntityDarkTemplar && !StarcraftConfig.dTempVis) {

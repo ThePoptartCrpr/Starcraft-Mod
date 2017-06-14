@@ -11,12 +11,13 @@ import scmc.entity.layers.LayerHydralisk;
 import scmc.lib.Reference;
 import scmc.model.ModelHydralisk;
 
+//Same reason for special case
+@SuppressWarnings("unused")
 public class RenderHydralisk<T> extends RenderLiving<EntityHydralisk> {
-
 	private static final ResourceLocation ZERGLING_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/hydralisk.png");
-
 	protected ModelHydralisk modelEntity;
 
+	@SuppressWarnings({"rawtypes", "unchecked"}) //Laziness
 	public RenderHydralisk(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 		modelEntity = ((ModelHydralisk) mainModel);

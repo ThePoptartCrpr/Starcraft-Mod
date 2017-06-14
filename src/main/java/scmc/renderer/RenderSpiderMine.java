@@ -8,15 +8,12 @@ import scmc.entity.EntitySpiderMine;
 import scmc.lib.Reference;
 import scmc.model.ModelSpiderMine;
 
-public class RenderSpiderMine<T> extends RenderLiving<EntitySpiderMine> {
-
+public class RenderSpiderMine extends RenderLiving<EntitySpiderMine> {
 	private static final ResourceLocation CIVILIAN_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/models/spidermine.png");
-
 	protected ModelSpiderMine modelEntity;
 
 	public RenderSpiderMine(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelSpiderMine) mainModel);
 	}
 
@@ -33,5 +30,4 @@ public class RenderSpiderMine<T> extends RenderLiving<EntitySpiderMine> {
 	protected ResourceLocation getEntityTexture(EntitySpiderMine entity) {
 		return CIVILIAN_TEXTURES;
 	}
-
 }

@@ -8,15 +8,12 @@ import scmc.entity.EntityProbe;
 import scmc.lib.Reference;
 import scmc.model.ModelProbe;
 
-public class RenderProbe<T> extends RenderLiving<EntityProbe> {
-
+public class RenderProbe extends RenderLiving<EntityProbe> {
 	private static final ResourceLocation PROBE_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/probe.png");
-
 	protected ModelProbe modelEntity;
 
 	public RenderProbe(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelProbe) mainModel);
 	}
 
@@ -33,5 +30,4 @@ public class RenderProbe<T> extends RenderLiving<EntityProbe> {
 	protected ResourceLocation getEntityTexture(EntityProbe entity) {
 		return PROBE_TEXTURES;
 	}
-
 }

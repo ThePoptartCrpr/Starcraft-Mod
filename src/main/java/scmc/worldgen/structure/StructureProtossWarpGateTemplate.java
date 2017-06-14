@@ -11,14 +11,12 @@ import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 
 public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
-
-	public Block chanBlock;
-
-	public Block dimBlock;
-	public int metaDim;
-	public int metaPrimColor;
-	public int metaSecColor;
-	public Block stabBlock;
+	private Block chanBlock;
+	private Block dimBlock;
+	private int metaDim;
+	private int metaPrimColor;
+	private int metaSecColor;
+	private Block stabBlock;
 
 	@Override
 	public boolean generate(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
@@ -50,14 +48,14 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 			chanBlock = ModBlocks.PROTOSS_VOID_ENERGY_CHANNEL;
 		}
 		if(rand.nextInt(1) == 0) {
-			generate_r0(metaPrimColor, metaSecColor, world, rand, offsetX, offsetY, offsetZ, pos);
+			generate_r0(metaPrimColor, metaSecColor, world, offsetY, pos);
 		}
 
 		return true;
 
 	}
 
-	public boolean generate_r0(int metaPrimColor, int metaSecColor, World world, Random rand, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean generate_r0(int metaPrimColor, int metaSecColor, World world, int offsetY, BlockPos pos) {
 		if(!LocationIsValidSpawn(world, pos) || !LocationIsValidSpawn(world, pos.add(14, 0, 0)) || !LocationIsValidSpawn(world, pos.add(14, 0, 14))
 				|| !LocationIsValidSpawn(world, pos.add(0, 0, 14))) {
 			return false;
@@ -1339,12 +1337,12 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(13, 6 + offsetY, 9), Blocks.AIR.getDefaultState());
 		world.setBlockState(pos.add(14, 6 + offsetY, 9), Blocks.AIR.getDefaultState());
 
-		generate_r02(world, rand, offsetX, offsetY, offsetZ, pos);
+		generate_r02(world, offsetY, pos);
 		return true;
 
 	}
 
-	public boolean generate_r02(World world, Random rand, int offsetX, int offsetY, int OffsetZ, BlockPos pos) {
+	public boolean generate_r02(World world, int offsetY, BlockPos pos) {
 
 		world.setBlockState(pos.add(0, 6 + offsetY, 10), Blocks.AIR.getDefaultState());
 		world.setBlockState(pos.add(1, 6 + offsetY, 10), Blocks.AIR.getDefaultState());
@@ -2226,12 +2224,11 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 	}
 
 	protected Block[] getValidSpawnBlocks() {
-		return new Block[] { Blocks.GRASS, Blocks.DIRT, Blocks.STONE, ModBlocks.ASH_CHAR, ModBlocks.STONE_CHAR, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS };
+		return new Block[] {Blocks.GRASS, Blocks.DIRT, Blocks.STONE, ModBlocks.ASH_CHAR, ModBlocks.STONE_CHAR, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS};
 	}
 
-	// TODO: Fix the portal on this
+	//TODO: Fix the portal on this
 	public boolean LocationIsValidSpawn(World world, BlockPos pos) {
-
 		Block checkBlock = world.getBlockState(pos).getBlock();
 		Material m = checkBlock.getBlockState().getBaseState().getMaterial();
 		Block blockAbove = world.getBlockState(pos.up()).getBlock();

@@ -11,12 +11,13 @@ import scmc.entity.layers.LayerZerglingBoost;
 import scmc.lib.Reference;
 import scmc.model.ModelZerglingBoost;
 
+//You know the drill; no more of these comments
+@SuppressWarnings("unused")
 public class RenderZerglingBoost<T> extends RenderLiving<EntityZerglingBoost> {
-
 	private static final ResourceLocation ZERGLINGBOOST_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/zerglingboost.png");
-
 	protected ModelZerglingBoost modelEntity;
 
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	public RenderZerglingBoost(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 		modelEntity = ((ModelZerglingBoost) mainModel);

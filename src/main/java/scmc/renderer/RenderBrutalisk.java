@@ -10,15 +10,12 @@ import scmc.entity.EntityBrutalisk;
 import scmc.lib.Reference;
 import scmc.model.ModelBrutalisk;
 
-public class RenderBrutalisk<T> extends RenderLiving<EntityBrutalisk> {
-
+public class RenderBrutalisk extends RenderLiving<EntityBrutalisk> {
 	private static final ResourceLocation BRUTALISK_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/brutalisk.png");
-
 	protected ModelBrutalisk modelEntity;
 
 	public RenderBrutalisk(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelBrutalisk) mainModel);
 	}
 
@@ -40,5 +37,4 @@ public class RenderBrutalisk<T> extends RenderLiving<EntityBrutalisk> {
 	protected void preRenderCallback(EntityBrutalisk entitylivingbaseIn, float partialTickTime) {
 		GL11.glScalef(3.0F, 3.0F, 3.0F);
 	}
-
 }

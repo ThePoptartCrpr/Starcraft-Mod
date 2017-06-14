@@ -10,15 +10,12 @@ import scmc.entity.EntityScarab;
 import scmc.lib.Reference;
 import scmc.model.ModelScarab;
 
-public class RenderScarab<T> extends RenderLiving<EntityScarab> {
-
+public class RenderScarab extends RenderLiving<EntityScarab> {
 	private static final ResourceLocation SCARAB_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/scarab.png");
-
 	protected ModelScarab modelEntity;
 
 	public RenderScarab(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelScarab) mainModel);
 	}
 
@@ -40,5 +37,4 @@ public class RenderScarab<T> extends RenderLiving<EntityScarab> {
 	protected void preRenderCallback(EntityScarab entitylivingbaseIn, float partialTickTime) {
 		GL11.glTranslatef(0.0F, 0.25F, 0.0F);
 	}
-
 }

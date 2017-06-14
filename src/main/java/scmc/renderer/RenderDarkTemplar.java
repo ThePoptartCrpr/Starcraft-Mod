@@ -11,12 +11,13 @@ import scmc.entity.layers.LayerDarkTemplar;
 import scmc.lib.Reference;
 import scmc.model.ModelDarkTemplar;
 
+//Special case for the generic type because I don't want to dig through LayerDarkTemplar :/
+@SuppressWarnings("unused")
 public class RenderDarkTemplar<T> extends RenderLiving<EntityDarkTemplar> {
-
 	private static final ResourceLocation DARK_TEMPLAR_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/darktemplar.png");
-
 	protected ModelDarkTemplar modelEntity;
 
+	@SuppressWarnings({"rawtypes", "unchecked"}) //Laziness
 	public RenderDarkTemplar(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 		modelEntity = ((ModelDarkTemplar) mainModel);

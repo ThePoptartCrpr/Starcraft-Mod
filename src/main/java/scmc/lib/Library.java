@@ -22,7 +22,7 @@ public class Library {
 	/**
 	 * Makes a cube out of {@code blockState} anchored at the bottom-middle.
 	 * NOTE: this ignores the anchor. Also, make sure the side length is an odd
-	 * number, else you'll break something
+	 * natural number, else you'll break something
 	 * @param world the world
 	 * @param blockState the blockState to make a cube of (use
 	 * {@link Block#getDefaultState()} if unsure)
@@ -83,7 +83,7 @@ public class Library {
 		int counter = domeHeight;
 		int increment = 0;
 		int ringLength = domeTopLength - 1;
-		int offset = (ringLength - 3) * (-1);
+//		int offset = -(ringLength - 3);
 
 		while(counter != 0) {
 			for(int x = 0; x < domeTopLength; x++) {
@@ -126,7 +126,8 @@ public class Library {
 	}
 
 	/**
-	 * Searches for Pylons... I think TODO: ensure that this works
+	 * Searches for Pylons... I think<br>
+	 * TODO: ensure that this works
 	 * @param world for world
 	 * @param pos
 	 * @param sideLength the length of the cube's sides. Must be an odd number.

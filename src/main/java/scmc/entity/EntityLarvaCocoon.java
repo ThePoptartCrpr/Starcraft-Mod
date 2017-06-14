@@ -25,7 +25,6 @@ import scmc.lib.Library;
 import scmc.lib.StarcraftConfig;
 
 public class EntityLarvaCocoon extends EntityZergPassive {
-
 	public EntityLarvaCocoon(World world) {
 		super(world);
 		setSize(1.0F, 1.1F);
@@ -82,10 +81,6 @@ public class EntityLarvaCocoon extends EntityZergPassive {
 			resetPositionToBB();
 		} else {
 			worldObj.theProfiler.startSection("move");
-			double d0 = posX;
-			double d1 = posY;
-			double d2 = posZ;
-
 			if(isInWeb) {
 				isInWeb = false;
 				x *= 0.25D;

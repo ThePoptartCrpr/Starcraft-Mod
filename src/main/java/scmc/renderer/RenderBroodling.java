@@ -8,15 +8,12 @@ import scmc.entity.EntityBroodling;
 import scmc.lib.Reference;
 import scmc.model.ModelBroodling;
 
-public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
-
+public class RenderBroodling extends RenderLiving<EntityBroodling> {
 	private static final ResourceLocation BROODLING_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/broodling.png");
-
 	protected ModelBroodling modelEntity;
 
 	public RenderBroodling(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
-
 		modelEntity = ((ModelBroodling) mainModel);
 	}
 
@@ -33,5 +30,4 @@ public class RenderBroodling<T> extends RenderLiving<EntityBroodling> {
 	protected ResourceLocation getEntityTexture(EntityBroodling entity) {
 		return BROODLING_TEXTURES;
 	}
-
 }

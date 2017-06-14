@@ -9,12 +9,13 @@ import scmc.entity.layers.LayerLarva;
 import scmc.lib.Reference;
 import scmc.model.ModelLarva;
 
+//And again
+@SuppressWarnings("unused")
 public class RenderLarva<T> extends RenderLiving<EntityLarva> {
-
 	private static final ResourceLocation LARVA_TEXTURES = new ResourceLocation(Reference.RL_BASE + "textures/entity/larva.png");
-
 	protected ModelLarva modelEntity;
-
+	
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	public RenderLarva(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn) {
 		super(renderManagerIn, modelBaseIn, shadowSizeIn);
 		modelEntity = ((ModelLarva) mainModel);
@@ -34,5 +35,4 @@ public class RenderLarva<T> extends RenderLiving<EntityLarva> {
 	protected ResourceLocation getEntityTexture(EntityLarva entity) {
 		return LARVA_TEXTURES;
 	}
-
 }

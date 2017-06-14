@@ -11,29 +11,24 @@ import scmc.lib.Reference;
 import scmc.renderer.RenderHydralisk;
 
 @SideOnly(Side.CLIENT)
-public class LayerHydralisk<T extends EntityHydralisk> implements LayerRenderer<T>
-{
+public class LayerHydralisk<T extends EntityHydralisk> implements LayerRenderer<T> {
     private static final ResourceLocation HYDRALISK_LAYER = new ResourceLocation(Reference.RL_BASE + "textures/entity/hydralisk_layer.png");
     private final RenderHydralisk<T> hydraliskRenderer;
 
-    public LayerHydralisk(RenderHydralisk<T> hydraliskRendererIn)
-    {
-        this.hydraliskRenderer = hydraliskRendererIn;
+    public LayerHydralisk(RenderHydralisk<T> hydraliskRendererIn) {
+        hydraliskRenderer = hydraliskRendererIn;
     }
 
-    public void doRenderLayer(EntityHydralisk entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
-    {
-        this.hydraliskRenderer.bindTexture(HYDRALISK_LAYER);
+    @Override
+    public void doRenderLayer(EntityHydralisk entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        hydraliskRenderer.bindTexture(HYDRALISK_LAYER);
         GlStateManager.enableBlend();
         GlStateManager.enableAlpha();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
 
-        if (entitylivingbaseIn.isInvisible())
-        {
+        if(entitylivingbaseIn.isInvisible()){
             GlStateManager.depthMask(false);
-        }
-        else
-        {
+        } else {
             GlStateManager.depthMask(true);
         }
 
@@ -42,19 +37,18 @@ public class LayerHydralisk<T extends EntityHydralisk> implements LayerRenderer<
         int k = i / 65536;
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        this.hydraliskRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+        hydraliskRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
         i = entitylivingbaseIn.getBrightnessForRender(partialTicks);
         j = i % 65536;
         k = i / 65536;
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
-        this.hydraliskRenderer.setLightmap(entitylivingbaseIn, partialTicks);
+        hydraliskRenderer.setLightmap(entitylivingbaseIn, partialTicks);
         GlStateManager.disableBlend();
         GlStateManager.enableAlpha();
     }
 
     @Override
-    public boolean shouldCombineTextures()
-    {
+    public boolean shouldCombineTextures() {
         return false;
     }
 }
