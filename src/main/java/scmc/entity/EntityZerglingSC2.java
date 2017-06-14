@@ -38,7 +38,6 @@ public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<
 		super(world);
 		setSize(1.75F, 1.55F);
 		experienceValue = 23;
-		/*
 		tasks.addTask(0, new EntityAISwimming(this));
 		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
 		tasks.addTask(2, new EntityAIWander(this, 1.0D));
@@ -46,7 +45,6 @@ public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<
 		tasks.addTask(4, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
-		*/
 	}
 
 	@Override
