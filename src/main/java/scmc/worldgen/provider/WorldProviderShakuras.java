@@ -46,7 +46,7 @@ public class WorldProviderShakuras extends WorldProvider {
 	 */
 	@Override
 	public int getRespawnDimension(net.minecraft.entity.player.EntityPlayerMP player) {
-		return StarcraftConfig.dimShakuras;
+		return StarcraftConfig.INT_DIMENSION_SHAKURAS;
 	}
 
 	@Override

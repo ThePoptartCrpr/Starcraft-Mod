@@ -24,7 +24,7 @@ import scmc.lib.StarcraftConfig;
 
 public class DimPortalShakuras extends ModBlocks {
 
-	private int dim = StarcraftConfig.dimShakuras;
+	private int dim = StarcraftConfig.INT_DIMENSION_SHAKURAS;
 
 	public DimPortalShakuras() {
 		super(Material.ROCK);

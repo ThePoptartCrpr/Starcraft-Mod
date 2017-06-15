@@ -33,7 +33,7 @@ public class LivingUpdateEventHandler {
 			} catch(@SuppressWarnings("unused") NullPointerException e) {
 				player.setInvisible(false);
 			}
-		} else if(event.getEntity() instanceof EntityDarkTemplar && !StarcraftConfig.dTempVis) {
+		} else if(event.getEntity() instanceof EntityDarkTemplar && !StarcraftConfig.BOOL_IS_DARK_TEMPLAR_VISIBLE) {
 			event.getEntity().setInvisible(true);
 		}
 	}

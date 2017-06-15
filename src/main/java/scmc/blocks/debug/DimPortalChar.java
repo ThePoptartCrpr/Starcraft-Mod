@@ -24,7 +24,7 @@ import scmc.lib.StarcraftConfig;
 
 public class DimPortalChar extends ModBlocks {
 
-	private int dim = StarcraftConfig.dimChar;
+	private int dim = StarcraftConfig.INT_DIMENSION_CHAR;
 
 	public DimPortalChar() {
 		super(Material.ROCK);

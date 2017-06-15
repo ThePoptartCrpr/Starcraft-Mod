@@ -6,118 +6,88 @@ import net.minecraftforge.common.config.Configuration;
 
 public class StarcraftConfig {
 
-	public static double broodlingDmg = 2.0D;
-	public static double broodlingHP = 20.0D;
-	public static double brutaliskDmg = 50.0D;
-	public static double brutaliskHP = 1000.0D;
-	public static double civHP = 27.0D;
-	public static boolean creepCanSpread;
-	public static int creepSpreadBaseVal;
-	public static boolean creepSpreadScalesWithDif;
-	public static int dimChar;
-	public static int dimShakuras;
-	public static double dProbeHP = 27.0D;
-	public static double droneHP = 27.0D;
-	public static double dTempDmg = 24.5D;
-	public static double dTempHP = 80.0D;
-	public static boolean dTempVis = false;
-	public static double hydraliskDmg = 12.0D;
-	public static double hydraliskHP = 60.0D;
-	public static double infestedCivilianHP = 10.0D;
-	public static double infestedCivilianDmg = 10.0D;
-	public static double larvaCocoonHP = 133.0D;
-	public static double larvaHP = 17.0D;
-	private static final float MAX_VALUE = 1000;
-	public static double overlordHP = 133.0D;
-	public static double probeHP = 27.0D;
-	public static double reaverHP = 133.0D;
-	public static boolean useSubCfg;
-	public static boolean vanillaSpawn;
-	public static double zealotDmg = 8.0D;
-	public static double zealotHP = 100.0D;
-	public static double zerglingDmg = 5.0D;
-	public static double zerglingHP = 23.0D;
+	public static boolean BOOL_CREEP_CAN_SPREAD;
+	public static boolean BOOL_CREEP_SPREAD_SCALES_WITH_DIFFICULTY;
+	public static boolean BOOL_ENABLE_SUBCONFIG;
+	public static boolean BOOL_IS_DARK_TEMPLAR_VISIBLE;
+	public static boolean BOOL_VANILLA_MOBS_CAN_SPAWN;
+	public static double BROODLING_DAMAGE;
+	public static double BROODLING_HEALTH;
+	public static double BRUTALISK_DAMAGE;
+	public static double BRUTALISK_HEALTH;
+	public static double CIVILIAN_HEALTH;
+	public static double DARK_PROBE_HEALTH;
+	public static double DARK_TEMPLAR_DAMAGE;
+	public static double DARK_TEMPLAR_HEALTH;
+	public static double DRONE_HEALTH;
+	public static double HYDRALISK_DAMAGE;
+	public static double HYDRALISK_HEALTH;
+	public static double INFESTED_CIVILIAN_DAMAGE;
+	public static double INFESTED_CIVILIAN_HEALTH;
+	public static int INT_CREEP_SPREAD_BASE_VALUE;
+	public static int INT_DIMENSION_CHAR;
+	public static int INT_DIMENSION_SHAKURAS;
+	public static double LARVA_COCOON_HEALTH;
+	public static double LARVA_HEALTH;
+	private static final float MAX_VALUE = Float.MAX_VALUE;
+	public static double OVERLORD_HEALTH;
+	public static double PROBE_HEALTH;
+	public static double REAVER_HEALTH;
+	public static double ZEALOT_DAMAGE;
+	public static double ZEALOT_HEALTH;
+	
+	public static double ZERGLING_BOOST_ARMOR;
+	public static double ZERGLING_BOOST_DAMAGE;
+	public static double ZERGLING_BOOST_HEALTH;
+	public static double ZERGLING_BOOST_RANGE;
+	public static double ZERGLING_BOOST_SPEED;
 
+	public static double ZERGLING_RAPTOR_ARMOR;
+	public static double ZERGLING_RAPTOR_DAMAGE;
+	public static double ZERGLING_RAPTOR_HEALTH;
+	public static double ZERGLING_RAPTOR_RANGE;
+	public static double ZERGLING_RAPTOR_SPEED;
+	
+	public static double ZERGLING_SC2_ARMOR;
+	public static double ZERGLING_SC2_DAMAGE;
+	public static double ZERGLING_SC2_HEALTH;
+	public static double ZERGLING_SC2_RANGE;
+	public static double ZERGLING_SC2_SPEED;
+	
+	public static double ZERGLING_SWARMLING_ARMOR;
+	public static double ZERGLING_SWARMLING_DAMAGE;
+	public static double ZERGLING_SWARMLING_HEALTH;
+	public static double ZERGLING_SWARMLING_RANGE;
+	public static double ZERGLING_SWARMLING_SPEED;
+	
 
 	public static void preInit() {
 		Configuration config = new Configuration(new File("config/Starcraft.cfg"));
 
 		// General
 		config.setCategoryComment("General", "General settings.");
-
-		useSubCfg = config.getBoolean("Use Sub-Config", "General", false,
+		BOOL_ENABLE_SUBCONFIG = config.getBoolean("Use Sub-Config", "General", FactorySettings.BOOL_ENABLE_SUBCONFIG,
 				"If true, the sub-config \'./scmc_editor/units.cfg\' will be used to set various mob stats. NOTE: New file will be generated in the Config folder if this is set to true.");
-
-		creepCanSpread = config.get("General", "Zerg - Creep Can Spread", true).getBoolean(true);
-
-		creepSpreadScalesWithDif = config.get("General", "Zerg - Creep Spread Scales With Difficulty", false).getBoolean(false);
-
-		creepSpreadBaseVal = config.getInt("Creep Spread Base Value", "General", 4, 0, 16, "Base value for Creep Spread. WARNING, DO NOT SET THIS HIGH");
-
+		BOOL_CREEP_CAN_SPREAD = config.get("General", "Zerg - Creep Can Spread", FactorySettings.BOOL_CREEP_CAN_SPREAD).getBoolean(FactorySettings.BOOL_CREEP_CAN_SPREAD);
+		BOOL_CREEP_SPREAD_SCALES_WITH_DIFFICULTY = config
+				.get("General", "Zerg - Creep Spread Scales With Difficulty", FactorySettings.BOOL_CREEP_SPREAD_SCALES_WITH_DIFFICULTY)
+				.getBoolean(FactorySettings.BOOL_CREEP_SPREAD_SCALES_WITH_DIFFICULTY);
+		INT_CREEP_SPREAD_BASE_VALUE = config.getInt("Creep Spread Base Value", "General", FactorySettings.INT_CREEP_SPREAD_BASE_VALUE, 0, 16, "Base value for Creep Spread. WARNING, DO NOT SET THIS HIGH");
+		
 		// Dimensions
 		config.setCategoryComment("Dimension ID's", "Change the ID's of the dimensions");
-		dimChar = config.getInt("Char ID", "Dimension ID's", 2, -128, 127, "ID for the planet Char");
-		dimShakuras = config.getInt("Shakuras ID", "Dimension ID's", 3, -128, 127, "ID for the planet Shakuras");
-		// Biome Generation (Overworld)
-
+		INT_DIMENSION_CHAR = config.getInt("Char ID", "Dimension ID's", FactorySettings.INT_DIMENSION_CHAR, -128, 127, "ID for the planet Char");
+		INT_DIMENSION_SHAKURAS = config.getInt("Shakuras ID", "Dimension ID's", FactorySettings.INT_DIMENSION_SHAKURAS, -128, 127, "ID for the planet Shakuras");
+		
 		// Overall Structure Generation
 		config.setCategoryComment("World Generation", "Enable or disable structure generation.");
-		// Terran Structure Generation
-		// generateTerranBunker = config.get("World Generation", "Terran -
-		// Bunker", true).getBoolean(true);
-		// Protoss Structure Generation
-		// generateProtossPylon = config.get("World Generation", "Protoss -
-		// Pylon", true).getBoolean(true);
-		// generateProtossDarkPylon = config.get("World Generation", "Protoss -
-		// Dark Pylon", true).getBoolean(true);
-		// generateProtossVoidPylon = config.get("World Generation", "Protoss -
-		// Void Pylon", true).getBoolean(true);
-		// generateProtossWarpGateChar = config.get("World Generation", "Protoss
-		// - Warp Gate (To Char)", true).getBoolean(true);
-		// generateProtossWarpGateOverworld = config.get("World Generation",
-		// "Protoss - Warp Gate (To Overworld)", true).getBoolean(true);
-		// generateProtossWarpGateShakuras= config.get("World Generation",
-		// "Protoss - Warp Gate (To Shakuras)", true).getBoolean(true);
-		// Zerg Structure Generation
-		// generateZergSpawningPool = config.get("World Generation", "Zerg -
-		// Spawning Pool", true).getBoolean(true);
-		// generateZergSpire = config.get("World Generation", "Zerg - Spire",
-		// true).getBoolean(true);
-		// Xel'Naga Structure Generation
-		// Neutral Structure Generation
-		// generateVespeneGeyser = config.get("World Generation", "Neutral -
-		// Vespene Geyser", true).getBoolean(true);
-		// generateRichVespeneGeyser = config.get("World Generation", "Neutral -
-		// Rich Vespene Geyser", true).getBoolean(true);
-		// generateMineralBed = config.get("World Generation", "Neutral -
-		// Mineral Bed", true).getBoolean(true);
-		// generateRichMineralBed = config.get("World Generation", "Neutral -
-		// Rich Mineral Bed", true).getBoolean(true);
-
+		
 		// Ore Generation
 		config.setCategoryComment("Ore Generation", "Enable or disable ore generation.");
-		// generateTitaniumOre = config.get("Ore Generation", "Titanium Ore",
-		// true).getBoolean(true);
-		// generateCopperOre = config.get("Ore Generation", "Copper Ore",
-		// true).getBoolean(true);
-		// generateAlienOre = config.get("Ore Generation", "Alien Ore",
-		// true).getBoolean(true);
-		// generateMineralOre = config.get("Ore Generation", "Mineral Ore",
-		// true).getBoolean(true);
-		// generateRichMineralOre = config.get("Ore Generation", "Rich Mineral
-		// Ore", true).getBoolean(true);
-
+		
 		// Mob Spawning
 		config.setCategoryComment("Mob Spawning", "Decide which mobs will spawn and which mobs will not.");
-		vanillaSpawn = config.get("Mob Spawning", "Vanilla - Disable Vanilla Mob Spawn", false).getBoolean(false);
-		// larvaCanSpawn = config.get("Mob Spawning", "Zerg - Larva",
-		// true).getBoolean(true);
-		// larvaCocoonCanSpawn = config.get("Mob Spawning", "Zerg - Larva
-		// Cocoon", true).getBoolean(true);
-
-		// Dimension Id Configuration
-
-		// Debugging/TESTING
+		BOOL_VANILLA_MOBS_CAN_SPAWN = config.get("Mob Spawning", "Vanilla - Disable Vanilla Mob Spawn", FactorySettings.BOOL_VANILLA_MOBS_CAN_SPAWN).getBoolean(FactorySettings.BOOL_VANILLA_MOBS_CAN_SPAWN);
 
 		config.save();
 
@@ -125,45 +95,65 @@ public class StarcraftConfig {
 		// SUB-CONFIG//
 		//////////////
 
-		if(useSubCfg) {
+		if(BOOL_ENABLE_SUBCONFIG) {
 			Configuration subCfg = new Configuration(new File("config/scmc_editor/units.cfg"));
 
 			subCfg.setCategoryComment("Protoss", "Protoss mob modifications");
+			DARK_PROBE_HEALTH = subCfg.getFloat("Dark Probe HP", "Protoss", (float) FactorySettings.DARK_PROBE_HEALTH_CONV, 1, MAX_VALUE, "Health of the Dark Probe.");
+
+			BOOL_IS_DARK_TEMPLAR_VISIBLE = subCfg.getBoolean("Dark Templar Visibility", "Protoss", FactorySettings.BOOL_IS_DARK_TEMPLAR_VISIBLE, "If true, the Dark Templar will be visible");
+			DARK_TEMPLAR_HEALTH = subCfg.getFloat("Dark Templar HP", "Protoss", (float) FactorySettings.DARK_TEMPLAR_HEALTH_CONV, 1, MAX_VALUE, "Health of the Dark Templar.");
+			DARK_TEMPLAR_DAMAGE = subCfg.getFloat("Dark Templar Damage", "Protoss", (float) FactorySettings.DARK_TEMPLAR_DAMAGE_CONV, 1, MAX_VALUE, "Damage the Dark Templar deals.");
+
+			PROBE_HEALTH = subCfg.getFloat("Probe HP", "Protoss", (float) FactorySettings.PROBE_HEALTH_CONV, 1, MAX_VALUE, "Health of the Probe.");
+
+			REAVER_HEALTH = subCfg.getFloat("Reaver HP", "Protoss", (float) FactorySettings.PREAVER_HEALTH_CONV, 1, MAX_VALUE, "Health of the Reaver.");
+
+			ZEALOT_HEALTH = subCfg.getFloat("Zealot HP", "Protoss", (float) FactorySettings.ZEALOT_HEALTH_CONV, 1, MAX_VALUE, "Health of the Zealot.");
+			ZEALOT_DAMAGE = subCfg.getFloat("Zealot Damage", "Protoss", (float) FactorySettings.ZEALOT_DAMAGE_CONV, 1, MAX_VALUE, "Damage the Zealot deals.");
+			
 			subCfg.setCategoryComment("Terran", "Terran mob modifications");
+			CIVILIAN_HEALTH = subCfg.getFloat("Civilian HP", "Terran", (float) FactorySettings.CIVILIAN_HEALTH_CONV, 1, MAX_VALUE, "Health of the Civilian.");
+			
 			subCfg.setCategoryComment("Zerg", "Zerg mob modifications");
+			BROODLING_HEALTH = subCfg.getFloat("Broodling HP", "Zerg", (float) FactorySettings.BROODLING_HEALTH_CONV, 1, MAX_VALUE, "Health of the Broodling.");
+			BROODLING_DAMAGE = subCfg.getFloat("Broodling Damage", "Zerg", (float) FactorySettings.BROODLING_DAMAGE_CONV, 1, MAX_VALUE, "Damage the Broodling deals.");
 
-			broodlingHP = subCfg.getFloat("Broodling HP", "Zerg", 15, 1, MAX_VALUE, "Health of the Broodling. Be sane else you might break something");
-			broodlingDmg = subCfg.getFloat("Broodling Damage", "Zerg", 2, 1, MAX_VALUE, "Damage the Broodling deals. Be sane else you might break something");
+			BRUTALISK_HEALTH = subCfg.getFloat("Brutalisk HP", "Zerg", (float) FactorySettings.BRUTALISK_HEALTH_CONV, 1, MAX_VALUE, "Health of the Brutalisk.");
+			BRUTALISK_DAMAGE = subCfg.getFloat("Brutalisk Damage", "Zerg", (float) FactorySettings.BRUTALISK_DAMAGE_CONV, 1, MAX_VALUE, "Damage the Brutalisk deals.");
+			
+			LARVA_HEALTH = subCfg.getFloat("Larva HP", "Zerg", (float) FactorySettings.LARVA_HEALTH_CONV, 1, MAX_VALUE, "Health of the Larva.");
 
-			brutaliskHP = subCfg.getFloat("Brutalisk HP", "Zerg", 750, 1, MAX_VALUE, "Health of the Brutalisk. Be sane else you might break something");
-			brutaliskDmg = subCfg.getFloat("Brutalisk Damage", "Zerg", 25, 1, MAX_VALUE, "Damage the Brutalisk deals. Be sane else you might break something");
+			LARVA_COCOON_HEALTH = subCfg.getFloat("Larva Cocoon HP", "Zerg", (float) FactorySettings.LARVA_COCOON_HEALTH_CONV, 1, MAX_VALUE, "Health of the Larva Cocoon.");
 
-			civHP = subCfg.getFloat("Civilian HP", "Terran", 20, 1, MAX_VALUE, "Health of the Civilian. Be sane else you might break something");
+			OVERLORD_HEALTH = subCfg.getFloat("Overlord HP", "Zerg", (float) FactorySettings.OVERLORD_HEALTH_CONV, 1, MAX_VALUE, "Health of the Overlord.");
+			
+			DRONE_HEALTH = subCfg.getFloat("Drone HP", "Zerg", (float) FactorySettings.DRONE_HEALTH_CONV, 1, MAX_VALUE, "Health of the Drone.");
 
-			dProbeHP = subCfg.getFloat("Dark Probe HP", "Protoss", 20, 1, MAX_VALUE, "Health of the Dark Probe. Be sane else you might break something");
-
-			droneHP = subCfg.getFloat("Drone HP", "Zerg", 20, 1, MAX_VALUE, "Health of the Drone. Be sane else you might break something");
-
-			dTempVis = subCfg.getBoolean("Dark Templar Visibility", "Protoss", false, "If true, the Dark Templar will be visible");
-			dTempHP = subCfg.getFloat("Dark Templar HP", "Protoss", 60, 1, MAX_VALUE, "Health of the Dark Templar. Be sane else you might break something");
-			dTempDmg = subCfg.getFloat("Dark Templar Damage", "Protoss", 24.5f, 1, MAX_VALUE, "Damage the Dark Templar deals. Be sane else you\'ll break something");
-
-			larvaHP = subCfg.getFloat("Larva HP", "Zerg", 12.5f, 1, MAX_VALUE, "Health of the Larva. Be sane else you might break something");
-
-			larvaCocoonHP = subCfg.getFloat("Larva Cocoon HP", "Zerg", 100, 1, MAX_VALUE, "Health of the Larva Cocoon. Be sane else you might break something");
-
-			overlordHP = subCfg.getFloat("Overlord HP", "Zerg", 100, 1, MAX_VALUE, "Health of the Overlord. Be sane else you might break something");
-
-			probeHP = subCfg.getFloat("Probe HP", "Protoss", 20, 1, MAX_VALUE, "Health of the Probe. Be sane else you might break something");
-
-			reaverHP = subCfg.getFloat("Reaver HP", "Protoss", 200, 1, MAX_VALUE, "Health of the Reaver. Be sane else you might break something");
-
-			zealotHP = subCfg.getFloat("Zealot HP", "Protoss", 100, 1, MAX_VALUE, "Health of the Zealot. Be sane else you might break something");
-			zealotDmg = subCfg.getFloat("Zealot Damage", "Protoss", 8, 1, MAX_VALUE, "Damage the Zealot deals. Be sane else you might break something");
-
-			zerglingHP = subCfg.getFloat("Zergling HP", "Zerg", 25, 1, MAX_VALUE, "Health of the Zergling. Be sane else you might break something");
-			zerglingDmg = subCfg.getFloat("Zergling Damage", "Zerg", 5, 1, MAX_VALUE, "Damage the Zergling deals. Be sane else you might break something");
-
+			ZERGLING_BOOST_ARMOR = subCfg.getFloat("Zergling (Boost) Armor", "Zerg", (float) FactorySettings.ZERGLING_BOOST_ARMOR_CONV, 1, MAX_VALUE, "Armor of the Boosted Zergling.");
+			ZERGLING_BOOST_HEALTH = subCfg.getFloat("Zergling (Boost) HP", "Zerg", (float) FactorySettings.ZERGLING_BOOST_HEALTH_CONV, 1, MAX_VALUE, "Health of the Boosted Zergling.");
+			ZERGLING_BOOST_DAMAGE = subCfg.getFloat("Zergling (Boost) Damage", "Zerg", (float) FactorySettings.ZERGLING_BOOST_DAMAGE_CONV, 1, MAX_VALUE, "Damage the Boosted Zergling deals.");
+			ZERGLING_BOOST_RANGE = subCfg.getFloat("Zergling (Boost) Follow Range", "Zerg", (float) FactorySettings.ZERGLING_BOOST_RANGE_CONV, 1, MAX_VALUE, "Range the Boosted Zergling can spot other mobs.");
+			ZERGLING_BOOST_SPEED = subCfg.getFloat("Zergling (Boost) Speed", "Zerg", (float) FactorySettings.ZERGLING_BOOST_SPEED_CONV, 1, MAX_VALUE, "Speed the Boosted Zergling moves at.");
+			
+			ZERGLING_RAPTOR_ARMOR = subCfg.getFloat("Zergling (Raptor) Armor", "Zerg", (float) FactorySettings.ZERGLING_RAPTOR_ARMOR_CONV, 1, MAX_VALUE, "Armor of the Raptor Zergling.");
+			ZERGLING_RAPTOR_HEALTH = subCfg.getFloat("Zergling (Raptor) HP", "Zerg", (float) FactorySettings.ZERGLING_RAPTOR_HEALTH_CONV, 1, MAX_VALUE, "Health of the Raptor Zergling.");
+			ZERGLING_RAPTOR_DAMAGE = subCfg.getFloat("Zergling (Raptor) Damage", "Zerg", (float) FactorySettings.ZERGLING_RAPTOR_DAMAGE_CONV, 1, MAX_VALUE, "Damage the Raptor Zergling deals.");
+			ZERGLING_RAPTOR_RANGE = subCfg.getFloat("Zergling (Raptor) Follow Range", "Zerg", (float) FactorySettings.ZERGLING_RAPTOR_RANGE_CONV, 1, MAX_VALUE, "Range the Raptor Zergling can spot other mobs.");
+			ZERGLING_RAPTOR_SPEED = subCfg.getFloat("Zergling (Raptor) Speed", "Zerg", (float) FactorySettings.ZERGLING_RAPTOR_SPEED_CONV, 1, MAX_VALUE, "Speed the Raptor Zergling moves at.");
+			
+			ZERGLING_SWARMLING_ARMOR = subCfg.getFloat("Zergling (Swarmling) Armor", "Zerg", (float) FactorySettings.ZERGLING_SWARMLING_ARMOR_CONV, 1, MAX_VALUE, "Armor of the Swarmling.");
+			ZERGLING_SWARMLING_HEALTH = subCfg.getFloat("Zergling (Swarmling) HP", "Zerg", (float) FactorySettings.ZERGLING_SWARMLING_HEALTH_CONV, 1, MAX_VALUE, "Health of the Swarmling.");
+			ZERGLING_SWARMLING_DAMAGE = subCfg.getFloat("Zergling (Swarmling) Damage", "Zerg", (float) FactorySettings.ZERGLING_SWARMLING_DAMAGE_CONV, 1, MAX_VALUE, "Damage the Swarmling deals.");
+			ZERGLING_SWARMLING_RANGE = subCfg.getFloat("Zergling (Swarmling) Follow Range", "Zerg", (float) FactorySettings.ZERGLING_SWARMLING_RANGE_CONV, 1, MAX_VALUE, "Range the Swarmling can spot other mobs.");
+			ZERGLING_SWARMLING_SPEED = subCfg.getFloat("Zergling (Swarmling) Speed", "Zerg", (float) FactorySettings.ZERGLING_SWARMLING_SPEED_CONV, 1, MAX_VALUE, "Speed the Swarmling moves at.");
+			
+			ZERGLING_SC2_ARMOR = subCfg.getFloat("Zergling (SC2) Armor", "Zerg", (float) FactorySettings.ZERGLING_SC2_ARMOR_CONV, 1, MAX_VALUE, "Armor of the SC2 Zergling.");
+			ZERGLING_SC2_HEALTH = subCfg.getFloat("Zergling (SC2) HP", "Zerg", (float) FactorySettings.ZERGLING_SC2_HEALTH_CONV, 1, MAX_VALUE, "Health of the SC2 Zergling.");
+			ZERGLING_SC2_DAMAGE = subCfg.getFloat("Zergling (SC2) Damage", "Zerg", (float) FactorySettings.ZERGLING_SC2_DAMAGE_CONV, 1, MAX_VALUE, "Damage the SC2 Zergling deals.");
+			ZERGLING_SC2_RANGE = subCfg.getFloat("Zergling (SC2) Follow Range", "Zerg", (float) FactorySettings.ZERGLING_SC2_RANGE_CONV, 1, MAX_VALUE, "Range the SC2 Zergling can spot other mobs.");
+			ZERGLING_SC2_SPEED = subCfg.getFloat("Zergling (SC2) Speed", "Zerg", (float) FactorySettings.ZERGLING_SC2_SPEED_CONV, 1, MAX_VALUE, "Speed the SC2 Zergling moves at.");
+			
 			subCfg.save();
 		}
 

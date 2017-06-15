@@ -47,7 +47,7 @@ public class WorldProviderChar extends WorldProvider {
 	 */
 	@Override
 	public int getRespawnDimension(EntityPlayerMP player) {
-		return StarcraftConfig.dimChar;
+		return StarcraftConfig.INT_DIMENSION_CHAR;
 	}
 
 	@Override

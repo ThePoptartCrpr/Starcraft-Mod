@@ -61,11 +61,11 @@ public class EntityZerglingSC2 extends EntityZergMob implements IMob, Predicate<
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-
-		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D);
-		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(16.0D);
-		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
+		getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(StarcraftConfig.ZERGLING_SC2_ARMOR);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.ZERGLING_SC2_HEALTH);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(StarcraftConfig.ZERGLING_SC2_SPEED);
+		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(StarcraftConfig.ZERGLING_SC2_RANGE);
+		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.ZERGLING_SC2_DAMAGE);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 	}
 

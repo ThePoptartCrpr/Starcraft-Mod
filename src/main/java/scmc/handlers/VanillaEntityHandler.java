@@ -19,7 +19,7 @@ public class VanillaEntityHandler {
 
 	@SubscribeEvent
 	public static void onEntitySpawn(EntityJoinWorldEvent event) {
-		if(StarcraftConfig.vanillaSpawn == true) {
+		if(StarcraftConfig.BOOL_VANILLA_MOBS_CAN_SPAWN == true) {
 			if(event.getEntity() instanceof EntityCaveSpider || event.getEntity() instanceof EntitySilverfish || event.getEntity() instanceof EntityWitch
 					|| event.getEntity() instanceof EntitySlime || event.getEntity() instanceof EntityEnderman || event.getEntity() instanceof EntityCreeper
 					|| event.getEntity() instanceof EntitySkeleton || event.getEntity() instanceof EntityZombie || event.getEntity() instanceof EntitySpider) {

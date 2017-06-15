@@ -9,7 +9,7 @@ public class Reference {
 		BLOCK_COBBLESTONE_CHAR("charCobblestone", "char_cobblestone"),
 		BLOCK_COBBLESTONE_S("shakurasStone", "shakuras_cobblestone"),
 
-		BLOCK_COMP_METALT1("compMetalT1", "comp_metal_t1"), // Neutral Objects
+		BLOCK_COMP_METALT1("compMetalT1", "comp_metal_t1"),
 		BLOCK_COMP_MINERAL("compMineral", "comp_mineral"),
 		BLOCK_CORE_CYBERNETICSCORE_DARK("coreCyberneticsCoreDark", "core_cyberneticscore_dark"),
 		BLOCK_CORE_CYBERNETICSCORE_KHALAI("coreCyberneticsCoreKhalai", "core_cyberneticscore_khalai"),
@@ -18,19 +18,19 @@ public class Reference {
 		BLOCK_CORE_NEXUS_KHALAI("coreNexusKhalai", "core_nexus_khalai"),
 		BLOCK_CORE_NEXUS_VOID("coreNexusVoid", "core_nexus_void"),
 		BLOCK_CORE_PYLON_DARK("corePylonDark", "core_pylon_dark"),
-		BLOCK_CORE_PYLON_KHALAI("corePylonKhalai", "core_pylon_khalai"), // Core Blocks
+		BLOCK_CORE_PYLON_KHALAI("corePylonKhalai", "core_pylon_khalai"),
 		BLOCK_CORE_PYLON_VOID("corePylonVoid", "core_pylon_void"),
 		BLOCK_CORE_WARPGATE_DARK("coreWarpGateDark", "core_warpgate_dark"),
 		BLOCK_CORE_WARPGATE_KHALAI("coreWarpGateKhalai", "core_warpgate_khalai"),
 		BLOCK_CORE_WARPGATE_VOID("coreWarpGateVoid", "core_warpgate_void"),
 		BLOCK_CRYSTAL("crystal", "crystal"),
 
-		BLOCK_DIM_PORTAL_AI("aiurDimPortal", "aiur_dim_portal"), // Dimension Objects
+		BLOCK_DIM_PORTAL_AI("aiurDimPortal", "aiur_dim_portal"),
 		BLOCK_DIM_PORTAL_C("charDimPortal", "char_dim_portal"),
 		BLOCK_DIM_PORTAL_OW("overworldDimPortal", "overworld_dim_portal"),
-		BLOCK_DIM_PORTAL_S("shakurasDimPortal", "shakuras_dim_portal"), // Char Objects
-		BLOCK_DIRT_CHAR("charDirt", "char_dirt"), // Shakuras Objects
-		BLOCK_DIRT_S("shakurasDirt", "shakuras_dirt"), // Terran Objects
+		BLOCK_DIM_PORTAL_S("shakurasDimPortal", "shakuras_dim_portal"),
+		BLOCK_DIRT_CHAR("charDirt", "char_dirt"),
+		BLOCK_DIRT_S("shakurasDirt", "shakuras_dirt"),
 		BLOCK_DYED_IRON("dyedIron", "dyed_iron"),
 		BLOCK_ENERGY("energy", "energy"),
 		BLOCK_GRAVEL_CHAR("charGravel", "char_gravel"),
@@ -74,7 +74,7 @@ public class Reference {
 
 		BLOCK_WARP_GATE_WORMHOLE_C("charWarpGateWormhole", "char_warp_gate_wormhole"),
 		BLOCK_WARP_GATE_WORMHOLE_OW("overworldWarpGateWormhole", "overworld_warp_gate_wormhole"),
-		BLOCK_WARP_GATE_WORMHOLE_S("shakurasWarpGateWormhole", "shakuras_warp_gate_wormhole"), // Zerg Objects
+		BLOCK_WARP_GATE_WORMHOLE_S("shakurasWarpGateWormhole", "shakuras_warp_gate_wormhole"),
 		BLOCK_ZERG_CARAPACE("zergCarapace", "zerg_carapace"),
 		BLOCK_ZERG_CREEP("zergCreep", "zerg_creep"),
 
