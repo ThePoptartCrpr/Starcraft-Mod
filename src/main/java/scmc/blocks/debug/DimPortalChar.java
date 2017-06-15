@@ -21,10 +21,11 @@ import scmc.blocks.ModBlocks;
 import scmc.lib.ModTeleporter;
 import scmc.lib.Reference;
 import scmc.lib.StarcraftConfig;
+import scmc.worldgen.DimensionRegistry;
 
 public class DimPortalChar extends ModBlocks {
 
-	private int dim = StarcraftConfig.INT_DIMENSION_CHAR;
+	private int dim = 2;
 
 	public DimPortalChar() {
 		super(Material.ROCK);

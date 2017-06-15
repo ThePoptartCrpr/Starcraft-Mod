@@ -10,7 +10,6 @@ import net.minecraft.world.World;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.ModMetaBlocks;
 
-//This is ugly... do yourself a favor and don't look
 public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 	
 	@Override
@@ -1036,7 +1035,7 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 	}
 	
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] {Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS};
+		return new Block[] {Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModMetaBlocks.PROTOSS_METAL_T1, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS};
 	}
 
 	public boolean LocationIsValidSpawn(World world, BlockPos pos) {

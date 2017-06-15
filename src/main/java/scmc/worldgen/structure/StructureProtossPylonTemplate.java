@@ -760,7 +760,7 @@ public class StructureProtossPylonTemplate extends SCWorldGenerator {
 	}
 
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] {Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS};
+		return new Block[] {Blocks.GRASS, Blocks.STONE, Blocks.DIRT, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS, ModMetaBlocks.PROTOSS_METAL_T1};
 	}
 
 	public boolean LocationIsValidSpawn(World world, BlockPos pos) {

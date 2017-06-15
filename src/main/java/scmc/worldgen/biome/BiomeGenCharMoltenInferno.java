@@ -66,10 +66,7 @@ public class BiomeGenCharMoltenInferno extends BiomesSC {
 						} else if(yLoc < seaLevel - 7 - randHeight) {
 							topBlock = AIR;
 							fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();
-							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, ModBlocks.STONE_CHAR.getDefaultState()); // use
-																													// to
-																													// be
-																													// gravel
+							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, ModBlocks.GRAVEL_CHAR.getDefaultState()); 
 						} else {
 							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, fillerBlock);
 						}

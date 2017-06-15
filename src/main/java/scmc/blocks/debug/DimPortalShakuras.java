@@ -21,10 +21,11 @@ import scmc.blocks.ModBlocks;
 import scmc.lib.ModTeleporter;
 import scmc.lib.Reference;
 import scmc.lib.StarcraftConfig;
+import scmc.worldgen.DimensionRegistry;
 
 public class DimPortalShakuras extends ModBlocks {
 
-	private int dim = StarcraftConfig.INT_DIMENSION_SHAKURAS;
+	private int dim = 3;
 
 	public DimPortalShakuras() {
 		super(Material.ROCK);

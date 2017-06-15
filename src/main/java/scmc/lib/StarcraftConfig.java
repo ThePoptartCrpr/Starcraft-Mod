@@ -6,60 +6,61 @@ import net.minecraftforge.common.config.Configuration;
 
 public class StarcraftConfig {
 
-	public static boolean BOOL_CREEP_CAN_SPREAD;
-	public static boolean BOOL_CREEP_SPREAD_SCALES_WITH_DIFFICULTY;
-	public static boolean BOOL_ENABLE_SUBCONFIG;
-	public static boolean BOOL_IS_DARK_TEMPLAR_VISIBLE;
-	public static boolean BOOL_VANILLA_MOBS_CAN_SPAWN;
-	public static double BROODLING_DAMAGE;
-	public static double BROODLING_HEALTH;
-	public static double BRUTALISK_DAMAGE;
-	public static double BRUTALISK_HEALTH;
-	public static double CIVILIAN_HEALTH;
-	public static double DARK_PROBE_HEALTH;
-	public static double DARK_TEMPLAR_DAMAGE;
-	public static double DARK_TEMPLAR_HEALTH;
-	public static double DRONE_HEALTH;
-	public static double HYDRALISK_DAMAGE;
-	public static double HYDRALISK_HEALTH;
-	public static double INFESTED_CIVILIAN_DAMAGE;
-	public static double INFESTED_CIVILIAN_HEALTH;
-	public static int INT_CREEP_SPREAD_BASE_VALUE;
+	public static boolean BOOL_CREEP_CAN_SPREAD = FactorySettings.BOOL_CREEP_CAN_SPREAD;
+	public static boolean BOOL_CREEP_SPREAD_SCALES_WITH_DIFFICULTY = FactorySettings.BOOL_CREEP_SPREAD_SCALES_WITH_DIFFICULTY;
+	public static boolean BOOL_ENABLE_SUBCONFIG = FactorySettings.BOOL_ENABLE_SUBCONFIG;
+	public static boolean BOOL_IS_DARK_TEMPLAR_VISIBLE = FactorySettings.BOOL_IS_DARK_TEMPLAR_VISIBLE;
+	public static boolean BOOL_VANILLA_MOBS_CAN_SPAWN = FactorySettings.BOOL_VANILLA_MOBS_CAN_SPAWN;
+	public static double BROODLING_DAMAGE = FactorySettings.BROODLING_DAMAGE_CONV;
+	public static double BROODLING_HEALTH = FactorySettings.BROODLING_HEALTH_CONV;
+	public static double BRUTALISK_DAMAGE = FactorySettings.BRUTALISK_DAMAGE_CONV;
+	public static double BRUTALISK_HEALTH = FactorySettings.BRUTALISK_HEALTH_CONV;
+	public static double CIVILIAN_HEALTH = FactorySettings.CIVILIAN_HEALTH_CONV;
+	public static double DARK_PROBE_HEALTH = FactorySettings.DARK_PROBE_HEALTH_CONV;
+	public static double DARK_TEMPLAR_DAMAGE = FactorySettings.DARK_TEMPLAR_DAMAGE_CONV;
+	public static double DARK_TEMPLAR_HEALTH = FactorySettings.DARK_TEMPLAR_HEALTH_CONV;
+	public static double DRONE_HEALTH = FactorySettings.DRONE_HEALTH_CONV;
+	public static double HYDRALISK_DAMAGE = FactorySettings.HYDRALISK_DAMAGE_CONV;
+	public static double HYDRALISK_HEALTH = FactorySettings.HYDRALISK_HEALTH_CONV;
+	public static double INFESTED_CIVILIAN_DAMAGE = FactorySettings.INFESTED_CIVILIAN_DAMAGE_CONV;
+	public static double INFESTED_CIVILIAN_HEALTH = FactorySettings.INFESTED_CIVILIAN_HEALTH_CONV;
+	public static int INT_CREEP_SPREAD_BASE_VALUE = FactorySettings.INT_CREEP_SPREAD_BASE_VALUE;
 	public static int INT_DIMENSION_CHAR;
 	public static int INT_DIMENSION_SHAKURAS;
-	public static double LARVA_COCOON_HEALTH;
-	public static double LARVA_HEALTH;
+	public static double LARVA_COCOON_HEALTH = FactorySettings.LARVA_COCOON_HEALTH_CONV;
+	public static double LARVA_HEALTH = FactorySettings.LARVA_HEALTH_CONV;
 	private static final float MAX_VALUE = Float.MAX_VALUE;
-	public static double OVERLORD_HEALTH;
-	public static double PROBE_HEALTH;
-	public static double REAVER_HEALTH;
-	public static double ZEALOT_DAMAGE;
-	public static double ZEALOT_HEALTH;
+	public static double OVERLORD_HEALTH = FactorySettings.OVERLORD_HEALTH_CONV;
+	public static double PROBE_HEALTH = FactorySettings.PROBE_HEALTH_CONV;
 	
-	public static double ZERGLING_BOOST_ARMOR;
-	public static double ZERGLING_BOOST_DAMAGE;
-	public static double ZERGLING_BOOST_HEALTH;
-	public static double ZERGLING_BOOST_RANGE;
-	public static double ZERGLING_BOOST_SPEED;
+	public static double REAVER_HEALTH = FactorySettings.PREAVER_HEALTH_CONV;
+	
+	public static double ZEALOT_DAMAGE = FactorySettings.ZEALOT_DAMAGE_CONV;
+	public static double ZEALOT_HEALTH = FactorySettings.ZEALOT_HEALTH_CONV;
+	
+	public static double ZERGLING_BOOST_ARMOR = FactorySettings.ZERGLING_BOOST_ARMOR_CONV;
+	public static double ZERGLING_BOOST_DAMAGE = FactorySettings.ZERGLING_BOOST_DAMAGE_CONV;
+	public static double ZERGLING_BOOST_HEALTH = FactorySettings.ZERGLING_BOOST_HEALTH_CONV;
+	public static double ZERGLING_BOOST_RANGE = FactorySettings.ZERGLING_BOOST_RANGE_CONV;
+	public static double ZERGLING_BOOST_SPEED = FactorySettings.ZERGLING_BOOST_SPEED_CONV;
 
-	public static double ZERGLING_RAPTOR_ARMOR;
-	public static double ZERGLING_RAPTOR_DAMAGE;
-	public static double ZERGLING_RAPTOR_HEALTH;
-	public static double ZERGLING_RAPTOR_RANGE;
-	public static double ZERGLING_RAPTOR_SPEED;
+	public static double ZERGLING_RAPTOR_ARMOR = FactorySettings.ZERGLING_RAPTOR_ARMOR_CONV;
+	public static double ZERGLING_RAPTOR_DAMAGE = FactorySettings.ZERGLING_RAPTOR_DAMAGE_CONV;
+	public static double ZERGLING_RAPTOR_HEALTH = FactorySettings.ZERGLING_RAPTOR_HEALTH_CONV;
+	public static double ZERGLING_RAPTOR_RANGE = FactorySettings.ZERGLING_RAPTOR_RANGE_CONV;
+	public static double ZERGLING_RAPTOR_SPEED = FactorySettings.ZERGLING_RAPTOR_SPEED_CONV;
 	
-	public static double ZERGLING_SC2_ARMOR;
-	public static double ZERGLING_SC2_DAMAGE;
-	public static double ZERGLING_SC2_HEALTH;
-	public static double ZERGLING_SC2_RANGE;
-	public static double ZERGLING_SC2_SPEED;
+	public static double ZERGLING_SC2_ARMOR = FactorySettings.ZERGLING_RAPTOR_ARMOR_CONV;
+	public static double ZERGLING_SC2_DAMAGE = FactorySettings.ZERGLING_RAPTOR_DAMAGE_CONV;
+	public static double ZERGLING_SC2_HEALTH = FactorySettings.ZERGLING_RAPTOR_HEALTH_CONV;
+	public static double ZERGLING_SC2_RANGE = FactorySettings.ZERGLING_RAPTOR_RANGE_CONV;
+	public static double ZERGLING_SC2_SPEED = FactorySettings.ZERGLING_RAPTOR_SPEED_CONV;
 	
-	public static double ZERGLING_SWARMLING_ARMOR;
-	public static double ZERGLING_SWARMLING_DAMAGE;
-	public static double ZERGLING_SWARMLING_HEALTH;
-	public static double ZERGLING_SWARMLING_RANGE;
-	public static double ZERGLING_SWARMLING_SPEED;
-	
+	public static double ZERGLING_SWARMLING_ARMOR = FactorySettings.ZERGLING_RAPTOR_ARMOR_CONV;
+	public static double ZERGLING_SWARMLING_DAMAGE = FactorySettings.ZERGLING_RAPTOR_DAMAGE_CONV;
+	public static double ZERGLING_SWARMLING_HEALTH = FactorySettings.ZERGLING_RAPTOR_HEALTH_CONV;
+	public static double ZERGLING_SWARMLING_RANGE = FactorySettings.ZERGLING_RAPTOR_RANGE_CONV;
+	public static double ZERGLING_SWARMLING_SPEED = FactorySettings.ZERGLING_RAPTOR_SPEED_CONV;
 
 	public static void preInit() {
 		Configuration config = new Configuration(new File("config/Starcraft.cfg"));

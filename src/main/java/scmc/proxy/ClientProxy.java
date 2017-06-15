@@ -40,6 +40,7 @@ import scmc.entity.ModEntities;
 import scmc.fluids.ModFluids;
 import scmc.handlers.FuelHandler;
 import scmc.items.ModItems;
+import scmc.lib.FactorySettings;
 import scmc.lib.Reference;
 import scmc.lib.StarcraftConfig;
 import scmc.material.ModMaterials;

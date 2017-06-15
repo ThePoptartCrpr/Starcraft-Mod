@@ -2230,7 +2230,7 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 	}
 
 	protected Block[] getValidSpawnBlocks() {
-		return new Block[] {Blocks.GRASS, Blocks.DIRT, Blocks.STONE, ModBlocks.ASH_CHAR, ModBlocks.STONE_CHAR, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS};
+		return new Block[] {Blocks.GRASS, Blocks.DIRT, Blocks.STONE, ModBlocks.ASH_CHAR, ModBlocks.STONE_CHAR, ModMetaBlocks.PROTOSS_METAL_T1, ModBlocks.SAND_SHAKURAS, ModBlocks.STONE_SHAKURAS};
 	}
 
 	//TODO: Fix the portal on this

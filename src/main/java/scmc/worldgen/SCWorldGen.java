@@ -6,6 +6,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -13,7 +14,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import scmc.blocks.ModBlocks;
-import scmc.lib.StarcraftConfig;
+import scmc.worldgen.biome.BiomeGenShakurasCity;
 import scmc.worldgen.features.CharWorldGenMinable;
 import scmc.worldgen.features.ShakurasWorldGenMinable;
 import scmc.worldgen.structure.SCWorldGenerator;
@@ -207,7 +208,7 @@ public class SCWorldGen implements IWorldGenerator {
 			case 1: // End
 
 			default: // check for our dimensions
-				if(world.provider.getDimension() == StarcraftConfig.INT_DIMENSION_CHAR) {
+				if(world.provider.getDimension() == 2) {
 					runGenerator(COAL_CHAR, world, random, chunkX, chunkZ, 20, 0, 128);
 					runGenerator(COPPER_CHAR, world, random, chunkX, chunkZ, 15, 4, 64);
 					runGenerator(DIAMOND_CHAR, world, random, chunkX, chunkZ, 1, 0, 16);
@@ -240,7 +241,7 @@ public class SCWorldGen implements IWorldGenerator {
 					}
 					runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 25, 0, 128);
 
-				} else if(world.provider.getDimension() == StarcraftConfig.INT_DIMENSION_SHAKURAS) {
+				} else if(world.provider.getDimension() == 3) {
 					runGenerator(COAL_SHAKURAS, world, random, chunkX, chunkZ, 20, 0, 128);
 					runGenerator(COPPER_SHAKURAS, world, random, chunkX, chunkZ, 15, 4, 64);
 					runGenerator(DIAMOND_SHAKURAS, world, random, chunkX, chunkZ, 1, 0, 16);
@@ -253,13 +254,16 @@ public class SCWorldGen implements IWorldGenerator {
 					runGenerator(TITANIUM_SHAKURAS, world, random, chunkX, chunkZ, 8, 4, 28);
 					runGenerator(URANIUM_SHAKURAS, world, random, chunkX, chunkZ, 1, 0, 20);
 
-					if(rnd.nextInt(100) < 30) {
+					BlockPos pos = new BlockPos(chunkZ, 0, chunkZ);
+					Biome biome = world.getBiomeProvider().getBiomeGenerator(pos);
+					
+					if(rnd.nextInt(100) < 30 && biome instanceof BiomeGenShakurasCity) {
 						runGenerator(PROTOSS_PYLON, 1, 2, world, random, chunkX, chunkZ, 0, 3, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 10) {
+					if(rnd.nextInt(100) < 10 && biome instanceof BiomeGenShakurasCity) {
 						runGenerator(PROTOSS_WARPGATE, 1, 2, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 10) {
+					if(rnd.nextInt(100) < 10 && biome instanceof BiomeGenShakurasCity) {
 						runGenerator(PROTOSS_CYBERNETICS_CORE, 1, 2, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 					}
 					if(rnd.nextInt(100) < 5) {
