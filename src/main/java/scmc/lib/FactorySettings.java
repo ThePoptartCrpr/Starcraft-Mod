@@ -14,8 +14,8 @@ public class FactorySettings {
 	public static boolean BOOL_ENABLE_SUBCONFIG = false;
 	public static boolean BOOL_VANILLA_MOBS_CAN_SPAWN = true;
 	
-	public static int INT_DIMENSION_CHAR;
-	public static int INT_DIMENSION_SHAKURAS;
+	public static int INT_DIMENSION_CHAR = 2;
+	public static int INT_DIMENSION_SHAKURAS = 3;
 	
 	private static final float MAX_VALUE = Float.MAX_VALUE;
 	

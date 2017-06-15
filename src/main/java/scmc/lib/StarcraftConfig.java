@@ -76,8 +76,8 @@ public class StarcraftConfig {
 		
 		// Dimensions
 		config.setCategoryComment("Dimension ID's", "Change the ID's of the dimensions");
-		INT_DIMENSION_CHAR = config.getInt("Char ID", "Dimension ID's", FactorySettings.INT_DIMENSION_CHAR, -128, 127, "ID for the planet Char");
-		INT_DIMENSION_SHAKURAS = config.getInt("Shakuras ID", "Dimension ID's", FactorySettings.INT_DIMENSION_SHAKURAS, -128, 127, "ID for the planet Shakuras");
+		INT_DIMENSION_CHAR = config.getInt("Char ID", "Dimension ID's", 2, -128, 127, "ID for the planet Char");
+		INT_DIMENSION_SHAKURAS = config.getInt("Shakuras ID", "Dimension ID's", 3, -128, 127, "ID for the planet Shakuras");
 		
 		// Overall Structure Generation
 		config.setCategoryComment("World Generation", "Enable or disable structure generation.");
