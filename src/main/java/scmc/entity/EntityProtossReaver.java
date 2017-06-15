@@ -48,24 +48,12 @@ public class EntityProtossReaver extends EntityProtossMob implements IMob, IRang
 
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityZergMob)
+		if(entity instanceof EntityZergMob || entity instanceof EntityZergPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
+				|| entity instanceof EntityPlayer) {
 			return true;
-		if(entity instanceof EntityZergPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityProtossMob)
+		} else {
 			return false;
-		if(entity instanceof EntityProtossPassive)
-			return false;
-
-		return false;
+		}
 	}
 	
 	@Override

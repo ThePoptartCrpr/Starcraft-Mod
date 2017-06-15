@@ -48,24 +48,12 @@ public class EntityQueen extends EntityZergMob implements IMob, Predicate<Entity
 	
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityProtossMob)
+		if(entity instanceof EntityProtossMob || entity instanceof EntityProtossPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
+				|| entity instanceof EntityPlayer) {
 			return true;
-		if(entity instanceof EntityProtossPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityZergMob)
+		} else {
 			return false;
-		if(entity instanceof EntityZergPassive)
-			return false;
-		
-		return false;
+		}
 	}
 
 	@Override
@@ -74,7 +62,7 @@ public class EntityQueen extends EntityZergMob implements IMob, Predicate<Entity
 
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zerglingHP);
 		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.39000000417232513D); // Wat
-		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
+		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(16.0D);
 		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zerglingDmg);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 		getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);

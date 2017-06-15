@@ -11,6 +11,9 @@ public class Reference {
 
 		BLOCK_COMP_METALT1("compMetalT1", "comp_metal_t1"), // Neutral Objects
 		BLOCK_COMP_MINERAL("compMineral", "comp_mineral"),
+		BLOCK_CORE_CYBERNETICSCORE_DARK("coreCyberneticsCoreDark", "core_cyberneticscore_dark"),
+		BLOCK_CORE_CYBERNETICSCORE_KHALAI("coreCyberneticsCoreKhalai", "core_cyberneticscore_khalai"),
+		BLOCK_CORE_CYBERNETICSCORE_VOID("coreCyberneticsCoreVoid", "core_cyberneticscore_void"),
 		BLOCK_CORE_NEXUS_DARK("coreNexusDark", "core_nexus_dark"),
 		BLOCK_CORE_NEXUS_KHALAI("coreNexusKhalai", "core_nexus_khalai"),
 		BLOCK_CORE_NEXUS_VOID("coreNexusVoid", "core_nexus_void"),
@@ -47,6 +50,7 @@ public class Reference {
 		BLOCK_PROTOSS_METALT1("protossMetalT1", "protoss_metal_t1"),
 		BLOCK_PROTOSS_METALT2("protossMetalT2", "protoss_metal_t2"),
 		BLOCK_PROTOSS_METALT3("protossMetalT3", "protoss_metal_t3"),
+		BLOCK_PROTOSS_SHIELD("protossShield", "protoss_shield"),
 		BLOCK_PROTOSS_WARP_PROJECTOR_C("charWarpGateProjector", "char_warp_projector"),
 		BLOCK_PROTOSS_WARP_PROJECTOR_OW("overworldWarpGateProjector", "overworld_warp_projector"),
 		BLOCK_PROTOSS_WARP_PROJECTOR_S("shakurasWarpGateProjector", "shakuras_warp_projector"),

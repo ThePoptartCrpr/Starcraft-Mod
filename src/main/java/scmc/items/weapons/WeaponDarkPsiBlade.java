@@ -18,7 +18,7 @@ public class WeaponDarkPsiBlade extends ItemSword {
 	
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-		player.worldObj.playSound(null, player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), StarcraftSoundEvents.FX_PSIBLADE_ATTACK, SoundCategory.PLAYERS , 2.0F, 1.0F);
+		player.worldObj.playSound(null, player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), StarcraftSoundEvents.FX_PSIBLADE_ATTACK, SoundCategory.PLAYERS , 1.0F, 1.0F);
 		return super.onLeftClickEntity(stack, player, entity);
 	}
 }

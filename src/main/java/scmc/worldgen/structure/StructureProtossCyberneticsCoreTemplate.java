@@ -926,7 +926,6 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+9, y+2, z+11), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(x+10, y+2, z+11), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+11, y+2, z+11), Blocks.AIR.getDefaultState(), 2);
-		world.setBlockState(pos.add(x+12, y+2, z+11), ModBlocks.CORE_WARPGATE_DARK.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+13, y+2, z+11), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+14, y+2, z+11), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+15, y+2, z+11), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
@@ -5962,11 +5961,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+1, y+10, z+16), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+2, y+10, z+16), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+3, y+10, z+16), Blocks.AIR.getDefaultState(), 2);
-		spawn4(metaPrimColor, world, offsetX, offsetY, offsetZ, pos);
+		spawn4(metaPrimColor, metaSecColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn4(int metaPrimColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn4(int metaPrimColor, int metaSecColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -7570,11 +7569,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+15, y+13, z+8), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+16, y+13, z+8), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+17, y+13, z+8), Blocks.AIR.getDefaultState(), 2);
-		spawn5(metaPrimColor, world, offsetX, offsetY, offsetZ, pos);
+		spawn5(metaPrimColor, metaSecColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn5(int metaPrimColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn5(int metaPrimColor, int metaSecColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -9178,11 +9177,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+3, y+16, z+1), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+4, y+16, z+1), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+5, y+16, z+1), Blocks.AIR.getDefaultState(), 2);
-		spawn6(metaPrimColor, world, offsetX, offsetY, offsetZ, pos);
+		spawn6(metaPrimColor, metaSecColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn6(int metaPrimColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn6(int metaPrimColor, int metaSecColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -10786,11 +10785,11 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+17, y+18, z+16), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+18, y+18, z+16), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+19, y+18, z+16), Blocks.AIR.getDefaultState(), 2);
-		spawn7(metaPrimColor, world, offsetX, offsetY, offsetZ, pos);
+		spawn7(metaPrimColor, metaSecColor, world, offsetX, offsetY, offsetZ, pos);
 		return true;
 	}
 
-	public boolean spawn7(int metaPrimColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
+	public boolean spawn7(int metaPrimColor, int metaSecColor, World world, int offsetX, int offsetY, int offsetZ, BlockPos pos) {
 		int x = offsetX;
 		int y = offsetY;
 		int z = offsetZ;
@@ -11554,6 +11553,13 @@ public class StructureProtossCyberneticsCoreTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(x+23, y+19, z+22), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+24, y+19, z+22), Blocks.AIR.getDefaultState(), 2);
 		world.setBlockState(pos.add(x+25, y+19, z+22), Blocks.AIR.getDefaultState(), 2);
+		if(metaSecColor == 3) {
+			world.setBlockState(pos.add(x+12, y+2, z+11), ModBlocks.CORE_CYBERNETICSCORE_KHALAI.getDefaultState(), 2);
+		}else if(metaSecColor == 2) {
+			world.setBlockState(pos.add(x+12, y+2, z+11), ModBlocks.CORE_CYBERNETICSCORE_VOID.getDefaultState(), 2);
+		}else if(metaSecColor == 4) {
+			world.setBlockState(pos.add(x+12, y+2, z+11), ModBlocks.CORE_CYBERNETICSCORE_DARK.getDefaultState(), 2);
+		}
 		return true;
 	}
 }

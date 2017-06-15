@@ -9,6 +9,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
@@ -42,30 +43,19 @@ public class EntityZealot extends EntityProtossMob implements IMob, Predicate<En
 		tasks.addTask(2, new EntityAIWander(this, 1.0D));
 		tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		tasks.addTask(4, new EntityAILookIdle(this));
+        tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
 	}
 
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityZergMob)
+		if(entity instanceof EntityZergMob || entity instanceof EntityZergPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
+				|| entity instanceof EntityPlayer) {
 			return true;
-		if(entity instanceof EntityZergPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityProtossMob)
+		} else {
 			return false;
-		if(entity instanceof EntityProtossPassive)
-			return false;
-
-		return false;
+		}
 	}
 	
 	@Override
@@ -73,7 +63,7 @@ public class EntityZealot extends EntityProtossMob implements IMob, Predicate<En
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(StarcraftConfig.zealotHP);
 		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(.39000000417232513);
-		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32);
+		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(16.0D);
 		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.zealotDmg);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
 		getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);

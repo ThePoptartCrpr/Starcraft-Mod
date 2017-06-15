@@ -55,7 +55,7 @@ public class ModEntities {
 		registerEntity(EntityZerglingSwarmling.class, "zerglingSwarmling", 64, 1, true);
 		registerEntity(EntityZerglingBoost.class, "zerglingBoost", 64, 1, true);
 		registerEntity(EntityQueen.class, "queen", 64, 1, true);
-		registerEntity(EntityOverlord.class, "EntityOverlord", 64, 1, true);
+		registerEntity(EntityOverlord.class, "overlord", 64, 1, true);
 		registerEntity(EntityLarva.class, "larva", 64, 1, true);
 		registerEntity(EntityLarvaCocoon.class, "larvaCocoon", 64, 1, true);
 		registerEntity(EntityBroodling.class, "broodling", 64, 1, true);

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -177,19 +178,7 @@ public class Library {
 			replaceEntity(true, current, next);
 		}
 	}
-
-	public static void square(World world, BlockPos center, int radius, IBlockState state) {
-        BlockPos pos = center.add(-radius, 0, -radius);
-        EnumFacing facing = EnumFacing.EAST;
-        for (int i = 0; i < 4; i++) {
-            for (int k = radius * 2 - 1; k >= 0; k--) {
-                world.setBlockState(pos, state);
-                pos = pos.offset(facing);
-            }
-            facing = facing.rotateY();
-        }
-    }
-
+	
 	/**
 	 * Creates the glorious shields
 	 * @param world the world
@@ -197,14 +186,33 @@ public class Library {
 	 * @param domeHeight difference in height between {@code pos} and the peak
 	 * of the dome
 	 */
-	public static void truncatedPyramid(World world, BlockPos pos, int domeHeight, int domeTopLength,
-            IBlockState state) {
-        int radius = domeTopLength / 2 - 1;
-        for (int i = domeHeight - 1; i >= 0; i--) {
-            square(world, new BlockPos(pos.getX(), pos.getY() + i, pos.getZ()), domeHeight - i + radius, state);
+	 /**
+     * SliceThePi's proprietary blend of all-natural spaghetti code
+     */
+    public static void truncatedPyramid(World world, BlockPos pos, IBlockState state, int domeHeight, int domeTopLength,
+            int slope) {
+        int radius = domeTopLength / 2;
+        for (int i = domeHeight - 1; i >= 0; i -= slope) {
+            for (int k = 0; k >= -slope + 1 && i + k >= 0; k--)
+                square(world, new BlockPos(pos.getX(), pos.getY() + i + k, pos.getZ()),
+                        (domeHeight - i - 1) / slope + radius, state);
         }
-        for (int i = -radius; i <= radius; i++)
-            for (int k = -radius; k <= radius; k++)
-                world.setBlockState(pos.add(i, domeHeight - 1, k), state);
+        for (int x = -radius; x <= radius; x++)
+            for (int z = -radius; z <= radius; z++)
+                if (world.getBlockState(pos.add(x, domeHeight - 1, z)).getBlock() == Blocks.AIR)
+                    world.setBlockState(pos.add(x, domeHeight - 1, z), state);
+    }
+
+    public static void square(World world, BlockPos center, int radius, IBlockState state) {
+        BlockPos pos = center.add(-radius, 0, -radius);
+        EnumFacing facing = EnumFacing.EAST;
+        for (int i = 0; i < 4; i++) {
+            for (int k = radius * 2 - 1; k >= 0; k--) {
+                if (world.getBlockState(pos).getBlock() == Blocks.AIR)
+                    world.setBlockState(pos, state);
+                pos = pos.offset(facing);
+            }
+            facing = facing.rotateY();
+        }
     }
 }

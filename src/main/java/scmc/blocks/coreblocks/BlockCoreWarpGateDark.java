@@ -27,6 +27,6 @@ public class BlockCoreWarpGateDark extends ModBlocks {
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		super.onBlockAdded(worldIn, pos, state);
-		Library.truncatedPyramid(worldIn, pos, 20, 20, Blocks.GLASS.getDefaultState());
+		Library.truncatedPyramid(worldIn, pos.add(0, -5, 0), ModBlocks.PROTOSS_SHIELD.getDefaultState(), 16, 24, 3);
 	}
 }

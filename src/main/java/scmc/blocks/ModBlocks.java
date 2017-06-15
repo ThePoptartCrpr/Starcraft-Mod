@@ -11,6 +11,9 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scmc.blocks.coreblocks.BlockCoreCyberneticsCoreDark;
+import scmc.blocks.coreblocks.BlockCoreCyberneticsCoreKhalai;
+import scmc.blocks.coreblocks.BlockCoreCyberneticsCoreVoid;
 import scmc.blocks.coreblocks.BlockCoreNexusDark;
 import scmc.blocks.coreblocks.BlockCoreNexusKhalai;
 import scmc.blocks.coreblocks.BlockCoreNexusVoid;
@@ -65,6 +68,9 @@ public class ModBlocks extends Block {
 	public static Block COBBLESTONE_CHAR;
 	public static Block COBBLESTONE_SHAKURAS;
 	public static BlockCompressedMetalsT1 COMP_METAL;
+	public static Block CORE_CYBERNETICSCORE_DARK;
+	public static Block CORE_CYBERNETICSCORE_KHALAI;
+	public static Block CORE_CYBERNETICSCORE_VOID;
 	public static Block CORE_NEXUS_DARK;
 	public static Block CORE_NEXUS_KHALAI;
 	public static Block CORE_NEXUS_VOID;
@@ -117,6 +123,7 @@ public class ModBlocks extends Block {
 	public static Block PROTOSS_DARK_ENERGY_STABILIZER;
 	public static Block PROTOSS_ENERGY_CHANNEL;
 	public static Block PROTOSS_ENERGY_STABILIZER;
+	public static Block PROTOSS_SHIELD;
 	public static Block PROTOSS_VOID_ENERGY_CHANNEL;
 	public static Block PROTOSS_VOID_ENERGY_STABILIZER;
 	public static Block PROTOSS_WARPPROJECTOR_CHAR;
@@ -133,7 +140,7 @@ public class ModBlocks extends Block {
 	public static Block WARPGATE_WORMHOLE_OVERWORLD;
 	public static Block WARPGATE_WORMHOLE_SHAKURAS;
 	public static Block ZERG_CREEP;
-
+	
 	public static void init() {
 		instantiate();
 		register();
@@ -196,6 +203,7 @@ public class ModBlocks extends Block {
 		PROTOSS_ENERGY_STABILIZER = new BlockProtossEnergyStabilizer();
 		PROTOSS_DARK_ENERGY_CHANNEL = new BlockProtossEnergyChannelDark();
 		PROTOSS_DARK_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerDark();
+		PROTOSS_SHIELD = new BlockProtossShield();
 		PROTOSS_VOID_ENERGY_CHANNEL = new BlockProtossEnergyChannelVoid();
 		PROTOSS_VOID_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerVoid();
 		
@@ -209,6 +217,10 @@ public class ModBlocks extends Block {
 		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
 
 		// Core Blocks
+		CORE_CYBERNETICSCORE_VOID = new BlockCoreCyberneticsCoreVoid();
+		CORE_CYBERNETICSCORE_DARK = new BlockCoreCyberneticsCoreDark();
+		CORE_CYBERNETICSCORE_KHALAI = new BlockCoreCyberneticsCoreKhalai();
+		
 		CORE_PYLON_VOID = new BlockCorePylonVoid();
 		CORE_PYLON_DARK = new BlockCorePylonDark();
 		CORE_PYLON_KHALAI = new BlockCorePylonKhalai();
@@ -364,6 +376,9 @@ public class ModBlocks extends Block {
 		GameRegistry.register(PROTOSS_DARK_ENERGY_STABILIZER);
 		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getRegistryRL()));
 		
+		GameRegistry.register(PROTOSS_SHIELD);
+		GameRegistry.register(new ItemBlock(PROTOSS_SHIELD).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_SHIELD.getRegistryRL()));
+		
 		GameRegistry.register(PROTOSS_VOID_ENERGY_CHANNEL);
 		GameRegistry.register(new ItemBlock(PROTOSS_VOID_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_VOID_ENERGY_CHANNEL.getRegistryRL()));
 
@@ -385,6 +400,15 @@ public class ModBlocks extends Block {
 		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
 		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
 
+		GameRegistry.register(CORE_CYBERNETICSCORE_VOID);
+		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_VOID.getRegistryRL()));
+
+		GameRegistry.register(CORE_CYBERNETICSCORE_DARK);
+		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_DARK.getRegistryRL()));
+
+		GameRegistry.register(CORE_CYBERNETICSCORE_KHALAI);
+		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_KHALAI.getRegistryRL()));
+		
 		GameRegistry.register(CORE_PYLON_VOID);
 		GameRegistry.register(new ItemBlock(CORE_PYLON_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL()));
 
@@ -527,10 +551,14 @@ public class ModBlocks extends Block {
 		registerModel(PROTOSS_ENERGY_STABILIZER);
 		registerModel(PROTOSS_DARK_ENERGY_CHANNEL);
 		registerModel(PROTOSS_DARK_ENERGY_STABILIZER);
+		registerModel(PROTOSS_SHIELD);
 		registerModel(PROTOSS_VOID_ENERGY_CHANNEL);
 		registerModel(PROTOSS_VOID_ENERGY_STABILIZER);
 
 		// Protoss Cores
+		registerModel(CORE_CYBERNETICSCORE_VOID);
+		registerModel(CORE_CYBERNETICSCORE_DARK);
+		registerModel(CORE_CYBERNETICSCORE_KHALAI);
 		registerModel(CORE_PYLON_VOID);
 		registerModel(CORE_PYLON_DARK);
 		registerModel(CORE_PYLON_KHALAI);
@@ -570,8 +598,7 @@ public class ModBlocks extends Block {
 	}
 
 	/**
-	 * ...?
-	 * @param bool 'tis a bool
+	 * @param bool boolean
 	 * @return {@code bool}
 	 */
 	public boolean PoweredByPSI(boolean bool) {

@@ -1,5 +1,6 @@
 package scmc.worldgen.layer;
 
+import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
@@ -7,7 +8,7 @@ import scmc.worldgen.biome.BiomesSC;
 
 public class GenLayerShakurasBiomes extends GenLayer {
 
-	public Biome[] dimBiomes = { BiomesSC.biomeShakurasDesert, BiomesSC.biomeShakurasCity };
+	public Biome[] dimBiomes = { BiomesSC.biomeShakurasDesert, BiomesSC.biomeShakurasCity};
 
 	public GenLayerShakurasBiomes(long par1) {
 		super(par1);

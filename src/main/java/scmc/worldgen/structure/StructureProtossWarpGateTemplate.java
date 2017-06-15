@@ -623,7 +623,6 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(4, 3 + offsetY, 7), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(5, 3 + offsetY, 7), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(6, 3 + offsetY, 7), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
-		world.setBlockState(pos.add(7, 3 + offsetY, 7), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(8, 3 + offsetY, 7), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(9, 3 + offsetY, 7), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
 		world.setBlockState(pos.add(10, 3 + offsetY, 7), ModMetaBlocks.PROTOSS_METAL_T1.getStateFromMeta(metaPrimColor));
@@ -2219,6 +2218,13 @@ public class StructureProtossWarpGateTemplate extends SCWorldGenerator {
 		world.setBlockState(pos.add(12, 12 + offsetY, 14), Blocks.AIR.getDefaultState());
 		world.setBlockState(pos.add(13, 12 + offsetY, 14), Blocks.AIR.getDefaultState());
 		world.setBlockState(pos.add(14, 12 + offsetY, 14), Blocks.AIR.getDefaultState());
+		if(metaSecColor == 0) {
+			world.setBlockState(pos.add(7, 3 + offsetY, 7), ModBlocks.CORE_WARPGATE_KHALAI.getDefaultState(), 2);
+		}else if(metaSecColor == 2) {
+			world.setBlockState(pos.add(7, 3 + offsetY, 7), ModBlocks.CORE_WARPGATE_VOID.getDefaultState(), 2);
+		}else if(metaSecColor == 1) {
+			world.setBlockState(pos.add(7, 3 + offsetY, 7), ModBlocks.CORE_WARPGATE_DARK.getDefaultState(), 2);
+		}
 		return true;
 
 	}

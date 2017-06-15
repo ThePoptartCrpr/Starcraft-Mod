@@ -23,7 +23,7 @@ public class VanillaEntityHandler {
 			if(event.getEntity() instanceof EntityCaveSpider || event.getEntity() instanceof EntitySilverfish || event.getEntity() instanceof EntityWitch
 					|| event.getEntity() instanceof EntitySlime || event.getEntity() instanceof EntityEnderman || event.getEntity() instanceof EntityCreeper
 					|| event.getEntity() instanceof EntitySkeleton || event.getEntity() instanceof EntityZombie || event.getEntity() instanceof EntitySpider) {
-				event.setCanceled(true);
+				event.setCanceled(false);
 			}
 		}
 	}
