@@ -18,6 +18,6 @@ public class BlockCharGravel extends BlockGravel {
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getRegistryRL());
 		setCreativeTab(StarcraftCreativeTabs.BUILDING);
-		this.setSoundType(SoundType.SAND);
+		this.setSoundType(SoundType.GROUND);
 	}
 }

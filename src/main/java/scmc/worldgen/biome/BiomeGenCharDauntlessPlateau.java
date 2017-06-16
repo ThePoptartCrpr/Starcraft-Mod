@@ -8,13 +8,14 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
 import scmc.blocks.ModBlocks;
+import scmc.blocks.metablocks.ModMetaBlocks;
 
-public class BiomeGenCharAshHills extends BiomesSC {
+public class BiomeGenCharDauntlessPlateau extends BiomesSC {
 
-	public BiomeGenCharAshHills(BiomeProperties id) {
+	public BiomeGenCharDauntlessPlateau(BiomeProperties id) {
 		super(id);
 
-		setRegistryName("ash_hills");
+		setRegistryName("dauntless_plateau");
 
 		topBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 		fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
@@ -62,7 +63,7 @@ public class BiomeGenCharAshHills extends BiomesSC {
 
 						if(yLoc >= seaLevel - 1) {
 							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, topBlock);
-							chunkPrimerIn.setBlockState(xLoc, yLoc + 1, zLoc, ModBlocks.ASH_CHAR.getStateFromMeta(1));
+							chunkPrimerIn.setBlockState(xLoc, yLoc + 1, zLoc, ModMetaBlocks.COMP_METAL_T1.getStateFromMeta(1));
 						} else if(yLoc < seaLevel - 7 - randHeight) {
 							topBlock = AIR;
 							fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();

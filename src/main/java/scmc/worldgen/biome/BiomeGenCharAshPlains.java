@@ -62,7 +62,7 @@ public class BiomeGenCharAshPlains extends BiomesSC {
 
 						if(yLoc >= seaLevel - 1) {
 							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, topBlock);
-							chunkPrimerIn.setBlockState(xLoc, yLoc + 1, zLoc, ModBlocks.ASH_CHAR.getStateFromMeta(rand.nextInt(3)));
+							chunkPrimerIn.setBlockState(xLoc, yLoc + 1, zLoc, ModBlocks.ASH_CHAR.getStateFromMeta(1));
 						} else if(yLoc < seaLevel - 7 - randHeight) {
 							topBlock = AIR;
 							fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();

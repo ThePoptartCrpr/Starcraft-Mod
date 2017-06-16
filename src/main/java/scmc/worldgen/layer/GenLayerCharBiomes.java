@@ -7,8 +7,9 @@ import scmc.worldgen.biome.BiomesSC;
 
 public class GenLayerCharBiomes extends GenLayer {
 
-	public Biome[] dimBiomes = { BiomesSC.biomeCharCreepInfestation, BiomesSC.biomeAshPlains, BiomesSC.biomeMoltenInferno, BiomesSC.biomeAshPlateau,
-			BiomesSC.biomeLavaOcean, BiomesSC.biomeAshHills };
+	public Biome[] dimBiomes = { BiomesSC.biomeCharCreepInfestation, BiomesSC.biomeAshPlains, BiomesSC.biomeMoltenInferno, BiomesSC.biomeAshPlateau, BiomesSC.biomeLavaOcean,
+			BiomesSC.biomeAshHills, BiomesSC.biomeCharHills, BiomesSC.biomeDauntlessPlateau, BiomesSC.biomeAcidMarsh, BiomesSC.biomeBoneTrench,
+			BiomesSC.biomeCharOutskirts };
 
 	public GenLayerCharBiomes(long par1) {
 		super(par1);

@@ -9,12 +9,12 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
 import scmc.blocks.ModBlocks;
 
-public class BiomeGenCharAshHills extends BiomesSC {
+public class BiomeGenCharAcidMarsh extends BiomesSC {
 
-	public BiomeGenCharAshHills(BiomeProperties id) {
+	public BiomeGenCharAcidMarsh(BiomeProperties id) {
 		super(id);
 
-		setRegistryName("ash_hills");
+		setRegistryName("acid_marsh");
 
 		topBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 		fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
@@ -25,7 +25,6 @@ public class BiomeGenCharAshHills extends BiomesSC {
 		spawnableCaveCreatureList.clear();
 	}
 
-	@SuppressWarnings("deprecation")
 	public final void genBiomeTerrainChar(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 
 		int seaLevel = worldIn.getSeaLevel();
@@ -42,10 +41,11 @@ public class BiomeGenCharAshHills extends BiomesSC {
 			} else {
 				IBlockState origState = chunkPrimerIn.getBlockState(xLoc, yLoc, zLoc);
 
-				if(origState.getMaterial() == Material.AIR) { // If we're still in the air...
+				if(origState.getMaterial() == Material.AIR) { // If we're still
+																	// in the air...
 					j = -1;
-				} else if(origState.getBlock() == ModBlocks.STONE_CHAR) { // If we've hit the ground...
-					if(j == -1) { // If we were just in the air...
+				} else if(origState.getBlock() == ModBlocks.STONE_CHAR) {
+					if(j == -1) {
 						if(randHeight <= 0) {
 							topBlock = AIR;
 							fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();
@@ -55,18 +55,17 @@ public class BiomeGenCharAshHills extends BiomesSC {
 						}
 
 						if(yLoc < seaLevel && (topBlock == null || topBlock.getMaterial() == Material.AIR)) {
-							topBlock = Blocks.LAVA.getDefaultState();
+							topBlock = ModBlocks.FLUID_ACID.getDefaultState();
 						}
 
 						j = randHeight;
 
 						if(yLoc >= seaLevel - 1) {
 							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, topBlock);
-							chunkPrimerIn.setBlockState(xLoc, yLoc + 1, zLoc, ModBlocks.ASH_CHAR.getStateFromMeta(1));
 						} else if(yLoc < seaLevel - 7 - randHeight) {
 							topBlock = AIR;
 							fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();
-							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, GRAVEL);
+							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, ModBlocks.GRAVEL_CHAR.getDefaultState()); 
 						} else {
 							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, fillerBlock);
 						}

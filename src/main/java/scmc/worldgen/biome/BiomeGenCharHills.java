@@ -9,12 +9,12 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
 import scmc.blocks.ModBlocks;
 
-public class BiomeGenCharAshHills extends BiomesSC {
+public class BiomeGenCharHills extends BiomesSC {
 
-	public BiomeGenCharAshHills(BiomeProperties id) {
+	public BiomeGenCharHills(BiomeProperties id) {
 		super(id);
 
-		setRegistryName("ash_hills");
+		setRegistryName("char_hills");
 
 		topBlock = ModBlocks.DIRT_CHAR.getDefaultState();
 		fillerBlock = ModBlocks.DIRT_CHAR.getDefaultState();
@@ -62,7 +62,7 @@ public class BiomeGenCharAshHills extends BiomesSC {
 
 						if(yLoc >= seaLevel - 1) {
 							chunkPrimerIn.setBlockState(xLoc, yLoc, zLoc, topBlock);
-							chunkPrimerIn.setBlockState(xLoc, yLoc + 1, zLoc, ModBlocks.ASH_CHAR.getStateFromMeta(1));
+							chunkPrimerIn.setBlockState(xLoc, yLoc + 1, zLoc, ModBlocks.DIRT_CHAR.getDefaultState());
 						} else if(yLoc < seaLevel - 7 - randHeight) {
 							topBlock = AIR;
 							fillerBlock = ModBlocks.STONE_CHAR.getDefaultState();
