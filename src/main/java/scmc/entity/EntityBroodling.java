@@ -11,7 +11,6 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.SoundEvent;
@@ -22,7 +21,6 @@ import scmc.entity.monster.EntityTerranMob;
 import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
-import scmc.entity.passive.EntityZergPassive;
 import scmc.lib.StarcraftConfig;
 
 public class EntityBroodling extends EntityZergMob implements IMob, Predicate<EntityLivingBase>{

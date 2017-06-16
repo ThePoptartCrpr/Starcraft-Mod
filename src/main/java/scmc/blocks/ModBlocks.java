@@ -27,7 +27,6 @@ import scmc.blocks.debug.DimPortalAiur;
 import scmc.blocks.debug.DimPortalChar;
 import scmc.blocks.debug.DimPortalOverworld;
 import scmc.blocks.debug.DimPortalShakuras;
-import scmc.blocks.metablocks.BlockCompressedMetalsT1;
 import scmc.blocks.metablocks.ModMetaBlocks;
 import scmc.blocks.ore.OreOWCopper;
 import scmc.blocks.ore.OreOWTitanium;
@@ -67,7 +66,6 @@ public class ModBlocks extends Block {
 	public static Block BLOCK_MOVING_LIGHT_SOURCE;
 	public static Block COBBLESTONE_CHAR;
 	public static Block COBBLESTONE_SHAKURAS;
-	public static BlockCompressedMetalsT1 COMP_METAL;
 	public static Block CORE_CYBERNETICSCORE_DARK;
 	public static Block CORE_CYBERNETICSCORE_KHALAI;
 	public static Block CORE_CYBERNETICSCORE_VOID;
@@ -86,7 +84,7 @@ public class ModBlocks extends Block {
 	public static Block DIM_PORTAL_SHAKURAS;
 	public static Block DIRT_CHAR;
 	public static Block DIRT_SHAKURAS;
-	public static Block ENERGY_BLOCK;
+	public static Block ENERGY;
 	public static Block FLUID_ACID;
 	public static Block FLUID_BLOOD;
 	public static Block GRAVEL_CHAR;
@@ -135,7 +133,7 @@ public class ModBlocks extends Block {
 	public static Block VESPENE_GEYSER_BASE;
 	public static Block VESPENE_GEYSER_BASE_CHAR;
 	public static Block VESPENE_GEYSER_BASE_SHAKURAS;
-	public static Block VOID_ENERGY_BLOCK;
+	public static Block VOID_ENERGY;
 	public static Block WARPGATE_WORMHOLE_CHAR;
 	public static Block WARPGATE_WORMHOLE_OVERWORLD;
 	public static Block WARPGATE_WORMHOLE_SHAKURAS;
@@ -207,6 +205,8 @@ public class ModBlocks extends Block {
 		PROTOSS_VOID_ENERGY_CHANNEL = new BlockProtossEnergyChannelVoid();
 		PROTOSS_VOID_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerVoid();
 		
+		ENERGY = new BlockEnergy();
+		VOID_ENERGY = new BlockVoidEnergy();
 
 		// Zerg Blocks
 		ZERG_CREEP = new BlockZergCreep();
@@ -444,9 +444,12 @@ public class ModBlocks extends Block {
 
 		GameRegistry.register(FLUID_BLOOD);
 		GameRegistry.register(new ItemBlock(FLUID_BLOOD).setRegistryName(Reference.ModBlocks.FLUID_BLOOD.getRegistryRL()));
-
-		// GameRegistry.registerBlock(PROTOSS_METAL, ItemBlockMeta.class,
-		// "protoss_metal");
+		
+		GameRegistry.register(ENERGY);
+		GameRegistry.register(new ItemBlock(ENERGY).setRegistryName(Reference.ModBlocks.BLOCK_ENERGY.getRegistryRL()));
+		
+		GameRegistry.register(VOID_ENERGY);
+		GameRegistry.register(new ItemBlock(VOID_ENERGY).setRegistryName(Reference.ModBlocks.BLOCK_VOID_ENERGY.getRegistryRL()));
 	}
 
 	private static void registerFluid(final Block block) {
@@ -555,6 +558,9 @@ public class ModBlocks extends Block {
 		registerModel(PROTOSS_VOID_ENERGY_CHANNEL);
 		registerModel(PROTOSS_VOID_ENERGY_STABILIZER);
 
+		registerFluid(ENERGY);
+		registerFluid(VOID_ENERGY);
+		
 		// Protoss Cores
 		registerModel(CORE_CYBERNETICSCORE_VOID);
 		registerModel(CORE_CYBERNETICSCORE_DARK);

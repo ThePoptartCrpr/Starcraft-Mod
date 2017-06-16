@@ -21,7 +21,7 @@ public class OnPickupItemEvent {
 
 	@SubscribeEvent
 	public static void onMineralShardObtained(PlayerEvent.ItemPickupEvent e) {
-		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModItems.mineralShard))) {
+		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModItems.MINERAL_SHARD))) {
 			e.player.addStat(Achievements.achievementMinedMinerals, 1);
 			// add sound here
 		}
@@ -29,7 +29,7 @@ public class OnPickupItemEvent {
 
 	@SubscribeEvent
 	public static void onRawVespeneObtained(PlayerEvent.ItemPickupEvent e) {
-		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModItems.vespene, 0, 3))) {
+		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModItems.VESPENE, 0, 3))) {
 			e.player.addStat(Achievements.achievementMinedVespene, 1);
 			// add sound here
 		}
@@ -37,7 +37,7 @@ public class OnPickupItemEvent {
 
 	@SubscribeEvent
 	public static void onRichMineralShardObtained(PlayerEvent.ItemPickupEvent e) {
-		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModItems.richMineralShard))) {
+		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(ModItems.RICH_MINERAL_SHARD))) {
 			e.player.addStat(Achievements.achievementMinedRichMinerals, 1);
 			// add sound here
 		}

@@ -15,7 +15,7 @@ public class ModWeapons {
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial("COPPER", 2, 190, 4.5F, 1.0F, 10);
 	public static Item COPPER_SWORD;
 
-	public static Item DARK_PSI_BLADE;
+	public static Item BANE_BLADE;
 
 	public static Item DARK_WARP_BLADE;
 	// public static Item DARK_DUAL_WARP_BLADE;
@@ -43,7 +43,7 @@ public class ModWeapons {
 
 	public static void init() {
 		PSI_BLADE = new WeaponPsiBlade(PSIBLADE);
-		DARK_PSI_BLADE = new WeaponDarkPsiBlade(PSIBLADE);
+		BANE_BLADE = new WeaponDarkPsiBlade(PSIBLADE);
 
 		WARP_BLADE = new WeaponWarpBlade(WARPBLADE);
 		DARK_WARP_BLADE = new WeaponDarkWarpBlade(WARPBLADE);
@@ -63,7 +63,7 @@ public class ModWeapons {
 
 	public static void register() {
 		registerItem(PSI_BLADE);
-		registerItem(DARK_PSI_BLADE);
+		registerItem(BANE_BLADE);
 
 		registerItem(WARP_BLADE);
 		registerItem(DARK_WARP_BLADE);
@@ -94,7 +94,7 @@ public class ModWeapons {
 
 	public static void registerRenders() {
 		registerRender(PSI_BLADE);
-		registerRender(DARK_PSI_BLADE);
+		registerRender(BANE_BLADE);
 
 		registerRender(WARP_BLADE);
 		registerRender(DARK_WARP_BLADE);

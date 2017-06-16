@@ -20,27 +20,34 @@ tile.protossMetalT1.dark.name=Dark Protoss Metal T1
 tile.protossMetalT1.aiur.name=Protoss Metal T1
 tile.protossMetalT1.blue.name=Blue Protoss Metal T1
 tile.protossMetalT1.green.name=Green Protoss Metal T1
+tile.protossMetalT1.red.name=Red Protoss Metal T1
 
 tile.protossMetalT2.dark.name=Dark Protoss Metal T2
 tile.protossMetalT2.aiur.name=Protoss Metal T2
 tile.protossMetalT2.blue.name=Blue Protoss Metal T2
 tile.protossMetalT2.green.name=Green Protoss Metal T2
+tile.protossMetalT2.red.name=Red Protoss Metal T2
 
 tile.protossMetalT3.dark.name=Dark Protoss Metal T3
 tile.protossMetalT3.aiur.name=Protoss Metal T3
 tile.protossMetalT3.blue.name=Blue Protoss Metal T3
 tile.protossMetalT3.green.name=Green Protoss Metal T3
+tile.protossMetalT3.red.name=Red Protoss Metal T3
 
 tile.protossEnergyStabilizer.name=Protoss Energy Stabilizer
 tile.protossEnergyChannel.name=Protoss Energy Channel
-tile.protossEnergyStabilizerDark.name=Dark Protoss Energy Stabilizer
-tile.protossEnergyChannelDark.name=Dark Protoss Energy Channel
+tile.protossDarkEnergyStabilizer.name=Dark Protoss Energy Stabilizer
+tile.protossDarkEnergyChannel.name=Dark Protoss Energy Channel
+tile.protossVoidEnergyStabilizer.name=Void Protoss Energy Stabilizer
+tile.protossVoidEnergyChannel.name=Void Protoss Energy Channel
 
-tile.oreAlienC.name=Alien Ore (Char)
-tile.oreAlienS.name=Alien Ore (Shakuras)
 tile.pylonCrystal.pure.name=Pylon Crystal
 tile.pylonCrystal.dark.name=Dark Pylon Crystal
 tile.pylonCrystal.void.name=Void Pylon Crystal
+
+tile.coreCyberneticsCoreVoid.name=Cybernetics Core Core (Void)
+tile.coreCyberneticsCoreDark.name=Cybernetics Core Core (Dark)
+tile.coreCyberneticsCoreKhalai.name=Cybernetics Core Core (Khalai)
 
 tile.corePylonVoid.name=Pylon Core (Void)
 tile.corePylonDark.name=Pylon Core (Dark)
@@ -91,6 +98,25 @@ tile.dyedIron.purple.name=Block of Iron (Purple)
 tile.dyedIron.red.name=Block of Iron (Red)
 tile.dyedIron.silver.name=Block of Iron (Silver)
 tile.dyedIron.yellow.name=Block of Iron (Yellow)
+
+tile.neosteel.base.name=Neosteel Base
+tile.neosteel.frame.name=Neosteel Frame
+
+tile.paristeel.purple.name=Paristeel (Purple)
+tile.paristeel.brown.name=Paristeel (Brown)
+tile.paristeel.pink.name=Paristeel (Pink)
+tile.paristeel.blue.name=Paristeel (Blue)
+tile.paristeel.cyan.name=Paristeel (Cyan)
+tile.paristeel.gray.name=Paristeel (Gray)
+tile.paristeel.green.name=Paristeel (Green)
+tile.paristeel.lightblue.name=Paristeel (Light Blue)
+tile.paristeel.lime.name=Paristeel (Lime)
+tile.paristeel.magenta.name=Paristeel (Magenta)
+tile.paristeel.orange.name=Paristeel (Orange)
+tile.paristeel.red.name=Paristeel (Red)
+tile.paristeel.silver.name=Paristeel (Silver)
+tile.paristeel.white.name=Paristeel (White)
+tile.paristeel.yellow.name=Paristeel (Yellow)
 
 tile.mineralField.name=Mineral Field
 tile.richMineralField.name=Rich Mineral Field
@@ -147,6 +173,7 @@ tile.fluidBlood.name=Fluid Blood
 
 tile.charAsh.name=Ash (Char)
 tile.charDirt.name=Dirt (Char)
+tile.charGravel.name=Gravel (Char)
 tile.charStone.name=Stone (Char)
 tile.charCobblestone.name=Cobblestone (Char)
 
@@ -159,6 +186,7 @@ tile.charOreRedstone.name=Redstone Ore (Char)
 tile.charOreRedstoneLit.name=Redstone Ore (Char)
 tile.charOreLapis.name=Lapis Lazuli Ore (Char)
 
+tile.aiurDimPortal.name=Aiur Portal
 tile.charDimPortal.name=Char Portal
 tile.overworldDimPortal.name=Overworld Portal
 tile.shakurasDimPortal.name=Shakuras Portal
@@ -179,10 +207,14 @@ fluid.fluidBlood=Blood
 #########
 
 item.psiBlade.name=Psi Blade
-item.darkPsiBlade.name=Psi Blade (Dark)
+item.darkPsiBlade.name=Bane Blade
 item.warpBlade.name=Warp Blade
 item.darkWarpBlade.name=Warp Blade (Dark)
 item.masterPsiBlade.name=Master Psi Blade
+
+item.balisong.name=Balisong
+item.militaryKnife.name=Military Knife
+item.monomolecularBlade.name=Monomolecular Blade
 
 item.mineralShard.blue.name=Mineral Shard
 item.mineralShard.rich.name=Rich Mineral Shard
@@ -206,23 +238,11 @@ item.crystal.khaydarin.name=Khaydarin Crystal
 item.crystal.bloodshard.name=BloodShard Crystal
 item.crystal.uraj.name=Uraj Crystal
 
-item.ingot1.alien.name=Alien Ingot T1
-item.ingot1.aliendark.name=Dark Alien Ingot T1
-item.ingot1.titanium.name=Titanium Ingot T1
-item.ingot1.copper.name=Copper Ingot T1
-item.ingot1.steel.name=Steel Ingot T1
-
-item.ingot2.alien.name=Alien Ingot T2
-item.ingot2.aliendark.name=Dark Alien Ingot T2
-item.ingot2.titanium.name=Titanium Ingot T2
-item.ingot2.copper.name=Copper Ingot T2
-item.ingot2.steel.name=Steel Ingot T2
-
-item.ingot3.alien.name=Alien Ingot T3
-item.ingot3.aliendark.name=Dark Alien Ingot T3
-item.ingot3.titanium.name=Titanium Ingot T3
-item.ingot3.copper.name=Copper Ingot T3
-item.ingot3.steel.name=Steel Ingot T3
+item.ingot1.alien.name=Alien Ingot
+item.ingot1.aliendark.name=Dark Alien Ingot
+item.ingot1.titanium.name=Titanium Ingot
+item.ingot1.copper.name=Copper Ingot
+item.ingot1.steel.name=Steel Ingot
 
 item.titaniumSword.name=Titanium Sword
 item.titaniumPickaxe.name=Titanium Pickaxe
@@ -268,9 +288,101 @@ item.ghostChestplate.name=Ghost Chestplate
 item.ghostLeggings.name=Ghost Leggings
 item.ghostBoots.name=Ghost Boots
 
+item.adeptHelmetT1.name=Adept Helmet T1
+item.adeptChestplateT1.name=Adept Chestplate T1
+item.adeptLeggingsT1.name=Adept Leggings T1
+item.adeptBootsT1.name=Adept Boots T1
+
+item.adeptHelmetT2.name=Adept Helmet T2
+item.adeptChestplateT2.name=Adept Chestplate T2
+item.adeptLeggingsT2.name=Adept Leggings T2
+item.adeptBootsT2.name=Adept Boots T2
+
+item.adeptHelmetT3.name=Adept Helmet T3
+item.adeptChestplateT3.name=Adept Chestplate T3
+item.adeptLeggingsT3.name=Adept Leggings T3
+item.adeptBootsT3.name=Adept Boots T3
+
+item.darkZealotHelmetT1.name=Dark Zealot Helmet T1
+item.darkZealotChestplateT1.name=Dark Zealot Chestplate T1
+item.darkZealotLeggingsT1.name=Dark Zealot Leggings T1
+item.darkZealotBootsT1.name=Dark Zealot Boots T1
+
+item.darkZealotHelmetT2.name=Dark Zealot Helmet T2
+item.darkZealotChestplateT2.name=Dark Zealot Chestplate T2
+item.darkZealotLeggingsT2.name=Dark Zealot Leggings T2
+item.darkZealotBootsT2.name=Dark Zealot Boots T2
+
+item.darkZealotHelmetT3.name=Dark Zealot Helmet T3
+item.darkZealotChestplateT3.name=Dark Zealot Chestplate T3
+item.darkZealotLeggingsT3.name=Dark Zealot Leggings T3
+item.darkZealotBootsT3.name=Dark Zealot Boots T3
+
+item.purifierAdeptHelmetT1.name=Purifier Adept Helmet T1
+item.purifierAdeptChestplateT1.name=Purifier Adept Chestplate T1
+item.purifierAdeptLeggingsT1.name=Purifier Adept Leggings T1
+item.purifierAdeptBootsT1.name=Purifier Adept Boots T1
+
+item.purifierAdeptHelmetT2.name=Purifier Adept Helmet T2
+item.purifierAdeptChestplateT2.name=Purifier Adept Chestplate T2
+item.purifierAdeptLeggingsT2.name=Purifier Adept Leggings T2
+item.purifierAdeptBootsT2.name=Purifier Adept Boots T2
+
+item.purifierAdeptHelmetT3.name=Purifier Adept Helmet T3
+item.purifierAdeptChestplateT3.name=Purifier Adept Chestplate T3
+item.purifierAdeptLeggingsT3.name=Purifier Adept Leggings T3
+item.purifierAdeptBootsT3.name=Purifier Adept Boots T3
+
+item.zealotHelmetT1.name=Zealot Helmet T1
+item.zealotChestplateT1.name=Zealot Chestplate T1
+item.zealotLeggingsT1.name=Zealot Leggings T1
+item.zealotBootsT1.name=Zealot Boots T1
+
+item.zealotHelmetT2.name=Zealot Helmet T2
+item.zealotChestplateT2.name=Zealot Chestplate T2
+item.zealotLeggingsT2.name=Zealot Leggings T2
+item.zealotBootsT2.name=Zealot Boots T2
+
+item.zealotHelmetT3.name=Zealot Helmet T3
+item.zealotChestplateT3.name=Zealot Chestplate T3
+item.zealotLeggingsT3.name=Zealot Leggings T3
+item.zealotBootsT3.name=Zealot Boots T3
+
+item.khaydarinAmulet.name=Khaydarin Amulet
+item.darkKhaydarinAmulet.name=Dark Khaydarin Amulet
+
 item.zergICarapace.t1.name=Zerg Carapace T1
 item.zergICarapace.t2.name=Zerg Carapace T2
 item.zergICarapace.t3.name=Zerg Carapace T3
+
+item.mutaliskWing.purple.name=Mutalisk Wing (Purple)
+item.mutaliskWing.brown.name=Mutalisk Wing (Brown)
+item.mutaliskWing.pink.name=Mutalisk Wing (Pink)
+item.mutaliskWing.blue.name=Mutalisk Wing (Blue)
+item.mutaliskWing.cyan.name=Mutalisk Wing (Cyan)
+item.mutaliskWing.gray.name=Mutalisk Wing (Gray)
+item.mutaliskWing.green.name=Mutalisk Wing (Green)
+item.mutaliskWing.lightblue.name=Mutalisk Wing (Light Blue)
+item.mutaliskWing.lime.name=Mutalisk Wing (Lime)
+item.mutaliskWing.magenta.name=Mutalisk Wing (Magenta)
+item.mutaliskWing.orange.name=Mutalisk Wing (Orange)
+item.mutaliskWing.red.name=Mutalisk Wing (Red)
+item.mutaliskWing.silver.name=Mutalisk Wing (Silver)
+item.mutaliskWing.white.name=Mutalisk Wing (White)
+item.mutaliskWing.yellow.name=Mutalisk Wing (Yellow)
+
+item.credit.bronze.name=Bronze Credit
+item.credit.silver.name=Silver Credit
+item.credit.gold.name=Gold Credit
+item.credit.platinum.name=Platinum Credit
+
+item.spawnerProtossDarkCyberneticsCore.name=Dark Cybernetics Core Spawner
+item.spawnerProtossCyberneticsCore.name=Cybernetics Core Spawner
+item.spawnerProtossVoidCyberneticsCore.name=Void Cybernetics Core Spawner
+
+item.spawnerProtossDarkPylon.name=Dark Pylon Spawner
+item.spawnerProtossPylon.name=Pylon Spawner
+item.spawnerProtossVoidPylon.name=Void Pylon Spawner
 
 item.zergCreepResin.name=Creep Resin
 item.organicTissue.name=Organic Tissue
@@ -322,7 +434,7 @@ achievement.mineRichMinerals.desc=Get rich mineral shards!
 achievement.mineVespene=Vespene Geyser Depleted!
 achievement.mineVespene.desc=Obtain vespene!
 				
-achievement.getC14GaussRifle=Hell, it's About Time!
+achievement.getC14GaussRifle=Hell, It's About Time!
 achievement.getC14GaussRifle.desc=Obtain a C14 gauss rifle!
 
 achievement.getPsiBladeFocuser=Embrace Purity

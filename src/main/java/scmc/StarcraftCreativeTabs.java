@@ -40,7 +40,7 @@ public class StarcraftCreativeTabs {
 
 		@Override
 		public Item getTabIconItem() {
-			return ModItems.energy;
+			return ModItems.ENERGY;
 		}
 	};
 

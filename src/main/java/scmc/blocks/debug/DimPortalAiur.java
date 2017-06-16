@@ -20,7 +20,6 @@ import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.lib.ModTeleporter;
 import scmc.lib.Reference;
-import scmc.worldgen.DimensionRegistry;
 
 public class DimPortalAiur extends ModBlocks {
 

@@ -32,7 +32,7 @@ public class Reference {
 		BLOCK_DIRT_CHAR("charDirt", "char_dirt"),
 		BLOCK_DIRT_S("shakurasDirt", "shakuras_dirt"),
 		BLOCK_DYED_IRON("dyedIron", "dyed_iron"),
-		BLOCK_ENERGY("energy", "energy"),
+		BLOCK_ENERGY("blockEnergy", "block_energy"),
 		BLOCK_GRAVEL_CHAR("charGravel", "char_gravel"),
 		BLOCK_KERATIN_CHUNK("zergKeratinChunk", "zerg_keratin_chunk"),
 		BLOCK_MAGMA_CHAR("charMagma", "char_magma"),

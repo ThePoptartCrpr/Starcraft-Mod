@@ -3,7 +3,6 @@ package scmc.worldgen;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.common.DimensionManager;
-import scmc.lib.StarcraftConfig;
 import scmc.worldgen.aiur.WorldProviderAiur;
 import scmc.worldgen.provider.WorldProviderChar;
 import scmc.worldgen.provider.WorldProviderShakuras;

@@ -47,7 +47,7 @@ public class BlockMovingLightSource extends ModBlocks implements ITileEntityProv
 			add(Item.getItemFromBlock(Blocks.SEA_LANTERN));
 			add(Item.getItemFromBlock(Blocks.END_PORTAL));
 			add(Item.getItemFromBlock(Blocks.END_PORTAL_FRAME));
-			add(ModItems.crystal);
+			add(ModItems.PROTOSS_CRYSTAL);
 		}
 	};
 

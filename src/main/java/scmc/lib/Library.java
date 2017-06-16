@@ -179,7 +179,20 @@ public class Library {
 		}
 	}
 	
-	/**
+	public static void square(World world, BlockPos center, int radius, IBlockState state) {
+        BlockPos pos = center.add(-radius, 0, -radius);
+        EnumFacing facing = EnumFacing.EAST;
+        for (int i = 0; i < 4; i++) {
+            for (int k = radius * 2 - 1; k >= 0; k--) {
+                if (world.getBlockState(pos).getBlock() == Blocks.AIR)
+                    world.setBlockState(pos, state);
+                pos = pos.offset(facing);
+            }
+            facing = facing.rotateY();
+        }
+    }
+
+    /**
 	 * Creates the glorious shields
 	 * @param world the world
 	 * @param pos the bottom-middle of the shield
@@ -201,18 +214,5 @@ public class Library {
             for (int z = -radius; z <= radius; z++)
                 if (world.getBlockState(pos.add(x, domeHeight - 1, z)).getBlock() == Blocks.AIR)
                     world.setBlockState(pos.add(x, domeHeight - 1, z), state);
-    }
-
-    public static void square(World world, BlockPos center, int radius, IBlockState state) {
-        BlockPos pos = center.add(-radius, 0, -radius);
-        EnumFacing facing = EnumFacing.EAST;
-        for (int i = 0; i < 4; i++) {
-            for (int k = radius * 2 - 1; k >= 0; k--) {
-                if (world.getBlockState(pos).getBlock() == Blocks.AIR)
-                    world.setBlockState(pos, state);
-                pos = pos.offset(facing);
-            }
-            facing = facing.rotateY();
-        }
     }
 }

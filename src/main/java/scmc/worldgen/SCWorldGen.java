@@ -224,19 +224,19 @@ public class SCWorldGen implements IWorldGenerator {
 					runGenerator(GRAVEL_CHAR, world, random, chunkX, chunkZ, 10, 0, 128);
 					
 
-					if(rnd.nextInt(100) < 20) {
+					if(rnd.nextInt(100) < 20 && world.getWorldInfo().isMapFeaturesEnabled()) {
 						runGenerator(SPAWNING_POOL, world, random, chunkX, chunkZ, 0, 1, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 15) {
+					if(rnd.nextInt(100) < 15 && world.getWorldInfo().isMapFeaturesEnabled()) {
 						runGenerator(ZERG_SPIRE, world, random, chunkX, chunkZ, 0, 1, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 15) {
+					if(rnd.nextInt(100) < 15 && world.getWorldInfo().isMapFeaturesEnabled()) {
 						runGenerator(ZERG_HYDRALISK_DEN, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 10) {
+					if(rnd.nextInt(100) < 10 && world.getWorldInfo().isMapFeaturesEnabled()) {
 						runGenerator(PROTOSS_WARPGATE, 1, 2, world, random, chunkX, chunkZ, 0, -1, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 5) {
+					if(rnd.nextInt(100) < 5 && world.getWorldInfo().isMapFeaturesEnabled()) {
 						runGenerator(VESPENE_GEYSER, ModBlocks.STONE_CHAR.getDefaultState(), Blocks.WATER.getDefaultState(), world, random, chunkX, chunkZ, 0, -34, 0, 1, 60, 70);
 					}
 					runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 25, 0, 128);
@@ -257,16 +257,16 @@ public class SCWorldGen implements IWorldGenerator {
 					BlockPos pos = new BlockPos(chunkZ, 0, chunkZ);
 					Biome biome = world.getBiomeProvider().getBiomeGenerator(pos);
 					
-					if(rnd.nextInt(100) < 30 && biome instanceof BiomeGenShakurasCity) {
+					if(rnd.nextInt(100) < 30 && world.getWorldInfo().isMapFeaturesEnabled() && biome instanceof BiomeGenShakurasCity) {
 						runGenerator(PROTOSS_PYLON, 1, 2, world, random, chunkX, chunkZ, 0, 3, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 10 && biome instanceof BiomeGenShakurasCity) {
+					if(rnd.nextInt(100) < 10 && world.getWorldInfo().isMapFeaturesEnabled() && biome instanceof BiomeGenShakurasCity) {
 						runGenerator(PROTOSS_WARPGATE, 1, 2, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 10 && biome instanceof BiomeGenShakurasCity) {
+					if(rnd.nextInt(100) < 10 && world.getWorldInfo().isMapFeaturesEnabled() && biome instanceof BiomeGenShakurasCity) {
 						runGenerator(PROTOSS_CYBERNETICS_CORE, 1, 2, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 					}
-					if(rnd.nextInt(100) < 5) {
+					if(rnd.nextInt(100) < 5 && world.getWorldInfo().isMapFeaturesEnabled()) {
 						runGenerator(VESPENE_GEYSER, ModBlocks.STONE_SHAKURAS.getDefaultState(), Blocks.WATER.getDefaultState(), world, random, chunkX, chunkZ, 0, -34, 0, 1, 60, 70);
 					}
 				}

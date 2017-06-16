@@ -40,7 +40,6 @@ import scmc.entity.ModEntities;
 import scmc.fluids.ModFluids;
 import scmc.handlers.FuelHandler;
 import scmc.items.ModItems;
-import scmc.lib.FactorySettings;
 import scmc.lib.Reference;
 import scmc.lib.StarcraftConfig;
 import scmc.material.ModMaterials;
@@ -66,6 +65,9 @@ import scmc.model.ModelZerglingBoost;
 import scmc.model.ModelZerglingRaptor;
 import scmc.model.ModelZerglingSC2;
 import scmc.model.ModelZerglingSwarmling;
+import scmc.recipes.ShapelessRecipes;
+import scmc.recipes.SimpleRecipes;
+import scmc.recipes.SmeltingRecipes;
 import scmc.renderer.RenderBroodling;
 import scmc.renderer.RenderBrutalisk;
 import scmc.renderer.RenderCivilian;
@@ -102,6 +104,9 @@ public class ClientProxy extends ServerProxy {
 		ModEntities.generateSpawnEgg();
 		registerEntityRenders();
 		Achievements.init();
+		SimpleRecipes.init();
+		ShapelessRecipes.init();
+		SmeltingRecipes.init();
 	}
 
 	@Override
@@ -174,47 +179,39 @@ public class ClientProxy extends ServerProxy {
 
 	@Override
 	public void registerModelBakeryStuff() {
-		ModelBakery.registerItemVariants(ModItems.mineralShard, new ResourceLocation(Reference.MODID, "shard_blue"), new ResourceLocation(Reference.MODID, "shard_rich"));
+		ModelBakery.registerItemVariants(ModItems.MINERAL_SHARD, new ResourceLocation(Reference.MODID, "shard_blue"), new ResourceLocation(Reference.MODID, "shard_rich"));
 
-		ModelBakery.registerItemVariants(ModItems.vespene, new ResourceLocation(Reference.MODID, "vespene_raw"), new ResourceLocation(Reference.MODID, "vespene_protoss"),
+		ModelBakery.registerItemVariants(ModItems.VESPENE, new ResourceLocation(Reference.MODID, "vespene_raw"), new ResourceLocation(Reference.MODID, "vespene_protoss"),
 				new ResourceLocation(Reference.MODID, "vespene_terran"), new ResourceLocation(Reference.MODID, "vespene_zerg"));
 
-		ModelBakery.registerItemVariants(ModItems.energy, new ResourceLocation(Reference.MODID, "energy_pure"), new ResourceLocation(Reference.MODID, "energy_corrupted"),
+		ModelBakery.registerItemVariants(ModItems.ENERGY, new ResourceLocation(Reference.MODID, "energy_pure"), new ResourceLocation(Reference.MODID, "energy_corrupted"),
 				new ResourceLocation(Reference.MODID, "energy_void"));
 
-		ModelBakery.registerItemVariants(ModItems.dust, new ResourceLocation(Reference.MODID, "dust_iron"), new ResourceLocation(Reference.MODID, "dust_steel"),
+		ModelBakery.registerItemVariants(ModItems.DUST, new ResourceLocation(Reference.MODID, "dust_iron"), new ResourceLocation(Reference.MODID, "dust_steel"),
 				new ResourceLocation(Reference.MODID, "dust_carbon"));
 
-		ModelBakery.registerItemVariants(ModItems.essence, new ResourceLocation(Reference.MODID, "essence_protoss"), new ResourceLocation(Reference.MODID, "essence_terran"),
+		ModelBakery.registerItemVariants(ModItems.ESSENCE, new ResourceLocation(Reference.MODID, "essence_protoss"), new ResourceLocation(Reference.MODID, "essence_terran"),
 				new ResourceLocation(Reference.MODID, "essence_zerg"));
 
-		ModelBakery.registerItemVariants(ModItems.ingot1, new ResourceLocation(Reference.MODID, "ingot1_copper"), new ResourceLocation(Reference.MODID, "ingot1_alien"),
+		ModelBakery.registerItemVariants(ModItems.INGOT, new ResourceLocation(Reference.MODID, "ingot1_copper"), new ResourceLocation(Reference.MODID, "ingot1_alien"),
 				new ResourceLocation(Reference.MODID, "ingot1_aliendark"), new ResourceLocation(Reference.MODID, "ingot1_titanium"),
 				new ResourceLocation(Reference.MODID, "ingot1_steel"));
 
-		ModelBakery.registerItemVariants(ModItems.ingot2, new ResourceLocation(Reference.MODID, "ingot2_copper"), new ResourceLocation(Reference.MODID, "ingot2_alien"),
-				new ResourceLocation(Reference.MODID, "ingot2_aliendark"), new ResourceLocation(Reference.MODID, "ingot2_titanium"),
-				new ResourceLocation(Reference.MODID, "ingot2_steel"));
-
-		ModelBakery.registerItemVariants(ModItems.ingot3, new ResourceLocation(Reference.MODID, "ingot3_copper"), new ResourceLocation(Reference.MODID, "ingot3_alien"),
-				new ResourceLocation(Reference.MODID, "ingot3_aliendark"), new ResourceLocation(Reference.MODID, "ingot3_titanium"),
-				new ResourceLocation(Reference.MODID, "ingot3_steel"));
-
-		ModelBakery.registerItemVariants(ModItems.coord, new ResourceLocation(Reference.MODID, "coordinate_char"),
+		ModelBakery.registerItemVariants(ModItems.COORDINATES, new ResourceLocation(Reference.MODID, "coordinate_char"),
 				new ResourceLocation(Reference.MODID, "coordinate_shakuras"));
 
-		ModelBakery.registerItemVariants(ModItems.psiBladeFocuserUncharged, new ResourceLocation(Reference.MODID, "protoss_psiblade_focuser_uncharged_aiur"),
+		ModelBakery.registerItemVariants(ModItems.PSI_BLADE_FOCUSER_UNCHARGED, new ResourceLocation(Reference.MODID, "protoss_psiblade_focuser_uncharged_aiur"),
 				new ResourceLocation(Reference.MODID, "protoss_psiblade_focuser_uncharged_dark"));
 
-		ModelBakery.registerItemVariants(ModItems.crystal, new ResourceLocation(Reference.MODID, "crystal_khaydarin"),
+		ModelBakery.registerItemVariants(ModItems.PROTOSS_CRYSTAL, new ResourceLocation(Reference.MODID, "crystal_khaydarin"),
 				new ResourceLocation(Reference.MODID, "crystal_bloodshard"), new ResourceLocation(Reference.MODID, "crystal_uraj"));
 
-		ModelBakery.registerItemVariants(ModItems.c14Parts, new ResourceLocation(Reference.MODID, "part_c14_gauss_body"),
+		ModelBakery.registerItemVariants(ModItems.C14_PARTS, new ResourceLocation(Reference.MODID, "part_c14_gauss_body"),
 				new ResourceLocation(Reference.MODID, "part_c14_gauss_barrel"), new ResourceLocation(Reference.MODID, "part_c14_gauss_grip"));
 
-		ModelBakery.registerItemVariants(ModItems.bullet, new ResourceLocation(Reference.MODID, "bullet_rifle_c14_gauss"));
+		ModelBakery.registerItemVariants(ModItems.BULLET, new ResourceLocation(Reference.MODID, "bullet_rifle_c14_gauss"));
 
-		ModelBakery.registerItemVariants(ModItems.zergCarapace, new ResourceLocation(Reference.MODID, "zerg_icarapace_t1"),
+		ModelBakery.registerItemVariants(ModItems.ZERG_CARAPACE, new ResourceLocation(Reference.MODID, "zerg_icarapace_t1"),
 				new ResourceLocation(Reference.MODID, "zerg_icarapace_t2"), new ResourceLocation(Reference.MODID, "zerg_icarapace_t3"));
 
 		ModelBakery.registerItemVariants(ModItems.MUTALISK_WING, new ResourceLocation(Reference.MODID, "mutalisk_wing_purple"),

@@ -14,7 +14,6 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -25,7 +24,6 @@ import scmc.StarcraftSoundEvents;
 import scmc.entity.monster.EntityProtossMob;
 import scmc.entity.monster.EntityTerranMob;
 import scmc.entity.monster.EntityZergMob;
-import scmc.entity.passive.EntityProtossPassive;
 import scmc.entity.passive.EntityTerranPassive;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
@@ -82,7 +80,7 @@ public class EntityZealot extends EntityProtossMob implements IMob, Predicate<En
 		if(j == 49) {
 			dropItem(ModWeapons.PSI_BLADE, 1);
 		} else if(j < 5) {
-			entityDropItem(new ItemStack(ModItems.energy, 1, 0), 1 + rand.nextInt(2));
+			entityDropItem(new ItemStack(ModItems.ENERGY, 1, 0), 1 + rand.nextInt(2));
 		}
 	}
 

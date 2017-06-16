@@ -83,7 +83,7 @@ public class EntityLarva extends EntityZergPassive {
 		int dropChanceCarapace = random.nextInt(9);
 
 		if(dropChanceCarapace == 1)
-			entityDropItem(new ItemStack(ModItems.zergCarapace, 1, 0), 1);
+			entityDropItem(new ItemStack(ModItems.ZERG_CARAPACE, 1, 0), 1);
 	}
 
 	@Override

@@ -72,7 +72,7 @@ public class EntityInfestedCivilian extends EntityZergMob implements IMob, Predi
 			//TODO: Make this
 			//dropItem(ModWeapons.ZERGLING_CLAW, 1);
 		} else if(j < 5) {
-			entityDropItem(new ItemStack(ModItems.zergCarapace, 1, 0), 1 + rand.nextInt(2));
+			entityDropItem(new ItemStack(ModItems.ZERG_CARAPACE, 1, 0), 1 + rand.nextInt(2));
 		}
 	}
 

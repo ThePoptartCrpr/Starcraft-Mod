@@ -284,12 +284,12 @@ public class StructureTerranBunker extends SCWorldGenerator {
 		for(int slot = 0; slot < chest.getSizeInventory(); slot++) {
 			int num = randchest.nextInt(30);
 			if(num == 0) {
-				chest.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 0));
+				chest.setInventorySlotContents(slot, new ItemStack(ModItems.COORDINATES, 1, 0));
 
 			} else if(num >= 13 && num <= 19) {
-				chest.setInventorySlotContents(slot, new ItemStack(ModItems.ingot1, 1, 0));
+				chest.setInventorySlotContents(slot, new ItemStack(ModItems.INGOT, 1, 0));
 			} else if(num == 1) {
-				chest.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 1));
+				chest.setInventorySlotContents(slot, new ItemStack(ModItems.COORDINATES, 1, 1));
 			}
 
 		}
@@ -394,11 +394,11 @@ public class StructureTerranBunker extends SCWorldGenerator {
 		for(int slot = 0; slot < chest2.getSizeInventory(); slot++) {
 			int num = randchest2.nextInt(30);
 			if(num < 1) {
-				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 0));
+				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.COORDINATES, 1, 0));
 			} else if(num >= 13 && num <= 19) {
-				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.ingot1, 1, 0));
+				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.INGOT, 1, 0));
 			} else if(num > 29) {
-				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.coord, 1, 1));
+				chest2.setInventorySlotContents(slot, new ItemStack(ModItems.COORDINATES, 1, 1));
 			}
 		}
 

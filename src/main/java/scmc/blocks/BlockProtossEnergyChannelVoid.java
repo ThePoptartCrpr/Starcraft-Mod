@@ -47,6 +47,6 @@ public class BlockProtossEnergyChannelVoid extends ModBlocks {
 	 */
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return ModItems.energy;
+		return ModItems.ENERGY;
 	}
 }

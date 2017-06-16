@@ -2,7 +2,6 @@ package scmc.blocks;
 
 import net.minecraft.block.BlockGravel;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 

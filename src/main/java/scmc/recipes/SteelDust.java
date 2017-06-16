@@ -20,7 +20,7 @@ public class SteelDust implements IRecipe {
 	@Override
 	@Nullable
 	public ItemStack getCraftingResult(InventoryCrafting grid) {
-		return new ItemStack(ModItems.dust, 1, 0);
+		return new ItemStack(ModItems.DUST, 1, 0);
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class SteelDust implements IRecipe {
 	@Override
 	@Nullable
 	public ItemStack getRecipeOutput() {
-		return new ItemStack(ModItems.dust, 1, 0);
+		return new ItemStack(ModItems.DUST, 1, 0);
 	}
 
 	/**

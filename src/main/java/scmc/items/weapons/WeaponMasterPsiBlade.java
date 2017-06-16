@@ -5,7 +5,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.world.World;
 import scmc.StarcraftSoundEvents;
 import scmc.lib.Reference;
 

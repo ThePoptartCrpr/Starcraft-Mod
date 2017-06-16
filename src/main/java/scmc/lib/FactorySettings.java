@@ -170,43 +170,25 @@ public class FactorySettings {
 	
 	
 	/**
-	 * A standard method to convert SC2 health to MC health
-	 * @param h health
-	 * @return
-	 */
-	public static double standardHealthConversion(double h) {
-		h *= 0.666666666;
-		return h;
-	}
-	
-	/**
-	 * A standard method to convert SC2 speed to MC speed
-	 * @param s speed
-	 * @return
-	 */
-	public static double standardSpeedConversion(double s) {
-		s *= 0.08;
-		return s;
-	}
-	
-	/**
-	 * A standard method to convert SC2 damage to MC damage
-	 * @param d damage
-	 * @return
-	 */
-	public static double standardDamageConversion(double d) {
-		d *= 0.5;
-		return d;
-	}
-	
-	/**
-	 * A standard method to convert SC2 armor to MC armor
+	 * A mini-boss method to convert SC2 armor to MC armor. This method is
+	 * only for special mini-bosses, such as {@link: EntityBrutalisk} or {@link: EntityProtossReaver}
 	 * @param a armor
 	 * @return
 	 */
-	public static double standardArmorConversion(double a) {
+	public static double specialArmorConversion(double a) {
 		a *= 1.0;
 		return a;
+	}
+	
+	/**
+	 * A mini-boss method to convert SC2 damage to MC damage. This method is
+	 * only for special mini-bosses, such as {@link: EntityBrutalisk} or {@link: EntityProtossReaver}
+	 * @param d damage
+	 * @return
+	 */
+	public static double specialDamageConversion(double d) {
+		d *= 0.4;
+		return d;
 	}
 	
 	/**
@@ -232,24 +214,42 @@ public class FactorySettings {
 	}
 	
 	/**
-	 * A mini-boss method to convert SC2 damage to MC damage. This method is
-	 * only for special mini-bosses, such as {@link: EntityBrutalisk} or {@link: EntityProtossReaver}
+	 * A standard method to convert SC2 armor to MC armor
+	 * @param a armor
+	 * @return
+	 */
+	public static double standardArmorConversion(double a) {
+		a *= 1.0;
+		return a;
+	}
+	
+	/**
+	 * A standard method to convert SC2 damage to MC damage
 	 * @param d damage
 	 * @return
 	 */
-	public static double specialDamageConversion(double d) {
-		d *= 0.4;
+	public static double standardDamageConversion(double d) {
+		d *= 0.5;
 		return d;
 	}
 	
 	/**
-	 * A mini-boss method to convert SC2 armor to MC armor. This method is
-	 * only for special mini-bosses, such as {@link: EntityBrutalisk} or {@link: EntityProtossReaver}
-	 * @param a armor
+	 * A standard method to convert SC2 health to MC health
+	 * @param h health
 	 * @return
 	 */
-	public static double specialArmorConversion(double a) {
-		a *= 1.0;
-		return a;
+	public static double standardHealthConversion(double h) {
+		h *= 0.666666666;
+		return h;
+	}
+	
+	/**
+	 * A standard method to convert SC2 speed to MC speed
+	 * @param s speed
+	 * @return
+	 */
+	public static double standardSpeedConversion(double s) {
+		s *= 0.08;
+		return s;
 	}
 }

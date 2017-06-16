@@ -6,11 +6,11 @@ import net.minecraft.block.material.MaterialLiquid;
 
 public class ModMaterials {
 
-	public static Material acid;
-	public static Material blood;
+	public static Material ACID;
+	public static Material BLOOD;
 
 	public static void preInit() {
-		acid = new MaterialLiquid(MapColor.GREEN);
-		blood = new MaterialLiquid(MapColor.RED);
+		ACID = new MaterialLiquid(MapColor.GREEN);
+		BLOOD = new MaterialLiquid(MapColor.RED);
 	}
 }

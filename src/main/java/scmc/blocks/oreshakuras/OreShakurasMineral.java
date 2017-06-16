@@ -31,7 +31,7 @@ public class OreShakurasMineral extends ModBlocks {
 
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int par3) {
-		return ModItems.mineralShard;
+		return ModItems.MINERAL_SHARD;
 	}
 
 	@Override

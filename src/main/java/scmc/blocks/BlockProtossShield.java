@@ -7,7 +7,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityFireball;
-import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -27,16 +27,16 @@ public class BlockProtossShield extends ModBlocks {
 		setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_SHIELD.getRegistryRL());
 	}
 
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+	public boolean canCollideCheck(IBlockState state, boolean hitIfLiquid)
+    {
+        return false;
+    }
+
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
         return FULL_BLOCK_AABB;
     }
-	
-	public EnumBlockRenderType getRenderType(IBlockState state)
-    {
-        return EnumBlockRenderType.INVISIBLE;
-    }
-
+    
     @Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
     {
@@ -44,11 +44,6 @@ public class BlockProtossShield extends ModBlocks {
     }
     
     public boolean isFullCube(IBlockState state)
-    {
-        return false;
-    }
-    
-    public boolean canCollideCheck(IBlockState state, boolean hitIfLiquid)
     {
         return false;
     }
@@ -63,8 +58,10 @@ public class BlockProtossShield extends ModBlocks {
 	
 	@Override
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
-		if(entityIn instanceof EntityArrow || entityIn instanceof EntityFireball) {
+		if(entityIn instanceof EntityArrow) {
 			entityIn.motionX = entityIn.motionZ = 0;
+		}else if(entityIn instanceof EntityFireball || entityIn instanceof EntitySmallFireball) {
+			System.out.print("test");
 		}
 		super.onEntityCollidedWithBlock(worldIn, pos, state, entityIn);
 	}

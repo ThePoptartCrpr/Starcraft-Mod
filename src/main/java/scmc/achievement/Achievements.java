@@ -24,26 +24,26 @@ public class Achievements {
 	public static Achievement achievementMinedVespene;
 
 	public static void init() {
-		achievementMinedMinerals = new Achievement("achievement.mineMinerals", "mineMinerals", 0, 0, new ItemStack(ModItems.mineralShard), (Achievement) null)
+		achievementMinedMinerals = new Achievement("achievement.mineMinerals", "mineMinerals", 0, 0, new ItemStack(ModItems.MINERAL_SHARD), (Achievement) null)
 				.initIndependentStat().registerStat();
 
-		achievementMinedRichMinerals = new Achievement("achievement.mineRichMinerals", "mineRichMinerals", 1, 0, new ItemStack(ModItems.richMineralShard),
+		achievementMinedRichMinerals = new Achievement("achievement.mineRichMinerals", "mineRichMinerals", 1, 0, new ItemStack(ModItems.RICH_MINERAL_SHARD),
 				achievementMinedMinerals).initIndependentStat().registerStat();
 
-		achievementMinedVespene = new Achievement("achievement.mineVespene", "mineVespene", 0, 1, new ItemStack(ModItems.vespene, 0, 3), (Achievement) null)
+		achievementMinedVespene = new Achievement("achievement.mineVespene", "mineVespene", 0, 1, new ItemStack(ModItems.VESPENE, 0, 3), (Achievement) null)
 				.initIndependentStat().registerStat();
 
-		achievementGetC14GaussRifle = new Achievement("achievement.getC14GaussRifle", "getC14GaussRifle", 6, 0, new ItemStack(ModItems.C14GaussRifle), (Achievement) null)
+		achievementGetC14GaussRifle = new Achievement("achievement.getC14GaussRifle", "getC14GaussRifle", 6, 0, new ItemStack(ModItems.C14_GAUSS_RIFLE), (Achievement) null)
 				.initIndependentStat().registerStat();
 
 		// Protoss Achievements
-		achievementGetPsiBladeFocuser = new Achievement("achievement.getPsiBladeFocuser", "getPsiBladeFocuser", 3, 0, new ItemStack(ModItems.psiBladeFocuserUncharged),
+		achievementGetPsiBladeFocuser = new Achievement("achievement.getPsiBladeFocuser", "getPsiBladeFocuser", 3, 0, new ItemStack(ModItems.PSI_BLADE_FOCUSER_UNCHARGED),
 				(Achievement) null).initIndependentStat().registerStat();
 
 		achievementGetPsiBladeFocuserDark = new Achievement("achievement.getPsiBladeFocuserDark", "getPsiBladeFocuserDark", 4, 0,
-				new ItemStack(ModItems.darkPsiBladeFocuserUncharged), (Achievement) null).initIndependentStat().registerStat();
+				new ItemStack(ModItems.PSI_BLADE_FOCUSER_UNCHARGED, 1, 1), (Achievement) null).initIndependentStat().registerStat();
 
-		achievementGetPsiBladeDark = new Achievement("achievement.getPsiBladeDark", "getPsiBladeDark", 4, 1, new ItemStack(ModWeapons.DARK_PSI_BLADE),
+		achievementGetPsiBladeDark = new Achievement("achievement.getPsiBladeDark", "getPsiBladeDark", 4, 1, new ItemStack(ModWeapons.BANE_BLADE),
 				achievementGetPsiBladeFocuserDark).initIndependentStat().registerStat();
 
 		achievementGetPsiBlade = new Achievement("achievement.getPsiBlade", "getPsiBlade", 3, 1, new ItemStack(ModWeapons.PSI_BLADE), achievementGetPsiBladeFocuser)
