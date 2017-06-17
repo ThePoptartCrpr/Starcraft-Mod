@@ -72,6 +72,7 @@ public class StarcraftSoundEvents {
 	
 	public static SoundEvent FX_PSIBLADE_ATTACK;
 	public static SoundEvent FX_WARPBLADE_ATTACK;
+	public static SoundEvent FX_SHIELD_HURT;
 
 	private static SoundEvent registerSound(String soundName) {
 		final ResourceLocation soundID = new ResourceLocation(Reference.MODID, soundName);
@@ -144,6 +145,6 @@ public class StarcraftSoundEvents {
 		
 		FX_PSIBLADE_ATTACK = registerSound("fx.psiblade.attack");
 		FX_WARPBLADE_ATTACK = registerSound("fx.warpblade.attack");
-
+		FX_SHIELD_HURT = registerSound("fx.shield.hurt");
 	}
 }

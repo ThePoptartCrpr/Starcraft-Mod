@@ -422,5 +422,13 @@
         "name": "starcraft:/fx/warpblade/warpblade-attack","stream":false
     }
     ]
+},
+"fx.shield.hurt": {
+    "category": "master",
+    "sounds": [
+    {
+        "name": "starcraft:/fx/shield/shield-hurt","stream":false
+    }
+    ]
 }
 }
