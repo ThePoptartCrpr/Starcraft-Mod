@@ -151,10 +151,12 @@ public class Reference {
 		ARMOR_ADEPT_LEGGINGS_T1("adeptLeggingsT1", "adept_leggings_t1"),
 		ARMOR_ADEPT_LEGGINGS_T2("adeptLeggingsT2", "adept_leggings_t2"),
 		ARMOR_ADEPT_LEGGINGS_T3("adeptLeggingsT3", "adept_leggings_t3"),
+		
 		ARMOR_COPPER_BOOTS("copperBoots", "copper_boots"),
 		ARMOR_COPPER_CHESTPLATE("copperChestplate", "copper_chestplate"),
 		ARMOR_COPPER_HELMET("copperHelmet", "copper_helmet"),
 		ARMOR_COPPER_LEGGINGS("copperLeggings", "copper_leggings"),
+		
 		ARMOR_DARK_KHAYDARIN_AMULET("darkKhaydarinAmulet", "dark_khaydarin_amulet"),
 		
 		ARMOR_DARK_ZEALOT_BOOTS_T1("darkZealotBootsT1", "dark_zealot_boots_t1"),
@@ -174,29 +176,32 @@ public class Reference {
 		ARMOR_GHOST_CHESTPLATE("ghostChestplate", "ghost_chestplate"),
 		ARMOR_GHOST_HELMET("ghostHelmet", "ghost_helmet"),
 		ARMOR_GHOST_LEGGINGS("ghostLeggings", "ghost_leggings"),
+		
 		ARMOR_KHAYDARIN_AMULET("khaydarinAmulet", "khaydarin_amulet"),
+		
 		ARMOR_PURIFIER_ADEPT_BOOTS_T1("purifierAdeptBootsT1", "purifier_adept_boots_t1"),
 		ARMOR_PURIFIER_ADEPT_BOOTS_T2("purifierAdeptBootsT2", "purifier_adept_boots_t2"),
 		ARMOR_PURIFIER_ADEPT_BOOTS_T3("purifierAdeptBootsT3", "purifier_adept_boots_t3"),
 		ARMOR_PURIFIER_ADEPT_CHESTPLATE_T1("purifierAdeptChestplateT1", "purifier_adept_chestplate_t1"),
 		ARMOR_PURIFIER_ADEPT_CHESTPLATE_T2("purifierAdeptChestplateT2", "purifier_adept_chestplate_t2"),
 		ARMOR_PURIFIER_ADEPT_CHESTPLATE_T3("purifierAdeptChestplateT3", "purifier_adept_chestplate_t3"),
-
 		ARMOR_PURIFIER_ADEPT_HELMET_T1("purifierAdeptHelmetT1", "purifier_adept_helmet_t1"),
 		ARMOR_PURIFIER_ADEPT_HELMET_T2("purifierAdeptHelmetT2", "purifier_adept_helmet_t2"),
 		ARMOR_PURIFIER_ADEPT_HELMET_T3("purifierAdeptHelmetT3", "purifier_adept_helmet_t3"),
 		ARMOR_PURIFIER_ADEPT_LEGGINGS_T1("purifierAdeptLeggingsT1", "purifier_adept_leggings_t1"),
 		ARMOR_PURIFIER_ADEPT_LEGGINGS_T2("purifierAdeptLeggingsT2", "purifier_adept_leggings_t2"),
 		ARMOR_PURIFIER_ADEPT_LEGGINGS_T3("purifierAdeptLeggingsT3", "purifier_adept_leggings_t3"),
+		
 		ARMOR_STEEL_BOOTS("steelBoots", "steel_boots"),
 		ARMOR_STEEL_CHESTPLATE("steelChestplate", "steel_chestplate"),
 		ARMOR_STEEL_HELMET("steelHelmet", "steel_helmet"),
 		ARMOR_STEEL_LEGGINGS("steelLeggings", "steel_leggings"),
+		
 		ARMOR_TITANIUM_BOOTS("titaniumBoots", "titanium_boots"),
 		ARMOR_TITANIUM_CHESTPLATE("titaniumChestplate", "titanium_chestplate"),
 		ARMOR_TITANIUM_HELMET("titaniumHelmet", "titanium_helmet"),
-
 		ARMOR_TITANIUM_LEGGINGS("titaniumLeggings", "titanium_leggings"),
+		
 		ARMOR_ZEALOT_BOOTS_T1("zealotBootsT1", "zealot_boots_t1"),
 		ARMOR_ZEALOT_BOOTS_T2("zealotBootsT2", "zealot_boots_t2"),
 		ARMOR_ZEALOT_BOOTS_T3("zealotBootsT3", "zealot_boots_t3"),
@@ -209,6 +214,20 @@ public class Reference {
 		ARMOR_ZEALOT_LEGGINGS_T1("zealotLeggingsT1", "zealot_leggings_t1"),
 		ARMOR_ZEALOT_LEGGINGS_T2("zealotLeggingsT2", "zealot_leggings_t2"),
 		ARMOR_ZEALOT_LEGGINGS_T3("zealotLeggingsT3", "zealot_leggings_t3"),
+		
+		ARMOR_ZERG_BOOTS_T1("zergBootsT1", "zerg_boots_t1"),
+		ARMOR_ZERG_BOOTS_T2("zergBootsT2", "zerg_boots_t2"),
+		ARMOR_ZERG_BOOTS_T3("zergBootsT3", "zerg_boots_t3"),
+		ARMOR_ZERG_CHESTPLATE_T1("zergChestplateT1", "zerg_chestplate_t1"),
+		ARMOR_ZERG_CHESTPLATE_T2("zergChestplateT2", "zerg_chestplate_t2"),
+		ARMOR_ZERG_CHESTPLATE_T3("zergChestplateT3", "zerg_chestplate_t3"),
+		ARMOR_ZERG_HELMET_T1("zergHelmetT1", "zerg_helmet_t1"),
+		ARMOR_ZERG_HELMET_T2("zergHelmetT2", "zerg_helmet_t2"),
+		ARMOR_ZERG_HELMET_T3("zergHelmetT3", "zerg_helmet_t3"),
+		ARMOR_ZERG_LEGGINGS_T1("zergLeggingsT1", "zerg_leggings_t1"),
+		ARMOR_ZERG_LEGGINGS_T2("zergLeggingsT2", "zerg_leggings_t2"),
+		ARMOR_ZERG_LEGGINGS_T3("zergLeggingsT3", "zerg_leggings_t3"),
+		
 		BULLET_RIFLE_C14_GAUSS("bulletC14", "bullet_c14"),
 		ITEM_BUCKET_ACID("bucketAcid", "bucket_acid"),
 		ITEM_BUCKET_BLOOD("bucketBlood", "bucket_blood"),

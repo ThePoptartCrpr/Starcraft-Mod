@@ -20,27 +20,41 @@ public class ModArmor {
 	 */
 
 	// TODO: adjust the protoss values later
-	static final ItemArmor.ArmorMaterial ADEPT_ARMOR_MATERIAL_T1 = EnumHelper.addArmorMaterial("adeptArmorMaterialT1", Reference.RL_BASE + "adeptT1", 33,
+	static final ItemArmor.ArmorMaterial ADEPT_ARMOR_MATERIAL_T1 = EnumHelper.addArmorMaterial("adeptArmorMaterialT1", Reference.RL_BASE + "adept_t1", 33,
 			new int[] { 3, 8, 6, 3 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
-	static final ItemArmor.ArmorMaterial ADEPT_ARMOR_MATERIAL_T2 = EnumHelper.addArmorMaterial("adeptArmorMaterialT2", Reference.RL_BASE + "adeptT2", 35,
+	static final ItemArmor.ArmorMaterial ADEPT_ARMOR_MATERIAL_T2 = EnumHelper.addArmorMaterial("adeptArmorMaterialT2", Reference.RL_BASE + "adept_t2", 35,
 			new int[] { 4, 9, 7, 4 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
-	static final ItemArmor.ArmorMaterial ADEPT_ARMOR_MATERIAL_T3 = EnumHelper.addArmorMaterial("adeptArmorMaterialT3", Reference.RL_BASE + "adeptT3", 37,
+	static final ItemArmor.ArmorMaterial ADEPT_ARMOR_MATERIAL_T3 = EnumHelper.addArmorMaterial("adeptArmorMaterialT3", Reference.RL_BASE + "adept_t3", 37,
 			new int[] { 5, 10, 8, 5 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	
 	static final ItemArmor.ArmorMaterial COPPER_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("copperArmorMaterial", Reference.RL_BASE + "copper", 11,
 			new int[] { 2, 5, 4, 1 }, 12, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	
 	static final ItemArmor.ArmorMaterial GHOST_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ghostArmourMaterial", Reference.RL_BASE + "ghost_invis", 20,
 			new int[] { 2, 6, 4, 2 }, 0, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	
 	static final ItemArmor.ArmorMaterial KHAYDARIN_AMULET_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("khaydarinAmuletArmorMaterial", Reference.RL_BASE + "khaydarin_amulet",
 			37, new int[] { 5, 10, 8, 5 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	
 	static final ItemArmor.ArmorMaterial STEEL_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("steelArmorMaterial", Reference.RL_BASE + "steel", 29, new int[] { 3, 7, 5, 3 },
 			9, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	
 	static final ItemArmor.ArmorMaterial TITANIUM_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("titaniumArmorMaterial", Reference.RL_BASE + "titanium", 21,
 			new int[] { 3, 6, 5, 2 }, 30, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
-	static final ItemArmor.ArmorMaterial ZEALOT_ARMOR_MATERIAL_T1 = EnumHelper.addArmorMaterial("zealotArmorMaterialT1", Reference.RL_BASE + "zealotT1", 33,
+	
+	static final ItemArmor.ArmorMaterial ZEALOT_ARMOR_MATERIAL_T1 = EnumHelper.addArmorMaterial("zealotArmorMaterialT1", Reference.RL_BASE + "zealot_t1", 33,
 			new int[] { 3, 8, 6, 3 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
-	static final ItemArmor.ArmorMaterial ZEALOT_ARMOR_MATERIAL_T2 = EnumHelper.addArmorMaterial("zealotArmorMaterialT2", Reference.RL_BASE + "zealotT2", 35,
+	static final ItemArmor.ArmorMaterial ZEALOT_ARMOR_MATERIAL_T2 = EnumHelper.addArmorMaterial("zealotArmorMaterialT2", Reference.RL_BASE + "zealot_t2", 35,
 			new int[] { 4, 9, 7, 4 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
-	static final ItemArmor.ArmorMaterial ZEALOT_ARMOR_MATERIAL_T3 = EnumHelper.addArmorMaterial("zealotArmorMaterialT3", Reference.RL_BASE + "zealotT3", 37,
+	static final ItemArmor.ArmorMaterial ZEALOT_ARMOR_MATERIAL_T3 = EnumHelper.addArmorMaterial("zealotArmorMaterialT3", Reference.RL_BASE + "zealot_t3", 37,
+			new int[] { 5, 10, 8, 5 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	
+	//TODO: edit these too
+	static final ItemArmor.ArmorMaterial ZERG_ARMOR_MATERIAL_T1 = EnumHelper.addArmorMaterial("zergArmorMaterialT1", Reference.RL_BASE + "zerg_t1", 33,
+			new int[] { 3, 8, 6, 3 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	static final ItemArmor.ArmorMaterial ZERG_ARMOR_MATERIAL_T2 = EnumHelper.addArmorMaterial("zergArmorMaterialT2", Reference.RL_BASE + "zerg_t2", 35,
+			new int[] { 4, 9, 7, 4 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
+	static final ItemArmor.ArmorMaterial ZERG_ARMOR_MATERIAL_T3 = EnumHelper.addArmorMaterial("zergArmorMaterialT3", Reference.RL_BASE + "zerg_t3", 37,
 			new int[] { 5, 10, 8, 5 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
 
 	public static Item ADEPT_BOOTS_T1;
@@ -118,6 +132,19 @@ public class ModArmor {
 	public static Item ZEALOT_LEGGINGS_T1;
 	public static Item ZEALOT_LEGGINGS_T2;
 	public static Item ZEALOT_LEGGINGS_T3;
+	
+	public static Item ZERG_BOOTS_T1;
+	public static Item ZERG_BOOTS_T2;
+	public static Item ZERG_BOOTS_T3;
+	public static Item ZERG_CHESTPLATE_T1;
+	public static Item ZERG_CHESTPLATE_T2;
+	public static Item ZERG_CHESTPLATE_T3;
+	public static Item ZERG_HELMET_T1;
+	public static Item ZERG_HELMET_T2;
+	public static Item ZERG_HELMET_T3;
+	public static Item ZERG_LEGGINGS_T1;
+	public static Item ZERG_LEGGINGS_T2;
+	public static Item ZERG_LEGGINGS_T3;
 
 	public static void init() {
 		TITANIUM_HELMET = new ArmorTitaniumHelmet(TITANIUM_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
@@ -202,6 +229,21 @@ public class ModArmor {
 
 		KHAYDARIN_AMULET = new ArmorKhaydarinAmulet(KHAYDARIN_AMULET_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
 		DARK_KHAYDARIN_AMULET = new ArmorDarkKhaydarinAmulet(KHAYDARIN_AMULET_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
+		
+		ZERG_HELMET_T1 = new ArmorZergHelmetT1(ZERG_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
+		ZERG_CHESTPLATE_T1 = new ArmorZergChestplateT1(ZERG_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
+		ZERG_LEGGINGS_T1 = new ArmorZergLeggingsT1(ZERG_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.LEGS);
+		ZERG_BOOTS_T1 = new ArmorZergBootsT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.FEET);
+
+		ZERG_HELMET_T2 = new ArmorZergHelmetT2(ZERG_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.HEAD);
+		ZERG_CHESTPLATE_T2 = new ArmorZergChestplateT2(ZERG_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.CHEST);
+		ZERG_LEGGINGS_T2 = new ArmorZergLeggingsT2(ZERG_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.LEGS);
+		ZERG_BOOTS_T2 = new ArmorZergBootsT2(ZERG_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.FEET);
+
+		ZERG_HELMET_T3 = new ArmorZergHelmetT3(ZERG_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.HEAD);
+		ZERG_CHESTPLATE_T3 = new ArmorZergChestplateT3(ZERG_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.CHEST);
+		ZERG_LEGGINGS_T3 = new ArmorZergLeggingsT3(ZERG_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.LEGS);
+		ZERG_BOOTS_T3 = new ArmorZergBootsT3(ZERG_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.FEET);
 	}
 
 	public static void register() {
@@ -287,6 +329,21 @@ public class ModArmor {
 
 		registerItem(KHAYDARIN_AMULET);
 		registerItem(DARK_KHAYDARIN_AMULET);
+		
+		registerItem(ZERG_HELMET_T1);
+		registerItem(ZERG_CHESTPLATE_T1);
+		registerItem(ZERG_LEGGINGS_T1);
+		registerItem(ZERG_BOOTS_T1);
+
+		registerItem(ZERG_HELMET_T2);
+		registerItem(ZERG_CHESTPLATE_T2);
+		registerItem(ZERG_LEGGINGS_T2);
+		registerItem(ZERG_BOOTS_T2);
+
+		registerItem(ZERG_HELMET_T3);
+		registerItem(ZERG_CHESTPLATE_T3);
+		registerItem(ZERG_LEGGINGS_T3);
+		registerItem(ZERG_BOOTS_T3);
 	}
 
 	public static void registerItem(Item item) {
@@ -383,5 +440,20 @@ public class ModArmor {
 
 		registerRender(KHAYDARIN_AMULET);
 		registerRender(DARK_KHAYDARIN_AMULET);
+		
+		registerRender(ZERG_HELMET_T1);
+		registerRender(ZERG_CHESTPLATE_T1);
+		registerRender(ZERG_LEGGINGS_T1);
+		registerRender(ZERG_BOOTS_T1);
+
+		registerRender(ZERG_HELMET_T2);
+		registerRender(ZERG_CHESTPLATE_T2);
+		registerRender(ZERG_LEGGINGS_T2);
+		registerRender(ZERG_BOOTS_T2);
+
+		registerRender(ZERG_HELMET_T3);
+		registerRender(ZERG_CHESTPLATE_T3);
+		registerRender(ZERG_LEGGINGS_T3);
+		registerRender(ZERG_BOOTS_T3);
 	}
 }

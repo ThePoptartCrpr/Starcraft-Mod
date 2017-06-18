@@ -1,6 +1,7 @@
 package scmc.proxy;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -50,6 +51,7 @@ import scmc.model.ModelDarkProbe;
 import scmc.model.ModelDarkTemplar;
 import scmc.model.ModelHydralisk;
 import scmc.model.ModelInfestedCivilian;
+import scmc.model.ModelKhaydarinAmulet;
 import scmc.model.ModelLarva;
 import scmc.model.ModelLarvaCocoon;
 import scmc.model.ModelOverlord;
@@ -107,6 +109,20 @@ public class ClientProxy extends ServerProxy {
 		SimpleRecipes.init();
 		ShapelessRecipes.init();
 		SmeltingRecipes.init();
+	}
+	
+	public ModelBiped getArmorModel(int id) {
+		 final ModelKhaydarinAmulet armorASAChest = new ModelKhaydarinAmulet(1.0f);
+		 final ModelKhaydarinAmulet armorASA = new ModelKhaydarinAmulet(0.5f);
+		 //and switch on the id in your getArmorModel !
+		 switch (id) {
+		  case 0:
+		  return armorASAChest;
+		  case 1:
+		  return armorASA;
+		 }
+		 return null;
+
 	}
 
 	@Override

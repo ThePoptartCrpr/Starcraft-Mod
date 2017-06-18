@@ -6,7 +6,9 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -14,6 +16,13 @@ import scmc.StarcraftCreativeTabs;
 import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
+import scmc.items.armor.ArmorGhostBoots;
+import scmc.items.armor.ArmorGhostChestplate;
+import scmc.items.armor.ArmorGhostHelmet;
+import scmc.items.armor.ArmorGhostLeggings;
+import scmc.items.armor.ArmorZergBootsT1;
+import scmc.items.armor.ArmorZergBootsT2;
+import scmc.items.armor.ArmorZergBootsT3;
 import scmc.lib.Reference;
 
 public class BlockZergCreep extends ModBlocks {
@@ -46,6 +55,19 @@ public class BlockZergCreep extends ModBlocks {
 		if(entityIn instanceof EntityZergMob || entityIn instanceof EntityZergPassive) {
 			entityIn.motionX *= 1.2D;
 			entityIn.motionZ *= 1.2D;
+		}
+		if(entityIn instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) entityIn;
+			try {
+				if(player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() instanceof ArmorZergBootsT1 ||
+						player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() instanceof ArmorZergBootsT2 ||
+						player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() instanceof ArmorZergBootsT3) {
+					player.motionX *= 1.2D;
+					player.motionZ *= 1.2D;
+				} else {
+				}
+			} catch(@SuppressWarnings("unused") NullPointerException e) {
+			}
 		}
 	}
 
