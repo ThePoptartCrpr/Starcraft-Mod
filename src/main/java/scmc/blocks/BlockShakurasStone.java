@@ -19,7 +19,7 @@ public class BlockShakurasStone extends ModBlocks {
 		setHardness(1.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 	}
 
 	// @Override

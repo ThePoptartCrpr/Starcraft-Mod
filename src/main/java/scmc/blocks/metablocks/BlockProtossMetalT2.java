@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.ProtossMetalType;
 import scmc.lib.Reference;
@@ -41,7 +42,8 @@ public class BlockProtossMetalT2 extends ModBlocks implements IMetaBlockName {
 		setHardness(5.0F);
 		setResistance(25.0F);
 		setHarvestLevel("pickaxe", 3);
-		setDefaultState(blockState.getBaseState().withProperty(TYPE, ProtossMetalType.AIUR)); // Default state
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, ProtossMetalType.AIUR));
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 
 	/**

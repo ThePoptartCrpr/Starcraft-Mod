@@ -2,6 +2,7 @@ package scmc.items.armor;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ArmorZealotChestplateT2 extends ItemArmor {
@@ -10,5 +11,6 @@ public class ArmorZealotChestplateT2 extends ItemArmor {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_ZEALOT_CHESTPLATE_T2.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ARMOR_ZEALOT_CHESTPLATE_T2.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 }

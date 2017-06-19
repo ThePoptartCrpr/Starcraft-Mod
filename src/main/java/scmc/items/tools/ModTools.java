@@ -6,7 +6,6 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.StarcraftCreativeTabs;
 
 /**
  * Handles the tool registration and render
@@ -72,7 +71,6 @@ public class ModTools {
 	}
 
 	public static void registerItem(Item item) {
-		item.setCreativeTab(StarcraftCreativeTabs.TOOLS);
 		GameRegistry.register(item);
 		// LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

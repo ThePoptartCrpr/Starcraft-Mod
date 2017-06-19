@@ -1,5 +1,6 @@
 package scmc.items.metaitems;
 
+import scmc.StarcraftCreativeTabs;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
 
@@ -9,5 +10,6 @@ public class ItemRichMineralShard extends ModItems {
 		super();
 		setUnlocalizedName(Reference.ModItems.ITEM_RICHMINERAL_SHARD.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ITEM_RICHMINERAL_SHARD.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 	}
 }

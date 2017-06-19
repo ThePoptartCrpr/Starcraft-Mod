@@ -20,6 +20,6 @@ public class BlockCharDirt extends ModBlocks {
 		setHardness(0.5F);
 		setResistance(2.5F);
 		setHarvestLevel("shovel", 0);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 	}
 }

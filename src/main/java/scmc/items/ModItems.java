@@ -6,7 +6,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.StarcraftCreativeTabs;
 import scmc.fluids.ModFluids;
 import scmc.items.armor.ModArmor;
 import scmc.items.metaitems.ItemBullet;
@@ -17,10 +16,12 @@ import scmc.items.metaitems.ItemDust;
 import scmc.items.metaitems.ItemEnergy;
 import scmc.items.metaitems.ItemEnumHandler;
 import scmc.items.metaitems.ItemEssence;
-import scmc.items.metaitems.ItemIngotT1;
+import scmc.items.metaitems.ItemIngot;
 import scmc.items.metaitems.ItemMineralShard;
 import scmc.items.metaitems.ItemMutaliskWing;
+import scmc.items.metaitems.ItemProtossArmorPieces;
 import scmc.items.metaitems.ItemProtossCoordinates;
+import scmc.items.metaitems.ItemProtossIngot;
 import scmc.items.metaitems.ItemPsiBladeFocuserUncharged;
 import scmc.items.metaitems.ItemVespene;
 import scmc.items.metaitems.ItemZergCarapace;
@@ -50,13 +51,17 @@ public class ModItems extends Item {
 	public static Item COORDINATES;
 	public static Item CREDIT;
 	public static Item CREEP_RESIN;
+	public static Item PROTOSS_ARMOR_PIECES;
 	public static Item PROTOSS_CRYSTAL;
+	public static Item PROTOSS_INGOT;
+	public static Item PROTOSS_SCRAP_METAL;
 	public static Item DUST;
 	public static Item ENERGY;
 	public static Item ESSENCE;
 	public static Item HYDRALISK_NEEDLE;
 	public static Item INGOT;
 	public static Item KEYSTONE;
+	public static Item KHAYDARIN_SHARD;
 	public static Item MINERAL_SHARD;
 	public static Item MUTALISK_TOOTH;
 	public static Item MUTALISK_WING;
@@ -77,16 +82,24 @@ public class ModItems extends Item {
 	public static Item SPAWNER_PROTOSS_DARK_WARPGATE;
 	public static Item SPAWNER_PROTOSS_VOID_WARPGATE;
 	public static Item SPAWNER_PROTOSS_WARPGATE;
+	
+	public static Item ICON_PROTOSS;
+	public static Item ICON_TERRAN;
+	public static Item ICON_ZERG;
 
 	public static void init() {
 		KEYSTONE = new ItemKeystone();
 		MINERAL_SHARD = new ItemMineralShard();
+		KHAYDARIN_SHARD = new ItemKhaydarinShard();
 		VESPENE = new ItemVespene();
 		ENERGY = new ItemEnergy();
 		DUST = new ItemDust();
 		ESSENCE = new ItemEssence();
-		INGOT = new ItemIngotT1();
+		INGOT = new ItemIngot();
+		PROTOSS_ARMOR_PIECES = new ItemProtossArmorPieces();
 		PROTOSS_CRYSTAL = new ItemCrystal();
+		PROTOSS_INGOT = new ItemProtossIngot();
+		PROTOSS_SCRAP_METAL = new ItemProtossScrapMetal();
 		C14_PARTS = new ItemC14GaussRifleParts();
 		BULLET = new ItemBullet();
 		CREDIT = new ItemCredit();
@@ -108,6 +121,10 @@ public class ModItems extends Item {
 		SPAWNER_PROTOSS_VOID_WARPGATE = new ItemProtossVoidWarpGateSpawner();
 		SPAWNER_PROTOSS_WARPGATE = new ItemProtossWarpGateSpawner();
 
+		ICON_PROTOSS = new ItemIconProtoss();
+		ICON_TERRAN = new ItemIconTerran();
+		ICON_ZERG = new ItemIconZerg();
+		
 		ModArmor.init();
 		ModWeapons.init();
 		ModTools.init();
@@ -126,12 +143,16 @@ public class ModItems extends Item {
 
 		registerItem(KEYSTONE);
 		registerItem(MINERAL_SHARD);
+		registerItem(KHAYDARIN_SHARD);
 		registerItem(VESPENE);
 		registerItem(ENERGY);
 		registerItem(DUST);
 		registerItem(ESSENCE);
 		registerItem(INGOT);
+		registerItem(PROTOSS_ARMOR_PIECES);
 		registerItem(PROTOSS_CRYSTAL);
+		registerItem(PROTOSS_INGOT);
+		registerItem(PROTOSS_SCRAP_METAL);
 		registerItem(C14_PARTS);
 		registerItem(BULLET);
 		registerItem(CREDIT);
@@ -152,6 +173,10 @@ public class ModItems extends Item {
 		registerItem(SPAWNER_PROTOSS_DARK_WARPGATE);
 		registerItem(SPAWNER_PROTOSS_VOID_WARPGATE);
 		registerItem(SPAWNER_PROTOSS_WARPGATE);
+		
+		registerItem(ICON_PROTOSS);
+		registerItem(ICON_TERRAN);
+		registerItem(ICON_ZERG);
 
 		ModArmor.register();
 		ModWeapons.register();
@@ -163,11 +188,7 @@ public class ModItems extends Item {
 	 * @param item The item
 	 */
 	public static void registerItem(Item item) {
-		item.setCreativeTab(StarcraftCreativeTabs.MATERIALS); // Sets the
-																// creative tab
 		GameRegistry.register(item);
-		// LogHelper.logger.info("Registered item: " +
-		// item.getUnlocalizedName().substring(5));
 	}
 
 	/**
@@ -196,6 +217,8 @@ public class ModItems extends Item {
 		registerRender(CREEP_RESIN);
 		registerRender(HYDRALISK_NEEDLE);
 		registerRender(MUTALISK_TOOTH);
+		registerRender(PROTOSS_SCRAP_METAL);
+		registerRender(KHAYDARIN_SHARD);
 		
 		registerRender(SPAWNER_PROTOSS_DARK_CYBERNETICSCORE);
 		registerRender(SPAWNER_PROTOSS_VOID_CYBERNETICSCORE);
@@ -206,6 +229,9 @@ public class ModItems extends Item {
 		registerRender(SPAWNER_PROTOSS_DARK_WARPGATE);
 		registerRender(SPAWNER_PROTOSS_VOID_WARPGATE);
 		registerRender(SPAWNER_PROTOSS_WARPGATE);
+		registerRender(ICON_PROTOSS);
+		registerRender(ICON_TERRAN);
+		registerRender(ICON_ZERG);
 
 		for(int i = 0; i < ItemEnumHandler.MineralType.values().length; i++) {
 			registerRender(MINERAL_SHARD, i, "shard_" + ItemEnumHandler.MineralType.values()[i].getName());
@@ -223,7 +249,10 @@ public class ModItems extends Item {
 			registerRender(ESSENCE, i, "essence_" + ItemEnumHandler.EssenceType.values()[i].getName());
 		}
 		for(int i = 0; i < ItemEnumHandler.IngotType.values().length; i++) {
-			registerRender(INGOT, i, "ingot1_" + ItemEnumHandler.IngotType.values()[i].getName());
+			registerRender(INGOT, i, "ingot_" + ItemEnumHandler.IngotType.values()[i].getName());
+		}
+		for(int i = 0; i < ItemEnumHandler.ProtossIngotType.values().length; i++) {
+			registerRender(PROTOSS_INGOT, i, "pingot_" + ItemEnumHandler.ProtossIngotType.values()[i].getName());
 		}
 		for(int i = 0; i < ItemEnumHandler.CrystalType.values().length; i++) {
 			registerRender(PROTOSS_CRYSTAL, i, "crystal_" + ItemEnumHandler.CrystalType.values()[i].getName());
@@ -242,6 +271,9 @@ public class ModItems extends Item {
 		}
 		for(int i = 0; i < ItemEnumHandler.CarapaceType.values().length; i++) {
 			registerRender(ZERG_CARAPACE, i, "zerg_icarapace_" + ItemEnumHandler.CarapaceType.values()[i].getName());
+		}
+		for(int i = 0; i < ItemEnumHandler.ProtossArmorPiecesType.values().length; i++) {
+			registerRender(PROTOSS_ARMOR_PIECES, i, "ppieces_" + ItemEnumHandler.ProtossArmorPiecesType.values()[i].getName());
 		}
 		for(int i = 0; i < ItemEnumHandler.CoordinateType.values().length; i++) {
 			registerRender(COORDINATES, i, "coordinate_" + ItemEnumHandler.CoordinateType.values()[i].getName());

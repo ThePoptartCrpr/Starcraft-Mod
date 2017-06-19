@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.DyedIronType;
 import scmc.lib.Reference;
@@ -42,6 +43,7 @@ public class BlockDyedIronBlocks extends ModBlocks implements IMetaBlockName {
 		setResistance(30.0F);
 		setHarvestLevel("pickaxe", 2);
 		setDefaultState(blockState.getBaseState().withProperty(TYPE, DyedIronType.PURPLE)); // Default state
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 
 	/**

@@ -19,7 +19,7 @@ public class OreCharCoal extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5);
 		setHarvestLevel("pickaxe", 0);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.ORE_COAL_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_COAL_C.getRegistryRL());
 	}

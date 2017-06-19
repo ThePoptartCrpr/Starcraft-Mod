@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.ZergStructureCarapaceType;
 import scmc.lib.Reference;
@@ -42,6 +43,7 @@ public class BlockZergStructureCarapace extends ModBlocks implements IMetaBlockN
 		setResistance(20); // Sets the blocks blast resistance to
 								// explosions
 		setDefaultState(blockState.getBaseState().withProperty(TYPE, ZergStructureCarapaceType.T1)); // Default state
+		setCreativeTab(StarcraftCreativeTabs.ZERG);
 	}
 
 	/**

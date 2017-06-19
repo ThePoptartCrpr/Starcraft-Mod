@@ -27,7 +27,7 @@ public class BlockProtossEnergyChannelVoid extends ModBlocks {
 		setResistance(30.0F);
 		setTickRandomly(true);
 		setHarvestLevel("pickaxe", 3);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 
 	/**

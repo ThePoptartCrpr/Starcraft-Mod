@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import scmc.StarcraftCreativeTabs;
 import scmc.items.metaitems.ItemEnumHandler.VespeneType;
 import scmc.lib.Reference;
 
@@ -18,6 +19,7 @@ public class ItemVespene extends Item {
 		setUnlocalizedName(Reference.ModItems.ITEM_VESPENE.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ITEM_VESPENE.getRegistryRL());
 		setHasSubtypes(true); // This just says the item has metadata
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 	}
 
 	/**

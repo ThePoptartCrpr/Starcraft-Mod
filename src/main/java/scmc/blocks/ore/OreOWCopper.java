@@ -18,7 +18,7 @@ public class OreOWCopper extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.ORE_COPPER_OW.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL());
 	}

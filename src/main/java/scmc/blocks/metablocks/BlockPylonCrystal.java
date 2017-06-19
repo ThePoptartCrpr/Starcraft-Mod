@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.PylonCrystalType;
 import scmc.lib.Reference;
@@ -43,7 +44,8 @@ public class BlockPylonCrystal extends ModBlocks implements IMetaBlockName {
 		setLightLevel(4.0F);
 		setTickRandomly(true);
 		setHarvestLevel("pickaxe", 2);
-		setDefaultState(blockState.getBaseState().withProperty(TYPE, PylonCrystalType.PURE)); // Default state
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, PylonCrystalType.PURE));
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 	}
 
 	/**

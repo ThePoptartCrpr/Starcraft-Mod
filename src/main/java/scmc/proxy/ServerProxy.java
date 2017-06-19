@@ -8,6 +8,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @SuppressWarnings("unused")
 public abstract class ServerProxy {
 
+	public abstract ModelBiped getArmorModel(int id);
+
 	public void init(FMLInitializationEvent event) {}
 
 	public void postInit(FMLPostInitializationEvent event) {}
@@ -17,8 +19,6 @@ public abstract class ServerProxy {
 	public void registerModelBakeryStuff() {}
 
 	public void registerModelBakeryVariants() {}
-
-	public void registerTileEntities() {}
 	
-	public abstract ModelBiped getArmorModel(int id);
+	public void registerTileEntities() {}
 }

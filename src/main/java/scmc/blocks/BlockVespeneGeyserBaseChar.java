@@ -2,6 +2,7 @@ package scmc.blocks;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class BlockVespeneGeyserBaseChar extends ModBlocks {
@@ -14,6 +15,7 @@ public class BlockVespeneGeyserBaseChar extends ModBlocks {
 		setHardness(5.0F);
 		setResistance(3.0F);
 		setHarvestLevel("pickaxe", 1);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 	}
 
 }

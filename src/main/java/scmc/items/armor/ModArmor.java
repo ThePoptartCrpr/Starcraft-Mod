@@ -8,7 +8,6 @@ import net.minecraft.item.ItemArmor;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ModArmor {
@@ -347,7 +346,6 @@ public class ModArmor {
 	}
 
 	public static void registerItem(Item item) {
-		item.setCreativeTab(StarcraftCreativeTabs.COMBAT);
 		GameRegistry.register(item);
 		// LogHelper.logger.info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}

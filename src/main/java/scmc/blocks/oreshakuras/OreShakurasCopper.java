@@ -18,7 +18,7 @@ public class OreShakurasCopper extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.ORE_COPPER_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_COPPER_S.getRegistryRL());
 	}

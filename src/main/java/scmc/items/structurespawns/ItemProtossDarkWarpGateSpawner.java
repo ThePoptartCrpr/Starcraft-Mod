@@ -9,6 +9,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.StarcraftCreativeTabs;
 import scmc.StarcraftSoundEvents;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
@@ -19,6 +20,7 @@ public class ItemProtossDarkWarpGateSpawner extends ModItems {
 	public ItemProtossDarkWarpGateSpawner() {
 		setUnlocalizedName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_DARK_WARPGATE.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_DARK_WARPGATE.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 	
 	@Override

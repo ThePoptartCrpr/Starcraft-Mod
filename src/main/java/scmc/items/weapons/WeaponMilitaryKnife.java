@@ -1,6 +1,7 @@
 package scmc.items.weapons;
 
 import net.minecraft.item.ItemSword;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class WeaponMilitaryKnife extends ItemSword {
@@ -9,5 +10,6 @@ public class WeaponMilitaryKnife extends ItemSword {
 		super(material);
 		setUnlocalizedName(Reference.ModItems.WEAPON_MILITARY_KNIFE.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.WEAPON_MILITARY_KNIFE.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 }

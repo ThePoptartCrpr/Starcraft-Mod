@@ -22,7 +22,7 @@ public class BlockAsh extends ModBlockLayered {
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_ASH_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_ASH_CHAR.getRegistryRL());
 		setSoundType(SoundType.SAND);
-		setCreativeTab(StarcraftCreativeTabs.DECORATION);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 	}
 
 	// No @Override because the super method is private

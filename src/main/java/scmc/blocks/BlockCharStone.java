@@ -24,7 +24,7 @@ public class BlockCharStone extends ModBlocks {
 		setHardness(1.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_STONE_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_STONE_CHAR.getRegistryRL());
 	}

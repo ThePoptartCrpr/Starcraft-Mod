@@ -16,10 +16,6 @@ import scmc.StarcraftCreativeTabs;
 import scmc.entity.monster.EntityZergMob;
 import scmc.entity.passive.EntityZergPassive;
 import scmc.items.ModItems;
-import scmc.items.armor.ArmorGhostBoots;
-import scmc.items.armor.ArmorGhostChestplate;
-import scmc.items.armor.ArmorGhostHelmet;
-import scmc.items.armor.ArmorGhostLeggings;
 import scmc.items.armor.ArmorZergBootsT1;
 import scmc.items.armor.ArmorZergBootsT2;
 import scmc.items.armor.ArmorZergBootsT3;
@@ -37,7 +33,7 @@ public class BlockZergCreep extends ModBlocks {
 		setResistance(10.0F);
 		setHarvestLevel("shovel", 2);
 		setTickRandomly(true);
-		setCreativeTab(StarcraftCreativeTabs.DECORATION);
+		setCreativeTab(StarcraftCreativeTabs.ZERG);
 	}
 
 	@Override

@@ -2,6 +2,7 @@ package scmc.items.armor;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ArmorGhostBoots extends ItemArmor {
@@ -10,5 +11,6 @@ public class ArmorGhostBoots extends ItemArmor {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_GHOST_BOOTS.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ARMOR_GHOST_BOOTS.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 }

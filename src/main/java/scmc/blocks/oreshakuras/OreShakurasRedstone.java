@@ -19,7 +19,7 @@ public class OreShakurasRedstone extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.ORE_REDSTONE_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_REDSTONE_S.getRegistryRL());
 	}

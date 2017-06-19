@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import scmc.StarcraftCreativeTabs;
 import scmc.items.metaitems.ItemEnumHandler.MineralType;
 import scmc.items.metaitems.ItemEnumHandler.MutaliskWingType;
 import scmc.lib.Reference;
@@ -19,6 +20,7 @@ public class ItemMutaliskWing extends Item {
 		setUnlocalizedName(Reference.ModItems.ITEM_MUTALISK_WING.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ITEM_MUTALISK_WING.getRegistryRL());
 		setHasSubtypes(true); // This just says the item has metadata
+		setCreativeTab(StarcraftCreativeTabs.ZERG);
 	}
 
 	/**

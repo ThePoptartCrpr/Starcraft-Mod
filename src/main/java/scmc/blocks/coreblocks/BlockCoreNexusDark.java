@@ -21,7 +21,7 @@ public class BlockCoreNexusDark extends ModBlocks {
 		// setHardness(2.0F);
 		// setResistance(5.0F);
 		// setHarvestLevel("pickaxe", 0);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 
 	@Override

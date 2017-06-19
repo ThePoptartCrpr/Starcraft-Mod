@@ -2,6 +2,7 @@ package scmc.blocks;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 /**
@@ -19,5 +20,6 @@ public class BlockKeratinChunk extends ModBlocks {
 		setHardness(5.0F);
 		setResistance(15.0F);
 		setHarvestLevel("pickaxe", 2);
+		setCreativeTab(StarcraftCreativeTabs.ZERG);
 	}
 }

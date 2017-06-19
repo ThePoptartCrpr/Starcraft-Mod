@@ -18,7 +18,7 @@ public class OreShakurasUranium extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.ORE_URANIUM_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_URANIUM_S.getRegistryRL());
 	}

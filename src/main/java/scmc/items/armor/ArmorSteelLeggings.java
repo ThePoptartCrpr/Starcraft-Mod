@@ -2,6 +2,7 @@ package scmc.items.armor;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ArmorSteelLeggings extends ItemArmor {
@@ -10,5 +11,6 @@ public class ArmorSteelLeggings extends ItemArmor {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_STEEL_LEGGINGS.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ARMOR_STEEL_LEGGINGS.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 }

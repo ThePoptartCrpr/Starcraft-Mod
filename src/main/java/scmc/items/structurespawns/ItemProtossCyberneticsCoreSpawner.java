@@ -7,6 +7,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scmc.StarcraftCreativeTabs;
 import scmc.StarcraftSoundEvents;
 import scmc.items.ModItems;
 import scmc.lib.Reference;
@@ -17,6 +18,7 @@ public class ItemProtossCyberneticsCoreSpawner extends ModItems {
 	public ItemProtossCyberneticsCoreSpawner() {
 		setUnlocalizedName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_CYBERNETICSCORE.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ITEM_SPAWNER_PROTOSS_CYBERNETICSCORE.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 	
 	@Override

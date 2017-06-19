@@ -19,7 +19,7 @@ public class OreShakurasDiamond extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.ORE_DIAMOND_S.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_DIAMOND_S.getRegistryRL());
 	}

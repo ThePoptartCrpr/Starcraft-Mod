@@ -7,7 +7,6 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scmc.StarcraftCreativeTabs;
 import scmc.lib.LogHelper;
 import scmc.lib.Reference;
 
@@ -69,7 +68,6 @@ public class ModMetaBlocks {
 	 * @param block The block to register
 	 */
 	public static void registerBlock(Block block) {
-		block.setCreativeTab(StarcraftCreativeTabs.BUILDING);
 		GameRegistry.register(block);
 		GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
 		LogHelper.logger.info("Registered Block: " + block.getUnlocalizedName().substring(5));
@@ -81,7 +79,6 @@ public class ModMetaBlocks {
 	 * @param itemBlock The {@link ItemBlock}
 	 */
 	public static void registerBlock(Block block, ItemBlock itemBlock) {
-		block.setCreativeTab(StarcraftCreativeTabs.BUILDING);
 		GameRegistry.register(block);
 		GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
 		// LogHelper.logger.info("Registered Block: " + block.getUnlocalizedName().substring(5));

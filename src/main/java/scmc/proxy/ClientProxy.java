@@ -5,12 +5,9 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.ForgeModContainer;
-import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import scmc.StarcraftCreativeTabs;
 import scmc.StarcraftSoundEvents;
 import scmc.achievement.Achievements;
 import scmc.blocks.ModBlocks;
@@ -100,6 +97,20 @@ import scmc.worldgen.biome.BiomesSC;
 @SuppressWarnings({ "deprecation" })
 public class ClientProxy extends ServerProxy {
 
+	public ModelBiped getArmorModel(int id) {
+		final ModelKhaydarinAmulet armorASAChest = new ModelKhaydarinAmulet(1.0f);
+		final ModelKhaydarinAmulet armorASA = new ModelKhaydarinAmulet(0.5f);
+		//and switch on the id in your getArmorModel !
+		switch(id) {
+			case 0:
+				return armorASAChest;
+			case 1:
+				return armorASA;
+		}
+		return null;
+
+	}
+
 	@Override
 	public void init(FMLInitializationEvent event) {
 		ModEntities.setEntityToSpawn();
@@ -110,20 +121,6 @@ public class ClientProxy extends ServerProxy {
 		ShapelessRecipes.init();
 		SmeltingRecipes.init();
 	}
-	
-	public ModelBiped getArmorModel(int id) {
-		 final ModelKhaydarinAmulet armorASAChest = new ModelKhaydarinAmulet(1.0f);
-		 final ModelKhaydarinAmulet armorASA = new ModelKhaydarinAmulet(0.5f);
-		 //and switch on the id in your getArmorModel !
-		 switch (id) {
-		  case 0:
-		  return armorASAChest;
-		  case 1:
-		  return armorASA;
-		 }
-		 return null;
-
-	}
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
@@ -132,11 +129,7 @@ public class ClientProxy extends ServerProxy {
 		ModBlocks.init();
 		ModItems.init();
 		ModItems.register(); // Does stuff, including bucket-y stuff
-		StarcraftCreativeTabs.setMisc(); // Add the misc tab after doing bucket-y stuff
-		
-		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.acid).getItem().setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS);
-		UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, ModFluids.blood).getItem().setCreativeTab(StarcraftCreativeTabs.MISCELLANEOUS);
-		
+
 		ModItems.registerRenders();
 		ModMaterials.preInit();
 		ModTileEntities.preInit();
@@ -158,16 +151,12 @@ public class ClientProxy extends ServerProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityScarab.class, new RenderScarab(Minecraft.getMinecraft().getRenderManager(), new ModelScarab(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkTemplar.class,
 				new RenderDarkTemplar<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelDarkTemplar(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class,
-				new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntitySentry.class,
-				new RenderSentry(Minecraft.getMinecraft().getRenderManager(), new ModelSentry(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class,
-				new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityDarkProbe.class, new RenderDarkProbe(Minecraft.getMinecraft().getRenderManager(), new ModelDarkProbe(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntitySentry.class, new RenderSentry(Minecraft.getMinecraft().getRenderManager(), new ModelSentry(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityBrutalisk.class, new RenderBrutalisk(Minecraft.getMinecraft().getRenderManager(), new ModelBrutalisk(), 3.0f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityHydralisk.class,
 				new RenderHydralisk<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelHydralisk(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class,
-				new RenderZergling(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityZergling.class, new RenderZergling(Minecraft.getMinecraft().getRenderManager(), new ModelZergling(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingSC2.class,
 				new RenderZerglingSC2<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZerglingSC2(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingRaptor.class,
@@ -177,18 +166,15 @@ public class ClientProxy extends ServerProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityZerglingBoost.class,
 				new RenderZerglingBoost<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelZerglingBoost(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityQueen.class, new RenderQueen(Minecraft.getMinecraft().getRenderManager(), new ModelQueen(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityOverlord.class,
-				new RenderOverlord(Minecraft.getMinecraft().getRenderManager(), new ModelOverlord(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityOverlord.class, new RenderOverlord(Minecraft.getMinecraft().getRenderManager(), new ModelOverlord(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarva.class, new RenderLarva<Object>(Minecraft.getMinecraft().getRenderManager(), new ModelLarva(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLarvaCocoon.class,
 				new RenderLarvaCocoon(Minecraft.getMinecraft().getRenderManager(), new ModelLarvaCocoon(), 0.4f));
-		RenderingRegistry.registerEntityRenderingHandler(EntityBroodling.class,
-				new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityBroodling.class, new RenderBroodling(Minecraft.getMinecraft().getRenderManager(), new ModelBroodling(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityInfestedCivilian.class,
 				new RenderInfestedCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelInfestedCivilian(), 0.4f));
 
-		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class,
-				new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCivilian.class, new RenderCivilian(Minecraft.getMinecraft().getRenderManager(), new ModelCivilian(), 0.4f));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpiderMine.class,
 				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f));
 	}
@@ -209,9 +195,10 @@ public class ClientProxy extends ServerProxy {
 		ModelBakery.registerItemVariants(ModItems.ESSENCE, new ResourceLocation(Reference.MODID, "essence_protoss"), new ResourceLocation(Reference.MODID, "essence_terran"),
 				new ResourceLocation(Reference.MODID, "essence_zerg"));
 
-		ModelBakery.registerItemVariants(ModItems.INGOT, new ResourceLocation(Reference.MODID, "ingot1_copper"), new ResourceLocation(Reference.MODID, "ingot1_alien"),
-				new ResourceLocation(Reference.MODID, "ingot1_aliendark"), new ResourceLocation(Reference.MODID, "ingot1_titanium"),
-				new ResourceLocation(Reference.MODID, "ingot1_steel"));
+		ModelBakery.registerItemVariants(ModItems.INGOT, new ResourceLocation(Reference.MODID, "ingot_copper"), new ResourceLocation(Reference.MODID, "ingot_titanium"),
+				new ResourceLocation(Reference.MODID, "ingot_steel"));
+
+		ModelBakery.registerItemVariants(ModItems.PROTOSS_INGOT, new ResourceLocation(Reference.MODID, "pingot_khalai"), new ResourceLocation(Reference.MODID, "pingot_dark"));
 
 		ModelBakery.registerItemVariants(ModItems.COORDINATES, new ResourceLocation(Reference.MODID, "coordinate_char"),
 				new ResourceLocation(Reference.MODID, "coordinate_shakuras"));
@@ -239,10 +226,15 @@ public class ClientProxy extends ServerProxy {
 				new ResourceLocation(Reference.MODID, "mutalisk_wing_red"), new ResourceLocation(Reference.MODID, "mutalisk_wing_silver"),
 				new ResourceLocation(Reference.MODID, "mutalisk_wing_white"), new ResourceLocation(Reference.MODID, "mutalisk_wing_yellow"));
 
+		ModelBakery.registerItemVariants(ModItems.PROTOSS_ARMOR_PIECES, new ResourceLocation(Reference.MODID, "ppieces_knodes"),
+				new ResourceLocation(Reference.MODID, "ppieces_wmounts"), new ResourceLocation(Reference.MODID, "ppieces_arch"),
+				new ResourceLocation(Reference.MODID, "ppieces_guard"), new ResourceLocation(Reference.MODID, "ppieces_dark_knodes"),
+				new ResourceLocation(Reference.MODID, "ppieces_dark_wmounts"), new ResourceLocation(Reference.MODID, "ppieces_dark_arch"),
+				new ResourceLocation(Reference.MODID, "ppieces_dark_guard"));
+
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T1), new ResourceLocation(Reference.MODID, "protoss_metal_t1_aiur"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_t1_dark"), new ResourceLocation(Reference.MODID, "protoss_metal_t1_green"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_t1_blue"),
-				new ResourceLocation(Reference.MODID, "protoss_metal_t1_red"));
+				new ResourceLocation(Reference.MODID, "protoss_metal_t1_blue"), new ResourceLocation(Reference.MODID, "protoss_metal_t1_red"));
 
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.PROTOSS_METAL_T2), new ResourceLocation(Reference.MODID, "protoss_metal_t2_aiur"),
 				new ResourceLocation(Reference.MODID, "protoss_metal_t2_dark"), new ResourceLocation(Reference.MODID, "protoss_metal_t2_green"),

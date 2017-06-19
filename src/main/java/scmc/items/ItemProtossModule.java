@@ -1,5 +1,6 @@
 package scmc.items;
 
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ItemProtossModule extends ModItems {
@@ -8,5 +9,6 @@ public class ItemProtossModule extends ModItems {
 		super();
 		setUnlocalizedName(Reference.ModItems.ITEM_PROTOSS_MODULE.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ITEM_PROTOSS_MODULE.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 }

@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.NeosteelMetalType;
 import scmc.lib.Reference;
@@ -42,6 +43,7 @@ public class BlockNeosteelMetal extends ModBlocks implements IMetaBlockName {
 		setHardness(20);
 		setResistance(20);
 		setDefaultState(blockState.getBaseState().withProperty(TYPE, NeosteelMetalType.BASE));
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 
 	/**

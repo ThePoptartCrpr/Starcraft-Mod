@@ -2,12 +2,9 @@
 # Item Groups #
 ###############
 
-itemGroup.StarcraftMaterials=Starcraft Materials
-itemGroup.StarcraftBuildingBlocks=Starcraft Building Blocks
-itemGroup.StarcraftDecorativeBlocks=Starcraft Decorative Blocks
-itemGroup.StarcraftTools=Starcraft Tools
-itemGroup.StarcraftCombat=Starcraft Combat
-itemGroup.StarcraftMisc=Starcraft Miscellaneous
+itemGroup.protoss=Protoss
+itemGroup.terran=Terran
+itemGroup.zerg=Zerg
 
 ##########
 # Blocks #

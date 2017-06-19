@@ -5,19 +5,21 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import scmc.StarcraftCreativeTabs;
 import scmc.items.metaitems.ItemEnumHandler.IngotType;
 import scmc.lib.Reference;
 
-public class ItemIngotT1 extends Item {
+public class ItemIngot extends Item {
 
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
 	 * @param unlocalizedName
 	 */
-	public ItemIngotT1() {
-		setUnlocalizedName(Reference.ModItems.ITEM_INGOT1.getUnlocalizedName());
-		setRegistryName(Reference.ModItems.ITEM_INGOT1.getRegistryRL());
+	public ItemIngot() {
+		setUnlocalizedName(Reference.ModItems.ITEM_INGOT.getUnlocalizedName());
+		setRegistryName(Reference.ModItems.ITEM_INGOT.getRegistryRL());
 		setHasSubtypes(true); // This just says the item has metadata
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 
 	/**

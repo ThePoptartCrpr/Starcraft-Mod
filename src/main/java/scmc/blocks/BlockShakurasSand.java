@@ -15,7 +15,7 @@ public class BlockShakurasSand extends BlockFalling {
 		setSoundType(SoundType.SAND);
 		setHardness(0.5F);
 		setResistance(2.5F);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 	}
 
 	public int damageDropped(int par1) {

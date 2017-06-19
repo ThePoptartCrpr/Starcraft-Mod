@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import scmc.Starcraft;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ArmorKhaydarinAmulet extends ItemArmor {
@@ -17,6 +18,7 @@ public class ArmorKhaydarinAmulet extends ItemArmor {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_KHAYDARIN_AMULET.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ARMOR_KHAYDARIN_AMULET.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 	
 	@Override 	

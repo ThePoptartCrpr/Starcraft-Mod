@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import scmc.StarcraftCreativeTabs;
 import scmc.items.metaitems.ItemEnumHandler.C14PartType;
 import scmc.lib.Reference;
 
@@ -18,6 +19,7 @@ public class ItemC14GaussRifleParts extends Item {
 		setUnlocalizedName(Reference.ModItems.ITEM_PART_C14_GAUSS.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ITEM_PART_C14_GAUSS.getRegistryRL());
 		setHasSubtypes(true); // This just says the item has metadata
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 
 	/**

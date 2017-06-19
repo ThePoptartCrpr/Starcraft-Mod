@@ -18,7 +18,7 @@ public class OreOWTitanium extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5);
 		setHarvestLevel("pickaxe", 2);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.ORE_TITANIUM_OW.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryRL());
 	}

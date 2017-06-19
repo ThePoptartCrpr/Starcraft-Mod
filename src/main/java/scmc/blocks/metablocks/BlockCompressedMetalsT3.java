@@ -16,6 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import scmc.StarcraftCreativeTabs;
 import scmc.blocks.ModBlocks;
 import scmc.blocks.metablocks.EnumHandler.CompressedMetalType;
 import scmc.lib.Reference;
@@ -41,8 +42,8 @@ public class BlockCompressedMetalsT3 extends ModBlocks implements IMetaBlockName
 		setRegistryName(new ResourceLocation(Reference.MODID, registryName));
 		setHardness(20); // Sets how hard the block is to break
 		setResistance(20); // Sets the blocks blast resistance to explosions
-		setDefaultState(blockState.getBaseState().withProperty(TYPE, CompressedMetalType.COPPER)); // Default
-																												// state
+		setDefaultState(blockState.getBaseState().withProperty(TYPE, CompressedMetalType.COPPER));
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 
 	/**

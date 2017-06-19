@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.SoundCategory;
+import scmc.StarcraftCreativeTabs;
 import scmc.StarcraftSoundEvents;
 import scmc.lib.Reference;
 
@@ -14,6 +15,7 @@ public class WeaponWarpBlade extends ItemSword {
 		super(material);
 		setUnlocalizedName(Reference.ModItems.WEAPON_WARP_BLADE.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.WEAPON_WARP_BLADE.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.PROTOSS);
 	}
 	
 	@Override

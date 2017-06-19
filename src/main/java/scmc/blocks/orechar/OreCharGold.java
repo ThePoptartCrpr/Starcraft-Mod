@@ -18,7 +18,7 @@ public class OreCharGold extends ModBlocks {
 		setHardness(3.5F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 2);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.ORE_GOLD_C.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.ORE_GOLD_C.getRegistryRL());
 	}

@@ -36,7 +36,7 @@ public class BlockCharMagma extends ModBlocks {
 		setLightLevel(0.2F);
 		setTickRandomly(true);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(StarcraftCreativeTabs.BUILDING);
+		setCreativeTab(StarcraftCreativeTabs.MISC);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_MAGMA_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_MAGMA_CHAR.getRegistryRL());
 	}

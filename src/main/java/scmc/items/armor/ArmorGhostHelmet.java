@@ -2,6 +2,7 @@ package scmc.items.armor;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ArmorGhostHelmet extends ItemArmor {
@@ -10,5 +11,6 @@ public class ArmorGhostHelmet extends ItemArmor {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_GHOST_HELMET.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.ARMOR_GHOST_HELMET.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 }

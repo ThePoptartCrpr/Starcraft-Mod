@@ -13,7 +13,7 @@ import scmc.lib.Reference;
 
 public class ItemC14GaussRifle extends Item {
 	public ItemC14GaussRifle() {
-		setCreativeTab(StarcraftCreativeTabs.COMBAT);
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 		setFull3D();
 		setUnlocalizedName(Reference.ModItems.WEAPON_RIFLE_C14_GAUSS.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.WEAPON_RIFLE_C14_GAUSS.getRegistryRL());

@@ -293,10 +293,8 @@ public class ItemEnumHandler {
 	
 	public static enum IngotType implements IStringSerializable {
 		COPPER("copper", 0),
-		ALIEN("alien", 1),
-		ALIENDARK("aliendark", 2),
-		TITANIUM("titanium", 3),
-		STEEL("steel", 4);
+		TITANIUM("titanium", 1),
+		STEEL("steel", 2);
 		
 		private int ID;
 		private String name;
@@ -320,7 +318,6 @@ public class ItemEnumHandler {
 			return getName();
 		}
 	}
-	
 	
 	public static enum MineralType implements IStringSerializable {
 		BLUE("blue", 0),
@@ -371,6 +368,67 @@ public class ItemEnumHandler {
 		private String name;
 		
 		private MutaliskWingType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String getName() {
+			return name;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
+	
+	
+	public static enum ProtossArmorPiecesType implements IStringSerializable {
+		KHAYDARIN_NODES("knodes", 0),
+		WRIST_MOUNTS("wmounts", 1),
+		ARCH("arch", 2),
+		GUARD("guard", 3),
+		DARK_KHAYDARIN_NODES("dark_knodes", 4),
+		DARK_WRIST_MOUNTS("dark_wmounts", 5),
+		DARK_ARCH("dark_arch", 6),
+		DARK_GUARD("dark_guard", 7);
+		
+		private int ID;
+		private String name;
+		
+		private ProtossArmorPiecesType(String name, int ID) {
+			this.ID = ID;
+			this.name = name;
+		}
+		
+		public int getID() {
+			return ID;
+		}
+		
+		@Override
+		public String getName() {
+			return name;
+		}
+		
+		@Override
+		public String toString() {
+			return getName();
+		}
+	}
+	
+	public static enum ProtossIngotType implements IStringSerializable {
+		KHALAI("khalai", 0),
+		DARK("dark", 1);
+		
+		private int ID;
+		private String name;
+		
+		private ProtossIngotType(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}

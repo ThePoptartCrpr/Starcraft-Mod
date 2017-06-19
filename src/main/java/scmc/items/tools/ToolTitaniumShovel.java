@@ -1,6 +1,7 @@
 package scmc.items.tools;
 
 import net.minecraft.item.ItemSpade;
+import scmc.StarcraftCreativeTabs;
 import scmc.lib.Reference;
 
 public class ToolTitaniumShovel extends ItemSpade {
@@ -9,5 +10,6 @@ public class ToolTitaniumShovel extends ItemSpade {
 		super(material);
 		setUnlocalizedName(Reference.ModItems.TOOL_TITANIUM_SHOVEL.getUnlocalizedName());
 		setRegistryName(Reference.ModItems.TOOL_TITANIUM_SHOVEL.getRegistryRL());
+		setCreativeTab(StarcraftCreativeTabs.TERRAN);
 	}
 }
