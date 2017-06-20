@@ -16,7 +16,7 @@ public class BlockCharDirt extends ModBlocks {
 		super(Material.GROUND);
 		setUnlocalizedName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getUnlocalizedName());
 		setRegistryName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getRegistryRL());
-		setSoundType(SoundType.SAND);
+		setSoundType(SoundType.GROUND);
 		setHardness(0.5F);
 		setResistance(2.5F);
 		setHarvestLevel("shovel", 0);

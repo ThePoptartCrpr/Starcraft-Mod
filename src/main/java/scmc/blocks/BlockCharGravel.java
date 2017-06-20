@@ -18,5 +18,8 @@ public class BlockCharGravel extends BlockGravel {
 		setRegistryName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getRegistryRL());
 		setCreativeTab(StarcraftCreativeTabs.MISC);
 		this.setSoundType(SoundType.GROUND);
+		setHardness(0.5F);
+		setResistance(2.5F);
+		setHarvestLevel("shovel", 0);
 	}
 }
