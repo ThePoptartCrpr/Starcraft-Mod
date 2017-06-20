@@ -46,10 +46,14 @@ public class EntityQueen extends EntityZergMob implements IMob, Predicate<Entity
 	
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityProtossMob || entity instanceof EntityProtossPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
-				|| entity instanceof EntityPlayer) {
-			return true;
-		} else {
+		if(entity.isInvisible() == false) {
+			if(entity instanceof EntityProtossMob || entity instanceof EntityProtossPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
+					|| entity instanceof EntityPlayer) {
+				return true;
+			} else {
+				return false;
+			}
+		}else {
 			return false;
 		}
 	}

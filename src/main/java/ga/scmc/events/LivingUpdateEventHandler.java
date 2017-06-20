@@ -34,7 +34,7 @@ public class LivingUpdateEventHandler {
 				player.setInvisible(false);
 			}
 		} else if(event.getEntity() instanceof EntityDarkTemplar && !StarcraftConfig.BOOL_IS_DARK_TEMPLAR_VISIBLE) {
-			event.getEntity().setInvisible(true);
+			event.getEntity().setInvisible(false);
 		}
 	}
 }

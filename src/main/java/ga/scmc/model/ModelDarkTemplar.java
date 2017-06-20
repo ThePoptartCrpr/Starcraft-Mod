@@ -447,9 +447,9 @@ public class ModelDarkTemplar extends ModelBase {
 		// netHeadYaw, headPitch, scaleFactor, entityIn);
 		head.rotateAngleX = par5 * 0.017453292F + 5.5F;
 	    head.rotateAngleY = par4 * 0.0017453292F;
-		legLeft1.rotateAngleX = MathHelper.sin(par1 * 1) * 1 * par2 - 0.5F;
+		legLeft1.rotateAngleX = MathHelper.sin(par1 * 1) * 1 * par2 - 0.45F;
 		armLeft1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float) Math.PI) * 0.5F * par2;
-		legRight1.rotateAngleX = MathHelper.cos(par1 * 1) * 1 * par2 - 0.5F;
+		legRight1.rotateAngleX = MathHelper.cos(par1 * 1) * 1 * par2 - 0.45F;
 		armRight1.rotateAngleX = MathHelper.sin(par1 * 0.6662F + (float) Math.PI) * 0.5F * par2;
 	}
 }

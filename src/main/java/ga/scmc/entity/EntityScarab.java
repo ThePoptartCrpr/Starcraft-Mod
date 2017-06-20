@@ -80,24 +80,16 @@ public class EntityScarab extends EntityProtossMob implements IMob, Predicate<En
 	
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityZergMob)
-			return true;
-		if(entity instanceof EntityZergPassive)
-			return true;
-		if(entity instanceof EntityTerranMob)
-			return true;
-		if(entity instanceof EntityTerranPassive)
-			return true;
-		if(entity instanceof EntityPlayer)
-			return true;
-		if(entity instanceof EntityGolem)
-			return true;
-		if(entity instanceof EntityProtossMob)
+		if(entity.isInvisible() == false) {
+			if(entity instanceof EntityZergMob || entity instanceof EntityZergPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
+					|| entity instanceof EntityPlayer) {
+				return true;
+			} else {
+				return false;
+			}
+		}else {
 			return false;
-		if(entity instanceof EntityProtossPassive)
-			return false;
-
-		return false;
+		}
 	}
 	
 	@Override

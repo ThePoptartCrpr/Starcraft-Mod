@@ -6,6 +6,7 @@ import ga.scmc.StarcraftSoundEvents;
 import ga.scmc.entity.monster.EntityProtossMob;
 import ga.scmc.entity.monster.EntityTerranMob;
 import ga.scmc.entity.monster.EntityZergMob;
+import ga.scmc.entity.passive.EntityProtossPassive;
 import ga.scmc.entity.passive.EntityTerranPassive;
 import ga.scmc.entity.passive.EntityZergPassive;
 import ga.scmc.items.ModItems;
@@ -45,13 +46,17 @@ public class EntityDarkTemplar extends EntityProtossMob implements IMob, Predica
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
 	}
-
+	
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityZergMob || entity instanceof EntityZergPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
-				|| entity instanceof EntityPlayer) {
-			return true;
-		} else {
+		if(entity.isInvisible() == false) {
+			if(entity instanceof EntityZergMob || entity instanceof EntityZergPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
+					|| entity instanceof EntityPlayer) {
+				return true;
+			} else {
+				return false;
+			}
+		}else {
 			return false;
 		}
 	}

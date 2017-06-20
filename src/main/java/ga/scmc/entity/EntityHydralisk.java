@@ -24,9 +24,10 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
@@ -42,8 +43,7 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 		super(world);
 		setSize(3.5F, 3.3F);
 		experienceValue = 60;
-		rangedAttackAI = new EntityAIAttackRanged(this, 0.4D, 10, 24);
-		tasks.addTask(1, rangedAttackAI);
+		tasks.addTask(1, new EntityAIAttackRanged(this, 1.0D, 17, 16.0F));
 		tasks.addTask(2, new EntityAISwimming(this));
 		tasks.addTask(3, new EntityAIWander(this, 1.0D));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -54,14 +54,18 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 
 	@Override
 	public boolean apply(EntityLivingBase entity) {
-		if(entity instanceof EntityProtossMob || entity instanceof EntityProtossPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
-				|| entity instanceof EntityPlayer) {
-			return true;
-		} else {
+		if(entity.isInvisible() == false) {
+			if(entity instanceof EntityProtossMob || entity instanceof EntityProtossPassive || entity instanceof EntityTerranMob || entity instanceof EntityTerranPassive
+					|| entity instanceof EntityPlayer) {
+				return true;
+			} else {
+				return false;
+			}
+		}else {
 			return false;
 		}
 	}
-	
+
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -77,15 +81,18 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 		return super.attackEntityFrom(source, damageDealt);
 	}
 
-	// TODO: Work this out! It probably isn't firing properly because of how HydraliskSpike is set up. Also, fix the sound and particles!
+	// TODO: Work this out! Also, fix the sound and particles!
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase target, float p_82196_2_) {
-		if(getAttackTarget() != null) {
-			EntityHydraliskSpike entityBullet = new EntityHydraliskSpike(worldObj, this, target, 10F, 12F);
-			worldObj.spawnEntityInWorld(entityBullet);
-			playSound(StarcraftSoundEvents.ENTITY_BROODLING_DEATH, 0.7F, 1F);
-			worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, posX, posY + getEyeHeight(), posZ, 1, 1, 1);
-		}
+		EntityHydraliskSpike spike = new EntityHydraliskSpike(this.worldObj, this);
+		double d0 = target.posY + (double) target.getEyeHeight() - 1.600000023841858D;
+		double d1 = target.posX - this.posX;
+		double d2 = d0 - spike.posY;
+		double d3 = target.posZ - this.posZ;
+		float f = MathHelper.sqrt_double(d1 * d1 + d3 * d3) * 0.2F;
+		spike.setThrowableHeading(d1, d2 + (double) f, d3, 1.6F, .0F);
+		this.playSound(SoundEvents.ENTITY_SNOWMAN_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+		this.worldObj.spawnEntityInWorld(spike);
 	}
 
 	/**
