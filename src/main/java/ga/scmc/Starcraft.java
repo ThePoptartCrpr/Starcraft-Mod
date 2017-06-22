@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MODID, acceptedMinecraftVersions = "[1.10.2]", useMetadata = true)
+@Mod(modid = Reference.MODID, version="1.5", acceptedMinecraftVersions = "[1.10.2]", useMetadata = true)
 public class Starcraft {
 
 	@Instance(Reference.MODID)
