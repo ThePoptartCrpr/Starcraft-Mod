@@ -95,7 +95,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @SuppressWarnings({ "deprecation" })
-public class ClientProxy extends ServerProxy {
+public class ClientProxy extends CommonProxy {
 
 	public ModelBiped getArmorModel(int id) {
 		final ModelKhaydarinAmulet armorASAChest = new ModelKhaydarinAmulet(1.0f);

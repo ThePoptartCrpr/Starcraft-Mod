@@ -1,7 +1,7 @@
 package ga.scmc;
 
 import ga.scmc.lib.Reference;
-import ga.scmc.proxy.ServerProxy;
+import ga.scmc.proxy.CommonProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -22,7 +22,7 @@ public class Starcraft {
 	// public static ItemC14GaussRifle itemTest = (ItemC14GaussRifle) new ItemC14GaussRifle().setFull3D().setUnlocalizedName("c14gaussrifle").setCreativeTab(CreativeTabs.TOOLS).setRegistryName("c14gaussrifle");
 
 	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY, serverSide = Reference.SERVER_SIDE_PROXY)
-	public static ServerProxy proxy;
+	public static CommonProxy proxy;
 
 	static {
 		FluidRegistry.enableUniversalBucket();
