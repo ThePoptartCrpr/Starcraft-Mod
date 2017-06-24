@@ -1,6 +1,7 @@
 package ga.scmc;
 
 import ga.scmc.lib.Reference;
+import ga.scmc.proxy.IProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -11,17 +12,20 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MODID, version="1.5", acceptedMinecraftVersions = "[1.10.2]", useMetadata = true)
+/**
+ * The main Starcraft mod class<br>
+ * <em><b>Copyright (c) 2017 The Starcraft Minecraft (SCMC) Mod Team</b></em>
+ * @author He of a Former Time
+ * @author wundrweapon
+ */
+@Mod(modid = Reference.MODID, acceptedMinecraftVersions = "[1.10.2]", useMetadata = true)
 public class Starcraft {
 
 	@Instance(Reference.MODID)
 	public static Starcraft instance;
 
-	//Testing the C14 Gauss Rifle
-//	public static ItemC14GaussRifle itemTest = (ItemC14GaussRifle) new ItemC14GaussRifle().setFull3D().setUnlocalizedName("c14gaussrifle").setCreativeTab(CreativeTabs.TOOLS).setRegistryName("c14gaussrifle");
-
 	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY)
-	public static IProxy proxy;
+	private static IProxy proxy;
 
 	static {
 		FluidRegistry.enableUniversalBucket();
@@ -32,8 +36,6 @@ public class Starcraft {
 		proxy.init(event);
 		proxy.registerModelBakeryStuff();
 		MinecraftForge.EVENT_BUS.register(this); //I'm like 102% sure this is unnecessary
-//		GameRegistry.register(itemTest);
-//		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemTest, 0, new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"));
 	}
 
 	@EventHandler
@@ -46,11 +48,4 @@ public class Starcraft {
 		proxy.preInit(event);
 		proxy.registerTileEntities();
 	}
-
-	//Probably more C14 Gauss Rifle testing
-//	@SideOnly(Side.CLIENT)
-//	@SubscribeEvent
-//	public void onModelBake(ModelBakeEvent event) {
-//		event.getModelRegistry().putObject(new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"), new RenderItemC14GaussRifle());
-//	}
 }

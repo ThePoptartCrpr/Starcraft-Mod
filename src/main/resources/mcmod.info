@@ -1,13 +1,13 @@
 [
 {
-  "modid": "Starcraft",
-  "name": "Starcraft Mod",
+  "modid": "starcraft",
+  "name": "Starcraft",
   "description": "The Void hungers! Prepare for epic conquest, as three races battle each other to the death! Choose your side, conquer the universe... all while a horrible evil stirs in The Void...",
-  "version": "1.5-port",
+  "version": "1.5-almost-done",
   "mcversion": "1.10.2",
   "url": "http://scmc.ga",
   "updateUrl": "",
-  "authorList": ["valiec2019", "wundrweapon", "CraftSpider", "ccc", "sugarrush", "Cybercat", "Justaguy", "LittleMac", "Ruthless", "YordleKing"],
+  "authorList": ["Bloody", "wundrweapon", "CraftSpider", "Hypeirochus", "SliceThePi", "dddd", "Kirbocabana", "Cybercat", "Justaguy", "Ruthless", "ILikeKitties", "Bevan", "Ruthless", "ccc", "sugarrush", "LittleMac", "valiec2019"],
   "credits": "",
   "logoFile": "",
   "screenshots": [],
