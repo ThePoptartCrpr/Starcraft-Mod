@@ -1,7 +1,6 @@
 package ga.scmc;
 
 import ga.scmc.lib.Reference;
-import ga.scmc.proxy.CommonProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -18,11 +17,11 @@ public class Starcraft {
 	@Instance(Reference.MODID)
 	public static Starcraft instance;
 
-	// Testing the C14 Gauss Rifle
-	// public static ItemC14GaussRifle itemTest = (ItemC14GaussRifle) new ItemC14GaussRifle().setFull3D().setUnlocalizedName("c14gaussrifle").setCreativeTab(CreativeTabs.TOOLS).setRegistryName("c14gaussrifle");
+	//Testing the C14 Gauss Rifle
+//	public static ItemC14GaussRifle itemTest = (ItemC14GaussRifle) new ItemC14GaussRifle().setFull3D().setUnlocalizedName("c14gaussrifle").setCreativeTab(CreativeTabs.TOOLS).setRegistryName("c14gaussrifle");
 
-	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY, serverSide = Reference.SERVER_SIDE_PROXY)
-	public static CommonProxy proxy;
+	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY)
+	public static IProxy proxy;
 
 	static {
 		FluidRegistry.enableUniversalBucket();
@@ -32,9 +31,9 @@ public class Starcraft {
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
 		proxy.registerModelBakeryStuff();
-		MinecraftForge.EVENT_BUS.register(this);
-		// GameRegistry.register(itemTest);
-		// Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemTest, 0, new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"));
+		MinecraftForge.EVENT_BUS.register(this); //I'm like 102% sure this is unnecessary
+//		GameRegistry.register(itemTest);
+//		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemTest, 0, new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"));
 	}
 
 	@EventHandler
@@ -48,10 +47,10 @@ public class Starcraft {
 		proxy.registerTileEntities();
 	}
 
-	// Probably more C14 Gauss Rifle testing
-	// @SideOnly(Side.CLIENT)
-	// @SubscribeEvent
-	// public void onModelBake(ModelBakeEvent event) {
-	// 		event.getModelRegistry().putObject(new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"), new RenderItemC14GaussRifle());
-	// }
+	//Probably more C14 Gauss Rifle testing
+//	@SideOnly(Side.CLIENT)
+//	@SubscribeEvent
+//	public void onModelBake(ModelBakeEvent event) {
+//		event.getModelRegistry().putObject(new ModelResourceLocation("starcraft:c14gaussrifle", "inventory"), new RenderItemC14GaussRifle());
+//	}
 }

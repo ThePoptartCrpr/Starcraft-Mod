@@ -95,12 +95,17 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @SuppressWarnings({ "deprecation" })
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/proxy/ClientProxy.java
 public class ClientProxy extends CommonProxy {
+=======
+public class ClientProxy implements IProxy {
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/proxy/ClientProxy.java
 
 	public ModelBiped getArmorModel(int id) {
 		final ModelKhaydarinAmulet armorASAChest = new ModelKhaydarinAmulet(1.0f);
 		final ModelKhaydarinAmulet armorASA = new ModelKhaydarinAmulet(0.5f);
-		//and switch on the id in your getArmorModel !
+		
+		//And switch on the ID in your getArmorModel!
 		switch(id) {
 			case 0:
 				return armorASAChest;
@@ -111,7 +116,6 @@ public class ClientProxy extends CommonProxy {
 
 	}
 
-	@Override
 	public void init(FMLInitializationEvent event) {
 		ModEntities.setEntityToSpawn();
 		ModEntities.generateSpawnEgg();
@@ -122,7 +126,6 @@ public class ClientProxy extends CommonProxy {
 		SmeltingRecipes.init();
 	}
 
-	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
 		ModFluids.register();
@@ -139,7 +142,7 @@ public class ClientProxy extends CommonProxy {
 		ModEntities.registerEntities();
 		StarcraftSoundEvents.registerSounds();
 		BiomesSC.init();
-		DimensionRegistry.mainRegistry();
+		DimensionRegistry.registerDimensions();
 	}
 
 	// TODO: get all of this into registry
@@ -179,7 +182,6 @@ public class ClientProxy extends CommonProxy {
 				new RenderSpiderMine(Minecraft.getMinecraft().getRenderManager(), new ModelSpiderMine(), 0.4f));
 	}
 
-	@Override
 	public void registerModelBakeryStuff() {
 		ModelBakery.registerItemVariants(ModItems.MINERAL_SHARD, new ResourceLocation(Reference.MODID, "shard_blue"), new ResourceLocation(Reference.MODID, "shard_rich"));
 

@@ -2,12 +2,15 @@ package ga.scmc.items.metaitems;
 
 import java.util.List;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.items.metaitems.ItemEnumHandler.CreditType;
 import ga.scmc.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/items/metaitems/ItemCredit.java
+=======
+import scmc.lib.Reference;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/items/metaitems/ItemCredit.java
 
 public class ItemCredit extends Item {
 

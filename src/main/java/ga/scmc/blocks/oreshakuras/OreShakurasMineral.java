@@ -2,7 +2,6 @@ package ga.scmc.blocks.oreshakuras;
 
 import java.util.Random;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.blocks.ModBlocks;
 import ga.scmc.items.ModItems;
 import ga.scmc.lib.Reference;
@@ -10,6 +9,11 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/blocks/oreshakuras/OreShakurasMineral.java
+=======
+import scmc.blocks.ModBlocks;
+import scmc.lib.Reference;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/blocks/oreshakuras/OreShakurasMineral.java
 
 public class OreShakurasMineral extends ModBlocks {
 

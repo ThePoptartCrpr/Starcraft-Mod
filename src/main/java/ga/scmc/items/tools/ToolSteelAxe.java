@@ -1,11 +1,14 @@
 package ga.scmc.items.tools;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/items/tools/ToolSteelAxe.java
+=======
+import scmc.lib.Reference;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/items/tools/ToolSteelAxe.java
 
 public class ToolSteelAxe extends ItemAxe {
 

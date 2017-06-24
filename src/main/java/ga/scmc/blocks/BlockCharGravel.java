@@ -1,9 +1,12 @@
 package ga.scmc.blocks;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.BlockGravel;
 import net.minecraft.block.SoundType;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/blocks/BlockCharGravel.java
+=======
+import scmc.lib.Reference;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/blocks/BlockCharGravel.java
 
 /**
  * Char Gravel block.<br>

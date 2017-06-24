@@ -5,7 +5,6 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.blocks.ModBlocks;
 import ga.scmc.lib.ModTeleporter;
 import ga.scmc.lib.Reference;
@@ -20,6 +19,12 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/blocks/debug/DimPortalShakuras.java
+=======
+import scmc.blocks.ModBlocks;
+import scmc.lib.ModTeleporter;
+import scmc.lib.Reference;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/blocks/debug/DimPortalShakuras.java
 
 public class DimPortalShakuras extends ModBlocks {
 

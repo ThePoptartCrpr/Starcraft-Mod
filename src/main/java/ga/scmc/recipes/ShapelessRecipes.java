@@ -11,18 +11,17 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ShapelessRecipes {
 
 	public static void init() {
-		// Iron Grain x2 from Iron Ores
+		//Iron Grain x2 from Iron Ores
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.DUST, 2, 1), Blocks.IRON_ORE);
 
-		// Iron Ore from Iron Grain x2 + Stone
+		//Iron Ore from Iron Grain x2 + Stone
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.IRON_ORE), new ItemStack(ModItems.DUST, 1, 1), new ItemStack(ModItems.DUST, 1, 1), new ItemStack(Blocks.STONE));
 
-		// Carbon Grain x9 from Coal (not Charcoal as Coal is natural, and iirc has more carbon)
+		//Carbon Grain x9 from Coal (not Charcoal as Coal is natural, and iirc has more carbon)
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.DUST, 9, 2), new ItemStack(Items.COAL, 1, 1));
 
-		// Steel Dust from Carbon and Iron Grains
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.DUST, 1, 0), new ItemStack(ModItems.DUST, 3, 1), new ItemStack(ModItems.DUST, 3, 1),
-				new ItemStack(ModItems.DUST, 3, 2), new ItemStack(ModItems.DUST, 3, 2));
+		//Steel Dust from Carbon and Iron Grains
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.DUST, 1, 0), new ItemStack(ModItems.DUST, 3, 1), new ItemStack(ModItems.DUST, 3, 1), new ItemStack(ModItems.DUST, 3, 2), new ItemStack(ModItems.DUST, 3, 2));
 
 		//1 Dark Protoss Ingot (using Dye on a normal Protoss Ingot)
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.INGOT, 1, 2), new ItemStack(Items.DYE, 1, 0), new ItemStack(ModItems.INGOT, 1, 1));

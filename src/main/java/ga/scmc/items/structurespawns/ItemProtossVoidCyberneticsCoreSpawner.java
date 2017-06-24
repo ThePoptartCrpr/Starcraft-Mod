@@ -1,6 +1,5 @@
 package ga.scmc.items.structurespawns;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.StarcraftSoundEvents;
 import ga.scmc.items.ModItems;
 import ga.scmc.lib.Reference;
@@ -12,6 +11,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/items/structurespawns/ItemProtossVoidCyberneticsCoreSpawner.java
+=======
+import scmc.StarcraftSoundEvents;
+import scmc.lib.Reference;
+import scmc.worldgen.structure.StructureProtossCyberneticsCoreTemplate;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/items/structurespawns/ItemProtossVoidCyberneticsCoreSpawner.java
 
 public class ItemProtossVoidCyberneticsCoreSpawner extends ModItems {
 

@@ -1,6 +1,5 @@
 package ga.scmc.blocks.coreblocks;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.blocks.ModBlocks;
 import ga.scmc.lib.Library;
 import ga.scmc.lib.Reference;
@@ -10,6 +9,12 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/blocks/coreblocks/BlockCoreNexusDark.java
+=======
+import scmc.blocks.ModBlocks;
+import scmc.lib.Library;
+import scmc.lib.Reference;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/blocks/coreblocks/BlockCoreNexusDark.java
 
 public class BlockCoreNexusDark extends ModBlocks {
 

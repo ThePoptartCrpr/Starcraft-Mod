@@ -44,12 +44,12 @@ public class SteelDust implements IRecipe {
 	 */
 	@Override
 	public int getRecipeSize() {
-		return 3; // There are three items
+		return 3;
 	}
 
 	/**
 	 * Keeps certain items in the grid afterwords
-	 * @param grid
+	 * @param grid the crafting grid right before using its items
 	 * @return
 	 * @see net.minecraft.item.crafting.IRecipe#getRemainingItems(InventoryCrafting)
 	 */
@@ -67,26 +67,14 @@ public class SteelDust implements IRecipe {
 				} else if(currentStack.getMetadata() == 2) {
 					carbonDust = currentStack.copy();
 				}
-			} catch(@SuppressWarnings("unused") NullPointerException e) {} // Same
-																			// bs
-																			// as
-																			// before
+			} catch(@SuppressWarnings("unused") NullPointerException e) {}
 		}
 
-		grid.clear(); // Makes sure we get rid of the used ingredients... by
-						// getting rid of everything then adding more :P
-
+		grid.clear(); //Makes sure we get rid of the used ingredients... by getting rid of everything then adding back what we want :P
 		ironDust.stackSize -= 2;
 		carbonDust.stackSize--;
 
-		return new ItemStack[] { ironDust, carbonDust }; // If Mojang had made
-															// stack size
-															// editing with
-															// setters as they
-															// usually do,
-															// this'd be a much
-															// cooler-looking
-															// line
+		return new ItemStack[] {ironDust, carbonDust};
 	}
 
 	/**
@@ -99,62 +87,37 @@ public class SteelDust implements IRecipe {
 	 */
 	@Override
 	public boolean matches(InventoryCrafting grid, World world) {
-		ItemStack ironDust = null; // Tracks the Iron Dust stack
-		ItemStack carbonDust = null; // Tracks the Carbon Dust stack
+		ItemStack ironDust = null; //Tracks the Iron Dust stack
+		ItemStack carbonDust = null; //Tracks the Carbon Dust stack
 
 		for(int i = 0; i < grid.getSizeInventory(); i++) {
 			try {
-				ItemStack currentStack = grid.getStackInSlot(i); // For analysis
-																	// of the
-																	// stack in
-																	// slot i
+				ItemStack currentStack = grid.getStackInSlot(i);
 
 				if(currentStack.getItem() instanceof ItemDust) {
 					if(currentStack.getMetadata() == 1) {
 						if(ironDust == null) {
-							ironDust = currentStack; // Only sets the current
-														// stack as the Iron
-														// Dust if it definitely
-														// is Iron Dust AND
-														// there's no Iron Dust
-														// yet
+							ironDust = currentStack; //Only sets the current stack as the Iron Dust if it definitely is Iron Dust AND there's no Iron Dust yet
 						} else {
-							return false; // Already an Iron Dust? That means we
-											// have too many in the grid
+							return false; //Already an Iron Dust? That means we have too many in the grid
 						}
 					} else if(currentStack.getMetadata() == 2) {
 						if(carbonDust == null) {
-							carbonDust = currentStack; // Only sets the current
-														// stack as the Carbon
-														// Dust if it definitely
-														// is Carbon Dust AND
-														// there's no Carbon
-														// Dust yet
+							carbonDust = currentStack; //Only sets the current stack as the Carbon Dust if it definitely is Carbon Dust AND there's no Carbon Dust yet
 						} else {
-							return false; // Already a Carbon Dust? That means
-											// we have too many in the grid
+							return false; //Already a Carbon Dust? That means we have too many in the grid
 						}
 					}
 				} else if(currentStack != null) {
-					return false; // If there's anything other than the Dusts,
-									// it's not valid
+					return false; //If there's anything other than the Dusts, it's not valid
 				}
-			} catch(@SuppressWarnings("unused") NullPointerException e) {} // Preventing
-																			// errors
-																			// with
-																			// as
-																			// little
-																			// effort
-																			// as
-																			// possible
-																			// :P
+			} catch(@SuppressWarnings("unused") NullPointerException e) {}
 		}
 
 		if(ironDust == null || carbonDust == null) {
-			return false; // Did we not receive an ingredient?
+			return false; //Missing a necessity? Then it's not correct
 		}
 
-		return ironDust.stackSize >= 2; // We don't check the stack size of the
-										// Carbon Dust as we only need one
+		return ironDust.stackSize >= 2; //We don't check the stack size of the Carbon Dust as we only need one
 	}
 }

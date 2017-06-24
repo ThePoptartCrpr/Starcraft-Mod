@@ -2,7 +2,6 @@ package ga.scmc.blocks.metablocks;
 
 import java.util.List;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.blocks.ModBlocks;
 import ga.scmc.blocks.metablocks.EnumHandler.ProtossMetalType;
 import ga.scmc.lib.Reference;
@@ -19,6 +18,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/blocks/metablocks/BlockProtossMetalT2.java
+=======
+import scmc.blocks.ModBlocks;
+import scmc.blocks.metablocks.EnumHandler.ProtossMetalType;
+import scmc.lib.Reference;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/blocks/metablocks/BlockProtossMetalT2.java
 
 /**
  * This block has three variants. Refer to {@link ProtossMetalType}

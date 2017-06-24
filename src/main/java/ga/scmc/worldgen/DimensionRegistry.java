@@ -21,11 +21,7 @@ public class DimensionRegistry {
 	public static final DimensionType SHAKURAS_DT = DimensionType.register("Shakuras", "_starcraft", SHAKURAS_DIMENSION_ID, WorldProviderShakuras.class, true);
 	public static final WorldType SHAKURAS_WT = new WorldType("SHAKURAS");
 
-	public static void mainRegistry() {
-		registerDimensions();
-	}
-
-	private static void registerDimensions() {
+	public static void registerDimensions() {
 		DimensionManager.registerDimension(AIUR_DIMENSION_ID, AIUR_DT);
 		DimensionManager.registerDimension(CHAR_DIMENSION_ID, CHAR_DT);
 		DimensionManager.registerDimension(SHAKURAS_DIMENSION_ID, SHAKURAS_DT);

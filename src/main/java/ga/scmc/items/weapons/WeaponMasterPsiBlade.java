@@ -1,6 +1,5 @@
 package ga.scmc.items.weapons;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.StarcraftSoundEvents;
 import ga.scmc.lib.Reference;
 import net.minecraft.entity.Entity;
@@ -8,6 +7,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.SoundCategory;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/items/weapons/WeaponMasterPsiBlade.java
+=======
+import scmc.StarcraftSoundEvents;
+import scmc.lib.Reference;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/items/weapons/WeaponMasterPsiBlade.java
 
 public class WeaponMasterPsiBlade extends ItemSword {
 	

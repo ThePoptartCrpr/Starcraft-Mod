@@ -2,7 +2,6 @@ package ga.scmc.items.structurespawns;
 
 import java.util.Random;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.StarcraftSoundEvents;
 import ga.scmc.items.ModItems;
 import ga.scmc.lib.Reference;
@@ -14,6 +13,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/items/structurespawns/ItemProtossWarpGateSpawner.java
+=======
+import scmc.StarcraftSoundEvents;
+import scmc.lib.Reference;
+import scmc.worldgen.structure.StructureProtossWarpGateTemplate;
+>>>>>>> Start of proxy rebuild:src/main/java/scmc/items/structurespawns/ItemProtossWarpGateSpawner.java
 
 public class ItemProtossWarpGateSpawner extends ModItems {
 
