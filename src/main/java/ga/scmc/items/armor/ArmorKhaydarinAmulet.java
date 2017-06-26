@@ -33,11 +33,11 @@ public class ArmorKhaydarinAmulet extends ItemArmor {
 				ModelBiped armorModel = null;
 				switch (type) {
 				case HEAD:
-					armorModel = /*Starcraft.proxy.getArmorModel(0);*/ null; //It always returned null anyways
+					armorModel = Starcraft.proxy.getArmorModel(0);
 					break;
 				case FEET:
 				case CHEST:
-					armorModel = /*Starcraft.proxy.getArmorModel(1);*/ null; //It always returned null anyways
+					armorModel = Starcraft.proxy.getArmorModel(1);
 					break;
 				default:
 					break;
