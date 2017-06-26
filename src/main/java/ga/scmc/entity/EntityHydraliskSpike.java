@@ -1,9 +1,9 @@
 package ga.scmc.entity;
 
+import ga.scmc.StarcraftDamageSources;
 import ga.scmc.lib.StarcraftConfig;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -32,7 +32,14 @@ public class EntityHydraliskSpike extends EntityThrowable
     {
         if (result.entityHit != null)
         {
-            result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)StarcraftConfig.HYDRALISK_DAMAGE);
+        	float i = (float)StarcraftConfig.HYDRALISK_DAMAGE;
+        	
+        	 if (result.entityHit instanceof EntityHydralisk)
+             {
+                 i = 0;
+             }
+        	 
+            result.entityHit.attackEntityFrom(StarcraftDamageSources.causeHydraliskNeedleDamage(this, this.getThrower()), i);
         }
 
         for (int j = 0; j < 8; ++j)

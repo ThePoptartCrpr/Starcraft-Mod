@@ -25,7 +25,6 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.EnumDifficulty;
@@ -74,11 +73,6 @@ public class EntityHydralisk extends EntityZergMob implements IMob, IRangedAttac
 		getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(16.0D);
 		getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(StarcraftConfig.HYDRALISK_DAMAGE);
 		getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(Double.MAX_VALUE);
-	}
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float damageDealt) {
-		return super.attackEntityFrom(source, damageDealt);
 	}
 
 	// TODO: Work this out! Also, fix the sound and particles!
