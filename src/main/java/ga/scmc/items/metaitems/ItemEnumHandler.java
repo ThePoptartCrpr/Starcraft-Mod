@@ -1,18 +1,17 @@
 package ga.scmc.items.metaitems;
 
-
 import net.minecraft.util.IStringSerializable;
 
-
+//So... much... REDUNDANCY
 public class ItemEnumHandler {
 
-	public static enum BulletType implements IStringSerializable {
+	public enum BulletType implements IStringSerializable {
 		C14("c14", 0);
 		
 		private int ID;
 		private String name;
 		
-		private BulletType(String name, int ID) {
+		BulletType(String name, int ID) {
 			this.ID = ID;
 			this.name = name;
 		}

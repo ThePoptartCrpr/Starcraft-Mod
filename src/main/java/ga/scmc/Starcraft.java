@@ -25,27 +25,27 @@ public class Starcraft {
 	public static Starcraft instance;
 
 	@SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY)
-	private static IProxy proxy;
+	public static IProxy proxy;
 
 	static {
 		FluidRegistry.enableUniversalBucket();
+	}
+	
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		proxy.preInit(event);
+		proxy.registerTileEntities();
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
-		proxy.registerModelBakeryStuff();
+		proxy.registerItemVariants();
 		MinecraftForge.EVENT_BUS.register(this); //I'm like 102% sure this is unnecessary
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		proxy.postInit(event);
-	}
-
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		proxy.preInit(event);
-		proxy.registerTileEntities();
 	}
 }

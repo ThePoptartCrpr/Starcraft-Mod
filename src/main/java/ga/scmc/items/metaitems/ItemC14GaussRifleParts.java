@@ -2,21 +2,17 @@ package ga.scmc.items.metaitems;
 
 import java.util.List;
 
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.items.metaitems.ItemEnumHandler.C14PartType;
 import ga.scmc.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/items/metaitems/ItemC14GaussRifleParts.java
-=======
-import scmc.lib.Reference;
->>>>>>> Start of proxy rebuild:src/main/java/scmc/items/metaitems/ItemC14GaussRifleParts.java
 
 public class ItemC14GaussRifleParts extends Item {
 
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
-	 * @param unlocalizedName
 	 */
 	public ItemC14GaussRifleParts() {
 		setUnlocalizedName(Reference.ModItems.ITEM_PART_C14_GAUSS.getUnlocalizedName());
@@ -36,7 +32,7 @@ public class ItemC14GaussRifleParts extends Item {
 	}
 
 	/**
-	 * Gets the correct unlocalized name using the {@link c14PartTypeType} enum
+	 * Gets the correct unlocalized name using the c14PartTypeType enum (wait, what?)
 	 */
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {

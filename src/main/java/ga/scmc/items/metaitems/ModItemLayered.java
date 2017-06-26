@@ -24,8 +24,7 @@ public class ModItemLayered extends ItemBlock {
 	@Override
 	public boolean canPlaceBlockOnSide(World world, BlockPos pos, EnumFacing side, EntityPlayer player, ItemStack stack) {
 		IBlockState state = world.getBlockState(pos);
-		return (!(state.getBlock() instanceof ModBlockLayered) || (state.getValue(ModBlockLayered.LAYERS)) > 7) ? super.canPlaceBlockOnSide(world, pos, side, player, stack)
-				: true;
+		return (!(state.getBlock() instanceof ModBlockLayered) || (state.getValue(ModBlockLayered.LAYERS)) > 7) ? super.canPlaceBlockOnSide(world, pos, side, player, stack) : true;
 	}
 
 	@Override

@@ -1,15 +1,11 @@
 package ga.scmc.items.armor;
 
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
-<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/items/armor/ArmorZealotHelmetT2.java
-=======
-import scmc.lib.Reference;
->>>>>>> Start of proxy rebuild:src/main/java/scmc/items/armor/ArmorZealotHelmetT2.java
 
 public class ArmorZealotHelmetT2 extends ItemArmor {
-
 	public ArmorZealotHelmetT2(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_ZEALOT_HELMET_T2.getUnlocalizedName());

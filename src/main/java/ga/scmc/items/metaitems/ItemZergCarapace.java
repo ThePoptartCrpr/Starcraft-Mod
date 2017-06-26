@@ -2,21 +2,17 @@ package ga.scmc.items.metaitems;
 
 import java.util.List;
 
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.items.metaitems.ItemEnumHandler.CarapaceType;
 import ga.scmc.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/items/metaitems/ItemZergCarapace.java
-=======
-import scmc.lib.Reference;
->>>>>>> Start of proxy rebuild:src/main/java/scmc/items/metaitems/ItemZergCarapace.java
 
 public class ItemZergCarapace extends Item {
 
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
-	 * @param unlocalizedName
 	 */
 	public ItemZergCarapace() {
 		setUnlocalizedName(Reference.ModItems.ITEM_ZERG_CARAPACE.getUnlocalizedName());

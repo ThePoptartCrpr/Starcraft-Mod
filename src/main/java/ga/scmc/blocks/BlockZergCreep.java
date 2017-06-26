@@ -2,6 +2,7 @@ package ga.scmc.blocks;
 
 import java.util.Random;
 
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.entity.monster.EntityZergMob;
 import ga.scmc.entity.passive.EntityZergPassive;
 import ga.scmc.items.ModItems;
@@ -19,12 +20,6 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/blocks/BlockZergCreep.java
-=======
-import scmc.entity.monster.EntityZergMob;
-import scmc.entity.passive.EntityZergPassive;
-import scmc.lib.Reference;
->>>>>>> Start of proxy rebuild:src/main/java/scmc/blocks/BlockZergCreep.java
 
 public class BlockZergCreep extends ModBlocks {
 

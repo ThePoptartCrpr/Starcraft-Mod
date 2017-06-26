@@ -2,6 +2,7 @@ package ga.scmc.blocks;
 
 import java.util.Random;
 
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Library;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.SoundType;
@@ -18,11 +19,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/blocks/BlockCharMagma.java
-=======
-import scmc.lib.Library;
-import scmc.lib.Reference;
->>>>>>> Start of proxy rebuild:src/main/java/scmc/blocks/BlockCharMagma.java
 
 /**
  * Magma block. Makes lava source when broken or when lava is found near it on a

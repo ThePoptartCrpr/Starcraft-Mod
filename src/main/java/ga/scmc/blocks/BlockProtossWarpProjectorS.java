@@ -1,5 +1,6 @@
 package ga.scmc.blocks;
 
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -10,10 +11,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-<<<<<<< 9c53d1b268c91c7dd3e7b00933a509a597e4213d:src/main/java/ga/scmc/blocks/BlockProtossWarpProjectorS.java
-=======
-import scmc.lib.Reference;
->>>>>>> Start of proxy rebuild:src/main/java/scmc/blocks/BlockProtossWarpProjectorS.java
 
 /**
  * Protoss Shakuras Warp Projector block.<br>

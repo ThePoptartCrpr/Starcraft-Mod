@@ -3,8 +3,12 @@ package ga.scmc.lib;
 import net.minecraft.util.ResourceLocation;
 
 public class Reference {
+	public static final String CLIENT_SIDE_PROXY = "ga.scmc.proxy.ClientProxy";
+	public static final String MODID = "starcraft";
+	public static final String RL_BASE = MODID + ":";
+	public static final String UN_BASE = MODID + "_";
 
-	public static enum ModBlocks {
+	public enum ModBlocks {
 		BLOCK_ASH_CHAR("charAsh", "char_ash"),
 		BLOCK_COBBLESTONE_CHAR("charCobblestone", "char_cobblestone"),
 		BLOCK_COBBLESTONE_S("shakurasStone", "shakuras_cobblestone"),
@@ -327,12 +331,4 @@ public class Reference {
 			return unlocalizedName;
 		}
 	}
-
-	public static final String CLIENT_SIDE_PROXY = "ga.scmc.proxy.ClientProxy";
-	public static final String MODID = "starcraft";
-	public static final String RL_BASE = MODID + ":";
-
-	public static final String SERVER_SIDE_PROXY = "ga.scmc.proxy.ServerProxy";
-
-	public static final String UN_BASE = MODID + "_";
 }
