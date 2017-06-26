@@ -204,30 +204,30 @@ public class SimpleRecipes {
 				new ItemStack(ModArmor.ZEALOT_BOOTS_T2, 1, 0));
 
 		//Protoss ZealotMK1 Dark armorset
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T1), "ZZZ", "Z Z", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1));
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T2), " Z ", "ZHZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'H',
-				new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T1, 1, 0));
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T3), " Z ", "ZHZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'H',
-				new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T2, 1, 0));
-		
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T1), "AZA", "ZNZ", " Z ", 'A', new ItemStack(ModItems.PROTOSS_ARMOR_PIECES, 1, 6), 'N',
-				new ItemStack(ModItems.PROTOSS_ARMOR_PIECES, 1, 4), 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1));
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T2), " Z ", "ZCZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'C',
-				new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T1, 1, 0));
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T3), " Z ", "ZCZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'C',
-				new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T2, 1, 0));
-		
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_LEGGINGS_T1), "Z Z", "Z Z", "Z Z", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1));
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_LEGGINGS_T2), " Z ", "ZLZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'L',
-				new ItemStack(ModArmor.DARK_ZEALOT_LEGGINGS_T1, 1, 0));
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_LEGGINGS_T3), " Z ", "ZLZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'L',
-				new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T2, 1, 0));
-
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T1), "   ", "Z Z", "Z Z", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1));
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T2), " Z ", "ZBZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'B',
-				new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T1, 1, 0));
-		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T3), " Z ", "ZBZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'B',
-				new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T2, 1, 0));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T1), "ZZZ", "Z Z", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T2), " Z ", "ZHZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'H',
+//				new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T1, 1, 0));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T3), " Z ", "ZHZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'H',
+//				new ItemStack(ModArmor.DARK_ZEALOT_HELMET_T2, 1, 0));
+//		
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T1), "AZA", "ZNZ", " Z ", 'A', new ItemStack(ModItems.PROTOSS_ARMOR_PIECES, 1, 6), 'N',
+//				new ItemStack(ModItems.PROTOSS_ARMOR_PIECES, 1, 4), 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T2), " Z ", "ZCZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'C',
+//				new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T1, 1, 0));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T3), " Z ", "ZCZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'C',
+//				new ItemStack(ModArmor.DARK_ZEALOT_CHESTPLATE_T2, 1, 0));
+//		
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_LEGGINGS_T1), "Z Z", "Z Z", "Z Z", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_LEGGINGS_T2), " Z ", "ZLZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'L',
+//				new ItemStack(ModArmor.DARK_ZEALOT_LEGGINGS_T1, 1, 0));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_LEGGINGS_T3), " Z ", "ZLZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'L',
+//				new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T2, 1, 0));
+//
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T1), "   ", "Z Z", "Z Z", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T2), " Z ", "ZBZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'B',
+//				new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T1, 1, 0));
+//		GameRegistry.addRecipe(new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T3), " Z ", "ZBZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 1), 'B',
+//				new ItemStack(ModArmor.DARK_ZEALOT_BOOTS_T2, 1, 0));
 
 		//Khaydarin nodes
 		GameRegistry.addRecipe(new ItemStack(ModItems.PROTOSS_ARMOR_PIECES, 1, 0), " Z ", "ZKZ", " Z ", 'Z', new ItemStack(ModItems.PROTOSS_INGOT, 1, 0), 'K',

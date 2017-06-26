@@ -78,7 +78,7 @@ public class ModBlocks extends Block {
 	public static Block CORE_WARPGATE_DARK;
 	public static Block CORE_WARPGATE_KHALAI;
 	public static Block CORE_WARPGATE_VOID;
-	public static Block DIM_PORTAL_AIUR;
+	//public static Block DIM_PORTAL_AIUR;
 	public static Block DIM_PORTAL_CHAR;
 	public static Block DIM_PORTAL_OVERWORLD;
 	public static Block DIM_PORTAL_SHAKURAS;
@@ -190,7 +190,7 @@ public class ModBlocks extends Block {
 		SAND_SHAKURAS = new BlockShakurasSand();
 		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
 
-		DIM_PORTAL_AIUR = new DimPortalAiur();
+		//DIM_PORTAL_AIUR = new DimPortalAiur();
 
 		// Protoss Blocks
 		PROTOSS_WARPPROJECTOR_CHAR = new BlockProtossWarpProjectorC();
@@ -352,8 +352,8 @@ public class ModBlocks extends Block {
 		GameRegistry.register(DIM_PORTAL_SHAKURAS);
 		GameRegistry.register(new ItemBlock(DIM_PORTAL_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL()));
 
-		GameRegistry.register(DIM_PORTAL_AIUR);
-		GameRegistry.register(new ItemBlock(DIM_PORTAL_AIUR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_AI.getRegistryRL()));
+		//GameRegistry.register(DIM_PORTAL_AIUR);
+		//GameRegistry.register(new ItemBlock(DIM_PORTAL_AIUR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_AI.getRegistryRL()));
 
 		GameRegistry.register(PROTOSS_WARPPROJECTOR_CHAR);
 		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_C.getRegistryRL()));
@@ -543,7 +543,7 @@ public class ModBlocks extends Block {
 		registerModel(DIM_PORTAL_OVERWORLD);
 		registerModel(DIM_PORTAL_CHAR);
 		registerModel(DIM_PORTAL_SHAKURAS);
-		registerModel(DIM_PORTAL_AIUR);
+		//registerModel(DIM_PORTAL_AIUR);
 
 		// Protoss Blocks
 		registerModel(PROTOSS_WARPPROJECTOR_CHAR);

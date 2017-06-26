@@ -16,7 +16,7 @@ public class ModEntities {
 		EntityRegistry.registerEgg(EntityProbe.class, 13022529, 2412228);
 		EntityRegistry.registerEgg(EntityProtossReaver.class, 13022529, 2412228);
 		EntityRegistry.registerEgg(EntityScarab.class, 13022529, 2412228);
-		EntityRegistry.registerEgg(EntitySentry.class, 13022529, 2412228);
+//		EntityRegistry.registerEgg(EntitySentry.class, 13022529, 2412228);
 		EntityRegistry.registerEgg(EntityDarkTemplar.class, 1447446, 45824);
 		EntityRegistry.registerEgg(EntityDarkProbe.class, 1447446, 12648448);
 
@@ -27,7 +27,7 @@ public class ModEntities {
 		EntityRegistry.registerEgg(EntityZerglingRaptor.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityZerglingSwarmling.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityZerglingBoost.class, 11403519, 7684608);
-		EntityRegistry.registerEgg(EntityQueen.class, 11403519, 7684608);
+//		EntityRegistry.registerEgg(EntityQueen.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityOverlord.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityLarva.class, 11403519, 7684608);
 		EntityRegistry.registerEgg(EntityLarvaCocoon.class, 11403519, 7684608);
@@ -41,7 +41,7 @@ public class ModEntities {
 	public static void registerEntities() {
 		registerEntity(EntityZealot.class, "zealot", 64, 1, true);
 		registerEntity(EntityProtossReaver.class, "protossReaver", 64, 1, true);
-		registerEntity(EntitySentry.class, "sentry", 64, 1, true);
+//		registerEntity(EntitySentry.class, "sentry", 64, 1, true);
 		registerEntity(EntityScarab.class, "scarab", 64, 1, true);
 		registerEntity(EntityProbe.class, "probe", 64, 1, true);
 		registerEntity(EntityDarkTemplar.class, "darkTemplar", 64, 1, true);
@@ -54,7 +54,7 @@ public class ModEntities {
 		registerEntity(EntityZerglingRaptor.class, "zerglingRaptor", 64, 1, true);
 		registerEntity(EntityZerglingSwarmling.class, "zerglingSwarmling", 64, 1, true);
 		registerEntity(EntityZerglingBoost.class, "zerglingBoost", 64, 1, true);
-		registerEntity(EntityQueen.class, "queen", 64, 1, true);
+//		registerEntity(EntityQueen.class, "queen", 64, 1, true);
 		registerEntity(EntityOverlord.class, "overlord", 64, 1, true);
 		registerEntity(EntityLarva.class, "larva", 64, 1, true);
 		registerEntity(EntityLarvaCocoon.class, "larvaCocoon", 64, 1, true);
@@ -83,7 +83,7 @@ public class ModEntities {
 		EntityRegistry.addSpawn(EntityZerglingRaptor.class, 10, 1, 5, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
 		EntityRegistry.addSpawn(EntityZerglingSwarmling.class, 10, 1, 5, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
 		EntityRegistry.addSpawn(EntityZerglingBoost.class, 10, 1, 5, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
-		EntityRegistry.addSpawn(EntityQueen.class, 5, 1, 1, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
+//		EntityRegistry.addSpawn(EntityQueen.class, 5, 1, 1, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
 		EntityRegistry.addSpawn(EntityOverlord.class, 5, 1, 2, EnumCreatureType.MONSTER, BiomesSC.biomeCharCreepInfestation);
 		EntityRegistry.addSpawn(EntityLarva.class, 5, 1, 3, EnumCreatureType.CREATURE, BiomesSC.biomeCharCreepInfestation);
 		EntityRegistry.addSpawn(EntityLarvaCocoon.class, 5, 1, 5, EnumCreatureType.CREATURE, BiomesSC.biomeCharCreepInfestation);

@@ -42,58 +42,58 @@ public class ModArmor {
 	private static final ItemArmor.ArmorMaterial ZERG_ARMOR_MATERIAL_T2 = EnumHelper.addArmorMaterial("zergArmorMaterialT2", Reference.RL_BASE + "zerg_t2", 35, new int[] { 4, 9, 7, 4 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
 	private static final ItemArmor.ArmorMaterial ZERG_ARMOR_MATERIAL_T3 = EnumHelper.addArmorMaterial("zergArmorMaterialT3", Reference.RL_BASE + "zerg_t3", 37, new int[] { 5, 10, 8, 5 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f);
 	
-	private static Item ADEPT_BOOTS_T1;
-	private static Item ADEPT_BOOTS_T2;
-	private static Item ADEPT_BOOTS_T3;
-	private static Item ADEPT_CHESTPLATE_T1;
-	private static Item ADEPT_CHESTPLATE_T2;
-	private static Item ADEPT_CHESTPLATE_T3;
-	private static Item ADEPT_HELMET_T1;
-	private static Item ADEPT_HELMET_T2;
-	private static Item ADEPT_HELMET_T3;
-	private static Item ADEPT_LEGGINGS_T1;
-	private static Item ADEPT_LEGGINGS_T2;
-	private static Item ADEPT_LEGGINGS_T3;
-
+//	private static Item ADEPT_BOOTS_T1;
+//	private static Item ADEPT_BOOTS_T2;
+//	private static Item ADEPT_BOOTS_T3;
+//	private static Item ADEPT_CHESTPLATE_T1;
+//	private static Item ADEPT_CHESTPLATE_T2;
+//	private static Item ADEPT_CHESTPLATE_T3;
+//	private static Item ADEPT_HELMET_T1;
+//	private static Item ADEPT_HELMET_T2;
+//	private static Item ADEPT_HELMET_T3;
+//	private static Item ADEPT_LEGGINGS_T1;
+//	private static Item ADEPT_LEGGINGS_T2;
+//	private static Item ADEPT_LEGGINGS_T3;
+//
 	public static Item COPPER_BOOTS;
 	public static Item COPPER_CHESTPLATE;
 	public static Item COPPER_HELMET;
 	public static Item COPPER_LEGGINGS;
-	
-	private static Item DARK_KHAYDARIN_AMULET;
-
-	public static Item DARK_ZEALOT_BOOTS_T1;
-	public static Item DARK_ZEALOT_BOOTS_T2;
-	public static Item DARK_ZEALOT_BOOTS_T3;
-	public static Item DARK_ZEALOT_CHESTPLATE_T1;
-	public static Item DARK_ZEALOT_CHESTPLATE_T2;
-	public static Item DARK_ZEALOT_CHESTPLATE_T3;
-	public static Item DARK_ZEALOT_HELMET_T1;
-	public static Item DARK_ZEALOT_HELMET_T2;
-	public static Item DARK_ZEALOT_HELMET_T3;
-	public static Item DARK_ZEALOT_LEGGINGS_T1;
-	public static Item DARK_ZEALOT_LEGGINGS_T2;
-	public static Item DARK_ZEALOT_LEGGINGS_T3;
-	
-	private static Item GHOST_BOOTS;
-	private static Item GHOST_CHESTPLATE;
-	private static Item GHOST_HELMET;
-	private static Item GHOST_LEGGINGS;
+//	
+//	private static Item DARK_KHAYDARIN_AMULET;
+//
+//	public static Item DARK_ZEALOT_BOOTS_T1;
+//	public static Item DARK_ZEALOT_BOOTS_T2;
+//	public static Item DARK_ZEALOT_BOOTS_T3;
+//	public static Item DARK_ZEALOT_CHESTPLATE_T1;
+//	public static Item DARK_ZEALOT_CHESTPLATE_T2;
+//	public static Item DARK_ZEALOT_CHESTPLATE_T3;
+//	public static Item DARK_ZEALOT_HELMET_T1;
+//	public static Item DARK_ZEALOT_HELMET_T2;
+//	public static Item DARK_ZEALOT_HELMET_T3;
+//	public static Item DARK_ZEALOT_LEGGINGS_T1;
+//	public static Item DARK_ZEALOT_LEGGINGS_T2;
+//	public static Item DARK_ZEALOT_LEGGINGS_T3;
+//	
+//	private static Item GHOST_BOOTS;
+//	private static Item GHOST_CHESTPLATE;
+//	private static Item GHOST_HELMET;
+//	private static Item GHOST_LEGGINGS;
 	
 	private static Item KHAYDARIN_AMULET;
 	
-	private static Item PURIFIER_ADEPT_BOOTS_T1;
-	private static Item PURIFIER_ADEPT_BOOTS_T2;
-	private static Item PURIFIER_ADEPT_BOOTS_T3;
-	private static Item PURIFIER_ADEPT_CHESTPLATE_T1;
-	private static Item PURIFIER_ADEPT_CHESTPLATE_T2;
-	private static Item PURIFIER_ADEPT_CHESTPLATE_T3;
-	private static Item PURIFIER_ADEPT_HELMET_T1;
-	private static Item PURIFIER_ADEPT_HELMET_T2;
-	private static Item PURIFIER_ADEPT_HELMET_T3;
-	private static Item PURIFIER_ADEPT_LEGGINGS_T1;
-	private static Item PURIFIER_ADEPT_LEGGINGS_T2;
-	private static Item PURIFIER_ADEPT_LEGGINGS_T3;
+//	private static Item PURIFIER_ADEPT_BOOTS_T1;
+//	private static Item PURIFIER_ADEPT_BOOTS_T2;
+//	private static Item PURIFIER_ADEPT_BOOTS_T3;
+//	private static Item PURIFIER_ADEPT_CHESTPLATE_T1;
+//	private static Item PURIFIER_ADEPT_CHESTPLATE_T2;
+//	private static Item PURIFIER_ADEPT_CHESTPLATE_T3;
+//	private static Item PURIFIER_ADEPT_HELMET_T1;
+//	private static Item PURIFIER_ADEPT_HELMET_T2;
+//	private static Item PURIFIER_ADEPT_HELMET_T3;
+//	private static Item PURIFIER_ADEPT_LEGGINGS_T1;
+//	private static Item PURIFIER_ADEPT_LEGGINGS_T2;
+//	private static Item PURIFIER_ADEPT_LEGGINGS_T3;
 
 	public static Item STEEL_BOOTS;
 	public static Item STEEL_CHESTPLATE;
@@ -147,25 +147,25 @@ public class ModArmor {
 		STEEL_LEGGINGS = new ArmorSteelLeggings(STEEL_ARMOR_MATERIAL, 0, EntityEquipmentSlot.LEGS);
 		STEEL_BOOTS = new ArmorSteelBoots(STEEL_ARMOR_MATERIAL, 0, EntityEquipmentSlot.FEET);
 
-		GHOST_HELMET = new ArmorGhostHelmet(GHOST_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
-		GHOST_CHESTPLATE = new ArmorGhostChestplate(GHOST_ARMOR_MATERIAL, 0, EntityEquipmentSlot.CHEST);
-		GHOST_LEGGINGS = new ArmorGhostLeggings(GHOST_ARMOR_MATERIAL, 0, EntityEquipmentSlot.LEGS);
-		GHOST_BOOTS = new ArmorGhostBoots(GHOST_ARMOR_MATERIAL, 0, EntityEquipmentSlot.FEET);
-
-		ADEPT_HELMET_T1 = new ArmorAdeptHelmetT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
-		ADEPT_CHESTPLATE_T1 = new ArmorAdeptChestplateT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
-		ADEPT_LEGGINGS_T1 = new ArmorAdeptLeggingsT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.LEGS);
-		ADEPT_BOOTS_T1 = new ArmorAdeptBootsT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.FEET);
-
-		ADEPT_HELMET_T2 = new ArmorAdeptHelmetT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.HEAD);
-		ADEPT_CHESTPLATE_T2 = new ArmorAdeptChestplateT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.CHEST);
-		ADEPT_LEGGINGS_T2 = new ArmorAdeptLeggingsT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.LEGS);
-		ADEPT_BOOTS_T2 = new ArmorAdeptBootsT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.FEET);
-
-		ADEPT_HELMET_T3 = new ArmorAdeptHelmetT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.HEAD);
-		ADEPT_CHESTPLATE_T3 = new ArmorAdeptChestplateT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.CHEST);
-		ADEPT_LEGGINGS_T3 = new ArmorAdeptLeggingsT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.LEGS);
-		ADEPT_BOOTS_T3 = new ArmorAdeptBootsT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.FEET);
+//		GHOST_HELMET = new ArmorGhostHelmet(GHOST_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
+//		GHOST_CHESTPLATE = new ArmorGhostChestplate(GHOST_ARMOR_MATERIAL, 0, EntityEquipmentSlot.CHEST);
+//		GHOST_LEGGINGS = new ArmorGhostLeggings(GHOST_ARMOR_MATERIAL, 0, EntityEquipmentSlot.LEGS);
+//		GHOST_BOOTS = new ArmorGhostBoots(GHOST_ARMOR_MATERIAL, 0, EntityEquipmentSlot.FEET);
+//
+//		ADEPT_HELMET_T1 = new ArmorAdeptHelmetT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
+//		ADEPT_CHESTPLATE_T1 = new ArmorAdeptChestplateT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
+//		ADEPT_LEGGINGS_T1 = new ArmorAdeptLeggingsT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.LEGS);
+//		ADEPT_BOOTS_T1 = new ArmorAdeptBootsT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.FEET);
+//
+//		ADEPT_HELMET_T2 = new ArmorAdeptHelmetT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.HEAD);
+//		ADEPT_CHESTPLATE_T2 = new ArmorAdeptChestplateT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.CHEST);
+//		ADEPT_LEGGINGS_T2 = new ArmorAdeptLeggingsT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.LEGS);
+//		ADEPT_BOOTS_T2 = new ArmorAdeptBootsT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.FEET);
+//
+//		ADEPT_HELMET_T3 = new ArmorAdeptHelmetT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.HEAD);
+//		ADEPT_CHESTPLATE_T3 = new ArmorAdeptChestplateT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.CHEST);
+//		ADEPT_LEGGINGS_T3 = new ArmorAdeptLeggingsT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.LEGS);
+//		ADEPT_BOOTS_T3 = new ArmorAdeptBootsT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.FEET);
 
 		ZEALOT_HELMET_T1 = new ArmorZealotHelmetT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
 		ZEALOT_CHESTPLATE_T1 = new ArmorZealotChestplateT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
@@ -182,38 +182,38 @@ public class ModArmor {
 		ZEALOT_LEGGINGS_T3 = new ArmorZealotLeggingsT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.LEGS);
 		ZEALOT_BOOTS_T3 = new ArmorZealotBootsT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.FEET);
 
-		PURIFIER_ADEPT_HELMET_T1 = new ArmorPurifierAdeptHelmetT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
-		PURIFIER_ADEPT_CHESTPLATE_T1 = new ArmorPurifierAdeptChestplateT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
-		PURIFIER_ADEPT_LEGGINGS_T1 = new ArmorPurifierAdeptLeggingsT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.LEGS);
-		PURIFIER_ADEPT_BOOTS_T1 = new ArmorPurifierAdeptBootsT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.FEET);
-
-		PURIFIER_ADEPT_HELMET_T2 = new ArmorPurifierAdeptHelmetT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.HEAD);
-		PURIFIER_ADEPT_CHESTPLATE_T2 = new ArmorPurifierAdeptChestplateT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.CHEST);
-		PURIFIER_ADEPT_LEGGINGS_T2 = new ArmorPurifierAdeptLeggingsT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.LEGS);
-		PURIFIER_ADEPT_BOOTS_T2 = new ArmorPurifierAdeptBootsT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.FEET);
-
-		PURIFIER_ADEPT_HELMET_T3 = new ArmorPurifierAdeptHelmetT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.HEAD);
-		PURIFIER_ADEPT_CHESTPLATE_T3 = new ArmorPurifierAdeptChestplateT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.CHEST);
-		PURIFIER_ADEPT_LEGGINGS_T3 = new ArmorPurifierAdeptLeggingsT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.LEGS);
-		PURIFIER_ADEPT_BOOTS_T3 = new ArmorPurifierAdeptBootsT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.FEET);
-
-		DARK_ZEALOT_HELMET_T1 = new ArmorDarkZealotHelmetT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
-		DARK_ZEALOT_CHESTPLATE_T1 = new ArmorDarkZealotChestplateT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
-		DARK_ZEALOT_LEGGINGS_T1 = new ArmorDarkZealotLeggingsT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.LEGS);
-		DARK_ZEALOT_BOOTS_T1 = new ArmorDarkZealotBootsT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.FEET);
-
-		DARK_ZEALOT_HELMET_T2 = new ArmorDarkZealotHelmetT2(ZEALOT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.HEAD);
-		DARK_ZEALOT_CHESTPLATE_T2 = new ArmorDarkZealotChestplateT2(ZEALOT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.CHEST);
-		DARK_ZEALOT_LEGGINGS_T2 = new ArmorDarkZealotLeggingsT2(ZEALOT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.LEGS);
-		DARK_ZEALOT_BOOTS_T2 = new ArmorDarkZealotBootsT2(ZEALOT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.FEET);
-
-		DARK_ZEALOT_HELMET_T3 = new ArmorDarkZealotHelmetT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.HEAD);
-		DARK_ZEALOT_CHESTPLATE_T3 = new ArmorDarkZealotChestplateT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.CHEST);
-		DARK_ZEALOT_LEGGINGS_T3 = new ArmorDarkZealotLeggingsT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.LEGS);
-		DARK_ZEALOT_BOOTS_T3 = new ArmorDarkZealotBootsT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.FEET);
+//		PURIFIER_ADEPT_HELMET_T1 = new ArmorPurifierAdeptHelmetT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
+//		PURIFIER_ADEPT_CHESTPLATE_T1 = new ArmorPurifierAdeptChestplateT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
+//		PURIFIER_ADEPT_LEGGINGS_T1 = new ArmorPurifierAdeptLeggingsT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.LEGS);
+//		PURIFIER_ADEPT_BOOTS_T1 = new ArmorPurifierAdeptBootsT1(ADEPT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.FEET);
+//
+//		PURIFIER_ADEPT_HELMET_T2 = new ArmorPurifierAdeptHelmetT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.HEAD);
+//		PURIFIER_ADEPT_CHESTPLATE_T2 = new ArmorPurifierAdeptChestplateT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.CHEST);
+//		PURIFIER_ADEPT_LEGGINGS_T2 = new ArmorPurifierAdeptLeggingsT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.LEGS);
+//		PURIFIER_ADEPT_BOOTS_T2 = new ArmorPurifierAdeptBootsT2(ADEPT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.FEET);
+//
+//		PURIFIER_ADEPT_HELMET_T3 = new ArmorPurifierAdeptHelmetT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.HEAD);
+//		PURIFIER_ADEPT_CHESTPLATE_T3 = new ArmorPurifierAdeptChestplateT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.CHEST);
+//		PURIFIER_ADEPT_LEGGINGS_T3 = new ArmorPurifierAdeptLeggingsT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.LEGS);
+//		PURIFIER_ADEPT_BOOTS_T3 = new ArmorPurifierAdeptBootsT3(ADEPT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.FEET);
+//
+//		DARK_ZEALOT_HELMET_T1 = new ArmorDarkZealotHelmetT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
+//		DARK_ZEALOT_CHESTPLATE_T1 = new ArmorDarkZealotChestplateT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
+//		DARK_ZEALOT_LEGGINGS_T1 = new ArmorDarkZealotLeggingsT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.LEGS);
+//		DARK_ZEALOT_BOOTS_T1 = new ArmorDarkZealotBootsT1(ZEALOT_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.FEET);
+//
+//		DARK_ZEALOT_HELMET_T2 = new ArmorDarkZealotHelmetT2(ZEALOT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.HEAD);
+//		DARK_ZEALOT_CHESTPLATE_T2 = new ArmorDarkZealotChestplateT2(ZEALOT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.CHEST);
+//		DARK_ZEALOT_LEGGINGS_T2 = new ArmorDarkZealotLeggingsT2(ZEALOT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.LEGS);
+//		DARK_ZEALOT_BOOTS_T2 = new ArmorDarkZealotBootsT2(ZEALOT_ARMOR_MATERIAL_T2, 0, EntityEquipmentSlot.FEET);
+//
+//		DARK_ZEALOT_HELMET_T3 = new ArmorDarkZealotHelmetT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.HEAD);
+//		DARK_ZEALOT_CHESTPLATE_T3 = new ArmorDarkZealotChestplateT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.CHEST);
+//		DARK_ZEALOT_LEGGINGS_T3 = new ArmorDarkZealotLeggingsT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.LEGS);
+//		DARK_ZEALOT_BOOTS_T3 = new ArmorDarkZealotBootsT3(ZEALOT_ARMOR_MATERIAL_T3, 0, EntityEquipmentSlot.FEET);
 
 		KHAYDARIN_AMULET = new ArmorKhaydarinAmulet(KHAYDARIN_AMULET_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
-		DARK_KHAYDARIN_AMULET = new ArmorDarkKhaydarinAmulet(KHAYDARIN_AMULET_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
+//		DARK_KHAYDARIN_AMULET = new ArmorDarkKhaydarinAmulet(KHAYDARIN_AMULET_ARMOR_MATERIAL, 0, EntityEquipmentSlot.HEAD);
 		
 		ZERG_HELMET_T1 = new ArmorZergHelmetT1(ZERG_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.HEAD);
 		ZERG_CHESTPLATE_T1 = new ArmorZergChestplateT1(ZERG_ARMOR_MATERIAL_T1, 0, EntityEquipmentSlot.CHEST);
@@ -247,25 +247,25 @@ public class ModArmor {
 		registerItem(STEEL_LEGGINGS);
 		registerItem(STEEL_BOOTS);
 
-		registerItem(GHOST_HELMET);
-		registerItem(GHOST_CHESTPLATE);
-		registerItem(GHOST_LEGGINGS);
-		registerItem(GHOST_BOOTS);
-
-		registerItem(ADEPT_HELMET_T1);
-		registerItem(ADEPT_CHESTPLATE_T1);
-		registerItem(ADEPT_LEGGINGS_T1);
-		registerItem(ADEPT_BOOTS_T1);
-
-		registerItem(ADEPT_HELMET_T2);
-		registerItem(ADEPT_CHESTPLATE_T2);
-		registerItem(ADEPT_LEGGINGS_T2);
-		registerItem(ADEPT_BOOTS_T2);
-
-		registerItem(ADEPT_HELMET_T3);
-		registerItem(ADEPT_CHESTPLATE_T3);
-		registerItem(ADEPT_LEGGINGS_T3);
-		registerItem(ADEPT_BOOTS_T3);
+//		registerItem(GHOST_HELMET);
+//		registerItem(GHOST_CHESTPLATE);
+//		registerItem(GHOST_LEGGINGS);
+//		registerItem(GHOST_BOOTS);
+//
+//		registerItem(ADEPT_HELMET_T1);
+//		registerItem(ADEPT_CHESTPLATE_T1);
+//		registerItem(ADEPT_LEGGINGS_T1);
+//		registerItem(ADEPT_BOOTS_T1);
+//
+//		registerItem(ADEPT_HELMET_T2);
+//		registerItem(ADEPT_CHESTPLATE_T2);
+//		registerItem(ADEPT_LEGGINGS_T2);
+//		registerItem(ADEPT_BOOTS_T2);
+//
+//		registerItem(ADEPT_HELMET_T3);
+//		registerItem(ADEPT_CHESTPLATE_T3);
+//		registerItem(ADEPT_LEGGINGS_T3);
+//		registerItem(ADEPT_BOOTS_T3);
 
 		registerItem(ZEALOT_HELMET_T1);
 		registerItem(ZEALOT_CHESTPLATE_T1);
@@ -281,39 +281,39 @@ public class ModArmor {
 		registerItem(ZEALOT_CHESTPLATE_T3);
 		registerItem(ZEALOT_LEGGINGS_T3);
 		registerItem(ZEALOT_BOOTS_T3);
-
-		registerItem(PURIFIER_ADEPT_HELMET_T1);
-		registerItem(PURIFIER_ADEPT_CHESTPLATE_T1);
-		registerItem(PURIFIER_ADEPT_LEGGINGS_T1);
-		registerItem(PURIFIER_ADEPT_BOOTS_T1);
-
-		registerItem(PURIFIER_ADEPT_HELMET_T2);
-		registerItem(PURIFIER_ADEPT_CHESTPLATE_T2);
-		registerItem(PURIFIER_ADEPT_LEGGINGS_T2);
-		registerItem(PURIFIER_ADEPT_BOOTS_T2);
-
-		registerItem(PURIFIER_ADEPT_HELMET_T3);
-		registerItem(PURIFIER_ADEPT_CHESTPLATE_T3);
-		registerItem(PURIFIER_ADEPT_LEGGINGS_T3);
-		registerItem(PURIFIER_ADEPT_BOOTS_T3);
-
-		registerItem(DARK_ZEALOT_HELMET_T1);
-		registerItem(DARK_ZEALOT_CHESTPLATE_T1);
-		registerItem(DARK_ZEALOT_LEGGINGS_T1);
-		registerItem(DARK_ZEALOT_BOOTS_T1);
-
-		registerItem(DARK_ZEALOT_HELMET_T2);
-		registerItem(DARK_ZEALOT_CHESTPLATE_T2);
-		registerItem(DARK_ZEALOT_LEGGINGS_T2);
-		registerItem(DARK_ZEALOT_BOOTS_T2);
-
-		registerItem(DARK_ZEALOT_HELMET_T3);
-		registerItem(DARK_ZEALOT_CHESTPLATE_T3);
-		registerItem(DARK_ZEALOT_LEGGINGS_T3);
-		registerItem(DARK_ZEALOT_BOOTS_T3);
+//
+//		registerItem(PURIFIER_ADEPT_HELMET_T1);
+//		registerItem(PURIFIER_ADEPT_CHESTPLATE_T1);
+//		registerItem(PURIFIER_ADEPT_LEGGINGS_T1);
+//		registerItem(PURIFIER_ADEPT_BOOTS_T1);
+//
+//		registerItem(PURIFIER_ADEPT_HELMET_T2);
+//		registerItem(PURIFIER_ADEPT_CHESTPLATE_T2);
+//		registerItem(PURIFIER_ADEPT_LEGGINGS_T2);
+//		registerItem(PURIFIER_ADEPT_BOOTS_T2);
+//
+//		registerItem(PURIFIER_ADEPT_HELMET_T3);
+//		registerItem(PURIFIER_ADEPT_CHESTPLATE_T3);
+//		registerItem(PURIFIER_ADEPT_LEGGINGS_T3);
+//		registerItem(PURIFIER_ADEPT_BOOTS_T3);
+//
+//		registerItem(DARK_ZEALOT_HELMET_T1);
+//		registerItem(DARK_ZEALOT_CHESTPLATE_T1);
+//		registerItem(DARK_ZEALOT_LEGGINGS_T1);
+//		registerItem(DARK_ZEALOT_BOOTS_T1);
+//
+//		registerItem(DARK_ZEALOT_HELMET_T2);
+//		registerItem(DARK_ZEALOT_CHESTPLATE_T2);
+//		registerItem(DARK_ZEALOT_LEGGINGS_T2);
+//		registerItem(DARK_ZEALOT_BOOTS_T2);
+//
+//		registerItem(DARK_ZEALOT_HELMET_T3);
+//		registerItem(DARK_ZEALOT_CHESTPLATE_T3);
+//		registerItem(DARK_ZEALOT_LEGGINGS_T3);
+//		registerItem(DARK_ZEALOT_BOOTS_T3);
 
 		registerItem(KHAYDARIN_AMULET);
-		registerItem(DARK_KHAYDARIN_AMULET);
+//		registerItem(DARK_KHAYDARIN_AMULET);
 		
 		registerItem(ZERG_HELMET_T1);
 		registerItem(ZERG_CHESTPLATE_T1);
@@ -357,25 +357,25 @@ public class ModArmor {
 		registerRender(STEEL_LEGGINGS);
 		registerRender(STEEL_BOOTS);
 
-		registerRender(GHOST_HELMET);
-		registerRender(GHOST_CHESTPLATE);
-		registerRender(GHOST_LEGGINGS);
-		registerRender(GHOST_BOOTS);
-
-		registerRender(ADEPT_HELMET_T1);
-		registerRender(ADEPT_CHESTPLATE_T1);
-		registerRender(ADEPT_LEGGINGS_T1);
-		registerRender(ADEPT_BOOTS_T1);
-
-		registerRender(ADEPT_HELMET_T2);
-		registerRender(ADEPT_CHESTPLATE_T2);
-		registerRender(ADEPT_LEGGINGS_T2);
-		registerRender(ADEPT_BOOTS_T2);
-
-		registerRender(ADEPT_HELMET_T3);
-		registerRender(ADEPT_CHESTPLATE_T3);
-		registerRender(ADEPT_LEGGINGS_T3);
-		registerRender(ADEPT_BOOTS_T3);
+//		registerRender(GHOST_HELMET);
+//		registerRender(GHOST_CHESTPLATE);
+//		registerRender(GHOST_LEGGINGS);
+//		registerRender(GHOST_BOOTS);
+//
+//		registerRender(ADEPT_HELMET_T1);
+//		registerRender(ADEPT_CHESTPLATE_T1);
+//		registerRender(ADEPT_LEGGINGS_T1);
+//		registerRender(ADEPT_BOOTS_T1);
+//
+//		registerRender(ADEPT_HELMET_T2);
+//		registerRender(ADEPT_CHESTPLATE_T2);
+//		registerRender(ADEPT_LEGGINGS_T2);
+//		registerRender(ADEPT_BOOTS_T2);
+//
+//		registerRender(ADEPT_HELMET_T3);
+//		registerRender(ADEPT_CHESTPLATE_T3);
+//		registerRender(ADEPT_LEGGINGS_T3);
+//		registerRender(ADEPT_BOOTS_T3);
 
 		registerRender(ZEALOT_HELMET_T1);
 		registerRender(ZEALOT_CHESTPLATE_T1);
@@ -392,38 +392,38 @@ public class ModArmor {
 		registerRender(ZEALOT_LEGGINGS_T3);
 		registerRender(ZEALOT_BOOTS_T3);
 
-		registerRender(PURIFIER_ADEPT_HELMET_T1);
-		registerRender(PURIFIER_ADEPT_CHESTPLATE_T1);
-		registerRender(PURIFIER_ADEPT_LEGGINGS_T1);
-		registerRender(PURIFIER_ADEPT_BOOTS_T1);
-
-		registerRender(PURIFIER_ADEPT_HELMET_T2);
-		registerRender(PURIFIER_ADEPT_CHESTPLATE_T2);
-		registerRender(PURIFIER_ADEPT_LEGGINGS_T2);
-		registerRender(PURIFIER_ADEPT_BOOTS_T2);
-
-		registerRender(PURIFIER_ADEPT_HELMET_T3);
-		registerRender(PURIFIER_ADEPT_CHESTPLATE_T3);
-		registerRender(PURIFIER_ADEPT_LEGGINGS_T3);
-		registerRender(PURIFIER_ADEPT_BOOTS_T3);
-
-		registerRender(DARK_ZEALOT_HELMET_T1);
-		registerRender(DARK_ZEALOT_CHESTPLATE_T1);
-		registerRender(DARK_ZEALOT_LEGGINGS_T1);
-		registerRender(DARK_ZEALOT_BOOTS_T1);
-
-		registerRender(DARK_ZEALOT_HELMET_T2);
-		registerRender(DARK_ZEALOT_CHESTPLATE_T2);
-		registerRender(DARK_ZEALOT_LEGGINGS_T2);
-		registerRender(DARK_ZEALOT_BOOTS_T2);
-
-		registerRender(DARK_ZEALOT_HELMET_T3);
-		registerRender(DARK_ZEALOT_CHESTPLATE_T3);
-		registerRender(DARK_ZEALOT_LEGGINGS_T3);
-		registerRender(DARK_ZEALOT_BOOTS_T3);
+//		registerRender(PURIFIER_ADEPT_HELMET_T1);
+//		registerRender(PURIFIER_ADEPT_CHESTPLATE_T1);
+//		registerRender(PURIFIER_ADEPT_LEGGINGS_T1);
+//		registerRender(PURIFIER_ADEPT_BOOTS_T1);
+//
+//		registerRender(PURIFIER_ADEPT_HELMET_T2);
+//		registerRender(PURIFIER_ADEPT_CHESTPLATE_T2);
+//		registerRender(PURIFIER_ADEPT_LEGGINGS_T2);
+//		registerRender(PURIFIER_ADEPT_BOOTS_T2);
+//
+//		registerRender(PURIFIER_ADEPT_HELMET_T3);
+//		registerRender(PURIFIER_ADEPT_CHESTPLATE_T3);
+//		registerRender(PURIFIER_ADEPT_LEGGINGS_T3);
+//		registerRender(PURIFIER_ADEPT_BOOTS_T3);
+//
+//		registerRender(DARK_ZEALOT_HELMET_T1);
+//		registerRender(DARK_ZEALOT_CHESTPLATE_T1);
+//		registerRender(DARK_ZEALOT_LEGGINGS_T1);
+//		registerRender(DARK_ZEALOT_BOOTS_T1);
+//
+//		registerRender(DARK_ZEALOT_HELMET_T2);
+//		registerRender(DARK_ZEALOT_CHESTPLATE_T2);
+//		registerRender(DARK_ZEALOT_LEGGINGS_T2);
+//		registerRender(DARK_ZEALOT_BOOTS_T2);
+//
+//		registerRender(DARK_ZEALOT_HELMET_T3);
+//		registerRender(DARK_ZEALOT_CHESTPLATE_T3);
+//		registerRender(DARK_ZEALOT_LEGGINGS_T3);
+//		registerRender(DARK_ZEALOT_BOOTS_T3);
 
 		registerRender(KHAYDARIN_AMULET);
-		registerRender(DARK_KHAYDARIN_AMULET);
+//		registerRender(DARK_KHAYDARIN_AMULET);
 		
 		registerRender(ZERG_HELMET_T1);
 		registerRender(ZERG_CHESTPLATE_T1);

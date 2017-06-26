@@ -63,8 +63,8 @@ public class ModItems extends Item {
 	public static Item KEYSTONE;
 	public static Item KHAYDARIN_SHARD;
 	public static Item MINERAL_SHARD;
-	public static Item MUTALISK_TOOTH;
-	public static Item MUTALISK_WING;
+//	public static Item MUTALISK_TOOTH;
+//	public static Item MUTALISK_WING;
 	public static Item ORGANIC_TISSUE;
 	public static Item PROTOSS_ARTIFACT;
 	public static Item PROTOSS_MODULE;
@@ -108,8 +108,8 @@ public class ModItems extends Item {
 		COORDINATES = new ItemProtossCoordinates();
 		CREEP_RESIN = new ItemCreepResin();
 		HYDRALISK_NEEDLE = new ItemHydraliskNeedle();
-		MUTALISK_WING = new ItemMutaliskWing();
-		MUTALISK_TOOTH = new ItemMutaliskTooth();
+//		MUTALISK_WING = new ItemMutaliskWing();
+//		MUTALISK_TOOTH = new ItemMutaliskTooth();
 		
 		SPAWNER_PROTOSS_DARK_CYBERNETICSCORE = new ItemProtossDarkCyberneticsCoreSpawner();
 		SPAWNER_PROTOSS_VOID_CYBERNETICSCORE = new ItemProtossVoidCyberneticsCoreSpawner();
@@ -161,8 +161,8 @@ public class ModItems extends Item {
 		registerItem(CREEP_RESIN);
 		registerItem(COORDINATES);
 		registerItem(HYDRALISK_NEEDLE);
-		registerItem(MUTALISK_WING);
-		registerItem(MUTALISK_TOOTH);
+//		registerItem(MUTALISK_WING);
+//		registerItem(MUTALISK_TOOTH);
 		
 		registerItem(SPAWNER_PROTOSS_DARK_CYBERNETICSCORE);
 		registerItem(SPAWNER_PROTOSS_VOID_CYBERNETICSCORE);
@@ -216,7 +216,7 @@ public class ModItems extends Item {
 		registerRender(KEYSTONE);
 		registerRender(CREEP_RESIN);
 		registerRender(HYDRALISK_NEEDLE);
-		registerRender(MUTALISK_TOOTH);
+//		registerRender(MUTALISK_TOOTH);
 		registerRender(PROTOSS_SCRAP_METAL);
 		registerRender(KHAYDARIN_SHARD);
 		
@@ -278,9 +278,9 @@ public class ModItems extends Item {
 		for(int i = 0; i < ItemEnumHandler.CoordinateType.values().length; i++) {
 			registerRender(COORDINATES, i, "coordinate_" + ItemEnumHandler.CoordinateType.values()[i].getName());
 		}
-		for(int i = 0; i < ItemEnumHandler.MutaliskWingType.values().length; i++) {
-			registerRender(MUTALISK_WING, i, "mutalisk_wing_" + ItemEnumHandler.MutaliskWingType.values()[i].getName());
-		}
+//		for(int i = 0; i < ItemEnumHandler.MutaliskWingType.values().length; i++) {
+//			registerRender(MUTALISK_WING, i, "mutalisk_wing_" + ItemEnumHandler.MutaliskWingType.values()[i].getName());
+//		}
 		
 		ModArmor.registerRenders();
 		ModWeapons.registerRenders();
