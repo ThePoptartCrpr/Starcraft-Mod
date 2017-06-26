@@ -2,7 +2,7 @@ package ga.scmc.items.metaitems;
 
 import java.util.List;
 
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.items.metaitems.ItemEnumHandler.IngotType;
 import ga.scmc.items.metaitems.ItemEnumHandler.ProtossIngotType;
 import ga.scmc.lib.Reference;
@@ -14,7 +14,6 @@ public class ItemProtossIngot extends Item {
 
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
-	 * @param unlocalizedName
 	 */
 	public ItemProtossIngot() {
 		setUnlocalizedName(Reference.ModItems.ITEM_PROTOSS_INGOT.getUnlocalizedName());

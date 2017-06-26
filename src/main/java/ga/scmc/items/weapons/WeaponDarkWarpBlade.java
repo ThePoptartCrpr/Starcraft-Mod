@@ -1,7 +1,7 @@
 package ga.scmc.items.weapons;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.StarcraftSoundEvents;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

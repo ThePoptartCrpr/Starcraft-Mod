@@ -2,7 +2,7 @@ package ga.scmc.items.metaitems;
 
 import java.util.List;
 
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.items.metaitems.ItemEnumHandler.EnergyType;
 import ga.scmc.items.metaitems.ItemEnumHandler.ProtossArmorPiecesType;
 import ga.scmc.lib.Reference;
@@ -14,7 +14,6 @@ public class ItemProtossArmorPieces extends Item {
 
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
-	 * @param unlocalizedName
 	 */
 	public ItemProtossArmorPieces() {
 		setUnlocalizedName(Reference.ModItems.ITEM_PROTOSS_ARMOR_PIECES.getUnlocalizedName());

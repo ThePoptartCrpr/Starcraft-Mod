@@ -1,12 +1,11 @@
 package ga.scmc.items.armor;
 
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 
 public class ArmorDarkZealotChestplateT2 extends ItemArmor {
-
 	public ArmorDarkZealotChestplateT2(ArmorMaterial armourMaterial, int renderIndex, EntityEquipmentSlot armourType) {
 		super(armourMaterial, renderIndex, armourType);
 		setUnlocalizedName(Reference.ModItems.ARMOR_DARK_ZEALOT_CHESTPLATE_T2.getUnlocalizedName());

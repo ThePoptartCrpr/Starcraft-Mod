@@ -2,8 +2,8 @@ package ga.scmc.blocks.oreshakuras;
 
 import java.util.Random;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.blocks.ModBlocks;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

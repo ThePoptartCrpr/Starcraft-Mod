@@ -2,8 +2,8 @@ package ga.scmc.items.structurespawns;
 
 import java.util.Random;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.StarcraftSoundEvents;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.items.ModItems;
 import ga.scmc.lib.Reference;
 import ga.scmc.worldgen.structure.StructureProtossWarpGateTemplate;

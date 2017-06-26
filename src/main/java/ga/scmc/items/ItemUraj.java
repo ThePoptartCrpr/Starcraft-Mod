@@ -1,6 +1,6 @@
 package ga.scmc.items;
 
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 
 public class ItemUraj extends ModItems {

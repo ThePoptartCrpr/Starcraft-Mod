@@ -1,6 +1,6 @@
 package ga.scmc.items.tools;
 
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.item.ItemSpade;
 

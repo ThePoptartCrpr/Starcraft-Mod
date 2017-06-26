@@ -2,8 +2,8 @@ package ga.scmc.blocks.orechar;
 
 import java.util.Random;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.blocks.ModBlocks;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.items.ModItems;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.SoundType;

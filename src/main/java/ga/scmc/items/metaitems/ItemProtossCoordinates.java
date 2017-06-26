@@ -2,7 +2,7 @@ package ga.scmc.items.metaitems;
 
 import java.util.List;
 
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.items.metaitems.ItemEnumHandler.CoordinateType;
 import ga.scmc.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,7 +13,6 @@ public class ItemProtossCoordinates extends Item {
 
 	/**
 	 * Default constructor just sets the unlocalized name and the registry name
-	 * @param unlocalizedName
 	 */
 	public ItemProtossCoordinates() {
 		setUnlocalizedName(Reference.ModItems.ITEM_COORDINATE.getUnlocalizedName());

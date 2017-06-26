@@ -1,6 +1,6 @@
 package ga.scmc.blocks;
 
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;

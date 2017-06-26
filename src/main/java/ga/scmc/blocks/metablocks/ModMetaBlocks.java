@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+//I don't like this class. I'm gonna dust over it for 1.6
 public class ModMetaBlocks {
 
 	public static BlockCompressedMetalsT1 COMP_METAL_T1;
@@ -29,9 +30,6 @@ public class ModMetaBlocks {
 		register();
 	}
 
-	/**
-	 * Initialize the blocks
-	 */
 	private static void instantiate() {
 		PROTOSS_METAL_T1 = new BlockProtossMetalT1();
 		PROTOSS_METAL_T2 = new BlockProtossMetalT2();

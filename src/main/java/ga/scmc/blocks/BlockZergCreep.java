@@ -2,7 +2,7 @@ package ga.scmc.blocks;
 
 import java.util.Random;
 
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.entity.monster.EntityZergMob;
 import ga.scmc.entity.passive.EntityZergPassive;
 import ga.scmc.items.ModItems;

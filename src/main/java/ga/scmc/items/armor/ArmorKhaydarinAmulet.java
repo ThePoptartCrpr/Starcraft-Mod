@@ -1,7 +1,7 @@
 package ga.scmc.items.armor;
 
 import ga.scmc.Starcraft;
-import ga.scmc.StarcraftCreativeTabs;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
@@ -33,11 +33,11 @@ public class ArmorKhaydarinAmulet extends ItemArmor {
 				ModelBiped armorModel = null;
 				switch (type) {
 				case HEAD:
-					armorModel = Starcraft.proxy.getArmorModel(0);
+					armorModel = /*Starcraft.proxy.getArmorModel(0);*/ null; //It always returned null anyways
 					break;
 				case FEET:
 				case CHEST:
-					armorModel = Starcraft.proxy.getArmorModel(1);
+					armorModel = /*Starcraft.proxy.getArmorModel(1);*/ null; //It always returned null anyways
 					break;
 				default:
 					break;

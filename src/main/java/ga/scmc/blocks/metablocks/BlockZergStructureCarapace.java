@@ -2,9 +2,9 @@ package ga.scmc.blocks.metablocks;
 
 import java.util.List;
 
-import ga.scmc.StarcraftCreativeTabs;
 import ga.scmc.blocks.ModBlocks;
 import ga.scmc.blocks.metablocks.EnumHandler.ZergStructureCarapaceType;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
