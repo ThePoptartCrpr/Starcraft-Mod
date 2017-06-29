@@ -5,6 +5,7 @@ import java.util.Random;
 import com.google.common.base.Predicate;
 
 import ga.scmc.StarcraftSoundEvents;
+import ga.scmc.entity.ai.EntityAIRaptorLeapAtTarget;
 import ga.scmc.entity.monster.EntityProtossMob;
 import ga.scmc.entity.monster.EntityTerranMob;
 import ga.scmc.entity.monster.EntityZergMob;
@@ -40,11 +41,12 @@ public class EntityZerglingRaptor extends EntityZergMob implements IMob, Predica
 		experienceValue = 23;
 		stepHeight = 5.0F;
 		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
-		tasks.addTask(2, new EntityAIMoveTowardsRestriction(this, 1.0D));
-		tasks.addTask(3, new EntityAIWander(this, 1.0D));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		tasks.addTask(5, new EntityAILookIdle(this));
+        tasks.addTask(1, new EntityAIRaptorLeapAtTarget(this, 0.6F));
+		tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+		tasks.addTask(3, new EntityAIMoveTowardsRestriction(this, 1.0D));
+		tasks.addTask(4, new EntityAIWander(this, 1.0D));
+		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		tasks.addTask(6, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityLivingBase>(this, EntityLivingBase.class, 0, false, false, this));
 	}
