@@ -1,6 +1,7 @@
 package ga.scmc.worldgen;
 
-import ga.scmc.worldgen.aiur.WorldProviderAiur;
+//import ga.scmc.worldgen.aiur.WorldProviderAiur; TODO: move that class into ga.scmc.worldgen.provider (when Aiur's complete)
+import ga.scmc.lib.StarcraftConfig;
 import ga.scmc.worldgen.provider.WorldProviderChar;
 import ga.scmc.worldgen.provider.WorldProviderShakuras;
 import net.minecraft.world.DimensionType;
@@ -13,17 +14,18 @@ public class DimensionRegistry {
 //	public static final DimensionType AIUR_DT = DimensionType.register("Aiur", "_starcraft", AIUR_DIMENSION_ID, WorldProviderAiur.class, true);
 //	public static final WorldType AIUR_WT = new WorldType("AIUR");
 	
-	public static final int CHAR_DIMENSION_ID = 2;
-	public static final DimensionType CHAR_DT = DimensionType.register("Char", "_starcraft", CHAR_DIMENSION_ID, WorldProviderChar.class, true);
+	public static DimensionType char_dt = null;
 	public static final WorldType CHAR_WT = new WorldType("CHAR");
 	
-	public static final int SHAKURAS_DIMENSION_ID = 3;
-	public static final DimensionType SHAKURAS_DT = DimensionType.register("Shakuras", "_starcraft", SHAKURAS_DIMENSION_ID, WorldProviderShakuras.class, true);
+	public static DimensionType shakuras_dt = null;
 	public static final WorldType SHAKURAS_WT = new WorldType("SHAKURAS");
 
 	public static void registerDimensions() {
+		char_dt = DimensionType.register("Char", "_starcraft", StarcraftConfig.INT_DIMENSION_CHAR, WorldProviderChar.class, true);
+		shakuras_dt = DimensionType.register("Shakuras", "_starcraft", StarcraftConfig.INT_DIMENSION_SHAKURAS, WorldProviderShakuras.class, true);
+		
 //		DimensionManager.registerDimension(AIUR_DIMENSION_ID, AIUR_DT);
-		DimensionManager.registerDimension(CHAR_DIMENSION_ID, CHAR_DT);
-		DimensionManager.registerDimension(SHAKURAS_DIMENSION_ID, SHAKURAS_DT);
+		DimensionManager.registerDimension(StarcraftConfig.INT_DIMENSION_CHAR, char_dt);
+		DimensionManager.registerDimension(StarcraftConfig.INT_DIMENSION_SHAKURAS, shakuras_dt);
 	}
 }

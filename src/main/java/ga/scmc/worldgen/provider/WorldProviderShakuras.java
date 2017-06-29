@@ -27,15 +27,18 @@ public class WorldProviderShakuras extends WorldProvider {
 	 */
 	@Override
 	public String getDepartMessage() {
+		
+		//Always true
 		if(this instanceof WorldProviderShakuras) {
 			return "Leaving Shakuras";
 		}
+		
 		return null;
 	}
 
 	@Override
 	public DimensionType getDimensionType() {
-		return DimensionRegistry.SHAKURAS_DT;
+		return DimensionRegistry.shakuras_dt;
 	}
 
 	/**
@@ -60,9 +63,12 @@ public class WorldProviderShakuras extends WorldProvider {
 	 */
 	@Override
 	public String getWelcomeMessage() {
+		
+		//Always true
 		if(this instanceof WorldProviderShakuras) {
 			return "Entering Shakuras";
 		}
+		
 		return null;
 	}
 	

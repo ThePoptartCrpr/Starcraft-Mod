@@ -87,9 +87,9 @@ public class StarcraftConfig {
 		INT_CREEP_SPREAD_BASE_VALUE = config.getInt("Creep Spread Base Value", "General", FactorySettings.INT_CREEP_SPREAD_BASE_VALUE, 0, 16, "Base value for Creep Spread. WARNING, DO NOT SET THIS HIGH");
 		
 		// Dimensions
-		config.setCategoryComment("Dimension ID's", "Change the ID's of the dimensions");
-		INT_DIMENSION_CHAR = config.getInt("Char ID", "Dimension ID's", 2, -128, 127, "ID for the planet Char");
-		INT_DIMENSION_SHAKURAS = config.getInt("Shakuras ID", "Dimension ID's", 3, -128, 127, "ID for the planet Shakuras");
+		config.setCategoryComment("Dimension IDs", "Change the IDs of the dimensions");
+		INT_DIMENSION_CHAR = config.getInt("Char ID", "Dimension IDs", 2, -128, 127, "ID for the planet Char");
+		INT_DIMENSION_SHAKURAS = config.getInt("Shakuras ID", "Dimension IDs", 3, -128, 127, "ID for the planet Shakuras");
 		
 		// Overall Structure Generation
 		config.setCategoryComment("World Generation", "Enable or disable structure generation.");
@@ -104,7 +104,7 @@ public class StarcraftConfig {
 		config.save();
 
 		//////////////
-		// SUB-CONFIG//
+		//SUB-CONFIG//
 		//////////////
 
 		if(BOOL_ENABLE_SUBCONFIG) {

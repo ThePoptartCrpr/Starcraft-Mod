@@ -28,15 +28,18 @@ public class WorldProviderChar extends WorldProvider {
 	 */
 	@Override
 	public String getDepartMessage() {
+		
+		//Always true
 		if(this instanceof WorldProviderChar) {
 			return "Leaving Char";
 		}
+		
 		return null;
 	}
 
 	@Override
 	public DimensionType getDimensionType() {
-		return DimensionRegistry.CHAR_DT;
+		return DimensionRegistry.char_dt;
 	}
 
 	/**
@@ -62,9 +65,12 @@ public class WorldProviderChar extends WorldProvider {
 	 */
 	@Override
 	public String getWelcomeMessage() {
+		
+		//Always true
 		if(this instanceof WorldProviderChar) {
 			return "Entering Char";
 		}
+		
 		return null;
 	}
 }
