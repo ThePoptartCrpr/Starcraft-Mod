@@ -98,7 +98,7 @@ public class ShakurasBiomeProvider extends BiomeProvider {
 			crashreportcategory.addCrashSection("x", Integer.valueOf(x));
 			crashreportcategory.addCrashSection("z", Integer.valueOf(z));
 			crashreportcategory.addCrashSection("w", Integer.valueOf(width));
-			crashreportcategory.addCrashSection("h", Integer.valueOf(height));
+			crashreportcategory.addCrashSection("char_dt", Integer.valueOf(height));
 			throw new ReportedException(crashreport);
 		}
 	}
