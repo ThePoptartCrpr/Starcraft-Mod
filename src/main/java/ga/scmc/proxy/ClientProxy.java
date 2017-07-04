@@ -16,9 +16,7 @@ import ga.scmc.entity.EntityLarvaCocoon;
 import ga.scmc.entity.EntityOverlord;
 import ga.scmc.entity.EntityProbe;
 import ga.scmc.entity.EntityProtossReaver;
-import ga.scmc.entity.EntityQueen;
 import ga.scmc.entity.EntityScarab;
-import ga.scmc.entity.EntitySentry;
 import ga.scmc.entity.EntitySpiderMine;
 import ga.scmc.entity.EntityZealot;
 import ga.scmc.entity.EntityZergling;
@@ -46,11 +44,10 @@ import ga.scmc.model.ModelLarvaCocoon;
 import ga.scmc.model.ModelOverlord;
 import ga.scmc.model.ModelProbe;
 import ga.scmc.model.ModelProtossReaver;
-import ga.scmc.model.ModelQueen;
 import ga.scmc.model.ModelScarab;
-import ga.scmc.model.ModelSentry;
 import ga.scmc.model.ModelSpiderMine;
 import ga.scmc.model.ModelZealot;
+import ga.scmc.model.ModelZergArmorT1;
 import ga.scmc.model.ModelZergling;
 import ga.scmc.model.ModelZerglingBoost;
 import ga.scmc.model.ModelZerglingRaptor;
@@ -71,9 +68,7 @@ import ga.scmc.renderer.RenderLarvaCocoon;
 import ga.scmc.renderer.RenderOverlord;
 import ga.scmc.renderer.RenderProbe;
 import ga.scmc.renderer.RenderProtossReaver;
-import ga.scmc.renderer.RenderQueen;
 import ga.scmc.renderer.RenderScarab;
-import ga.scmc.renderer.RenderSentry;
 import ga.scmc.renderer.RenderSpiderMine;
 import ga.scmc.renderer.RenderZealot;
 import ga.scmc.renderer.RenderZergling;
@@ -81,7 +76,6 @@ import ga.scmc.renderer.RenderZerglingBoost;
 import ga.scmc.renderer.RenderZerglingRaptor;
 import ga.scmc.renderer.RenderZerglingSC2;
 import ga.scmc.renderer.RenderZerglingSwarmling;
-import ga.scmc.tileentity.ModTileEntities;
 import ga.scmc.worldgen.DimensionRegistry;
 import ga.scmc.worldgen.SCWorldGen;
 import ga.scmc.worldgen.biome.BiomesSC;
@@ -135,6 +129,18 @@ public class ClientProxy implements IProxy {
 		}
 	}
 	
+	public ModelBiped getZergArmorT1Model(int id) {
+		ModelZergArmorT1 armorZerg = new ModelZergArmorT1(1.0f);
+		//And switch on the ID in your getArmorModel!
+		switch(id) {
+			case 0: return armorZerg;
+			case 1: return armorZerg;
+			case 2: return armorZerg;
+			case 3: return armorZerg;
+			default: return null;
+		}
+	}
+	
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
 		ModFluids.register();
@@ -143,7 +149,6 @@ public class ClientProxy implements IProxy {
 		ModItems.register(); //Does stuff, including bucket-y stuff
 		ModItems.registerRenders();
 		ModMaterials.preInit();
-		ModTileEntities.preInit();
 		FuelHandler.preInit();
 		ModBlocks.registerModels();
 		SCWorldGen.preInit();
@@ -193,6 +198,4 @@ public class ClientProxy implements IProxy {
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.NEOSTEEL_METAL), new ResourceLocation(Reference.MODID, "neosteel_base"), new ResourceLocation(Reference.MODID, "neosteel_frame"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_MINERAL), new ResourceLocation(Reference.MODID, "comp_mineral_blue"), new ResourceLocation(Reference.MODID, "comp_mineral_rich"));
 	}
-	
-	public void registerTileEntities() {} //I'm no expert on tile entities - anyone else care to try this one, assuming we need it?
 }

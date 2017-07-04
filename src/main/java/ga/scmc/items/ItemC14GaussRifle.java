@@ -2,12 +2,11 @@ package ga.scmc.items;
 
 import javax.annotation.Nullable;
 
-import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.StarcraftSoundEvents;
+import ga.scmc.creativetabs.StarcraftCreativeTabs;
 import ga.scmc.entity.EntityC14GaussRifleBullet;
 import ga.scmc.items.metaitems.ItemBullet;
 import ga.scmc.lib.Reference;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

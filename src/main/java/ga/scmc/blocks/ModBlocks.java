@@ -12,7 +12,6 @@ import ga.scmc.blocks.coreblocks.BlockCorePylonVoid;
 import ga.scmc.blocks.coreblocks.BlockCoreWarpGateDark;
 import ga.scmc.blocks.coreblocks.BlockCoreWarpGateKhalai;
 import ga.scmc.blocks.coreblocks.BlockCoreWarpGateVoid;
-import ga.scmc.blocks.debug.DimPortalAiur;
 import ga.scmc.blocks.debug.DimPortalChar;
 import ga.scmc.blocks.debug.DimPortalOverworld;
 import ga.scmc.blocks.debug.DimPortalShakuras;
@@ -87,6 +86,8 @@ public class ModBlocks extends Block {
 	public static Block ENERGY;
 	public static Block FLUID_ACID;
 	public static Block FLUID_BLOOD;
+	public static Block FLUID_VESPENE;
+	public static Block GAS_VESPENE;
 	public static Block GRAVEL_CHAR;
 	public static Block KERATIN_CHUNK;
 	public static Block MAGMA_CHAR;
@@ -237,6 +238,9 @@ public class ModBlocks extends Block {
 
 		FLUID_ACID = new BlockAcidFluid();
 		FLUID_BLOOD = new BlockBloodFluid();
+		FLUID_VESPENE = new BlockVespeneFluid();
+		
+		GAS_VESPENE = new BlockVespeneGas();
 	}
 
 	public static void register() {
@@ -445,11 +449,17 @@ public class ModBlocks extends Block {
 		GameRegistry.register(FLUID_BLOOD);
 		GameRegistry.register(new ItemBlock(FLUID_BLOOD).setRegistryName(Reference.ModBlocks.FLUID_BLOOD.getRegistryRL()));
 		
+		GameRegistry.register(FLUID_VESPENE);
+		GameRegistry.register(new ItemBlock(FLUID_VESPENE).setRegistryName(Reference.ModBlocks.FLUID_VESPENE.getRegistryRL()));
+		
 		GameRegistry.register(ENERGY);
 		GameRegistry.register(new ItemBlock(ENERGY).setRegistryName(Reference.ModBlocks.BLOCK_ENERGY.getRegistryRL()));
 		
 		GameRegistry.register(VOID_ENERGY);
 		GameRegistry.register(new ItemBlock(VOID_ENERGY).setRegistryName(Reference.ModBlocks.BLOCK_VOID_ENERGY.getRegistryRL()));
+		
+		GameRegistry.register(GAS_VESPENE);
+		GameRegistry.register(new ItemBlock(GAS_VESPENE).setRegistryName(Reference.ModBlocks.BLOCK_GAS_VESPENE.getRegistryRL()));
 	}
 
 	private static void registerFluid(final Block block) {
@@ -586,6 +596,7 @@ public class ModBlocks extends Block {
 
 		// Misc Blocks
 		registerModel(BLOCK_MOVING_LIGHT_SOURCE);
+		registerModel(GAS_VESPENE);
 
 		// Layer Registration
 		registerLayered(ASH_CHAR);
@@ -593,6 +604,7 @@ public class ModBlocks extends Block {
 		// Fluid Registration
 		registerFluid(FLUID_ACID);
 		registerFluid(FLUID_BLOOD);
+		registerFluid(FLUID_VESPENE);
 
 		ModMetaBlocks.registerRenders();
 		// BlockRenderRegister.registerBlockRenderer();

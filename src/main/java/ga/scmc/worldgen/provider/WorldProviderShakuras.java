@@ -4,6 +4,7 @@ import ga.scmc.lib.StarcraftConfig;
 import ga.scmc.worldgen.DimensionRegistry;
 import ga.scmc.worldgen.biomeprovider.ShakurasBiomeProvider;
 import ga.scmc.worldgen.chunk.ChunkProviderShakuras;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkGenerator;
@@ -57,6 +58,11 @@ public class WorldProviderShakuras extends WorldProvider {
         return 0;
     }
 
+	@Override
+	public void setSpawnPoint(BlockPos pos) {	
+		pos = new BlockPos(0, 0, 0);
+	}
+	
 	/**
 	 * A message to display to the user when they transfer to this dimension.
 	 * @return The message to be displayed

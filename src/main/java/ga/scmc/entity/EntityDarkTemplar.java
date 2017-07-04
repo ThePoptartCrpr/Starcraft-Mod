@@ -6,7 +6,6 @@ import ga.scmc.StarcraftSoundEvents;
 import ga.scmc.entity.monster.EntityProtossMob;
 import ga.scmc.entity.monster.EntityTerranMob;
 import ga.scmc.entity.monster.EntityZergMob;
-import ga.scmc.entity.passive.EntityProtossPassive;
 import ga.scmc.entity.passive.EntityTerranPassive;
 import ga.scmc.entity.passive.EntityZergPassive;
 import ga.scmc.items.ModItems;
