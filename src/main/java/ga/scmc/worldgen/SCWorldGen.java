@@ -3,9 +3,9 @@ package ga.scmc.worldgen;
 import java.util.Random;
 
 import ga.scmc.blocks.ModBlocks;
-import ga.scmc.worldgen.biome.BiomeGenShakurasCity;
-import ga.scmc.worldgen.features.CharWorldGenMinable;
-import ga.scmc.worldgen.features.ShakurasWorldGenMinable;
+import ga.scmc.worldgen.dimchar.CharWorldGenMinable;
+import ga.scmc.worldgen.dimshakuras.BiomeGenShakurasCity;
+import ga.scmc.worldgen.dimshakuras.ShakurasWorldGenMinable;
 import ga.scmc.worldgen.structure.SCWorldGenerator;
 import ga.scmc.worldgen.structure.StructureProtossCyberneticsCoreTemplate;
 import ga.scmc.worldgen.structure.StructureProtossPylonTemplate;

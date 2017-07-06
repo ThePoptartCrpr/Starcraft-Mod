@@ -1,5 +1,6 @@
 package ga.scmc.blocks.metablocks;
 
+import ga.scmc.handlers.BlockEnumHandler;
 import ga.scmc.lib.LogHelper;
 import ga.scmc.lib.Reference;
 import net.minecraft.block.Block;
@@ -108,38 +109,38 @@ public class ModMetaBlocks {
 	 * Register the renders for the block
 	 */
 	public static void registerRenders() {
-		for(int i = 0; i < EnumHandler.ProtossMetalType.values().length; i++) {
-			registerRender(PROTOSS_METAL_T1, i, "protoss_metal_t1_" + EnumHandler.ProtossMetalType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.ProtossMetalType.values().length; i++) {
+			registerRender(PROTOSS_METAL_T1, i, "protoss_metal_t1_" + BlockEnumHandler.ProtossMetalType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.ProtossMetalType.values().length; i++) {
-			registerRender(PROTOSS_METAL_T2, i, "protoss_metal_t2_" + EnumHandler.ProtossMetalType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.ProtossMetalType.values().length; i++) {
+			registerRender(PROTOSS_METAL_T2, i, "protoss_metal_t2_" + BlockEnumHandler.ProtossMetalType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.ProtossMetalType.values().length; i++) {
-			registerRender(PROTOSS_METAL_T3, i, "protoss_metal_t3_" + EnumHandler.ProtossMetalType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.ProtossMetalType.values().length; i++) {
+			registerRender(PROTOSS_METAL_T3, i, "protoss_metal_t3_" + BlockEnumHandler.ProtossMetalType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.PylonCrystalType.values().length; i++) {
-			registerRender(PYLON_CRYSTAL, i, "pcrystal_" + EnumHandler.PylonCrystalType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.PylonCrystalType.values().length; i++) {
+			registerRender(PYLON_CRYSTAL, i, "pcrystal_" + BlockEnumHandler.PylonCrystalType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.ZergStructureCarapaceType.values().length; i++) {
-			registerRender(ZERG_CARAPACE, i, "zerg_carapace_" + EnumHandler.ZergStructureCarapaceType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.ZergStructureCarapaceType.values().length; i++) {
+			registerRender(ZERG_CARAPACE, i, "zerg_carapace_" + BlockEnumHandler.ZergStructureCarapaceType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.ZergFleshType.values().length; i++) {
-			registerRender(ZERG_FLESH, i, "zerg_flesh_" + EnumHandler.ZergFleshType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.ZergFleshType.values().length; i++) {
+			registerRender(ZERG_FLESH, i, "zerg_flesh_" + BlockEnumHandler.ZergFleshType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.DyedIronType.values().length; i++) {
-			registerRender(DYED_IRON, i, "dyed_iron_" + EnumHandler.DyedIronType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.DyedIronType.values().length; i++) {
+			registerRender(DYED_IRON, i, "dyed_iron_" + BlockEnumHandler.DyedIronType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.CompressedMetalType.values().length; i++) {
-			registerRender(COMP_METAL_T1, i, "comp_metal_" + EnumHandler.CompressedMetalType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.CompressedMetalType.values().length; i++) {
+			registerRender(COMP_METAL_T1, i, "comp_metal_" + BlockEnumHandler.CompressedMetalType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.NeosteelMetalType.values().length; i++) {
-			registerRender(NEOSTEEL_METAL, i, "neosteel_" + EnumHandler.NeosteelMetalType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.NeosteelMetalType.values().length; i++) {
+			registerRender(NEOSTEEL_METAL, i, "neosteel_" + BlockEnumHandler.NeosteelMetalType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.ParisteelMetalType.values().length; i++) {
-			registerRender(PARISTEEL_METAL, i, "paristeel_" + EnumHandler.ParisteelMetalType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.ParisteelMetalType.values().length; i++) {
+			registerRender(PARISTEEL_METAL, i, "paristeel_" + BlockEnumHandler.ParisteelMetalType.values()[i].getName());
 		}
-		for(int i = 0; i < EnumHandler.CompressedMineralType.values().length; i++) {
-			registerRender(COMP_MINERAL, i, "comp_mineral_" + EnumHandler.CompressedMineralType.values()[i].getName());
+		for(int i = 0; i < BlockEnumHandler.CompressedMineralType.values().length; i++) {
+			registerRender(COMP_MINERAL, i, "comp_mineral_" + BlockEnumHandler.CompressedMineralType.values()[i].getName());
 		}
 	}
 }

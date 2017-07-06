@@ -12,9 +12,6 @@ import ga.scmc.blocks.coreblocks.BlockCorePylonVoid;
 import ga.scmc.blocks.coreblocks.BlockCoreWarpGateDark;
 import ga.scmc.blocks.coreblocks.BlockCoreWarpGateKhalai;
 import ga.scmc.blocks.coreblocks.BlockCoreWarpGateVoid;
-import ga.scmc.blocks.debug.DimPortalChar;
-import ga.scmc.blocks.debug.DimPortalOverworld;
-import ga.scmc.blocks.debug.DimPortalShakuras;
 import ga.scmc.blocks.metablocks.ModMetaBlocks;
 import ga.scmc.blocks.ore.OreOWCopper;
 import ga.scmc.blocks.ore.OreOWTitanium;
@@ -62,7 +59,6 @@ public class ModBlocks extends Block {
 
 	public static Block ASH_CHAR;
 
-	public static Block BLOCK_MOVING_LIGHT_SOURCE;
 	public static Block COBBLESTONE_CHAR;
 	public static Block COBBLESTONE_SHAKURAS;
 	public static Block CORE_CYBERNETICSCORE_DARK;
@@ -152,7 +148,7 @@ public class ModBlocks extends Block {
 		ORE_TITANIUM_OW = new OreOWTitanium();
 		ORE_URANIUM_OW = new OreOWUranium();
 
-		DIM_PORTAL_OVERWORLD = new DimPortalOverworld();
+		DIM_PORTAL_OVERWORLD = new BlockDimPortalOverworld();
 
 		ORE_COAL_CHAR = new OreCharCoal();
 		ORE_COPPER_CHAR = new OreCharCopper();
@@ -172,7 +168,7 @@ public class ModBlocks extends Block {
 		ASH_CHAR = new BlockAsh();
 		DIRT_CHAR = new BlockCharDirt();
 		GRAVEL_CHAR = new BlockCharGravel();
-		DIM_PORTAL_CHAR = new DimPortalChar();
+		DIM_PORTAL_CHAR = new BlockDimPortalChar();
 
 		ORE_COAL_SHAKURAS = new OreShakurasCoal();
 		ORE_COPPER_SHAKURAS = new OreShakurasCopper();
@@ -189,9 +185,9 @@ public class ModBlocks extends Block {
 		STONE_SHAKURAS = new BlockShakurasStone();
 		COBBLESTONE_SHAKURAS = new BlockShakurasCobblestone();
 		SAND_SHAKURAS = new BlockShakurasSand();
-		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
+		DIM_PORTAL_SHAKURAS = new BlockDimPortalShakuras();
 
-		//DIM_PORTAL_AIUR = new DimPortalAiur();
+		//DIM_PORTAL_AIUR = new BlockDimPortalAiur();
 
 		// Protoss Blocks
 		PROTOSS_WARPPROJECTOR_CHAR = new BlockProtossWarpProjectorC();
@@ -233,8 +229,6 @@ public class ModBlocks extends Block {
 		CORE_NEXUS_VOID = new BlockCoreNexusVoid();
 		CORE_NEXUS_DARK = new BlockCoreNexusDark();
 		CORE_NEXUS_KHALAI = new BlockCoreNexusKhalai();
-
-		BLOCK_MOVING_LIGHT_SOURCE = new BlockMovingLightSource();
 
 		FLUID_ACID = new BlockAcidFluid();
 		FLUID_BLOOD = new BlockBloodFluid();
@@ -440,9 +434,6 @@ public class ModBlocks extends Block {
 		GameRegistry.register(CORE_WARPGATE_KHALAI);
 		GameRegistry.register(new ItemBlock(CORE_WARPGATE_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_KHALAI.getRegistryRL()));
 
-		GameRegistry.register(BLOCK_MOVING_LIGHT_SOURCE);
-		GameRegistry.register(new ItemBlock(BLOCK_MOVING_LIGHT_SOURCE).setRegistryName(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL()));
-
 		GameRegistry.register(FLUID_ACID);
 		GameRegistry.register(new ItemBlock(FLUID_ACID).setRegistryName(Reference.ModBlocks.FLUID_ACID.getRegistryRL()));
 
@@ -595,7 +586,6 @@ public class ModBlocks extends Block {
 		registerModel(VESPENE_GEYSER_BASE_SHAKURAS);
 
 		// Misc Blocks
-		registerModel(BLOCK_MOVING_LIGHT_SOURCE);
 		registerModel(GAS_VESPENE);
 
 		// Layer Registration
