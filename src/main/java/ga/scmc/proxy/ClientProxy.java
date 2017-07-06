@@ -6,29 +6,27 @@ import ga.scmc.blocks.BlockAcidFluid;
 import ga.scmc.blocks.BlockBloodFluid;
 import ga.scmc.blocks.ModBlocks;
 import ga.scmc.blocks.metablocks.ModMetaBlocks;
-import ga.scmc.entity.EntityBroodling;
-import ga.scmc.entity.EntityBrutalisk;
-import ga.scmc.entity.EntityCivilian;
-import ga.scmc.entity.EntityDarkProbe;
-import ga.scmc.entity.EntityDarkTemplar;
-import ga.scmc.entity.EntityHydralisk;
-import ga.scmc.entity.EntityInfestedCivilian;
-import ga.scmc.entity.EntityLarva;
-import ga.scmc.entity.EntityLarvaCocoon;
-import ga.scmc.entity.EntityOverlord;
-import ga.scmc.entity.EntityProbe;
-import ga.scmc.entity.EntityProtossReaver;
-import ga.scmc.entity.EntityQueen;
-import ga.scmc.entity.EntityScarab;
-import ga.scmc.entity.EntitySentry;
-import ga.scmc.entity.EntitySpiderMine;
-import ga.scmc.entity.EntityZealot;
-import ga.scmc.entity.EntityZergling;
-import ga.scmc.entity.EntityZerglingBoost;
-import ga.scmc.entity.EntityZerglingRaptor;
-import ga.scmc.entity.EntityZerglingSC2;
-import ga.scmc.entity.EntityZerglingSwarmling;
 import ga.scmc.entity.ModEntities;
+import ga.scmc.entity.living.EntityBroodling;
+import ga.scmc.entity.living.EntityBrutalisk;
+import ga.scmc.entity.living.EntityCivilian;
+import ga.scmc.entity.living.EntityDarkProbe;
+import ga.scmc.entity.living.EntityDarkTemplar;
+import ga.scmc.entity.living.EntityHydralisk;
+import ga.scmc.entity.living.EntityInfestedCivilian;
+import ga.scmc.entity.living.EntityLarva;
+import ga.scmc.entity.living.EntityLarvaCocoon;
+import ga.scmc.entity.living.EntityOverlord;
+import ga.scmc.entity.living.EntityProbe;
+import ga.scmc.entity.living.EntityProtossReaver;
+import ga.scmc.entity.living.EntityScarab;
+import ga.scmc.entity.living.EntitySpiderMine;
+import ga.scmc.entity.living.EntityZealot;
+import ga.scmc.entity.living.EntityZergling;
+import ga.scmc.entity.living.EntityZerglingBoost;
+import ga.scmc.entity.living.EntityZerglingRaptor;
+import ga.scmc.entity.living.EntityZerglingSC2;
+import ga.scmc.entity.living.EntityZerglingSwarmling;
 import ga.scmc.fluids.ModFluids;
 import ga.scmc.handlers.FuelHandler;
 import ga.scmc.items.ModItems;
@@ -48,11 +46,10 @@ import ga.scmc.model.ModelLarvaCocoon;
 import ga.scmc.model.ModelOverlord;
 import ga.scmc.model.ModelProbe;
 import ga.scmc.model.ModelProtossReaver;
-import ga.scmc.model.ModelQueen;
 import ga.scmc.model.ModelScarab;
-import ga.scmc.model.ModelSentry;
 import ga.scmc.model.ModelSpiderMine;
 import ga.scmc.model.ModelZealot;
+import ga.scmc.model.ModelZergArmorT1;
 import ga.scmc.model.ModelZergling;
 import ga.scmc.model.ModelZerglingBoost;
 import ga.scmc.model.ModelZerglingRaptor;
@@ -61,32 +58,29 @@ import ga.scmc.model.ModelZerglingSwarmling;
 import ga.scmc.recipes.ShapelessRecipes;
 import ga.scmc.recipes.SimpleRecipes;
 import ga.scmc.recipes.SmeltingRecipes;
-import ga.scmc.renderer.RenderBroodling;
-import ga.scmc.renderer.RenderBrutalisk;
-import ga.scmc.renderer.RenderCivilian;
-import ga.scmc.renderer.RenderDarkProbe;
-import ga.scmc.renderer.RenderDarkTemplar;
-import ga.scmc.renderer.RenderHydralisk;
-import ga.scmc.renderer.RenderInfestedCivilian;
-import ga.scmc.renderer.RenderLarva;
-import ga.scmc.renderer.RenderLarvaCocoon;
-import ga.scmc.renderer.RenderOverlord;
-import ga.scmc.renderer.RenderProbe;
-import ga.scmc.renderer.RenderProtossReaver;
-import ga.scmc.renderer.RenderQueen;
-import ga.scmc.renderer.RenderScarab;
-import ga.scmc.renderer.RenderSentry;
-import ga.scmc.renderer.RenderSpiderMine;
-import ga.scmc.renderer.RenderZealot;
-import ga.scmc.renderer.RenderZergling;
-import ga.scmc.renderer.RenderZerglingBoost;
-import ga.scmc.renderer.RenderZerglingRaptor;
-import ga.scmc.renderer.RenderZerglingSC2;
-import ga.scmc.renderer.RenderZerglingSwarmling;
-import ga.scmc.tileentity.ModTileEntities;
+import ga.scmc.renderer.entity.RenderBroodling;
+import ga.scmc.renderer.entity.RenderBrutalisk;
+import ga.scmc.renderer.entity.RenderCivilian;
+import ga.scmc.renderer.entity.RenderDarkProbe;
+import ga.scmc.renderer.entity.RenderDarkTemplar;
+import ga.scmc.renderer.entity.RenderHydralisk;
+import ga.scmc.renderer.entity.RenderInfestedCivilian;
+import ga.scmc.renderer.entity.RenderLarva;
+import ga.scmc.renderer.entity.RenderLarvaCocoon;
+import ga.scmc.renderer.entity.RenderOverlord;
+import ga.scmc.renderer.entity.RenderProbe;
+import ga.scmc.renderer.entity.RenderProtossReaver;
+import ga.scmc.renderer.entity.RenderScarab;
+import ga.scmc.renderer.entity.RenderSpiderMine;
+import ga.scmc.renderer.entity.RenderZealot;
+import ga.scmc.renderer.entity.RenderZergling;
+import ga.scmc.renderer.entity.RenderZerglingBoost;
+import ga.scmc.renderer.entity.RenderZerglingRaptor;
+import ga.scmc.renderer.entity.RenderZerglingSC2;
+import ga.scmc.renderer.entity.RenderZerglingSwarmling;
+import ga.scmc.worldgen.BiomesSC;
 import ga.scmc.worldgen.DimensionRegistry;
 import ga.scmc.worldgen.SCWorldGen;
-import ga.scmc.worldgen.biome.BiomesSC;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -137,6 +131,18 @@ public class ClientProxy implements IProxy {
 		}
 	}
 	
+	public ModelBiped getZergArmorT1Model(int id) {
+		ModelZergArmorT1 armorZerg = new ModelZergArmorT1(1.0f);
+		//And switch on the ID in your getArmorModel!
+		switch(id) {
+			case 0: return armorZerg;
+			case 1: return armorZerg;
+			case 2: return armorZerg;
+			case 3: return armorZerg;
+			default: return null;
+		}
+	}
+	
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
 		
@@ -152,7 +158,6 @@ public class ClientProxy implements IProxy {
 		ModItems.register();
 		ModItems.registerRenders();
 		ModMaterials.preInit();
-		ModTileEntities.preInit();
 		FuelHandler.preInit();
 		ModBlocks.registerModels();
 		SCWorldGen.preInit();
@@ -202,6 +207,4 @@ public class ClientProxy implements IProxy {
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.NEOSTEEL_METAL), new ResourceLocation(Reference.MODID, "neosteel_base"), new ResourceLocation(Reference.MODID, "neosteel_frame"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(ModMetaBlocks.COMP_MINERAL), new ResourceLocation(Reference.MODID, "comp_mineral_blue"), new ResourceLocation(Reference.MODID, "comp_mineral_rich"));
 	}
-	
-	public void registerTileEntities() {} //I'm no expert on tile entities - anyone else care to try this one, assuming we need it?
 }
