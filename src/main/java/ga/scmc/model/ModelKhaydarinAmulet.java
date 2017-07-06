@@ -25,7 +25,7 @@ public class ModelKhaydarinAmulet extends ModelBiped {
     public ModelRenderer prtrRight_3;
 
     public ModelKhaydarinAmulet(float scale) {
-    super(scale, 0, 64, 32);
+    	super(scale, 0, 64, 32);
 	 textureWidth = 64;
      textureHeight = 32;
      hornRight_1 = new ModelRenderer(this, 25, 0);

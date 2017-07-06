@@ -3,9 +3,9 @@ package ga.scmc.worldgen;
 import java.util.Random;
 
 import ga.scmc.blocks.ModBlocks;
-import ga.scmc.worldgen.dimchar.CharWorldGenMinable;
-import ga.scmc.worldgen.dimshakuras.BiomeGenShakurasCity;
-import ga.scmc.worldgen.dimshakuras.ShakurasWorldGenMinable;
+import ga.scmc.worldgen.biome.BiomeGenShakurasCity;
+import ga.scmc.worldgen.features.CharWorldGenMinable;
+import ga.scmc.worldgen.features.ShakurasWorldGenMinable;
 import ga.scmc.worldgen.structure.SCWorldGenerator;
 import ga.scmc.worldgen.structure.StructureProtossCyberneticsCoreTemplate;
 import ga.scmc.worldgen.structure.StructureProtossPylonTemplate;
@@ -16,6 +16,7 @@ import ga.scmc.worldgen.structure.StructureZergHydraliskDenTemplate;
 import ga.scmc.worldgen.structure.StructureZergSpawningPool;
 import ga.scmc.worldgen.structure.StructureZergSpire;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -236,7 +237,7 @@ public class SCWorldGen implements IWorldGenerator {
 						runGenerator(PROTOSS_WARPGATE, 1, 2, world, random, chunkX, chunkZ, 0, -1, 0, 1, 60, 70);
 					}
 					if(rnd.nextInt(100) < 5 && world.getWorldInfo().isMapFeaturesEnabled()) {
-						runGenerator(VESPENE_GEYSER, ModBlocks.STONE_CHAR.getDefaultState(), ModBlocks.FLUID_VESPENE.getDefaultState(), world, random, chunkX, chunkZ, 0, -34, 0, 1, 60, 70);
+						runGenerator(VESPENE_GEYSER, ModBlocks.STONE_CHAR.getDefaultState(), Blocks.WATER.getDefaultState(), world, random, chunkX, chunkZ, 0, -34, 0, 1, 60, 70);
 					}
 					runGenerator(MAGMA_CHAR, world, random, chunkX, chunkZ, 25, 0, 128);
 
@@ -266,7 +267,7 @@ public class SCWorldGen implements IWorldGenerator {
 						runGenerator(PROTOSS_CYBERNETICS_CORE, 1, 2, world, random, chunkX, chunkZ, 0, 0, 0, 1, 60, 70);
 					}
 					if(rnd.nextInt(100) < 5 && world.getWorldInfo().isMapFeaturesEnabled()) {
-						runGenerator(VESPENE_GEYSER, ModBlocks.STONE_SHAKURAS.getDefaultState(), ModBlocks.FLUID_VESPENE.getDefaultState(), world, random, chunkX, chunkZ, 0, -34, 0, 1, 60, 70);
+						runGenerator(VESPENE_GEYSER, ModBlocks.STONE_SHAKURAS.getDefaultState(), Blocks.WATER.getDefaultState(), world, random, chunkX, chunkZ, 0, -34, 0, 1, 60, 70);
 					}
 				}
 

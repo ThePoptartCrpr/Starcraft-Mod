@@ -1,9 +1,9 @@
 package ga.scmc.worldgen;
 
-//import ga.scmc.worldgen.dimaiur.WorldProviderAiur; TODO: move that class into ga.scmc.worldgen.provider (when Aiur's complete)
+//import ga.scmc.worldgen.aiur.WorldProviderAiur; TODO: move that class into ga.scmc.worldgen.provider (when Aiur's complete)
 import ga.scmc.lib.StarcraftConfig;
-import ga.scmc.worldgen.dimchar.WorldProviderChar;
-import ga.scmc.worldgen.dimshakuras.WorldProviderShakuras;
+import ga.scmc.worldgen.provider.WorldProviderChar;
+import ga.scmc.worldgen.provider.WorldProviderShakuras;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.common.DimensionManager;
