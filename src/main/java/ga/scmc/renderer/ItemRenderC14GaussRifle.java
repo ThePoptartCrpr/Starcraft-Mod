@@ -1,7 +1,5 @@
 package ga.scmc.renderer;
 
-import org.lwjgl.opengl.GL11;
-
 import ga.scmc.model.ModelC14GaussRifle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -9,6 +7,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
 
 public class ItemRenderC14GaussRifle extends ItemRenderer {
 
@@ -18,7 +17,7 @@ public class ItemRenderC14GaussRifle extends ItemRenderer {
 
 	@Override
 	public void renderFirstPersonLeft(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {
-		;
+	
 	}
 
 	@Override
@@ -82,7 +81,7 @@ public class ItemRenderC14GaussRifle extends ItemRenderer {
 
 	@Override
 	public void renderThirdPersonLeft(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {
-		;
+	
 	}
 
 	@Override
