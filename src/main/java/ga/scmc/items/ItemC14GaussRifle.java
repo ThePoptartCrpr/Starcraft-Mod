@@ -33,16 +33,16 @@ public class ItemC14GaussRifle extends Item {
         {
         	if(!flag) {
         		worldIn.playSound(playerIn, playerIn.getPosition(), StarcraftSoundEvents.FX_PSIBLADE_ATTACK, SoundCategory.PLAYERS, 0.4F, 0.4F / (itemRand.nextFloat() * 0.5F + 0.8F));
-				return ActionResult.newResult(EnumActionResult.FAIL, itemStackIn);
+        		return new ActionResult(EnumActionResult.FAIL, itemStackIn);
         	}else {
         		worldIn.spawnEntityInWorld(new EntityC14GaussRifleBullet(worldIn, playerIn));
-				return ActionResult.newResult(EnumActionResult.PASS, itemStackIn);
+        		return new ActionResult(EnumActionResult.PASS, itemStackIn);
         	}
         }
         else
         {
             playerIn.setActiveHand(hand);
-			return ActionResult.newResult(EnumActionResult.SUCCESS, itemStackIn);
+            return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
         }
     }
 	
