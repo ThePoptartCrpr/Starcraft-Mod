@@ -3,7 +3,7 @@ package ga.scmc.items.metaitems;
 import java.util.List;
 
 import ga.scmc.creativetabs.StarcraftCreativeTabs;
-import ga.scmc.handlers.ItemEnumHandler.CarapaceType;
+import ga.scmc.items.metaitems.ItemEnumHandler.CarapaceType;
 import ga.scmc.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

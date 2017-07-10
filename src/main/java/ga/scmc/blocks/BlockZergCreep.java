@@ -3,8 +3,8 @@ package ga.scmc.blocks;
 import java.util.Random;
 
 import ga.scmc.creativetabs.StarcraftCreativeTabs;
-import ga.scmc.entity.EntityZergMob;
-import ga.scmc.entity.EntityZergPassive;
+import ga.scmc.entity.monster.EntityZergMob;
+import ga.scmc.entity.passive.EntityZergPassive;
 import ga.scmc.items.ModItems;
 import ga.scmc.items.armor.ArmorZergBootsT1;
 import ga.scmc.items.armor.ArmorZergBootsT2;

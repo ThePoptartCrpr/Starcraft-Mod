@@ -1,6 +1,6 @@
 package ga.scmc.entity.ai;
 
-import ga.scmc.entity.living.EntityScarab;
+import ga.scmc.entity.EntityScarab;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 
