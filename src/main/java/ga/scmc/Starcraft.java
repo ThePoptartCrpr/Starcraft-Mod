@@ -1,5 +1,6 @@
 package ga.scmc;
 
+import ga.scmc.fluids.ModFluids;
 import ga.scmc.lib.Reference;
 import ga.scmc.proxy.IProxy;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,7 +29,11 @@ public class Starcraft {
 	public static IProxy proxy;
 
 	static {
-		FluidRegistry.enableUniversalBucket();
+		FluidRegistry.enableUniversalBucket(); //Enable unibucket
+		
+		//Register fluids and add to unibucket
+		FluidRegistry.addBucketForFluid(ModFluids.acid);
+		FluidRegistry.addBucketForFluid(ModFluids.blood);
 	}
 	
 	@EventHandler
