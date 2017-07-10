@@ -1,10 +1,7 @@
 package ga.scmc;
 
-import ga.scmc.items.ModItems;
 import ga.scmc.lib.Reference;
 import ga.scmc.proxy.IProxy;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -45,7 +42,6 @@ public class Starcraft {
 		proxy.init(event);
 		proxy.registerItemVariants();
 		MinecraftForge.EVENT_BUS.register(this); //I'm like 102% sure this is unnecessary
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ModItems.C14_GAUSS_RIFLE, 0, new ModelResourceLocation(Reference.ModItems.WEAPON_RIFLE_C14_GAUSS.getRegistryRL(), "inventory"));
 	}
 
 	@EventHandler

@@ -153,7 +153,6 @@ public class ModItems extends Item {
 		registerItem(PROTOSS_INGOT);
 		registerItem(PROTOSS_SCRAP_METAL);
 		registerItem(C14_PARTS);
-		registerItem(C14_GAUSS_RIFLE);
 		registerItem(BULLET);
 		registerItem(CREDIT);
 		registerItem(PSI_BLADE_FOCUSER_UNCHARGED);
