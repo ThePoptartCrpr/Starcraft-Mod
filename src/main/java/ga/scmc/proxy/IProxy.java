@@ -8,9 +8,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public interface IProxy {
 	
 	ModelBiped getArmorModel(int id);
+	ModelBiped getZergArmorT1Model(int id);
 	void preInit(FMLPreInitializationEvent event);
 	void init(FMLInitializationEvent event);
 	void postInit(FMLPostInitializationEvent event);
-	void registerTileEntities();
 	void registerItemVariants();
 }
