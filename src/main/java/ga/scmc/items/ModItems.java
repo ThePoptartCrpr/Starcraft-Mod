@@ -12,6 +12,7 @@ import ga.scmc.items.metaitems.ItemEnumHandler;
 import ga.scmc.items.metaitems.ItemEssence;
 import ga.scmc.items.metaitems.ItemIngot;
 import ga.scmc.items.metaitems.ItemMineralShard;
+import ga.scmc.items.metaitems.ItemMutaliskWing;
 import ga.scmc.items.metaitems.ItemProtossArmorPieces;
 import ga.scmc.items.metaitems.ItemProtossCoordinates;
 import ga.scmc.items.metaitems.ItemProtossIngot;
@@ -45,7 +46,7 @@ public class ModItems extends Item {
 	// public static Item acidBucket;
 	// public static Item bloodBucket;
 	public static Item BULLET;
-	public static Item C14_GAUSS_RIFLE = new ItemC14GaussRifle();
+	public static Item C14_GAUSS_RIFLE;
 	public static Item C14_PARTS;
 	public static Item COORDINATES;
 	public static Item CREDIT;
@@ -212,7 +213,6 @@ public class ModItems extends Item {
 	}
 
 	public static void registerRenders() {
-		registerRender(C14_GAUSS_RIFLE);
 		registerRender(KEYSTONE);
 		registerRender(CREEP_RESIN);
 		registerRender(HYDRALISK_NEEDLE);
