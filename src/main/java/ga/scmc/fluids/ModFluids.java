@@ -4,6 +4,7 @@ import ga.scmc.blocks.ModBlocks;
 import ga.scmc.lib.Reference;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 
 public class ModFluids {
 

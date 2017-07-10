@@ -38,6 +38,8 @@ import ga.scmc.blocks.oreshakuras.OreShakurasRedstone;
 import ga.scmc.blocks.oreshakuras.OreShakurasRichMineral;
 import ga.scmc.blocks.oreshakuras.OreShakurasTitanium;
 import ga.scmc.blocks.oreshakuras.OreShakurasUranium;
+import ga.scmc.items.metaitems.ModItemLayered;
+import ga.scmc.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -48,11 +50,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
-//import ga.scmc.blocks.debug.DimPortalAiur;
-
-/** Copyright (c) 2017 the Starcraft Minecraft (SCMC) mod team */
+/**
+ * Copyright (c) 2017 the Starcraft Minecraft (SCMC) mod team
+ */
 public class ModBlocks extends Block {
+
 	public static Block ASH_CHAR;
 
 	public static Block COBBLESTONE_CHAR;
@@ -130,10 +134,7 @@ public class ModBlocks extends Block {
 	public static Block WARPGATE_WORMHOLE_CHAR;
 	public static Block WARPGATE_WORMHOLE_OVERWORLD;
 	public static Block WARPGATE_WORMHOLE_SHAKURAS;
-	public static Block ZERG_CREEP = new BlockZergCreep();
-	
-	public static final ArrayList<Block> blocks = new ArrayList<Block>();
-	public static final ArrayList<Item> itemBlocks = new ArrayList<Item>();
+	public static Block ZERG_CREEP;
 	
 	public static void init() {
 		instantiate();
@@ -373,80 +374,47 @@ public class ModBlocks extends Block {
 		GameRegistry.register(PROTOSS_DARK_ENERGY_STABILIZER);
 		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getRegistryRL()));
 		
-		//Adds Block values to blocks. Anyone have a better way to do this?
-		blocks.add(ASH_CHAR);
-		blocks.add(COBBLESTONE_CHAR);
-		blocks.add(COBBLESTONE_SHAKURAS);
-		blocks.add(CORE_CYBERNETICSCORE_DARK);
-		blocks.add(CORE_CYBERNETICSCORE_KHALAI);
-		blocks.add(CORE_CYBERNETICSCORE_VOID);
-		blocks.add(CORE_NEXUS_DARK);
-		blocks.add(CORE_NEXUS_KHALAI);
-		blocks.add(CORE_NEXUS_VOID);
-		blocks.add(CORE_PYLON_DARK);
-		blocks.add(CORE_PYLON_KHALAI);
-		blocks.add(CORE_PYLON_VOID);
-		blocks.add(CORE_WARPGATE_DARK);
-		blocks.add(CORE_WARPGATE_KHALAI);
-		blocks.add(CORE_WARPGATE_VOID);
-		blocks.add(DIM_PORTAL_CHAR);
-		blocks.add(DIM_PORTAL_OVERWORLD);
-		blocks.add(DIM_PORTAL_SHAKURAS);
-		blocks.add(DIRT_CHAR);
-		blocks.add(ENERGY);
-		blocks.add(FLUID_ACID);
-		blocks.add(FLUID_BLOOD);
-		blocks.add(GRAVEL_CHAR);
-		blocks.add(KERATIN_CHUNK);
-		blocks.add(MAGMA_CHAR);
-		blocks.add(ORE_COAL_CHAR);
-		blocks.add(ORE_COAL_SHAKURAS);
-		blocks.add(ORE_COPPER_CHAR);
-		blocks.add(ORE_COPPER_OW);
-		blocks.add(ORE_COPPER_SHAKURAS);
-		blocks.add(ORE_DIAMOND_CHAR);
-		blocks.add(ORE_DIAMOND_SHAKURAS);
-		blocks.add(ORE_GOLD_CHAR);
-		blocks.add(ORE_GOLD_SHAKURAS);
-		blocks.add(ORE_IRON_CHAR);
-		blocks.add(ORE_IRON_SHAKURAS);
-		blocks.add(ORE_LAPIS_CHAR);
-		blocks.add(ORE_LAPIS_SHAKURAS);
-		blocks.add(ORE_MINERAL_CHAR);
-		blocks.add(ORE_MINERAL_SHAKURAS);
-		blocks.add(ORE_REDSTONE_CHAR);
-		blocks.add(ORE_REDSTONE_SHAKURAS);
-		blocks.add(ORE_TITANIUM_CHAR);
-		blocks.add(ORE_TITANIUM_OW);
-		blocks.add(ORE_TITANIUM_SHAKURAS);
-		blocks.add(ORE_URANIUM_CHAR);
-		blocks.add(ORE_URANIUM_OW);
-		blocks.add(ORE_URANIUM_SHAKURAS);
-		blocks.add(PROTOSS_DARK_ENERGY_CHANNEL);
-		blocks.add(PROTOSS_DARK_ENERGY_STABILIZER);
-		blocks.add(PROTOSS_ENERGY_CHANNEL);
-		blocks.add(PROTOSS_ENERGY_STABILIZER);
-		blocks.add(PROTOSS_SHIELD);
-		blocks.add(PROTOSS_VOID_ENERGY_CHANNEL);
-		blocks.add(PROTOSS_VOID_ENERGY_STABILIZER);
-		blocks.add(PROTOSS_WARPPROJECTOR_CHAR);
-		blocks.add(PROTOSS_WARPPROJECTOR_OVERWORLD);
-		blocks.add(PROTOSS_WARPPROJECTOR_SHAKURAS);
-		blocks.add(SAND_SHAKURAS);
-		blocks.add(STONE_CHAR);
-		blocks.add(STONE_SHAKURAS);
-		blocks.add(VESPENE_GEYSER_BASE);
-		blocks.add(VESPENE_GEYSER_BASE_CHAR);
-		blocks.add(VESPENE_GEYSER_BASE_SHAKURAS);
-		blocks.add(VOID_ENERGY);
-		blocks.add(ZERG_CREEP);
+		GameRegistry.register(PROTOSS_SHIELD);
+		GameRegistry.register(new ItemBlock(PROTOSS_SHIELD).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_SHIELD.getRegistryRL()));
 		
-		//Adds ItemBlock values to itemBlocks
-		for(Block b : blocks) {
-			itemBlocks.add(new ItemBlock(b).setRegistryName(b.getRegistryName()));
-		}
+		GameRegistry.register(PROTOSS_VOID_ENERGY_CHANNEL);
+		GameRegistry.register(new ItemBlock(PROTOSS_VOID_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_VOID_ENERGY_CHANNEL.getRegistryRL()));
+
+		GameRegistry.register(PROTOSS_VOID_ENERGY_STABILIZER);
+		GameRegistry.register(new ItemBlock(PROTOSS_VOID_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_VOID_ENERGY_STABILIZER.getRegistryRL()));
+
+		GameRegistry.register(ZERG_CREEP);
+		GameRegistry.register(new ItemBlock(ZERG_CREEP).setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL()));
+
+		GameRegistry.register(KERATIN_CHUNK);
+		GameRegistry.register(new ItemBlock(KERATIN_CHUNK).setRegistryName(Reference.ModBlocks.BLOCK_KERATIN_CHUNK.getRegistryRL()));
+
+		GameRegistry.register(VESPENE_GEYSER_BASE);
+		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE.getRegistryRL()));
+
+		GameRegistry.register(VESPENE_GEYSER_BASE_CHAR);
+		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_C.getRegistryRL()));
+
+		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
+		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
+
+		GameRegistry.register(CORE_CYBERNETICSCORE_VOID);
+		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_VOID.getRegistryRL()));
+
+		GameRegistry.register(CORE_CYBERNETICSCORE_DARK);
+		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_DARK.getRegistryRL()));
+
+		GameRegistry.register(CORE_CYBERNETICSCORE_KHALAI);
+		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_KHALAI.getRegistryRL()));
 		
-//		register();
+		GameRegistry.register(CORE_PYLON_VOID);
+		GameRegistry.register(new ItemBlock(CORE_PYLON_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL()));
+
+		GameRegistry.register(CORE_PYLON_DARK);
+		GameRegistry.register(new ItemBlock(CORE_PYLON_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_DARK.getRegistryRL()));
+
+		GameRegistry.register(CORE_PYLON_KHALAI);
+		GameRegistry.register(new ItemBlock(CORE_PYLON_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_KHALAI.getRegistryRL()));
 
 		GameRegistry.register(CORE_NEXUS_VOID);
 		GameRegistry.register(new ItemBlock(CORE_NEXUS_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_NEXUS_VOID.getRegistryRL()));
@@ -484,311 +452,6 @@ public class ModBlocks extends Block {
 		GameRegistry.register(GAS_VESPENE);
 		GameRegistry.register(new ItemBlock(GAS_VESPENE).setRegistryName(Reference.ModBlocks.BLOCK_GAS_VESPENE.getRegistryRL()));
 	}
-
-//	public static void instantiate() {
-//		ORE_COPPER_OW = new OreOWCopper();
-//		ORE_TITANIUM_OW = new OreOWTitanium();
-//		ORE_URANIUM_OW = new OreOWUranium();
-//
-//		DIM_PORTAL_OVERWORLD = new DimPortalOverworld();
-//
-//		ORE_COAL_CHAR = new OreCharCoal();
-//		ORE_COPPER_CHAR = new OreCharCopper();
-//		ORE_DIAMOND_CHAR = new OreCharDiamond();
-//		ORE_GOLD_CHAR = new OreCharGold();
-//		ORE_IRON_CHAR = new OreCharIron();
-//		ORE_LAPIS_CHAR = new OreCharLapis();
-//		ORE_MINERAL_CHAR = new OreCharMineral();
-//		ORE_REDSTONE_CHAR = new OreCharRedstone();
-//		ORE_RICHMINERAL_CHAR = new OreCharRichMineral();
-//		ORE_TITANIUM_CHAR = new OreCharTitanium();
-//		ORE_URANIUM_CHAR = new OreCharUranium();
-//
-//		STONE_CHAR = new BlockCharStone();
-//		COBBLESTONE_CHAR = new BlockCharCobblestone();
-//		MAGMA_CHAR = new BlockCharMagma();
-//		ASH_CHAR = new BlockAsh();
-//		DIRT_CHAR = new BlockCharDirt();
-//		GRAVEL_CHAR = new BlockCharGravel();
-//		DIM_PORTAL_CHAR = new DimPortalChar();
-//
-//		ORE_COAL_SHAKURAS = new OreShakurasCoal();
-//		ORE_COPPER_SHAKURAS = new OreShakurasCopper();
-//		ORE_DIAMOND_SHAKURAS = new OreShakurasDiamond();
-//		ORE_GOLD_SHAKURAS = new OreShakurasGold();
-//		ORE_IRON_SHAKURAS = new OreShakurasIron();
-//		ORE_LAPIS_SHAKURAS = new OreShakurasLapis();
-//		ORE_MINERAL_SHAKURAS = new OreShakurasMineral();
-//		ORE_REDSTONE_SHAKURAS = new OreShakurasRedstone();
-//		ORE_RICHMINERAL_SHAKURAS = new OreShakurasRichMineral();
-//		ORE_TITANIUM_SHAKURAS = new OreShakurasTitanium();
-//		ORE_URANIUM_SHAKURAS = new OreShakurasUranium();
-//
-//		STONE_SHAKURAS = new BlockShakurasStone();
-//		COBBLESTONE_SHAKURAS = new BlockShakurasCobblestone();
-//		SAND_SHAKURAS = new BlockShakurasSand();
-//		DIM_PORTAL_SHAKURAS = new DimPortalShakuras();
-//
-//		//DIM_PORTAL_AIUR = new DimPortalAiur();
-//
-//		// Protoss Blocks
-//		PROTOSS_WARPPROJECTOR_CHAR = new BlockProtossWarpProjectorC();
-//		PROTOSS_WARPPROJECTOR_OVERWORLD = new BlockProtossWarpProjectorO();
-//		PROTOSS_WARPPROJECTOR_SHAKURAS = new BlockProtossWarpProjectorS();
-//
-//		PROTOSS_ENERGY_CHANNEL = new BlockProtossEnergyChannel();
-//		PROTOSS_ENERGY_STABILIZER = new BlockProtossEnergyStabilizer();
-//		PROTOSS_DARK_ENERGY_CHANNEL = new BlockProtossEnergyChannelDark();
-//		PROTOSS_DARK_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerDark();
-//		PROTOSS_SHIELD = new BlockProtossShield();
-//		PROTOSS_VOID_ENERGY_CHANNEL = new BlockProtossEnergyChannelVoid();
-//		PROTOSS_VOID_ENERGY_STABILIZER = new BlockProtossEnergyStabilizerVoid();
-//
-//		ENERGY = new BlockEnergy();
-//		VOID_ENERGY = new BlockVoidEnergy();
-//
-//		// Zerg Blocks
-//		ZERG_CREEP = new BlockZergCreep();
-//		KERATIN_CHUNK = new BlockKeratinChunk();
-//
-//		VESPENE_GEYSER_BASE = new BlockVespeneGeyserBase();
-//		VESPENE_GEYSER_BASE_CHAR = new BlockVespeneGeyserBaseChar();
-//		VESPENE_GEYSER_BASE_SHAKURAS = new BlockVespeneGeyserBaseShakuras();
-//
-//		// Core Blocks
-//		CORE_CYBERNETICSCORE_VOID = new BlockCoreCyberneticsCoreVoid();
-//		CORE_CYBERNETICSCORE_DARK = new BlockCoreCyberneticsCoreDark();
-//		CORE_CYBERNETICSCORE_KHALAI = new BlockCoreCyberneticsCoreKhalai();
-//
-//		CORE_PYLON_VOID = new BlockCorePylonVoid();
-//		CORE_PYLON_DARK = new BlockCorePylonDark();
-//		CORE_PYLON_KHALAI = new BlockCorePylonKhalai();
-//
-//		CORE_WARPGATE_VOID = new BlockCoreWarpGateVoid();
-//		CORE_WARPGATE_DARK = new BlockCoreWarpGateDark();
-//		CORE_WARPGATE_KHALAI = new BlockCoreWarpGateKhalai();
-//
-//		CORE_NEXUS_VOID = new BlockCoreNexusVoid();
-//		CORE_NEXUS_DARK = new BlockCoreNexusDark();
-//		CORE_NEXUS_KHALAI = new BlockCoreNexusKhalai();
-//
-//		BLOCK_MOVING_LIGHT_SOURCE = new BlockMovingLightSource();
-//
-//		FLUID_ACID = new BlockAcidFluid();
-//		FLUID_BLOOD = new BlockBloodFluid();
-//	}
-
-//	public static void register() {
-//		GameRegistry.register(ORE_COPPER_OW);
-//		GameRegistry.register(new ItemBlock(ORE_COPPER_OW).setRegistryName(Reference.ModBlocks.ORE_COPPER_OW.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_TITANIUM_OW);
-//		GameRegistry.register(new ItemBlock(ORE_TITANIUM_OW).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_OW.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_URANIUM_OW);
-//		GameRegistry.register(new ItemBlock(ORE_URANIUM_OW).setRegistryName(Reference.ModBlocks.ORE_URANIUM_OW.getRegistryRL()));
-//
-//		GameRegistry.register(DIM_PORTAL_OVERWORLD);
-//		GameRegistry.register(new ItemBlock(DIM_PORTAL_OVERWORLD).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_OW.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_COAL_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_COAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_COAL_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_COPPER_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_COPPER_CHAR).setRegistryName(Reference.ModBlocks.ORE_COPPER_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_DIAMOND_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_DIAMOND_CHAR).setRegistryName(Reference.ModBlocks.ORE_DIAMOND_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_GOLD_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_GOLD_CHAR).setRegistryName(Reference.ModBlocks.ORE_GOLD_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_IRON_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_IRON_CHAR).setRegistryName(Reference.ModBlocks.ORE_IRON_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_LAPIS_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_LAPIS_CHAR).setRegistryName(Reference.ModBlocks.ORE_LAPIS_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_MINERAL_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_MINERAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_MINERAL_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_REDSTONE_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_REDSTONE_CHAR).setRegistryName(Reference.ModBlocks.ORE_REDSTONE_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_RICHMINERAL_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_RICHMINERAL_CHAR).setRegistryName(Reference.ModBlocks.ORE_RICHMINERAL_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_TITANIUM_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_TITANIUM_CHAR).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_URANIUM_CHAR);
-//		GameRegistry.register(new ItemBlock(ORE_URANIUM_CHAR).setRegistryName(Reference.ModBlocks.ORE_URANIUM_C.getRegistryRL()));
-//
-//		GameRegistry.register(STONE_CHAR);
-//		GameRegistry.register(new ItemBlock(STONE_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_STONE_CHAR.getRegistryRL()));
-//
-//		GameRegistry.register(COBBLESTONE_CHAR);
-//		GameRegistry.register(new ItemBlock(COBBLESTONE_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_CHAR.getRegistryRL()));
-//
-//		GameRegistry.register(MAGMA_CHAR);
-//		GameRegistry.register(new ItemBlock(MAGMA_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_MAGMA_CHAR.getRegistryRL()));
-//
-//		GameRegistry.register(ASH_CHAR);
-//		GameRegistry.register(new ModItemLayered(ASH_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_ASH_CHAR.getRegistryRL()));
-//
-//		GameRegistry.register(DIRT_CHAR);
-//		GameRegistry.register(new ItemBlock(DIRT_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIRT_CHAR.getRegistryRL()));
-//
-//		GameRegistry.register(GRAVEL_CHAR);
-//		GameRegistry.register(new ItemBlock(GRAVEL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_GRAVEL_CHAR.getRegistryRL()));
-//
-//		GameRegistry.register(DIM_PORTAL_CHAR);
-//		GameRegistry.register(new ItemBlock(DIM_PORTAL_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_C.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_COAL_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_COAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_COAL_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_COPPER_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_COPPER_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_COPPER_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_DIAMOND_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_DIAMOND_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_DIAMOND_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_GOLD_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_GOLD_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_GOLD_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_IRON_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_IRON_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_IRON_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_LAPIS_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_LAPIS_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_LAPIS_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_MINERAL_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_MINERAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_MINERAL_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_REDSTONE_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_REDSTONE_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_REDSTONE_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_RICHMINERAL_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_RICHMINERAL_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_RICHMINERAL_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_TITANIUM_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_TITANIUM_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_TITANIUM_S.getRegistryRL()));
-//
-//		GameRegistry.register(ORE_URANIUM_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(ORE_URANIUM_SHAKURAS).setRegistryName(Reference.ModBlocks.ORE_URANIUM_S.getRegistryRL()));
-//
-//		GameRegistry.register(STONE_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(STONE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_STONE_S.getRegistryRL()));
-//
-//		GameRegistry.register(COBBLESTONE_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(COBBLESTONE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_COBBLESTONE_S.getRegistryRL()));
-//
-//		GameRegistry.register(SAND_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(SAND_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_SAND_S.getRegistryRL()));
-//
-//		GameRegistry.register(DIM_PORTAL_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(DIM_PORTAL_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_S.getRegistryRL()));
-//
-//		//GameRegistry.register(DIM_PORTAL_AIUR);
-//		//GameRegistry.register(new ItemBlock(DIM_PORTAL_AIUR).setRegistryName(Reference.ModBlocks.BLOCK_DIM_PORTAL_AI.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_WARPPROJECTOR_CHAR);
-//		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_C.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_WARPPROJECTOR_OVERWORLD);
-//		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_OVERWORLD).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_OW.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_WARPPROJECTOR_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(PROTOSS_WARPPROJECTOR_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_WARP_PROJECTOR_S.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_ENERGY_CHANNEL);
-//		GameRegistry.register(new ItemBlock(PROTOSS_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_ENERGY_CHANNEL.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_ENERGY_STABILIZER);
-//		GameRegistry.register(new ItemBlock(PROTOSS_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_ENERGY_STABILIZER.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_DARK_ENERGY_CHANNEL);
-//		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_CHANNEL.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_DARK_ENERGY_STABILIZER);
-//		GameRegistry.register(new ItemBlock(PROTOSS_DARK_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_DARK_ENERGY_STABILIZER.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_SHIELD);
-//		GameRegistry.register(new ItemBlock(PROTOSS_SHIELD).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_SHIELD.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_VOID_ENERGY_CHANNEL);
-//		GameRegistry.register(new ItemBlock(PROTOSS_VOID_ENERGY_CHANNEL).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_VOID_ENERGY_CHANNEL.getRegistryRL()));
-//
-//		GameRegistry.register(PROTOSS_VOID_ENERGY_STABILIZER);
-//		GameRegistry.register(new ItemBlock(PROTOSS_VOID_ENERGY_STABILIZER).setRegistryName(Reference.ModBlocks.BLOCK_PROTOSS_VOID_ENERGY_STABILIZER.getRegistryRL()));
-//
-//		GameRegistry.register(ZERG_CREEP);
-//		GameRegistry.register(new ItemBlock(ZERG_CREEP).setRegistryName(Reference.ModBlocks.BLOCK_ZERG_CREEP.getRegistryRL()));
-//
-//		GameRegistry.register(KERATIN_CHUNK);
-//		GameRegistry.register(new ItemBlock(KERATIN_CHUNK).setRegistryName(Reference.ModBlocks.BLOCK_KERATIN_CHUNK.getRegistryRL()));
-//
-//		GameRegistry.register(VESPENE_GEYSER_BASE);
-//		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE.getRegistryRL()));
-//
-//		GameRegistry.register(VESPENE_GEYSER_BASE_CHAR);
-//		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_CHAR).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_C.getRegistryRL()));
-//
-//		GameRegistry.register(VESPENE_GEYSER_BASE_SHAKURAS);
-//		GameRegistry.register(new ItemBlock(VESPENE_GEYSER_BASE_SHAKURAS).setRegistryName(Reference.ModBlocks.BLOCK_VESPENE_GEYSER_BASE_S.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_CYBERNETICSCORE_VOID);
-//		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_VOID.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_CYBERNETICSCORE_DARK);
-//		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_DARK.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_CYBERNETICSCORE_KHALAI);
-//		GameRegistry.register(new ItemBlock(CORE_CYBERNETICSCORE_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_CYBERNETICSCORE_KHALAI.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_PYLON_VOID);
-//		GameRegistry.register(new ItemBlock(CORE_PYLON_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_VOID.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_PYLON_DARK);
-//		GameRegistry.register(new ItemBlock(CORE_PYLON_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_DARK.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_PYLON_KHALAI);
-//		GameRegistry.register(new ItemBlock(CORE_PYLON_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_PYLON_KHALAI.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_NEXUS_VOID);
-//		GameRegistry.register(new ItemBlock(CORE_NEXUS_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_NEXUS_VOID.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_NEXUS_DARK);
-//		GameRegistry.register(new ItemBlock(CORE_NEXUS_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_NEXUS_DARK.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_NEXUS_KHALAI);
-//		GameRegistry.register(new ItemBlock(CORE_NEXUS_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_NEXUS_KHALAI.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_WARPGATE_VOID);
-//		GameRegistry.register(new ItemBlock(CORE_WARPGATE_VOID).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_VOID.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_WARPGATE_DARK);
-//		GameRegistry.register(new ItemBlock(CORE_WARPGATE_DARK).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_DARK.getRegistryRL()));
-//
-//		GameRegistry.register(CORE_WARPGATE_KHALAI);
-//		GameRegistry.register(new ItemBlock(CORE_WARPGATE_KHALAI).setRegistryName(Reference.ModBlocks.BLOCK_CORE_WARPGATE_KHALAI.getRegistryRL()));
-//
-//		GameRegistry.register(BLOCK_MOVING_LIGHT_SOURCE);
-//		GameRegistry.register(new ItemBlock(BLOCK_MOVING_LIGHT_SOURCE).setRegistryName(Reference.ModBlocks.BLOCK_MOVING_LIGHT_SOURCE.getRegistryRL()));
-//
-//		GameRegistry.register(FLUID_ACID);
-//		GameRegistry.register(new ItemBlock(FLUID_ACID).setRegistryName(Reference.ModBlocks.FLUID_ACID.getRegistryRL()));
-//
-//		GameRegistry.register(FLUID_BLOOD);
-//		GameRegistry.register(new ItemBlock(FLUID_BLOOD).setRegistryName(Reference.ModBlocks.FLUID_BLOOD.getRegistryRL()));
-//
-//		GameRegistry.register(ENERGY);
-//		GameRegistry.register(new ItemBlock(ENERGY).setRegistryName(Reference.ModBlocks.BLOCK_ENERGY.getRegistryRL()));
-//
-//		GameRegistry.register(VOID_ENERGY);
-//		GameRegistry.register(new ItemBlock(VOID_ENERGY).setRegistryName(Reference.ModBlocks.BLOCK_VOID_ENERGY.getRegistryRL()));
-//	}
 
 	private static void registerFluid(final Block block) {
 		ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(block), new ItemMeshDefinition() {
