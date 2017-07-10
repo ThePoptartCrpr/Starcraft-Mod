@@ -1,8 +1,8 @@
 package ga.scmc.creativetabs;
 
+import ga.scmc.items.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import ga.scmc.items.ModItems;
 
 public class StarcraftCreativeTabProtoss extends CreativeTabs{
 
