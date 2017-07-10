@@ -17,7 +17,7 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 	public static final ModelC14GaussRifle model = new ModelC14GaussRifle();
 
 	public RenderItemC14GaussRifle() {
-		super(model, ModelC14GaussRifle.TEXTURE);
+		super(model, ModelC14GaussRifle.texture);
 	}
 
 	@Override

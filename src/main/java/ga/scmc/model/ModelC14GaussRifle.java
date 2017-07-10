@@ -1,6 +1,5 @@
 package ga.scmc.model;
 
-import ga.scmc.lib.Reference;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -11,7 +10,8 @@ import net.minecraft.util.ResourceLocation;
  */
 
 public class ModelC14GaussRifle extends ModelBase {
-	public static final ResourceLocation TEXTURE = new ResourceLocation("starcraft", "textures/models/c14gaussrifle.png");
+
+	public static ResourceLocation texture = new ResourceLocation("starcraft", "textures\\model\\c14gaussrifle.png");
 
 	public ModelRenderer main1;
 	public ModelRenderer main10;
