@@ -2,8 +2,6 @@ package ga.scmc.proxy;
 
 import ga.scmc.StarcraftSoundEvents;
 import ga.scmc.achievement.Achievements;
-import ga.scmc.blocks.BlockAcidFluid;
-import ga.scmc.blocks.BlockBloodFluid;
 import ga.scmc.blocks.ModBlocks;
 import ga.scmc.blocks.metablocks.ModMetaBlocks;
 import ga.scmc.entity.EntityBroodling;
@@ -139,17 +137,10 @@ public class ClientProxy implements IProxy {
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		StarcraftConfig.preInit();
-		
-		//These are here for timing-based NPE aversion. It's cheeky but fuck it, it works
-		ModBlocks.FLUID_ACID = new BlockAcidFluid();
-		ModBlocks.FLUID_BLOOD = new BlockBloodFluid();
-		ModFluids.acid.setUnlocalizedName(ModBlocks.FLUID_ACID.getUnlocalizedName()).setBlock(ModBlocks.FLUID_ACID);
-		ModFluids.blood.setUnlocalizedName(ModBlocks.FLUID_BLOOD.getUnlocalizedName()).setBlock(ModBlocks.FLUID_BLOOD);
-		
-//		ModBlocks.init();
-		ModMetaBlocks.init();
+		ModFluids.register();
+		ModBlocks.init();
 		ModItems.init();
-		ModItems.register();
+		ModItems.register(); //Does stuff, including bucket-y stuff
 		ModItems.registerRenders();
 		ModMaterials.preInit();
 		ModTileEntities.preInit();

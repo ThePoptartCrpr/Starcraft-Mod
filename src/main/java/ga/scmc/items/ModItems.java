@@ -131,10 +131,16 @@ public class ModItems extends Item {
 	}
 
 	/**
-	 * Registers all mod items. Calls registration of sub-packages.<br>
-	 * Fluid registration and addition to unibucket handled elsewhere
+	 * Registers all mod items. Calls registration of sub-packages.
 	 */
 	public static void register() {
+
+		// Register acid fluid and add it to the universal bucket
+		FluidRegistry.addBucketForFluid(ModFluids.acid);
+
+		// Register blood fluid and add it to the universal bucket
+		FluidRegistry.addBucketForFluid(ModFluids.blood);
+
 		registerItem(KEYSTONE);
 		registerItem(MINERAL_SHARD);
 		registerItem(KHAYDARIN_SHARD);
