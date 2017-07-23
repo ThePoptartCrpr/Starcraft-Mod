@@ -11,10 +11,10 @@ public class StarcraftDamageSources extends DamageSource {
 
 	public static DamageSource bullet = (new DamageSource("bullet")).setProjectile();
 	public static DamageSource hydraNeedle = (new DamageSource("hydraneedle")).setProjectile();
+	public static DamageSource acid = (new DamageSource("acid"));
 	
 	public StarcraftDamageSources(String damageTypeIn) {
 		super(damageTypeIn);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public static DamageSource causeBulletDamage(Entity sourceEntity)
@@ -24,7 +24,6 @@ public class StarcraftDamageSources extends DamageSource {
 
 	public static DamageSource causeHydraliskNeedleDamage(Entity source, @Nullable Entity indirectEntityIn)
     {
-        return (new EntityDamageSourceIndirect(hydraNeedle.getDamageType(), source, indirectEntityIn)).setProjectile();
+        return (new EntityDamageSource(hydraNeedle.getDamageType(), source));
     }
-	
 }
