@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ga.scmc.items.ModItems;
-import ga.scmc.tileentity.TileEntityMovingLightSource;
-import net.minecraft.block.ITileEntityProvider;
+//import ga.scmc.tileentity.TileEntityMovingLightSource;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -14,14 +13,14 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockMovingLightSource extends ModBlocks implements ITileEntityProvider {
+//public class BlockMovingLightSource extends ModBlocks implements ITileEntityProvider {
+public class BlockMovingLightSource extends ModBlocks {
 
 	public static final AxisAlignedBB FULL_BLOCK_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D);
 
@@ -78,10 +77,10 @@ public class BlockMovingLightSource extends ModBlocks implements ITileEntityProv
 		return new BlockStateContainer(this);
 	}
 
-	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEntityMovingLightSource();
-	}
+	// @Override
+	// public TileEntity createNewTileEntity(World worldIn, int meta) {
+	// return new TileEntityMovingLightSource();
+	// }
 
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {

@@ -85,6 +85,8 @@ public class Reference {
 		BLOCK_ZERG_FLESH("zergFlesh", "zerg_flesh"),
 		FLUID_ACID("fluidAcid", "fluid_acid"),
 		FLUID_BLOOD("fluidBlood", "fluid_blood"),
+		FLUID_VESPENE("fluidVespene", "fluid_vespene"),
+		BLOCK_GAS_VESPENE("gasVespene", "gas_vespene"),
 		ORE_ALIEN_C("charOreAlien", "char_ore_alien"),
 		ORE_ALIEN_S("shakurasOreAlien", "shakuras_ore_alien"),
 		ORE_COAL_C("charOreCoal", "char_ore_coal"),

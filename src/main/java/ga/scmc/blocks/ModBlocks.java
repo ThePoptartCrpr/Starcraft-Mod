@@ -232,7 +232,7 @@ public class ModBlocks extends Block {
 
 		FLUID_ACID = new BlockAcidFluid();
 		FLUID_BLOOD = new BlockBloodFluid();
-		FLUID_VESPENE = new BlockVespeneFluid();
+		//FLUID_VESPENE = new BlockVespeneFluid();
 		
 		GAS_VESPENE = new BlockVespeneGas();
 	}
@@ -440,8 +440,8 @@ public class ModBlocks extends Block {
 		GameRegistry.register(FLUID_BLOOD);
 		GameRegistry.register(new ItemBlock(FLUID_BLOOD).setRegistryName(Reference.ModBlocks.FLUID_BLOOD.getRegistryRL()));
 		
-		GameRegistry.register(FLUID_VESPENE);
-		GameRegistry.register(new ItemBlock(FLUID_VESPENE).setRegistryName(Reference.ModBlocks.FLUID_VESPENE.getRegistryRL()));
+		//GameRegistry.register(FLUID_VESPENE);
+		//GameRegistry.register(new ItemBlock(FLUID_VESPENE).setRegistryName(Reference.ModBlocks.FLUID_VESPENE.getRegistryRL()));
 		
 		GameRegistry.register(ENERGY);
 		GameRegistry.register(new ItemBlock(ENERGY).setRegistryName(Reference.ModBlocks.BLOCK_ENERGY.getRegistryRL()));
@@ -594,7 +594,7 @@ public class ModBlocks extends Block {
 		// Fluid Registration
 		registerFluid(FLUID_ACID);
 		registerFluid(FLUID_BLOOD);
-		registerFluid(FLUID_VESPENE);
+		//registerFluid(FLUID_VESPENE);
 
 		ModMetaBlocks.registerRenders();
 		// BlockRenderRegister.registerBlockRenderer();

@@ -19,7 +19,8 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 	public static final ModelC14GaussRifle model = new ModelC14GaussRifle();
 
 	public RenderItemC14GaussRifle() {
-		super(model, ModelC14GaussRifle.texture);
+		// super(model, ModelC14GaussRifle.texture);
+		super(model, ModelC14GaussRifle.TEXTURE);
 	}
 
 	@Override
@@ -28,15 +29,16 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 	}
 
 	@Override
-	public void renderFirstPersonLeft(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {}
+	public void renderFirstPersonLeft(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {
+	}
 
 	@Override
 	public void renderFirstPersonRight(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {
 		float displayScale = 1.0F;
 		float glScale = 1.0F;
 
-		if(RenderUtil.firstPersonRenderCheck(Minecraft.getMinecraft().thePlayer)) {
-			if(Mouse.isButtonDown(0) && mc.inGameHasFocus) {
+		if (RenderUtil.firstPersonRenderCheck(Minecraft.getMinecraft().thePlayer)) {
+			if (Mouse.isButtonDown(0) && mc.inGameHasFocus) {
 				GlStateManager.translate(-0.1F, 1.44F, -0.595F);
 				GlStateManager.rotate(102F, 1.0F, 0.0F, 0.0F);
 				GlStateManager.rotate(115.0F, 0.0F, 1.0F, 0.0F);
@@ -54,7 +56,7 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 			RenderUtil.bindTexture(getResourceLocation());
 			getModel().render(null, 0, 0, 0, 0, 0, RenderUtil.DEFAULT_BOX_TRANSLATION);
 
-			if(itemstack != null && itemstack.getItem() instanceof ItemC14GaussRifle) {
+			if (itemstack != null && itemstack.getItem() instanceof ItemC14GaussRifle) {
 				GL11.glDisable(GL11.GL_LIGHTING);
 				GlStateManager.translate(-0.3439F, 0.6F, 0.04F);
 				GlStateManager.scale(displayScale, displayScale, displayScale);
@@ -91,7 +93,8 @@ public class RenderItemC14GaussRifle extends ItemRenderer {
 	}
 
 	@Override
-	public void renderThirdPersonLeft(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {}
+	public void renderThirdPersonLeft(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {
+	}
 
 	@Override
 	public void renderThirdPersonRight(ItemStack itemstack, EntityLivingBase entity, TransformType cameraTransformType) {

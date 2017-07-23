@@ -13,7 +13,8 @@ import net.minecraft.item.ItemStack;
 public class ItemRenderC14GaussRifle extends ItemRenderer {
 
 	public ItemRenderC14GaussRifle() {
-		super(new ModelC14GaussRifle(), ModelC14GaussRifle.texture);
+		//super(new ModelC14GaussRifle(), ModelC14GaussRifle.texture);
+		super(new ModelC14GaussRifle(), ModelC14GaussRifle.TEXTURE);
 	}
 
 	@Override
