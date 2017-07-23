@@ -10,9 +10,6 @@ public class CommonProxy implements IProxy {
 	public ModelBiped getArmorModel(int id) {
 		return null; //That's all it did anyways
 	}
-	public ModelBiped getZergArmorT1Model(int id) {
-		return null; //That's all it did anyways
-	}
 	
 	public void preInit(FMLPreInitializationEvent event) {}
 	public void init(FMLInitializationEvent event) {}

@@ -65,6 +65,7 @@ public class BlockProtossShield extends ModBlocks {
         return false;
     }
 	
+    //TODO: fix this, arrows can sometimes whiz by shields
 	@Override
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
 		if(entityIn instanceof EntityArrow) {
